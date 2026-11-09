@@ -1,61 +1,33 @@
-**Example 1: 范例**
+**Example 1: 成功示例**
 
-
+成功示例
 
 Input: 
 
 ```
 tccli wedata RegisterEvent --cli-unfold-argument  \
+    --ProjectId 1460947878944567296 \
+    --Name xxxxx2 \
     --EventSubType DAY \
-    --Name aab \
+    --EventBroadcastType BROADCAST \
+    --TimeUnit DAYS \
+    --Owner jaydenjhu \
     --EventType TIME_SERIES \
     --DimensionFormat yyyyMMdd \
-    --EventBroadcastType SINGLE \
-    --ProjectId 1 \
-    --Owner TBDS \
-    --TimeUnit DAYS \
-    --Description aa
+    --TimeToLive 30 \
+    --Description ffdsafasdf
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "150c868d-0f20-4c31-b300-12c08be75328",
-        "Data": true
-    }
-}
-```
-
-**Example 2: 范例2**
-
-
-
-Input: 
-
-```
-tccli wedata RegisterEvent --cli-unfold-argument  \
-    --EventSubType DAY \
-    --Name mytest4 \
-    --EventType TIME_SERIES \
-    --DimensionFormat yyyyMMdd \
-    --EventBroadcastType SINGLE \
-    --ProjectId 1 \
-    --Owner TBDS \
-    --TimeUnit DAYS \
-    --Description aa
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "3ba35016-968f-456e-aae9-b31e1e0c8df3",
         "Data": {
-            "Result": true,
+            "ErrorDesc": null,
             "ErrorId": null,
-            "ErrorDesc": null
-        }
+            "Result": true
+        },
+        "RequestId": "ff9b1b3e-bf16-45d0-ac93-ab093dc2db8c"
     }
 }
 ```

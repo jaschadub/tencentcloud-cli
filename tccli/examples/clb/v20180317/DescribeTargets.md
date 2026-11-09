@@ -1,6 +1,60 @@
-**Example 1: 查询负载均衡实例上绑定的所有后端服务**
+**Example 1: 通过Location过滤查询后端服务列表**
 
+当负载均衡的7层监听器规则太多，而只想查询某个规则下的服务列表时，可通过Filters过滤location-id。
 
+Input: 
+
+```
+tccli clb DescribeTargets --cli-unfold-argument  \
+    --LoadBalancerId lb-12345678 \
+    --Filters.0.Name location-id \
+    --Filters.0.Values loc-12345678
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Listeners": [
+            {
+                "ListenerId": "lbl-12345678",
+                "Protocol": "HTTP",
+                "Port": 80,
+                "Rules": [
+                    {
+                        "LocationId": "loc-12345678",
+                        "Domain": "123.com",
+                        "Url": "/query",
+                        "Targets": [
+                            {
+                                "Type": "CVM",
+                                "InstanceId": "ins-12345678",
+                                "Port": 80,
+                                "Weight": 10,
+                                "PublicIpAddresses": null,
+                                "PrivateIpAddresses": [
+                                    "172.16.0.100"
+                                ],
+                                "InstanceName": "cvm-biz-test",
+                                "RegisteredTime": "2023-01-01",
+                                "EniId": "eni-12345678"
+                            }
+                        ],
+                        "FunctionTargets": null
+                    }
+                ],
+                "Targets": null,
+                "EndPort": 0
+            }
+        ],
+        "RequestId": "038afb75-7303-48da-abdc-e25f0cbfda0f"
+    }
+}
+```
+
+**Example 2: 查询负载均衡实例上绑定的所有后端服务**
+
+查询负载均衡实例上绑定的所有后端服务
 
 Input: 
 
@@ -22,7 +76,7 @@ Output:
                     {
                         "LocationId": "loc-o9732aw0",
                         "Domain": "www.123.com",
-                        "Url": "/",
+                        "Url": "/query",
                         "Targets": [
                             {
                                 "Type": "cvm",
@@ -37,16 +91,19 @@ Output:
                                 "InstanceId": "ins-19425y2y",
                                 "RegisteredTime": "2019-07-12 16:22:02"
                             }
-                        ]
+                        ],
+                        "FunctionTargets": []
                     }
                 ],
-                "Targets": null
+                "Targets": null,
+                "EndPort": 0
             },
             {
                 "ListenerId": "lbl-4ue2rpl2",
                 "Protocol": "TCP",
                 "Port": 888,
                 "Rules": null,
+                "EndPort": 0,
                 "Targets": [
                     {
                         "Type": "cvm",

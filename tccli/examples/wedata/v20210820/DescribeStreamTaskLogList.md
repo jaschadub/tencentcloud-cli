@@ -6,32 +6,33 @@ Input:
 
 ```
 tccli wedata DescribeStreamTaskLogList --cli-unfold-argument  \
-    --RunningOrderId 1 \
-    --Container xx \
-    --TaskId xx \
-    --ProjectId xx \
-    --JobId xx \
+    --ProjectId 1 \
+    --TaskId 20230112170349643 \
+    --JobId 123213 \
+    --Container pod \
+    --EndTime 143213 \
+    --StartTime 143113 \
     --Limit 1 \
-    --StartTime 1 \
-    --OrderType xx \
-    --EndTime 1
+    --OrderType desc \
+    --RunningOrderId 1 \
+    --Keyword INFO
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
         "ListOver": true,
         "LogContentList": [
             {
-                "PkgId": "xx",
-                "ContainerName": "xx",
+                "Log": "vdscsdcs",
+                "PkgId": "1",
+                "PkgLogId": "1",
                 "Time": 1,
-                "Log": "xx",
-                "PkgLogId": "xx"
+                "ContainerName": "pod"
             }
-        ]
+        ],
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

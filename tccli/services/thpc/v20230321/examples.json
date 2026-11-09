@@ -1,0 +1,451 @@
+{
+  "actions": {
+    "AddClusterStorageOption": [
+      {
+        "document": "集群添加CFS挂载选项。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddClusterStorageOption\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-eq97tf4u\",\n    \"StorageOption\": {\n        \"CFSOptions\": [\n            {\n                \"LocalPath\": \"/data/\",\n                \"RemotePath\": \"172.30.3.90:/\",\n                \"Protocol\": \"NFS 4.0\",\n                \"StorageType\": \"SD\"\n            },\n            {\n                \"LocalPath\": \"/tmp/\",\n                \"FileSystemId\": \"cfs-odp2ivgf\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "添加集群存储选项"
+      }
+    ],
+    "AddNodes": [
+      {
+        "document": "往集群ID为hpc-52nkfau6的集群的compute队列增加一个计算节点。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddNodes\n<公共请求参数>\n\n{\n    \"Count\": 1,\n    \"VirtualPrivateCloud\": {\n        \"SubnetId\": \"subnet-r0zpktaa\",\n        \"VpcId\": \"vpc-r9jw2jzr\"\n    },\n    \"Placement\": {\n        \"Zone\": \"ap-guangzhou-2\"\n    },\n    \"ClusterId\": \"hpc-52nkfau6\",\n    \"ImageId\": \"img-3la7wgnt\",\n    \"InstanceChargeType\": \"SPOTPAID\",\n    \"InstanceType\": \"S2.SMALL2\",\n    \"NodeRole\": \"Compute\",\n    \"QueueName\": \"compute\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "添加节点"
+      }
+    ],
+    "AddQueue": [
+      {
+        "document": "往指定集群添加队列。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddQueue\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-prkxbd7c\",\n    \"QueueName\": \"gpu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13ee84a5-7846-4682-8877-1c8f94962dd6\"\n    }\n}",
+        "title": "添加队列"
+      }
+    ],
+    "AttachNodes": [
+      {
+        "document": "本接口 (AttachNodes) 用于绑定一个或者多个计算节点指定资源到指定集群中。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachNodes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-2j8ntf9l\",\n    \"QueueName\": \"compute\",\n    \"ImageId\": \"img-39ywauzd\",\n    \"ResourceType\": \"CVM\",\n    \"ResourceSet\": [\n        \"ins-7i4yut4b\"\n    ],\n    \"UserData\": \"IyEvYmluL2Jhc2gKZWNobyAiSGFwcHnvvIEgVGhlIHRpbWUgaXMgbm93ICQoZGF0ZSAtUikhIiA+ICAvdG1wL3Vzcl9kYXRhLnR4dA==\",\n    \"SkipResetInstance\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e81d404b-4fa2-49de-bce7-6499a3529f04\"\n    }\n}",
+        "title": "绑定计算节点到集群"
+      }
+    ],
+    "BindClusterVpc": [
+      {
+        "document": "为IDC集群绑定指定的VPC和子网。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindClusterVpc\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-12345678\",\n    \"VpcId\": \"vpc-aaaa1234\",\n    \"SubnetId\": \"subnet-bbbb5678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"hpc-12345678\",\n        \"VpcId\": \"vpc-aaaa1234\",\n        \"SubnetId\": \"subnet-bbbb5678\",\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "绑定IDC集群VPC"
+      }
+    ],
+    "CreateCluster": [
+      {
+        "document": "创建一个管控节点和两个计算节点的集群。调度器为：SLURM。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCluster\n<公共请求参数>\n\n{\n    \"ManagerNodeCount\": 1,\n    \"Placement\": {\n        \"Zone\": \"ap-guangzhou-2\"\n    },\n    \"SchedulerType\": \"SLURM\",\n    \"ImageId\": \"img-l8og963d\",\n    \"ComputeNode\": {\n        \"InstanceChargeType\": \"SPOTPAID\",\n        \"InstanceType\": \"S2.SMALL2\"\n    },\n    \"ComputeNodeCount\": 2,\n    \"ManagerNode\": {\n        \"InstanceType\": \"S2.SMALL2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"hpc-5lyv94lq\",\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "创建集群"
+      }
+    ],
+    "CreateScheduledAction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScheduledAction\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-qd1qqnyt\",\n    \"QueueName\": \"lurka-auto-as\",\n    \"ScheduledActionName\": \"scale-out-morning\",\n    \"StartTime\": \"2026-08-14T00:00:00+08:00\",\n    \"DesiredCapacity\": 3,\n    \"EndTime\": \"2026-08-31T23:59:59+08:00\",\n    \"Recurrence\": \"0 9 * * 1-5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21aed752-2433-4ee7-8351-e986261f270d\"\n    }\n}",
+        "title": "创建定时任务"
+      }
+    ],
+    "CreateWorkspaces": [
+      {
+        "document": "创建工作空间",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkspaces\n<公共请求参数>\n\n{\n    \"SpaceChargeType\": \"PREPAID\",\n    \"SpaceChargePrepaid\": {\n        \"Period\": 1,\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n    },\n    \"Placement\": {\n        \"Zone\": \"ap-guangzhou-2\",\n        \"ProjectId\": 0\n    },\n    \"VirtualPrivateCloud\": {\n        \"AsVpcGateway\": false,\n        \"VpcId\": \"vpc-nrqwfyzv\",\n        \"SubnetId\": \"subnet-0tmm4ywk\",\n        \"Ipv6AddressCount\": 0\n    },\n    \"SpaceType\": \"96A.96XLARGE2304\",\n    \"ImageId\": \"img-9qrfy1xt\",\n    \"SystemDisk\": {\n        \"DiskSize\": 50,\n        \"DiskType\": \"CLOUD_PREMIUM\"\n    },\n    \"DataDisks\": [\n        {\n            \"DiskSize\": 50,\n            \"DiskType\": \"CLOUD_PREMIUM\"\n        },\n        {\n            \"DiskSize\": 50,\n            \"DiskType\": \"CLOUD_PREMIUM\"\n        }\n    ],\n    \"InternetAccessible\": {\n        \"PublicIpAssigned\": true,\n        \"InternetMaxBandwidthOut\": 5\n    },\n    \"SecurityGroupIds\": [\n        \"sg-fsx9rsr1\"\n    ],\n    \"SpaceCount\": 1,\n    \"EnhancedService\": {\n        \"SecurityService\": {\n            \"Enabled\": true\n        },\n        \"MonitorService\": {\n            \"Enabled\": true\n        },\n        \"AutomationService\": {\n            \"Enabled\": true\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SpaceIdSet\": [\n            \"wks-avs9gqvt\"\n        ],\n        \"RequestId\": \"efbbe00e-0175-4ee7-92c5-debc5763142d\"\n    }\n}",
+        "title": "创建工作空间"
+      }
+    ],
+    "DeleteCluster": [
+      {
+        "document": "删除指定集群。",
+        "input": "https://thpc.tencentcloudapi.com/?Action=DeleteCluster\n&ClusterId=hpc-5lyv94lq\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8b71050a-55c1-4f3b-bf66-5e4f8510a5a0\"\n    }\n}",
+        "title": "删除集群"
+      }
+    ],
+    "DeleteClusterStorageOption": [
+      {
+        "document": "删除本地挂载点为/data/的存储选项信息。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterStorageOption\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-5lyv94lq\",\n    \"LocalPath\": \"/data/\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2aeaea7e-9fc4-4c17-8a9b-50343b711003\"\n    }\n}",
+        "title": "删除集群存储选项信息。"
+      }
+    ],
+    "DeleteJob": [
+      {
+        "document": "删除指定作业任务",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteJob\n<公共请求参数>\n\n{\n    \"JobId\": \"job-7lbm9sss8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e8b3df3-0c0d-4f5a-b103-a9cf8sacs0865b\"\n    }\n}",
+        "title": "删除指定作业任务"
+      }
+    ],
+    "DeleteNodes": [
+      {
+        "document": "批量删除节点。",
+        "input": "https://thpc.tencentcloudapi.com/?Action=DeleteNodes\n&ClusterId=hpc-5lyv94lq\n&NodeIds.0=ins-jhf9c1gi\n&NodeIds.1=ins-qmzlqk70\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f4d90874-f565-463d-ba1d-c707517eeaa1\"\n    }\n}",
+        "title": "删除节点"
+      }
+    ],
+    "DeleteQueue": [
+      {
+        "document": "从集群删除指定队列。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteQueue\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-prkxbd7c\",\n    \"QueueName\": \"compute\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13ee84a5-7846-4682-8877-1c8f94962d10\"\n    }\n}",
+        "title": "删除队列"
+      }
+    ],
+    "DeleteScheduledAction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScheduledAction\n<公共请求参数>\n\n{\n    \"ScheduledActionIds\": [\n        \"as-824b4600\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f3e058e1-9c1a-4641-a85f-ee39d0c138eb\"\n    }\n}",
+        "title": "删除已经配置的定时任务"
+      }
+    ],
+    "DescribeAutoScalingConfiguration": [
+      {
+        "document": "查询集群ID为hpc-rv7hahw2的集群弹性伸缩配置信息。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoScalingConfiguration\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-rv7hahw2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"hpc-rv7hahw2\",\n        \"ExpansionBusyTime\": 120,\n        \"ShrinkIdleTime\": 300,\n        \"QueueConfigs\": [\n            {\n                \"QueueName\": \"compute\",\n                \"MinSize\": 0,\n                \"MaxSize\": 10,\n                \"EnableAutoExpansion\": false,\n                \"EnableAutoShrink\": false,\n                \"ExpansionNodeConfigs\": [\n                    {\n                        \"InstanceType\": \"M5.SMALL8\",\n                        \"Placement\": {\n                            \"Zone\": \"ap-chongqing-1\"\n                        },\n                        \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n                        \"InstanceChargePrepaid\": null,\n                        \"VirtualPrivateCloud\": {\n                            \"VpcId\": \"vpc-r9jw2jzv\",\n                            \"SubnetId\": \"subnet-r0zpktae\"\n                        },\n                        \"ImageId\": \"img-l8og963d\",\n                        \"InternetAccessible\": {\n                            \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                            \"InternetMaxBandwidthOut\": 0\n                        },\n                        \"SystemDisk\": {\n                            \"DiskType\": \"CLOUD_BSSD\",\n                            \"DiskSize\": 50\n                        },\n                        \"DataDisks\": null\n                    }\n                ],\n                \"DesiredIdleNodeCapacity\": 5,\n                \"DesiredNodeCount\": 0,\n                \"ScaleOutRatio\": 50,\n                \"ScaleOutNodeThreshold\": 0,\n                \"MaxNodesPerCycle\": 10,\n                \"ScaleUpMemRatio\": 0\n            }\n        ],\n        \"RequestId\": \"935760b6-2a63-480d-9124-c5f5b9d4218b\"\n    }\n}",
+        "title": "查询扩缩容策略配置"
+      }
+    ],
+    "DescribeClusterActivities": [
+      {
+        "document": "按照队列名称进行过滤",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterActivities\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-k2uwxvhn\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"queue-name\",\n            \"Values\": [\n                \"compute\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterActivitySet\": [\n            {\n                \"ActivityId\": \"cha-m9uxy80u\",\n                \"ActivityStatus\": \"SUCCESSFUL\",\n                \"ActivityStatusCode\": \"ActivitySuccess\",\n                \"ActivityType\": \"CreateAndAddNodes\",\n                \"Cause\": \"AutoScaleOut\",\n                \"ClusterId\": \"hpc-k2uwxvhn\",\n                \"Description\": \"弹性扩容，创建实例并添加进集群，队列：compute 增加 2个节点，总共扩容2个节点。\",\n                \"EndTime\": \"2026-08-31T03:51:51Z\",\n                \"QueueName\": \"compute\",\n                \"RelatedNodeActivitySet\": [\n                    {\n                        \"NodeActivityStatus\": \"SUCCESSFUL\",\n                        \"NodeActivityStatusCode\": \"ActivitySuccess\",\n                        \"NodeActivityStatusReason\": \"Activity success.\",\n                        \"NodeInstanceId\": \"ins-7236kgtn\"\n                    }\n                ],\n                \"ResultDetail\": \"Activity success.\",\n                \"StartTime\": \"2026-08-31T03:49:33Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"4e4ec467-cfa6-4212-9c1f-0c548278a43e\"\n    }\n}",
+        "title": "查询队列的弹性伸缩历史记录"
+      },
+      {
+        "document": "根据集群ID查询集群活动历史记录。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterActivities\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-0yd8fqsc\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterActivitySet\": [\n            {\n                \"ClusterId\": \"hpc-myd8fgsc\",\n                \"ActivityId\": \"cha-gvzj0zbd\",\n                \"ActivityType\": \"TerminateNodes\",\n                \"ActivityStatus\": \"SUCCESSFUL\",\n                \"ActivityStatusCode\": \"ActivitySuccess\",\n                \"ResultDetail\": \"Activity success.\",\n                \"Cause\": \"DeleteCluster\",\n                \"QueueName\": \"compute\",\n                \"Description\": \"删除指定集群，销毁实例，销毁所有节点。\",\n                \"RelatedNodeActivitySet\": [\n                    {\n                        \"NodeInstanceId\": \"ins-1zll2of0\",\n                        \"NodeActivityStatus\": \"SUCCESSFUL\",\n                        \"NodeActivityStatusCode\": \"ActivitySuccess\",\n                        \"NodeActivityStatusReason\": \"Activity success.\"\n                    },\n                    {\n                        \"NodeInstanceId\": \"ins-ig2bew40\",\n                        \"NodeActivityStatus\": \"SUCCESSFUL\",\n                        \"NodeActivityStatusCode\": \"ActivitySuccess\",\n                        \"NodeActivityStatusReason\": \"Activity success.\"\n                    }\n                ],\n                \"StartTime\": \"2021-11-01T02:17:20Z\",\n                \"EndTime\": \"2021-11-01T02:17:38Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"7fa864e6-cf1a-4962-8aa9-f68abfa31a00\"\n    }\n}",
+        "title": "查询集群活动历史记录"
+      }
+    ],
+    "DescribeClusterDedicatedProxy": [
+      {
+        "document": "查询一个已开通专线代理的IDC集群的代理状态信息。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterDedicatedProxy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-12345678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Enabled\": true,\n        \"EndPointId\": \"vpce-12345678\",\n        \"EndPointVip\": \"10.0.0.1\",\n        \"EndPointReady\": true,\n        \"EndPointStatus\": \"ACTIVE\",\n        \"LastKnownStatus\": \"ACTIVE\",\n        \"EndPointServiceId\": \"vpcsvc-xxx\",\n        \"VpcId\": \"vpc-aaaa1234\",\n        \"SubnetId\": \"subnet-bbbb5678\",\n        \"CreateTime\": \"2026-06-01 10:00:00\",\n        \"LastSyncTime\": \"2026-06-11 14:00:00\",\n        \"RealtimeQueryTime\": \"2026-06-11 14:56:39\",\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "查询已开通代理的IDC集群"
+      },
+      {
+        "document": "查询一个未开通专线代理的IDC集群。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterDedicatedProxy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-87654321\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Enabled\": false,\n        \"EndPointReady\": false,\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "查询未开通代理的IDC集群"
+      }
+    ],
+    "DescribeClusterMonitorStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterMonitorStatus\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MonitorStatus\": \"DISABLED\",\n        \"PrometheusId\": \"prom-********\",\n        \"RequestId\": \"1b1ba87a-0565-4b48-bea1-5f85ee921abb\"\n    }\n}",
+        "title": "查询集群的监控状态"
+      }
+    ],
+    "DescribeClusterStorageOption": [
+      {
+        "document": "查询集群ID为hpc-5lyv94lq的集群存储选项信息。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterStorageOption\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-5lyv94lq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StorageOption\": {\n            \"CFSOptions\": [\n                {\n                    \"LocalPath\": \"/opt/\",\n                    \"RemotePath\": \"172.30.3.90:/j25ey5tz/hpc-kjddsnfa/opt/\",\n                    \"Protocol\": \"NFS 3.0\",\n                    \"StorageType\": \"SD\",\n                    \"MountOption\": \"vers=3,nolock,proto=tcp,noresvport\"\n                }\n            ],\n            \"GooseFSOptions\": [\n                {\n                    \"LocalPath\": \"/data/\",\n                    \"RemotePath\": \"/xxx/cfs/\",\n                    \"Masters\": [\n                        \"172.30.4.63:9202\",\n                        \"172.30.0.128:9202\"\n                    ]\n                }\n            ],\n            \"GooseFSxOptions\": [\n                {\n                    \"LocalPath\": \"/data/\",\n                    \"Masters\": [\n                        \"172.30.4.63:9202\",\n                        \"172.30.0.128:9202\"\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"2aeaea7e-9fc4-4c17-8a9b-50343b712993\"\n    }\n}",
+        "title": "查询集群存储选项"
+      }
+    ],
+    "DescribeClusters": [
+      {
+        "document": "查询集群列表。",
+        "input": "https://thpc.tencentcloudapi.com/?Action=DescribeClusters\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterSet\": [\n            {\n                \"ClusterId\": \"hpc-qrb7ybn0\",\n                \"ClusterName\": \"unnamed\",\n                \"ClusterStatus\": \"RUNNING\",\n                \"Placement\": {\n                    \"Zone\": \"ap-guangzhou-2\"\n                },\n                \"CreateTime\": \"2021-12-07T03:29:09Z\",\n                \"SchedulerType\": \"SGE\",\n                \"VpcId\": \"vpc-xxxxxxxx\",\n                \"ComputeNodeCount\": 1,\n                \"LoginNodeSet\": [\n                    {\n                        \"NodeId\": \"ins-jehc407m\"\n                    }\n                ],\n                \"LoginNodeCount\": 1,\n                \"ComputeNodeSet\": [\n                    {\n                        \"NodeId\": \"ins-jfhc307q\"\n                    }\n                ],\n                \"ManagerNodeCount\": 1,\n                \"ManagerNodeSet\": [\n                    {\n                        \"NodeId\": \"ins-cv6ygpkq\"\n                    }\n                ],\n                \"AutoScalingType\": \"THPC_AS\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"8a39c8e3-129b-4628-b763-ef96caaa2f4d\"\n    }\n}",
+        "title": "查询集群列表"
+      }
+    ],
+    "DescribeInitNodeScripts": [
+      {
+        "document": "查询节点初始化脚本信息。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInitNodeScripts\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-5lyv94lq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InitNodeScriptSet\": [\n            {\n                \"ScriptPath\": \"cos://test-xxxxxxxx.cos.ap-guangzhou.myqcloud.com/test/echo.sh\",\n                \"Timeout\": 30\n            }\n        ],\n        \"RequestId\": \"a40ac3ec-f0ac-4eee-8af8-ef2d93f37982\"\n    }\n}",
+        "title": "查询节点初始化脚本信息"
+      }
+    ],
+    "DescribeInstanceFamilies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceFamilies\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-pgzjxqkf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f218388-68cb-47ca-a6f5-8bf38268fc91\"\n    }\n}",
+        "title": "查询可用机型族列表"
+      }
+    ],
+    "DescribeJobSubmitInfo": [
+      {
+        "document": "查询指定作业的提交信息",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobSubmitInfo\n<公共请求参数>\n\n{\n    \"JobId\": \"job-7lbm9sss8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"hpc-qjwi17gr\",\n        \"QueueName\": \"compute\",\n        \"Job\": {\n            \"JobName\": \"jobj-test\",\n            \"JobDescription\": \"demo\",\n            \"Priority\": 1,\n            \"Tasks\": [\n                {\n                    \"TaskInstanceNum\": 1,\n                    \"Application\": {\n                        \"Commands\": [\n                            {\n                                \"Command\": \"sleep 30\"\n                            }\n                        ],\n                        \"Docker\": {\n                            \"Image\": \"ccr.ccs.tencentyun.com/taco/taco-train:ngc24.03-ofed5.8-hccpnv6-v1.0\",\n                            \"RunArgs\": [\n                                \"--privileged\",\n                                \"--cap-add=IPC_LOCK\",\n                                \"--ulimit memlock=-1\",\n                                \"--ulimit stack=67108864\",\n                                \"--net=host\",\n                                \"--ipc=host\",\n                                \"--gpus all\"\n                            ]\n                        },\n                        \"JobType\": \"Custom\"\n                    },\n                    \"Timeout\": 86400,\n                    \"TaskName\": \"Task_1\"\n                }\n            ]\n        },\n        \"RequestId\": \"d00db282-3ebb-438d-82da-73e376ff9b31\"\n    }\n}",
+        "title": "查询指定作业的提交信息"
+      }
+    ],
+    "DescribeJobs": [
+      {
+        "document": "查询指定作业ID的任务列表信息",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobs\n<公共请求参数>\n\n{\n    \"JobIds\": [\n        \"job-mudo8mj\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobSet\": [\n            {\n                \"ClusterId\": \"hpc-59wddafa\",\n                \"CreateTime\": \"2024-12-17 15:31:14\",\n                \"EndTime\": \"1753-01-01 00:00:00\",\n                \"JobDescription\": \"job test\",\n                \"JobId\": \"job-mudo8mij\",\n                \"JobName\": \"nj-test\",\n                \"JobState\": \"RUNNING\",\n                \"Priority\": 1,\n                \"QueueName\": \"compute\",\n                \"OccupyResources\": \"计算节点: 2\"\n            }\n        ],\n        \"RequestId\": \"a0a8bfa0-43cd-424e-9b12-eb01fadfadc6c1\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询指定作业ID的任务列表信息"
+      }
+    ],
+    "DescribeJobsOverview": [
+      {
+        "document": "thpc查看集群下的作业概览信息",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobsOverview\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobTotal\": 3,\n        \"QueuingJobTotal\": 2,\n        \"RunningJobTotal\": 1,\n        \"RequestId\": \"a0a8bfa0-43cd-424e-9b12-eb01fadfadc6c1\"\n    }\n}",
+        "title": "thpc查看集群下的作业概览信息"
+      }
+    ],
+    "DescribeNodes": [
+      {
+        "document": "查询指定集群节点概览信息，集群ID为hpc-ggaqjyax。",
+        "input": "https://thpc.tencentcloudapi.com/?Action=DescribeNodes\n&ClusterId=hpc-ggaqjyax\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NodeSet\": [\n            {\n                \"NodeId\": \"node-2sh754ah\",\n                \"InstanceId\": \"ins-j3n6kiae\",\n                \"Zone\": \"ap-chongqing-1\",\n                \"NodeState\": \"RUNNING\",\n                \"ImageId\": \"img-l8og963d\",\n                \"QueueName\": \"compute\",\n                \"NodeRole\": \"Compute\",\n                \"NodeType\": \"DYNAMIC\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"6793673e-3bce-4fbb-adea-923a82267da2\"\n    }\n}",
+        "title": "查询指定集群节点概览信息。"
+      }
+    ],
+    "DescribeQueueAutoScaling": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQueueAutoScaling\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-d9ng14l3\",\n    \"QueueName\": \"lurka-auto-as\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"539a36cc-f30c-4e2b-8f4f-f56a6b2ca141\"\n    }\n}",
+        "title": "查询队列弹性伸缩配置"
+      }
+    ],
+    "DescribeQueueAutoScalingOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQueueAutoScalingOverview\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-d9ng14l3\",\n    \"QueueNames\": [\n        \"lurka-auto-as\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"18738ab9-7cbe-412e-92b7-5097ef4b01e7\"\n    }\n}",
+        "title": "查询队列伸缩概览"
+      }
+    ],
+    "DescribeQueues": [
+      {
+        "document": "查询集群队列概览信息列表。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQueues\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-prkxbd7c\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"QueueSet\": [\n            {\n                \"QueueName\": \"compute\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"13ee84a5-7846-4682-8877-1c8f94962dd5\"\n    }\n}",
+        "title": "查询集群队列概览信息列表"
+      }
+    ],
+    "DescribeScheduledActions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScheduledActions\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-brv22s4t\",\n    \"QueueName\": \"thpc-as\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d8a16885-b53d-4392-bfae-6622da419431\"\n    }\n}",
+        "title": "按照队列查询定时任务配置"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScheduledActions\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-brv22s4t\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2bb70350-b162-427e-99cf-78b465277563\"\n    }\n}",
+        "title": "按照集群查询定时任务配置"
+      }
+    ],
+    "DescribeWorkspaces": [
+      {
+        "document": "查看在上海8区的实例信息,限制返回结果最多为一项",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaces\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"ap-shanghai-8\"\n            ],\n            \"Name\": \"zone\"\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0142a337-d8cf-4ae1-857f-d090c1f802fdafd\",\n        \"SpaceSet\": [\n            {\n                \"CreatedTime\": \"2024-09-22T00:00:00+00:00\",\n                \"ExpiredTime\": \"2024-09-22T00:00:00+00:00\",\n                \"LatestOperation\": \"CreateWorkspaces\",\n                \"LatestOperationState\": \"SUCCESS\",\n                \"Placement\": {\n                    \"Zone\": \"ap-shanghai-8\"\n                },\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"ResourceId\": \"ins-3zjugd6z\",\n                \"SpaceChargeType\": \"PREPAID\",\n                \"SpaceFamily\": \"96AS\",\n                \"SpaceId\": \"wks-bfdafadfd\",\n                \"SpaceName\": \"workspace\",\n                \"SpaceState\": \"ONLINE\",\n                \"SpaceType\": \"96AS.4XLARGE160\",\n                \"Tags\": []\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询工作空间列表"
+      }
+    ],
+    "DetachNodes": [
+      {
+        "document": "集群ID为hpc-2j8ntf9l的集群解绑计算节点node-8workmoi",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachNodes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-2j8ntf9l\",\n    \"NodeIds\": [\n        \"node-8workmoi\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"40c2e07e-8500-4460-8db8-666d0e791ee5\"\n    }\n}",
+        "title": "从集群解绑计算节点"
+      }
+    ],
+    "DisableClusterDedicatedProxy": [
+      {
+        "document": "关闭IDC集群的专线/VPN代理，释放终端节点资源。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableClusterDedicatedProxy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-12345678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "关闭IDC集群专线代理"
+      }
+    ],
+    "DisableClusterMonitor": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableClusterMonitor\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"95320c3f-2a84-45bc-90e9-304dcf037f1c\"\n    }\n}",
+        "title": "关闭集群监控"
+      }
+    ],
+    "EnableClusterDedicatedProxy": [
+      {
+        "document": "开启IDC集群的专线/VPN代理，在指定VPC和子网中创建终端节点。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableClusterDedicatedProxy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-12345678\",\n    \"VpcId\": \"vpc-aaaa1234\",\n    \"SubnetId\": \"subnet-bbbb5678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EndPointId\": \"vpce-12345678\",\n        \"EndPointVip\": \"10.0.0.1\",\n        \"EndPointReady\": true,\n        \"EndPointStatus\": \"ACTIVE\",\n        \"VpcId\": \"vpc-aaaa1234\",\n        \"SubnetId\": \"subnet-bbbb5678\",\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "开启IDC集群专线代理"
+      }
+    ],
+    "EnableClusterMonitor": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableClusterMonitor\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-********\",\n    \"PrometheusId\": \"prom-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0089c30e-f6b1-4e8e-9663-5ca0728e94d1\"\n    }\n}",
+        "title": "开启集群监控"
+      }
+    ],
+    "GenerateRegisterCode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateRegisterCode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-kywo***a\",\n    \"QueueName\": \"compute\",\n    \"ExpireSeconds\": 3600\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireAt\": 1778041412,\n        \"RegisterCode\": \"***********************0*******3*m*w*SIs******l*********M****D*0**************9uI************md***9*****c3*********1*********j****A***A*N****DM**n******3**P*Jz*********m*****9*****vudEt-**7j*\",\n        \"RequestId\": \"c7be8eb1-046a-4b48-9b29-535543cb9a3f\"\n    }\n}",
+        "title": "为集群指定队列生成注册码"
+      }
+    ],
+    "GenerateRegisterCommand": [
+      {
+        "document": "为可直连的IDC集群生成节点注册命令。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateRegisterCommand\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-12345678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RegisterCommand\": \"curl -sSL http://xxx/register.sh | bash -s -- --code eyJ...\",\n        \"RegisterCode\": \"eyJhbGciOiJIUzI1NiJ9...\",\n        \"ExpireAt\": 1755676800,\n        \"Proxy\": false,\n        \"ClusterId\": \"hpc-12345678\",\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "生成IDC集群节点注册命令（直连）"
+      },
+      {
+        "document": "为IDC集群生成经专线代理接入的节点注册命令。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateRegisterCommand\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-12345678\",\n    \"Proxy\": true,\n    \"VpcId\": \"vpc-aaaa1234\",\n    \"SubnetId\": \"subnet-bbbb5678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RegisterCommand\": \"curl -sSL http://xxx/register.sh | bash -s -- --code eyJ...\",\n        \"RegisterCode\": \"eyJhbGciOiJIUzI1NiJ9...\",\n        \"ExpireAt\": 1755676800,\n        \"Proxy\": true,\n        \"EndPointVip\": \"10.0.0.1\",\n        \"EndPointStatus\": \"ACTIVE\",\n        \"ClusterId\": \"hpc-12345678\",\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
+        "title": "生成IDC集群节点注册命令（走专线代理）"
+      }
+    ],
+    "InquirePriceCreateWorkspaces": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceCreateWorkspaces\n<公共请求参数>\n\n{\n    \"SpaceChargeType\": \"PREPAID\",\n    \"SpaceChargePrepaid\": {\n        \"Period\": 1,\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n    },\n    \"Placement\": {\n        \"Zone\": \"ap-guangzhou-2\",\n        \"ProjectId\": 0\n    },\n    \"VirtualPrivateCloud\": {\n        \"AsVpcGateway\": false,\n        \"VpcId\": \"vpc-nrqwfyzv\",\n        \"SubnetId\": \"subnet-0tmm4ywk\",\n        \"Ipv6AddressCount\": 0\n    },\n    \"SpaceType\": \"96A.96XLARGE2304\",\n    \"ImageId\": \"img-9qrfy1xt\",\n    \"SystemDisk\": {\n        \"DiskSize\": 50,\n        \"DiskType\": \"CLOUD_PREMIUM\"\n    },\n    \"DataDisks\": [\n        {\n            \"DiskSize\": 50,\n            \"DiskType\": \"CLOUD_PREMIUM\"\n        },\n        {\n            \"DiskSize\": 50,\n            \"DiskType\": \"CLOUD_PREMIUM\"\n        }\n    ],\n    \"InternetAccessible\": {\n        \"PublicIpAssigned\": true,\n        \"InternetMaxBandwidthOut\": 5\n    },\n    \"SecurityGroupIds\": [\n        \"sg-fsx9rsr1\"\n    ],\n    \"SpaceCount\": 1,\n    \"EnhancedService\": {\n        \"SecurityService\": {\n            \"Enabled\": true\n        },\n        \"MonitorService\": {\n            \"Enabled\": true\n        },\n        \"AutomationService\": {\n            \"Enabled\": true\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"SpacePrice\": {\n                \"OriginalPrice\": 123630.3,\n                \"DiscountPrice\": 123630.3,\n                \"Discount\": 100\n            },\n            \"BandwidthPrice\": {\n                \"UnitPrice\": 0.8,\n                \"DiscountUnitPrice\": 0.8,\n                \"ChargeUnit\": \"GB\",\n                \"Discount\": 100\n            }\n        },\n        \"RequestId\": \"dcec1ad4-54a4-4a49-b754-f65cd7274c82\"\n    }\n}",
+        "title": "创建实例询价"
+      }
+    ],
+    "InquirePriceModifyWorkspacesChargeType": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceModifyWorkspacesChargeType\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"wks-q8b3h7xt\"\n    ],\n    \"SpaceChargeType\": \"PREPAID\",\n    \"SpaceChargePrepaid\": {\n        \"Period\": 1,\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"SpacePrice\": {\n                \"Discount\": 100,\n                \"DiscountPrice\": 146171.22999999998,\n                \"OriginalPrice\": 146171.22999999998\n            }\n        },\n        \"RequestId\": \"faf63fd0-001b-4321-9f5e-99fa433bb83e\"\n    }\n}",
+        "title": "询价工作空间转换计费模式"
+      }
+    ],
+    "ModifyClusterDeletionProtection": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterDeletionProtection\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-cjaqo2i7\",\n    \"DeletionProtection\": \"OFF\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"efbbe00e-0175-4ee7-92c5-debc5763142d\"\n    }\n}",
+        "title": "关闭集群删除保护状态"
+      }
+    ],
+    "ModifyInitNodeScripts": [
+      {
+        "document": "修改节点初始化脚本。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInitNodeScripts\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-5lyv94lq\",\n    \"InitNodeScripts\": [\n        {\n            \"ScriptPath\": \"cos://test-xxxxxxxx.cos.ap-guangzhou.myqcloud.com/test/echo.sh\",\n            \"Timeout\": 30\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b40ac3ec-f0ac-4eaaa-8af8-ef2d93f37982\"\n    }\n}",
+        "title": "修改节点初始化脚本"
+      }
+    ],
+    "ModifyNodeAttribute": [
+      {
+        "document": "用于同集群下队列切换",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodeAttribute\n<公共请求参数>\n\n{\n    \"NodeId\": \"node-qkpdhp90\",\n    \"QueueName\": \"usr_queue\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c16f5ef-f532-4574-a4d2-7cee0c38acb8\"\n    }\n}",
+        "title": "切换队列"
+      },
+      {
+        "document": "手动隔离节点，修改节点的资源使用为隔离状态，阻止作业调度到目标节点",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodeAttribute\n<公共请求参数>\n\n{\n    \"NodeId\": \"node-xxx\",\n    \"NodeAllocateState\": \"ISOLATE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e55f6797-8672-435a-875a-8f05d9b3fadaaa\"\n    }\n}",
+        "title": "隔离节点"
+      }
+    ],
+    "ModifyScheduledAction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScheduledAction\n<公共请求参数>\n\n{\n    \"ScheduledActionId\": \"as-6be93212\",\n    \"ScheduledActionName\": \"scale-out-morning\",\n    \"Status\": \"ACTIVE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f9540742-a232-4707-a2a7-7f358215e561\"\n    }\n}",
+        "title": "修改定时任务名称"
+      }
+    ],
+    "ModifyWorkspacesAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkspacesAttribute\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"wks-gzut2d4n\"\n    ],\n    \"SpaceName\": \"Workspace\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbfa8866-7644-4181-806f-2334ea2da591\"\n    }\n}",
+        "title": "修改工作空间的名称"
+      }
+    ],
+    "ModifyWorkspacesChargeType": [
+      {
+        "document": "按量转包年包月",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkspacesChargeType\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"wks-azkpgmz5\"\n    ],\n    \"SpaceChargeType\": \"PREPAID\",\n    \"DryRun\": false,\n    \"SpaceChargePrepaid\": {\n        \"Period\": 1,\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9f80f09b-f157-4ba6-9197-6622a1195c9a\"\n    }\n}",
+        "title": "工作空间转换计费模式"
+      }
+    ],
+    "ModifyWorkspacesRenewFlag": [
+      {
+        "document": "修改工作空间实例的续费标识",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkspacesRenewFlag\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"wks-xxxx\"\n    ],\n    \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"84dea32c-55a7-4a07-b2e9-f7ba4dfaad58\"\n    }\n}",
+        "title": "修改工作空间实例的续费标识"
+      }
+    ],
+    "SetAutoScalingConfiguration": [
+      {
+        "document": "集群配置弹性伸缩策略信息。",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetAutoScalingConfiguration\n<公共请求参数>\n\n{\n    \"DryRun\": false,\n    \"ShrinkIdleTime\": 300,\n    \"ExpansionBusyTime\": 120,\n    \"ClusterId\": \"hpc-5lyv94lq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1d90874-f565-463d-ba1d-c707517eece1\"\n    }\n}",
+        "title": "设置弹性伸缩配置"
+      }
+    ],
+    "SetQueueAutoScaling": [
+      {
+        "document": "MULTI_CARD + 混合卡数",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetQueueAutoScaling\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-r7cjxd9c\",\n    \"QueueName\": \"as-it-queue\",\n    \"ScalingPolicy\": {\n        \"DesiredCapacity\": 8,\n        \"ScalingUnit\": \"GPU_CARD\"\n    },\n    \"ExpansionPolicy\": {\n        \"ExpansionMode\": \"MULTI_CARD\",\n        \"LaunchTemplateIds\": [\n            \"lt-1dtaw7fw\"\n        ],\n        \"TemplateOverrides\": {\n            \"InstanceFamilies\": [\n                \"GN10X\"\n            ],\n            \"EnableMixedGpuCount\": true,\n            \"EnableMultiZone\": true\n        },\n        \"ExpansionPriority\": {\n            \"InstanceSpecPriority\": \"LARGE_FIRST\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0fa65b3-2174-4534-87d5-e9434e858b3f\"\n    }\n}",
+        "title": "设置队列弹性伸缩配置"
+      }
+    ],
+    "SubmitJob": [
+      {
+        "document": "提交一个\"hello world\"作业任务",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitJob\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-5fdafdsas\",\n    \"Job\": {\n        \"Tasks\": [\n            {\n                \"Application\": {\n                    \"Commands\": [\n                        {\n                            \"Command\": \"echo hello world\"\n                        }\n                    ],\n                    \"StorageMounts\": [\n                        {\n                            \"Source\": \"/mnt/\",\n                            \"Target\": \"/data/\"\n                        }\n                    ],\n                    \"EnvVars\": [\n                        {\n                            \"Name\": \"ENV\",\n                            \"Value\": \"prod\"\n                        }\n                    ],\n                    \"Docker\": {\n                        \"Image\": \"test:test\",\n                        \"RunArgs\": [\n                            \"--privileged\",\n                            \"--cap-add=IPC_LOCK\",\n                            \"--net=host\",\n                            \"--ipc=host\",\n                            \" --gpus all\"\n                        ]\n                    },\n                    \"OutputRedirect\": {\n                        \"Driver\": \"local\",\n                        \"Options\": [\n                            \"stdout=/data/${BATCH_JOB_ID}.log\",\n                            \"stderr=/data/${BATCH_JOB_ID}.log\"\n                        ]\n                    }\n                },\n                \"TaskName\": \"task-test-v1\",\n                \"TaskInstanceNum\": 2,\n                \"Timeout\": 3600\n            }\n        ],\n        \"JobName\": \"hello world\",\n        \"JobDescription\": \"job test\",\n        \"Priority\": 1\n    },\n    \"QueueName\": \"compute\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"job-mudfdafada\",\n        \"RequestId\": \"ef8a9572-db7f-450b-b736-265feffafda34\"\n    }\n}",
+        "title": "提交一个\"hello world\"作业任务"
+      }
+    ],
+    "TerminateJob": [
+      {
+        "document": "终止指定的作业任务",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"job-n27m0dx9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c2781659-7d40-4d4e-bee6-40a1e5fdadfae3c\"\n    }\n}",
+        "title": "终止指定的作业任务"
+      }
+    ],
+    "TerminateWorkspaces": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateWorkspaces\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"wks-kj2pb4dt\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"952f8cb8-240a-45cb-aabf-7665be657072\"\n    }\n}",
+        "title": "主动退还工作空间"
+      }
+    ]
+  },
+  "version": "1.0"
+}

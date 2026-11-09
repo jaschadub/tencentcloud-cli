@@ -1,13 +1,38 @@
-**Example 1: 五官定位接口**
+**Example 1: 五官定位接口异常示例**
 
-
+对请求图片进行五官定位，图片中无人脸。
 
 Input: 
 
 ```
 tccli iai AnalyzeFace --cli-unfold-argument  \
-    --Mode 0 \
-    --Url http://test.image.myqcloud.com/testA.jpg
+    --Url http://test.image.myqcloud.com/testB.jpg \
+    --Mode 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "c964ad35-5476-486e-a03f-311faa6652e6",
+        "Error": {
+            "Code": "InvalidParameterValue.NoFaceInPhoto",
+            "Message": "图片中没有人脸。"
+        }
+    }
+}
+```
+
+**Example 2: 五官定位接口成功示例**
+
+对请求图片进行五官定位。
+
+Input: 
+
+```
+tccli iai AnalyzeFace --cli-unfold-argument  \
+    --Url http://test.image.myqcloud.com/testA.jpg \
+    --Mode 0
 ```
 
 Output: 

@@ -24,74 +24,41 @@ Output:
     "Response": {
         "Alarms": [
             {
-                "AlarmStatus": "OK",
-                "AlarmType": "内存使用量",
-                "Content": "内存使用量 >  66666 MB",
-                "Dimensions": "{\"unInstanceId\":\"ins-19a06nn8\"}",
-                "Duration": 600,
-                "FirstOccurTime": "2019-11-16T15:50:00+08:00",
-                "GroupId": 1278966,
-                "GroupName": "dddd",
-                "Id": 30057956,
-                "InstanceGroup": [
-                    {
-                        "InstanceGroupId": 562,
-                        "InstanceGroupName": "barad_nws_cvm"
-                    }
-                ],
-                "LastOccurTime": "2019-11-16T16:00:00+08:00",
-                "MetricId": 24,
-                "MetricName": "mem_used",
-                "NotifyWay": [
-                    "EMAIL",
-                    "SMS"
-                ],
-                "ObjId": "a961c198-e0e2-4989-a3b6-7b155b35ff6f",
-                "ObjName": "10.0.0.14(251008737 vm1)",
+                "Id": 1,
                 "ProjectId": 0,
                 "ProjectName": "默认项目",
-                "Region": "gz",
-                "Status": 1,
+                "Status": 0,
+                "AlarmStatus": "未恢复",
+                "GroupId": 12345,
+                "GroupName": "cpu",
+                "FirstOccurTime": "2026-06-26 10:15:30",
+                "Duration": 300,
+                "LastOccurTime": "2026-06-26 10:20:30",
+                "Content": "CPU利用率超过90%，当前值95.2%",
+                "ObjName": "ins-a1b2c3d4",
+                "ObjId": "ins-a1b2c3d4",
                 "ViewName": "cvm_device",
-                "Vpc": "1"
-            },
-            {
-                "AlarmStatus": "OK",
-                "AlarmType": "内存使用量",
-                "Content": "内存使用量 >=  200000 MB",
-                "Dimensions": "{\"unInstanceId\":\"ins-19a06nn8\"}",
-                "Duration": 180,
-                "FirstOccurTime": "2019-11-16T15:45:00+08:00",
-                "GroupId": 1279043,
-                "GroupName": "-",
-                "Id": 30057955,
-                "InstanceGroup": [
-                    {
-                        "InstanceGroupId": 562,
-                        "InstanceGroupName": "barad_nws_cvm"
-                    }
-                ],
-                "LastOccurTime": "2019-11-16T15:48:00+08:00",
-                "MetricId": 24,
-                "MetricName": "mem_used",
+                "Vpc": "vpc-12345678",
+                "MetricId": 5000,
+                "MetricName": "cpu_usage",
+                "AlarmType": 0,
+                "Region": "ap-guangzhou",
+                "Dimensions": "{\"unInstanceId\":\"ins-a1b2c3d4\"}",
                 "NotifyWay": [
-                    "EMAIL",
                     "SMS",
-                    "WECHAT"
+                    "EMAIL"
                 ],
-                "ObjId": "a961c198-e0e2-4989-a3b6-7b155b35ff6f",
-                "ObjName": "10.0.0.14(251008737 vm1)",
-                "ProjectId": 0,
-                "ProjectName": "默认项目",
-                "Region": "gz",
-                "Status": 1,
-                "ViewName": "cvm_device",
-                "Vpc": "1"
+                "InstanceGroup": [
+                    {
+                        "InstanceGroupId": 6789,
+                        "InstanceGroupName": "生产环境-Web服务器组"
+                    }
+                ]
             }
         ],
-        "RequestId": "6b64cc24-0c60-483f-bdc3-2e55edbbc68c",
-        "Total": 2,
-        "Warning": "This method is deprecated! Use `DescribeAlarmHistories` instead!"
+        "Total": 1,
+        "Warning": "",
+        "RequestId": "3a5f7e2d-8b1c-4d6a-9e0f-1a2b3c4d5e6f"
     }
 }
 ```

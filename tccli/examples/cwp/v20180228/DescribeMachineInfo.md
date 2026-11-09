@@ -13,27 +13,27 @@ Output:
 ```
 {
     "Response": {
-        "ProVersionDeadline": "xx",
+        "AgentVersion": "1.0.1",
+        "FreeMalwaresLeft": 0,
+        "FreeVulsLeft": 0,
+        "HasAssetScan": 0,
+        "InstanceId": "ins-ivkxaaaa",
         "IsProVersion": true,
-        "MachineOs": "xx",
-        "Uuid": "xx",
-        "RequestId": "xx",
-        "HasAssetScan": 1,
-        "InstanceId": "xx",
-        "MachineName": "xx",
-        "FreeVulsLeft": 1,
-        "MachineIp": "xx",
-        "PayMode": "xx",
-        "AgentVersion": "xx",
-        "MachineRegion": "xx",
-        "ProtectDays": 1,
-        "Quuid": "xx",
-        "FreeMalwaresLeft": 1,
-        "MachineStatus": "xx",
-        "MachineWanIp": "xx",
-        "MachineType": "xx",
-        "ProVersionOpenDate": "xx",
-        "ProtectType": "BASIC_VERSION"
+        "MachineIp": "172.16.255.2",
+        "MachineName": "tke_cls-kjg9r3fh_master_etcd1",
+        "MachineOs": "TencentOS Server 3.1 (TK4)",
+        "MachineRegion": "ap-shanghai",
+        "MachineStatus": "ONLINE",
+        "MachineType": "CVM",
+        "MachineWanIp": "124.222.61.130",
+        "PayMode": "PREPAY",
+        "ProVersionDeadline": "2024-01-10 10:51:11",
+        "ProVersionOpenDate": "2023-08-07 14:54:29",
+        "ProtectDays": 98,
+        "ProtectType": "Flagship",
+        "Quuid": "a081a69d-aaaa-bbbb-b456-59f381de839b",
+        "RequestId": "8564b09e-0e04-4516-bb59-db09742503c2",
+        "Uuid": "a081a69d-aaaa-bbbb-b456-59f381de839b"
     }
 }
 ```

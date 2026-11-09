@@ -1,35 +1,217 @@
 {
   "actions": {
+    "AsyncTextToSpeech": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AsyncTextToSpeech\n<公共请求参数>\n\n{\n    \"Text\": \"你好\",\n    \"Voice\": {\n        \"VoiceId\": \"v-female-R2s4N9qJ\"\n    },\n    \"SdkAppId\": 1600019222,\n    \"AlignmentMode\": 1,\n    \"LanguageCode\": \"zh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"3d5f26c1-**9*-*f***883e-b543337b8eab\",\n        \"RequestId\": \"dcbccd58-c660-4546-b4fa-522d9223556e\"\n    }\n}",
+        "title": "开启异步任务"
+      }
+    ],
+    "BatchDeleteTRTCVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteTRTCVoicePrint\n<公共请求参数>\n\n{\n    \"VoicePrintIds\": [\n        \"19dbb1d12cd_9610feccb7dc4548910724f3f78a2d9d\"\n    ],\n    \"SdkAppId\": \"1400123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FailCount\": 1,\n        \"Message\": \"batch delete completed: 1 succeeded, 1 failed\",\n        \"Results\": [\n            {\n                \"ErrorCode\": \"FailedOperation.VoiceprintNotFound\",\n                \"ErrorMessage\": \"voiceprint not found\",\n                \"VoicePrintId\": \"19dbb1d12cd_9610feccb7dc4548910724f3f78a2d9d\"\n            }\n        ],\n        \"SuccessCount\": 1,\n        \"RequestId\": \"37584dec-d405-4ed4-8af8-61e21db06ac6\"\n    }\n}",
+        "title": "批量删除示例"
+      }
+    ],
+    "ControlAIConversation": [
+      {
+        "document": "当您想让机器人主动播报文本的时候，可以使用该接口",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ControlAIConversation\n<公共请求参数>\n\n{\n    \"TaskId\": \"your-taskid\",\n    \"Command\": \"ServerPushText\",\n    \"ServerPushText\": {\n        \"Text\": \"你好很高兴为您服务\",\n        \"Interrupt\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx\"\n    }\n}",
+        "title": "发送播报文本"
+      }
+    ],
+    "ControlVoiceConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ControlVoiceConversation\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400704311,\n    \"TaskId\": \"-m9jX35U7ginppW8rcCa0K3L6C*************************b7SjBmnozma7Gfq2Tbb5htQE.\",\n    \"Command\": \"interrupt\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-m9jX35U7ginppW8rcCa0K3L6C*************************b7SjBmnozma7Gfq2Tbb5htQE.\",\n        \"RequestId\": \"13bd15e4-70b3-42e3-a7d6-3b2b3f26ff53\"\n    }\n}",
+        "title": "打断对话"
+      }
+    ],
+    "CreateAudioModerationSync": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAudioModerationSync\n<公共请求参数>\n\n{\n    \"Sdkappid\": 140034324,\n    \"DataId\": \"sdyfasdf\",\n    \"FileFormat\": \"wav\",\n    \"FileName\": \"testaudio.wav\",\n    \"FileUrl\": \"https://sa201-oss-ugc-center.oss-cn-beijing.aliyuncs.com/hangtest/pkxkj22x902jILSIO28shxca/%E7%AC%AC%E4%B8%80%E6%89%B9%E6%B5%8B%E8%AF%95/%E9%9F%B3%E9%A2%91%E4%B8%8B%E8%BD%BD/29.wav\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Audio\": \"\",\n        \"AudioText\": \"求真务实，充分体现了马克思列宁主义，毛泽东思想，邓小平理论，三个代表重要思想和科学发展观的历史逻辑和内在联系。\",\n        \"CheckDetail\": [\n            {\n                \"Desc\": \"涉政；核心领导\",\n                \"Keywords\": [\n                    \"毛泽东思想\"\n                ],\n                \"Label\": \"Polity\",\n                \"LibName\": \"\",\n                \"Scene\": \"\",\n                \"Score\": 100,\n                \"Severity\": 0,\n                \"SeverityDesc\": \"\",\n                \"SubLabel\": \"politics_coreleader\",\n                \"Suggest\": 2\n            }\n        ],\n        \"DataId\": \"sdyfasdf\",\n        \"FileName\": \"testaudio.wav\",\n        \"Label\": \"Polity\",\n        \"MediaType\": 1,\n        \"Rate\": 100,\n        \"SubLabel\": \"politics_coreleader\",\n        \"Suggest\": 2,\n        \"TaskId\": \"636545579459027127\",\n        \"RequestId\": \"0edb21fb-a9ac-4b0d-b12a-adf728d26980\"\n    }\n}",
+        "title": "短音频内容理解同步接口"
+      }
+    ],
+    "CreateCloudModeration": [
+      {
+        "document": "启动SdkAppId 为 200806 指定房间（房间号为150）的AI 内容理解任务\n\n房间空闲等待时间设置为30秒。\n送审模式设置为，每隔5秒，送审一张视频截帧图片到ace审核商\n音频每隔15秒，送审一个15s长的音频到ace审核\n审核结果通过配置的回调url触达",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudModeration\n<公共请求参数>\n\n{\n    \"SdkAppId\": 200806,\n    \"RoomId\": \"150\",\n    \"RoomIdType\": 1,\n    \"UserId\": \"inspect\",\n    \"UserSig\": \"eJwszc3KgkAUxvF7Odv3xY6jx2KgRU1NPHMy3CnQIZEJBDxf1SulLZcs*pAAuveqIuFaeqrW2kMVyAFYogrTGbnBiScDmm2zf0*HdqoLAhxQ85dn4vMn4*N8zFT7f-aXIf3Zj0fWn78*ktBUUyJoEmHMS0ChM83AAD---1NMfA_\",\n    \"ModerationParams\": {\n        \"ModerationType\": 1,\n        \"MaxIdleTime\": 30,\n        \"SliceAudio\": 15,\n        \"SliceVideo\": 5,\n        \"ModerationSupplier\": \"ace\",\n        \"ModerationSupplierParam\": {\n            \"AppID\": \"2501\",\n            \"SecretId\": \"ace_ugc_20521\",\n            \"SecretKey\": \"637ae34f4069afb92xxxxxxx\",\n            \"AudioBizType\": \"2001\",\n            \"ImageBizType\": \"2002\"\n        },\n        \"SaveModerationFile\": 1,\n        \"CallbackAllResults\": 0\n    },\n    \"ModerationStorageParams\": {\n        \"CloudModerationStorage\": {\n            \"Vendor\": 0,\n            \"Region\": \"ap-guangzhou\",\n            \"Bucket\": \"av-recover-prod-1258344699\",\n            \"AccessKey\": \"AKIDiGYZYrugBPM3TbS2MO9dqmRp\",\n            \"SecretKey\": \"91w4wXswiDSQ7XfX8So31Bm6\",\n            \"FileNamePrefix\": [\n                \"testname\"\n            ]\n        }\n    },\n    \"ResourceExpiredHour\": 72\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c8eac0c-a46e-4002-893a-935160b43b34\",\n        \"TaskId\": \"-npVqpdU7qidKD61us+k9KlbamMCLrDbczWnLoK-2OqyoZWQndib8Ma8fbGq2JxnW26LgE.\"\n    }\n}",
+        "title": "启动AI 内容理解任务"
+      }
+    ],
     "CreateCloudRecording": [
       {
-        "document": "启动SdkAppId 为 1234 指定房间（房间号为3560）的云端录制。\n\n房间空闲等待时间设置为1分钟。\n录制模式为混流模式。\n录制的流类型为音视频。\n默认订阅所有用户的流。\n录制视频的宽度360，录制视频的高度640，帧率15，比特率500,000bps，默认背景色。\n录制视频布局模式为九宫格布局。\n存储至腾讯云点播",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRecording\n<公共请求参数>\n\n{\n    \"StorageParams\": {\n        \"CloudVod\": {\n            \"TencentVod\": {\n                \"ExpireTime\": 0\n            }\n        }\n    },\n    \"UserSig\": \"xx\",\n    \"UserId\": \"xx\",\n    \"RecordParams\": {\n        \"MaxIdleTime\": 60,\n        \"StreamType\": 0,\n        \"RecordMode\": 2\n    },\n    \"RoomIdType\": 1,\n    \"MixTranscodeParams\": {\n        \"VideoParams\": {\n            \"Width\": 360,\n            \"BitRate\": 500000,\n            \"Fps\": 15,\n            \"Height\": 640,\n            \"Gop\": 10\n        }\n    },\n    \"MixLayoutParams\": {\n        \"MixLayoutMode\": 3\n    },\n    \"SdkAppId\": 1234,\n    \"RoomId\": \"3560\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-gCTFWtU7t7DUlo7A8IswFszO9z2O-rbERqJAoK-4pycoZXKjIAAnasdcasdOEycyX4CnzhIm4RAQ..\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
+        "document": "启动SdkAppId 为 1400188366 指定房间（房间号为3560）的云端录制。\n\n房间空闲等待时间设置为1分钟。\n录制模式为合流录制模式。\n录制的流类型为音视频。\n默认订阅所有用户的流。\n录制视频的宽度360，录制视频的高度640，帧率15，比特率500,000bps，默认背景色。\n录制视频布局模式为九宫格布局。\n存储至腾讯云点播VOD",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRecording\n<公共请求参数>\n\n{\n    \"StorageParams\": {\n        \"CloudVod\": {\n            \"TencentVod\": {\n                \"ExpireTime\": 0\n            }\n        }\n    },\n    \"UserSig\": \"eJw1jcEKgkAURX9FZlvYc3SaC***PiwmafL9rfNX4_\",\n    \"UserId\": \"10001\",\n    \"RecordParams\": {\n        \"MaxIdleTime\": 60,\n        \"StreamType\": 0,\n        \"RecordMode\": 2\n    },\n    \"RoomIdType\": 1,\n    \"MixTranscodeParams\": {\n        \"VideoParams\": {\n            \"Width\": 360,\n            \"BitRate\": 500000,\n            \"Fps\": 15,\n            \"Height\": 640,\n            \"Gop\": 10\n        }\n    },\n    \"MixLayoutParams\": {\n        \"MixLayoutMode\": 3\n    },\n    \"SdkAppId\": 1400188366,\n    \"RoomId\": \"3560\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-gCTFWtU7t7DUlo7A8Isw***sdOEycyX4CnzhIm4RAQ..\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
         "title": "启动云端录制"
+      }
+    ],
+    "CreateCloudSliceTask": [
+      {
+        "document": "启动SdkAppId 为 200806 指定房间（房间号为150）的云端切片任务。\n\n房间空闲等待时间设置为30秒。\n切片模式设置为音频切片+视频截帧\n音频隔15秒切片一次\n视频隔5秒，截帧一次",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudSliceTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 200806,\n    \"RoomId\": \"150\",\n    \"UserId\": \"inspect\",\n    \"UserSig\": \"eJxxxv3xY6jx2KgRU1NPHMy3CnQIZEJBDxf1SulLZcs*pAAuveqIuFaeqrW2kMVyAFYogrTGbnBiScDmm2zf0*HdqoLAhxQ85dn4vMn4*N8zFT7f-aXIf3Zj0fWn78*ktBUUyJoEmHMS0ChM83AAD---1NMfA_\",\n    \"SliceParams\": {\n        \"SliceType\": 3,\n        \"MaxIdleTime\": 30,\n        \"SliceAudio\": 15,\n        \"SliceVideo\": 5\n    },\n    \"SliceStorageParams\": {\n        \"CloudSliceStorage\": {\n            \"Vendor\": 0,\n            \"Region\": \"ap-guangzhou\",\n            \"Bucket\": \"av-recover-prod-1258344699\",\n            \"AccessKey\": \"AKIDiGYZYrugBPM3TbS2MO9dqxxx\",\n            \"SecretKey\": \"91w4wXswiDSQ7XfX8So31xxx\",\n            \"FileNamePrefix\": [\n                \"prefix1\"\n            ]\n        }\n    },\n    \"RoomIdType\": 1,\n    \"ResourceExpiredHour\": 72\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c8eac0c-a46e-4002-893a-935160b43b34\",\n        \"TaskId\": \"-npVqpdU7qidKD61us+k9KlbamMCLrDbczWnLoK-2OqyoZWQndib8Ma8fbGq2JxnW26LgE.\"\n    }\n}",
+        "title": "创建切片任务"
+      }
+    ],
+    "CreateCloudTranscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudTranscription\n<公共请求参数>\n\n{\n    \"SdkAppId\": 14000000,\n    \"RoomId\": \"295000\",\n    \"RoomIdType\": 0,\n    \"TranscriptionParam\": {\n        \"UserId\": \"trtc_test_1\",\n        \"UserSig\": \"eJjdaVgrxCdYrzkx*************BLATRT\",\n        \"SubscribeList\": [\n            {\n                \"UserId\": \"user_1\"\n            }\n        ],\n        \"MaxIdleTime\": 30,\n        \"SendCustomMode\": 1\n    },\n    \"AsrParam\": {\n        \"Lang\": \"16k_zh_en\",\n        \"VadSilenceTime\": 2000\n    },\n    \"TranslationParam\": {\n        \"TargetLang\": [\n            \"en\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-nE5dafd3iq51******41fnF8bp2NI65pgE.\",\n        \"RequestId\": \"f98cb56d-2c70******b0-213ee0ef73ac\"\n    }\n}",
+        "title": "发起转录任务"
+      }
+    ],
+    "CreateLiveStreamModeration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveStreamModeration\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400704311,\n    \"Input\": {\n        \"Url\": \"rtmp://43.173.153.79/pull/9988123?sdkappid=1400704311&userid=inspect&usersig=eJwsjt8KgjAUh9-l3BZyphvaoBuDyvUX6gVMlxxqc*iQQfTukXr7ffD7fR*4H2*RDo46DZIJIWJEXI6Uam09PUl3IIFs73TlYVJ9-Sqdoxok44gp8oSx2VADEgRi65uNSk6rYA72XAxlfslVkVVbfX3vlX0oU7ZmEXbVep70ZP4FacaFiBnyiQ7jeRwhfH8BAAD--0M4MiU_&use_number_room_id=1&remoteuserid=inspect\",\n        \"Format\": \"rtmp\"\n    },\n    \"LiveModerationParams\": {\n        \"ModerationType\": 3,\n        \"MaxIdleTime\": 30,\n        \"SliceVideo\": 5,\n        \"SliceAudio\": 1,\n        \"SaveModerationFile\": 1,\n        \"CallbackAllResults\": 0\n    },\n    \"DataId\": \"*********rtmp-test\",\n    \"SourceInfo\": {\n        \"RoomId\": \"rtmp_test\",\n        \"RoomIdType\": 1,\n        \"UserId\": \"user0\"\n    },\n    \"LiveModerationStorageParams\": {\n        \"CloudModerationStorage\": {\n            \"Vendor\": 0,\n            \"Region\": \"ap-nanjing\",\n            \"Bucket\": \"ai-c*******tion-test-1254340397\",\n            \"AccessKey\": \"AKID*Q*******sHOEmtjIaaIjunSrypPijTw\",\n            \"SecretKey\": \"FPIuIPEle*******OQGo4LK1TeZDbojO\",\n            \"FileNamePrefix\": [\n                \"file_test\"\n            ]\n        }\n    },\n    \"ResourceExpiredHour\": 48\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"WPqDNeW3D3UHPMW2q7FSYYz8VgxsBwiKFVq19GtbdXSkY4FJwWJsxU0UhrRTBEBupwKMn17ze1hYawpYtz9ANUVB5tPW0AkgEQxddua01cZuwpYVCb4H\",\n        \"RequestId\": \"df91a81a-aeb9-4687-91fb-b356d448d453\"\n    }\n}",
+        "title": "创建直播流审核任务"
       }
     ],
     "CreatePicture": [
       {
-        "document": "",
-        "input": "https://trtc.tencentcloudapi.com/?Action=CreatePicture\n&Content=test\n&Suffix=jpg\n&SdkAppId=123\n&Height=12\n&Width=15\n&XPosition=15\n&YPosition=36\n&<公共请求参数>",
+        "document": "上传图片",
+        "input": "https://trtc.tencentcloudapi.com/?Action=CreatePicture\n&Content=MTg4MTM=\n&Suffix=jpg\n&SdkAppId=140000001\n&Height=12\n&Width=15\n&XPosition=15\n&YPosition=36\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"PictureId\": 1400297109,\n        \"RequestId\": \"049461e6-f2f5-4168-887e-aca4fbfa5fae\"\n    }\n}",
         "title": "上传图片"
       }
     ],
+    "CreateRecognizeVocabV3": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRecognizeVocabV3\n<公共请求参数>\n\n{\n    \"Name\": \"测试用户\",\n    \"SdkAppId\": 1400000001,\n    \"WordWeights\": [\n        {\n            \"Word\": \"腾讯云\",\n            \"Weight\": 5\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"VocabId\": \"7bc538d6acb442f19dc3396dd7eacd66\",\n        \"RequestId\": \"3196438f-39ef-47c0-98b8-8a50a7b4a313\"\n    }\n}",
+        "title": "创建热词列表示例"
+      }
+    ],
+    "CreateVoiceConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVoiceConversation\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000311,\n    \"RoomId\": \"99884336\",\n    \"RoomIdType\": 0,\n    \"AgentConfig\": {\n        \"UserId\": \"test2\",\n        \"UserSig\": \"eJyrVgrxCdYrzkxXslJQyvEsqDTzcyrzyHGNcgoMKsuudEt2D3D1KUwsi8jy8PD3NQnK********************************************************************cmWpRSDrjPQMYKaUZOaCzTA3MzYwMDI2NYOKZ6ak5pVkpmVCNJSkFpcYKdUCAKlEMxg_\",\n        \"TargetUserId\": [\n            \"Jeff\"\n        ],\n        \"TTSPushRoomParams\": {\n            \"UserId\": \"tts-bot-001\"\n        },\n        \"MaxIdleTime\": 5000,\n        \"FilterBracketsContent\": [\n            1\n        ],\n        \"SubtitleMode\": 0,\n        \"TurnDetectionMode\": \"auto\"\n    },\n    \"ConversationMode\": \"Cascade\",\n    \"STTConfig\": {\n        \"Provider\": \"trtc\",\n        \"Params\": \"{\\\"engine_model_type\\\":\\\"bigmodel\\\", \\\"max_speak_time\\\":\\\"60000\\\", \\\"language\\\":\\\"zh\\\"}\"\n    },\n    \"LLMConfig\": {\n        \"LLMType\": \"tencent\",\n        \"Model\": \"hunyu*****0628\",\n        \"APIUrl\": \"http://api.taiji.w*****************/chat/completions\",\n        \"APIKey\": \"n21LYT6WmpE***********mqWKCrQlzJ\",\n        \"SystemPrompt\": \"你是一个简洁的对话助手。\",\n        \"FailureMessage\": \"系统繁忙请稍后再试\",\n        \"MaxTokens\": 0,\n        \"ThinkingMode\": false,\n        \"MaxHistory\": 50,\n        \"MaxToolRound\": 20,\n        \"Timeout\": 60000,\n        \"Temperature\": 0.5,\n        \"TopP\": 0.9,\n        \"McpServer\": {\n            \"Name\": \"weath****ools\",\n            \"Url\": \"https://m*********e.com/sse\",\n            \"Timeout\": 10000,\n            \"Headers\": [\n                {\n                    \"Key\": \"enable_search\",\n                    \"Value\": \"true\"\n                }\n            ],\n            \"ToolList\": [\n                \"get_****her\"\n            ]\n        },\n        \"CustomHeaders\": [\n            {\n                \"Key\": \"X-Request-Source\",\n                \"Value\": \"trtc-conversation\"\n            }\n        ],\n        \"CustomFields\": [\n            {\n                \"Key\": \"enable_search\",\n                \"Value\": \"true\"\n            }\n        ],\n        \"HistoryMessages\": [\n            {\n                \"Role\": \"user\",\n                \"Content\": \"你好\"\n            }\n        ]\n    },\n    \"TTSConfig\": {\n        \"Provider\": \"trtc\",\n        \"Params\": \"{\\\"model\\\":\\\"flow_02_turbo\\\",\\\"voice_id\\\":\\\"v-female-R2s4N9qJ\\\",\\\"speed\\\":1.0,\\\"volume\\\":1.0,\\\"pitch\\\":0}\"\n    },\n    \"DialogConfig\": {\n        \"InterruptMode\": 2,\n        \"InterruptSpeechDuration\": 200,\n        \"InterruptKeywords\": [\n            \"停止\"\n        ],\n        \"SilenceFollowUp\": 50,\n        \"SilenceFollowUpText\": \"你还在吗？有想问的直接告诉我。\",\n        \"WelcomeMessage\": \"您好，我是你的ai助手，请问有什么可以帮您？\"\n    },\n    \"VisionConfig\": {\n        \"Enable\": true,\n        \"StorageType\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-nG0jIFU7iHfG3DHVsI24YFXEn*************************bRRKvrG-CxBxuPyrGvSr2ZQE.\",\n        \"RequestId\": \"45192e66-a49e-4ea4-92f0-519955e3c903\"\n    }\n}",
+        "title": "开始对话任务（三段式）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVoiceConversation\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400704311,\n    \"RoomId\": \"9988123\",\n    \"RoomIdType\": 0,\n    \"AgentConfig\": {\n        \"UserId\": \"test2\",\n        \"UserSig\": \"eJyrVgrxCdYrzkxXslJQyvEsqDTzcyrzyHGNcgoMKsuudEt2D3D1KUwsi8jy8PD3NQnK********************************************************************cmWpRSDrjPQMYKaUZOaCzTA3MzYwMDI2NYOKZ6ak5pVkpmVCNJSkFpcYKdUCAKlEMxg_\",\n        \"TargetUserId\": [\n            \"Jeff\"\n        ],\n        \"TTSPushRoomParams\": {\n            \"UserId\": \"tts-bot-001\"\n        },\n        \"MaxIdleTime\": 50\n    },\n    \"ConversationMode\": \"S2S\",\n    \"S2SConfig\": {\n        \"Provider\": \"doubao\",\n        \"Params\": \"{\\\"api_key\\\":\\\"xxxxxx\\\",\\\"type\\\":\\\"session.create\\\",\\\"session\\\":{\\\"id\\\":\\\"\\\",\\\"model\\\":\\\"1.2.6.1\\\",\\\"instructions\\\":\\\"你是一位生活小助手，擅长回答菜谱、旅游、育儿、健康、购物、法律等日常问题，请用中文简洁清晰地回答。\\\",\\\"type\\\":\\\"realtime\\\",\\\"audio\\\":{\\\"input\\\":{\\\"format\\\":{\\\"type\\\":\\\"pcm\\\",\\\"rate\\\":16000}},\\\"output\\\":{\\\"format\\\":{\\\"type\\\":\\\"pcm_s16le\\\",\\\"rate\\\":24000},\\\"voice\\\":\\\"zh_female_vv_jupiter_bigtts\\\"}}},\\\"extension\\\":{\\\"asr\\\":{\\\"extra\\\":{}},\\\"dialog\\\":{\\\"bot_name\\\":\\\"豆包\\\"},\\\"tts\\\":{\\\"speaker\\\":\\\"zh_female_vv_jupiter_bigtts\\\",\\\"audio_config\\\":{\\\"channel\\\":1,\\\"format\\\":\\\"pcm_s16le\\\",\\\"sample_rate\\\":24000}}}}\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-nG0jIFU7g8UyQOwf8uvyfe1ph*************************bAp-C8HdhuD+Acd+5Tavn6AE.\",\n        \"RequestId\": \"32151e30-fd9f-47d4-b59d-72a372eb61f0\"\n    }\n}",
+        "title": "开始对话任务（端到端语音大模型）"
+      }
+    ],
+    "DeleteCloudModeration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudModeration\n<公共请求参数>\n\n{\n    \"SdkAppId\": 20010806,\n    \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"93186328-a0f6-4127-a0cb-72c85b6af982\",\n        \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n    }\n}",
+        "title": "停止AI 内容理解任务"
+      }
+    ],
     "DeleteCloudRecording": [
       {
-        "document": "停止SdkAppId 为 1234, TaskId 为 xx 的云端录制。",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudRecording\n<公共请求参数>\n\n{\n    \"TaskId\": \"xx\",\n    \"SdkAppId\": 1234\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"5df46eb2-8e4b-490e-9c3c-dbd3b84faefc\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
+        "document": "停止SdkAppId 为 1400188366, TaskId 为 -m9-bVVU7gzdSqvsV***Y+QMYNee2QE. 的云端录制。",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudRecording\n<公共请求参数>\n\n{\n    \"TaskId\": \"-m9-bVVU7gzdSqvsV***Y+QMYNee2QE.\",\n    \"SdkAppId\": 1400188366\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-m9-bVVU7gzdSqvsV***Y+QMYNee2QE.\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
         "title": "停止云端录制"
+      }
+    ],
+    "DeleteCloudSliceTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudSliceTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 20010806,\n    \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"93186328-a0f6-4127-a0cb-72c85b6af982\",\n        \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n    }\n}",
+        "title": "停止云端切片任务"
+      }
+    ],
+    "DeleteCloudTranscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudTranscription\n<公共请求参数>\n\n{\n    \"SdkAppId\": 14000000,\n    \"TaskId\": \"-nE5Nd9U7pfwyEzu+8LN******j-r1AI7H3plkD1p8pHX71AE.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-nE5Nd9U7pfwyEzu+8LNXe******ndibj-r1AI7H3plkD1p8pHX71AE.\",\n        \"RequestId\": \"768c7bde-70******c-e81f21cb1599\"\n    }\n}",
+        "title": "停止转录任务"
+      }
+    ],
+    "DeleteLiveStreamModeration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLiveStreamModeration\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400704311,\n    \"TaskId\": \"NAzTzX8qf6RY66Z2Wf8tyR6T3xyBkZWROxVf3KKwF8fS3lXlxHxCejGjzeqs4GRpcGUCXCqi-e2vVEGah4iPe1R1QMrfNPdxNc_M7qZICg8GtM1c1ZO3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"NAzTzX8qf6RY66Z2Wf8tyR6T3xyBkZWROxVf3KKwF8fS3lXlxHxCejGjzeqs4GRpcGUCXCqi-e2vVEGah4iPe1R1QMrfNPdxNc_M7qZICg8GtM1c1ZO3\",\n        \"RequestId\": \"d926a8b0-613a-4376-8117-61cbea75e99d\"\n    }\n}",
+        "title": "停止直播流ai内容"
       }
     ],
     "DeletePicture": [
       {
         "document": "",
-        "input": "https://trtc.tencentcloudapi.com/?Action=DeletePicture\n&PictureId=1234567890\n&SdkAppId=123456789\n&<公共请求参数>",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DeletePicture\n&PictureId=18813\n&SdkAppId=140000001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"049461e6-f2f5-4168-887e-aca4fbfa5fae\"\n    }\n}",
         "title": "删除图片"
+      }
+    ],
+    "DeleteRecognizeVocabV3": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecognizeVocabV3\n<公共请求参数>\n\n{\n    \"VocabId\": \"7bc538d6acb442f19dc3396dd7eacd66\",\n    \"SdkAppId\": 1400000001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aadd2e37-9878-44ff-91f5-2f60b38739bc\"\n    }\n}",
+        "title": "删除词表"
+      }
+    ],
+    "DeleteTRTCVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTRTCVoicePrint\n<公共请求参数>\n\n{\n    \"VoicePrintId\": \"19dbb673331_2c080706ecd94342982b7582e7a98fda\",\n    \"SdkAppId\": \"1400123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"voiceprint deleted successfully\",\n        \"VoicePrintId\": \"19dbb673331_2c080706ecd94342982b7582e7a98fda\",\n        \"RequestId\": \"015ac549-83b2-42de-9bc6-5600ca09f922\"\n    }\n}",
+        "title": "删除声纹示例"
+      }
+    ],
+    "DeleteVoiceConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVoiceConversation\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400704311,\n    \"TaskId\": \"-nG0xCFU7lbAnrSOAsc22iFg4v*************************b7S+nNiUvm6EPLEY7SC+VIAE.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-nG0xCFU7lbAnrSOAsc22iFg4v*************************b7S+nNiUvm6EPLEY7SC+VIAE.\",\n        \"RequestId\": \"222dbe7b-e1e4-45e5-b08a-43699e3493e4\"\n    }\n}",
+        "title": "停止对话任务"
+      }
+    ],
+    "DeleteVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVoicePrint\n<公共请求参数>\n\n{\n    \"VoicePrintId\": \"20250605_9cc525c117ab4545b1ad21543e48412fSz4ZnwTZCW2tyePrHj0Y37WXz4QkUoLvT9P_eRVqiw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3facfb37-9ded-4c73-bef7-90a78a0c2936\"\n    }\n}",
+        "title": "删除jackson的声纹信息"
+      }
+    ],
+    "DescribeAIConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIConversation\n<公共请求参数>\n\n{\n    \"TaskId\": \"SV1FR+XTtvzAjRxZZ+aof1DfJF00VSBBNE0zR9W-PEpgCPBmt402BbnqMCdom79LtZO-VbLyV1nhVY1pFauWgrW12BevPvJ5Zn010RnD6vj3hgfbV0.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2025-04-24 16:15:48.076648\",\n        \"Status\": \"InProgress\",\n        \"RequestId\": \"109ede3f-2389-45e5-88a7-3a99dddc6e2f\"\n    }\n}",
+        "title": "查询对话任务状态"
+      }
+    ],
+    "DescribeAITranscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAITranscription\n<公共请求参数>\n\n{\n    \"TaskId\": \"v2_20250424_n3cHsk5kBFa09E5SEa7I_fKIxuKqZjiUsmteLPc2uXoTxpgc6F4TsigwJ1dH9SakK24SdUhLW86jhofgDHERZUHhCa0FJvu4Qgod\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2025-04-24 16:17:56.931660\",\n        \"Status\": \"InProgress\",\n        \"RequestId\": \"287d3c69-246a-4e6d-bb12-bba573177512\"\n    }\n}",
+        "title": "样例"
+      }
+    ],
+    "DescribeAsyncTextToSpeech": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAsyncTextToSpeech\n<公共请求参数>\n\n{\n    \"TaskId\": \"86edb448-dc2f-4853-be31-8f05c7d3f6fe\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AudioDownloadUrl\": \"https://async-tts-1258344699.cos.ap-shanghai.myqcloud.com/86edb448-dc2f-4853-be31-8f05c7d3f6fe/result.m****-sign-algorithm=sha1&************************************KhndC&q-**gn-time=1775910013%3B1775942413&q-key-time=1775910013%3B1775942413&q-header-list=host&q-url-param-list=&q-signature=6618730ea4953adf7912d4d5188eeff0ee56cfa9\",\n        \"Status\": \"Success\",\n        \"SubtitleDownloadUrl\": \"https://async-tts-1258344699.cos.ap-shanghai.myqcloud.com/86edb448-dc2f-4853-be31-8f05c7d3f6fe/subtitle.json?******-algorithm=sha1&******************U***hphJfkY5MM6Zlg***dC&q-sign-time=1775910013%3B1775942413&q-key-time=1775910013%3B1775942413&q-header-list=host&q-url-param-list=&q-signature=32d59684e4cb9884c38b8d32f1b1dfbfac1ae42f\",\n        \"RequestId\": \"ec74e0f9-1921-4781-87d3-b724d9b9a1d1\"\n    }\n}",
+        "title": "查询例子"
       }
     ],
     "DescribeCallDetailInfo": [
@@ -40,42 +222,66 @@
         "title": "查询历史用户列表与通话指标"
       }
     ],
+    "DescribeCloudModeration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudModeration\n<公共请求参数>\n\n{\n    \"SdkAppId\": 20010806,\n    \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-npVoIhU7nVF+0aF9cAU08H4y253LKPbBX+UIoK-4pycoZWQndibGOPu9klhRT7bEDv5XoewCQE.\",\n        \"Status\": \"InProgress\",\n        \"RequestId\": \"uis_mock\",\n        \"SubscribeStreamUserIds\": {\n            \"SubscribeAudioUserIds\": [],\n            \"UnSubscribeAudioUserIds\": [],\n            \"SubscribeVideoUserIds\": [],\n            \"UnSubscribeVideoUserIds\": []\n        }\n    }\n}",
+        "title": "查询AI 内容理解任务信息"
+      }
+    ],
     "DescribeCloudRecording": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRecording\n<公共请求参数>\n\n{\n    \"TaskId\": \"xx\",\n    \"SdkAppId\": 1234\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"InProgress\",\n        \"StorageFileList\": [],\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
-        "title": "查询SdkAppId 为 1234 TaskId 为 xx 的录制状态。"
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRecording\n<公共请求参数>\n\n{\n    \"TaskId\": \"m9-bVVU7nhKM5X3GsED6KNGVG********ndibWSn631uT6pbhE4PcPDSsggE.\",\n    \"SdkAppId\": 1400188366\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"InProgress\",\n        \"StorageFileList\": [],\n        \"RequestId\": \"c4536bd1-c3ea-4e84-b2dd-a8491d2057e2\",\n        \"TaskId\": \"m9-bVVU7nhKM5X3GsED6KNGVG********ndibWSn631uT6pbhE4PcPDSsggE.\"\n    }\n}",
+        "title": "查询SdkAppId 为 1400***366 TaskId 为 m9-bVVU7nhKM5X3GsED6KNGVG********ndibWSn631uT6pbhE4PcPDSsggE.的录制状态。"
       }
     ],
-    "DescribeExternalTrtcMeasure": [
+    "DescribeCloudSliceTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalTrtcMeasure\n<公共请求参数>\n\n{\n    \"EndTime\": \"2022-01-01 00:00:00\",\n    \"StartTime\": \"2022-01-03 00:00:00\",\n    \"SdkAppId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"AnchorUsageMode\": \"xx\",\n        \"AudienceUsageMode\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"SdkAppIdTrtrTimeUsages\": [\n            {\n                \"TrtcTimeUsages\": [\n                    {\n                        \"AudioTime\": 1,\n                        \"Video4KTime\": 1,\n                        \"VideoTime\": 1,\n                        \"Class1VideoTime\": 1,\n                        \"TimeKey\": \"xx\",\n                        \"Class3VideoTime\": 1,\n                        \"Video2KTime\": 1,\n                        \"Bandwidth\": 0.0,\n                        \"VoiceUserNum\": 1,\n                        \"Class2VideoTime\": 1\n                    },\n                    {\n                        \"AudioTime\": 1,\n                        \"Video4KTime\": 1,\n                        \"TimeKey\": \"xx\",\n                        \"Class1VideoTime\": 1,\n                        \"VideoTime\": 1,\n                        \"Class3VideoTime\": 1,\n                        \"Video2KTime\": 1,\n                        \"Bandwidth\": 0.0,\n                        \"VoiceUserNum\": 1,\n                        \"Class2VideoTime\": 1\n                    },\n                    {\n                        \"AudioTime\": 1,\n                        \"Video4KTime\": 1,\n                        \"TimeKey\": \"xx\",\n                        \"Class1VideoTime\": 1,\n                        \"VideoTime\": 1,\n                        \"Class3VideoTime\": 1,\n                        \"Video2KTime\": 1,\n                        \"Bandwidth\": 0.0,\n                        \"VoiceUserNum\": 1,\n                        \"Class2VideoTime\": 1\n                    }\n                ],\n                \"AudienceTrtcTimeUsages\": [\n                    {\n                        \"AudioTime\": 1,\n                        \"Video4KTime\": 1,\n                        \"VideoTime\": 1,\n                        \"Class1VideoTime\": 1,\n                        \"TimeKey\": \"xx\",\n                        \"Class3VideoTime\": 1,\n                        \"Video2KTime\": 1,\n                        \"Bandwidth\": 0.0,\n                        \"VoiceUserNum\": 1,\n                        \"Class2VideoTime\": 1\n                    }\n                ],\n                \"SdkAppId\": \"xx\"\n            }\n        ]\n    }\n}",
-        "title": "获取实时音视频的时长统计数据 。走计费渠道第二版"
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudSliceTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 20010806,\n    \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc45d9cd-f615-43a5-943e-89f559cb3f7b\",\n        \"Status\": \"InProgress\",\n        \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n    }\n}",
+        "title": "查询切片任务信息"
+      }
+    ],
+    "DescribeCloudTranscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudTranscription\n<公共请求参数>\n\n{\n    \"TaskId\": \"m9-bVVU7nhKM5X3GsED6KNGVG********ndibWSn631uT6pbhE4PcPDSsggE.\",\n    \"SdkAppId\": 1400000000\n}",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": 1772433534515,\n        \"Status\": \"Idle\",\n        \"RequestId\": \"f83001c5-7e3c-dfac-ba3e-236bf063c8d1\",\n        \"TaskId\": \"m9-bVVU7nhKM5X3GsED6KNGVG********ndibWSn631uT6pbhE4PcPDSsggE.\"\n    }\n}",
+        "title": "查询转录任务"
+      }
+    ],
+    "DescribeLiveStreamModeration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveStreamModeration\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400704311,\n    \"TaskId\": \"5i7U-joD9BS2_zly-yMhhvDx9gyG_PGQRQHfhZRQxDAgXolJ3XWhf19Sj5RVWLikRCcbM__tJYhPH_uSL6WkH7t-AsZRVY054w_paTZm9eKqio_JSzJH\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"InProgress\",\n        \"TaskId\": \"5i7U-joD9BS2_zly-yMhhvDx9gyG_PGQRQHfhZRQxDAgXolJ3XWhf19Sj5RVWLikRCcbM__tJYhPH_uSL6WkH7t-AsZRVY054w_paTZm9eKqio_JSzJH\",\n        \"RequestId\": \"9330b62a-708c-4d79-9b90-9a581098e606\"\n    }\n}",
+        "title": "查询直播流ai内容理解"
       }
     ],
     "DescribeMixTranscodingUsage": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMixTranscodingUsage\n<公共请求参数>\n\n{\n    \"EndTime\": \"2022-01-01\",\n    \"StartTime\": \"2022-01-02\",\n    \"SdkAppId\": 1400123456\n}",
-        "output": "{\n    \"Response\": {\n        \"UsageKey\": [\n            \"Audio\",\n            \"SDH264\",\n            \"HDH264\",\n            \"FullHDH264\",\n            \"2KH264\",\n            \"4KH264\",\n            \"SDH265\",\n            \"HDH265\",\n            \"FullHDH265\",\n            \"2KH265\",\n            \"4KH265\"\n        ],\n        \"UsageList\": [\n            {\n                \"TimeKey\": \"2022-01-01 00:00:00\",\n                \"UsageValue\": [\n                    10,\n                    20,\n                    30,\n                    40,\n                    50,\n                    60,\n                    70,\n                    80,\n                    90,\n                    100,\n                    110\n                ]\n            },\n            {\n                \"TimeKey\": \"2022-01-02 00:00:00\",\n                \"UsageValue\": [\n                    10,\n                    20,\n                    30,\n                    40,\n                    50,\n                    60,\n                    70,\n                    80,\n                    90,\n                    100,\n                    110\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"UsageKey\": [\n            \"Audio\",\n            \"SDH264\",\n            \"HDH264\",\n            \"FullHDH264\",\n            \"2KH264\",\n            \"4KH264\",\n            \"SDH265\",\n            \"HDH265\",\n            \"FullHDH265\",\n            \"2KH265\",\n            \"4KH265\"\n        ],\n        \"UsageList\": [\n            {\n                \"TimeKey\": \"2022-01-01 00:00:00\",\n                \"UsageValue\": [\n                    10,\n                    20,\n                    30,\n                    40,\n                    50,\n                    60,\n                    70,\n                    80,\n                    90,\n                    100,\n                    110\n                ]\n            },\n            {\n                \"TimeKey\": \"2022-01-02 00:00:00\",\n                \"UsageValue\": [\n                    10,\n                    20,\n                    30,\n                    40,\n                    50,\n                    60,\n                    70,\n                    80,\n                    90,\n                    100,\n                    110\n                ]\n            }\n        ],\n        \"RequestId\": \"6def28d59b9384b4de4e1d818da57ae0\"\n    }\n}",
         "title": "获取用户在2022年1月1日-2022年1月2日范围内，SdkAppId为1400123456的应用的用量明细。"
       }
     ],
     "DescribePicture": [
       {
         "document": "",
-        "input": "https://trtc.tencentcloudapi.com/?Action=DescribePicture\n&SdkAppId=123456\n&PictureId=123\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"PictureInfo\": [\n            {\n                \"PictureId\": 1,\n                \"Height\": 12,\n                \"Width\": 13,\n                \"XPosition\": 14,\n                \"YPosition\": 15,\n                \"SdkAppId\": 123456\n            },\n            {\n                \"PictureId\": 2,\n                \"Height\": 22,\n                \"Width\": 23,\n                \"XPosition\": 24,\n                \"YPosition\": 25,\n                \"SdkAppId\": 123456\n            }\n        ],\n        \"RequestId\": \"83ca6fdd-cf4c-46a9-a577-74c3497ad3fa\"\n    }\n}",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DescribePicture\n&SdkAppId=140000001\n&PictureId=100861\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"PictureInfo\": [\n            {\n                \"PictureId\": 100861,\n                \"Height\": 120,\n                \"Width\": 113,\n                \"XPosition\": 124,\n                \"YPosition\": 150,\n                \"SdkAppId\": 140000001\n            }\n        ],\n        \"RequestId\": \"83ca6fdd-cf4c-46a9-a577-74c3497ad3fa\"\n    }\n}",
         "title": "查询图片信息"
       }
     ],
     "DescribeRecordStatistic": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordStatistic\n<公共请求参数>\n\n{\n    \"EndTime\": \"2019-10-13\",\n    \"StartTime\": \"2019-10-11\",\n    \"SdkAppId\": \"1400123456\"\n}",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordStatistic\n<公共请求参数>\n\n{\n    \"EndTime\": \"2019-10-13\",\n    \"StartTime\": \"2019-10-11\",\n    \"SdkAppId\": 1400123456\n}",
         "output": "{\n    \"Response\": {\n        \"SdkAppIdUsages\": [\n            {\n                \"SdkAppId\": \"1400123456\",\n                \"Usages\": [\n                    {\n                        \"TimeKey\": \"2019-10-11\",\n                        \"Class1VideoTime\": 556026,\n                        \"Class2VideoTime\": 86361829,\n                        \"Class3VideoTime\": 0,\n                        \"AudioTime\": 64169044\n                    },\n                    {\n                        \"TimeKey\": \"2019-10-12\",\n                        \"Class1VideoTime\": 551103,\n                        \"Class2VideoTime\": 85103796,\n                        \"Class3VideoTime\": 0,\n                        \"AudioTime\": 64156599\n                    },\n                    {\n                        \"TimeKey\": \"2019-10-13\",\n                        \"Class1VideoTime\": 515249,\n                        \"Class2VideoTime\": 82982805,\n                        \"Class3VideoTime\": 0,\n                        \"AudioTime\": 65673394\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"644956b8-9f7c-44c5-b833-31d91dba1b24\"\n    }\n}",
         "title": "获取录制的时长统计数据"
       }
@@ -84,7 +290,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordingUsage\n<公共请求参数>\n\n{\n    \"EndTime\": \"2022-01-01\",\n    \"StartTime\": \"2022-01-02\",\n    \"SdkAppId\": 1400123456,\n    \"MixType\": \"single\"\n}",
-        "output": "{\n    \"Response\": {\n        \"UsageKey\": [\n            \"Audio\",\n            \"SD\",\n            \"HD\",\n            \"FullHD\",\n            \"2K\",\n            \"4K\"\n        ],\n        \"UsageList\": [\n            {\n                \"TimeKey\": \"2022-01-01 00:00:00\",\n                \"UsageValue\": [\n                    10,\n                    20,\n                    30,\n                    40,\n                    50,\n                    60\n                ]\n            },\n            {\n                \"TimeKey\": \"2022-01-02 00:00:00\",\n                \"UsageValue\": [\n                    10,\n                    20,\n                    30,\n                    40,\n                    50,\n                    60\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"UsageKey\": [\n            \"Audio\",\n            \"SD\",\n            \"HD\",\n            \"FullHD\",\n            \"2K\",\n            \"4K\"\n        ],\n        \"UsageList\": [\n            {\n                \"TimeKey\": \"2022-01-01 00:00:00\",\n                \"UsageValue\": [\n                    10,\n                    20,\n                    30,\n                    40,\n                    50,\n                    60\n                ]\n            },\n            {\n                \"TimeKey\": \"2022-01-02 00:00:00\",\n                \"UsageValue\": [\n                    10,\n                    20,\n                    30,\n                    40,\n                    50,\n                    60\n                ]\n            }\n        ],\n        \"RequestId\": \"02a7c0fa-39a5-46cd-922e-12bb26b77d9d\"\n    }\n}",
         "title": "获取用户在2022年1月1日-2022年1月2日范围内，SdkAppId为1400123456的应用的单流录制用量明细。"
       }
     ],
@@ -92,7 +298,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRelayUsage\n<公共请求参数>\n\n{\n    \"EndTime\": \"2022-01-01\",\n    \"StartTime\": \"2022-01-02\",\n    \"SdkAppId\": 1400123456\n}",
-        "output": "{\n    \"Response\": {\n        \"UsageKey\": [\n            \"Bandwidth\"\n        ],\n        \"UsageList\": [\n            {\n                \"TimeKey\": \"2022-01-01 00:00:00\",\n                \"UsageValue\": [\n                    10.11\n                ]\n            },\n            {\n                \"TimeKey\": \"2022-01-02 00:00:00\",\n                \"UsageValue\": [\n                    10.11\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"UsageKey\": [\n            \"Bandwidth\"\n        ],\n        \"UsageList\": [\n            {\n                \"TimeKey\": \"2022-01-01 00:00:00\",\n                \"UsageValue\": [\n                    10.11\n                ]\n            },\n            {\n                \"TimeKey\": \"2022-01-02 00:00:00\",\n                \"UsageValue\": [\n                    10.11\n                ]\n            }\n        ],\n        \"RequestId\": \"02a7c0fa-39a5-46cd-922e-12bb26b77d9d\"\n    }\n}",
         "title": "获取用户在2022年1月1日-2022年1月2日范围内，SdkAppId为1400123456的应用的用量明细。"
       }
     ],
@@ -106,57 +312,111 @@
     ],
     "DescribeScaleInfo": [
       {
-        "document": "",
+        "document": "查询历史房间与用户规模信息。",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScaleInfo\n<公共请求参数>\n\n{\n    \"StartTime\": 1590065777,\n    \"SdkAppId\": 1400353843,\n    \"EndTime\": 1590065877\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 4,\n        \"ScaleList\": [\n            {\n                \"Time\": 1587830400,\n                \"RoomNumbers\": 130644,\n                \"UserNumber\": 2111978,\n                \"UserCount\": 7004243\n            },\n            {\n                \"Time\": 1587744000,\n                \"RoomNumbers\": 79241,\n                \"UserNumber\": 781494,\n                \"UserCount\": 2968232\n            },\n            {\n                \"Time\": 1587657600,\n                \"RoomNumbers\": 180341,\n                \"UserNumber\": 3047931,\n                \"UserCount\": 10839565\n            },\n            {\n                \"Time\": 1587571200,\n                \"RoomNumbers\": 185469,\n                \"UserNumber\": 3267726,\n                \"UserCount\": 11656700\n            }\n        ],\n        \"RequestId\": \"70259dd1-c935-4a31-8576-f4daadd942ef\"\n    }\n}",
         "title": "查询历史房间与用户规模信息"
       }
     ],
-    "DescribeTRTCMarketQualityMetricData": [
+    "DescribeStreamIngest": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCMarketQualityMetricData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2022-10-01\",\n    \"EndTime\": \"2022-10-13\",\n    \"Period\": \"d\",\n    \"SdkAppId\": \"1400188366\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"StatementID\": 0,\n            \"Series\": [\n                {\n                    \"Columns\": [\n                        \"time\",\n                        \"videoFreezeRate\",\n                        \"audioFreezeRate\",\n                        \"networkDelay\",\n                        \"joinSuccessRate\",\n                        \"joinSuccessRate\"\n                    ],\n                    \"Values\": [\n                        [\n                            1664553600,\n                            2.217581018881752,\n                            0.5328453940234894,\n                            0.3013997510316756,\n                            97.95918367346938,\n                            97.95918367346938\n                        ],\n                        [\n                            1664640000,\n                            3.392116310528898,\n                            0.17430339496653524,\n                            0.08710108562352477,\n                            98.18181818181819,\n                            98.18181818181819\n                        ],\n                        [\n                            1664726400,\n                            2.242237027877107,\n                            0.6513981832034338,\n                            0.1171609034713461,\n                            98.21428571428571,\n                            96.42857142857143\n                        ],\n                        [\n                            1664812800,\n                            1.2540262484656994,\n                            0.10000228613558222,\n                            0.026161712971789295,\n                            95.65217391304348,\n                            95.65217391304348\n                        ],\n                        [\n                            1664899200,\n                            2.0387375523733438,\n                            0.3573173953636354,\n                            0.20206969697319535,\n                            98.11320754716981,\n                            98.11320754716981\n                        ],\n                        [\n                            1664985600,\n                            4.237787988109656,\n                            0.7134409188069496,\n                            0.14704888397100485,\n                            98.33333333333333,\n                            98.33333333333333\n                        ],\n                        [\n                            1665072000,\n                            1.2503420076985923,\n                            0.5437361749192481,\n                            0.01987029513935762,\n                            97.10144927536231,\n                            97.10144927536231\n                        ],\n                        [\n                            1665158400,\n                            2.827661481850274,\n                            0.27880314391303734,\n                            0.25404666952118315,\n                            96.58316291751873,\n                            95.31672996396922\n                        ],\n                        [\n                            1665244800,\n                            2.3367388331307213,\n                            0.47179729012411875,\n                            0.756283289682675,\n                            96.85185185185186,\n                            96.00312757201647\n                        ],\n                        [\n                            1665331200,\n                            2.025790869145893,\n                            0.3661555356751269,\n                            1.2037946900891334,\n                            95.83333333333333,\n                            94.56798245614036\n                        ],\n                        [\n                            1665417600,\n                            1.7312029049706419,\n                            0.38615952743673804,\n                            0.7458501568405749,\n                            97.89973859914336,\n                            97.33835663895188\n                        ],\n                        [\n                            1665504000,\n                            2.383380614959001,\n                            0.6752303123715754,\n                            0.42152506276385404,\n                            98.65139949109415,\n                            97.35368956743002\n                        ],\n                        [\n                            1665590400,\n                            2.5176695760288497,\n                            0.5395212846043457,\n                            0.8175603324240602,\n                            97.44958481613286,\n                            96.27817319098459\n                        ]\n                    ]\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"yjr3nvoptmg1645dhc1cht8bpd6otxda\"\n    }\n}",
-        "title": "DescribeTRTCMarketQualityMetricData"
+        "document": "查询SdkAppId为1600011111下的TaskId为HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri任务状态",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1600011111,\n    \"TaskId\": \"HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"InProgress\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
+        "title": "查询任务"
       }
     ],
-    "DescribeTRTCMarketScaleMetricData": [
+    "DescribeTRTCAIRecognitionUsage": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCMarketScaleMetricData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2022-10-01\",\n    \"EndTime\": \"2022-10-13\",\n    \"Period\": \"d\",\n    \"SdkAppId\": \"1400188366\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"StatementID\": 0,\n            \"Series\": [\n                {\n                    \"Columns\": [\n                        \"time\",\n                        \"userCount\",\n                        \"roomCount\",\n                        \"peakCurrentChannels\",\n                        \"peakCurrentUsers\"\n                    ],\n                    \"Values\": [\n                        [\n                            1664553600,\n                            16,\n                            12,\n                            0,\n                            0\n                        ],\n                        [\n                            1664640000,\n                            17,\n                            13,\n                            0,\n                            0\n                        ],\n                        [\n                            1664726400,\n                            14,\n                            11,\n                            0,\n                            0\n                        ],\n                        [\n                            1664812800,\n                            16,\n                            12,\n                            0,\n                            0\n                        ],\n                        [\n                            1664899200,\n                            17,\n                            12,\n                            0,\n                            0\n                        ],\n                        [\n                            1664985600,\n                            17,\n                            12,\n                            0,\n                            0\n                        ],\n                        [\n                            1665072000,\n                            16,\n                            14,\n                            0,\n                            0\n                        ],\n                        [\n                            1665158400,\n                            29,\n                            21,\n                            0,\n                            0\n                        ],\n                        [\n                            1665244800,\n                            43,\n                            32,\n                            0,\n                            0\n                        ],\n                        [\n                            1665331200,\n                            42,\n                            32,\n                            0,\n                            0\n                        ],\n                        [\n                            1665417600,\n                            47,\n                            31,\n                            0,\n                            0\n                        ],\n                        [\n                            1665504000,\n                            51,\n                            35,\n                            0,\n                            0\n                        ],\n                        [\n                            1665590400,\n                            49,\n                            34,\n                            0,\n                            0\n                        ]\n                    ]\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"mg--88gg8wpzr8j26-2wl1xk4pmqfanw\"\n    }\n}",
-        "title": "DescribeTRTCMarketScaleMetricData"
+        "document": "查询指定时间范围内AI 实时对话用量",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCAIRecognitionUsage\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-04-01 00:00:00\",\n    \"EndTime\": \"2026-04-02 00:00:00\",\n    \"AuType\": [\n        \"conversation\"\n    ],\n    \"SdkAppId\": \"1400763596\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalUsage\": [\n            0\n        ],\n        \"UsageKey\": [\n            \"Conversation\"\n        ],\n        \"UsageList\": [\n            {\n                \"TimeKey\": \"2026-04-01 00:00:00\",\n                \"UsageValue\": [\n                    0\n                ]\n            }\n        ],\n        \"RequestId\": \"f6333ebf-b53b-4be4-82c3-81b70f91f55a\"\n    }\n}",
+        "title": "查询指定时间范围内AI 实时对话用量"
       }
     ],
-    "DescribeTRTCRealTimeQualityMetricData": [
+    "DescribeTRTCDedicatedCloudAccUsage": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCRealTimeQualityMetricData\n<公共请求参数>\n\n{\n    \"StartTime\": 1665747036,\n    \"EndTime\": 1665747284,\n    \"SdkAppId\": \"1400188366\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"StatementID\": 0,\n            \"Series\": [\n                {\n                    \"Columns\": [\n                        \"time\",\n                        \"videoFreezeRate\",\n                        \"audioFreezeRate\"\n                    ],\n                    \"Values\": [\n                        [\n                            1665747040,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747050,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747060,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747070,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747080,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747090,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747100,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747110,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747120,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747130,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747140,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747150,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747160,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747170,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747180,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747190,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747200,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747210,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747220,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747230,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747240,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747250,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747260,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747270,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747280,\n                            0,\n                            0\n                        ]\n                    ]\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"7n-62qgcuuaupi-2wre2ncswqydl9cae\"\n    }\n}",
-        "title": "DescribeTRTCRealTimeQualityMetricData"
+        "document": "查询指定时间范围内用量数据",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCDedicatedCloudAccUsage\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-04-01 00:00:00\",\n    \"EndTime\": \"2026-04-03 00:00:00\",\n    \"SdkAppId\": 1400621940\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalUsage\": [\n            0\n        ],\n        \"UsageKey\": [\n            \"Time\"\n        ],\n        \"UsageList\": [\n            {\n                \"TimeKey\": \"2026-04-01 00:00:00\",\n                \"UsageValue\": [\n                    0\n                ]\n            }\n        ],\n        \"RequestId\": \"3262f482-57c6-4a8d-b1da-888d54e67ab4\"\n    }\n}",
+        "title": "查询指定时间范围内用量数据"
       }
     ],
-    "DescribeTRTCRealTimeScaleMetricData": [
+    "DescribeTRTCMarketQualityData": [
+      {
+        "document": "查询TRTC数据大盘质量相关数据",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCMarketQualityData\n<公共请求参数>\n\n{\n    \"SdkAppId\": \"1400xxxxxx\",\n    \"StartTime\": \"2020-09-22\",\n    \"EndTime\": \"2020-09-22\",\n    \"Period\": \"d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"StatementID\": 0,\n            \"Series\": [\n                {\n                    \"Columns\": [\n                        \"time\",\n                        \"videoFreezeRate\",\n                        \"audioFreezeRate\",\n                        \"networkDelay\",\n                        \"joinSuccessRate\",\n                        \"joinSuccessIn5sRate\"\n                    ],\n                    \"Values\": [\n                        {\n                            \"RowValue\": [\n                                1664553600,\n                                2,\n                                0,\n                                0,\n                                97,\n                                97\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1664640000,\n                                3,\n                                0,\n                                0,\n                                98,\n                                98\n                            ]\n                        }\n                    ]\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"4mry45x5sslfsee3vfl5n99oz4u9u-8w\"\n    }\n}",
+        "title": "DescribeTRTCMarketQualityData"
+      }
+    ],
+    "DescribeTRTCMarketScaleData": [
+      {
+        "document": "查询TRTC数据大盘规模数据",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCMarketScaleData\n<公共请求参数>\n\n{\n    \"SdkAppId\": \"1400xxxxxx\",\n    \"StartTime\": \"2023-09-20\",\n    \"EndTime\": \"2023-09-23\",\n    \"Period\": \"d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"StatementID\": 0,\n            \"Series\": [\n                {\n                    \"Columns\": [\n                        \"time\",\n                        \"peakCurrentUsers\",\n                        \"peakCurrentChannels\",\n                        \"userCount\",\n                        \"roomCount\"\n                    ],\n                    \"Values\": [\n                        {\n                            \"RowValue\": [\n                                1695139200,\n                                55,\n                                37,\n                                784,\n                                572\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695225600,\n                                62,\n                                46,\n                                848,\n                                614\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695312000,\n                                47,\n                                45,\n                                950,\n                                695\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695398400,\n                                36,\n                                35,\n                                378,\n                                313\n                            ]\n                        }\n                    ]\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"kp38ibciayx-elqqjdfrf7umkvpbvowt\"\n    }\n}",
+        "title": "DescribeTRTCMarketScaleData"
+      }
+    ],
+    "DescribeTRTCRealTimeQualityData": [
+      {
+        "document": "查询TRTC实时监控质量数据",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCRealTimeQualityData\n<公共请求参数>\n\n{\n    \"StartTime\": 1695711343,\n    \"EndTime\": 1695711643,\n    \"SdkAppId\": \"1400xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"StatementID\": 0,\n            \"Series\": [\n                {\n                    \"Columns\": [\n                        \"time\",\n                        \"videoFreezeRate\",\n                        \"audioFreezeRate\"\n                    ],\n                    \"Values\": [\n                        {\n                            \"RowValue\": [\n                                1695711350,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711360,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711370,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711380,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711390,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711400,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711410,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711420,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711430,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711440,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711450,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711460,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711470,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711480,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711490,\n                                0,\n                                4\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711500,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711510,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711520,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711530,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711540,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711550,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711560,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711570,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711580,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711590,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711600,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711610,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711620,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711630,\n                                0,\n                                0\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711640,\n                                0,\n                                0\n                            ]\n                        }\n                    ]\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"75fegcba14mffq3wl2zz578ml3e-i1a3\"\n    }\n}",
+        "title": "DescribeTRTCRealTimeQualityData"
+      }
+    ],
+    "DescribeTRTCRealTimeScaleData": [
+      {
+        "document": "查询在线TRTC房间和用户",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCRealTimeScaleData\n<公共请求参数>\n\n{\n    \"StartTime\": 1695711343,\n    \"EndTime\": 1695711643,\n    \"SdkAppId\": \"1400xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"StatementID\": 0,\n            \"Series\": [\n                {\n                    \"Columns\": [\n                        \"time\",\n                        \"userCount\",\n                        \"roomCount\"\n                    ],\n                    \"Values\": [\n                        {\n                            \"RowValue\": [\n                                1695711350,\n                                22,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711360,\n                                22,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711370,\n                                22,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711380,\n                                22,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711390,\n                                23,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711400,\n                                21,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711410,\n                                21,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711420,\n                                21,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711430,\n                                21,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711440,\n                                21,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711450,\n                                21,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711460,\n                                21,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711470,\n                                21,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711480,\n                                21,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711490,\n                                21,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711500,\n                                21,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711510,\n                                21,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711520,\n                                21,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711530,\n                                21,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711540,\n                                21,\n                                18\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711550,\n                                22,\n                                19\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711560,\n                                22,\n                                19\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711570,\n                                22,\n                                19\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711580,\n                                22,\n                                19\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711590,\n                                22,\n                                19\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711600,\n                                22,\n                                19\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711610,\n                                22,\n                                19\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711620,\n                                22,\n                                19\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711630,\n                                24,\n                                20\n                            ]\n                        },\n                        {\n                            \"RowValue\": [\n                                1695711640,\n                                22,\n                                19\n                            ]\n                        }\n                    ]\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"7gb56tcisiuy9el619p3jjkccop9qpv8\"\n    }\n}",
+        "title": "DescribeTRTCRealTimeScaleData"
+      }
+    ],
+    "DescribeTRTCSegmentModerationUsage": [
+      {
+        "document": "查询指定时间范围内数据",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCSegmentModerationUsage\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-04-01 00:00:00\",\n    \"EndTime\": \"2026-04-10 00:00:00\",\n    \"Type\": \"audio\",\n    \"Business\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalUsage\": [\n            0\n        ],\n        \"UsageKey\": [\n            \"Audio\"\n        ],\n        \"UsageList\": [\n            {\n                \"TimeKey\": \"2026-04-01 00:00:00\",\n                \"UsageValue\": [\n                    0\n                ]\n            }\n        ],\n        \"RequestId\": \"e5783938-a9c4-451f-9b17-7db9c8635a96\"\n    }\n}",
+        "title": "查询指定时间范围内音频审核数据"
+      },
+      {
+        "document": "查询指定时间范围内图片切片用量数据",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCSegmentModerationUsage\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-04-01 00:00:00\",\n    \"EndTime\": \"2026-04-10 00:00:00\",\n    \"Type\": \"picture\",\n    \"Business\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalUsage\": [\n            0\n        ],\n        \"UsageKey\": [\n            \"Picture\"\n        ],\n        \"UsageList\": [\n            {\n                \"TimeKey\": \"2026-04-01 00:00:00\",\n                \"UsageValue\": [\n                    0\n                ]\n            }\n        ],\n        \"RequestId\": \"3164f896-1141-4d6d-88da-8e757ce65360\"\n    }\n}",
+        "title": "查询指定时间范围内图片切片用量数据"
+      }
+    ],
+    "DescribeTRTCVoicePrint": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCRealTimeScaleMetricData\n<公共请求参数>\n\n{\n    \"StartTime\": 1665747036,\n    \"EndTime\": 1665747284,\n    \"SdkAppId\": \"1400188366\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"StatementID\": 0,\n            \"Series\": [\n                {\n                    \"Columns\": [\n                        \"time\",\n                        \"userCount\",\n                        \"roomCount\"\n                    ],\n                    \"Values\": [\n                        [\n                            1665747040,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747050,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747060,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747070,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747080,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747090,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747100,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747110,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747120,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747130,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747140,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747150,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747160,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747170,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747180,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747190,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747200,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747210,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747220,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747230,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747240,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747250,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747260,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747270,\n                            0,\n                            0\n                        ],\n                        [\n                            1665747280,\n                            0,\n                            0\n                        ]\n                    ]\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"7n-62qgcuuaupi-2wre2ncswqydl9cae\"\n    }\n}",
-        "title": "DescribeTRTCRealTimeScaleMetricData"
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCVoicePrint\n<公共请求参数>\n\n{\n    \"SdkAppId\": \"1400123456\",\n    \"Offset\": 0,\n    \"Limit\": 30\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"query voiceprint list successfully\",\n        \"TotalCount\": 4,\n        \"VoicePrintList\": [\n            {\n                \"CreateTime\": \"2026-04-24T01:45:35+08:00\",\n                \"SpeakerId\": \"user4\",\n                \"UpdateTime\": \"2026-04-24T01:45:35+08:00\",\n                \"VoicePrintId\": \"19dbb727a75_f3be637f9fda4c10b5b466d28285efba\"\n            }\n        ],\n        \"RequestId\": \"a14eb21b-8e78-46a0-baad-46e1ab952e95\"\n    }\n}",
+        "title": "查询示例"
       }
     ],
     "DescribeTrtcMcuTranscodeTime": [
       {
         "document": "多日查询",
-        "input": "https://trtc.tencentcloudapi.com/?Action=DescribeTrtcMcuTranscodeTime\n&SdkAppId=1400123456\n&StartTime=2020-09-07\n&EndTime=2020-09-08\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Usages\": [\n            {\n                \"SdkAppId\": \"1400123456\",\n                \"TotalNum\": 1,\n                \"SdkAppIdTranscodeTimeUsages\": [\n                    {\n                        \"AudioTime\": 1,\n                        \"VideoTimeHd\": 1,\n                        \"VideoTimeFhd\": 1,\n                        \"VideoTimeSd\": 1,\n                        \"TimeKey\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"644956b8-9f7c-44c5-b833-31d91dba1b23\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrtcMcuTranscodeTime\n<公共请求参数>\n\n{\n    \"EndTime\": \"2020-09-08\",\n    \"StartTime\": \"2020-09-07\",\n    \"SdkAppId\": 1400123456\n}",
+        "output": "{\n    \"Response\": {\n        \"Usages\": [\n            {\n                \"SdkAppId\": \"1400123456\",\n                \"TotalNum\": 1,\n                \"SdkAppIdTranscodeTimeUsages\": [\n                    {\n                        \"Flux\": 10,\n                        \"AudioTime\": 12,\n                        \"VideoTimeHd\": 21,\n                        \"VideoTimeFhd\": 234,\n                        \"VideoTimeSd\": 198,\n                        \"TimeKey\": \"2020-09-07\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"644956b8-9f7c-44c5-b833-31d91dba1b23\"\n    }\n}",
         "title": "查询旁路转码计费时长"
+      }
+    ],
+    "DescribeTrtcRoomUsage": [
+      {
+        "document": "查询TRTC音视频房间维度用量",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrtcRoomUsage\n<公共请求参数>\n\n{\n    \"StartTime\": \"2023-01-06 00:00\",\n    \"EndTime\": \"2023-01-06 10:00\",\n    \"SdkAppid\": 1400017192\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"68fccf1c-c2c7-466a-9f14-1db4bed6054b\",\n        \"Data\": \"RoomId,Audio,SD,hd,FullHD,2K,4K\\ntest_room,1,2,3,4,5,6\\n\"\n    }\n}",
+        "title": "查询TRTC音视频房间维度用量"
       }
     ],
     "DescribeTrtcUsage": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrtcUsage\n<公共请求参数>\n\n{\n    \"EndTime\": \"2022-01-01\",\n    \"StartTime\": \"2022-01-02\",\n    \"SdkAppId\": 1400123456\n}",
-        "output": "{\n    \"Response\": {\n        \"UsageKey\": [\n            \"Audio\",\n            \"SD\",\n            \"HD\",\n            \"FullHD\",\n            \"2K\",\n            \"4K\"\n        ],\n        \"UsageList\": [\n            {\n                \"TimeKey\": \"2022-01-01 00:00:00\",\n                \"UsageValue\": [\n                    10,\n                    20,\n                    30,\n                    40,\n                    50,\n                    60\n                ]\n            },\n            {\n                \"TimeKey\": \"2022-01-02 00:00:00\",\n                \"UsageValue\": [\n                    10,\n                    20,\n                    30,\n                    40,\n                    50,\n                    60\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"UsageKey\": [\n            \"Audio\",\n            \"SD\",\n            \"HD\",\n            \"FullHD\",\n            \"2K\",\n            \"4K\"\n        ],\n        \"UsageList\": [\n            {\n                \"TimeKey\": \"2022-01-01 00:00:00\",\n                \"UsageValue\": [\n                    10,\n                    20,\n                    30,\n                    40,\n                    50,\n                    60\n                ]\n            },\n            {\n                \"TimeKey\": \"2022-01-02 00:00:00\",\n                \"UsageValue\": [\n                    10,\n                    20,\n                    30,\n                    40,\n                    50,\n                    60\n                ]\n            }\n        ],\n        \"RequestId\": \"635e1617-0613-4bf8-8f1f-e017754713e8\"\n    }\n}",
         "title": "获取用户在2022年1月1日-2022年1月2日范围内，SdkAppId为1400123456的应用的用量明细。"
       }
     ],
@@ -184,10 +444,34 @@
         "title": "查询用户列表与通话指标"
       }
     ],
+    "DescribeVoiceConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVoiceConversation\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000311,\n    \"TaskId\": \"-nG0jIFU7rPr0tFW0cg282rOxP*************************bUA9JbOXgp3tnRyVJAzlBFAE.\",\n    \"DescribeType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"HistoryContents\": [\n            {\n                \"Role\": \"user\",\n                \"Content\": \"最近上海天气怎么样\"\n            },\n            {\n                \"Role\": \"assistant\",\n                \"Content\": \"我无法获取实时天气数据，所以没法告诉你上海当前的具体天气情况。建议你打开手机自带的天气应用，或访问中国天气网等平台查询最新预报。\\n\\n如果你告诉我具体日期，我也可以帮你说明上海这个季节通常的气候特点（比如气温范围、降水情况），供你参考。\"\n            }\n        ],\n        \"StartTime\": 1790081311564,\n        \"Status\": \"InProgress\",\n        \"TaskId\": \"-nG0jIFU7rPr0tFW0cg282rOxP*************************bUA9JbOXgp3tnRyVJAzlBFAE.\",\n        \"RequestId\": \"ebb2213e-7322-4f9b-8fcd-60c08a5168b7\"\n    }\n}",
+        "title": "查询对话任务"
+      }
+    ],
+    "DescribeVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVoicePrint\n<公共请求参数>\n\n{\n    \"DescribeMode\": 1,\n    \"PageIndex\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AppId\": 1300056921,\n                \"AudioName\": \"jackson\",\n                \"CreateTime\": \"2025-06-05 18:40:27\",\n                \"ReqTimestamp\": 1749119970000,\n                \"UpdateTime\": \"2025-06-05 18:40:27\",\n                \"VoicePrintId\": \"20250605_e3f126cda7ad4196bfb1acfb10642d39fFPqPcCyY6KcccmO9t4CHqn-6qJMBnzaiLzdaeEi2Q\",\n                \"VoicePrintMetaInfo\": \"custom_metainfo\"\n            }\n        ],\n        \"RequestId\": \"10459f57-b3fb-42a3-99c7-0c037967e420\",\n        \"TotalCount\": 14\n    }\n}",
+        "title": "分页查询已经注册过的声纹信息"
+      }
+    ],
+    "DescribeWebRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebRecord\n<公共请求参数>\n\n{\n    \"TaskId\": \"HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"RequestId\": \"record_class_1\"\n    }\n}",
+        "title": "查询页面录制状态"
+      }
+    ],
     "DismissRoom": [
       {
-        "document": "解散房间1234。",
-        "input": "https://trtc.tencentcloudapi.com/?Action=DismissRoom\n&SdkAppId=1400000001\n&RoomId=1234\n&<公共请求参数>",
+        "document": "解散房间1001。",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DismissRoom\n&SdkAppId=1400000001\n&RoomId=1001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "解散房间"
       }
@@ -200,26 +484,90 @@
         "title": "解散房间"
       }
     ],
+    "DownloadRecognizeVocabV3": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadRecognizeVocabV3\n<公共请求参数>\n\n{\n    \"VocabId\": \"7bc538d6acb442f19dc3396dd7eacd66\",\n    \"SdkAppId\": 1400000001\n}",
+        "output": "{\n    \"Response\": {\n        \"VocabId\": \"7bc538d6acb442f19dc3396dd7eacd66\",\n        \"WordWeightStr\": \"6IW+6K6v5LqRfDEwCuivremfs+ivhuWIq3w1\",\n        \"RequestId\": \"cab3e8a6-6318-415e-9d3d-bd9e93465950\"\n    }\n}",
+        "title": "下载词表内容"
+      }
+    ],
+    "GetRecognizeVocabListV3": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRecognizeVocabListV3\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000001\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"VocabList\": [\n            {\n                \"CreateTime\": \"2026-06-04T12:25:43+08:00\",\n                \"Description\": \"\",\n                \"Name\": \"测试用户\",\n                \"State\": 0,\n                \"UpdateTime\": \"2026-06-04T12:25:43+08:00\",\n                \"VocabId\": \"7bc538d6acb442f19dc3396dd7eacd66\",\n                \"WordWeights\": [\n                    {\n                        \"Weight\": 5,\n                        \"Word\": \"腾讯云\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"f612975e-4bca-4028-8eb6-d065f09f8345\"\n    }\n}",
+        "title": "查询词表列表示例"
+      }
+    ],
+    "GetRecognizeVocabV3": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRecognizeVocabV3\n<公共请求参数>\n\n{\n    \"VocabId\": \"7bc538d6acb442f19dc3396dd7eacd66\",\n    \"SdkAppId\": 1400000001\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2026-06-04T12:25:43+08:00\",\n        \"Description\": \"\",\n        \"Name\": \"测试用户\",\n        \"State\": 0,\n        \"UpdateTime\": \"2026-06-04T12:25:43+08:00\",\n        \"VocabId\": \"7bc538d6acb442f19dc3396dd7eacd66\",\n        \"WordWeights\": [\n            {\n                \"Weight\": 5,\n                \"Word\": \"腾讯云\"\n            }\n        ],\n        \"RequestId\": \"e0448aaa-e778-4495-b37a-32dc7475a7fd\"\n    }\n}",
+        "title": "查询单个词表示例"
+      }
+    ],
+    "ModifyCloudModeration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudModeration\n<公共请求参数>\n\n{\n    \"SdkAppId\": 20010806,\n    \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\",\n    \"SubscribeStreamUserIds\": {\n        \"SubscribeAudioUserIds\": [\n            \"user1\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4d09681-4413-4f21-972d-bba98422aa30\",\n        \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n    }\n}",
+        "title": "修改AI 内容理解任务"
+      }
+    ],
     "ModifyCloudRecording": [
       {
-        "document": "更新SdkAppId 为 1234 TaskId 为xx 的云端录制，设置视频流订阅白名单123，456，设置音频流订阅白名单123，456。设置自定义布局模式。",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudRecording\n<公共请求参数>\n\n{\n    \"SubscribeStreamUserIds\": {\n        \"SubscribeVideoUserIds\": [\n            \"123\",\n            \"456\"\n        ],\n        \"SubscribeAudioUserIds\": [\n            \"123\",\n            \"456\"\n        ]\n    },\n    \"TaskId\": \"xx\",\n    \"SdkAppId\": 1234,\n    \"MixLayoutParams\": {\n        \"MixLayoutMode\": 4,\n        \"MixLayoutList\": [\n            {\n                \"Top\": 100,\n                \"UserId\": \"123\",\n                \"Height\": 100,\n                \"Width\": 100,\n                \"Left\": 100\n            },\n            {\n                \"Top\": 200,\n                \"UserId\": \"456\",\n                \"Height\": 100,\n                \"Width\": 100,\n                \"Left\": 200\n            }\n        ]\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"5df46eb2-8e4b-490e-9c3c-dbd3b84faefc\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
+        "document": "更新SdkAppId 为 1400188366 TaskId 为-m9-bVVU7gzdSqvsV***Y+QMYNee2QE.的云端录制，设置视频流订阅白名单user1，user2，设置音频流订阅白名单user1，user2。设置自定义布局模式。",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudRecording\n<公共请求参数>\n\n{\n    \"SubscribeStreamUserIds\": {\n        \"SubscribeVideoUserIds\": [\n            \"user1\",\n            \"user2\"\n        ],\n        \"SubscribeAudioUserIds\": [\n            \"user1\",\n            \"user2\"\n        ]\n    },\n    \"TaskId\": \"-m9-bVVU7gzdSqvsV***Y+QMYNee2QE.\",\n    \"SdkAppId\": 1400188366,\n    \"MixLayoutParams\": {\n        \"MixLayoutMode\": 4,\n        \"MixLayoutList\": [\n            {\n                \"Top\": 100,\n                \"UserId\": \"user1\",\n                \"Height\": 100,\n                \"Width\": 100,\n                \"Left\": 100\n            },\n            {\n                \"Top\": 200,\n                \"UserId\": \"user2\",\n                \"Height\": 100,\n                \"Width\": 100,\n                \"Left\": 200\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-m9-bVVU7gzdSqvsV***Y+QMYNee2QE.\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
         "title": "更新云端录制"
+      }
+    ],
+    "ModifyCloudSliceTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudSliceTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 20010806,\n    \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\",\n    \"SubscribeStreamUserIds\": {\n        \"SubscribeAudioUserIds\": [\n            \"555\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4d09681-4413-4f21-972d-bba98422aa30\",\n        \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n    }\n}",
+        "title": "修改云端切片任务"
       }
     ],
     "ModifyPicture": [
       {
         "document": "",
-        "input": "https://trtc.tencentcloudapi.com/?Action=ModifyPicture\n&PictureId=123456\n&Height=12\n&Width=15\n&XPosition=15\n&YPosition=36\n&SdkAppId=30\n&<公共请求参数>",
+        "input": "https://trtc.tencentcloudapi.com/?Action=ModifyPicture\n&PictureId=10081\n&Height=80\n&Width=70\n&XPosition=10\n&YPosition=20\n&SdkAppId=1500000001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"049461e6-f2f5-4168-887e-aca4fbfa5fae\"\n    }\n}",
         "title": "修改图片相关参数"
       }
     ],
+    "ModifyVoiceConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVoiceConversation\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400704311,\n    \"TaskId\": \"-nG0jIFU7llEfJ3MR8El60TD18*************************bOp75dg0i7c+NqbBQ2tAxOAE.\",\n    \"SequenceNumber\": 0,\n    \"LLMConfig\": {\n        \"LLMType\": \"openai\",\n        \"Model\": \"gpt-4o-mini\",\n        \"APIUrl\": \"https://translationsllm.openai.azure.com****************************************pletions?api-version=2025-01-01-preview\",\n        \"APIKey\": \"CKLhA70tjVXN8Tp0ADnCiv5YSqFe****************************99BJAC4f1cMXJ3w3AAABACOG9t8q\",\n        \"SystemPrompt\": \"你是一个简洁的对话助手。\",\n        \"MaxTokens\": 2048,\n        \"MaxHistory\": 50,\n        \"MaxToolRound\": 20,\n        \"Timeout\": 20000,\n        \"Temperature\": 0.5,\n        \"TopP\": 0.9,\n        \"McpServer\": {\n            \"Name\": \"weather-mcp\",\n            \"Url\": \"https://m*********e.com/v1\",\n            \"Timeout\": 5000,\n            \"ToolList\": [\n                \"get_weather\"\n            ]\n        }\n    },\n    \"DialogConfig\": {\n        \"InterruptMode\": 2,\n        \"InterruptKeywords\": [\n            \"停止\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-nG0jIFU7llEfJ3MR8El60TD18*************************bOp75dg0i7c+NqbBQ2tAxOAE.\",\n        \"RequestId\": \"0842be45-1e51-401a-8372-f57f6c86edb9\"\n    }\n}",
+        "title": "修改ai对话"
+      }
+    ],
+    "RegisterTRTCVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterTRTCVoicePrint\n<公共请求参数>\n\n{\n    \"SpeakerId\": \"usera\",\n    \"Data\": \"base64_encoded_audio_data\",\n    \"SdkAppId\": \"1400123456\",\n    \"AudioFormat\": \"pcm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EffectiveAudioDuration\": 25.4,\n        \"Message\": \"voiceprint enrolled successfully\",\n        \"RequestId\": \"2ba4e1f9-208c-4d37-9cdc-baa6d8f52a52\",\n        \"SNR\": 5.8,\n        \"SpeakerId\": \"usera\",\n        \"VoicePrintId\": \"19dbe5b905b_1024998c2a534879a78c600f7850874a\"\n    }\n}",
+        "title": "注册声纹测试用例"
+      }
+    ],
+    "RegisterVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterVoicePrint\n<公共请求参数>\n\n{\n    \"Audio\": \"The Base64 string of the entire WAV audio file, with valid audio content from 8 to 18 seconds.\",\n    \"ReqTimestamp\": 1749119700000,\n    \"AudioFormat\": 0,\n    \"AudioName\": \"jackson\",\n    \"AudioMetaInfo\": \"custom_metainfo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"47a8f838-8368-4dc7-a5ce-94b366692f6f\",\n        \"VoicePrintId\": \"20250605_9cc525c117ab4545b1ad21543e48412fSz4ZnwTZCW2tyePrHj0Y37WXz4QkUoLvT9P_eRVqiw\"\n    }\n}",
+        "title": "注册jackson的声纹信息"
+      }
+    ],
     "RemoveUser": [
       {
-        "document": "将用户test1、test2从房间1234移出。",
-        "input": "https://trtc.tencentcloudapi.com/?Action=RemoveUser\n&SdkAppId=1400000001\n&RoomId=1234\n&UserIds.0=test1\n&UserIds.1=test2\n&<公共请求参数>",
+        "document": "将用户user_1、user_2从房间1001移出。",
+        "input": "https://trtc.tencentcloudapi.com/?Action=RemoveUser\n&SdkAppId=1400000001\n&RoomId=1001\n&UserIds.0=user_1\n&UserIds.1=user_2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "移出用户"
       }
@@ -232,10 +580,34 @@
         "title": "移出用户"
       }
     ],
+    "SetVocabStateV3": [
+      {
+        "document": "1=设为默认（激活），0=取消",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetVocabStateV3\n<公共请求参数>\n\n{\n    \"VocabId\": \"7bc538d6acb442f19dc3396dd7eacd66\",\n    \"State\": 1,\n    \"SdkAppId\": 1400000001\n}",
+        "output": "{\n    \"Response\": {\n        \"VocabId\": \"7bc538d6acb442f19dc3396dd7eacd66\",\n        \"RequestId\": \"5032e115-d218-45af-8987-c8e2873db233\"\n    }\n}",
+        "title": "设置默认词表/激活状态"
+      }
+    ],
+    "StartAIConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartAIConversation\n<公共请求参数>\n\n{\n    \"SdkAppId\": 12345678,\n    \"RoomId\": \"room_987654321\",\n    \"RoomIdType\": 1,\n    \"AgentConfig\": {\n        \"UserId\": \"user_12345\",\n        \"UserSig\": \"user_signature_example\",\n        \"MaxIdleTime\": 120,\n        \"TargetUserId\": \"target_user_54321\"\n    },\n    \"SessionId\": \"session_1234567890abcdef\",\n    \"STTConfig\": {\n        \"Language\": \"zh\"\n    },\n    \"LLMConfig\": \"{\\\"LLMType\\\": \\\"openai\\\", \\\"Model\\\": \\\"gpt-3.5-turbo\\\", \\\"APIKey\\\": \\\"xxx\\\", \\\"APIUrl\\\": \\\"http://xxxx-api.xxxx.com/v1/chat/completions\\\", \\\"Streaming\\\": true}\",\n    \"TTSConfig\": \"{\\\"TTSType\\\": \\\"tencent\\\", \\\"AppId\\\": 130000000, \\\"SecretId\\\": \\\"AKIDxxxxx\\\", \\\"SecretKey\\\": \\\"HlDxxxxxx\\\", \\\"VoiceType\\\": 1008, \\\"Speed\\\": 1}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"v2_20250224_udqgoOzzpAFOoiXR_sHbeVCwys3hy0PLs1uRLvS7wY9mjZMEIQuDPhT\",\n        \"RequestId\": \"df81f274-c1b8-4342-b0a1-e552072cc48e\"\n    }\n}",
+        "title": "启动一个AI机器人对话"
+      }
+    ],
+    "StartAITranscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartAITranscription\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234,\n    \"RoomId\": \"500123\",\n    \"RoomIdType\": 1,\n    \"TranscriptionParams\": {\n        \"UserId\": \"test_user\",\n        \"UserSig\": \"your-usersig\",\n        \"MaxIdleTime\": 60,\n        \"TranscriptionMode\": 1,\n        \"TargetUserId\": \"test_user\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"taskid\",\n        \"RequestId\": \"requestid\"\n    }\n}",
+        "title": "样例"
+      }
+    ],
     "StartMCUMixTranscode": [
       {
         "document": "启动指定房间（房间号为3560）的云端混流，同时指定各路画面按屏幕分享模板排布。\n\n设置云端混流参数如下：\n- CDN直播流ID：1400188366_3560_mix。\n- 录制文件名：1400188366_3560_mix_file。\n- CDN直播流视频参数：视频宽为1280、高为720，视频码率为1560kbps，视频帧率为15，gop为2秒。\n- CDN直播流音频参数：音频采样率为48kHz，音频码率为64kbps，音频声道数为双声道。\n- 各路画面按屏幕分享模板排布，占据屏幕左侧大画面的视频流为用户(main_pc)的屏幕分享。",
-        "input": "https://trtc.tencentcloudapi.com/?Action=StartMCUMixTranscode\n&SdkAppId=1400188366\n&RoomId=3560\n&OutputParams.StreamId=1400188366_3560_mix\n&OutputParams.PureAudioStream=0\n&OutputParams.RecordId=1400188366_3560_mix_file\n&OutputParams.RecordAudioOnly=0\n&EncodeParams.VideoWidth=1280\n&EncodeParams.VideoHeight=720\n&EncodeParams.VideoBitrate=1560\n&EncodeParams.VideoFramerate=15\n&EncodeParams.VideoGop=2\n&EncodeParams.BackgroundColor=0\n&EncodeParams.AudioSampleRate=48000\n&EncodeParams.AudioBitrate=64\n&EncodeParams.AudioChannels=2\n&LayoutParams.Template=2\n&LayoutParams.MainVideoUserId=main_pc\n&LayoutParams.MainVideoStreamType=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartMCUMixTranscode\n<公共请求参数>\n\n{\n    \"LayoutParams\": {\n        \"MainVideoUserId\": \"main_pc\",\n        \"Template\": 2,\n        \"MainVideoStreamType\": 1\n    },\n    \"EncodeParams\": {\n        \"VideoFramerate\": 15,\n        \"VideoGop\": 2,\n        \"AudioBitrate\": 64,\n        \"VideoBitrate\": 1560,\n        \"AudioSampleRate\": 48000,\n        \"AudioChannels\": 2,\n        \"BackgroundColor\": 0,\n        \"VideoWidth\": 1280,\n        \"VideoHeight\": 720\n    },\n    \"RoomId\": 3560,\n    \"OutputParams\": {\n        \"RecordId\": \"1400188366_3560_mix_file\",\n        \"PureAudioStream\": 0,\n        \"RecordAudioOnly\": 0,\n        \"StreamId\": \"1400188366_3560_mix\"\n    },\n    \"SdkAppId\": 1400188366\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "启动云端混流"
       }
@@ -248,20 +620,218 @@
         "title": "启动云端混流"
       }
     ],
+    "StartPublishCdnStream": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishCdnStream\n<公共请求参数>\n\n{\n    \"AgentParams\": {\n        \"MaxIdleTime\": 30,\n        \"UserSig\": \"eJw1zV8LgjAUBfCvInsO2dStGfQSQUb2pFJvsnLJJZW1LekPffdc6X08v8O5b5Snmd9LjRYeCnyMZt4vgUp2Fi7wB6vtuVRC207q0kpjSzIVTXUVSkE11EiEMeE8ZGw0*VCg5SCcDeRuBAutiwkLeRRwOo*nMajduy5O*gIaus9qel9vX*lJbHJmyDMxuKFFI27tsT*I1S6pl*jzBb*IOTE_\",\n        \"UserId\": \"trtc_partner_test_1\"\n    },\n    \"AudioParams\": {\n        \"AudioEncode\": {\n            \"SampleRate\": 48000,\n            \"Codec\": 0,\n            \"BitRate\": 64,\n            \"Channel\": 2\n        }\n    },\n    \"SingleSubscribeParams\": {\n        \"UserMediaStream\": {\n            \"StreamType\": 0,\n            \"UserInfo\": {\n                \"RoomIdType\": 0,\n                \"RoomId\": \"295066\",\n                \"UserId\": \"Trtc_User_0\"\n            }\n        }\n    },\n    \"PublishCdnParams\": [\n        {\n            \"PublishCdnUrl\": \"rtmp://3891.livepush.myqcloud.com/live/trtc_publishcdn_test1\",\n            \"IsTencentCdn\": 1\n        }\n    ],\n    \"RoomIdType\": 0,\n    \"SdkAppId\": 1400188366,\n    \"WithTranscoding\": 0,\n    \"RoomId\": \"295066\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-m97l2ZU7r57nZBesMa84KgzxhH0OBbbCRaKC4K-4pycoZW7yFPtusNuZOen1Ca0qtQQAQ..\",\n        \"RequestId\": \"ef089f8b-d0d1-4131-894d-4edd68d61605\"\n    }\n}",
+        "title": "发起单流纯音频旁路转推 CDN"
+      },
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishCdnStream\n<公共请求参数>\n\n{\n    \"AgentParams\": {\n        \"MaxIdleTime\": 30,\n        \"UserSig\": \"eJw1zV8LgjAUBfCvInsO2dStGfQSQUb2pFJvsnLJJZW1LekPffdc6X08v8O5b5Snmd9LjRYeCnyMZt4vgUp2Fi7wB6vtuVRC207q0kpjSzIVTXUVSkE11EiEMeE8ZGw0*VCg5SCcDeRuBAutiwkLeRRwOo*nMajduy5O*gIaus9qel9vX*lJbHJmyDMxuKFFI27tsT*I1S6pl*jzBb*IOTE_\",\n        \"UserId\": \"trtc_partner_test_1\"\n    },\n    \"AudioParams\": {\n        \"AudioEncode\": {\n            \"SampleRate\": 48000,\n            \"Codec\": 0,\n            \"BitRate\": 64,\n            \"Channel\": 2\n        }\n    },\n    \"VideoParams\": {\n        \"VideoEncode\": {\n            \"Height\": 720,\n            \"Width\": 1280,\n            \"Fps\": 15,\n            \"BitRate\": 1536,\n            \"Gop\": 2\n        }\n    },\n    \"SingleSubscribeParams\": {\n        \"UserMediaStream\": {\n            \"StreamType\": 0,\n            \"UserInfo\": {\n                \"RoomIdType\": 0,\n                \"RoomId\": \"295066\",\n                \"UserId\": \"Trtc_User_0\"\n            }\n        }\n    },\n    \"PublishCdnParams\": [\n        {\n            \"PublishCdnUrl\": \"rtmp://3891.livepush.myqcloud.com/live/trtc_publishcdn_test1\",\n            \"IsTencentCdn\": 1\n        }\n    ],\n    \"RoomIdType\": 0,\n    \"SdkAppId\": 1400188366,\n    \"WithTranscoding\": 0,\n    \"RoomId\": \"295066\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-m97l2ZU7tq6nEsHR89259B8aCDblqnbGhWKC4K-4pycoZWpyHnld1jC9aCD+EU7V8WRAQ..\",\n        \"RequestId\": \"f23d95bf-ddaf-4d0c-86c0-6bf50c74c0a0\"\n    }\n}",
+        "title": "发起单流音视频旁路转推 CDN"
+      },
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishCdnStream\n<公共请求参数>\n\n{\n    \"AgentParams\": {\n        \"MaxIdleTime\": 30,\n        \"UserSig\": \"eJw1zV8LgjAUBfCvInsO2dStGfQSQUb2pFJvsnLJJZW1LekPffdc6X08v8O5b5Snmd9LjRYeCnyMZt4vgUp2Fi7wB6vtuVRC207q0kpjSzIVTXUVSkE11EiEMeE8ZGw0*VCg5SCcDeRuBAutiwkLeRRwOo*nMajduy5O*gIaus9qel9vX*lJbHJmyDMxuKFFI27tsT*I1S6pl*jzBb*IOTE_\",\n        \"UserId\": \"trtc_partner_test_1\"\n    },\n    \"AudioParams\": {\n        \"AudioEncode\": {\n            \"SampleRate\": 48000,\n            \"Codec\": 0,\n            \"BitRate\": 64,\n            \"Channel\": 2\n        },\n        \"SubscribeAudioList\": [\n            {\n                \"UserInfo\": {\n                    \"RoomIdType\": 0,\n                    \"RoomId\": \"295066\",\n                    \"UserId\": \"Trtc_User_0\"\n                }\n            },\n            {\n                \"UserInfo\": {\n                    \"RoomIdType\": 0,\n                    \"RoomId\": \"295066\",\n                    \"UserId\": \"Trtc_User_1\"\n                }\n            }\n        ]\n    },\n    \"PublishCdnParams\": [\n        {\n            \"PublishCdnUrl\": \"rtmp://3891.livepush.myqcloud.com/live/trtc_publishcdn_test1\",\n            \"IsTencentCdn\": 1\n        }\n    ],\n    \"RoomIdType\": 0,\n    \"SdkAppId\": 1400188366,\n    \"WithTranscoding\": 1,\n    \"RoomId\": \"295066\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"388014ec-a0b8-4b8f-86bc-1f467448f5f0\",\n        \"TaskId\": \"-m9lnV5U7nj4rkLBWMXF9n8-EohONCXbalWuLYK-4pycoZWQndibcqSVnrlqKF5om7EIDVk4awE.\"\n    }\n}",
+        "title": "发起纯音频混流转推 CDN"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishCdnStream\n<公共请求参数>\n\n{\n    \"AgentParams\": {\n        \"MaxIdleTime\": 30,\n        \"UserSig\": \"eJw1zV8LgjAUBfCvInsO2dStGfQSQUb2pFJvsnLJJZW1LekPffdc6X08v8O5b5Snmd9LjRYeCnyMZt4vgUp2Fi7wB6vtuVRC207q0kpjSzIVTXUVSkE11EiEMeE8ZGw0*VCg5SCcDeRuBAutiwkLeRRwOo*nMajduy5O*gIaus9qel9vX*lJbHJmyDMxuKFFI27tsT*I1S6pl*jzBb*IOTE_\",\n        \"UserId\": \"trtc_partner_test_1\"\n    },\n    \"AudioParams\": {\n        \"AudioEncode\": {\n            \"SampleRate\": 48000,\n            \"Codec\": 0,\n            \"BitRate\": 64,\n            \"Channel\": 2\n        },\n        \"SubscribeAudioList\": [\n            {\n                \"UserInfo\": {\n                    \"RoomIdType\": 0,\n                    \"RoomId\": \"295066\",\n                    \"UserId\": \"Trtc_User_0\"\n                }\n            },\n            {\n                \"UserInfo\": {\n                    \"RoomIdType\": 0,\n                    \"RoomId\": \"295067\",\n                    \"UserId\": \"Trtc_User_1\"\n                }\n            }\n        ]\n    },\n    \"VideoParams\": {\n        \"VideoEncode\": {\n            \"Height\": 720,\n            \"Width\": 1280,\n            \"Fps\": 15,\n            \"BitRate\": 1536,\n            \"Gop\": 2\n        },\n        \"LayoutParams\": {\n            \"PureAudioHoldPlaceMode\": 0,\n            \"MixLayoutMode\": 4,\n            \"MixLayoutList\": [\n                {\n                    \"LocationX\": 0,\n                    \"LocationY\": 0,\n                    \"UserMediaStream\": {\n                        \"StreamType\": 0,\n                        \"UserInfo\": {\n                            \"RoomIdType\": 0,\n                            \"RoomId\": \"295066\",\n                            \"UserId\": \"Trtc_User_0\"\n                        }\n                    },\n                    \"ZOrder\": 0,\n                    \"ImageHeight\": 720,\n                    \"ImageWidth\": 640,\n                    \"RenderMode\": 0\n                },\n                {\n                    \"LocationX\": 640,\n                    \"LocationY\": 0,\n                    \"UserMediaStream\": {\n                        \"StreamType\": 0,\n                        \"UserInfo\": {\n                            \"RoomIdType\": 0,\n                            \"RoomId\": \"295067\",\n                            \"UserId\": \"Trtc_User_1\"\n                        }\n                    },\n                    \"ZOrder\": 0,\n                    \"ImageHeight\": 720,\n                    \"ImageWidth\": 640,\n                    \"RenderMode\": 0\n                }\n            ]\n        },\n        \"BackGroundColor\": \"0xFF0000\",\n        \"WaterMarkList\": [\n            {\n                \"WaterMarkType\": 0,\n                \"WaterMarkImage\": {\n                    \"LocationX\": 64,\n                    \"LocationY\": 64,\n                    \"WaterMarkHeight\": 64,\n                    \"WaterMarkWidth\": 64,\n                    \"WaterMarkUrl\": \"https://xkt-course-1304449343.cos.ap-beijing.myqcloud.com/test/mark/37f9eb62-ca72-430e-bfca-e700b59b20e0.png\",\n                    \"ZOrder\": 3\n                }\n            }\n        ]\n    },\n    \"PublishCdnParams\": [\n        {\n            \"PublishCdnUrl\": \"rtmp://3891.livepush.myqcloud.com/live/trtc_publishcdn_test1\",\n            \"IsTencentCdn\": 1\n        }\n    ],\n    \"RoomIdType\": 0,\n    \"SdkAppId\": 1400188366,\n    \"WithTranscoding\": 1,\n    \"RoomId\": \"295066\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-m97l2ZU7vxyBSmXYsRx1Xy9Kf4bVVfbbhSKC4K-4pycoZWKv542xbi139uTvGt1zAHoAQ..\",\n        \"RequestId\": \"b934c535-8d82-4f52-bd52-a1cbb043c4be\"\n    }\n}",
+        "title": "发起跨房音视频混流转推 CDN"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishCdnStream\n<公共请求参数>\n\n{\n    \"AgentParams\": {\n        \"MaxIdleTime\": 30,\n        \"UserSig\": \"eJw1zV8LgjAUBfCvInsO2dStGfQSQUb2pFJvsnLJJZW1LekPffdc6X08v8O5b5Snmd9LjRYeCnyMZt4vgUp2Fi7wB6vtuVRC207q0kpjSzIVTXUVSkE11EiEMeE8ZGw0*VCg5SCcDeRuBAutiwkLeRRwOo*nMajduy5O*gIaus9qel9vX*lJbHJmyDMxuKFFI27tsT*I1S6pl*jzBb*IOTE_\",\n        \"UserId\": \"trtc_partner_test_1\"\n    },\n    \"AudioParams\": {\n        \"AudioEncode\": {\n            \"SampleRate\": 48000,\n            \"Codec\": 0,\n            \"BitRate\": 64,\n            \"Channel\": 2\n        }\n    },\n    \"VideoParams\": {\n        \"VideoEncode\": {\n            \"Height\": 720,\n            \"Width\": 1280,\n            \"Fps\": 15,\n            \"BitRate\": 1536,\n            \"Gop\": 2\n        },\n        \"LayoutParams\": {\n            \"PureAudioHoldPlaceMode\": 0,\n            \"MixLayoutMode\": 4,\n            \"MixLayoutList\": [\n                {\n                    \"LocationX\": 0,\n                    \"LocationY\": 0,\n                    \"UserMediaStream\": {\n                        \"StreamType\": 0,\n                        \"UserInfo\": {\n                            \"RoomIdType\": 0,\n                            \"RoomId\": \"295066\",\n                            \"UserId\": \"Trtc_User_0\"\n                        }\n                    },\n                    \"ZOrder\": 0,\n                    \"ImageHeight\": 720,\n                    \"ImageWidth\": 640,\n                    \"RenderMode\": 0\n                },\n                {\n                    \"LocationX\": 640,\n                    \"LocationY\": 0,\n                    \"UserMediaStream\": {\n                        \"StreamType\": 0,\n                        \"UserInfo\": {\n                            \"RoomIdType\": 0,\n                            \"RoomId\": \"295066\",\n                            \"UserId\": \"Trtc_User_1\"\n                        }\n                    },\n                    \"ZOrder\": 0,\n                    \"ImageHeight\": 720,\n                    \"ImageWidth\": 640,\n                    \"RenderMode\": 0\n                }\n            ]\n        },\n        \"BackGroundColor\": \"0xFF0000\",\n        \"WaterMarkList\": [\n            {\n                \"WaterMarkType\": 0,\n                \"WaterMarkImage\": {\n                    \"LocationX\": 64,\n                    \"LocationY\": 64,\n                    \"WaterMarkHeight\": 64,\n                    \"WaterMarkWidth\": 64,\n                    \"WaterMarkUrl\": \"https://xkt-course-1304449343.cos.ap-beijing.myqcloud.com/test/mark/37f9eb62-ca72-430e-bfca-e700b59b20e0.png\",\n                    \"ZOrder\": 3\n                }\n            }\n        ]\n    },\n    \"FeedBackRoomParams\": [\n        {\n            \"RoomId\": \"630777\",\n            \"RoomIdType\": 0,\n            \"UserId\": \"trtc_partner_test_2\",\n            \"UserSig\": \"eJwtjEELgjAYhv-Ldy10m7mtQYcQOtklU6mLSFs1LVnzq4Tovwfa8Xmel-cD*zQLXsaDAhYQmI9stenQnu2o0eOpcrXHzvgKTY8V*8963dbOWQ2KLgihUkacTwXt3YCigpIlo0KyyZrBWW9ARZyQ-4O9gIJrYfK365M85PEw02HZPneNaJJbg4-1Nj6KQqZZacVhI1fw-QEkCzYe\"\n        }\n    ],\n    \"RoomIdType\": 0,\n    \"SdkAppId\": 1400188366,\n    \"WithTranscoding\": 1,\n    \"RoomId\": \"295066\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"921e9cf6-b77c-4a7a-ab0e-c66a3e66fc59\",\n        \"TaskId\": \"-m9lnV5U7n7TwoLKSsii1JivUn7DLDDbP16uLYK-4pycoZWQndib8GQJZEMMXFyOHe9Ds6WfxAE.\"\n    }\n}",
+        "title": "发起音视频混流回推 TRTC 房间"
+      },
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishCdnStream\n<公共请求参数>\n\n{\n    \"AgentParams\": {\n        \"MaxIdleTime\": 30,\n        \"UserSig\": \"eJw1zV8LgjAUBfCvInsO2dStGfQSQUb2pFJvsnLJJZW1LekPffdc6X08v8O5b5Snmd9LjRYeCnyMZt4vgUp2Fi7wB6vtuVRC207q0kpjSzIVTXUVSkE11EiEMeE8ZGw0*VCg5SCcDeRuBAutiwkLeRRwOo*nMajduy5O*gIaus9qel9vX*lJbHJmyDMxuKFFI27tsT*I1S6pl*jzBb*IOTE_\",\n        \"UserId\": \"trtc_partner_test_1\"\n    },\n    \"AudioParams\": {\n        \"AudioEncode\": {\n            \"SampleRate\": 48000,\n            \"Codec\": 0,\n            \"BitRate\": 64,\n            \"Channel\": 2\n        }\n    },\n    \"VideoParams\": {\n        \"VideoEncode\": {\n            \"Height\": 720,\n            \"Width\": 1280,\n            \"Fps\": 15,\n            \"BitRate\": 1536,\n            \"Gop\": 2\n        },\n        \"LayoutParams\": {\n            \"PureAudioHoldPlaceMode\": 0,\n            \"MixLayoutMode\": 4,\n            \"MixLayoutList\": [\n                {\n                    \"LocationX\": 0,\n                    \"LocationY\": 0,\n                    \"UserMediaStream\": {\n                        \"StreamType\": 0,\n                        \"UserInfo\": {\n                            \"RoomIdType\": 0,\n                            \"RoomId\": \"295066\",\n                            \"UserId\": \"Trtc_User_0\"\n                        }\n                    },\n                    \"ZOrder\": 0,\n                    \"ImageHeight\": 720,\n                    \"ImageWidth\": 640,\n                    \"RenderMode\": 0\n                },\n                {\n                    \"LocationX\": 640,\n                    \"LocationY\": 0,\n                    \"UserMediaStream\": {\n                        \"StreamType\": 0,\n                        \"UserInfo\": {\n                            \"RoomIdType\": 0,\n                            \"RoomId\": \"295066\",\n                            \"UserId\": \"Trtc_User_1\"\n                        }\n                    },\n                    \"ZOrder\": 0,\n                    \"ImageHeight\": 720,\n                    \"ImageWidth\": 640,\n                    \"RenderMode\": 0\n                }\n            ]\n        },\n        \"BackGroundColor\": \"0xFF0000\",\n        \"WaterMarkList\": [\n            {\n                \"WaterMarkType\": 0,\n                \"WaterMarkImage\": {\n                    \"LocationX\": 64,\n                    \"LocationY\": 64,\n                    \"WaterMarkHeight\": 64,\n                    \"WaterMarkWidth\": 64,\n                    \"WaterMarkUrl\": \"https://xkt-course-1304449343.cos.ap-beijing.myqcloud.com/test/mark/37f9eb62-ca72-430e-bfca-e700b59b20e0.png\",\n                    \"ZOrder\": 3\n                }\n            }\n        ]\n    },\n    \"PublishCdnParams\": [\n        {\n            \"PublishCdnUrl\": \"rtmp://3891.livepush.myqcloud.com/live/trtc_publishcdn_test1\",\n            \"IsTencentCdn\": 1\n        }\n    ],\n    \"RoomIdType\": 0,\n    \"SdkAppId\": 1400188366,\n    \"WithTranscoding\": 1,\n    \"RoomId\": \"295066\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-m97l2ZU7vxyBSmXYsRx1Xy9Kf4bVVfbbhSKC4K-4pycoZWKv542xbi139uTvGt1zAHoAQ..\",\n        \"RequestId\": \"b934c535-8d82-4f52-bd52-a1cbb043c4be\"\n    }\n}",
+        "title": "发起音视频混流转推 CDN"
+      },
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishCdnStream\n<公共请求参数>\n\n{\n    \"AgentParams\": {\n        \"MaxIdleTime\": 30,\n        \"UserSig\": \"eJw1zV8LgjAUBfCvInsO2dStGfQSQUb2pFJvsnLJJZW1LekPffdc6X08v8O5b5Snmd9LjRYeCnyMZt4vgUp2Fi7wB6vtuVRC207q0kpjSzIVTXUVSkE11EiEMeE8ZGw0*VCg5SCcDeRuBAutiwkLeRRwOo*nMajduy5O*gIaus9qel9vX*lJbHJmyDMxuKFFI27tsT*I1S6pl*jzBb*IOTE_\",\n        \"UserId\": \"trtc_partner_test_1\"\n    },\n    \"AudioParams\": {\n        \"AudioEncode\": {\n            \"SampleRate\": 48000,\n            \"Codec\": 0,\n            \"BitRate\": 64,\n            \"Channel\": 2\n        }\n    },\n    \"VideoParams\": {\n        \"VideoEncode\": {\n            \"Height\": 720,\n            \"Width\": 1280,\n            \"Fps\": 15,\n            \"BitRate\": 1536,\n            \"Gop\": 2\n        },\n        \"LayoutParams\": {\n            \"PureAudioHoldPlaceMode\": 0,\n            \"MixLayoutMode\": 4,\n            \"MixLayoutList\": [\n                {\n                    \"LocationX\": 0,\n                    \"LocationY\": 0,\n                    \"UserMediaStream\": {\n                        \"StreamType\": 0,\n                        \"UserInfo\": {\n                            \"RoomIdType\": 0,\n                            \"RoomId\": \"295066\",\n                            \"UserId\": \"Trtc_User_0\"\n                        }\n                    },\n                    \"ZOrder\": 0,\n                    \"ImageHeight\": 720,\n                    \"ImageWidth\": 640,\n                    \"RenderMode\": 0\n                },\n                {\n                    \"LocationX\": 640,\n                    \"LocationY\": 0,\n                    \"UserMediaStream\": {\n                        \"StreamType\": 0,\n                        \"UserInfo\": {\n                            \"RoomIdType\": 0,\n                            \"RoomId\": \"295066\",\n                            \"UserId\": \"Trtc_User_1\"\n                        }\n                    },\n                    \"ZOrder\": 0,\n                    \"ImageHeight\": 720,\n                    \"ImageWidth\": 640,\n                    \"RenderMode\": 0\n                }\n            ]\n        },\n        \"BackGroundColor\": \"0xFF0000\",\n        \"WaterMarkList\": [\n            {\n                \"WaterMarkType\": 0,\n                \"WaterMarkImage\": {\n                    \"LocationX\": 64,\n                    \"LocationY\": 64,\n                    \"WaterMarkHeight\": 64,\n                    \"WaterMarkWidth\": 64,\n                    \"WaterMarkUrl\": \"https://xkt-course-1304449343.cos.ap-beijing.myqcloud.com/test/mark/37f9eb62-ca72-430e-bfca-e700b59b20e0.png\",\n                    \"ZOrder\": 3\n                }\n            }\n        ]\n    },\n    \"SeiParams\": {\n        \"LayoutVolume\": {\n            \"AppData\": \"layout_sei_test\",\n            \"PayloadType\": 100,\n            \"Interval\": 1000,\n            \"FollowIdr\": 1\n        }\n    },\n    \"PublishCdnParams\": [\n        {\n            \"PublishCdnUrl\": \"rtmp://3891.livepush.myqcloud.com/live/trtc_publishcdn_test1\",\n            \"IsTencentCdn\": 1\n        }\n    ],\n    \"RoomIdType\": 0,\n    \"SdkAppId\": 1400188366,\n    \"WithTranscoding\": 1,\n    \"RoomId\": \"295066\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6dfc18cc-2123-4a11-9591-f1e873fbbd65\",\n        \"TaskId\": \"-m9lnV5U7nzo2Xwh48Dc-YCDrR5Bk8DbJ1WrLYK-4pycoZWQndibrNig9cq-7ljX4SenbKWlZAE.\"\n    }\n}",
+        "title": "发起音视频混流转推 CDN ，输出数据带布局 SEI"
+      }
+    ],
+    "StartStreamIngest": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400188366,\n    \"RoomId\": \"9988101\",\n    \"RoomIdType\": 1,\n    \"UserId\": \"u46618234\",\n    \"UserSig\": \"eJw1jUsOgkAQBa9CZm1wej4Nmrjwu1AxEeQABAZsDTgBNBrj3RXFbb1UvSc7bCO3oYKNHabaeb6ZJRhcpo94EZkwPYFcjfLQrOUSStof092wqGxsgwkbOF-V3C3V5mOD1lpwznveZOfEWsq6RXEOvi8R**1m6u5OuPxfaan8NjxE5YHQ0HPKTNVSTj-hqhDBF1Kx1xv7mTKR\",\n    \"StreamUrl\": \"https://webrtc-backup-record-default-1258344699.cos.ap-nanjing.myqcloud.com/runningwang/output_f100040.mp4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4096f81-8633-4475-9ee1-8ce4eab20849\",\n        \"TaskId\": \"CR6LqvF7KfFBEyRihlxDN5RBXjdLDEn-LZgRFr+rTEL2p6vnZV4vRaRm5zJS3tEiSir0mwHw-Y5itMY+Rcfy3QpDMCzfXWl5CXXrEFRHuOGHxJCzqSY.\"\n    }\n}",
+        "title": "开启在线输入媒体流"
+      }
+    ],
+    "StartWebRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartWebRecord\n<公共请求参数>\n\n{\n    \"RecordUrl\": \"https://webrtc-troubleshooting-demo-1258344699.cos-website.ap-guangzhou.myqcloud.com/whip-demos/test_webrecorder.html?video_count=1&video_resolution=720\",\n    \"StorageParams\": {\n        \"CloudStorage\": {\n            \"Vendor\": 0,\n            \"Region\": \"ap-nanjing\",\n            \"Bucket\": \"***************************************\",\n            \"AccessKey\": \"************************************\",\n            \"SecretKey\": \"KN9espVu2tUoreAPN4UJr89tNaWDeqmR\",\n            \"FileNamePrefix\": [\n                \"isaaccheng\"\n            ]\n        }\n    },\n    \"SdkAppId\": 1400188366,\n    \"WebRecordVideoParams\": {\n        \"Width\": 1280,\n        \"Height\": 720,\n        \"Format\": \"mp4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"N0VeWap2ZikvkBMy7vdQ2dHU-YweB2t48eNBquMyTewJWDH+GbjwpE1MLL9fuVSCWqv02VeJuL2IpqQ1dZArUQ66XwuZV7H9gK48N3nOnfGd0Vq78D-CkHWBmtvWbw..\",\n        \"RequestId\": \"981dca49-afc8-4af7-9fa8-1d2408f94b8a\"\n    }\n}",
+        "title": "启动一个页面录制任务"
+      }
+    ],
+    "StopAIConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopAIConversation\n<公共请求参数>\n\n{\n    \"TaskId\": \"SV1FR+XTtvzAjRxZZ+aof1DfJF00VSBBNE0zR9W-PEpgCPBmt402BbnqMCdom79LtZO-VbLyV1nhVY1pFauWgrW12BevPvJ5Zn010RnD6vj3hgfbVH0.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "停止AI对话任务"
+      }
+    ],
+    "StopAITranscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopAITranscription\n<公共请求参数>\n\n{\n    \"TaskId\": \"v2_20250424_n6cHsk5kBFa09E5SEp7I_fKIxuKqZjiUsmteLPc3uXoTxpgc6F4TsigwJ1dH9SakK14SdUhLW86jhofgDHERZUHhCa0FJvu3Qgod\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"287d3c39-246a-4e6d-bb12-bba573177513\"\n    }\n}",
+        "title": "样例"
+      }
+    ],
     "StopMCUMixTranscode": [
       {
         "document": "结束房间号为3560的云端混流。",
-        "input": "https://trtc.tencentcloudapi.com/?Action=StopMCUMixTranscode\n&SdkAppId=1400188366\n&RoomId=3560\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopMCUMixTranscode\n<公共请求参数>\n\n{\n    \"RoomId\": 3560,\n    \"SdkAppId\": 1400188366\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "结束云端混流"
       }
     ],
     "StopMCUMixTranscodeByStrRoomId": [
       {
-        "document": "结束字符串房间号为Room_3560的云端混流。",
-        "input": "https://trtc.tencentcloudapi.com/?Action=StopMCUMixTranscodeByStrRoomId\n&SdkAppId=1400188366\n&StrRoomId=Room_3560\n&<公共请求参数>",
+        "document": "结束字符串房间号为room_1001的云端混流。",
+        "input": "https://trtc.tencentcloudapi.com/?Action=StopMCUMixTranscodeByStrRoomId\n&SdkAppId=1400000001\n&StrRoomId=room_1001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "结束云端混流"
+      }
+    ],
+    "StopPublishCdnStream": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopPublishCdnStream\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400188366,\n    \"TaskId\": \"-m97l2ZU7kOlV5cTRMoU6yoGp2nDYkzbJ13EC4K-4pycoZXVv+XVrNoUXQ8++8Z2PwUlAQ..\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\",\n        \"TaskId\": \"-npC9yhU7sHLvaLOLcCAwP8-QDXVHHjbYz2nNoK-rO+8oZWQndibuK9pP-POfqMns0GVUTco6wE.\"\n    }\n}",
+        "title": "停止转推任务"
+      }
+    ],
+    "StopStreamIngest": [
+      {
+        "document": "将SdkAppId为1600011111下的任务HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri停止",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1600011111,\n    \"TaskId\": \"HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
+        "title": "停止输入在线媒体流"
+      }
+    ],
+    "StopWebRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopWebRecord\n<公共请求参数>\n\n{\n    \"TaskId\": \"dhze2exwGcZr+H5zWWXz2iwDFHCMwAt3jdEqk0A1wVJ13kfr4ZmnqxDt1PMMA7XPdRKxJFoYwlP85sCQdCY0GUmLfy4tmlZAkWvYUZun9mmAJi9s-T4MPRFygnj3nQ..\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"578050cb-9d6d-434f-9bc2-a2c47913ed31\"\n    }\n}",
+        "title": "StopWebRecord示例"
+      }
+    ],
+    "TextToSpeech": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeech\n<公共请求参数>\n\n{\n    \"Text\": \"你好\",\n    \"Voice\": {\n        \"VoiceId\": \"v-female-R2s4N9qJ\"\n    },\n    \"SdkAppId\": 160001234,\n    \"AlignmentMode\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Alignments\": [\n            {\n                \"TextBegin\": 0,\n                \"TextEnd\": 2,\n                \"TimeBeginMs\": 0,\n                \"TimeEndMs\": 760\n            }\n        ],\n        \"Audio\": \"base64audio\",\n        \"RequestId\": \"9b9b5959-8d17-46f2-a216-8a0ce219f92f\"\n    }\n}",
+        "title": "语音合成"
+      }
+    ],
+    "TextToSpeechSSE": [
+      {
+        "document": "在合成过程中，如果出现错误，会返回sse格式的错误",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeechSSE\n<公共请求参数>\n\n{\n    \"Text\": \"你好呀\",\n    \"SdkAppId\": 14600000000,\n    \"Voice\": {\n        \"VoiceId\": \"v-female-R2s4N9qJ\"\n    },\n    \"AlignmentMode\": 1\n}",
+        "output": "data: {\"Type\": \"chunk\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"ChunkId\": \"chunk_0\", \"Audio\": \"base64编码的音频数据...\", \"Seq\": 0, \"IsEnd\": false}\n\ndata: {\"Type\": \"error\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"Error\": {\"Code\": \"InternalError\", \"Message\": \"internal error message\"}}",
+        "title": "中途合成出错"
+      },
+      {
+        "document": "在正式进行合成前，如果有参数错误，会直接返回一个json错误，可以通过content type来判断这种情况",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeechSSE\n<公共请求参数>\n\n{\n    \"Text\": \"你好呀\",\n    \"SdkAppId\": 14600000000,\n    \"Voice\": {\n        \"VoiceId\": \"fake\"\n    },\n    \"AlignmentMode\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78033210-b9c2-4c2a-b378-6a0c63646d81\",\n        \"Error\": {\n            \"Code\": \"InvalidParameter.VoiceId\",\n            \"Message\": \"Cloud API TTS parameter error: Voice ID 'fake' not found. Please check if the voice exists or create it via voice clone API.\"\n        }\n    }\n}",
+        "title": "合成前出错"
+      },
+      {
+        "document": "注意sse接口需要使用trtc.ai.tencentcloudapi.com域名，否则会调用接口失败",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeechSSE\n<公共请求参数>\n\n{\n    \"Text\": \"你好呀\",\n    \"SdkAppId\": 14600000000,\n    \"Voice\": {\n        \"VoiceId\": \"v-female-R2s4N9qJ\"\n    },\n    \"AlignmentMode\": 1\n}",
+        "output": "data: {\"Type\": \"chunk\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"ChunkId\": \"chunk_0\", \"Audio\": \"base64编码的音频数据...\", \"Seq\": 0, \"IsEnd\": false}\n\ndata: {\"Type\": \"chunk\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"ChunkId\": \"chunk_1\", \"Audio\": \"base64编码的音频数据...\", \"Seq\": 1, \"Alignments\": [{\"TimeBeginMs\": 0, \"TimeEndMs\": 600, \"TextBegin\": 0, \"TextEnd\": 2}, \"IsEnd\": false}\n\ndata: {\"Type\": \"chunk\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"ChunkId\": \"chunk_2\", \"Audio\": \"base64编码的音频数据...\", \"Seq\": 2, \"IsEnd\": true}",
+        "title": "流式语音合成"
+      }
+    ],
+    "UpdateAIConversation": [
+      {
+        "document": "在对话过程中，想要动态更新tts的音色",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAIConversation\n<公共请求参数>\n\n{\n    \"TaskId\": \"your-taskid\",\n    \"TTSConfig\": \"your-tts-config-json\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"df81f274-c1b8-4342-b0a1-e552072cc48e\"\n    }\n}",
+        "title": "更新tts音色"
+      }
+    ],
+    "UpdatePublishCdnStream": [
+      {
+        "document": "更新为混主播Trtc_User_0和Trtc_User_3的音视频。",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePublishCdnStream\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400188366,\n    \"TaskId\": \"-m97l2ZU7kOlV5cTRMoU6yoGp2nDYkzbJ13EC4K-4pycoZXVv+XVrNoUXQ8++8Z2PwUlAQ..\",\n    \"SequenceNumber\": 20,\n    \"WithTranscoding\": 1,\n    \"AudioParams\": {\n        \"SubscribeAudioList\": [\n            {\n                \"UserInfo\": {\n                    \"RoomId\": \"48111\",\n                    \"RoomIdType\": 0,\n                    \"UserId\": \"Trtc_User_0\"\n                }\n            },\n            {\n                \"UserInfo\": {\n                    \"RoomId\": \"48111\",\n                    \"RoomIdType\": 0,\n                    \"UserId\": \"Trtc_User_3\"\n                }\n            }\n        ]\n    },\n    \"VideoParams\": {\n        \"LayoutParams\": {\n            \"MixLayoutMode\": 4,\n            \"MixLayoutList\": [\n                {\n                    \"UserMediaStream\": {\n                        \"UserInfo\": {\n                            \"RoomId\": \"48111\",\n                            \"RoomIdType\": 0,\n                            \"UserId\": \"Trtc_User_3\"\n                        },\n                        \"StreamType\": 0\n                    },\n                    \"ImageWidth\": 640,\n                    \"ImageHeight\": 720,\n                    \"LocationX\": 0,\n                    \"LocationY\": 0,\n                    \"ZOrder\": 0,\n                    \"RenderMode\": 0\n                },\n                {\n                    \"UserMediaStream\": {\n                        \"UserInfo\": {\n                            \"RoomId\": \"48111\",\n                            \"RoomIdType\": 0,\n                            \"UserId\": \"Trtc_User_0\"\n                        },\n                        \"StreamType\": 0\n                    },\n                    \"ImageWidth\": 640,\n                    \"ImageHeight\": 720,\n                    \"LocationX\": 640,\n                    \"LocationY\": 360,\n                    \"ZOrder\": 0,\n                    \"RenderMode\": 0\n                }\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\",\n        \"TaskId\": \"-nHPekVU7h******sceOqAZ1YVQE.\"\n    }\n}",
+        "title": "更新混音和布局参数"
+      },
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePublishCdnStream\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400188366,\n    \"TaskId\": \"-m97l2ZU7kOlV5cTRMoU6yoGp2nDYkzbJ13EC4K-4pycoZXVv+XVrNoUXQ8++8Z2PwUlAQ..\",\n    \"SequenceNumber\": 20,\n    \"WithTranscoding\": 1,\n    \"PublishCdnParams\": [\n        {\n            \"IsTencentCdn\": 1,\n            \"PublishCdnUrl\": \"rtmp://3891.livepush.myqcloud.com/live/trtc_publishcdn_test2?bizid=3891&txSecret=23aeb6ec16fd275af0d00a447b2282f7&txTime=62635BDE\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\",\n        \"TaskId\": \"-nHPekVU7h******sceOqAZ1YVQE.\"\n    }\n}",
+        "title": "更新转推参数"
+      }
+    ],
+    "UpdateRecognizeVocabV3": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRecognizeVocabV3\n<公共请求参数>\n\n{\n    \"VocabId\": \"7bc538d6acb442f19dc3396dd7eacd66\",\n    \"SdkAppId\": 1400000001,\n    \"Description\": \"描述文本\",\n    \"WordWeights\": [\n        {\n            \"Word\": \"腾讯云\",\n            \"Weight\": 10\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"VocabId\": \"7bc538d6acb442f19dc3396dd7eacd66\",\n        \"RequestId\": \"6ed76420-65dc-4a75-a3b3-0e224ec2d050\"\n    }\n}",
+        "title": "更新词表"
+      }
+    ],
+    "UpdateStreamIngest": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400188366,\n    \"TaskId\": \"CR6LqvF7KfFBEyRihlxDN5RBXjdLDEn-LZgRFr+rTEL2p6vnZV4vRaRm5zJS3tEiSir0mwHw-Y5itMY+Rcfy3QpDMCzfXWl5CXXrEFRHuOGHxJCzqSY.\",\n    \"StreamUrl\": \"https://webrtc-backup-record-default-1258344699.cos.ap-nanjing.myqcloud.com/runningwang/48d0c7e46f088ee97208f0815ddc8b20.mp4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b070fb8a-0fa2-4a3c-8675-0756e014770b\",\n        \"Status\": \"InProgress\"\n    }\n}",
+        "title": "更新输入在线媒体流"
+      }
+    ],
+    "UpdateTRTCVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTRTCVoicePrint\n<公共请求参数>\n\n{\n    \"VoicePrintId\": \"19dbb72269b_1e7b262ef347400490f19956bc293016\",\n    \"Data\": \"base64_encoded_audio_data\",\n    \"SdkAppId\": \"1400123456\",\n    \"AudioFormat\": \"pcm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EffectiveAudioDuration\": 25.4,\n        \"Message\": \"voiceprint updated successfully\",\n        \"RequestId\": \"c3baedee-e412-4ab1-96cb-049626f79b63\",\n        \"SNR\": 5.8,\n        \"VoicePrintId\": \"19dbb72269b_1e7b262ef347400490f19956bc293016\"\n    }\n}",
+        "title": "更新声纹测试用例"
+      }
+    ],
+    "UpdateVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateVoicePrint\n<公共请求参数>\n\n{\n    \"VoicePrintId\": \"20250605_9cc525c117ab4545b1ad21543e48412fSz4ZnwTZCW2tyePrHj0Y37WXz4QkUoLvT9P_eRVqiw\",\n    \"ReqTimestamp\": 1749120210000,\n    \"AudioFormat\": 0,\n    \"Audio\": \"The Base64 string of the entire WAV audio file, with valid audio content from 8 to 18 seconds.\",\n    \"AudioMetaInfo\": \"update_metainfo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"40e323b2-f0e7-402c-be5d-b02aef40d887\"\n    }\n}",
+        "title": "更新jackson的音频信息"
+      }
+    ],
+    "VerifyTRTCVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyTRTCVoicePrint\n<公共请求参数>\n\n{\n    \"VoicePrintId\": \"19dbb72269b_1e7b262ef347400490f19956bc293016\",\n    \"Data\": \"base64_encoded_audio_data\",\n    \"SdkAppId\": \"1400123456\",\n    \"AudioFormat\": \"pcm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Decision\": 1,\n        \"Message\": \"voiceprint verify success\",\n        \"RequestId\": \"6dd6414b-3695-4db7-af24-7f1a3ef41d0c\",\n        \"Score\": \"100.00\",\n        \"SpeakerId\": \"user1\",\n        \"VoicePrintId\": \"19dbb72269b_1e7b262ef347400490f19956bc293016\"\n    }\n}",
+        "title": "声纹验证测试用例"
+      }
+    ],
+    "VoiceClone": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoiceClone\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1466000000,\n    \"VoiceName\": \"xiaoming_02\",\n    \"PromptAudio\": \"ejxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VoiceId\": \"xiaoming_02_aidniwqndq\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建一个声音克隆"
       }
     ]
   },

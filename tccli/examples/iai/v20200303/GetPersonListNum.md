@@ -1,6 +1,6 @@
-**Example 1: 获取人员列表长度接口**
+**Example 1: 获取人员库中人员数量成功示例**
 
-获取指定人员库中人员数量
+
 
 Input: 
 
@@ -20,9 +20,9 @@ Output:
 }
 ```
 
-**Example 2: 错误示例**
+**Example 2: 获取人员库中人员数量失败示例**
 
-人员库ID不存在
+
 
 Input: 
 
@@ -35,6 +35,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.GroupIdNotExist",
+            "Message": "人员库ID不存在。"
+        },
         "RequestId": "2865a458-4db1-46bd-ae52-b7507c9f4e62"
     }
 }

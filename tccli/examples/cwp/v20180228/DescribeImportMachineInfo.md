@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cwp DescribeImportMachineInfo --cli-unfold-argument  \
-    --MachineList xx \
-    --ImportType xx \
+    --MachineList 0.0.0.0 \
+    --ImportType Ip \
     --IsQueryProMachine True
 ```
 
@@ -15,26 +15,43 @@ Output:
 ```
 {
     "Response": {
-        "InvalidMachineList": [
-            "xx"
-        ],
-        "RequestId": "xx",
         "EffectiveMachineInfoList": [
             {
-                "MachineName": "xx",
+                "MachineName": "tke-np-ol06goby-worker",
+                "MachinePublicIp": "10.0.1.92",
+                "MachinePrivateIp": "172.17.2.23",
                 "MachineTag": [
                     {
-                        "TagId": 1,
-                        "Rid": 0,
-                        "Name": "xx"
+                        "Rid": 10,
+                        "Name": "dev",
+                        "TagId": 10021
                     }
                 ],
-                "MachinePublicIp": "xx",
-                "Quuid": "xx",
-                "MachinePrivateIp": "xx",
-                "LicenseOrder": null
+                "CloudTags": [
+                    {
+                        "TagKey": "cwp",
+                        "TagValue": "dev"
+                    }
+                ],
+                "Quuid": "a9fe0359-04d9-417f-ab6d-4941891d6c4b",
+                "Uuid": "a9fe0359-04d9-417f-ab6d-4941891d6c4b",
+                "KernelVersion": "5.4.241-19-0017.1_plus",
+                "MachineStatus": "OFFLINE",
+                "LicenseOrder": {
+                    "LicenseId": 136621,
+                    "LicenseType": 2,
+                    "SourceType": 1,
+                    "ResourceId": "white_883011a2fb7a2ce8f032025ec0437f52",
+                    "Status": 1
+                },
+                "VulNum": 0,
+                "InstanceID": "eks-h847trlg"
             }
-        ]
+        ],
+        "InvalidMachineList": [
+            "a9fe0359-04d9-417f-ab6d-****"
+        ],
+        "RequestId": "633204c8-383a-4dbb-940b-2e92d0674529"
     }
 }
 ```

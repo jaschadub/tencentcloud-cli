@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cme DeleteTeamMembers --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --TeamId 1kdk882ddd88338ddd3k3 \
-    --MemberIds 999kd3ej3okjdije3lejjdjk99 999kd3ej3okjdije3lejjdjk98
+    --MemberIds 999kd3ej3okjdije3lejjdjk98 999kd3ej3okjdije3lejjdjk99
 ```
 
 Output: 

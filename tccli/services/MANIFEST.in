@@ -11,12 +11,16 @@ include tccli/services/af/v20200226/api.json
 include tccli/services/af/v20200226/examples.json
 include tccli/services/afc/v20200226/api.json
 include tccli/services/afc/v20200226/examples.json
+include tccli/services/aiart/v20221229/api.json
+include tccli/services/aiart/v20221229/examples.json
 include tccli/services/ame/v20190916/api.json
 include tccli/services/ame/v20190916/examples.json
 include tccli/services/ams/v20201229/api.json
 include tccli/services/ams/v20201229/examples.json
 include tccli/services/ams/v20200608/api.json
 include tccli/services/ams/v20200608/examples.json
+include tccli/services/anicloud/v20220923/api.json
+include tccli/services/anicloud/v20220923/examples.json
 include tccli/services/antiddos/v20200309/api.json
 include tccli/services/antiddos/v20200309/examples.json
 include tccli/services/apcas/v20201127/api.json
@@ -49,6 +53,8 @@ include tccli/services/bizlive/v20190313/api.json
 include tccli/services/bizlive/v20190313/examples.json
 include tccli/services/bm/v20180423/api.json
 include tccli/services/bm/v20180423/examples.json
+include tccli/services/bma/v20221115/api.json
+include tccli/services/bma/v20221115/examples.json
 include tccli/services/bma/v20210624/api.json
 include tccli/services/bma/v20210624/examples.json
 include tccli/services/bmeip/v20180625/api.json
@@ -89,6 +95,8 @@ include tccli/services/cdn/v20180606/api.json
 include tccli/services/cdn/v20180606/examples.json
 include tccli/services/cds/v20180420/api.json
 include tccli/services/cds/v20180420/examples.json
+include tccli/services/cdwch/v20200915/api.json
+include tccli/services/cdwch/v20200915/examples.json
 include tccli/services/cfg/v20210820/api.json
 include tccli/services/cfg/v20210820/examples.json
 include tccli/services/cfs/v20190719/api.json
@@ -131,6 +139,10 @@ include tccli/services/cpdp/v20190820/api.json
 include tccli/services/cpdp/v20190820/examples.json
 include tccli/services/cr/v20180321/api.json
 include tccli/services/cr/v20180321/examples.json
+include tccli/services/csip/v20221121/api.json
+include tccli/services/csip/v20221121/examples.json
+include tccli/services/csxg/v20230303/api.json
+include tccli/services/csxg/v20230303/examples.json
 include tccli/services/cvm/v20170312/api.json
 include tccli/services/cvm/v20170312/examples.json
 include tccli/services/cwp/v20180228/api.json
@@ -195,6 +207,8 @@ include tccli/services/essbasic/v20210526/api.json
 include tccli/services/essbasic/v20210526/examples.json
 include tccli/services/essbasic/v20201222/api.json
 include tccli/services/essbasic/v20201222/examples.json
+include tccli/services/facefusion/v20220927/api.json
+include tccli/services/facefusion/v20220927/examples.json
 include tccli/services/facefusion/v20181201/api.json
 include tccli/services/facefusion/v20181201/examples.json
 include tccli/services/faceid/v20180301/api.json
@@ -207,6 +221,8 @@ include tccli/services/gaap/v20180529/api.json
 include tccli/services/gaap/v20180529/examples.json
 include tccli/services/gme/v20180711/api.json
 include tccli/services/gme/v20180711/examples.json
+include tccli/services/goosefs/v20220519/api.json
+include tccli/services/goosefs/v20220519/examples.json
 include tccli/services/gpm/v20200820/api.json
 include tccli/services/gpm/v20200820/examples.json
 include tccli/services/gs/v20191118/api.json
@@ -215,6 +231,8 @@ include tccli/services/gse/v20191112/api.json
 include tccli/services/gse/v20191112/examples.json
 include tccli/services/habo/v20181203/api.json
 include tccli/services/habo/v20181203/examples.json
+include tccli/services/hasim/v20210716/api.json
+include tccli/services/hasim/v20210716/examples.json
 include tccli/services/hcm/v20181106/api.json
 include tccli/services/hcm/v20181106/examples.json
 include tccli/services/iai/v20200303/api.json
@@ -259,6 +277,8 @@ include tccli/services/irp/v20220324/api.json
 include tccli/services/irp/v20220324/examples.json
 include tccli/services/ivld/v20210903/api.json
 include tccli/services/ivld/v20210903/examples.json
+include tccli/services/keewidb/v20220308/api.json
+include tccli/services/keewidb/v20220308/examples.json
 include tccli/services/kms/v20190118/api.json
 include tccli/services/kms/v20190118/examples.json
 include tccli/services/lcic/v20220817/api.json
@@ -309,6 +329,8 @@ include tccli/services/oceanus/v20190422/api.json
 include tccli/services/oceanus/v20190422/examples.json
 include tccli/services/ocr/v20181119/api.json
 include tccli/services/ocr/v20181119/examples.json
+include tccli/services/omics/v20221128/api.json
+include tccli/services/omics/v20221128/examples.json
 include tccli/services/organization/v20210331/api.json
 include tccli/services/organization/v20210331/examples.json
 include tccli/services/organization/v20181225/api.json
@@ -341,6 +363,8 @@ include tccli/services/ses/v20201002/api.json
 include tccli/services/ses/v20201002/examples.json
 include tccli/services/smh/v20210712/api.json
 include tccli/services/smh/v20210712/examples.json
+include tccli/services/smop/v20201203/api.json
+include tccli/services/smop/v20201203/examples.json
 include tccli/services/smpn/v20190822/api.json
 include tccli/services/smpn/v20190822/examples.json
 include tccli/services/sms/v20210111/api.json
@@ -413,6 +437,8 @@ include tccli/services/teo/v20220901/api.json
 include tccli/services/teo/v20220901/examples.json
 include tccli/services/teo/v20220106/api.json
 include tccli/services/teo/v20220106/examples.json
+include tccli/services/thpc/v20230321/api.json
+include tccli/services/thpc/v20230321/examples.json
 include tccli/services/thpc/v20220401/api.json
 include tccli/services/thpc/v20220401/examples.json
 include tccli/services/thpc/v20211109/api.json
@@ -445,8 +471,14 @@ include tccli/services/tms/v20200713/api.json
 include tccli/services/tms/v20200713/examples.json
 include tccli/services/tmt/v20180321/api.json
 include tccli/services/tmt/v20180321/examples.json
+include tccli/services/tourism/v20230215/api.json
+include tccli/services/tourism/v20230215/examples.json
+include tccli/services/trdp/v20220726/api.json
+include tccli/services/trdp/v20220726/examples.json
 include tccli/services/trp/v20210515/api.json
 include tccli/services/trp/v20210515/examples.json
+include tccli/services/trro/v20220325/api.json
+include tccli/services/trro/v20220325/examples.json
 include tccli/services/trtc/v20190722/api.json
 include tccli/services/trtc/v20190722/examples.json
 include tccli/services/tse/v20201207/api.json
@@ -473,6 +505,8 @@ include tccli/services/vod/v20180717/api.json
 include tccli/services/vod/v20180717/examples.json
 include tccli/services/vpc/v20170312/api.json
 include tccli/services/vpc/v20170312/examples.json
+include tccli/services/vrs/v20200824/api.json
+include tccli/services/vrs/v20200824/examples.json
 include tccli/services/waf/v20180125/api.json
 include tccli/services/waf/v20180125/examples.json
 include tccli/services/wav/v20210129/api.json

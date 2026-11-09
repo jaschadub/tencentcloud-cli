@@ -6,25 +6,18 @@ Input:
 
 ```
 tccli tem CreateApplication --cli-unfold-argument  \
-    --ApplicationName xx \
-    --SubnetList xx \
-    --Description xx \
-    --InstanceId xx \
-    --DeployMode xx \
-    --RepoServer xx \
-    --SourceChannel 0 \
-    --RepoType 0 \
-    --RepoName xx \
-    --UseDefaultImageService 0 \
-    --CodingLanguage xx
+    --ApplicationName tem-app \
+    --Description 这是一个描述 \
+    --CodingLanguage JAVA \
+    --RepoType 3
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Result": "xx",
-        "RequestId": "xx"
+        "Result": "57d58b44-ee28-4db6-acba-c1cb0cxxx",
+        "RequestId": "app-xxxxxx"
     }
 }
 ```

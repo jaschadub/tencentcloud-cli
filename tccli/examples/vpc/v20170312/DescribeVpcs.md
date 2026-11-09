@@ -1,13 +1,13 @@
 **Example 1: 查询VPC列表**
 
-
+查询VPC列表
 
 Input: 
 
 ```
 tccli vpc DescribeVpcs --cli-unfold-argument  \
     --Limit 2 \
-    --Filters.0.Values 192.168.0.0 10.8.0.0 \
+    --Filters.0.Values 192.168.0.0 10.0.0.0 \
     --Filters.0.Name cidr-block \
     --Filters.1.Values false \
     --Filters.1.Name is-default \
@@ -20,14 +20,21 @@ Output:
     "Response": {
         "VpcSet": [
             {
+                "Ipv6CidrBlockSet": [
+                    {
+                        "IPv6CidrBlock": "2402:4e00:1717:8200::/56",
+                        "ISPType": "BGP"
+                    }
+                ],
                 "VpcId": "vpc-p5sf61yj",
-                "VpcName": "测试dhcp",
+                "VpcName": "DHCP1",
                 "CidrBlock": "10.0.0.0/16",
                 "Ipv6CidrBlock": "3402:4e00:20:1200::/56",
                 "IsDefault": false,
                 "EnableMulticast": false,
                 "CreatedTime": "2018-04-25 10:26:26",
                 "EnableDhcp": true,
+                "EnableRouteVpcPublish": false,
                 "DhcpOptionsId": "dopt-8g7k5qfq",
                 "DnsServerSet": [
                     "10.0.0.1",
@@ -64,12 +71,19 @@ Output:
     "Response": {
         "VpcSet": [
             {
+                "Ipv6CidrBlockSet": [
+                    {
+                        "IPv6CidrBlock": "2402:4e00:1717:8200::/56",
+                        "ISPType": "BGP"
+                    }
+                ],
                 "VpcId": "vpc-p5sf61yj",
                 "VpcName": "测试dhcp",
                 "CidrBlock": "10.0.0.0/16",
                 "Ipv6CidrBlock": "3402:4e00:20:1200::/56",
                 "IsDefault": false,
                 "EnableDhcp": true,
+                "EnableRouteVpcPublish": false,
                 "EnableMulticast": false,
                 "CreatedTime": "2018-04-25 10:26:26",
                 "DhcpOptionsId": "dopt-8g7k5qfq",
@@ -87,7 +101,8 @@ Output:
                     {
                         "CidrBlock": "192.168.1.0/24",
                         "AssistantType": 0,
-                        "SubnetSet": []
+                        "SubnetSet": [],
+                        "VpcId": "vpc-p5sf61yj"
                     }
                 ],
                 "DomainName": "aa.bb.cc"

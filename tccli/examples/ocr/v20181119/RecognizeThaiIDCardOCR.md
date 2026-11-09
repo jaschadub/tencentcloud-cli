@@ -1,4 +1,4 @@
-**Example 1: 泰国身份证识别示例代码**
+**Example 1: RecognizeThaiIDCardOCR调用**
 
 
 
@@ -6,22 +6,32 @@ Input:
 
 ```
 tccli ocr RecognizeThaiIDCardOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ai-demo-1426683817.cos.ap-chengdu.myqcloud.com/xxx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ID": "3102001968756",
-        "ThaiName": "นาย ธนกฤต  บุญโญปกรุณ์",
-        "EnFirstName": "Mr. Thanakit",
-        "EnLastName": "Boonyopakron",
-        "Address": "ที่อยู่21/19หมู่ที่3ต.บางคูครัดอ.บางบัวทอง",
-        "Birthday": "14ธ.ค.2509",
-        "IssueDate": "9ธ.ค.2559",
-        "ExpirationDate": "13ธ.ค.2567",
-        "RequestId": "98f8fcbf-933a-4e95-ac48-6f1a9308fs51"
+        "Address": "ที่อยู่ 27 ****ฐีระเวช 7 ต.ตะพ***ิน ****พานห** จ.พิจิตร",
+        "Birthday": "28 ม.ค. 2542",
+        "EnBirthday": "28 Jan. 1999",
+        "EnExpirationDate": "27 Jan. 2031",
+        "EnFirstName": "Miss Nat*****cha",
+        "EnIssueDate": "26 Mar. 2022",
+        "EnLastName": "Ph*******wan",
+        "ExpirationDate": "27 ม.ค. 2574",
+        "ID": "1 6604 ***** 52 4",
+        "IssueDate": "26 มี.ค. 2565",
+        "LaserID": "",
+        "PortraitImage": "",
+        "Religion": "พุทธ",
+        "SerialNumber": "10**-03-*****113",
+        "ThaiName": "น.ส. ณั*********ชราวรรณ",
+        "WarnCardInfos": [
+            -9109
+        ],
+        "RequestId": "23e58a98-0cbd-46dd-aad8-7144bf7cf47a"
     }
 }
 ```

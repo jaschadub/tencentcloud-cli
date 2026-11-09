@@ -1,12 +1,12 @@
 **Example 1: 获取域名日志**
 
-
+ 
 
 Input: 
 
 ```
 tccli dnspod DescribeDomainLogList --cli-unfold-argument  \
-    --Domain test.com \
+    --Domain dnspod.cn \
     --Limit 100 \
     --Offset 0
 ```

@@ -15,50 +15,37 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 11,
+        "TotalCount": 1,
         "ListenerSet": [
             {
-                "ForwardProtocol": "HTTPS",
-                "ClientCertificateId": "123",
-                "CertificateId": "Sv8lFuYh",
-                "Protocol": "HTTPS",
-                "CertificateAlias": "lagameft01_test勿删除",
+                "ListenerId": "listener-12345",
+                "ListenerName": "listener-name",
+                "Port": 1,
+                "Protocol": "TCP",
+                "ListenerStatus": 1,
+                "CertificateId": "cert-12345",
+                "ForwardProtocol": "TCP",
+                "CreateTime": 1,
+                "CertificateAlias": "alias-name",
+                "ClientCertificateId": "cert-54321",
                 "AuthType": 0,
-                "ListenerId": "listener-eqq49dct",
-                "ListenerStatus": 0,
-                "ListenerName": "连通性测试httpstohttps443",
-                "ClientCertificateAlias": "sdvadf",
-                "CreateTime": 1563340571,
-                "Port": 443,
+                "ClientCertificateAlias": "alias-name",
                 "PolyClientCertificateAliasInfo": [
                     {
-                        "CertificateId": "123",
-                        "CertificateAlias": "alis"
+                        "CertificateId": "cert-12345",
+                        "CertificateAlias": "cert-alias"
                     }
-                ]
-            },
-            {
-                "ForwardProtocol": "HTTPS",
-                "ClientCertificateId": "",
-                "CertificateId": "cert-r79xf99t",
-                "Protocol": "HTTPS",
-                "CertificateAlias": "boris服务器证书user001",
-                "AuthType": 0,
-                "ListenerId": "listener-85646933",
-                "ListenerStatus": 0,
-                "ListenerName": "testcert001",
-                "ClientCertificateAlias": null,
-                "CreateTime": 1564201158,
-                "Port": 1443,
-                "PolyClientCertificateAliasInfo": [
-                    {
-                        "CertificateId": "123",
-                        "CertificateAlias": "alis"
-                    }
-                ]
+                ],
+                "Http3Supported": 0,
+                "ProxyId": "link-12345",
+                "GroupId": "lg-12345",
+                "TLSSupportVersion": [
+                    "TLSv1.1"
+                ],
+                "TLSCiphers": "GAAP_TLS_CIPHERS_WIDE"
             }
         ],
-        "RequestId": "db5cebe8-b79a-401c-8704-388776fae938"
+        "RequestId": "209e95b9-488d-4a58-bc86-810859577af3"
     }
 }
 ```

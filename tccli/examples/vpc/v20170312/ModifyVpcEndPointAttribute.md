@@ -1,12 +1,12 @@
 **Example 1: 修改终端节点属性**
 
-
+修改终端节点属性
 
 Input: 
 
 ```
 tccli vpc ModifyVpcEndPointAttribute --cli-unfold-argument  \
-    --EndPointName 测试 \
+    --EndPointName demo \
     --EndPointId vpce-h0fk8lfc
 ```
 

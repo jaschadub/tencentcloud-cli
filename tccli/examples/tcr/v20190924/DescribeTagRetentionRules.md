@@ -1,4 +1,4 @@
-**Example 1: 查询版本保留规则**
+**Example 1: 查询镜像版本保留规则**
 
 
 
@@ -6,33 +6,46 @@ Input:
 
 ```
 tccli tcr DescribeTagRetentionRules --cli-unfold-argument  \
-    --RegistryId tcr-12345 \
-    --NamespaceName test \
-    --Limit 20 \
-    --Offset 1
+    --RegistryId tcr-dc0dgswk
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "c7abb9f2-9440-43ea-a12f-ae58875acf3d",
         "RetentionPolicyList": [
             {
-                "NextExecutionTime": "xx",
-                "RetentionId": 1,
-                "NamespaceName": "aaaa",
+                "AdvancedRuleItems": [
+                    {
+                        "RepositoryFilter": {
+                            "Decoration": "repoMatches",
+                            "Pattern": "*1"
+                        },
+                        "RetentionPolicy": {
+                            "Key": "latestPushedK",
+                            "Value": 7
+                        },
+                        "TagFilter": {
+                            "Decoration": "matches",
+                            "Pattern": "v*"
+                        }
+                    }
+                ],
+                "CronSetting": "manual",
+                "Disabled": true,
+                "NamespaceName": "dev",
+                "NextExecutionTime": "0001-01-01T00:00:00Z",
+                "RetentionId": 2,
                 "RetentionRuleList": [
                     {
                         "Key": "latestPushedK",
-                        "Value": 10
+                        "Value": 7
                     }
-                ],
-                "CronSetting": "weekly",
-                "Disabled": false
+                ]
             }
         ],
-        "TotalCount": 0
+        "TotalCount": 2,
+        "RequestId": "daafdd9a-b0cc-4f36-8522-c901874cb38e"
     }
 }
 ```

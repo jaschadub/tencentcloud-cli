@@ -1,4 +1,4 @@
-**Example 1: 删除私有域解析账号**
+**Example 1: 移除账号关联**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli privatedns DeletePrivateDNSAccount --cli-unfold-argument  \
-    --Account.Uin 123456789
+    --Account.Uin 1002330010
 ```
 
 Output: 

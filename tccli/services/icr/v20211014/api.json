@@ -4,7 +4,8 @@
       "document": "获取成员列表接口",
       "input": "GetIndustryV1HomeMembersRequest",
       "name": "获取成员列表",
-      "output": "GetIndustryV1HomeMembersResponse"
+      "output": "GetIndustryV1HomeMembersResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -18,7 +19,7 @@
       "document": "获取成员列表入参payload",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "用户ID",
           "example": "无",
           "member": "string",
@@ -34,7 +35,7 @@
       "document": "GetIndustryV1HomeMembers请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "GetIndustryV1HomeMembersReqPayload",
@@ -43,7 +44,7 @@
           "type": "object"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "ReqMetadata",
@@ -58,7 +59,7 @@
       "document": "获取成员列表回包DataList",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -68,7 +69,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "功能列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GetIndustryV1HomeMembersRespFeature",
@@ -78,7 +79,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -88,7 +89,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "用户行业分类\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -98,7 +99,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "子用户数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -108,7 +109,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "机器人列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GetIndustryV1HomeMembersRespProduct",
@@ -118,7 +119,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -128,7 +129,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -138,7 +139,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "功能列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GetIndustryV1HomeMembersRespType",
@@ -148,7 +149,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "用户账号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -164,7 +165,7 @@
       "document": "获取成员列表接口回包Feature",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "功能名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -174,7 +175,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "功能ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -190,7 +191,7 @@
       "document": "获取成员列表回包Industry",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "行业ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -200,7 +201,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "行业名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -216,7 +217,7 @@
       "document": "获取成员列表回包Payload",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "用户级别\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -226,7 +227,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GetIndustryV1HomeMembersRespData",
@@ -236,7 +237,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "每页数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -246,7 +247,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "分页偏移量，从0开始\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -256,7 +257,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "用户总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -272,7 +273,7 @@
       "document": "获取成员列表接口回包ProductList",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -282,7 +283,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "编辑时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -292,7 +293,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "机器人ID（AppKey信息）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -302,7 +303,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "机器人图标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -312,7 +313,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "行业信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GetIndustryV1HomeMembersRespIndustry",
@@ -322,7 +323,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作员列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -332,7 +333,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "机器人名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -342,7 +343,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -352,7 +353,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "模板列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -368,7 +369,7 @@
       "document": "获取成员列表接口回包TypeList",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "类型ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -378,7 +379,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -394,6 +395,7 @@
       "document": "GetIndustryV1HomeMembers返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RspMetadata",
@@ -403,6 +405,7 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GetIndustryV1HomeMembersRespPayload",
@@ -412,7 +415,7 @@
           "value_allowed_null": true
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -424,7 +427,7 @@
       "document": "请求的Metadata",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "渠道",
           "example": "无",
           "member": "string",
@@ -434,7 +437,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "string",
@@ -444,7 +447,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "string",
@@ -454,7 +457,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "string",
@@ -464,7 +467,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "位置定位服务",
           "example": "无",
           "member": "ReqMetadataLBS",
@@ -474,7 +477,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "透传字段",
           "example": "无",
           "member": "ReqMetadataVagrant",
@@ -490,7 +493,7 @@
       "document": "请求参数的lbs",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "纬度",
           "example": "无",
           "member": "float",
@@ -500,7 +503,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "经度",
           "example": "无",
           "member": "float",
@@ -516,7 +519,7 @@
       "document": "请求参数Vagrant",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "string",
@@ -526,7 +529,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "string",
@@ -542,7 +545,7 @@
       "document": "回包的meta data",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "int64",
@@ -552,7 +555,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "string",
@@ -562,7 +565,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "string",
@@ -572,7 +575,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "无",
           "example": "无",
           "member": "string",

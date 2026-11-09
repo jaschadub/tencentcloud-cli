@@ -1,16 +1,16 @@
 **Example 1: 查看安全组**
 
-
+查看安全组
 
 Input: 
 
 ```
 tccli vpc DescribeSecurityGroups --cli-unfold-argument  \
     --Limit 1 \
-    --Filters.0.Name project-id \
-    --Filters.0.Values 0 \
-    --Filters.1.Name security-group-name \
-    --Filters.1.Values TestGroup
+    --Filters.0.Values TestGroup \
+    --Filters.0.Name security-group-name \
+    --Filters.1.Values 0 \
+    --Filters.1.Name project-id
 ```
 
 Output: 
@@ -20,11 +20,13 @@ Output:
         "SecurityGroupSet": [
             {
                 "SecurityGroupId": "sg-05bb4upy",
-                "SecurityGroupName": "TestGroup",
-                "SecurityGroupDesc": "test-group-desc",
+                "SecurityGroupName": "demo",
+                "SecurityGroupDesc": "demo",
                 "ProjectId": "0",
                 "IsDefault": true,
-                "CreatedTime": "2017-04-18 21:02:30"
+                "CreatedTime": "2017-04-18 21:02:30",
+                "UpdateTime": "",
+                "TagSet": []
             }
         ],
         "TotalCount": 1,
@@ -41,8 +43,8 @@ Input:
 
 ```
 tccli vpc DescribeSecurityGroups --cli-unfold-argument  \
-    --Filters.0.Name tag:Version \
-    --Filters.0.Values TEST
+    --Filters.0.Values TEST \
+    --Filters.0.Name tag:Version
 ```
 
 Output: 
@@ -52,11 +54,12 @@ Output:
         "SecurityGroupSet": [
             {
                 "SecurityGroupId": "sg-2got2lcz",
-                "SecurityGroupName": "test",
+                "SecurityGroupName": "demo",
                 "SecurityGroupDesc": "暴露全部端口到公网和内网，有一定安全风险",
                 "ProjectId": "0",
                 "IsDefault": false,
                 "CreatedTime": "2019-07-23 12:32:24",
+                "UpdateTime": "",
                 "TagSet": [
                     {
                         "Key": "中文标签键",

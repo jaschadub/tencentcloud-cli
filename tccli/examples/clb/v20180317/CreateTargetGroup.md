@@ -1,22 +1,21 @@
 **Example 1: 创建目标组**
 
-
+创建目标组
 
 Input: 
 
 ```
 tccli clb CreateTargetGroup --cli-unfold-argument  \
-    --TargetGroupName czhtest \
-    --VpcId vpc-i1cnjuhx \
-    --Port 80
+    --TargetGroupName targetgroup-**** \
+    --VpcId vpc-lkdo****
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TargetGroupId": "lbtg-815iz538",
-        "RequestId": "9a4096dd-45a1-4e03-be8e-482a2fb48b59"
+        "RequestId": "f4ab1513-d0b8-4cf2-9836-a600a7f77d2f",
+        "TargetGroupId": "lbtg-e2ft****"
     }
 }
 ```

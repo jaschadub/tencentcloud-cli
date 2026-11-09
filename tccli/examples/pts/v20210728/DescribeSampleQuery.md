@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli pts DescribeSampleQuery --cli-unfold-argument  \
-    --ProjectId project-xx \
-    --JobId 123 \
-    --ScenarioId 123 \
+    --ProjectId project-1a2b3c4d \
+    --JobId job-1a2b3c4d \
+    --ScenarioId scenario-1a2b3c4d \
     --Metric pts_engine_req_total \
     --Aggregation Count
 ```
@@ -21,11 +21,16 @@ Output:
             "Metric": "pts_engine_req_total",
             "Aggregation": "Count",
             "Unit": "reqs",
-            "Labels": null,
-            "Value": "1159362",
-            "Timestamp": 1631693039208
+            "Labels": [
+                {
+                    "LabelName": "method",
+                    "LabelValue": "GET"
+                }
+            ],
+            "Value": "1100000",
+            "Timestamp": 1631693000000
         },
-        "RequestId": "xx"
+        "RequestId": "abc-123-xyz"
     }
 }
 ```

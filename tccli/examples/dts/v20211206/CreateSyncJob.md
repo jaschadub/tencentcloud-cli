@@ -1,12 +1,13 @@
 **Example 1: 创建一个同步任务**
 
-
+创建一个同步任务
 
 Input: 
 
 ```
 tccli dts CreateSyncJob --cli-unfold-argument  \
     --Count 1 \
+    --TimeSpan 1 \
     --Specification Standard \
     --PayMode PrePay \
     --DstDatabaseType mysql \

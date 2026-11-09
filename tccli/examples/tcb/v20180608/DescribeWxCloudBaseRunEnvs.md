@@ -1,12 +1,12 @@
 **Example 1: DescribeWxCloudBaseRunEnvs**
 
-
+查询环境列表
 
 Input: 
 
 ```
 tccli tcb DescribeWxCloudBaseRunEnvs --cli-unfold-argument  \
-    --WxAppId xx \
+    --WxAppId wxappid \
     --AllRegions False
 ```
 
@@ -16,76 +16,80 @@ Output:
     "Response": {
         "EnvList": [
             {
-                "Status": "xx",
-                "PayMode": "xx",
+                "Functions": [
+                    {
+                        "Region": "ap-shanghai",
+                        "Namespace": "ns"
+                    }
+                ],
+                "IsAutoDegrade": true,
+                "PackageName": "package",
+                "EnvChannel": "",
+                "Source": "",
+                "Storages": [
+                    {
+                        "CdnDomain": "",
+                        "Region": "ap-shanghai",
+                        "Bucket": "",
+                        "AppId": ""
+                    }
+                ],
+                "Status": "",
                 "UpdateTime": "2020-09-22 00:00:00",
-                "EnvId": "xx",
-                "EnvType": "xx",
                 "Tags": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Value": "",
+                        "Key": ""
                     }
                 ],
                 "CustomLogServices": [
                     {
-                        "ClsTopicId": "xx",
-                        "ClsRegion": "xx",
-                        "ClsLogsetId": "xx",
+                        "ClsTopicId": "",
+                        "ClsRegion": "",
+                        "ClsLogsetId": "",
                         "CreateTime": "2020-09-22 00:00:00"
                     }
                 ],
-                "PackageName": "xx",
-                "IsAutoDegrade": true,
-                "Functions": [
-                    {
-                        "Region": "xx",
-                        "Namespace": "xx"
-                    }
-                ],
-                "EnvChannel": "xx",
-                "Source": "xx",
-                "Alias": "xx",
-                "Region": "xx",
-                "IsDefault": true,
-                "PackageId": "xx",
-                "Databases": [
-                    {
-                        "InstanceId": "xx",
-                        "Status": "xx",
-                        "Region": "xx"
-                    }
-                ],
-                "Storages": [
-                    {
-                        "CdnDomain": "xx",
-                        "Region": "xx",
-                        "Bucket": "xx",
-                        "AppId": "xx"
-                    }
-                ],
-                "LogServices": [
-                    {
-                        "TopicId": "xx",
-                        "Region": "xx",
-                        "TopicName": "xx",
-                        "LogsetName": "xx",
-                        "LogsetId": "xx"
-                    }
-                ],
-                "CreateTime": "2020-09-22 00:00:00",
                 "StaticStorages": [
                     {
-                        "Status": "xx",
-                        "StaticDomain": "xx",
-                        "DefaultDirName": "xx",
-                        "Bucket": "xx",
-                        "Region": "xx"
+                        "Status": "",
+                        "StaticDomain": "",
+                        "DefaultDirName": "",
+                        "Bucket": "",
+                        "Region": "ap-shanghai"
                     }
-                ]
+                ],
+                "PackageId": "",
+                "EnvId": "",
+                "Region": "",
+                "PayMode": "",
+                "Alias": "",
+                "PackageType": "",
+                "IsDauPackage": true,
+                "Databases": [
+                    {
+                        "InstanceId": "",
+                        "Status": "",
+                        "Region": "",
+                        "UpdateTime": "2020-09-22T00:00:00+00:00"
+                    }
+                ],
+                "IsDefault": true,
+                "LogServices": [
+                    {
+                        "TopicId": "",
+                        "Region": "",
+                        "Period": 0,
+                        "TopicName": "",
+                        "LogsetName": "",
+                        "LogsetId": ""
+                    }
+                ],
+                "EnvType": "tcbr",
+                "CreateTime": "2020-09-22 00:00:00"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "sdfsdf"
     }
 }
 ```

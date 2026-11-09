@@ -1,6 +1,6 @@
 **Example 1: 查询实例的售卖价格**
 
-
+查询实例的售卖价格
 
 Input: 
 
@@ -9,7 +9,6 @@ tccli postgres InquiryPriceCreateDBInstances --cli-unfold-argument  \
     --InstanceCount 1 \
     --Zone ap-guangzhou-2 \
     --Storage 100 \
-    --Pid 11004 \
     --Period 1 \
     --SpecCode cdb.pg.z1.2g \
     --InstanceChargeType PREPAID

@@ -1,12 +1,12 @@
 **Example 1: 修改项目名称**
 
-
+ 
 
 Input: 
 
 ```
 tccli cme ModifyProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --ProjectId 3f1699f3f97b9f0001920f29 \
     --Name 项目名称
 ```

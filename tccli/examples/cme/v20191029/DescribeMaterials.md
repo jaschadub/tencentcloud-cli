@@ -1,4 +1,58 @@
-**Example 1: 获取视媒体材详情**
+**Example 1: 获取图片媒体详情**
+
+ 
+
+Input: 
+
+```
+tccli cme DescribeMaterials --cli-unfold-argument  \
+    --Platform 1000000009 \
+    --MaterialIds 5fd8ad3d628dc30001bd08894 \
+    --Operator user_id4114428941bd0420
+```
+
+Output: 
+```
+{
+    "Response": {
+        "MaterialInfoSet": [
+            {
+                "AudioMaterial": null,
+                "BasicInfo": {
+                    "ClassPath": "",
+                    "CreateTime": "2019-10-28T12:10:25Z",
+                    "MaterialId": "5fd8ad3d628dc30001bd08894",
+                    "MaterialType": "IMAGE",
+                    "Name": "dzq1.png",
+                    "Owner": {
+                        "Id": "03ce2cd6-a889-4e4d-95a7-876e44f21831",
+                        "Type": "PERSON"
+                    },
+                    "PreviewUrl": "https://1810000002.vod2.myqcloud.com/b64e98aevodcq1810000002/0d014fa85285890795320102944/j5dCbqBV72QA.png",
+                    "TagSet": [],
+                    "PresetTagSet": [],
+                    "UpdateTime": "2019-10-28T12:10:25Z"
+                },
+                "ImageMaterial": {
+                    "Height": 153,
+                    "MaterialUrl": "https://1810000002.vod2.myqcloud.com/b64e98aevodcq1810000002/0d014fa85285890795320102944/j5dCbqBV72QA.png",
+                    "Size": 52421,
+                    "Width": 213,
+                    "VodFileId": "15e83cf8b48b147",
+                    "OriginalUrl": "http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.png"
+                },
+                "LinkMaterial": null,
+                "VideoMaterial": null,
+                "VideoEditTemplateMaterial": null,
+                "OtherMaterial": null
+            }
+        ],
+        "RequestId": "964aae95-7344-4200-8962-92a44ff7a2aa"
+    }
+}
+```
+
+**Example 2: 获取视频媒体详情**
 
 视频媒体
 
@@ -6,7 +60,7 @@ Input:
 
 ```
 tccli cme DescribeMaterials --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --MaterialIds 5fd8ad3d628dc30001bd0895 \
     --Operator user_id4114428941bd0420
 ```
@@ -23,9 +77,8 @@ Output:
                     "Name": "9Qvacao2r7EA",
                     "CreateTime": "2019-12-31T03:59:14Z",
                     "UpdateTime": "2019-12-31T03:59:14Z",
-                    "ClassPath": "/",
+                    "ClassPath": "/media",
                     "TagSet": [],
-                    "TagInfoSet": [],
                     "PresetTagSet": [],
                     "PreviewUrl": "http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg",
                     "Owner": {
@@ -39,6 +92,8 @@ Output:
                 "VideoEditTemplateMaterial": null,
                 "OtherMaterial": null,
                 "VideoMaterial": {
+                    "VodFileId": "15e83cf8b48b1472",
+                    "OriginalUrl": "http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.mp4",
                     "MaterialStatus": {
                         "EditorUsableStatus": "NORMAL"
                     },
@@ -87,7 +142,7 @@ Output:
 }
 ```
 
-**Example 2: 获取音频媒体详情**
+**Example 3: 获取音频媒体详情**
 
 音频媒体
 
@@ -95,7 +150,7 @@ Input:
 
 ```
 tccli cme DescribeMaterials --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --MaterialIds 5fd8ad3d628dc30001bd08893 \
     --Operator user_id4114428941bd0420
 ```
@@ -107,6 +162,8 @@ Output:
         "MaterialInfoSet": [
             {
                 "AudioMaterial": {
+                    "VodFileId": "15e83cf8b48b1473",
+                    "OriginalUrl": "http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.mp4",
                     "CoverUrl": "",
                     "MaterialStatus": {
                         "EditorUsableStatus": "NORMAL"
@@ -131,7 +188,7 @@ Output:
                     }
                 },
                 "BasicInfo": {
-                    "ClassPath": "",
+                    "ClassPath": "/media",
                     "CreateTime": "2019-10-29T09:36:33Z",
                     "MaterialId": "5fd8ad3d628dc30001bd08893",
                     "MaterialType": "AUDIO",
@@ -142,7 +199,6 @@ Output:
                     },
                     "PreviewUrl": "",
                     "TagSet": [],
-                    "TagInfoSet": [],
                     "PresetTagSet": [],
                     "UpdateTime": "2019-10-29T09:37:29Z"
                 },
@@ -154,59 +210,6 @@ Output:
             }
         ],
         "RequestId": "964aae95-7344-4200-8962-92a44ff7a2ac"
-    }
-}
-```
-
-**Example 3: 获取图片媒体详情**
-
-
-
-Input: 
-
-```
-tccli cme DescribeMaterials --cli-unfold-argument  \
-    --Platform test \
-    --MaterialIds 5fd8ad3d628dc30001bd08894 \
-    --Operator user_id4114428941bd0420
-```
-
-Output: 
-```
-{
-    "Response": {
-        "MaterialInfoSet": [
-            {
-                "AudioMaterial": null,
-                "BasicInfo": {
-                    "ClassPath": "",
-                    "CreateTime": "2019-10-28T12:10:25Z",
-                    "MaterialId": "5fd8ad3d628dc30001bd08894",
-                    "MaterialType": "IMAGE",
-                    "Name": "dzq1.png",
-                    "Owner": {
-                        "Id": "03ce2cd6-a889-4e4d-95a7-876e44f21831",
-                        "Type": "PERSON"
-                    },
-                    "PreviewUrl": "https://1810000002.vod2.myqcloud.com/b64e98aevodcq1810000002/0d014fa85285890795320102944/j5dCbqBV72QA.png",
-                    "TagSet": [],
-                    "TagInfoSet": [],
-                    "PresetTagSet": [],
-                    "UpdateTime": "2019-10-28T12:10:25Z"
-                },
-                "ImageMaterial": {
-                    "Height": 153,
-                    "MaterialUrl": "https://1810000002.vod2.myqcloud.com/b64e98aevodcq1810000002/0d014fa85285890795320102944/j5dCbqBV72QA.png",
-                    "Size": 52421,
-                    "Width": 213
-                },
-                "LinkMaterial": null,
-                "VideoMaterial": null,
-                "VideoEditTemplateMaterial": null,
-                "OtherMaterial": null
-            }
-        ],
-        "RequestId": "964aae95-7344-4200-8962-92a44ff7a2aa"
     }
 }
 ```

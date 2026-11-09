@@ -1,4 +1,4 @@
-**Example 1: 企业证照识别示例代码**
+**Example 1: EnterpriseLicenseOCR调用**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr EnterpriseLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg
 ```
 
 Output: 

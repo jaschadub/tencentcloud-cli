@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli dlc DropDMSDatabase --cli-unfold-argument  \
+    --DatasourceConnectionName DataLakeCatalog \
     --Name Name1 \
     --DeleteData False \
     --Cascade False
@@ -15,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "1234567890"
     }
 }
 ```

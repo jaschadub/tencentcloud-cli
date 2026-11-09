@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc DescribeBandwidthPackages --cli-unfold-argument  \
-    --Filters.0.Name network-type \
-    --Filters.0.Values BGP
+    --Filters.0.Values BGP \
+    --Filters.0.Name network-type
 ```
 
 Output: 
@@ -21,8 +21,10 @@ Output:
                 "BandwidthPackageName": "gongxiang1",
                 "Status": "CREATED",
                 "NetworkType": "BGP",
+                "Egress": "center_egress1",
                 "ChargeType": "FIXED_PREPAID_BY_MONTH",
                 "CreatedTime": "2019-12-31T16:48:49Z",
+                "Deadline": "2023-02-06T06:42:20Z",
                 "ResourceSet": [
                     {
                         "ResourceType": "Address",

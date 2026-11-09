@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tem DescribeEnvironment --cli-unfold-argument  \
-    --EnvironmentId xx \
+    --EnvironmentId en-xxxxxx \
     --SourceChannel 0
 ```
 
@@ -14,27 +14,23 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "85435f86-a454-4bf8-8e8c-074a51f55bb2",
         "Result": {
-            "EnvironmentId": "xx",
-            "VpcId": "xx",
-            "Locked": 0,
-            "Description": "xx",
-            "EnvironmentName": "xx",
-            "NamespaceName": "xx",
-            "Region": "xx",
-            "Tags": [
-                {
-                    "TagKey": "xx",
-                    "TagValue": "xx"
-                }
-            ],
-            "ApmInstanceId": "xx",
-            "CreatedDate": "xx",
+            "EnvironmentId": "en-l5mmxey5",
+            "EnvironmentName": "bugfix-gz",
+            "Region": "ap-guangzhou",
+            "VpcId": "vpc-9xcgo41t",
             "SubnetIds": [
-                "subnet-xxx"
-            ]
-        },
-        "RequestId": "xx"
+                "subnet-orcy48cy"
+            ],
+            "Description": "这是一个描述",
+            "CreatedDate": "2024-07-01 17:48:35",
+            "ApmInstanceId": "",
+            "Locked": 0,
+            "NamespaceName": "",
+            "Tags": [],
+            "EnvType": "prod"
+        }
     }
 }
 ```

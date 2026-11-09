@@ -1,31 +1,56 @@
-**Example 1: 护照识别（港澳台地区及境外护照）示例代码[前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=MLIDPassportOCR)**
+**Example 1: 护照识别（多国多地区护照）示例代码**
 
-
+护照识别（多国多地区护照）
 
 Input: 
 
 ```
 tccli ocr MLIDPassportOCR --cli-unfold-argument  \
-    --ImageBase64 base64编码
+    --ImageBase64 https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/MLIDPassportOCR/MLIDPassportOCR1.png
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ID": "E6918C",
-        "Name": "LIM HEG CHUN STEE",
-        "IssuingCountry": "SGP",
-        "Nationality": "SGP",
-        "DateOfBirth": "",
-        "Sex": "M",
-        "DateOfExpiration": "230414",
-        "Warn": [],
+        "AdvancedInfo": "",
+        "CodeCrc": "4567123452USA9004117F2107268713843748<708026",
+        "CodeSet": "P<USACARTER<<ESTHER<<<<<<<<<<<<<<<<<<<<<<<<<",
+        "DateOfBirth": "19900411",
+        "DateOfExpiration": "20210726",
+        "GivenName": "ESTHER",
+        "ID": "456712345",
         "Image": "",
-        "AdvancedInfo": "{\"IssuingCountry\":{\"Confidence\":\"0.9500\"},\"Name\":{\"Confidence\":\"0.9500\"},\"ID\":{\"Confidence\":\"0.9500\"},\"Nationality\":{\"Confidence\":\"0.9500\"},\"Sex\":{\"Confidence\":\"0.9500\"},\"DateOfExpiration\":{\"Confidence\":\"0.9500\"}}",
-        "CodeSet": "P<CANBROWN<<BENJAMIN<<<<<<<<<<<<<<<<<<<<<<<<",
-        "CodeCrc": "JK123488<3CAN8510168M2603298<<<<<<<<<<<<<<04",
-        "RequestId": "0ee989d3-d064-45ec-bccb-63f5064247b4"
+        "IssuingCountry": "USA",
+        "Name": "CARTER ESTHER",
+        "Nationality": "USA",
+        "PassportRecognizeInfos": {
+            "DateOfBirth": "11 Apr 1990",
+            "DateOfExpiration": "26 Jul 2021",
+            "DateOfIssuance": "27 Jul 2011",
+            "GivenName": "ESTHER",
+            "IssuePlace": "",
+            "IssuingAuthority": "",
+            "IssuingCountry": "USA",
+            "Name": "",
+            "Nationality": "UNITED STATES OF AMERICA",
+            "PassportID": "456712345",
+            "Sex": "F",
+            "Signature": "",
+            "Surname": "CARTER",
+            "Type": "P"
+        },
+        "RequestId": "dad946b2-1288-4df9-a0b4-6abfaba1e170",
+        "Sex": "F",
+        "Surname": "CARTER",
+        "Type": "P",
+        "Warn": [
+            -9108,
+            -9102
+        ],
+        "WarnCardInfos": [
+            -9109
+        ]
     }
 }
 ```

@@ -22,16 +22,28 @@ Output:
             "Description": "华语影视男演员、导演、制片人",
             "FaceInfoSet": [
                 {
-                    "FaceId": "10023",
-                    "Url": "http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281553/face.jpeg"
+                    "FaceId": "10046",
+                    "Url": "http://www.test.com/9b9e480fe6dd-495e-87a2-b6e01de6492b.png"
                 }
             ],
-            "TagSet": [],
-            "CreateTime": "2018-10-01T10:00:00Z",
-            "UpdateTime": "2018-10-01T10:00:00Z"
+            "TagSet": [
+                "中国",
+                "明星"
+            ],
+            "UsageSet": [
+                "All"
+            ],
+            "CreateTime": "2024-05-18T06:38:18Z",
+            "UpdateTime": "2024-05-18T06:38:18Z"
         },
-        "FailFaceInfoSet": null,
-        "RequestId": "33737bdf-e2ed-4eda-b09b-f3782d8a9710"
+        "FailFaceInfoSet": [
+            {
+                "Index": 1,
+                "ErrCode": 0,
+                "Message": "SUCCESS"
+            }
+        ],
+        "RequestId": "240d82aa-3**********60949f7"
     }
 }
 ```
@@ -58,6 +70,9 @@ Output:
 {
     "Response": {
         "Person": {
+            "UsageSet": [
+                "All"
+            ],
             "PersonId": "10569",
             "Name": "张三",
             "Description": "华语影视男演员、导演、制片人",
@@ -78,7 +93,7 @@ Output:
             "CreateTime": "2018-10-01T10:00:00Z",
             "UpdateTime": "2018-10-01T10:00:00Z"
         },
-        "FailFaceInfoSet": null,
+        "FailFaceInfoSet": [],
         "RequestId": "33737bdf-e2ed-4eda-b09b-f3782d8a9710"
     }
 }
@@ -106,6 +121,9 @@ Output:
 {
     "Response": {
         "Person": {
+            "UsageSet": [
+                "All"
+            ],
             "PersonId": "10569",
             "Name": "张三",
             "Description": "华语影视男演员、导演、制片人",
@@ -126,7 +144,7 @@ Output:
             "CreateTime": "2018-10-01T10:00:00Z",
             "UpdateTime": "2018-10-01T10:00:00Z"
         },
-        "FailFaceInfoSet": null,
+        "FailFaceInfoSet": [],
         "RequestId": "33737bdf-e2ed-4eda-b09b-f3782d8a9710"
     }
 }
@@ -154,6 +172,9 @@ Output:
 {
     "Response": {
         "Person": {
+            "UsageSet": [
+                "All"
+            ],
             "PersonId": "10569",
             "Name": "张三",
             "Description": "华语影视男演员、导演、制片人",
@@ -169,7 +190,7 @@ Output:
             "CreateTime": "2018-10-01T10:00:00Z",
             "UpdateTime": "2018-10-01T10:00:00Z"
         },
-        "FailFaceInfoSet": null,
+        "FailFaceInfoSet": [],
         "RequestId": "33737bdf-e2ed-4eda-b09b-f3782d8a9710"
     }
 }

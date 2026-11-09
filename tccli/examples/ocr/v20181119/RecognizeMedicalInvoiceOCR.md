@@ -6,8 +6,7 @@ Input:
 
 ```
 tccli ocr RecognizeMedicalInvoiceOCR --cli-unfold-argument  \
-    --ImageBase64 xxx \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/invoice/RecognizeMedicalInvoiceOCR/RecognizeMedicalInvoiceOCR1.jpg \
     --ReturnVertex True \
     --ReturnCoord True
 ```
@@ -16,119 +15,64 @@ Output:
 ```
 {
     "Response": {
+        "Angle": -0.1712096631526947,
         "MedicalInvoiceInfos": [
             {
                 "MedicalInvoiceItems": [
                     {
-                        "Name": "项目名称",
-                        "Content": "强力枇杷露",
+                        "Content": "检查费",
+                        "Coord": {
+                            "Height": 20,
+                            "Width": 57,
+                            "X": 700,
+                            "Y": 277
+                        },
+                        "Name": "大项名称",
                         "Vertex": {
-                            "LeftTop": {
-                                "X": 543,
-                                "Y": 246
+                            "LeftBottom": {
+                                "X": 698,
+                                "Y": 294
                             },
-                            "RightTop": {
-                                "X": 621,
-                                "Y": 246
+                            "LeftTop": {
+                                "X": 698,
+                                "Y": 274
                             },
                             "RightBottom": {
-                                "X": 621,
-                                "Y": 264
+                                "X": 755,
+                                "Y": 294
                             },
-                            "LeftBottom": {
-                                "X": 543,
-                                "Y": 264
+                            "RightTop": {
+                                "X": 755,
+                                "Y": 274
                             }
-                        },
-                        "Coord": {
-                            "X": 544,
-                            "Y": 247,
-                            "Width": 78,
-                            "Height": 18
                         }
                     },
                     {
-                        "Name": "数量",
-                        "Content": "2",
+                        "Content": "81.90",
+                        "Coord": {
+                            "Height": 17,
+                            "Width": 50,
+                            "X": 554,
+                            "Y": 278
+                        },
+                        "Name": "大项金额",
                         "Vertex": {
-                            "LeftTop": {
-                                "X": 750,
-                                "Y": 248
+                            "LeftBottom": {
+                                "X": 552,
+                                "Y": 292
                             },
-                            "RightTop": {
-                                "X": 792,
-                                "Y": 248
+                            "LeftTop": {
+                                "X": 552,
+                                "Y": 275
                             },
                             "RightBottom": {
-                                "X": 792,
-                                "Y": 264
-                            },
-                            "LeftBottom": {
-                                "X": 750,
-                                "Y": 264
-                            }
-                        },
-                        "Coord": {
-                            "X": 751,
-                            "Y": 249,
-                            "Width": 42,
-                            "Height": 16
-                        }
-                    },
-                    {
-                        "Name": "单位",
-                        "Content": "瓶",
-                        "Vertex": {
-                            "LeftTop": {
-                                "X": 792,
-                                "Y": 248
+                                "X": 602,
+                                "Y": 292
                             },
                             "RightTop": {
-                                "X": 810,
-                                "Y": 248
-                            },
-                            "RightBottom": {
-                                "X": 810,
-                                "Y": 264
-                            },
-                            "LeftBottom": {
-                                "X": 792,
-                                "Y": 264
+                                "X": 602,
+                                "Y": 275
                             }
-                        },
-                        "Coord": {
-                            "X": 793,
-                            "Y": 249,
-                            "Width": 18,
-                            "Height": 16
-                        }
-                    },
-                    {
-                        "Name": "金额",
-                        "Content": "94.36",
-                        "Vertex": {
-                            "LeftTop": {
-                                "X": 882,
-                                "Y": 246
-                            },
-                            "RightTop": {
-                                "X": 954,
-                                "Y": 246
-                            },
-                            "RightBottom": {
-                                "X": 954,
-                                "Y": 264
-                            },
-                            "LeftBottom": {
-                                "X": 882,
-                                "Y": 264
-                            }
-                        },
-                        "Coord": {
-                            "X": 883,
-                            "Y": 247,
-                            "Width": 72,
-                            "Height": 18
                         }
                     }
                 ]
@@ -136,842 +80,607 @@ Output:
             {
                 "MedicalInvoiceItems": [
                     {
-                        "Name": "项目名称",
-                        "Content": "复方甘草片",
+                        "Content": "治疗费",
+                        "Coord": {
+                            "Height": 20,
+                            "Width": 57,
+                            "X": 700,
+                            "Y": 277
+                        },
+                        "Name": "大项名称",
                         "Vertex": {
-                            "LeftTop": {
-                                "X": 65,
-                                "Y": 248
+                            "LeftBottom": {
+                                "X": 698,
+                                "Y": 294
                             },
-                            "RightTop": {
-                                "X": 143,
-                                "Y": 248
+                            "LeftTop": {
+                                "X": 698,
+                                "Y": 274
                             },
                             "RightBottom": {
-                                "X": 143,
-                                "Y": 265
+                                "X": 755,
+                                "Y": 294
                             },
-                            "LeftBottom": {
-                                "X": 65,
-                                "Y": 265
+                            "RightTop": {
+                                "X": 755,
+                                "Y": 274
                             }
-                        },
-                        "Coord": {
-                            "X": 66,
-                            "Y": 249,
-                            "Width": 78,
-                            "Height": 17
                         }
                     },
                     {
-                        "Name": "数量",
-                        "Content": "2",
+                        "Content": "25.20",
+                        "Coord": {
+                            "Height": 17,
+                            "Width": 49,
+                            "X": 1153,
+                            "Y": 280
+                        },
+                        "Name": "大项金额",
                         "Vertex": {
-                            "LeftTop": {
-                                "X": 271,
-                                "Y": 248
+                            "LeftBottom": {
+                                "X": 1151,
+                                "Y": 294
                             },
-                            "RightTop": {
-                                "X": 319,
-                                "Y": 248
+                            "LeftTop": {
+                                "X": 1151,
+                                "Y": 277
                             },
                             "RightBottom": {
-                                "X": 319,
-                                "Y": 264
-                            },
-                            "LeftBottom": {
-                                "X": 271,
-                                "Y": 264
-                            }
-                        },
-                        "Coord": {
-                            "X": 272,
-                            "Y": 249,
-                            "Width": 48,
-                            "Height": 16
-                        }
-                    },
-                    {
-                        "Name": "单位",
-                        "Content": "盒",
-                        "Vertex": {
-                            "LeftTop": {
-                                "X": 319,
-                                "Y": 248
+                                "X": 1200,
+                                "Y": 294
                             },
                             "RightTop": {
-                                "X": 336,
-                                "Y": 248
-                            },
-                            "RightBottom": {
-                                "X": 336,
-                                "Y": 264
-                            },
-                            "LeftBottom": {
-                                "X": 319,
-                                "Y": 264
+                                "X": 1200,
+                                "Y": 277
                             }
-                        },
-                        "Coord": {
-                            "X": 320,
-                            "Y": 249,
-                            "Width": 17,
-                            "Height": 16
-                        }
-                    },
-                    {
-                        "Name": "金额",
-                        "Content": "13.20",
-                        "Vertex": {
-                            "LeftTop": {
-                                "X": 422,
-                                "Y": 248
-                            },
-                            "RightTop": {
-                                "X": 493,
-                                "Y": 248
-                            },
-                            "RightBottom": {
-                                "X": 493,
-                                "Y": 264
-                            },
-                            "LeftBottom": {
-                                "X": 422,
-                                "Y": 264
-                            }
-                        },
-                        "Coord": {
-                            "X": 423,
-                            "Y": 249,
-                            "Width": 71,
-                            "Height": 16
                         }
                     }
                 ]
             },
             {
-                "MedicalInvoiceItems": {
-                    "Name": "收款人",
-                    "Content": "Z0001",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 855,
-                            "Y": 658
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "实县人民医",
+                        "Coord": {
+                            "Height": 23,
+                            "Width": 104,
+                            "X": 261,
+                            "Y": 822
                         },
-                        "RightTop": {
-                            "X": 899,
-                            "Y": 658
-                        },
-                        "RightBottom": {
-                            "X": 899,
-                            "Y": 674
-                        },
-                        "LeftBottom": {
-                            "X": 855,
-                            "Y": 674
+                        "Name": "收款单位",
+                        "Vertex": {
+                            "LeftBottom": {
+                                "X": 259,
+                                "Y": 842
+                            },
+                            "LeftTop": {
+                                "X": 259,
+                                "Y": 819
+                            },
+                            "RightBottom": {
+                                "X": 363,
+                                "Y": 842
+                            },
+                            "RightTop": {
+                                "X": 363,
+                                "Y": 819
+                            }
                         }
-                    },
-                    "Coord": {
-                        "X": 856,
-                        "Y": 659,
-                        "Width": 44,
-                        "Height": 16
                     }
-                }
+                ]
             },
             {
-                "MedicalInvoiceItems": {
-                    "Name": "个人自费",
-                    "Content": "0.00",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 366,
-                            "Y": 551
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "0.00",
+                        "Coord": {
+                            "Height": 20,
+                            "Width": 48,
+                            "X": 521,
+                            "Y": 737
                         },
-                        "RightTop": {
+                        "Name": "个人自费",
+                        "Vertex": {
+                            "LeftBottom": {
+                                "X": 519,
+                                "Y": 754
+                            },
+                            "LeftTop": {
+                                "X": 519,
+                                "Y": 734
+                            },
+                            "RightBottom": {
+                                "X": 567,
+                                "Y": 754
+                            },
+                            "RightTop": {
+                                "X": 567,
+                                "Y": 734
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "54.81",
+                        "Coord": {
+                            "Height": 18,
+                            "Width": 53,
+                            "X": 225,
+                            "Y": 737
+                        },
+                        "Name": "个人自付",
+                        "Vertex": {
+                            "LeftBottom": {
+                                "X": 223,
+                                "Y": 752
+                            },
+                            "LeftTop": {
+                                "X": 223,
+                                "Y": 734
+                            },
+                            "RightBottom": {
+                                "X": 276,
+                                "Y": 752
+                            },
+                            "RightTop": {
+                                "X": 276,
+                                "Y": 734
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "0.00",
+                        "Coord": {
+                            "Height": 20,
+                            "Width": 54,
+                            "X": 831,
+                            "Y": 697
+                        },
+                        "Name": "个人账户支付",
+                        "Vertex": {
+                            "LeftBottom": {
+                                "X": 829,
+                                "Y": 714
+                            },
+                            "LeftTop": {
+                                "X": 829,
+                                "Y": 694
+                            },
+                            "RightBottom": {
+                                "X": 883,
+                                "Y": 714
+                            },
+                            "RightTop": {
+                                "X": 883,
+                                "Y": 694
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "0.00",
+                        "Coord": {
+                            "Height": 20,
+                            "Width": 50,
+                            "X": 521,
+                            "Y": 695
+                        },
+                        "Name": "其他支付",
+                        "Vertex": {
+                            "LeftBottom": {
+                                "X": 519,
+                                "Y": 712
+                            },
+                            "LeftTop": {
+                                "X": 519,
+                                "Y": 692
+                            },
+                            "RightBottom": {
+                                "X": 569,
+                                "Y": 712
+                            },
+                            "RightTop": {
+                                "X": 569,
+                                "Y": 692
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "52.29",
+                        "Coord": {
+                            "Height": 19,
+                            "Width": 58,
+                            "X": 293,
+                            "Y": 695
+                        },
+                        "Name": "医保统筹基金支付",
+                        "Vertex": {
+                            "LeftBottom": {
+                                "X": 291,
+                                "Y": 711
+                            },
+                            "LeftTop": {
+                                "X": 291,
+                                "Y": 692
+                            },
+                            "RightBottom": {
+                                "X": 349,
+                                "Y": 711
+                            },
+                            "RightTop": {
+                                "X": 349,
+                                "Y": 692
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "贵州省医保",
+                        "Coord": {
+                            "Height": 21,
+                            "Width": 110,
+                            "X": 518,
+                            "Y": 647
+                        },
+                        "Name": "医保类型",
+                        "Vertex": {
+                            "LeftBottom": {
+                                "X": 516,
+                                "Y": 665
+                            },
+                            "LeftTop": {
+                                "X": 516,
+                                "Y": 644
+                            },
+                            "RightBottom": {
+                                "X": 626,
+                                "Y": 665
+                            },
+                            "RightTop": {
+                                "X": 626,
+                                "Y": 644
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "非营利综合二级医院",
+                        "Coord": {
+                            "Height": 21,
+                            "Width": 162,
+                            "X": 266,
+                            "Y": 647
+                        },
+                        "Name": "医疗机构类型",
+                        "Vertex": {
+                            "LeftBottom": {
+                                "X": 264,
+                                "Y": 665
+                            },
+                            "LeftTop": {
+                                "X": 264,
+                                "Y": 644
+                            },
+                            "RightBottom": {
+                                "X": 426,
+                                "Y": 665
+                            },
+                            "RightTop": {
+                                "X": 426,
+                                "Y": 644
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "107.10",
+                        "Coord": {
+                            "Height": 22,
+                            "Width": 54,
+                            "X": 839,
+                            "Y": 562
+                        },
+                        "Name": "总金额",
+                        "Vertex": {
+                            "LeftBottom": {
+                                "X": 837,
+                                "Y": 581
+                            },
+                            "LeftTop": {
+                                "X": 837,
+                                "Y": 559
+                            },
+                            "RightBottom": {
+                                "X": 891,
+                                "Y": 581
+                            },
+                            "RightTop": {
+                                "X": 891,
+                                "Y": 559
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "壹佰零柒元壹角",
+                        "Coord": {
+                            "Height": 24,
+                            "Width": 140,
+                            "X": 245,
+                            "Y": 559
+                        },
+                        "Name": "总金额大写",
+                        "Vertex": {
+                            "LeftBottom": {
+                                "X": 243,
+                                "Y": 580
+                            },
+                            "LeftTop": {
+                                "X": 243,
+                                "Y": 556
+                            },
+                            "RightBottom": {
+                                "X": 383,
+                                "Y": 580
+                            },
+                            "RightTop": {
+                                "X": 383,
+                                "Y": 556
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "2022-03-11",
+                        "Coord": {
+                            "Height": 22,
+                            "Width": 93,
+                            "X": 986,
+                            "Y": 201
+                        },
+                        "Name": "开票日期",
+                        "Vertex": {
+                            "LeftBottom": {
+                                "X": 984,
+                                "Y": 220
+                            },
+                            "LeftTop": {
+                                "X": 984,
+                                "Y": 198
+                            },
+                            "RightBottom": {
+                                "X": 1077,
+                                "Y": 220
+                            },
+                            "RightTop": {
+                                "X": 1077,
+                                "Y": 198
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "1",
+                        "Coord": {
+                            "Height": 20,
+                            "Width": 20,
+                            "X": 1166,
+                            "Y": 826
+                        },
+                        "Name": "收款人",
+                        "Vertex": {
+                            "LeftBottom": {
+                                "X": 1164,
+                                "Y": 843
+                            },
+                            "LeftTop": {
+                                "X": 1164,
+                                "Y": 823
+                            },
+                            "RightBottom": {
+                                "X": 1184,
+                                "Y": 843
+                            },
+                            "RightTop": {
+                                "X": 1184,
+                                "Y": 823
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "2022-03-11",
+                        "Coord": {
+                            "Height": 17,
+                            "Width": 77,
+                            "X": 1115,
+                            "Y": 603
+                        },
+                        "Name": "就诊日期",
+                        "Vertex": {
+                            "LeftBottom": {
+                                "X": 1113,
+                                "Y": 617
+                            },
+                            "LeftTop": {
+                                "X": 1113,
+                                "Y": 600
+                            },
+                            "RightBottom": {
+                                "X": 1190,
+                                "Y": 617
+                            },
+                            "RightTop": {
+                                "X": 1190,
+                                "Y": 600
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "54.81",
+                        "Coord": {
+                            "Height": 20,
+                            "Width": 56,
+                            "X": 1146,
+                            "Y": 697
+                        },
+                        "Name": "个人现金支付",
+                        "Vertex": {
+                            "LeftBottom": {
+                                "X": 1144,
+                                "Y": 714
+                            },
+                            "LeftTop": {
+                                "X": 1144,
+                                "Y": 694
+                            },
+                            "RightBottom": {
+                                "X": 1200,
+                                "Y": 714
+                            },
+                            "RightTop": {
+                                "X": 1200,
+                                "Y": 694
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "女",
+                        "Coord": {
+                            "Height": 18,
+                            "Width": 21,
+                            "X": 1075,
+                            "Y": 651
+                        },
+                        "Name": "性别",
+                        "Vertex": {
+                            "LeftBottom": {
+                                "X": 1073,
+                                "Y": 666
+                            },
+                            "LeftTop": {
+                                "X": 1073,
+                                "Y": 648
+                            },
+                            "RightBottom": {
+                                "X": 1094,
+                                "Y": 666
+                            },
+                            "RightTop": {
+                                "X": 1094,
+                                "Y": 648
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "贵州省",
+                        "Coord": {
+                            "Height": 0,
+                            "Width": 0,
+                            "X": 0,
+                            "Y": 0
+                        },
+                        "Name": "发票属地",
+                        "Vertex": null
+                    }
+                ]
+            },
+            {
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "门诊发票",
+                        "Coord": {
+                            "Height": 0,
+                            "Width": 0,
+                            "X": 0,
+                            "Y": 0
+                        },
+                        "Name": "发票类型",
+                        "Vertex": null
+                    }
+                ]
+            },
+            {
+                "MedicalInvoiceItems": [
+                    {
+                        "Content": "贵州省医疗门诊收费票据(电子)",
+                        "Coord": {
+                            "Height": 38,
+                            "Width": 556,
                             "X": 407,
-                            "Y": 551
+                            "Y": 47
                         },
-                        "RightBottom": {
-                            "X": 407,
-                            "Y": 567
-                        },
-                        "LeftBottom": {
-                            "X": 366,
-                            "Y": 567
+                        "Name": "发票名称",
+                        "Vertex": {
+                            "LeftBottom": {
+                                "X": 405,
+                                "Y": 82
+                            },
+                            "LeftTop": {
+                                "X": 405,
+                                "Y": 44
+                            },
+                            "RightBottom": {
+                                "X": 961,
+                                "Y": 82
+                            },
+                            "RightTop": {
+                                "X": 961,
+                                "Y": 44
+                            }
                         }
-                    },
-                    "Coord": {
-                        "X": 367,
-                        "Y": 552,
-                        "Width": 41,
-                        "Height": 16
                     }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "个人账户支付",
-                    "Content": "0.00",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 654,
-                            "Y": 528
-                        },
-                        "RightTop": {
-                            "X": 699,
-                            "Y": 528
-                        },
-                        "RightBottom": {
-                            "X": 699,
-                            "Y": 545
-                        },
-                        "LeftBottom": {
-                            "X": 654,
-                            "Y": 545
-                        }
-                    },
-                    "Coord": {
-                        "X": 655,
-                        "Y": 529,
-                        "Width": 45,
-                        "Height": 17
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "性别",
-                    "Content": "男",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 827,
-                            "Y": 507
-                        },
-                        "RightTop": {
-                            "X": 844,
-                            "Y": 507
-                        },
-                        "RightBottom": {
-                            "X": 844,
-                            "Y": 524
-                        },
-                        "LeftBottom": {
-                            "X": 827,
-                            "Y": 524
-                        }
-                    },
-                    "Coord": {
-                        "X": 828,
-                        "Y": 508,
-                        "Width": 17,
-                        "Height": 17
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "业务流水号",
-                    "Content": "MZ0017782805001",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 181,
-                            "Y": 483
-                        },
-                        "RightTop": {
-                            "X": 298,
-                            "Y": 483
-                        },
-                        "RightBottom": {
-                            "X": 298,
-                            "Y": 500
-                        },
-                        "LeftBottom": {
-                            "X": 181,
-                            "Y": 500
-                        }
-                    },
-                    "Coord": {
-                        "X": 182,
-                        "Y": 484,
-                        "Width": 117,
-                        "Height": 17
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "个人自付",
-                    "Content": "32.27",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 162,
-                            "Y": 552
-                        },
-                        "RightTop": {
-                            "X": 207,
-                            "Y": 552
-                        },
-                        "RightBottom": {
-                            "X": 207,
-                            "Y": 567
-                        },
-                        "LeftBottom": {
-                            "X": 162,
-                            "Y": 567
-                        }
-                    },
-                    "Coord": {
-                        "X": 163,
-                        "Y": 553,
-                        "Width": 45,
-                        "Height": 15
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "其他支付",
-                    "Content": "0.00",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 375,
-                            "Y": 532
-                        },
-                        "RightTop": {
-                            "X": 410,
-                            "Y": 532
-                        },
-                        "RightBottom": {
-                            "X": 410,
-                            "Y": 545
-                        },
-                        "LeftBottom": {
-                            "X": 375,
-                            "Y": 545
-                        }
-                    },
-                    "Coord": {
-                        "X": 376,
-                        "Y": 533,
-                        "Width": 35,
-                        "Height": 13
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "复核人",
-                    "Content": "001",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 659,
-                            "Y": 658
-                        },
-                        "RightTop": {
-                            "X": 680,
-                            "Y": 658
-                        },
-                        "RightBottom": {
-                            "X": 680,
-                            "Y": 675
-                        },
-                        "LeftBottom": {
-                            "X": 659,
-                            "Y": 675
-                        }
-                    },
-                    "Coord": {
-                        "X": 660,
-                        "Y": 659,
-                        "Width": 21,
-                        "Height": 17
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "医保统筹基金支付",
-                    "Content": "0.00",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 223,
-                            "Y": 529
-                        },
-                        "RightTop": {
-                            "X": 262,
-                            "Y": 529
-                        },
-                        "RightBottom": {
-                            "X": 262,
-                            "Y": 544
-                        },
-                        "LeftBottom": {
-                            "X": 223,
-                            "Y": 544
-                        }
-                    },
-                    "Coord": {
-                        "X": 224,
-                        "Y": 530,
-                        "Width": 39,
-                        "Height": 15
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "医疗机构类型",
-                    "Content": "综合医院",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 198,
-                            "Y": 505
-                        },
-                        "RightTop": {
-                            "X": 263,
-                            "Y": 505
-                        },
-                        "RightBottom": {
-                            "X": 263,
-                            "Y": 523
-                        },
-                        "LeftBottom": {
-                            "X": 198,
-                            "Y": 523
-                        }
-                    },
-                    "Coord": {
-                        "X": 199,
-                        "Y": 506,
-                        "Width": 65,
-                        "Height": 18
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "收款单位",
-                    "Content": "北京大学人民医院",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 184,
-                            "Y": 658
-                        },
-                        "RightTop": {
-                            "X": 324,
-                            "Y": 658
-                        },
-                        "RightBottom": {
-                            "X": 324,
-                            "Y": 675
-                        },
-                        "LeftBottom": {
-                            "X": 184,
-                            "Y": 675
-                        }
-                    },
-                    "Coord": {
-                        "X": 185,
-                        "Y": 659,
-                        "Width": 140,
-                        "Height": 17
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "就诊日期",
-                    "Content": "2022-05-09",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 869,
-                            "Y": 483
-                        },
-                        "RightTop": {
-                            "X": 924,
-                            "Y": 483
-                        },
-                        "RightBottom": {
-                            "X": 924,
-                            "Y": 500
-                        },
-                        "LeftBottom": {
-                            "X": 869,
-                            "Y": 500
-                        }
-                    },
-                    "Coord": {
-                        "X": 870,
-                        "Y": 484,
-                        "Width": 55,
-                        "Height": 17
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "医保类型",
-                    "Content": "城镇职工",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 374,
-                            "Y": 508
-                        },
-                        "RightTop": {
-                            "X": 440,
-                            "Y": 508
-                        },
-                        "RightBottom": {
-                            "X": 440,
-                            "Y": 525
-                        },
-                        "LeftBottom": {
-                            "X": 374,
-                            "Y": 525
-                        }
-                    },
-                    "Coord": {
-                        "X": 375,
-                        "Y": 509,
-                        "Width": 66,
-                        "Height": 17
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "个人现金支付",
-                    "Content": "32.27",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 887,
-                            "Y": 533
-                        },
-                        "RightTop": {
-                            "X": 932,
-                            "Y": 533
-                        },
-                        "RightBottom": {
-                            "X": 932,
-                            "Y": 548
-                        },
-                        "LeftBottom": {
-                            "X": 887,
-                            "Y": 548
-                        }
-                    },
-                    "Coord": {
-                        "X": 888,
-                        "Y": 534,
-                        "Width": 45,
-                        "Height": 15
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "总金额",
-                    "Content": "壹佰零柒元伍角陆分",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 196,
-                            "Y": 450
-                        },
-                        "RightTop": {
-                            "X": 347,
-                            "Y": 450
-                        },
-                        "RightBottom": {
-                            "X": 347,
-                            "Y": 473
-                        },
-                        "LeftBottom": {
-                            "X": 196,
-                            "Y": 473
-                        }
-                    },
-                    "Coord": {
-                        "X": 197,
-                        "Y": 451,
-                        "Width": 151,
-                        "Height": 23
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "票据代码",
-                    "Content": "00060121",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 146,
-                            "Y": 115
-                        },
-                        "RightTop": {
-                            "X": 208,
-                            "Y": 115
-                        },
-                        "RightBottom": {
-                            "X": 208,
-                            "Y": 130
-                        },
-                        "LeftBottom": {
-                            "X": 146,
-                            "Y": 130
-                        }
-                    },
-                    "Coord": {
-                        "X": 147,
-                        "Y": 116,
-                        "Width": 62,
-                        "Height": 15
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "发票属地",
-                    "Content": "中央",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 855,
-                            "Y": 658
-                        },
-                        "RightTop": {
-                            "X": 899,
-                            "Y": 658
-                        },
-                        "RightBottom": {
-                            "X": 899,
-                            "Y": 674
-                        },
-                        "LeftBottom": {
-                            "X": 855,
-                            "Y": 674
-                        }
-                    },
-                    "Coord": {
-                        "X": 0,
-                        "Y": 0,
-                        "Width": 0,
-                        "Height": 0
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "发票类型",
-                    "Content": "门诊发票",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 855,
-                            "Y": 658
-                        },
-                        "RightTop": {
-                            "X": 899,
-                            "Y": 658
-                        },
-                        "RightBottom": {
-                            "X": 899,
-                            "Y": 674
-                        },
-                        "LeftBottom": {
-                            "X": 855,
-                            "Y": 674
-                        }
-                    },
-                    "Coord": {
-                        "X": 0,
-                        "Y": 0,
-                        "Width": 0,
-                        "Height": 0
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "发票名称",
-                    "Content": "中央医疗门诊收费票据(电子)",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 346,
-                            "Y": 42
-                        },
-                        "RightTop": {
-                            "X": 714,
-                            "Y": 42
-                        },
-                        "RightBottom": {
-                            "X": 714,
-                            "Y": 73
-                        },
-                        "LeftBottom": {
-                            "X": 346,
-                            "Y": 73
-                        }
-                    },
-                    "Coord": {
-                        "X": 347,
-                        "Y": 43,
-                        "Width": 368,
-                        "Height": 31
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "票据号码",
-                    "Content": "0013879793",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 740,
-                            "Y": 112
-                        },
-                        "RightTop": {
-                            "X": 824,
-                            "Y": 112
-                        },
-                        "RightBottom": {
-                            "X": 824,
-                            "Y": 130
-                        },
-                        "LeftBottom": {
-                            "X": 740,
-                            "Y": 130
-                        }
-                    },
-                    "Coord": {
-                        "X": 741,
-                        "Y": 113,
-                        "Width": 84,
-                        "Height": 18
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "校验码",
-                    "Content": "784954",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 728,
-                            "Y": 141
-                        },
-                        "RightTop": {
-                            "X": 774,
-                            "Y": 141
-                        },
-                        "RightBottom": {
-                            "X": 774,
-                            "Y": 156
-                        },
-                        "LeftBottom": {
-                            "X": 728,
-                            "Y": 156
-                        }
-                    },
-                    "Coord": {
-                        "X": 729,
-                        "Y": 142,
-                        "Width": 46,
-                        "Height": 15
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "开票日期",
-                    "Content": "2022-05-09",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 743,
-                            "Y": 164
-                        },
-                        "RightTop": {
-                            "X": 824,
-                            "Y": 164
-                        },
-                        "RightBottom": {
-                            "X": 824,
-                            "Y": 181
-                        },
-                        "LeftBottom": {
-                            "X": 743,
-                            "Y": 181
-                        }
-                    },
-                    "Coord": {
-                        "X": 744,
-                        "Y": 165,
-                        "Width": 81,
-                        "Height": 17
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "金额合计小写",
-                    "Content": "107.56",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 695,
-                            "Y": 452
-                        },
-                        "RightTop": {
-                            "X": 741,
-                            "Y": 452
-                        },
-                        "RightBottom": {
-                            "X": 741,
-                            "Y": 469
-                        },
-                        "LeftBottom": {
-                            "X": 695,
-                            "Y": 469
-                        }
-                    },
-                    "Coord": {
-                        "X": 696,
-                        "Y": 453,
-                        "Width": 46,
-                        "Height": 17
-                    }
-                }
-            },
-            {
-                "MedicalInvoiceItems": {
-                    "Name": "单位",
-                    "Content": "0.00",
-                    "Vertex": {
-                        "LeftTop": {
-                            "X": 438,
-                            "Y": 634
-                        },
-                        "RightTop": {
-                            "X": 486,
-                            "Y": 634
-                        },
-                        "RightBottom": {
-                            "X": 486,
-                            "Y": 652
-                        },
-                        "LeftBottom": {
-                            "X": 438,
-                            "Y": 652
-                        }
-                    },
-                    "Coord": {
-                        "X": 439,
-                        "Y": 635,
-                        "Width": 48,
-                        "Height": 18
-                    }
-                }
+                ]
             }
         ],
-        "Angle": 0,
-        "RequestId": "cb2ba647-06bd-447d-95c6-7d6264eaa8b0"
+        "RequestId": "a02d7a4d-3458-4139-828c-7add732d5c24"
     }
 }
 ```

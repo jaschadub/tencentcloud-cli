@@ -1,14 +1,14 @@
 **Example 1: 获取按资源汇总消耗详情**
 
-
+获取按资源汇总消耗详情
 
 Input: 
 
 ```
 tccli billing DescribeCostSummaryByResource --cli-unfold-argument  \
-    --BeginTime 2018-11 \
-    --EndTime 2018-11 \
+    --EndTime 2024-11 \
     --Limit 1 \
+    --BeginTime 2024-11 \
     --Offset 0
 ```
 
@@ -16,55 +16,82 @@ Output:
 ```
 {
     "Response": {
+        "Ready": 1,
+        "RecordNum": 4,
         "ConditionValue": {
             "Business": [
                 {
-                    "BusinessCode": "p_cdb",
-                    "BusinessCodeName": "云数据库MySQL"
+                    "BusinessCode": "p_cdn",
+                    "BusinessCodeName": "内容分发网络 CDN"
                 }
             ],
             "Project": [
                 {
-                    "ProjectId": "1003540",
+                    "ProjectId": "0",
                     "ProjectName": "默认项目"
                 }
             ],
             "Region": [
                 {
-                    "RegionId": "1",
-                    "RegionName": "华南地区（广州）"
+                    "RegionId": "0",
+                    "RegionName": "其他"
                 }
             ],
             "PayMode": [
                 {
-                    "PayMode": "prePay",
-                    "PayModeName": "包年包月"
+                    "PayMode": "postPay",
+                    "PayModeName": "按量计费"
                 }
             ]
         },
         "Total": {
-            "RealTotalCost": "510.15"
+            "RealTotalCost": "0.07"
         },
         "Data": [
             {
-                "BusinessCode": "billVirtualId",
-                "BusinessCodeName": "月度计费精度差异",
-                "ConsumptionTypeName": "xx",
-                "ResourceId": "billVirtualId",
-                "ResourceName": "扣费精度补偿",
-                "RealTotalCost": "-0.69",
-                "CashPayAmount": "-0.69",
-                "RegionId": "0",
-                "RegionName": "其他",
+                "OwnerUin": "10002011014",
+                "PayerUin": "10002011014",
+                "OperateUin": "10002011014",
+                "BusinessCode": "p_cdn",
+                "BusinessCodeName": "内容分发网络 CDN",
+                "ProductCode": "sp_cdn_ov",
+                "ProductCodeName": "中国境外CDN",
+                "ResourceId": "1300342678_1002522_102391_sv_cdn_ov_hour_flux_AS1_1",
+                "ResourceName": "未命名",
+                "RealTotalCost": "0.07",
+                "RealCost": "0.08",
+                "CashPayAmount": "0.06570339",
+                "RegionId": "1001",
+                "RegionName": "亚太地区（亚太一区）",
+                "RegionType": "international",
+                "RegionTypeName": "国际",
                 "PayMode": "postPay",
                 "PayModeName": "按量计费",
                 "ProjectId": "0",
-                "ProjectName": "默认项目"
+                "ProjectName": "默认项目",
+                "FeeBeginTime": "2024-11-01 08:00:00",
+                "FeeEndTime": "2024-11-17 19:59:59",
+                "DayDiff": "17",
+                "DailyTotalCost": "0.00386491",
+                "ConsumptionTypeName": "按量计费小时结",
+                "OrderId": "20241010****",
+                "VoucherPayAmount": "0.00000000",
+                "IncentivePayAmount": "0.00000000",
+                "TransferPayAmount": "0.00000000",
+                "Extend1": "",
+                "Extend2": "",
+                "Extend3": "",
+                "Extend4": "",
+                "Extend5": "",
+                "InstanceType": "exclusiveSale",
+                "InstanceTypeName": "包销实例",
+                "PayTime": "2024-10-10 15:43:39",
+                "ZoneName": "其他",
+                "ComponentConfig": "海外CDN-按小时结算-流量: 0.00000533 GB",
+                "Tags": ""
             }
         ],
-        "RecordNum": 29,
-        "Ready": 1,
-        "RequestId": "59a408bc-5d95-4d40-bf21-58e5e8d48dd0"
+        "RequestId": "4a3ec37d-7628-4e22-b9ab-08e696bcc1f2"
     }
 }
 ```

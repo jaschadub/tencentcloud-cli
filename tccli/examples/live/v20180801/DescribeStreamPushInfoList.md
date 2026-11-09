@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli live DescribeStreamPushInfoList --cli-unfold-argument  \
-    --StartTime '2019-06-21 12:00:00' \
-    --EndTime '2019-06-21 12:01:02' \
-    --StreamName abcd
+    --EndTime 2019-06-21T12:01:02+08:00 \
+    --StartTime 2019-06-21T12:00:00+08:00 \
+    --StreamName stream1
 ```
 
 Output: 
@@ -17,31 +17,32 @@ Output:
     "Response": {
         "DataInfoList": [
             {
-                "StreamParam": "xx",
-                "ACodec": "AAC",
+                "Time": "2019-06-21T12:01:02+08:00",
+                "PushDomain": "5000.livepush.com",
                 "AppName": "live",
-                "AudioFps": 43,
-                "AudioRate": 131580,
-                "AudioTs": 5004,
-                "BeginPushTime": "2019-06-21 00:29:12.252",
-                "ClientIp": "125.39.132.102",
-                "LocalTs": 5000,
-                "PushDomain": "123.livepush.myqcloud.com",
-                "Resolution": "368*640",
-                "Sequence": "10151483429474411508",
-                "Time": "2019-06-21 01:10:39.87",
-                "VCodec": "H264",
-                "VideoFps": 24,
-                "VideoRate": 701528,
-                "VideoTs": 5032,
-                "MateFps": 30,
-                "MetaAudioRate": 22,
-                "MetaVideoRate": 4885,
-                "Bandwidth": 1.0,
-                "Flux": 1.0
+                "ClientIp": "43.12.9.2",
+                "BeginPushTime": "2019-06-21T12:00:00+08:00",
+                "Resolution": "1920*1080",
+                "VCodec": "h264",
+                "ACodec": "aac",
+                "Sequence": "4543453324532",
+                "VideoFps": 20,
+                "VideoRate": 1,
+                "AudioFps": 15,
+                "AudioRate": 1,
+                "LocalTs": 1,
+                "VideoTs": 1,
+                "AudioTs": 1,
+                "MetaVideoRate": 1,
+                "MetaAudioRate": 1,
+                "MateFps": 1,
+                "StreamParam": "param1=my",
+                "Bandwidth": 0,
+                "Flux": 0,
+                "ServerIp": "127.0.0.1"
             }
         ],
-        "RequestId": "8e50cdb5-56dc-408b-89b0-31818958d424"
+        "RequestId": "1047d0dc-6dc8-4898-a7f3-03726a822b0e"
     }
 }
 ```

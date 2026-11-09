@@ -16,7 +16,7 @@ Output:
         "RequestId": "08fdf411-5d39-44f2-8e1d-a58ee60b237d",
         "DBInstance": {
             "Region": "ap-guangzhou",
-            "Zone": "ap-guangzhou-2",
+            "Zone": "ap-guangzhou-7",
             "AppId": 100000000,
             "Uid": 1000001,
             "ProjectId": 0,
@@ -24,7 +24,7 @@ Output:
             "SubnetId": "subnet-xxxxxxxx",
             "DBInstanceId": "postgres-xxxxxxxx",
             "MasterDBInstanceId": "postgres-xxxxxxxx",
-            "Type": 1,
+            "Type": "1",
             "DBInstanceName": "未命名",
             "DBInstanceStatus": "running",
             "DBInstanceMemory": 4,
@@ -41,7 +41,8 @@ Output:
                     "Status": "opened",
                     "NetType": "private",
                     "VpcId": "vpc-xxxxxxxx",
-                    "SubnetId": "subnet-xxxxxxxx"
+                    "SubnetId": "subnet-xxxxxxxx",
+                    "ProtocolType": ""
                 },
                 {
                     "Address": "",
@@ -50,12 +51,15 @@ Output:
                     "Status": "initing",
                     "NetType": "public",
                     "VpcId": "",
-                    "SubnetId": ""
+                    "SubnetId": "",
+                    "ProtocolType": ""
                 }
             ],
             "DBCharset": "UTF8",
             "IsSupportTDE": 0,
             "DBVersion": "10.4",
+            "DBEngine": "postgresql",
+            "DBEngineConfig": "",
             "DBMajorVersion": "10",
             "DBKernelVersion": "v10.4_r1.0",
             "CreateTime": "2017-12-28 19:23:19",
@@ -78,11 +82,13 @@ Output:
             "DBNodeSet": [
                 {
                     "Role": "Primary",
-                    "Zone": "ap-guangzhou-2"
+                    "Zone": "ap-guangzhou-7",
+                    "DedicatedClusterId": ""
                 },
                 {
                     "Role": "Standby",
-                    "Zone": "ap-guangzhou-3"
+                    "Zone": "ap-guangzhou-3",
+                    "DedicatedClusterId": ""
                 }
             ]
         }

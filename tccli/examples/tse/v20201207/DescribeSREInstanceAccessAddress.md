@@ -13,26 +13,33 @@ Output:
 ```
 {
     "Response": {
+        "IntranetAddress": "10.0.0.1",
+        "InternetAddress": "10.0.0.1",
         "EnvAddressInfos": [
             {
+                "EnvName": "dev",
                 "EnableConfigInternet": true,
-                "EnvName": "xx",
-                "ConfigIntranetAddress": "xx",
-                "ConfigInternetServiceIp": "xx"
+                "ConfigInternetServiceIp": "10.0.0.1",
+                "ConfigIntranetAddress": "10.0.0.2",
+                "EnableConfigIntranet": true,
+                "InternetBandWidth": 0
             }
         ],
+        "ConsoleInternetAddress": "10.0.0.1",
+        "ConsoleIntranetAddress": "10.0.0.2",
+        "InternetBandWidth": 0,
+        "ConsoleInternetBandWidth": 0,
         "LimiterAddressInfos": [
             {
-                "IntranetAddress": "xx"
+                "IntranetAddress": "10.0.0.1"
             }
         ],
-        "IntranetAddress": "xx",
-        "InternetAddress": "xx",
-        "ConsoleInternetBandWidth": 0,
-        "ConsoleIntranetAddress": "xx",
-        "RequestId": "xx",
-        "ConsoleInternetAddress": "xx",
-        "InternetBandWidth": 0
+        "CLBMultiRegion": {
+            "CLBMultiZoneFlag": true,
+            "CLBMasterZone": "ap-guangzhou-1",
+            "CLBSlaveZone": "ap-guangzhou-2"
+        },
+        "RequestId": "req-id"
     }
 }
 ```

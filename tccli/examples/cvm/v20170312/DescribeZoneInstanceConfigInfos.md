@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cvm DescribeZoneInstanceConfigInfos --cli-unfold-argument  \
-    --Filters.0.Name zone \
-    --Filters.0.Values ap-guangzhou-2 \
-    --Filters.1.Name instance-charge-type \
-    --Filters.1.Values POSTPAID_BY_HOUR
+    --Filters.0.Values POSTPAID_BY_HOUR \
+    --Filters.0.Name instance-charge-type \
+    --Filters.1.Values ap-guangzhou-6 \
+    --Filters.1.Name zone
 ```
 
 Output: 
@@ -19,27 +19,27 @@ Output:
         "InstanceTypeQuotaSet": [
             {
                 "Status": "SELL",
-                "Zone": "ap-guangzhou-2",
+                "Zone": "ap-guangzhou-6",
                 "NetworkCard": 0,
                 "Price": {
-                    "DiscountPrice": 59.0,
-                    "OriginalPriceThreeYear": 0.0,
-                    "DiscountOneYear": 0.0,
-                    "UnitPrice": 0.0,
-                    "UnitPriceThirdStep": 0.0,
-                    "OriginalPriceFiveYear": 0.0,
-                    "Discount": 0.0,
-                    "DiscountFiveYear": 0.0,
-                    "UnitPriceDiscountThirdStep": 0.0,
-                    "UnitPriceSecondStep": 0.0,
-                    "OriginalPrice": 59.0,
-                    "DiscountThreeYear": 0.0,
-                    "UnitPriceDiscountSecondStep": 0.0,
-                    "UnitPriceDiscount": 0.0,
-                    "DiscountPriceFiveYear": 0.0,
-                    "OriginalPriceOneYear": 708.0,
-                    "ChargeUnit": "xx",
-                    "DiscountPriceThreeYear": 0.0,
+                    "DiscountPrice": 59,
+                    "OriginalPriceThreeYear": 0,
+                    "DiscountOneYear": 0,
+                    "UnitPrice": 0,
+                    "UnitPriceThirdStep": 0,
+                    "OriginalPriceFiveYear": 0,
+                    "Discount": 0,
+                    "DiscountFiveYear": 0,
+                    "UnitPriceDiscountThirdStep": 0,
+                    "UnitPriceSecondStep": 0,
+                    "OriginalPrice": 59,
+                    "DiscountThreeYear": 0,
+                    "UnitPriceDiscountSecondStep": 0,
+                    "UnitPriceDiscount": 0,
+                    "DiscountPriceFiveYear": 0,
+                    "OriginalPriceOneYear": 708,
+                    "ChargeUnit": "HOUR",
+                    "DiscountPriceThreeYear": 0,
                     "DiscountPriceOneYear": 587.64
                 },
                 "InstanceFamily": "S2",
@@ -56,8 +56,11 @@ Output:
                 "InstancePps": 20,
                 "InstanceBandwidth": 1.5,
                 "Gpu": 0,
+                "GpuCount": 0,
                 "Fpga": 0,
-                "Remark": ""
+                "Remark": "",
+                "Frequency": "2.4GHz",
+                "StatusCategory": "EnoughStock"
             }
         ],
         "RequestId": "c28559ca-d3cf-40f0-9664-2ab303484efa"

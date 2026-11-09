@@ -1,6 +1,6 @@
-**Example 1: 获取服务开启状态**
+**Example 1: 获取 SSM 服务开通状态**
 
-
+获取 SSM 服务开通状态
 
 Input: 
 
@@ -11,10 +11,17 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "1a327ad8-5fef-41d5-b1a1-73d58af83d66",
-        "ServiceEnabled": true,
+        "AccessKeyEscrowEnabled": true,
+        "ExpireTime": "2027-02-01 19:30:31",
         "InvalidType": 1,
-        "AccessKeyEscrowEnabled": true
+        "PayModel": "Prepaid_SSM",
+        "QPSLimit": 1000,
+        "RenewFlag": 1,
+        "RequestId": "9a405d03-5cff-452b-bf0a-8576e2c1e1be",
+        "ResourceId": "SSM-Prepaid-rt64sffg",
+        "SecretLimit": 5900,
+        "ServiceEnabled": true,
+        "TotalCount": 5541
     }
 }
 ```

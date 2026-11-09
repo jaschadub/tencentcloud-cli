@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cdb DescribeTagsOfInstanceIds --cli-unfold-argument  \
+    --Limit 10 \
     --InstanceIds cdb-uns231ns \
-    --Offset 0 \
-    --Limit 10
+    --Offset 0
 ```
 
 Output: 
@@ -23,8 +23,8 @@ Output:
                 "InstanceId": "cdb-uns231ns",
                 "Tags": [
                     {
-                        "TagKey": "test",
-                        "TagValue": "1231"
+                        "TagKey": "name",
+                        "TagValue": "zhang"
                     }
                 ]
             }

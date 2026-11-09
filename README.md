@@ -1,7 +1,7 @@
-# 命令行工具简介
-欢迎使用腾讯云命令行工具(TCCLI)，TCCLI是管理腾讯云资源的统一工具。通过腾讯云命令行工具，您可以快速轻松的调用腾讯云 API来管理您的腾讯云资源。您还可以基于腾讯云的命令行工具来做自动化和脚本处理，能够以更多样的方式进行组合和重用。
+# 腾讯云命令行工具简介
+欢迎使用腾讯云命令行工具(TCCLI)，TCCLI是管理腾讯云资源的统一工具。通过腾讯云命令行工具，您可以快速轻松的调用腾讯云 API来管理您的腾讯云资源。您还可以基于腾讯云命令行工具来做自动化和脚本处理，能够以更多样的方式进行组合和重用。
 # 安装TCCLI
-1. 安装 Python 环境和 Pip 工具，安装命令行工具前请确保您的系统已经安装了 Python 环境和 Pip 工具。**注意python版本必须为2.7及以上版本**,更多内容请参考[python主页](https://www.python.org/)和[pip主页](https://pypi.org/project/pip/)。
+1. 安装 Python 环境和 Pip 工具，安装腾讯云命令行工具前请确保您的系统已经安装了 Python 环境和 Pip 工具。**注意python版本必须为2.7及以上版本**,更多内容请参考[python主页](https://www.python.org/)和[pip主页](https://pypi.org/project/pip/)。
 2. TCCLI依赖于TencentCloudApi Python SDK，**如果TencentCloudApi Python SDK的版本号小于要安装TCCLI版本号，在安装TCCLI时会自动升级TencentCloudApi Python SDK**。
 3. 安装TCCLI，执行以下命令：
 ```bash
@@ -26,14 +26,36 @@ complete -C 'tccli_completer' tccli
 ```
 可以将命令``complete -C 'tccli_completer' tccli``加入环境变量(/etc/profile)中，使自动补全功能一直有效。
 
+## 在 Docker 上使用
+
+```shell
+docker run --rm -it tencentcom/tencentcloud-cli --version
+docker run --rm -it tencentcom/tencentcloud-cli help
+```
+
+## 在 CNB 上使用
+
+```yaml
+# .cnb.yml
+main:
+  push:
+  - stages:
+    - name: run with tencentcloud-cli
+      image: tencentcom/tencentcloud-cli
+      commands: |
+        tccli --version
+        tccli help
+```
+
 # 配置TCCLI
 要使用腾讯云命令行工具，您还需要进行一些初始化配置，使其完成使用 云 API的必要前提条件。
 1. 交互模式，您可以通过tccli configure命令进入交互模式快速配置。
 
 ```bash
 $  tccli configure
-TencentCloud API secretId [*afcQ]:AKIDwLw1234MMfPRle2g9nR2OTI787aBCDP
-TencentCloud API secretKey [*ArFd]:OxXj7khcV1234dQSSYNABcdCc1LiArFd
+# 方括号内为已配置密钥的掩码后四位；请在冒号后输入完整密钥，不要输入尖括号。
+TencentCloud API secretId [*abcd]:<YOUR_SECRET_ID>
+TencentCloud API secretKey [*abcd]:<YOUR_SECRET_KEY>
 region: ap-guangzhou
 output[json]:
 ```
@@ -48,18 +70,21 @@ output： 可选参数，请求回包输出格式，支持[json table text]三�
 2. 命令行模式，通过命令行模式您可以在自动化脚本中配置您的信息。
 ```bash
 # set子命令可以设置某一配置，也可同时配置多个。
-tccli configure set secretId AKIDwLw1234MMfPRle2g9nR2OTI787aBCDP
+tccli configure set secretId <YOUR_SECRET_ID>
 tccli configure set region ap-guangzhou  output json language zh-CN
+
+# set-root-domain命令可以将配置文件中的endpoint的根域名全部设置为同一值。
+tccli configure set-root-domain internal.tencentcloudapi.com
 
 # get子命令用于获取配置信息。
 tccli configure get secretKey
-secretKey = OxXj7khcV1234dQSSYNABcdCc1LiArFd
+secretKey = <YOUR_SECRET_KEY>
 
 # list子命令打印所有配置信息。
 tccli configure list
 credential:
-secretId =  AKIDwLw1234MMfPRle2g9nR2OTI787aBCDP
-secretKey =  OxXj7khcV1234dQSSYNABcdCc1LiArFd
+secretId =  <YOUR_SECRET_ID>
+secretKey =  <YOUR_SECRET_KEY>
 configure:
 region =  ap-guangzhou
 output =  json
@@ -74,8 +99,9 @@ tccli configure remove
 ```bash
 在交互模式中指定账户名test。
 $  tccli configure --profile test
-TencentCloud API secretId [*BCDP]:AKIDwLw1234MMfPRle2g9nR2OTI787aBCDP
-TencentCloud API secretKey [*ArFd]:OxXj7khcV1234dQSSYNABcdCc1LiArFd
+# 方括号内为已配置密钥的掩码后四位；请在冒号后输入完整密钥，不要输入尖括号。
+TencentCloud API secretId [*abcd]:<YOUR_SECRET_ID>
+TencentCloud API secretKey [*abcd]:<YOUR_SECRET_KEY>
 region: ap-guangzhou
 output[json]:
 
@@ -84,10 +110,15 @@ tccli configure set region ap-guangzhou  output json language zh-CN --profile te
 tccli configure get secretKey      --profile test
 tccli configure list      --profile test
 tccli configure remove      --profile test
+tccli configure set-root-domain internal.tencentcloudapi.com --profile test
 
 
 在调用接口时指定账户(以cvm DescribeZones接口为例)。
 tccli cvm DescribeZones --profile test
+```
+如果不希望输入命令是手动指定账户名，还可以设置环境变量，tccli能从环境变量中读取指定的profile
+```bash
+export TCCLI_PROFILE=test
 ```
 
 4. 您可以配置https代理，让tccli通过代理调用API
@@ -110,9 +141,89 @@ set  http_proxy=https://myproxy.com:1111
 tccli cvm DescribeRegions --https-proxy https://192.168.1.1:1111
 ```
 
+# 凭证管理
+
+腾讯云命令行工具（TCCLI）目前支持以下几种方式进行凭证管理，获取凭证的优先级：实例角色 > 角色 > TKE OIDC > 临时密钥 > 永久密钥：
+
+1. 实例角色
+
+有关实例角色的相关概念请参阅：[腾讯云实例角色](https://cloud.tencent.com/document/product/213/47668)
+
+在您为实例绑定角色后，您可以在实例中访问相关元数据接口获取临时凭证，SDK 会自动刷新临时凭证。相关命令如下：
+
+使用方式：
+- 命令行输入
+```bash
+tccli cvm DescribeRegions --use-cvm-role
+```
+
+2. 角色
+
+有关角色的相关概念请参阅：[腾讯云角色概述](https://cloud.tencent.com/document/product/598/19420)
+
+要使用此种方式，您必须在腾讯云访问管理控制台上创建了一个角色，具体创建过程请参阅：[腾讯云角色创建](https://cloud.tencent.com/document/product/598/19381)
+
+在您拥有角色后，可以通过如下方式获取临时凭证，相关命令如下：
+
+- 命令行输入
+
+```bash
+tccli cvm DescribeRegions --secretId xx --secretKey xx --role-arn xx --role-session-name
+```
+
+- 环境变量
+
+配置环境变量：`TENCENTCLOUD_SECRET_ID`, `TENCENTCLOUD_SECRET_KEY`, `TENCENTCLOUD_ROLE_ARN`, `TENCENTCLOUD_ROLE_SESSION_NAME`
+
+3. TKE OIDC
+
+- 环境变量
+  配置环境变量：`TKE_REGION`, `TKE_PROVIDER_ID`, `TKE_WEB_IDENTITY_TOKEN_FILE`, `TKE_ROLE_ARN`
+
+4. 临时密钥
+
+- 命令行输入
+```bash
+tccli cvm DescribeRegions --secretId xx --secretKey xx --token xx
+```
+
+
+- 环境变量
+  配置环境变量：`TENCENTCLOUD_SECRET_ID`, `TENCENTCLOUD_SECRET_KEY`, `TENCENTCLOUD_TOKEN`
+
+
+- xxx.credential文件
+```json
+{
+  "secretId": "AKIDxxxxxxxxxxxxxxxxxxxxQsPk",
+  "secretKey": "QgoxxxxxxxxxxxxxxxxgvW4",
+  "token": "xxxxxxxxxxxxxxxxxx"
+}
+```
+
+
+5. 永久密钥
+
+- 命令行输入
+```bash
+tccli cvm DescribeRegions --secretId xx --secretKey xx
+```
+
+
+- 环境变量
+  配置环境变量：`TENCENTCLOUD_SECRET_ID`, `TENCENTCLOUD_SECRET_KEY`
+
+
+- xxx.credential文件
+```json
+{
+  "secretId": "AKIDxxxxxxxxxxxxxxxxxxxxQsPk",
+  "secretKey": "QgoxxxxxxxxxxxxxxxxgvW4"
+}
+```
 
 # 使用TCCLI
-命令行工具集成了腾讯云所有支持云 API 的产品，可以在命令行下完成对腾讯云产品的配置和管理。包括使用TCCLI创建云服务器，操作云服务器，通过TCCLI创建CBS盘、查看CBS盘使用情况，通过TCCLI创建VPC网络、往VPC网络中添加资源等等，所有在控制台页面能完成的操作，均能再命令行工具上执行命令实现。
+腾讯云命令行工具集成了腾讯云所有支持云 API 的产品，可以在命令行下完成对腾讯云产品的配置和管理。包括使用TCCLI创建云服务器，操作云服务器，通过TCCLI创建CBS盘、查看CBS盘使用情况，通过TCCLI创建VPC网络、往VPC网络中添加资源等等，所有在控制台页面能完成的操作，均能在腾讯云命令行工具上执行命令实现。
 * 通过tccli cvm DescribeInstances命令查看当前账号有哪些云服务器。
 * 通过tccli cbs DescribeDisks命令查看有CBS盘列表。
 
@@ -125,9 +236,12 @@ tccli cvm RunInstances --InstanceChargeType POSTPAID_BY_HOUR --InstanceChargePre
 ```
 更多功能，您可以通过tccli help查看支持的产品，通过tccli cvm help（以cvm举例）查看产品支持的接口。通过tccli cbs DescribeDisks help(以cbs产品的DescribeDisks接口为例) 查看接口支持的参数。如果想看详细信息，可以在help的后面增加字段'--detail'查看。例如：分别使用tccli help --detail，tccli cvm help --detail和tccli cbs DescribeDisks help --detail查看对应的详细信息。
 
+## 返回值
+从3.0.1009.1版本开始，命令行执行成功返回0值，执行失败返回非0值。
+
 # 高级功能
 ## 多版本接口访问
-某些产品可能存在多个版本的接口，TCCLI默认访问最新版本的接口。如果您想访问特定旧版本的接口，可以通过以下方式实现(以cvm举例)。
+某些产品可能存在多个版本的接口，TCCLI默认访问推荐版本的接口。如果您想访问其他版本的接口，可以通过以下方式实现(以cvm举例)。
 ```bash
 # 设置cvm产品默认使用版本:2017-03-12。
 tccli configure set cvm.version 2017-03-12
@@ -265,7 +379,7 @@ tccli cvm DescribeInstancesStatus --region ap-hongkong --waiter "{'expr':'Instan
 
 您可以在配置文件中设置可选子参数的值，例如
 ```
-# 在default.configure文件中，您可以添加如下参数，设置系统超时时间为180诗，睡眠时间为5s
+# 在default.configure文件中，您可以添加如下参数，设置系统超时时间为180s，睡眠时间为5s
     "waiter": {
         "interval": 5,
         "timeout": 180
@@ -283,4 +397,3 @@ tccli cvm DescribeInstancesStatus --region ap-hongkong --waiter "{'expr':'Instan
     "InstanceIdSet": null
 }
 ```
-

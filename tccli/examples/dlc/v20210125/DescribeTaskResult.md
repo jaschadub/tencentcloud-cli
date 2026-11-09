@@ -31,20 +31,28 @@ Output:
             "RowAffectInfo": "59378 rows affected (1.761000 seconds)",
             "ResultSchema": [
                 {
-                    "Name": "a",
-                    "Type": "integer",
+                    "Name": "key",
+                    "Type": "STRING_TYPE",
                     "Comment": "",
                     "Precision": 0,
                     "Scale": 0,
-                    "Nullable": "NULLABLE"
+                    "Nullable": "NULLABLE",
+                    "Position": 0,
+                    "CreateTime": "1737009973603",
+                    "ModifiedTime": "",
+                    "IsPartition": true
                 },
                 {
-                    "Name": "b",
-                    "Type": "varchar",
+                    "Name": "key",
+                    "Type": "STRING_TYPE",
                     "Comment": "",
                     "Precision": 0,
                     "Scale": 0,
-                    "Nullable": "NULLABLE"
+                    "Nullable": "NULLABLE",
+                    "Position": 0,
+                    "CreateTime": "1737009973603",
+                    "ModifiedTime": "",
+                    "IsPartition": true
                 }
             ],
             "ResultSet": "[[\"3\",\"kk\"],[\"3\",\"kk\"],[\"9143\",\" \\\"28992\\\"\"],[\"19048\",\" \\\"11266\\\"\"],[\"16711\",\" \\\"17422\\\"\"],[\"3816\",\" \\\"18501\\\"\"],[\"16428\",\" \\\"13774\\\"\"],[\"30190\",\" \\\"5177\\\"\"],[\"24824\",\" \\\"19479\\\"\"],[\"9709\",\" \\\"5532\\\"\"]]",

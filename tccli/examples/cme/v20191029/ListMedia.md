@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme ListMedia --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --ClassPath /素材/视频 \
     --Owner.Id 6b6ef043-85f3-4614-b735-768bb466ae5b \
     --Owner.Type PERSON
@@ -31,7 +31,6 @@ Output:
                     },
                     "PresetTagSet": [],
                     "PreviewUrl": "http://1xxxxx98.vod2.myqcloud.com/334751dbvodtranssh1400293698/e37cf1313877022919226xxxx/coverBySnapshot/coverBySnapshot_10_0.jpg",
-                    "TagInfoSet": [],
                     "TagSet": [],
                     "UpdateTime": "2021-11-24T16:08:07Z"
                 },
@@ -55,7 +54,6 @@ Output:
                     },
                     "PresetTagSet": [],
                     "PreviewUrl": "http://14xxxxxx98.vod2.myqcloud.com/334751dbvodtranssh1400293698/a958de3738770229144662908d/coverBySnapshot/coverBySnapshot_10_0.jpg",
-                    "TagInfoSet": [],
                     "TagSet": [],
                     "UpdateTime": "2021-11-14T15:53:17Z"
                 },

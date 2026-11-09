@@ -1,6 +1,6 @@
 **Example 1: 发起图片审核任务**
 
-
+使用模板 ID 10 发起图片审核任务。
 
 Input: 
 
@@ -15,21 +15,25 @@ Output:
 {
     "Response": {
         "RequestId": "6ca31e3a-6b8e-4b4e-9256-fdc700064ef3",
-        "ReviewResultSet": [
-            {
-                "Type": "Porn.Image",
-                "PornImageResult": {
+        "MediaReviewResult": {
+            "Suggestion": "block",
+            "Label": "Porn",
+            "Form": "Image",
+            "SegmentSet": [
+                {
                     "Confidence": 99,
                     "Suggestion": "block",
-                    "Label": "sexy"
-                },
-                "TerrorismImageResult": null,
-                "PoliticalImageResult": null,
-                "PornOcrResult": null,
-                "TerrorismOcrResult": null,
-                "PoliticalOcrResult": null
-            }
-        ]
+                    "Label": "Porn",
+                    "SubLabel": "SexyBehavior",
+                    "Form": "Image",
+                    "AreaCoordSet": [],
+                    "Text": "",
+                    "KeywordSet": []
+                }
+            ],
+            "SegmentSetFileUrl": "xxx/a.mp4",
+            "SegmentSetFileUrlExpireTime": "2020-09-07T00:00:00+08:00"
+        }
     }
 }
 ```

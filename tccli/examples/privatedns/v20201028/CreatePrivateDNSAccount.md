@@ -1,4 +1,4 @@
-**Example 1: 创建私有域解析账号**
+**Example 1: 添加关联账号**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli privatedns CreatePrivateDNSAccount --cli-unfold-argument  \
-    --Account.Uin 123456789
+    --Account.Uin 10020060700
 ```
 
 Output: 

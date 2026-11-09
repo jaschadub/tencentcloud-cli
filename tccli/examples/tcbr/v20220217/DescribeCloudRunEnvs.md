@@ -1,4 +1,4 @@
-**Example 1: DescribeCloudRunEnvs**
+**Example 1: 查询环境信息**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcbr DescribeCloudRunEnvs --cli-unfold-argument  \
-    --EnvId prod-6gvwy9lua50e9504
+    --EnvId lowcode-xxxxxx
 ```
 
 Output: 
@@ -15,86 +15,38 @@ Output:
     "Response": {
         "EnvList": [
             {
-                "EnvId": "yourenvid-2fb346",
-                "Source": "miniapp",
-                "Alias": "默认环境",
-                "Status": "NORMAL",
-                "PayMode": "postpaid",
-                "Tags": [],
-                "PackageId": "basic1",
-                "PackageName": "基础版1",
-                "IsAutoDegrade": true,
-                "EnvChannel": "xx",
-                "Region": "xx",
-                "IsDefault": true,
-                "CreateTime": "2020-09-22T00:00:00+00:00",
-                "UpdateTime": "2020-09-22T00:00:00+00:00",
-                "EnvType": "tcbr",
+                "Alias": "lowcode",
+                "CreateTime": "2022-04-11 14:00:28",
+                "CustomLogServices": [],
+                "Databases": [],
+                "EnvChannel": "low_code",
+                "EnvId": "lowcode-xxxxxx",
+                "EnvType": "baas",
+                "Functions": [],
+                "IsAutoDegrade": false,
+                "IsDefault": false,
                 "LogServices": [],
+                "PackageId": "",
+                "PackageName": "",
+                "PayMode": "",
+                "Region": "ap-shanghai",
+                "Source": "qcloud",
                 "StaticStorages": [
                     {
-                        "Status": "xx",
-                        "StaticDomain": "xx",
-                        "DefaultDirName": "xx",
-                        "Bucket": "xx",
-                        "Region": "xx"
-                    }
-                ],
-                "Databases": [
-                    {
-                        "InstanceId": "default",
+                        "Bucket": "8738-static-lowcode-xxxxxx",
+                        "DefaultDirName": "",
                         "Region": "ap-shanghai",
-                        "Status": "RUNNING"
+                        "StaticDomain": "lowcode-xxxxxx-xxxxxx.tcloudbaseapp.com",
+                        "Status": "create_fail"
                     }
                 ],
-                "CustomLogServices": [
-                    {
-                        "ClsTopicId": "xx",
-                        "ClsRegion": "xx",
-                        "ClsLogsetId": "xx",
-                        "CreateTime": "2020-09-22 00:00:00"
-                    }
-                ],
-                "Storages": [
-                    {
-                        "Region": "ap-shanghai",
-                        "Bucket": "yourenvid-2fb346-12532284",
-                        "CdnDomain": "yourenvid-2fb346.tcb.qcloud.la",
-                        "AppId": "xx"
-                    }
-                ],
-                "Functions": [
-                    {
-                        "Namespace": "yourenvid-2fb346",
-                        "Region": "ap-shanghai"
-                    }
-                ]
+                "Status": "UNAVAILABLE",
+                "Storages": [],
+                "Tags": [],
+                "UpdateTime": "2022-04-11 14:00:28"
             }
         ],
-        "RequestId": "75ec26f6-b624-40f1-a3f4-e724843f483e"
-    }
-}
-```
-
-**Example 2: success**
-
-
-
-Input: 
-
-```
-tccli tcbr DescribeCloudRunEnvs --cli-unfold-argument  \
-    --Channels 字符串 \
-    --EnvId 字符串 \
-    --IsVisible true
-```
-
-Output: 
-```
-{
-    "Response": {
-        "EnvList": [],
-        "RequestId": "bf7eb6ec-1ae5-475c-99aa-81c1bd906152"
+        "RequestId": "ab5ecfa4-9d05-xxxxxx"
     }
 }
 ```

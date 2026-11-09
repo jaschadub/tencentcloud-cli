@@ -1,18 +1,18 @@
 **Example 1: 更新ES集群词典**
 
-
+更新ES集群词典
 
 Input: 
 
 ```
 tccli es UpdateDictionaries --cli-unfold-argument  \
-    --IkStopwords xx \
-    --Synonym xx \
-    --InstanceId xx \
+    --IkStopwords stop \
+    --Synonym syno \
+    --InstanceId es-esadfeas \
     --UpdateType 0 \
     --ForceRestart True \
-    --QQDict xx \
-    --IkMainDicts xx
+    --QQDict qqDict \
+    --IkMainDicts mainDict
 ```
 
 Output: 

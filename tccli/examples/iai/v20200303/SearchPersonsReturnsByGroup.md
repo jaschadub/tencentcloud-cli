@@ -1,4 +1,4 @@
-**Example 1: 人员搜索分库返回接口**
+**Example 1: 人员搜索按库返回成功示例**
 
 
 
@@ -50,7 +50,7 @@ Output:
 }
 ```
 
-**Example 2: 错误示例**
+**Example 2: 人员搜索按库返回失败示例**
 
 
 
@@ -69,6 +69,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "FailedOperation.ImageDownloadError",
+            "Message": "图片下载错误。"
+        },
         "RequestId": "527ecffe-4c6a-47c9-8217-4dd2e3f018da"
     }
 }

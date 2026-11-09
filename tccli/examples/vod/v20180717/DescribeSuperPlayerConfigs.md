@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod DescribeSuperPlayerConfigs --cli-unfold-argument  \
-    --Names test
+    --Names SuperPlayerName
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
         "TotalCount": 1,
         "PlayerConfigSet": [
             {
-                "Name": "test",
+                "Name": "SuperPlayerName",
                 "Type": "Custom",
                 "DrmSwitch": "OFF",
                 "AdaptiveDynamicStreamingDefinition": 10,
@@ -33,7 +33,7 @@ Output:
                 ],
                 "TranscodeDefinition": 0,
                 "AudioVideoType": "AdaptiveDynamicStream",
-                "Domain": "xxx.vod2.myqcloud.com",
+                "Domain": "example.com",
                 "Scheme": "HTTPS",
                 "Comment": "",
                 "DrmStreamingsInfo": {

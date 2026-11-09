@@ -1,12 +1,16 @@
-**Example 1: DescribeSqlFilters**
+**Example 1: 查询实例SQL限流任务列表**
 
-
+查询实例SQL限流任务列表
 
 Input: 
 
 ```
 tccli dbbrain DescribeSqlFilters --cli-unfold-argument  \
-    --InstanceId cdb-test
+    --Product mysql \
+    --InstanceId cdb-test1234 \
+    --Statuses RUNNING \
+    --Offset 0 \
+    --Limit 10
 ```
 
 Output: 
@@ -24,7 +28,7 @@ Output:
                 "CurrentConcurrency": 5,
                 "RejectedSqlCount": 1000,
                 "SqlType": "SELECT",
-                "OriginRule": "xxxx",
+                "OriginRule": "SELECT,300,10,k1,k2",
                 "OriginKeys": "k1,k2"
             }
         ],

@@ -15,20 +15,21 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 12,
-        "RequestId": "13f43fa6-7282-4652-a99c-66819145ba5f",
+        "TotalCount": 1,
+        "RequestId": "f376d0e6-f064-1234-b27f-a8ae3b054dfa",
         "DomainBatchDetailSet": [
             {
-                "Status": "doing",
-                "Domain": "qq.com",
-                "UpdatedOn": "2020-06-10 20:08:50",
-                "CreatedOn": "2020-06-10 20:08:44",
-                "Reason": "",
-                "Id": 1
+                "UpdatedOn": "2024-12-18 12:21:16",
+                "BigDealId": "",
+                "Action": "batch_modify_domain_dns1",
+                "Status": "failed",
+                "Domain": "***.com",
+                "CreatedOn": "2024-12-18 12:21:12",
+                "Reason": "域名已开启【禁止更新锁】保护域名信息安全，不能修改信息。如需操作，请先关闭【禁止更新锁】",
+                "Id": 1001
             }
         ]
-    },
-    "ResultStatus": true
+    }
 }
 ```
 

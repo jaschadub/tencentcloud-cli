@@ -1,21 +1,22 @@
-**Example 1: 修改ES集群实例名称**
+**Example 1: ES集群纵向扩缩容**
 
-用以修改指定ES集群实例的名称
+用以对集群的节点规格（核数、内存大小）和磁盘大小进行扩缩容操作（当前仅支持纵向扩容）
 
 Input: 
 
 ```
 tccli es UpdateInstance --cli-unfold-argument  \
-    --InstanceId es-xxxxxx \
-    --InstanceName newName
+    --InstanceId es-xxxxxxxx \
+    --DiskSize 150 \
+    --NodeType ES.S1.MEDIUM4
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "DealName": "xx"
+        "RequestId": "1",
+        "DealName": "1"
     }
 }
 ```
@@ -43,13 +44,35 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "DealName": "xx"
+        "RequestId": "1",
+        "DealName": "1"
     }
 }
 ```
 
-**Example 3: 修改ES集群实例配置**
+**Example 3: 修改ES集群实例名称**
+
+用以修改指定ES集群实例的名称
+
+Input: 
+
+```
+tccli es UpdateInstance --cli-unfold-argument  \
+    --InstanceId es-xxxxxx \
+    --InstanceName newName
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "1",
+        "DealName": "1"
+    }
+}
+```
+
+**Example 4: 修改ES集群实例配置**
 
 用以对指定的ES集群实例的配置进行修改操作
 
@@ -65,13 +88,13 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "DealName": "xx"
+        "RequestId": "1",
+        "DealName": "1"
     }
 }
 ```
 
-**Example 4: 重置Kibana密码**
+**Example 5: 重置Kibana密码**
 
 重置指定ES集群实例Kibana密码
 
@@ -87,31 +110,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "DealName": "xx"
-    }
-}
-```
-
-**Example 5: ES集群纵向扩缩容**
-
-用以对集群的节点规格（核数、内存大小）和磁盘大小进行扩缩容操作（当前仅支持纵向扩容）
-
-Input: 
-
-```
-tccli es UpdateInstance --cli-unfold-argument  \
-    --InstanceId es-xxxxxxxx \
-    --DiskSize 150 \
-    --NodeType ES.S1.MEDIUM4
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "xx",
-        "DealName": "xx"
+        "RequestId": "1",
+        "DealName": "1"
     }
 }
 ```

@@ -1,11 +1,13 @@
-**Example 1: 删除云审计跟踪集**
+**Example 1: 删除操作审计跟踪集**
 
 
 
 Input: 
 
 ```
-tccli cloudaudit DeleteAuditTrack --cli-unfold-argument ```
+tccli cloudaudit DeleteAuditTrack --cli-unfold-argument  \
+    --TrackId 1
+```
 
 Output: 
 ```

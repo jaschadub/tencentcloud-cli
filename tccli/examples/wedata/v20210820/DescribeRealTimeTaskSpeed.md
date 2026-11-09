@@ -6,42 +6,68 @@ Input:
 
 ```
 tccli wedata DescribeRealTimeTaskSpeed --cli-unfold-argument  \
-    --ProjectId xx \
-    --EndTime 1 \
-    --StartTime 1 \
-    --TaskId xx \
-    --Granularity 1
+    --TaskId task33 \
+    --StartTime 1712803796000 \
+    --EndTime 1712803996000 \
+    --Granularity 1213 \
+    --ProjectId 1486804694126882816
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "BytesSpeedList": [
-            {
-                "Values": [
-                    {
-                        "Speed": 0.0,
-                        "Time": 1
-                    }
-                ],
-                "NodeType": "xx",
-                "NodeName": "xx"
-            }
-        ],
         "RecordsSpeedList": [
             {
+                "NodeType": "INPUT",
+                "NodeName": "1",
                 "Values": [
                     {
-                        "Speed": 0.0,
-                        "Time": 1
+                        "Time": 1,
+                        "Speed": 0
                     }
-                ],
-                "NodeType": "xx",
-                "NodeName": "xx"
+                ]
             }
         ],
-        "RequestId": "xx"
+        "BytesSpeedList": [
+            {
+                "NodeType": "INPUT",
+                "NodeName": "1",
+                "Values": [
+                    {
+                        "Time": 1,
+                        "Speed": 0
+                    }
+                ]
+            }
+        ],
+        "Data": {
+            "RecordsSpeedList": [
+                {
+                    "NodeType": "INPUT",
+                    "NodeName": "1",
+                    "Values": [
+                        {
+                            "Time": 1,
+                            "Speed": 0
+                        }
+                    ]
+                }
+            ],
+            "BytesSpeedList": [
+                {
+                    "Values": [
+                        {
+                            "Speed": 0,
+                            "Time": 1
+                        }
+                    ],
+                    "NodeType": "INPUT",
+                    "NodeName": "1"
+                }
+            ]
+        },
+        "RequestId": "977662"
     }
 }
 ```

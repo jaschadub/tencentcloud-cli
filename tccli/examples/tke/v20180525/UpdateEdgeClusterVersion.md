@@ -1,12 +1,12 @@
 **Example 1: 升级边缘集群**
 
-
+升级边缘计算集群组件版本
 
 Input: 
 
 ```
 tccli tke UpdateEdgeClusterVersion --cli-unfold-argument  \
-    --ClusterId cls-xxxxxxxx \
+    --ClusterId cls-2wds9k9p \
     --EdgeVersion 1.0.1
 ```
 

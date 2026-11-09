@@ -1,12 +1,12 @@
-**Example 1: 添加记录**
+**Example 1: 修改记录**
 
-
+ 
 
 Input: 
 
 ```
 tccli dnspod ModifyRecord --cli-unfold-argument  \
-    --Domain dnspod.site \
+    --Domain dnspod.cn \
     --DomainId 62 \
     --SubDomain bbbb \
     --RecordType A \

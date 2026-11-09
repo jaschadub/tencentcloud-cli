@@ -1,4 +1,4 @@
-**Example 1: 修改集群属性**
+**Example 1: 修改安全模式参数**
 
 
 
@@ -6,12 +6,8 @@ Input:
 
 ```
 tccli tke ModifyClusterAttribute --cli-unfold-argument  \
-    --AutoUpgradeClusterLevel.IsAutoUpgrade True \
-    --ClusterName xx \
-    --ProjectId 0 \
-    --ClusterDesc xx \
-    --ClusterId xx \
-    --ClusterLevel xx
+    --ClusterId cls-p8wo3t7e \
+    --SecurityModeConfig.Enabled False
 ```
 
 Output: 
@@ -19,14 +15,21 @@ Output:
 {
     "Response": {
         "AutoUpgradeClusterLevel": {
-            "IsAutoUpgrade": true
+            "IsAutoUpgrade": false
         },
-        "ClusterName": "xx",
+        "ClusterDesc": "",
+        "ClusterLevel": "",
+        "ClusterName": "",
+        "ClusterProperty": {
+            "NodeNameType": ""
+        },
+        "IsHighAvailability": false,
         "ProjectId": 0,
-        "ClusterDesc": "xx",
-        "QGPUShareEnable": true,
-        "RequestId": "xx",
-        "ClusterLevel": "xx"
+        "QGPUShareEnable": false,
+        "SecurityModeConfig": {
+            "Enabled": false
+        },
+        "RequestId": "ac4991da-f84d-4915-bf2d-2a7c8e6d8abf"
     }
 }
 ```

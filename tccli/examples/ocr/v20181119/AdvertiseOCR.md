@@ -1,113 +1,140 @@
-**Example 1: 通用印刷体识别示例代码 [ 前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=AdvertiseOCR)**
+**Example 1: AdvertiseOCR调用**
 
-
+ [ 前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=AdvertiseOCR)
 
 Input: 
 
 ```
 tccli ocr AdvertiseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/AdvertiseOCR/AdvertiseOCR1.jpg
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "ImageSize": {
+            "Height": 800,
+            "Width": 800
+        },
+        "RequestId": "72162aef-f8b6-4247-8efc-53e80311189d",
         "TextDetections": [
             {
-                "DetectedText": "Confetteria",
-                "Confidence": 99,
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":0}}",
+                "Confidence": 100,
+                "DetectedText": "永葆容颜",
                 "Polygon": [
                     {
-                        "X": 450,
-                        "Y": 211
+                        "X": 228,
+                        "Y": 48
                     },
                     {
-                        "X": 560,
-                        "Y": 223
+                        "X": 566,
+                        "Y": 48
                     },
                     {
-                        "X": 558,
-                        "Y": 244
+                        "X": 566,
+                        "Y": 169
                     },
                     {
-                        "X": 448,
-                        "Y": 232
+                        "X": 228,
+                        "Y": 169
                     }
-                ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":1}}"
+                ]
             },
             {
-                "DetectedText": "Raffaello",
-                "Confidence": 99,
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":0}}",
+                "Confidence": 100,
+                "DetectedText": "CHERISH THE ACHIEVEMENTS OF LUXURY",
                 "Polygon": [
                     {
-                        "X": 370,
-                        "Y": 233
+                        "X": 223,
+                        "Y": 166
                     },
                     {
-                        "X": 649,
-                        "Y": 265
+                        "X": 569,
+                        "Y": 167
                     },
                     {
-                        "X": 642,
-                        "Y": 331
+                        "X": 569,
+                        "Y": 194
                     },
                     {
-                        "X": 362,
-                        "Y": 299
+                        "X": 223,
+                        "Y": 192
                     }
-                ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":2}}"
+                ]
             },
             {
-                "DetectedText": "费列罗臻点坊",
-                "Confidence": 99,
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":0}}",
+                "Confidence": 100,
+                "DetectedText": "源于.自然的恩惠",
                 "Polygon": [
                     {
-                        "X": 402,
-                        "Y": 318
+                        "X": 301,
+                        "Y": 219
                     },
                     {
-                        "X": 587,
-                        "Y": 339
+                        "X": 494,
+                        "Y": 219
                     },
                     {
-                        "X": 584,
-                        "Y": 370
+                        "X": 494,
+                        "Y": 246
                     },
                     {
-                        "X": 398,
-                        "Y": 349
+                        "X": 301,
+                        "Y": 246
                     }
-                ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":3}}"
+                ]
             },
             {
-                "DetectedText": "拉斐尔脆雪柔",
-                "Confidence": 99,
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":0}}",
+                "Confidence": 100,
+                "DetectedText": "化妆品荣誉产品全场7折起售",
                 "Polygon": [
                     {
-                        "X": 386,
-                        "Y": 366
+                        "X": 232,
+                        "Y": 257
                     },
                     {
-                        "X": 591,
-                        "Y": 390
+                        "X": 562,
+                        "Y": 257
                     },
                     {
-                        "X": 587,
-                        "Y": 423
+                        "X": 562,
+                        "Y": 287
                     },
                     {
-                        "X": 382,
-                        "Y": 399
+                        "X": 232,
+                        "Y": 287
                     }
-                ],
-                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":3}}"
+                ]
+            },
+            {
+                "AdvancedInfo": "{\"Parag\":{\"ParagNo\":0}}",
+                "Confidence": 100,
+                "DetectedText": "FOUDATION",
+                "Polygon": [
+                    {
+                        "X": 407,
+                        "Y": 600
+                    },
+                    {
+                        "X": 407,
+                        "Y": 766
+                    },
+                    {
+                        "X": 383,
+                        "Y": 766
+                    },
+                    {
+                        "X": 383,
+                        "Y": 600
+                    }
+                ]
             }
-        ],
-        "RequestId": "03e66873-5209-4d26-abee-c4acd66fab91"
+        ]
     }
 }
 ```

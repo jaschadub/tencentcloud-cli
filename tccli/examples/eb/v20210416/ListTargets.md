@@ -1,83 +1,56 @@
 **Example 1: 获取目标列表**
 
-
+获取目标列表
 
 Input: 
 
 ```
 tccli eb ListTargets --cli-unfold-argument  \
-    --EventBusId eb-l65vlc2 \
-    --RuleId rule-fdltium8
+    --EventBusId eb-l6***c2 \
+    --RuleId rule-fd***um8
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "03118ade-8de2-4514-af4b-b9a2f170ddd9",
+        "RequestId": "b9730f16-0098-45d8-a55f-fd59fd7ed050",
         "Targets": [
             {
-                "EventBusId": "eb-l65vlc2u",
-                "RuleId": "rule-fdltium8",
-                "TargetDescription": {
-                    "ResourceDescription": "qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1"
-                },
-                "TargetId": "target-azwj7s7g",
-                "Type": "scf",
+                "BatchEventCount": 0,
+                "BatchTimeout": 0,
                 "EnableBatchDelivery": false,
-                "BatchEventCount": 1,
-                "BatchTimeout": 1
-            },
-            {
-                "EventBusId": "eb-l65vlc2u",
-                "RuleId": "rule-fdltium8",
+                "EventBusId": "eb-l6***c2",
+                "RuleId": "rule-fd***um8",
                 "TargetDescription": {
-                    "ResourceDescription": "qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1"
+                    "CkafkaTargetParams": {
+                        "EventDeliveryFormat": "",
+                        "RetryPolicy": {
+                            "MaxRetryAttempts": 0,
+                            "RetryInterval": 0
+                        },
+                        "TopicName": ""
+                    },
+                    "ESTargetParams": {
+                        "IndexPrefix": "",
+                        "IndexSuffixMode": "",
+                        "IndexTemplateType": "",
+                        "NetMode": "",
+                        "OutputMode": "",
+                        "RotationInterval": ""
+                    },
+                    "ResourceDescription": "qcs::eb-amp:ap-guangzhou:uin/my-uin:",
+                    "SCFParams": {
+                        "BatchEventCount": 0,
+                        "BatchTimeout": 0,
+                        "EnableBatchDelivery": false
+                    }
                 },
-                "TargetId": "target-o5yx01oq",
-                "Type": "scf",
-                "EnableBatchDelivery": false,
-                "BatchEventCount": 1,
-                "BatchTimeout": 1
-            },
-            {
-                "EventBusId": "eb-l65vlc2u",
-                "RuleId": "rule-fdltium8",
-                "TargetDescription": {
-                    "ResourceDescription": "qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1"
-                },
-                "TargetId": "target-prp1ovqi",
-                "Type": "scf",
-                "EnableBatchDelivery": false,
-                "BatchEventCount": 1,
-                "BatchTimeout": 1
-            },
-            {
-                "EventBusId": "eb-l65vlc2u",
-                "RuleId": "rule-fdltium8",
-                "TargetDescription": {
-                    "ResourceDescription": "qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1"
-                },
-                "TargetId": "target-krcwchke",
-                "Type": "scf",
-                "EnableBatchDelivery": false,
-                "BatchEventCount": 1,
-                "BatchTimeout": 1
-            },
-            {
-                "EventBusId": "eb-l65vlc2u",
-                "RuleId": "rule-fdltium8",
-                "TargetDescription": {
-                    "ResourceDescription": "qcs::scf:ap-guanzhou:uin/3473058547:namespace/default/function/test/1"
-                },
-                "TargetId": "target-e9r3a1l0",
-                "Type": "scf",
-                "EnableBatchDelivery": false,
-                "BatchEventCount": 1,
-                "BatchTimeout": 1
+                "TargetId": "target-5q***fmx",
+                "Type": "amp"
             }
         ],
-        "TotalCount": 5
+        "TotalCount": 1
     }
 }
 ```

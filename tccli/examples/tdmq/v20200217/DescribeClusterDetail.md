@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq DescribeClusterDetail --cli-unfold-argument  \
-    --ClusterId pulsar-xxxxxxxx
+    --ClusterId pulsar-47emajuekabz
 ```
 
 Output: 
@@ -14,25 +14,42 @@ Output:
 {
     "Response": {
         "ClusterSet": {
-            "ClusterId": "pulsar-xxxxxxxx",
-            "ClusterName": "sdfsdfsdf",
-            "Remark": "",
+            "ClusterId": "pulsar-47emajuekabz",
+            "ClusterName": "devName",
+            "Remark": "devRemark",
             "EndPointNum": 0,
-            "CreateTime": "2021-01-13 15:43:29",
+            "HealthyInfo": "healthy",
+            "CreateTime": "2023-07-20 10:35:17",
             "Healthy": 1,
-            "HealthyInfo": "",
-            "Status": 1,
-            "MaxNamespaceNum": 50,
-            "MaxTopicNum": 1000,
-            "MaxQps": 10000,
-            "MessageRetentionTime": 86400,
-            "VpcEndPoint": "xx",
+            "Status": 0,
+            "MaxNamespaceNum": 0,
+            "MaxTopicNum": 0,
+            "MaxQps": 0,
+            "MessageRetentionTime": 0,
+            "MaxStorageCapacity": 0,
+            "Version": "2.9.2",
+            "PublicEndPoint": null,
+            "VpcEndPoint": null,
             "NamespaceNum": 0,
-            "Version": "xx",
-            "PublicEndPoint": "xx",
-            "MaxStorageCapacity": 100
+            "UsedStorageBudget": 0,
+            "MaxPublishRateInMessages": 0,
+            "MaxDispatchRateInMessages": 0,
+            "MaxPublishRateInBytes": 0,
+            "MaxDispatchRateInBytes": 0,
+            "TopicNum": 0,
+            "MaxMessageDelayInSeconds": 0,
+            "PublicAccessEnabled": true,
+            "Tags": [
+                {
+                    "TagKey": "pulsarTag",
+                    "TagValue": "dev"
+                }
+            ],
+            "PayMode": 0,
+            "ProjectId": 0,
+            "ProjectName": "dev"
         },
-        "RequestId": "020eb354-144e-4cf8-9607-c6771cd24421"
+        "RequestId": "5d6c7091-e82c-4a9c-a18f-34d5fc460iuu"
     }
 }
 ```

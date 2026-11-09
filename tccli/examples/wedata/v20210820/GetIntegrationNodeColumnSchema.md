@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata GetIntegrationNodeColumnSchema --cli-unfold-argument  \
-    --ColumnContent {"a":1,"b":"0","c":0} \
-    --DatasourceType KAFKA
+    --ColumnContent {  "id": 1699859100000,  "name": "This seems to be a string", "len": 0,  "a1": "This seems to be a string"} \
+    --DatasourceType MYSQL
 ```
 
 Output: 
@@ -16,19 +16,43 @@ Output:
     "Response": {
         "Schemas": [
             {
-                "Name": "a",
-                "Value": "int"
+                "Alias": null,
+                "Comment": "",
+                "Id": "",
+                "Name": "id",
+                "Properties": null,
+                "Type": "bigint",
+                "Value": null
             },
             {
-                "Name": "b",
-                "Value": "string"
+                "Alias": null,
+                "Comment": "",
+                "Id": "",
+                "Name": "name",
+                "Properties": null,
+                "Type": "string",
+                "Value": null
             },
             {
-                "Name": "c",
-                "Value": "int"
+                "Alias": null,
+                "Comment": "",
+                "Id": "",
+                "Name": "len",
+                "Properties": null,
+                "Type": "int",
+                "Value": null
+            },
+            {
+                "Alias": null,
+                "Comment": "",
+                "Id": "",
+                "Name": "a1",
+                "Properties": null,
+                "Type": "string",
+                "Value": null
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "b86188b4-93e4-4b90-a5ed-2f7346af921f"
     }
 }
 ```

@@ -1,12 +1,12 @@
 **Example 1: 删除专用集群**
 
-
+删除专用集群
 
 Input: 
 
 ```
 tccli cdc DeleteDedicatedClusters --cli-unfold-argument  \
-    --DedicatedClusterIds cluster-gbo27yc4
+    --DedicatedClusterIds cluster-dfaf323
 ```
 
 Output: 

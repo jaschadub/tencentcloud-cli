@@ -26,7 +26,10 @@ class BaseHelpCommand(object):
                 version = self._cli_data.get_service_default_version(service_name)
             available_version_list = self._cli_data.get_available_services()[service_name]
             if version not in available_version_list:
-                raise Exception("available versions: %s" % " ".join(available_version_list))
+                raise Exception("Version: %s is invalid in service: %s, available versions: %s. \n"
+                                "Please check your command or configure file to find out "
+                                "if version setting is correct."
+                                % (version, service_name, " ".join(available_version_list)))
             self._version = version
 
     def __call__(self, args, parsed_globals):
@@ -72,6 +75,13 @@ class ActionHelpCommand(BaseHelpCommand):
         self._version = version
         self._action_name = action_name
         super(ActionHelpCommand, self).__init__()
+        description = self._cli_data.get_action_description(self._service_name, self._version, self._action_name)
+        online_status = self._cli_data.get_action_online_status(self._service_name, self._version, self._action_name)
+        if online_status == "deprecated":
+            deprecated_desc = description.split("\n\n")[0]
+            import warnings
+            warnings.filterwarnings("default")
+            warnings.warn("This action is deprecated, detail: %s" % deprecated_desc, DeprecationWarning)
 
     def _get_service_version(self, parsed_globals):
         self._service_version(self._service_name, parsed_globals)

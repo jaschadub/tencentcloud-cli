@@ -1,4 +1,4 @@
-**Example 1: 范例**
+**Example 1: 成功示例**
 
 
 
@@ -6,43 +6,41 @@ Input:
 
 ```
 tccli wedata ModifyTaskInfo --cli-unfold-argument  \
-    --SourceServer  \
-    --EndTime 2099-12-31 23:59:59 \
-    --ExecutionEndTime  \
-    --TaskAction  \
-    --CycleStep 10 \
-    --TaskId 20220727140613327 \
-    --TargetServer DelayTime \
-    --ProjectId 1 \
-    --Notes  \
-    --Retriable 1 \
-    --DependencyWorkflow yes \
-    --ResourceGroup  \
-    --RetryWait 1 \
-    --ExecutionStartTime  \
-    --TaskName  \
-    --BrokerIp  \
+    --ProjectId 1492511691706699776 \
+    --TaskId 20240307211852581 \
+    --DelayTime 600 \
     --StartupTime 0 \
-    --SelfDepend 1 \
-    --RunPriority 4 \
-    --TaskExt.0.Key aa \
-    --TaskExt.0.Value bb \
-    --InCharge  \
-    --TryLimit 3 \
-    --CycleType 1 \
-    --StartTime 2022-09-03 11:00:00 \
-    --TaskParamInfos.0.ParamValue ff \
-    --TaskParamInfos.0.ParamKey ee \
-    --YarnQueue  \
-    --CrontabExpression 
+    --SelfDepend 0 \
+    --StartTime 2024-03-28 00:00:00 \
+    --EndTime 2024-03-29 00:00:00 \
+    --TaskAction  \
+    --CycleType 3 \
+    --CycleStep 1 \
+    --ExecutionStartTime 00:00 \
+    --ExecutionEndTime 23:59 \
+    --TaskName python_task_failed \
+    --RetryWait 5 \
+    --TryLimit 5 \
+    --Retriable 1 \
+    --RunPriority 6 \
+    --TaskExt.0.Key python_type \
+    --TaskExt.0.Value python3 \
+    --ResourceGroup 20221229172428663695 \
+    --BrokerIp ins-g8j6pv4f \
+    --InCharge micofywang \
+    --Notes test \
+    --TaskParamInfos.0.ParamKey au \
+    --TaskParamInfos.0.ParamValue 3 \
+    --DependencyWorkflow no \
+    --InChargeIds 100033435965
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2e409eea-c8c8-4d3e-98b3-d8fdc960b631",
-        "Data": true
+        "Data": true,
+        "RequestId": "b41c3c3b-f7a8-4789-89f2-6b90711a6e5c"
     }
 }
 ```

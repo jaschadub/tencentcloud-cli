@@ -6,41 +6,29 @@ Input:
 
 ```
 tccli scf ListAliases --cli-unfold-argument  \
-    --Namespace <Namespace> \
-    --FunctionName <FunctionName>
+    --Namespace default \
+    --FunctionName functionName1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "RequestId": "xx",
         "Aliases": [
             {
-                "ModTime": "2020-09-22 00:00:00",
-                "Name": "xx",
-                "AddTime": "2020-09-22 00:00:00",
-                "FunctionVersion": "xx",
+                "ModTime": "2023-07-12 10:53:52",
+                "AddTime": "2023-07-12 10:53:52",
+                "Name": "$DEFAULT",
+                "Description": "",
+                "FunctionVersion": "$LATEST",
                 "RoutingConfig": {
-                    "AdditionalVersionWeights": [
-                        {
-                            "Version": "xx",
-                            "Weight": 0.0
-                        }
-                    ],
-                    "AddtionVersionMatchs": [
-                        {
-                            "Version": "xx",
-                            "Expression": "xx",
-                            "Method": "xx",
-                            "Key": "xx"
-                        }
-                    ]
-                },
-                "Description": "xx"
+                    "AdditionalVersionWeights": [],
+                    "AddtionVersionMatchs": []
+                }
             }
-        ]
+        ],
+        "TotalCount": 1,
+        "RequestId": "dfdfdfd-e3ca-4756-bc18-09a22ec9048f"
     }
 }
 ```

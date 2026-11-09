@@ -14,15 +14,20 @@ Output:
         "TotalCount": 1,
         "AccessRegionSet": [
             {
-                "RegionId": "xx",
-                "RegionAreaName": "xx",
-                "IDCType": "xx",
+                "RegionId": "NorthChina",
+                "RegionName": "中国大陆-华北",
+                "RegionArea": "NorthChina",
+                "RegionAreaName": "中国大陆-华北",
+                "IDCType": "dc",
                 "FeatureBitmap": 1,
-                "RegionArea": "xx",
-                "RegionName": "xx"
+                "SupportFeature": {
+                    "NetworkType": [
+                        "normal"
+                    ]
+                }
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "209e95b9-488d-4a58-bc86-810859577af3"
     }
 }
 ```

@@ -13,40 +13,42 @@ Output:
 ```
 {
     "Response": {
-        "Total": "1",
+        "Total": "382",
         "Data": [
             {
-                "TaskId": "task-video-XwxJtbkKXWgCt8AZ",
-                "DataId": "data_test_01",
-                "BizType": "1001",
-                "Name": "测试视频",
+                "DataId": "317xxx867800",
+                "TaskId": "w-audio-xxxxx_ouZOdcjYeN",
                 "Status": "FINISH",
-                "Type": "VIDEO",
-                "Suggestion": "Block",
+                "Name": "测试视频",
+                "BizType": "audit_txxxxx_xmly",
+                "Type": "AUDIO",
+                "Suggestion": "Review",
+                "MediaInfo": {
+                    "Codecs": "",
+                    "Duration": 177,
+                    "Width": 0,
+                    "Height": 0,
+                    "Thumbnail": ""
+                },
                 "Labels": [
                     {
-                        "Label": "Porn",
-                        "Suggestion": "Block",
-                        "Score": 99
-                    },
-                    {
-                        "Label": "Hot",
-                        "Suggestion": "Block",
-                        "Score": 70
+                        "Label": "Abuse",
+                        "Suggestion": "Review",
+                        "Score": 86,
+                        "SubLabel": "Uncivilized"
                     }
                 ],
-                "MediaInfo": {
-                    "Codecs": "h264 aac",
-                    "Duration": 36,
-                    "Width": 352,
-                    "Height": 640
+                "InputInfo": {
+                    "Type": "URL",
+                    "Url": "https://xxxx.com",
+                    "BucketInfo": null
                 },
-                "CreatedAt": "2020-07-13T11:47:01.925Z",
-                "UpdatedAt": "2020-07-13T11:47:25.840Z"
+                "CreatedAt": "2024-10-23T08:41:07.947Z",
+                "UpdatedAt": "2024-10-23T08:41:53.739Z"
             }
         ],
-        "PageToken": "4765-48dXwxJtbkKXW8d3eb",
-        "RequestId": "8d3e4765-48db-40b5-8fdb-aaf1d7225a60"
+        "PageToken": ".Zxi2o_ouxxxxjYeN",
+        "RequestId": "8172167d-8755-43d8-a7ce-76f3103059ac"
     }
 }
 ```

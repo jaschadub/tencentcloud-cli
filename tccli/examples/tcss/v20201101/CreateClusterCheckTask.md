@@ -14,9 +14,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "f19fd113-9288-4f1c-9236-9f59828763a9",
-        "TaskId": 32401,
-        "CreateResult": "Succ"
+        "CreateResult": "Succ",
+        "NewTaskID": "4647204fb0f965430b999ffb1f8d974d",
+        "RequestId": "c3a11cce-91df-4fbb-a935-ac85e162c31a",
+        "TaskId": 0
     }
 }
 ```

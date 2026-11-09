@@ -1,4 +1,4 @@
-**Example 1: 包年包月实例隔离接口**
+**Example 1: 包年包月实例退货退费**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mongodb TerminateDBInstances --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId cmgo-7pje****
 ```
 
 Output: 

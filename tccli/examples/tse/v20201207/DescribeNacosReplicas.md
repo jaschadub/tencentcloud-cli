@@ -6,25 +6,28 @@ Input:
 
 ```
 tccli tse DescribeNacosReplicas --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId ins-123456 \
+    --Limit 1 \
+    --Offset 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "RequestId": "xx",
         "Replicas": [
             {
-                "Status": "xx",
-                "Name": "xx",
-                "Zone": "xx",
-                "ZoneId": "xx",
-                "Role": "xx",
-                "SubnetId": "xx"
+                "Name": "name",
+                "Role": "node",
+                "Status": "running",
+                "SubnetId": "subnet-id",
+                "Zone": "ap-guangzhou-1",
+                "ZoneId": "100001",
+                "VpcId": "vpc-id"
             }
-        ]
+        ],
+        "TotalCount": 1,
+        "RequestId": "req-id"
     }
 }
 ```

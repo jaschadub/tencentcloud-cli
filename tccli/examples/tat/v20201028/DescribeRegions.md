@@ -1,6 +1,6 @@
 **Example 1: 查询地域列表**
 
-
+此接口用于查询 TAT 产品后台地域列表。 RegionState 为 AVAILABLE，代表该地域的 TAT 后台服务已经可用；未返回，代表该地域的 TAT 后台服务尚不可用
 
 Input: 
 
@@ -11,7 +11,7 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 13,
+        "TotalCount": 12,
         "RegionSet": [
             {
                 "Region": "ap-guangzhou",
@@ -66,16 +66,6 @@ Output:
             {
                 "Region": "ap-chongqing",
                 "RegionName": "重庆",
-                "RegionState": "AVAILABLE"
-            },
-            {
-                "Region": "ap-mumbai",
-                "RegionName": "孟买",
-                "RegionState": "AVAILABLE"
-            },
-            {
-                "Region": "eu-moscow",
-                "RegionName": "莫斯科",
                 "RegionState": "AVAILABLE"
             }
         ],

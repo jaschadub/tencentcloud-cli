@@ -1,12 +1,12 @@
 **Example 1: 请求示例**
 
-
+查询指定实例的账号信息
 
 Input: 
 
 ```
 tccli redis DescribeInstanceAccount --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p \
+    --InstanceId crs-fswdmXXX \
     --Limit 10 \
     --Offset 0
 ```
@@ -17,18 +17,19 @@ Output:
     "Response": {
         "Accounts": [
             {
-                "InstanceId": "crs-fdjfkldf",
-                "AccountName": "test",
-                "Remark": "test",
+                "AccountName": "root",
+                "CreateTime": "",
+                "InstanceId": "crs-fswdmXXX",
                 "Privilege": "rw",
                 "ReadonlyPolicy": [
                     "master"
                 ],
+                "Remark": "default",
                 "Status": 2
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db"
+        "RequestId": "10369b9b-b514-48b1-8967-44448fe8XXXXX",
+        "TotalCount": 1
     }
 }
 ```

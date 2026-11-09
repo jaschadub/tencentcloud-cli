@@ -1,4 +1,4 @@
-**Example 1: 创建泳道规则**
+**Example 1: 创建灰度发布规则**
 
 
 
@@ -6,26 +6,21 @@ Input:
 
 ```
 tccli tsf CreateLaneRule --cli-unfold-argument  \
-    --Remark xx \
-    --RuleTagList.0.UpdateTime 0 \
-    --RuleTagList.0.TagId xx \
-    --RuleTagList.0.TagOperator xx \
-    --RuleTagList.0.TagValue xx \
-    --RuleTagList.0.TagName xx \
-    --RuleTagList.0.LaneRuleId xx \
-    --RuleTagList.0.CreateTime 0 \
-    --RuleName xx \
-    --ProgramIdList xx \
-    --LaneId xx \
-    --RuleTagRelationship xx
+    --RuleName app_rule \
+    --Remark This is desc \
+    --RuleTagList.0.TagName app_tag \
+    --RuleTagList.0.TagOperator EQUAL \
+    --RuleTagList.0.TagValue user \
+    --RuleTagRelationship RELEATION_AND \
+    --LaneId lane-y9o6w958
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Result": "xx",
-        "RequestId": "xx"
+        "RequestId": "2d074caa-3966-42bd-a159-4bdd35534593",
+        "Result": "lane-r-yojkwwpr"
     }
 }
 ```

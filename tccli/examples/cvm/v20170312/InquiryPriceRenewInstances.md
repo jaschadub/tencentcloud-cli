@@ -1,14 +1,13 @@
 **Example 1: 续费实例询价**
 
-
+续费实例询价，时长为一个月
 
 Input: 
 
 ```
 tccli cvm InquiryPriceRenewInstances --cli-unfold-argument  \
-    --InstanceIds ins-2zvpghhc \
     --InstanceChargePrepaid.Period 1 \
-    --InstanceChargePrepaid.RenewFlag NOTIFY_AND_MANUAL_RENEW
+    --InstanceIds ins-2zvpghhc
 ```
 
 Output: 
@@ -17,8 +16,8 @@ Output:
     "Response": {
         "Price": {
             "InstancePrice": {
-                "OriginalPrice": "120.00",
-                "DiscountPrice": "1.20"
+                "OriginalPrice": 120,
+                "DiscountPrice": 1.2
             }
         },
         "RequestId": "e2e81b08-d747-455e-b27a-aecc5acafdba"

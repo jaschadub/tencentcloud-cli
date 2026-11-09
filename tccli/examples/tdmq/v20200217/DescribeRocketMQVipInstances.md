@@ -1,15 +1,13 @@
 **Example 1: 获取实例列表**
 
-
+获取实例列表
 
 Input: 
 
 ```
 tccli tdmq DescribeRocketMQVipInstances --cli-unfold-argument  \
-    --Limit 1 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --Offset 1
+    --Limit 20 \
+    --Offset 0
 ```
 
 Output: 
@@ -17,23 +15,27 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "23ca1a58-0388-4d2d-8465-653a53addda7",
         "Instances": [
             {
                 "Status": 1,
                 "PayMode": 1,
-                "Remark": "xx",
+                "Remark": "remark-info",
                 "AutoRenewFlag": 1,
-                "InstanceId": "xx",
-                "NodeCount": 1,
-                "ExpireTime": 1,
-                "InstanceVersion": "xx",
-                "MaxStorage": 1,
-                "MaxBandWidth": 1,
-                "SpecName": "xx",
-                "ConfigDisplay": "xx",
-                "InstanceName": "xx",
-                "MaxTps": 1
+                "InstanceId": "rocketmq-vvqb9emabapx",
+                "NodeCount": 3,
+                "ExpireTime": 1730877758000,
+                "InstanceVersion": "4.9.3",
+                "MaxStorage": 200,
+                "MaxBandWidth": 10,
+                "SpecName": "rocket-vip-basic-1",
+                "ConfigDisplay": "基础型",
+                "InstanceName": "order-instance",
+                "MaxTps": 4000,
+                "AclEnabled": true,
+                "Retention": 72,
+                "MinRetention": 72,
+                "MaxRetention": 960
             }
         ]
     }

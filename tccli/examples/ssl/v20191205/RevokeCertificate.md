@@ -1,12 +1,12 @@
 **Example 1: 吊销证书**
 
-
+吊销证书
 
 Input: 
 
 ```
 tccli ssl RevokeCertificate --cli-unfold-argument  \
-    --CertificateId a91hoLqi \
+    --CertificateId hehx***hshj \
     --Reason revoke
 ```
 

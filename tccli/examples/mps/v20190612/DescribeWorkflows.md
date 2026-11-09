@@ -1,58 +1,65 @@
 **Example 1: 查询特定工作流**
 
-查询 ID 为78459的工作流。
+查询 ID 为10001的工作流。
 
 Input: 
 
 ```
 tccli mps DescribeWorkflows --cli-unfold-argument  \
-    --WorkflowIds 78459
+    --WorkflowIds 10001
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6ca31e3a-6b8e-4b4e-9256-fdc700064ef3",
         "TotalCount": 1,
         "WorkflowInfoSet": [
             {
-                "WorkflowId": 78459,
-                "WorkflowName": "transcode-10",
-                "Status": "Enabled",
-                "Trigger": {
-                    "Type": "CosFileUpload",
-                    "CosFileUploadTrigger": {
-                        "Bucket": "TopRankVideo-125xxx88",
-                        "Region": "ap-chongqing",
-                        "Dir": "/movie/201907/"
-                    }
-                },
-                "OutputStorage": {
-                    "Type": "COS",
-                    "CosOutputStorage": {
-                        "Bucket": "TopRankVideo-125xxx88",
-                        "Region": "ap-chongqing"
-                    }
-                },
-                "MediaProcessTask": {
-                    "TranscodeTaskSet": [
-                        {
-                            "Definition": 10,
-                            "WatermarkSet": []
-                        }
-                    ]
-                },
-                "OutputDir": "/movie/201907/",
-                "AiContentReviewTask": null,
-                "AiRecognitionTask": null,
                 "AiAnalysisTask": null,
+                "AiContentReviewTask": {
+                    "Definition": 10
+                },
+                "AiRecognitionTask": null,
+                "CreateTime": "2024-04-03T08:29:26Z",
+                "MediaProcessTask": {
+                    "AdaptiveDynamicStreamingTaskSet": [],
+                    "AnimatedGraphicTaskSet": [],
+                    "ImageSpriteTaskSet": [],
+                    "SampleSnapshotTaskSet": [],
+                    "SnapshotByTimeOffsetTaskSet": [],
+                    "TranscodeTaskSet": []
+                },
+                "OutputDir": "",
+                "OutputStorage": {
+                    "CosOutputStorage": {
+                        "Bucket": "mpstest-12345567",
+                        "Region": "ap-nanjing"
+                    },
+                    "S3OutputStorage": null,
+                    "Type": "COS"
+                },
+                "Status": "Enabled",
                 "TaskNotifyConfig": null,
-                "TaskPriority": 0,
-                "CreateTime": "2019-07-18T10:00:00Z",
-                "UpdateTime": "2019-07-18T11:00:03Z"
+                "TaskPriority": -10,
+                "Trigger": {
+                    "AwsS3FileUploadTrigger": null,
+                    "CosFileUploadTrigger": {
+                        "Bucket": "mpstest-12345567",
+                        "Dir": "/mps/",
+                        "Formats": [
+                            ""
+                        ],
+                        "Region": "ap-nanjing"
+                    },
+                    "Type": "CosFileUpload"
+                },
+                "UpdateTime": "2024-08-05T07:04:30Z",
+                "WorkflowId": 10001,
+                "WorkflowName": "工作流test"
             }
-        ]
+        ],
+        "RequestId": "73054d13-abcdef1-8c28-7ce8698ef8b9"
     }
 }
 ```

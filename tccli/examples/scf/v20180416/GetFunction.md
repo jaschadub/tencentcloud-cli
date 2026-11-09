@@ -13,136 +13,89 @@ Output:
 ```
 {
     "Response": {
-        "ModTime": "2020-09-22 00:00:00",
-        "Layers": [
-            {
-                "Status": "xx",
-                "LayerVersion": 0,
-                "Description": "xx",
-                "LicenseInfo": "xx",
-                "AddTime": "xx",
-                "CompatibleRuntimes": [
-                    "xx"
-                ],
-                "LayerName": "xx"
-            }
-        ],
-        "CodeError": "xx",
-        "AccessInfo": {
-            "Host": "xx",
-            "Vip": "xx"
-        },
-        "UseGpu": "xx",
-        "EipConfig": {
-            "EipFixed": "xx",
-            "Eips": [
-                "xx"
-            ]
-        },
-        "Namespace": "xx",
-        "Environment": {
-            "Variables": [
-                {
-                    "Value": "xx",
-                    "Key": "xx"
-                }
-            ]
-        },
-        "OnsEnable": "xx",
-        "InstallDependency": "xx",
-        "Role": "xx",
-        "StatusReasons": [
-            {
-                "ErrorCode": "xx",
-                "ErrorMessage": "xx"
-            }
-        ],
-        "Description": "xx",
-        "Type": "xx",
-        "Status": "xx",
-        "Runtime": "xx",
-        "DeadLetterConfig": {
-            "FilterType": "xx",
-            "Type": "xx",
-            "Name": "xx"
-        },
-        "Qualifier": "xx",
-        "Tags": [
-            {
-                "Value": "xx",
-                "Key": "xx"
-            }
-        ],
-        "ClsLogsetId": "xx",
-        "FunctionId": "xx",
-        "FunctionVersion": "xx",
-        "FunctionName": "xx",
-        "Triggers": [
-            {
-                "ModTime": "2020-09-22 00:00:00",
-                "BindStatus": "xx",
-                "Enable": 0,
-                "TriggerAttribute": "xx",
-                "Qualifier": "xx",
-                "CustomArgument": "xx",
-                "AddTime": "2020-09-22 00:00:00",
-                "AvailableStatus": "xx",
-                "TriggerDesc": "xx",
-                "TriggerName": "xx",
-                "ResourceId": "xx",
-                "Type": "xx"
-            }
-        ],
-        "ClsTopicId": "xx",
-        "AddTime": "2020-09-22 00:00:00",
-        "MemorySize": 128,
-        "CfsConfig": {
-            "CfsInsList": [
-                {
-                    "MountSubnetId": "xx",
-                    "LocalMountDir": "xx",
-                    "UserId": "xx",
-                    "IpAddress": "xx",
-                    "MountInsId": "xx",
-                    "MountVpcId": "xx",
-                    "UserGroupId": "xx",
-                    "CfsId": "xx",
-                    "RemoteMountDir": "xx"
-                }
-            ]
-        },
+        "Qualifier": "$LATEST",
+        "Description": "Created by Serverless",
         "Timeout": 3,
-        "StatusDesc": "xx",
-        "TraceEnable": "xx",
-        "CodeInfo": "xx",
-        "AsyncRunEnable": "xx",
+        "InitTimeout": 90,
+        "MemorySize": 128,
+        "Runtime": "CustomImage",
         "VpcConfig": {
-            "SubnetId": "xx",
-            "VpcId": "xx"
+            "VpcId": "",
+            "SubnetId": ""
         },
-        "ErrNo": 0,
+        "Environment": {
+            "Variables": []
+        },
+        "Handler": "",
+        "UseGpu": "FALSE",
+        "Role": "",
         "CodeSize": 0,
-        "L5Enable": "xx",
-        "AvailableStatus": "xx",
-        "Handler": "xx",
-        "CodeResult": "xx",
-        "PublicNetConfig": {
-            "EipConfig": {
-                "EipAddress": [
-                    "xx"
-                ],
-                "EipStatus": "xx"
-            },
-            "PublicNetStatus": "xx"
+        "FunctionVersion": "$LATEST",
+        "FunctionName": "function-index1",
+        "FunctionId": "xccxvxcv",
+        "Namespace": "default",
+        "InstallDependency": "FALSE",
+        "Status": "Active",
+        "AvailableStatus": "Available",
+        "StatusDesc": "",
+        "L5Enable": "FALSE",
+        "DnsCache": "FALSE",
+        "EipConfig": {
+            "EipFixed": "FALSE",
+            "Eips": []
         },
-        "InitTimeout": 0,
-        "ProtocolType": "WS",
-        "ProtocolParams": {
-            "WSParams": {
-                "IdleTimeOut": 15
+        "ModTime": "2024-12-17 17:52:48",
+        "AddTime": "2024-12-17 17:47:08",
+        "Layers": [],
+        "DeadLetterConfig": {
+            "Type": "",
+            "Name": "",
+            "FilterType": ""
+        },
+        "OnsEnable": "FALSE",
+        "PublicNetConfig": {
+            "PublicNetStatus": "ENABLE",
+            "EipConfig": {
+                "EipStatus": "DISABLE",
+                "EipAddress": []
             }
         },
-        "RequestId": "xx"
+        "ImageConfig": {
+            "RegistryId": "",
+            "ImageType": "personal",
+            "ImageUri": "ccr.ccs.tencentyun.com/xxx/xxx:xx@sha256:xxxxxxxxxx",
+            "ContainerImageAccelerate": false,
+            "Command": "node",
+            "Args": " index.js ",
+            "ImagePort": 9000,
+            "EntryPoint": null
+        },
+        "ProtocolType": "",
+        "Triggers": [],
+        "ClsLogsetId": "b91e2c12-cccccccccccc",
+        "ClsTopicId": "a3b039f5-bbbbbbbbbb",
+        "CodeInfo": "",
+        "CodeResult": "success",
+        "CodeError": "",
+        "ErrNo": 0,
+        "Tags": [],
+        "AccessInfo": {
+            "Host": "",
+            "Vip": ""
+        },
+        "Type": "Event",
+        "CfsConfig": {
+            "CfsInsList": []
+        },
+        "StatusReasons": [],
+        "AsyncRunEnable": "FALSE",
+        "TraceEnable": "FALSE",
+        "ProtocolParams": null,
+        "InstanceConcurrencyConfig": null,
+        "IntranetConfig": {
+            "IpFixed": "DISABLE"
+        },
+        "RequestId": "08b4c93b-b515-4cf4-a7a3-72b5db4e21dc"
     }
 }
 ```

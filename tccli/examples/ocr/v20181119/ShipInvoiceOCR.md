@@ -1,12 +1,12 @@
 **Example 1: 轮船票识别示例代码**
 
-
+轮船票识别
 
 Input: 
 
 ```
 tccli ocr ShipInvoiceOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg 
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg
 ```
 
 Output: 

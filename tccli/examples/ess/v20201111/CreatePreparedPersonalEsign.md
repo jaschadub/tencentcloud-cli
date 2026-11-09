@@ -1,0 +1,27 @@
+**Example 1: 通过准备好的印章图片创建个人印章**
+
+通过准备好的印章图片创建个人印章
+
+Input: 
+
+```
+tccli ess CreatePreparedPersonalEsign --cli-unfold-argument  \
+    --Operator.UserId yDCYCUUckp7k0tlrUxLgPeIB2r7yVxrA \
+    --UserName 印章归属个人姓名 \
+    --IdCardType  \
+    --IdCardNumber 身份证件号码 \
+    --FileId yDxdfffxxxxxxxx \
+    --SealName 我的印章名称 \
+    --Mobile 135*111
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SealId": "sealid-1",
+        "RequestId": "abc-3456-333-5555"
+    }
+}
+```
+

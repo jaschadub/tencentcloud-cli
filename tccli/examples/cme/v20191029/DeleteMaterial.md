@@ -1,13 +1,13 @@
 **Example 1: 删除媒体**
 
-
+删除媒体
 
 Input: 
 
 ```
 tccli cme DeleteMaterial --cli-unfold-argument  \
-    --Platform test \
-    --MaterialId 123456789
+    --Platform 1000000009 \
+    --MaterialId 397ff3d4730c2e09ba24298f742add6346107826
 ```
 
 Output: 

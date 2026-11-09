@@ -11,120 +11,70 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 2,
-        "RequestId": "xx",
+        "TotalCount": 0,
         "Clusters": [
             {
-                "ApiAccessIpv6": "xx",
-                "DbaUins": [
-                    "xx"
-                ],
-                "KafkaInfo": {
-                    "IsVpc": true,
-                    "Topic": "xx",
-                    "Password": "xx",
-                    "User": "xx",
-                    "Address": "xx",
-                    "Instance": "ckafka-l4xpzgpz"
-                },
-                "PasswordStatus": "xx",
+                "ClusterName": "clustername",
+                "ClusterId": "145462",
+                "Region": "ap-shanghai",
+                "IdlType": "proto",
+                "NetworkType": "proto",
+                "VpcId": "testvpc",
+                "SubnetId": "testsubnetid",
                 "CreatedTime": "2020-09-22 00:00:00",
-                "WriteCapacityUnit": 0,
-                "IdlType": "xx",
-                "VpcId": "xx",
-                "ApiAccessIp": "xx",
-                "ClusterId": "xx",
+                "Password": "passd1",
+                "PasswordStatus": "1",
+                "ApiAccessId": "accessid",
+                "ApiAccessIp": "accessip",
+                "ApiAccessPort": 0,
+                "OldPasswordExpireTime": "17832322",
+                "ApiAccessIpv6": "",
+                "ClusterType": 0,
+                "ClusterStatus": 0,
+                "ReadCapacityUnit": 1000,
+                "WriteCapacityUnit": 1000,
+                "DiskVolume": 10,
+                "ServerList": [
+                    {
+                        "ServerUid": "1",
+                        "MachineType": "svr",
+                        "MemoryRate": 0,
+                        "DiskRate": 0,
+                        "ReadNum": 0,
+                        "WriteNum": 0,
+                        "Version": "1"
+                    }
+                ],
                 "ProxyList": [
                     {
+                        "ProxyUid": "2",
+                        "MachineType": "proxy",
                         "ProcessSpeed": 0,
                         "AverageProcessDelay": 0,
-                        "MachineType": "xx",
-                        "ProxyUid": "xx",
-                        "SlowProcessSpeed": 0
+                        "SlowProcessSpeed": 0,
+                        "Version": "2"
                     }
                 ],
                 "Censorship": 0,
-                "SubnetId": "xx",
-                "Password": "xx",
-                "ApiAccessId": "xx",
-                "DiskVolume": 0,
-                "DataFlowStatus": 0,
-                "Region": "xx",
-                "ClusterType": 0,
-                "NetworkType": "xx",
-                "OldPasswordExpireTime": "xx",
-                "ServerList": [
-                    {
-                        "MachineType": "xx",
-                        "ServerUid": "xx",
-                        "ReadNum": 0,
-                        "WriteNum": 0,
-                        "MemoryRate": 0,
-                        "DiskRate": 0
-                    }
-                ],
-                "ApiAccessPort": 9999,
-                "ClusterName": "xx",
-                "ClusterStatus": 0,
-                "ReadCapacityUnit": 0
-            },
-            {
-                "ApiAccessIpv6": "xx",
                 "DbaUins": [
-                    "342",
-                    "432432",
-                    "342342"
+                    "1888232"
                 ],
-                "PasswordStatus": "xx",
-                "KafkaInfo": {
-                    "IsVpc": true,
-                    "Topic": "xx",
-                    "Password": "xx",
-                    "User": "xx",
-                    "Address": "xx",
-                    "Instance": "ckafka-l4xpzgpz"
-                },
-                "CreatedTime": "2020-09-22 00:00:00",
-                "WriteCapacityUnit": 0,
-                "IdlType": "xx",
-                "VpcId": "xx",
-                "ApiAccessIp": "xx",
-                "ClusterId": "xx",
-                "ClusterStatus": 0,
-                "ProxyList": [
-                    {
-                        "MachineType": "xx",
-                        "AverageProcessDelay": 0,
-                        "ProcessSpeed": 0,
-                        "ProxyUid": "xx",
-                        "SlowProcessSpeed": 0
-                    }
-                ],
-                "Censorship": 1,
-                "SubnetId": "xx",
-                "Password": "xx",
-                "ApiAccessId": "xx",
-                "DiskVolume": 0,
                 "DataFlowStatus": 0,
-                "Region": "xx",
-                "ClusterType": 0,
-                "OldPasswordExpireTime": "xx",
-                "ServerList": [
-                    {
-                        "ServerUid": "xx",
-                        "ReadNum": 0,
-                        "DiskRate": 0,
-                        "WriteNum": 0,
-                        "MemoryRate": 0,
-                        "MachineType": "xx"
-                    }
-                ],
-                "ApiAccessPort": 9999,
-                "ClusterName": "xx",
-                "NetworkType": "xx",
-                "ReadCapacityUnit": 0
+                "KafkaInfo": {
+                    "Address": "address",
+                    "Topic": "topic",
+                    "User": "usr0",
+                    "Password": "usrpasswd",
+                    "Instance": "instid",
+                    "IsVpc": 0
+                },
+                "TxhBackupExpireDay": 1,
+                "UlogBackupExpireDay": 1,
+                "IsReadOnlyUlogBackupExpireDay": 1,
+                "RestProxyStatus": 0
             }
-        ]
+        ],
+        "RequestId": "1947843-12321"
     }
 }
 ```

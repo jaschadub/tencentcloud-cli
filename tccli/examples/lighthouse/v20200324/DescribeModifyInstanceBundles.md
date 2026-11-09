@@ -1,12 +1,12 @@
 **Example 1: 查询实例可修改套餐列表**
 
-
+查询实例可修改套餐列表
 
 Input: 
 
 ```
 tccli lighthouse DescribeModifyInstanceBundles --cli-unfold-argument  \
-    --InstanceId lhins-f4s3n38h
+    --InstanceId lhins-p6xbekdt
 ```
 
 Output: 
@@ -17,108 +17,44 @@ Output:
             {
                 "Bundle": {
                     "BundleDisplayLabel": "NORMAL",
-                    "BundleId": "bundle_ntp_small2_500",
+                    "BundleId": "bundle_gen_mc_med2_02",
                     "BundleSalesState": "AVAILABLE",
                     "BundleType": "GENERAL_BUNDLE",
-                    "CPU": 1,
-                    "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
-                    "InternetMaxBandwidthOut": 3,
-                    "Memory": 2,
-                    "MonthlyTraffic": 500,
-                    "Price": {
-                        "InstancePrice": {
-                            "Discount": 100,
-                            "DiscountPrice": 90,
-                            "OriginalBundlePrice": 90,
-                            "OriginalPrice": 90
-                        }
-                    },
-                    "SupportLinuxUnixPlatform": true,
-                    "SupportWindowsPlatform": true,
-                    "SystemDiskSize": 40,
-                    "SystemDiskType": "CLOUD_SSD"
-                },
-                "ModifyBundleState": "UNAVAILABLE",
-                "ModifyPrice": {
-                    "InstancePrice": {
-                        "Discount": 100,
-                        "DiscountPrice": 19.73,
-                        "OriginalBundlePrice": 90,
-                        "OriginalPrice": 19.73
-                    }
-                }
-            },
-            {
-                "Bundle": {
-                    "BundleDisplayLabel": "NORMAL",
-                    "BundleId": "bundle_ntp_small1_500",
-                    "BundleSalesState": "AVAILABLE",
-                    "BundleType": "GENERAL_BUNDLE",
-                    "CPU": 1,
-                    "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
-                    "InternetMaxBandwidthOut": 3,
-                    "Memory": 1,
-                    "MonthlyTraffic": 500,
-                    "Price": {
-                        "InstancePrice": {
-                            "Discount": 100,
-                            "DiscountPrice": 90,
-                            "OriginalBundlePrice": 90,
-                            "OriginalPrice": 90
-                        }
-                    },
-                    "SupportLinuxUnixPlatform": true,
-                    "SupportWindowsPlatform": true,
-                    "SystemDiskSize": 40,
-                    "SystemDiskType": "CLOUD_SSD"
-                },
-                "ModifyBundleState": "UNAVAILABLE",
-                "ModifyPrice": {
-                    "InstancePrice": {
-                        "Discount": 100,
-                        "DiscountPrice": 19.73,
-                        "OriginalBundlePrice": 90,
-                        "OriginalPrice": 19.73
-                    }
-                }
-            },
-            {
-                "Bundle": {
-                    "BundleDisplayLabel": "NORMAL",
-                    "BundleId": "bundle_ntp_small2_1000",
-                    "BundleSalesState": "AVAILABLE",
-                    "BundleType": "GENERAL_BUNDLE",
-                    "CPU": 1,
+                    "BundleTypeDescription": "通用型",
+                    "CPU": 2,
                     "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
                     "InternetMaxBandwidthOut": 5,
                     "Memory": 2,
-                    "MonthlyTraffic": 1000,
+                    "MonthlyTraffic": 500,
                     "Price": {
                         "InstancePrice": {
+                            "Currency": "CNY",
                             "Discount": 100,
-                            "DiscountPrice": 140,
-                            "OriginalBundlePrice": 140,
-                            "OriginalPrice": 140
+                            "DiscountPrice": 65,
+                            "OriginalBundlePrice": 65,
+                            "OriginalPrice": 65
                         }
                     },
                     "SupportLinuxUnixPlatform": true,
                     "SupportWindowsPlatform": true,
-                    "SystemDiskSize": 40,
-                    "SystemDiskType": "CLOUD_SSD"
+                    "SystemDiskSize": 70,
+                    "SystemDiskType": "CLOUD_PREMIUM"
                 },
-                "ModifyBundleState": "UNAVAILABLE",
+                "ModifyBundleState": "AVAILABLE",
                 "ModifyPrice": {
                     "InstancePrice": {
+                        "Currency": "CNY",
                         "Discount": 100,
-                        "DiscountPrice": 52.6,
-                        "OriginalBundlePrice": 140,
-                        "OriginalPrice": 52.6
+                        "DiscountPrice": 10,
+                        "OriginalBundlePrice": 65,
+                        "OriginalPrice": 10
                     }
-                }
+                },
+                "NotSupportModifyMessage": ""
             }
         ],
-        "RequestId": "f1bb6c99-e704-441e-a405-a594cb55c989",
-        "TotalCount": 3
+        "RequestId": "651060b7-b781-4ed9-898c-a06b8c5c51dc",
+        "TotalCount": 1
     }
 }
 ```

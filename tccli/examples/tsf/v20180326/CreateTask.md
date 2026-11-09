@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf CreateTask --cli-unfold-argument  \
-    --TaskName test \
+    --TaskName task-test \
     --TaskContent com.example.task.simpleTask \
     --TaskArgument taskArgumentTest \
     --ExecuteType UNICAST \
@@ -23,7 +23,7 @@ Output:
 {
     "Response": {
         "RequestId": "6281ddf9-1914-420b-afb8-93735ac3270a",
-        "Result": "task-12345678"
+        "Result": "task-6a79x94v"
     }
 }
 ```

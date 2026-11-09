@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideoindustry GetRecordPlanById --cli-unfold-argument  \
-    --PlanId plan-xxxx
+    --PlanId plan-fyw1k9l5
 ```
 
 Output: 
@@ -14,14 +14,16 @@ Output:
 {
     "Response": {
         "Plan": {
-            "PlanId": "plan-xxxxx",
-            "Name": "xxx",
-            "TimeTemplateId": "tgrp-xxxx",
-            "TimeTemplateName": "xxxx",
+            "PlanId": "plan-fyw1k9l5",
+            "Name": "fyw1k9l5",
+            "TimeTemplateId": "tgrp-fyw1k9l5",
+            "TimeTemplateName": "fyw1k9l5",
             "EventId": 0,
+            "RecordStorageTime": 1,
             "Devices": [
                 {
-                    "DeviceId": "dev02"
+                    "DeviceId": "99350367561320000005",
+                    "ChannelId": "99350367561320000005"
                 }
             ]
         },

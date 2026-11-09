@@ -1,6 +1,6 @@
 **Example 1: 查询通知模板列表**
 
-
+查询通知模板列表
 
 Input: 
 
@@ -20,77 +20,79 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 0,
         "Notices": [
             {
-                "AMPConsumerId": "xx",
-                "URLNotices": [
-                    {
-                        "ValidationCode": "xx",
-                        "URL": "xx",
-                        "IsValid": 0,
-                        "Weekday": [
-                            0
-                        ],
-                        "StartTime": 0,
-                        "EndTime": 0
-                    }
-                ],
-                "Name": "xx",
-                "NoticeType": "xx",
-                "Tags": [
-                    {
-                        "Value": "xx",
-                        "Key": "xx"
-                    }
-                ],
-                "CLSNotices": [
-                    {
-                        "TopicId": "xx",
-                        "Region": "xx",
-                        "Enable": 0,
-                        "LogSetId": "xx"
-                    }
-                ],
-                "PolicyIds": [
-                    "xx"
-                ],
+                "Id": "notice-id",
+                "Name": "notice-name",
+                "UpdatedAt": "2020-10-10 10:10:10",
+                "UpdatedBy": "2020-10-10 10:10:10",
+                "NoticeType": "normal",
                 "UserNotices": [
                     {
-                        "NoticeWay": [
-                            "SMS",
-                            "EMAIL"
-                        ],
-                        "NeedPhoneArriveNotice": 0,
-                        "PhoneOrder": [
+                        "ReceiverType": "webhook",
+                        "UserIds": [
                             0
                         ],
-                        "PhoneCallType": "xx",
-                        "UserIds": [
-                            1234567
-                        ],
-                        "ReceiverType": "xx",
-                        "PhoneCircleInterval": 0,
                         "GroupIds": [
                             0
                         ],
                         "StartTime": 0,
+                        "EndTime": 0,
+                        "NoticeWay": [
+                            ""
+                        ],
+                        "PhoneOrder": [
+                            0
+                        ],
                         "PhoneCircleTimes": 0,
-                        "EndTime": 86399,
                         "PhoneInnerInterval": 0,
+                        "PhoneCircleInterval": 0,
+                        "NeedPhoneArriveNotice": 0,
+                        "PhoneCallType": "",
+                        "Weekday": [
+                            0
+                        ],
+                        "OnCallFormIDs": [
+                            ""
+                        ]
+                    }
+                ],
+                "URLNotices": [
+                    {
+                        "URL": "",
+                        "IsValid": 0,
+                        "ValidationCode": "",
+                        "StartTime": 0,
+                        "EndTime": 0,
                         "Weekday": [
                             0
                         ]
                     }
                 ],
-                "IsPreset": 1,
-                "UpdatedBy": "xx",
-                "UpdatedAt": "xx",
-                "NoticeLanguage": "xx",
-                "Id": "xx"
+                "IsPreset": 0,
+                "NoticeLanguage": "",
+                "PolicyIds": [
+                    ""
+                ],
+                "AMPConsumerId": "",
+                "CLSNotices": [
+                    {
+                        "Enable": 0,
+                        "Region": "",
+                        "LogSetId": "",
+                        "TopicId": ""
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "",
+                        "Value": ""
+                    }
+                ]
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "xx"
+        "RequestId": "xyz"
     }
 }
 ```

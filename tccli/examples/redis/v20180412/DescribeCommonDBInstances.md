@@ -1,41 +1,41 @@
 **Example 1: 请求示例**
 
-
+废弃接口
 
 Input: 
 
 ```
 tccli redis DescribeCommonDBInstances --cli-unfold-argument  \
     --PayMode 0 \
-    --InstanceIds crs-nh47ubwr
+    --InstanceIds crs-xjhsdj****
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "TotalCount": 0,
         "InstanceDetails": [
             {
-                "AppId": 251006366,
-                "Createtime": "2020-05-06 19:38:19",
-                "InstanceId": "crs-nh47ubwr",
-                "InstanceName": "crs-nh47ubwr",
+                "AppId": 1251111111,
+                "Createtime": "2022-06-13 21:41:40",
+                "InstanceId": "crs-xjhsdj****",
+                "InstanceName": "dba-stag",
                 "NetType": 1,
                 "PayMode": 1,
-                "ProjectId": 1075668,
-                "Region": "ap-guangzhou",
-                "Status": "1",
-                "SubnetId": 1210162,
+                "ProjectId": 0,
+                "Region": "ap-beijing",
+                "Status": "2",
+                "SubnetId": "unknown-unSubnetId",
                 "Vips": [
-                    "172.16.1.84"
+                    "10.76.128.10"
                 ],
-                "VpcId": "79963",
+                "VpcId": "unknown-unVpcId",
                 "Vport": 6379,
-                "Zone": ""
+                "Zone": "ap-beijing-1"
             }
         ],
-        "RequestId": "e306be36-f01b-477a-bdfb-e63d9b16d0a5",
-        "TotalCount": 1
+        "RequestId": "fc4a37f4-b27d-4aaf-9661-8212c9dabmclnvXXX"
     }
 }
 ```

@@ -1,6 +1,6 @@
-**Example 1: 查询安全设置**
+**Example 1: 获取子账号安全设置**
 
-
+获取子账号安全设置
 
 Input: 
 
@@ -34,6 +34,7 @@ Output:
             "NotifyWechat": 1,
             "Tips": 0
         },
+        "PromptTrust": 0,
         "RequestId": "9626da03-4645-4c54-ba90-74836284af0c"
     }
 }

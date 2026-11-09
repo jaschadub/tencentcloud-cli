@@ -6,58 +6,69 @@ Input:
 
 ```
 tccli tcb DescribeCloudBaseProjectVersionList --cli-unfold-argument  \
-    --EnvId xx \
+    --EnvId lowcode-abc \
     --PageNum 1 \
-    --PageSize 1 \
-    --ProjectName xx \
-    --StartTime xx \
-    --EndTime xx
+    --PageSize 10 \
+    --ProjectName project
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "ProjectVersions": [
             {
-                "Status": "xx",
+                "Name": "name",
+                "Sam": "sam",
+                "Source": {
+                    "Type": "type",
+                    "Url": "http://url",
+                    "Name": "name",
+                    "WorkDir": "dir",
+                    "CodingPackageName": "projectName",
+                    "CodingPackageVersion": "0.0.1",
+                    "RawCode": "rawcode",
+                    "Branch": "branch",
+                    "ProjectId": 0,
+                    "ProjectName": "projectName"
+                },
+                "CreateTime": 0,
                 "UpdateTime": 0,
-                "EnvId": "xx",
-                "Name": "xx",
-                "Sam": "xx",
-                "Tags": [
-                    "xx"
-                ],
-                "RcJson": "xx",
-                "CDId": "xx",
-                "NetworkConfig": "xx",
+                "Status": "success",
                 "Parameters": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Key": "key",
+                        "Value": "value"
                     }
                 ],
-                "Source": {
-                    "CodingPackageVersion": "xx",
-                    "WorkDir": "xx",
-                    "Name": "xx",
-                    "Url": "xx",
-                    "RawCode": "xx",
-                    "Type": "xx",
-                    "CodingPackageName": "xx"
-                },
-                "FailReason": "xx",
-                "AddonConfig": "xx",
+                "Type": "type",
+                "CIId": "ciid",
+                "CDId": "cdid",
+                "EnvId": "env-asdf",
                 "VersionNum": 0,
-                "ExtensionId": "xx",
-                "FailType": "xx",
-                "CIId": "xx",
-                "Type": "xx",
-                "CreateTime": 0
+                "FailReason": "failed with reason",
+                "RcJson": "{\"key\":\"value\"}",
+                "AddonConfig": "{\"key\":\"value\"}",
+                "Tags": [
+                    "tag"
+                ],
+                "NetworkConfig": "{\"key\":\"value\"}",
+                "ExtensionId": "extensionid",
+                "FailType": "system",
+                "RepoUrl": "http://repourl",
+                "AutoDeployOnCodeChange": true,
+                "BuildPercent": 0,
+                "Uin": "10000101123",
+                "BuildFinishTime": "2024-12-26 14:00:00",
+                "DeployFinishTime": "2024-12-26 14:05:00",
+                "BuildId": "buildid",
+                "SourceUrl": "http://sourceurl",
+                "FailReasonShort": "failed with something",
+                "FirstInitRepo": "http://firstinitrepo"
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 1,
+        "RequestId": "asdasfas-hfgd-skdj-shaksldiaosu"
     }
 }
 ```

@@ -1,20 +1,20 @@
 **Example 1: 请求示例**
 
-
+请求示例
 
 Input: 
 
 ```
 tccli live ModifyLiveCallbackTemplate --cli-unfold-argument  \
-    --TemplateId 1000 \
+    --StreamBeginNotifyUrl http://www.yourdomain.com/api/notify?action=streamBegin \
+    --StreamEndNotifyUrl http://www.yourdomain.com/api/notify?action=streamEnd \
     --TemplateName testName \
-    --Description test \
+    --RecordNotifyUrl http://www.yourdomain.com/api/notify?action=record \
+    --SnapshotNotifyUrl http://www.yourdomain.com/api/notify?action=snapshot \
+    --TemplateId 1000 \
+    --PornCensorshipNotifyUrl http://www.yourdomain.com/api/notify?action=porn \
     --CallbackKey adasdas23432423 \
-    --StreamBeginNotifyUrl http://www.yourdomain.com/api/notify?action \
-    --StreamEndNotifyUrl http://www.yourdomain.com/api/notify?action \
-    --RecordNotifyUrl http://www.yourdomain.com/api/notify?action \
-    --SnapshotNotifyUrl http://www.yourdomain.com/api/notify?action \
-    --PornCensorshipNotifyUrl http://www.yourdomain.com/api/notify?action
+    --Description 回调模板
 ```
 
 Output: 

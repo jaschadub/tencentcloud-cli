@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreatePPTCheckTask": [
+      {
+        "document": "创建PPT检测任务，识别动态转码不支持的元素列表",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePPTCheckTask\n<公共请求参数>\n\n{\n    \"Url\": \"http://example.com/%E6%B5%8B%E8%AF%95.pptx\",\n    \"SdkAppId\": 1400000001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g6ls63ps49vteb8bk1mb\"\n    }\n}",
+        "title": "创建PPT检测任务"
+      }
+    ],
     "CreateSnapshotTask": [
       {
         "document": "",
@@ -11,13 +19,13 @@
     "CreateTranscode": [
       {
         "document": "创建PPT动态转码任务，并生成分辨率为960x540的缩略图",
-        "input": "https://tiw.tencentcloudapi.com/?Action=CreateTranscode\n&SdkAppId=1400000001\n&Url=https://path/to/document.ppt\n&ThumbnailResolution=960x540\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"ThumbnailResolution\": \"960x540\",\n    \"SdkAppId\": 1400000001\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g6ls63ps49vteb8bk1mb\"\n    }\n}",
         "title": "创建PPT动态转码任务"
       },
       {
         "document": "创建PPT静态转码任务",
-        "input": "https://tiw.tencentcloudapi.com/?Action=CreateTranscode\n&SdkAppId=1400000001\n&Url=https://path/to/document.ppt\n&IsStaticPPT=True\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"IsStaticPPT\": true,\n    \"SdkAppId\": 1400000001\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g6ls63ps49vteb8bk1mb\"\n    }\n}",
         "title": "创建PPT静态转码任务"
       }
@@ -25,7 +33,7 @@
     "CreateVideoGenerationTask": [
       {
         "document": "",
-        "input": "https://tiw.tencentcloudapi.com/?Action=CreateVideoGenerationTask\n&SdkAppId=1400000001\n&OnlineRecordTaskId=xxxxx\n&<公共请求参数>",
+        "input": "https://tiw.tencentcloudapi.com/?Action=CreateVideoGenerationTask\n&SdkAppId=1400000001\n&OnlineRecordTaskId=bj0mt2l23osdj300hl30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g7khk7f809vterp942mb\"\n    }\n}",
         "title": "开始录制视频生成"
       }
@@ -40,7 +48,7 @@
       {
         "document": "",
         "input": "https://tiw.tencentcloudapi.com/?Action=DescribeOnlineRecord\n&SdkAppId=1400000001\n&TaskId=ghucnligqtgtvk2624mb\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.Record\",\n            \"Message\": \"code: 40004, msg: 2019-09-23 10:31:47, im login failed with code 6206, desc serSig expired\\n\"\n        },\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
         "title": "查询录制失败的实时录制任务"
       }
     ],
@@ -52,12 +60,34 @@
         "title": "查询实时录制回调地址"
       }
     ],
-    "DescribeQualityMetrics": [
+    "DescribePPTCheck": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQualityMetrics\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400296030,\n    \"Metric\": \"image_load_fail_count\",\n    \"Interval\": \"1h\",\n    \"StartTime\": 1617874404,\n    \"EndTime\": 1618479204\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c41b5df-2326-4c0b-baca-2fd85ebb4097\",\n        \"Metric\": \"image_load_fail_count\",\n        \"Content\": [\n            {\n                \"Time\": 1617872400,\n                \"Value\": 0\n            }\n        ]\n    }\n}",
-        "title": "查询白板图片加载失败统计"
+        "document": "查询PPT检测任务，存在异常",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePPTCheck\n<公共请求参数>\n\n{\n    \"TaskId\": \"g0jb42ps49vtebjshilb\",\n    \"SdkAppId\": 1400000001\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"bj0mt2l23osdj300hl30\",\n        \"IsOK\": false,\n        \"Status\": \"FINISHED\",\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"ResultUrl\": \"https://xxx/xxx/测试_fixed.ppt\",\n        \"Slides\": [\n            {\n                \"Page\": \"幻灯片5\",\n                \"Errs\": [\n                    {\n                        \"Name\": \"Ink 1\",\n                        \"Type\": 0,\n                        \"Detail\": \"wps墨迹\"\n                    }\n                ]\n            }\n        ],\n        \"Errs\": [\n            {\n                \"Type\": 0,\n                \"Detail\": \"wps墨迹\"\n            }\n        ]\n    }\n}",
+        "title": "查询PPT检测任务异常"
+      },
+      {
+        "document": "查询PPT检测任务，PPT无异常",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePPTCheck\n<公共请求参数>\n\n{\n    \"TaskId\": \"g0jb42ps49vtebjshilb\",\n    \"SdkAppId\": 1400000001\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"bj0mt2l23osdj300hl30\",\n        \"IsOK\": true,\n        \"Status\": \"FINISHED\",\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"ResultUrl\": null,\n        \"Slides\": null,\n        \"Errs\": null\n    }\n}",
+        "title": "查询PPT检测任务无异常"
+      }
+    ],
+    "DescribePPTCheckCallback": [
+      {
+        "document": "查询回调地址",
+        "input": "https://tiw.tencentcloudapi.com/?Action=DescribePPTCheckCallback\n&SdkAppId=1400000001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Callback\": \"https://example.com/transcode/callback\",\n        \"CallbackKey\": \"6vg9G7Fd\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询回调地址"
+      }
+    ],
+    "DescribeRunningTasks": [
+      {
+        "document": "通过接口获取当前应用白板推流任务类型的正在执行中的任务列表",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRunningTasks\n<公共请求参数>\n\n{\n    \"SdkAppID\": 1400000001,\n    \"TaskType\": \"WhiteboardPush\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Tasks\": [\n            {\n                \"TaskID\": \"bj0mt2l23osdj300hl31\",\n                \"TaskType\": \"WhiteboardPush\",\n                \"CreateTime\": \"2023-03-14 15:00:00\",\n                \"CancelTime\": \"\",\n                \"Status\": \"PROCESSING\",\n                \"Progress\": 11,\n                \"RoomID\": 12345,\n                \"FileURL\": \"\",\n                \"SdkAppID\": 1400000001\n            }\n        ],\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
+        "title": "获取当前正在执行的白板推流任务列表"
       }
     ],
     "DescribeSnapshotTask": [
@@ -68,26 +98,26 @@
         "title": "获取任务信息"
       }
     ],
-    "DescribeTIWDailyUsage": [
-      {
-        "document": "查询2021-09-01到2021-09-07的互动白板时长用量",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeTIWDailyUsage\n&SdkAppId=1400000001\n&SubProduct=sp_tiw_board\n&StartTime=2021-09-01\n&EndTime=2021-09-07\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cdfb2097-75d1-4159-ad37-62d9eca65d6a\",\n        \"Usages\": [\n            {\n                \"Time\": \"2021-09-01\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 779552\n            },\n            {\n                \"Time\": \"2021-09-02\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 78118\n            },\n            {\n                \"Time\": \"2021-09-03\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 768385\n            },\n            {\n                \"Time\": \"2021-09-04\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 94257\n            },\n            {\n                \"Time\": \"2021-09-05\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 26717\n            },\n            {\n                \"Time\": \"2021-09-06\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 95296\n            },\n            {\n                \"Time\": \"2021-09-07\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 70592\n            }\n        ]\n    }\n}",
-        "title": "查询互动白板时长用量"
-      }
-    ],
     "DescribeTranscode": [
       {
         "document": "查询文档动态转码任务结果",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeTranscode\n&SdkAppId=1400000001\n&TaskId=g0jb42ps49vtebjshilb\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Pages\": 1,\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"Resolution\": \"793x1122\",\n        \"ResultUrl\": \"https://transcode-result/0agdnligqtgtvkm65emb/index.html\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"0agdnligqtgtvkm65emb\",\n        \"Title\": \"59378.docx\",\n        \"ThumbnailUrl\": \"https://transcode-thumbnal/0agdnligqtgtvkm65emb/\",\n        \"ThumbnailResolution\": \"793x1122\",\n        \"CompressFileUrl\": \"\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTranscode\n<公共请求参数>\n\n{\n    \"TaskId\": \"g0jb42ps49vtebjshilb\",\n    \"SdkAppId\": 1400000001\n}",
+        "output": "{\n    \"Response\": {\n        \"Pages\": 1,\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"Resolution\": \"793x1122\",\n        \"ResultUrl\": \"https://transcode-result/0agdnligqtgtvkm65emb/index.html\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"0agdnligqtgtvkm65emb\",\n        \"Title\": \"59378.docx\",\n        \"ThumbnailUrl\": \"https://transcode-thumbnal/0agdnligqtgtvkm65emb/\",\n        \"ThumbnailResolution\": \"793x1122\",\n        \"CompressFileUrl\": \"\",\n        \"ResourceListUrl\": \"https://transcode-result/0agdnligqtgtvkm65emb/resources.txt\",\n        \"Ext\": \"Office\"\n    }\n}",
         "title": "查询文档动态转码任务"
       },
       {
         "document": "查询文档静态转码任务结果",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeTranscode\n&SdkAppId=1400000001\n&TaskId=g0jb42ps49vtebjshilb\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Pages\": 1,\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"Resolution\": \"793x1122\",\n        \"ResultUrl\": \"https://transcode-result/0agdnligqtgtvkm65emb/\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"0agdnligqtgtvkm65emb\",\n        \"Title\": \"59378.docx\",\n        \"ThumbnailUrl\": \"\",\n        \"ThumbnailResolution\": \"\",\n        \"CompressFileUrl\": \"\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTranscode\n<公共请求参数>\n\n{\n    \"TaskId\": \"g0jb42ps49vtebjshilb\",\n    \"SdkAppId\": 1400000001\n}",
+        "output": "{\n    \"Response\": {\n        \"Pages\": 1,\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"Resolution\": \"793x1122\",\n        \"ResultUrl\": \"https://transcode-result/0agdnligqtgtvkm65emb/\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"0agdnligqtgtvkm65emb\",\n        \"Title\": \"59378.docx\",\n        \"ThumbnailUrl\": \"\",\n        \"ThumbnailResolution\": \"\",\n        \"CompressFileUrl\": \"\",\n        \"ResourceListUrl\": \"https://transcode-result/0agdnligqtgtvkm65emb/resources.txt\",\n        \"Ext\": \"Office\"\n    }\n}",
         "title": "查询文档静态转码任务"
+      }
+    ],
+    "DescribeTranscodeByUrl": [
+      {
+        "document": "通过url查询文档动态转码任务状态",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTranscodeByUrl\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"SdkAppId\": 1400000001\n}",
+        "output": "{\n    \"Response\": {\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"0agdnligqtgtvkm65emb\"\n    }\n}",
+        "title": "通过url查询文档动态转码任务状态"
       }
     ],
     "DescribeTranscodeCallback": [
@@ -114,6 +144,14 @@
         "title": "查询录制视频生成回调地址"
       }
     ],
+    "DescribeWarningCallback": [
+      {
+        "document": "获取告警回调地址信息",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWarningCallback\n<公共请求参数>\n\n{\n    \"SdkAppId\": 123456\n}",
+        "output": "{\n    \"Response\": {\n        \"Callback\": \"http://callback\",\n        \"CallbackKey\": \"12345\",\n        \"RequestId\": \"786eafde-17a8-47a9-9e1c-05b2b282dccc\"\n    }\n}",
+        "title": "获取告警回调地址信息"
+      }
+    ],
     "DescribeWhiteboardPush": [
       {
         "document": "",
@@ -124,7 +162,7 @@
       {
         "document": "",
         "input": "https://tiw.tencentcloudapi.com/?Action=DescribeWhiteboardPush\n&SdkAppId=1400000001\n&TaskId=ghucnligqtgtvk2624mb\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.WhiteboardPush\",\n            \"Message\": \"code: 40006, msg: 2021-01-13 22:34:42, TRTC onError, code: -70003, msg: The UserSig in use is illegal. Please regenerate UserSig through official API. (FYI: https://cloud.tencent.com/document/product/269/32688 )\\n\"\n        },\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
         "title": "查询推流失败的白板推流任务"
       }
     ],
@@ -168,6 +206,22 @@
         "title": "设置实时录制回调鉴权密钥"
       }
     ],
+    "SetPPTCheckCallback": [
+      {
+        "document": "设置回调地址",
+        "input": "https://tiw.tencentcloudapi.com/?Action=SetPPTCheckCallback\n&SdkAppId=1400000001\n&Callback=https://example.com/transcode/callback\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "设置回调地址"
+      }
+    ],
+    "SetPPTCheckCallbackKey": [
+      {
+        "document": "设置回调鉴权密钥",
+        "input": "https://tiw.tencentcloudapi.com/?Action=SetPPTCheckCallbackKey\n&SdkAppId=1400000001\n&CallbackKey=6vg9G7Fd\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "设置回调鉴权密钥"
+      }
+    ],
     "SetTranscodeCallback": [
       {
         "document": "",
@@ -198,6 +252,14 @@
         "input": "https://tiw.tencentcloudapi.com/?Action=SetVideoGenerationTaskCallbackKey\n&SdkAppId=1400000001\n&CallbackKey=6vg9G7Fd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "设置视频生成回调鉴权密钥"
+      }
+    ],
+    "SetWarningCallback": [
+      {
+        "document": "设置告警回调地址",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetWarningCallback\n<公共请求参数>\n\n{\n    \"SdkAppId\": 123456,\n    \"Callback\": \"http://callback\",\n    \"CallbackKey\": \"123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"786eafde-17a8-47a9-9e1c-05b2b282dccc\"\n    }\n}",
+        "title": "设置告警回调地址"
       }
     ],
     "SetWhiteboardPushCallback": [
@@ -232,8 +294,8 @@
     ],
     "StartWhiteboardPush": [
       {
-        "document": "",
-        "input": "https://tiw.tencentcloudapi.com/?Action=StartWhiteboardPush\n&SdkAppId=1400000001\n&RoomId=1203\n&PushUserId=tic_push_user_1203_141551\n&PushUserSig=usersig_of_<tic_push_user_1203_141551>\n&<公共请求参数>",
+        "document": "创建一个白板推流任务",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartWhiteboardPush\n<公共请求参数>\n\n{\n    \"PushUserId\": \"tic_push_user_1203_141551\",\n    \"PushUserSig\": \"usersig_of_<tic_push_user_1203_141551>\",\n    \"RoomId\": 1203,\n    \"SdkAppId\": 1400000001\n}",
         "output": "{\n    \"Response\": {\n        \"Backup\": \"{\\\"RequestId\\\":\\\"8e9b2bc4-ec7f-46cd-823b-66676e2375f8\\\",\\\"TaskId\\\":\\\"052lfmu5uc3lp0rrqvvb\\\"}\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"bj0mt2l23osdj300hl30\"\n    }\n}",
         "title": "开始白板推流"
       }

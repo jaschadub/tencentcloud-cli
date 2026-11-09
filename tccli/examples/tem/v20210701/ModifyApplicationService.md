@@ -6,39 +6,54 @@ Input:
 
 ```
 tccli tem ModifyApplicationService --cli-unfold-argument  \
+    --ApplicationId app-xxxxxx \
     --SourceChannel 0 \
-    --ApplicationId xx \
-    --Service.ApplicationName xx \
-    --Service.ExternalIp xx \
-    --Service.Name xx \
-    --Service.ApplicationId xx \
-    --Service.AllIpDone True \
-    --Service.PortMappings.0.Protocol xx \
-    --Service.PortMappings.0.ServiceName xx \
-    --Service.PortMappings.0.TargetPort 0 \
-    --Service.PortMappings.0.Port 0 \
-    --Service.Yaml xx \
-    --Service.LoadBalanceId xx \
-    --Service.ServicePortMappingList.0.ExternalIp xx \
-    --Service.ServicePortMappingList.0.VpcId xx \
-    --Service.ServicePortMappingList.0.PortMappingItemList.0.Protocol xx \
-    --Service.ServicePortMappingList.0.PortMappingItemList.0.TargetPort 0 \
-    --Service.ServicePortMappingList.0.PortMappingItemList.0.Port 0 \
-    --Service.ServicePortMappingList.0.Yaml xx \
-    --Service.ServicePortMappingList.0.LoadBalanceId xx \
-    --Service.ServicePortMappingList.0.ServiceName xx \
-    --Service.ServicePortMappingList.0.ClusterIp xx \
-    --Service.ServicePortMappingList.0.SubnetId xx \
-    --Service.ServicePortMappingList.0.Type xx \
-    --Service.ServicePortMappingList.0.Ports 0 \
-    --Service.VersionName xx \
-    --Service.ClusterIp xx \
-    --Service.SubnetId xx \
-    --Service.Type xx \
-    --Service.Ports 0 \
-    --Service.EnableRegistryNextDeploy 0 \
+    --EnvironmentId en-xxxxxx \
+    --Service.Name svc-name-xxx \
+    --Service.Ports 8080 \
+    --Service.Yaml apiVersion: xxx \
+    --Service.ApplicationName app-name-xxx \
+    --Service.VersionName ver-name-xxx \
+    --Service.ClusterIp 11.xx.xx.xx \
+    --Service.ExternalIp 10.xx.xx.xx \
+    --Service.Type CLUSTER \
+    --Service.SubnetId subnet-xxx \
+    --Service.LoadBalanceId lb-xxxxxx \
+    --Service.PortMappings.0.Port 8080 \
+    --Service.PortMappings.0.TargetPort 8080 \
+    --Service.PortMappings.0.Protocol TCP \
+    --Service.PortMappings.0.ServiceName svc-name-xxx \
+    --Service.ServicePortMappingList.0.Type CLUSTER \
+    --Service.ServicePortMappingList.0.ServiceName svc-name-xxx \
+    --Service.ServicePortMappingList.0.ClusterIp 11.xx.xx.xx \
+    --Service.ServicePortMappingList.0.ExternalIp 10.xx.xx.xx \
+    --Service.ServicePortMappingList.0.SubnetId subnet-xxxxxx \
+    --Service.ServicePortMappingList.0.VpcId vpc-xxxxxx \
+    --Service.ServicePortMappingList.0.LoadBalanceId lb-xxxxxx \
+    --Service.ServicePortMappingList.0.Yaml apiVersion: xxx \
+    --Service.ServicePortMappingList.0.Ports 8080 \
+    --Service.ServicePortMappingList.0.PortMappingItemList.0.Port 8080 \
+    --Service.ServicePortMappingList.0.PortMappingItemList.0.TargetPort 8080 \
+    --Service.ServicePortMappingList.0.PortMappingItemList.0.Protocol TCP \
+    --Service.ServicePortMappingList.0.ExternalDomain ext.com.xxx \
     --Service.FlushAll True \
-    --EnvironmentId xx
+    --Service.EnableRegistryNextDeploy 0 \
+    --Service.ApplicationId app-xxxxxx \
+    --Service.AllIpDone True \
+    --Service.ExternalDomain ext.com.xxx \
+    --Data.Type CLUSTER \
+    --Data.ServiceName svc-name-xxx \
+    --Data.ClusterIp 11.xx.xx.xx \
+    --Data.ExternalIp 10.xx.xx.xx \
+    --Data.SubnetId subnet-xxxxxx \
+    --Data.VpcId vpc-xxxxxx \
+    --Data.LoadBalanceId lb-xxxxxx \
+    --Data.Yaml apiVersion: xxx \
+    --Data.Ports 8080 \
+    --Data.PortMappingItemList.0.Port 8080 \
+    --Data.PortMappingItemList.0.TargetPort 8080 \
+    --Data.PortMappingItemList.0.Protocol TCP \
+    --Data.ExternalDomain ext.com.xxx
 ```
 
 Output: 
@@ -46,7 +61,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "xx"
+        "RequestId": "asdc122-xxx-xxx-xxx"
     }
 }
 ```

@@ -15,15 +15,12 @@ Output:
     "Response": {
         "Clients": [
             {
-                "Count": 15,
-                "IP": "10.xx.xx.xx"
-            },
-            {
-                "Count": 15,
-                "IP": "10.xx.xx.xx"
+                "IP": "10.0.0.1",
+                "Count": 1
             }
         ],
-        "RequestId": "c61fd6e2-c505-4fb9-9f30-edd8e897b236"
+        "TotalCount": 0,
+        "RequestId": "59b477da-6473-4ea8-85b3-7f4473744981"
     }
 }
 ```

@@ -1,15 +1,12 @@
-**Example 1: 登录审计列表**
+**Example 1: 异常登录列表**
 
-登录审计列表
+异常登录列表
 
 Input: 
 
 ```
 tccli cwp DescribeHostLoginList --cli-unfold-argument  \
     --Limit 1 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --Filters.0.ExactMatch True \
     --Offset 1
 ```
 
@@ -30,11 +27,28 @@ Output:
                 "City": 216,
                 "Province": 19,
                 "LoginTime": "2020-02-20 14:51:35",
-                "ModifyTime": "2020-02-20 14:51:35"
+                "ModifyTime": "2020-02-20 14:51:35",
+                "IsRiskUser": 0,
+                "Port": 22,
+                "Location": "中国:广东省:深圳市",
+                "Desc": "idesc",
+                "IsRiskSrcIp": 1,
+                "IsRiskArea": 1,
+                "Quuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
+                "RiskLevel": 0,
+                "IsRiskTime": 1,
+                "MachineExtraInfo": {
+                    "WanIP": "1.1.1.1",
+                    "InstanceID": "ins-12341234",
+                    "NetworkName": "vpc-d7f***",
+                    "PrivateIP": "1.1.1.1",
+                    "NetworkType": 1,
+                    "HostName": "机器名称"
+                }
             }
         ],
-        "RequestId": "4234234",
-        "TotalCount": 446
+        "RequestId": "be6f6eec-0825-4e67-ab9a-c8568bbf736c",
+        "TotalCount": 1
     }
 }
 ```

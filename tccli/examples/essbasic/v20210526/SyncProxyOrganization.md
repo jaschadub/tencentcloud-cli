@@ -1,4 +1,4 @@
-**Example 1: 同步企业信息**
+**Example 1: 同步企业姓名**
 
 
 
@@ -6,19 +6,17 @@ Input:
 
 ```
 tccli essbasic SyncProxyOrganization --cli-unfold-argument  \
-    --ProxyOrganizationName 渠道子客企业名称 \
-    --UniformSocialCreditCode xxxxxxxxxxxxxxxxxxxx \
-    --BusinessLicense xxxxxxxxxxxxx \
-    --Agent.ProxyOperator.OpenId proxy-operator-openid \
-    --Agent.ProxyOrganizationOpenId proxy-organization-openid \
-    --Agent.AppId test-appid
+    --Agent.AppId yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2 \
+    --Agent.ProxyOrganizationOpenId ess_open_organization_1 \
+    --Agent.ProxyOperator.OpenId ke*******ng \
+    --ProxyOrganizationName 典子谦示例企业
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "s16221xxx14775648"
+        "RequestId": "a4242135-81a4-46dd-b62d-9881e9d5d516"
     }
 }
 ```

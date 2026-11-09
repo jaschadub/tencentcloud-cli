@@ -7,46 +7,41 @@ Input:
 ```
 tccli tcaplusdb ModifyTables --cli-unfold-argument  \
     --ClusterId 5674209986 \
-    --IdlFiles.0.FileExtType proto \
-    --IdlFiles.0.FileType PROTO \
     --IdlFiles.0.FileName tb_example_modify \
-    --IdlFiles.0.FileSize 0 \
-    --IdlFiles.0.FileContent xx \
-    --IdlFiles.0.FileId 0 \
-    --SelectedTables.0.TableIdlType PROTO \
-    --SelectedTables.0.TableGroupId 101 \
-    --SelectedTables.0.FileExtType xx \
+    --IdlFiles.0.FileType PROTO \
+    --IdlFiles.0.FileExtType proto \
+    --IdlFiles.0.FileSize 292 \
+    --IdlFiles.0.FileId 600 \
     --SelectedTables.0.TableInstanceId tcaplus-1f224454 \
-    --SelectedTables.0.Memo xx \
+    --SelectedTables.0.TableGroupId 101 \
     --SelectedTables.0.TableName tb_example \
-    --SelectedTables.0.ReservedReadQps 0 \
-    --SelectedTables.0.ListElementNum 0 \
-    --SelectedTables.0.ReservedVolume 0 \
-    --SelectedTables.0.ReservedWriteQps 0 \
-    --SelectedTables.0.FileSize 0 \
-    --SelectedTables.0.FileContent xx \
-    --SelectedTables.0.FileName xx \
-    --SelectedTables.0.TableType xx
+    --SelectedTables.0.TableIdlType PROTO
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "007a279d-fd19-452c-842e-46a804e8564b",
+        "TotalCount": 1,
         "TableResults": [
             {
-                "Error": null,
-                "TableGroupId": "101",
-                "TableIdlType": "PROTO",
-                "TableInstanceId": "tcaplus-1f224454",
-                "TableName": "tb_example",
-                "TableType": "GENERIC",
-                "TaskId": "5674209986-1200",
-                "TaskIds": null
+                "TableInstanceId": "123123",
+                "TaskId": "43452",
+                "TableName": "tb_example_modify",
+                "TableType": "1",
+                "TableIdlType": "1",
+                "TableGroupId": "22141",
+                "Error": {
+                    "Code": "",
+                    "Message": ""
+                },
+                "TaskIds": [
+                    "321512"
+                ],
+                "ApplicationId": "421325"
             }
         ],
-        "TotalCount": 1
+        "RequestId": "1254521"
     }
 }
 ```

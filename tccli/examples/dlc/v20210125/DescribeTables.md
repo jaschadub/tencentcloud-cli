@@ -6,51 +6,72 @@ Input:
 
 ```
 tccli dlc DescribeTables --cli-unfold-argument  \
-    --Limit 1 \
+    --Limit 20 \
     --Offset 0 \
-    --DatabaseName testdb \
-    --DatasourceConnectionName DataLakeCatalog
+    --DatabaseName database1 \
+    --Filters.0.Name table-name \
+    --Filters.0.Values table2 \
+    --DatasourceConnectionName DataLakeCatalog \
+    --Sort CreateTime
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "8d02ec1a-1562-4780-98a2-15822f4cb517",
+        "RequestId": "********-****-****-****-ea237088c286",
         "TableList": [
             {
-                "TableBaseInfo": {
-                    "DatasourceConnectionName": "",
-                    "DatabaseName": "testdb",
-                    "TableName": "table1",
-                    "UserAlias": "testUser",
-                    "UserSubUin": "100019878767"
-                },
-                "Columns": [],
-                "Partitions": [],
-                "Properties": [
+                "Columns": null,
+                "CreateTime": "1736853257000",
+                "HeatValue": 10,
+                "InputFormat": "org.apache.hadoop.mapred.FileInputFormat",
+                "InputFormatShort": "parquet",
+                "Location": "cosn://********",
+                "ModifiedTime": "1736941935000",
+                "Partitions": [
                     {
-                        "Key": "EXTERNAL",
-                        "Value": "TRUE"
-                    },
-                    {
-                        "Key": "transient_lastDdlTime",
-                        "Value": "1630495521302"
-                    },
-                    {
-                        "Key": "skip.header.line.count",
-                        "Value": "1"
+                        "Comment": "",
+                        "CreateTime": 0,
+                        "Name": "column1",
+                        "Transform": "identity",
+                        "TransformArgs": null,
+                        "Type": ""
                     }
                 ],
-                "Location": "",
-                "CreateTime": "1630495521000",
-                "ModifiedTime": "1630495521000",
-                "InputFormat": "",
-                "StorageSize": 1024,
-                "RecordCount": 10
+                "Properties": [
+                    {
+                        "Key": "property1",
+                        "Value": "test property"
+                    },
+                    {
+                        "Key": "test property",
+                        "Value": "default value"
+                    },
+                    {
+                        "Key": "metadata_location",
+                        "Value": "cosn://********"
+                    }
+                ],
+                "RecordCount": 0,
+                "StorageSize": 0,
+                "TableBaseInfo": {
+                    "DatabaseName": "database1",
+                    "DatasourceConnectionName": "",
+                    "DbGovernPolicyIsDisable": "true",
+                    "GovernPolicy": {
+                        "RuleType": "none"
+                    },
+                    "TableComment": null,
+                    "TableFormat": "ICEBERG",
+                    "TableName": "table2",
+                    "Type": "MANAGED_TABLE",
+                    "UserAlias": "t**********",
+                    "UserSubUin": "1**********6"
+                }
             }
         ],
-        "TotalCount": 2
+        "TotalCount": 1
     }
 }
 ```

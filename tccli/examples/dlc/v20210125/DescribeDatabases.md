@@ -1,4 +1,4 @@
-**Example 1: 示例1**
+**Example 1: 查询数据库列表**
 
 查询数据库列表
 
@@ -6,34 +6,39 @@ Input:
 
 ```
 tccli dlc DescribeDatabases --cli-unfold-argument  \
+    --Limit 10 \
+    --Offset 0 \
+    --KeyWord database1 \
     --DatasourceConnectionName DataLakeCatalog \
-    --Limit 1 \
-    --Offset 0
+    --Sort CreateTime
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "1068a137-ed80-4cbd-a7e6-1cd0341db332",
-        "TotalCount": 1,
         "DatabaseList": [
             {
-                "DatabaseName": "testdb",
-                "Comment": "create by nick",
+                "Comment": "default description",
+                "CreateTime": "1737372787000",
+                "DatabaseName": "database1",
+                "GovernPolicy": {
+                    "RuleType": "none"
+                },
+                "Location": "",
+                "ModifiedTime": "1737372787000",
                 "Properties": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Key": "param1",
+                        "Value": "default param"
                     }
                 ],
-                "CreateTime": "1630486408000",
-                "ModifiedTime": "1630486408000",
-                "UserAlias": "testUser",
-                "UserSubUin": "100019878767",
-                "Location": ""
+                "UserAlias": "",
+                "UserSubUin": ""
             }
-        ]
+        ],
+        "RequestId": "********-****-****-****-2d2f1a350edb",
+        "TotalCount": 1
     }
 }
 ```

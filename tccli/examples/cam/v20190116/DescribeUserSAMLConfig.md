@@ -1,6 +1,6 @@
 **Example 1: 查询用户SAML配置**
 
-
+查询用户SAML配置
 
 Input: 
 
@@ -11,8 +11,9 @@ Output:
 ```
 {
     "Response": {
-        "SAMLMetadata": "",
+        "SAMLMetadata": "metadataDocument",
         "Status": 0,
+        "AuxiliaryDomain": "xx.com",
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }

@@ -1,81 +1,87 @@
 **Example 1: 训练任务列表**
 
-
+获取训练任务列表
 
 Input: 
 
 ```
 tccli tione DescribeTrainingTasks --cli-unfold-argument  \
     --Filters.0.Fuzzy True \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
+    --Filters.0.Values string \
+    --Filters.0.Name string \
     --Filters.0.Negative True \
-    --TagFilters.0.TagValues xx \
-    --TagFilters.0.TagKey xx \
+    --TagFilters.0.TagValues string \
+    --TagFilters.0.TagKey string \
     --Limit 1 \
-    --OrderField xx \
+    --OrderField string \
     --Offset 1 \
-    --Order xx
+    --Order string
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "TrainingTaskSet": [
             {
-                "Status": "xx",
-                "UpdateTime": "xx",
-                "EndTime": "xx",
-                "Name": "xx",
-                "BillingInfo": "xx",
-                "Tags": [
-                    {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
-                    }
-                ],
-                "ResourceGroupId": "xx",
+                "Id": "train-fd",
+                "Name": "testname",
+                "FrameworkName": "pytorch",
+                "FrameworkVersion": "v1",
+                "FrameworkEnvironment": "testenv",
+                "ChargeType": "PREPAID",
+                "ChargeStatus": "PAID",
+                "ResourceGroupId": "rsg-dfs",
                 "ResourceConfigInfos": [
                     {
-                        "InstanceType": "xx",
-                        "InstanceNum": 1,
+                        "Role": "worker",
                         "Cpu": 1,
-                        "Role": "xx",
                         "Memory": 1,
+                        "GpuType": "A100",
                         "Gpu": 1,
-                        "GpuType": "xx",
-                        "InstanceTypeAlias": "xx"
+                        "InstanceType": "instype-a",
+                        "InstanceNum": 1,
+                        "InstanceTypeAlias": "instype-ab",
+                        "RDMAConfig": {
+                            "Enable": true
+                        }
                     }
                 ],
-                "ResourceGroupName": "xx",
-                "CreateTime": "xx",
+                "TrainingMode": "DDP",
+                "Status": "RUNNING",
                 "RuntimeInSeconds": 1,
-                "ImageInfo": {
-                    "ImageUrl": "xx",
-                    "RegistryRegion": "xx",
-                    "RegistryId": "xx",
-                    "ImageType": "xx"
-                },
-                "FrameworkName": "xx",
-                "ChargeType": "xx",
-                "StartTime": "xx",
+                "CreateTime": "2025-11-21 00:00:00",
+                "StartTime": "2025-11-21 00:00:00",
+                "EndTime": "2025-11-21 01:00:00",
                 "Output": {
+                    "Bucket": "testbucket",
+                    "Region": "ap-nanjing",
                     "Paths": [
-                        "xx"
-                    ],
-                    "Region": "xx",
-                    "Bucket": "xx"
+                        "/"
+                    ]
                 },
-                "TrainingMode": "xx",
-                "FrameworkVersion": "xx",
-                "Id": "xx",
-                "ChargeStatus": "xx",
-                "FailureReason": "xx"
+                "FailureReason": "",
+                "UpdateTime": "2025-11-21 00:00:00",
+                "BillingInfo": "",
+                "ResourceGroupName": "rsg-fsdf",
+                "ImageInfo": {
+                    "ImageType": "TCR",
+                    "ImageUrl": "image/url",
+                    "RegistryRegion": "ap-nanjing",
+                    "RegistryId": "tcr-234"
+                },
+                "Message": "test message",
+                "Tags": [
+                    {
+                        "TagKey": "key",
+                        "TagValue": "value"
+                    }
+                ],
+                "CallbackUrl": "callback/url"
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 1,
+        "RequestId": "fdsljfl-dfsafds-xxf"
     }
 }
 ```

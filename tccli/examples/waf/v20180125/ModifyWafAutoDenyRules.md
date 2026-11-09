@@ -1,12 +1,12 @@
 **Example 1: 修改ip惩罚配置**
 
-
+修改ip惩罚配置
 
 Input: 
 
 ```
 tccli waf ModifyWafAutoDenyRules --cli-unfold-argument  \
-    --Domain xx \
+    --Domain test.test.com \
     --TimeThreshold 0 \
     --DenyTimeThreshold 0 \
     --AttackThreshold 0 \

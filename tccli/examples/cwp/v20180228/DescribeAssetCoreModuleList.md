@@ -6,38 +6,49 @@ Input:
 
 ```
 tccli cwp DescribeAssetCoreModuleList --cli-unfold-argument  \
-    --Uuid xx \
+    --Uuid 65ce6db8-a914-4349-a8b9-d756236686d2 \
     --Order asc \
     --Limit 1 \
-    --Quuid xx \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --Filters.0.ExactMatch True \
+    --Quuid 65ce6db8-a914-4349-a8b9-d756236686d2 \
     --Offset 1 \
-    --By xx
+    --By Size
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Total": 1,
         "Modules": [
             {
-                "OsInfo": "xx",
-                "Name": "xx",
-                "MachineName": "xx",
-                "Id": "xx",
-                "Version": "xx",
-                "ModuleCount": 1,
-                "ProcessCount": 1,
-                "Path": "xx",
+                "Name": "test-name",
+                "Desc": "idesc",
+                "Path": "/root",
+                "Version": "0.1.1",
+                "MachineIp": "1.1.1.1",
+                "MachineName": "test-name",
+                "OsInfo": "CentOs Bit64",
                 "Size": 1,
-                "MachineIp": "xx",
-                "Desc": 1
+                "ProcessCount": 1,
+                "ModuleCount": 1,
+                "Id": "1024",
+                "Quuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "Uuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "UpdateTime": "2024-10-11 12:23:34",
+                "FirstTime": "2024-10-11 12:23:34",
+                "IsNew": 0,
+                "MachineWanIp": "1.1.1.1",
+                "MachineExtraInfo": {
+                    "WanIP": "1.1.1.1",
+                    "PrivateIP": "1.1.1.1",
+                    "NetworkType": 0,
+                    "NetworkName": "vpc-id",
+                    "InstanceID": "ins-id",
+                    "HostName": "test-name"
+                }
             }
         ],
-        "RequestId": "xx"
+        "Total": 1,
+        "RequestId": "37b6df34-68f1-4ab8-a3d8-7b89de604c82"
     }
 }
 ```

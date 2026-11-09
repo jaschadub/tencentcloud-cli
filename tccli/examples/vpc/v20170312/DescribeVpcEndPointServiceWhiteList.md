@@ -1,6 +1,6 @@
-**Example 1: DescribeVpcEndPointServiceWhiteList**
+**Example 1: 查询终端节点服务的服务白名单列表**
 
-
+查询终端节点服务的服务白名单列表
 
 Input: 
 
@@ -13,6 +13,15 @@ Output:
     "Response": {
         "TotalCount": 1,
         "VpcEndpointServiceUserSet": [
+            {
+                "Owner": 1254277469,
+                "UserUin": "100016184089",
+                "Description": "描述信息",
+                "EndPointServiceId": "",
+                "CreateTime": "vpcsvc-kngiybxl"
+            }
+        ],
+        "VpcEndPointServiceUserSet": [
             {
                 "Owner": 1254277469,
                 "UserUin": "100016184089",

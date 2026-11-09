@@ -1,6 +1,6 @@
-**Example 1: 开启外网地址**
+**Example 1: 开通实例外网**
 
-
+开通实例postgres-apzvwncr外网。
 
 Input: 
 
@@ -13,7 +13,8 @@ Output:
 ```
 {
     "Response": {
-        "FlowId": 1234,
+        "FlowId": 23515,
+        "TaskId": 23515,
         "RequestId": "08fdf411-5d39-44f2-8e1d-a58ee60b237d"
     }
 }

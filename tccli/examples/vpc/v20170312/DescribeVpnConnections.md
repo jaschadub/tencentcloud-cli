@@ -1,72 +1,6 @@
-**Example 1: 查询VPN通道列表**
+**Example 1: DescribeVpnConnections返回示例**
 
-
-
-Input: 
-
-```
-tccli vpc DescribeVpnConnections --cli-unfold-argument  \
-    --Version 2017-03-12
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "74883e1b-5901-46de-ae1e-d6e2cf591c5b",
-        "TotalCount": 1,
-        "VpnConnectionSet": [
-            {
-                "VpcId": "vpc-0a36uwkr",
-                "VpnConnectionId": "vpnx-5p7vkch8",
-                "VpnConnectionName": "testjoan",
-                "VpnGatewayId": "vpngw-p4lmqawn",
-                "CustomerGatewayId": "cgw-l4rblw63",
-                "PreShareKey": "123456",
-                "VpnProto": "IPSEC",
-                "EncryptProto": "IKE",
-                "RouteType": "STATIC",
-                "IKEOptionsSpecification": {
-                    "PropoAuthenAlgorithm": "MD5",
-                    "PropoEncryAlgorithm": "3DES-CBC",
-                    "ExchangeMode": "MAIN",
-                    "LocalIdentity": "ADDRESS",
-                    "RemoteIdentity": "ADDRESS",
-                    "LocalAddress": "183.60.249.17",
-                    "RemoteAddress": "183.60.249.126",
-                    "LocalFqdnName": "",
-                    "RemoteFqdnName": "",
-                    "DhGroupName": "GROUP1",
-                    "IKESaLifetimeSeconds": "86400",
-                    "IKEVersion": "IKEV1"
-                },
-                "IPSECOptionsSpecification": {
-                    "EncryptAlgorithm": "3DES-CBC",
-                    "IntegrityAlgorith": "MD5",
-                    "PfsDhGroup": "NULL",
-                    "IPSECSaLifetimeSeconds": "3600",
-                    "IPSECSaLifetimeTraffic": "1843200"
-                },
-                "CreatedTime": "2017-08-0510: 27: 32",
-                "State": "AVAILABLE",
-                "NetStatus": "UNAVAILABLE",
-                "SecurityPolicyDatabaseSet": [
-                    {
-                        "LocalCidrBlock": "172.16.0.0/16",
-                        "RemoteCidrBlock": [
-                            "10.10.0.0/16"
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
-}
-```
-
-**Example 2: DescribeVpnConnections返回示例**
-
-
+查询VPN通道
 
 Input: 
 
@@ -88,7 +22,7 @@ Output:
                 "VpnConnectionName": "testcon-1",
                 "VpnGatewayId": "vpngw-6x0wxvtp",
                 "CustomerGatewayId": "cgw-apytvc1n",
-                "PreShareKey": "123",
+                "PreShareKey": "xqwe123s",
                 "VpnProto": "IPSEC",
                 "EncryptProto": "IKE",
                 "RouteType": "StaticRoute",
@@ -100,8 +34,8 @@ Output:
                     "RemoteIdentity": "ADDRESS",
                     "LocalAddress": "6.6.6.6",
                     "RemoteAddress": "1.1.3.2",
-                    "LocalFqdnName": "",
-                    "RemoteFqdnName": "",
+                    "LocalFqdnName": "localname",
+                    "RemoteFqdnName": "remotename",
                     "DhGroupName": "GROUP1",
                     "IKESaLifetimeSeconds": 86400,
                     "IKEVersion": "IKEV1"
@@ -129,9 +63,9 @@ Output:
                 "DpdTimeout": "30",
                 "DpdAction": "clear",
                 "EnableHealthCheck": false,
-                "HealthCheckLocalIp": "",
-                "HealthCheckRemoteIp": "",
-                "HealthCheckStatus": "",
+                "HealthCheckLocalIp": "169.254.128.1",
+                "HealthCheckRemoteIp": "169.254.128.2",
+                "HealthCheckStatus": "AVAILABLE",
                 "TagSet": []
             },
             {
@@ -140,7 +74,7 @@ Output:
                 "VpnConnectionName": "testcon-2",
                 "VpnGatewayId": "vpngw-6x0wxvtp",
                 "CustomerGatewayId": "cgw-876ql2tz",
-                "PreShareKey": "123",
+                "PreShareKey": "qwe123x",
                 "VpnProto": "IPSEC",
                 "EncryptProto": "IKE",
                 "RouteType": "StaticRoute",
@@ -152,8 +86,8 @@ Output:
                     "RemoteIdentity": "ADDRESS",
                     "LocalAddress": "6.6.6.6",
                     "RemoteAddress": "169.168.10.4",
-                    "LocalFqdnName": "",
-                    "RemoteFqdnName": "",
+                    "LocalFqdnName": "localname",
+                    "RemoteFqdnName": "remotename",
                     "DhGroupName": "GROUP1",
                     "IKESaLifetimeSeconds": 86400,
                     "IKEVersion": "IKEV1"
@@ -181,9 +115,9 @@ Output:
                 "DpdTimeout": "31",
                 "DpdAction": "clear",
                 "EnableHealthCheck": false,
-                "HealthCheckLocalIp": "",
-                "HealthCheckRemoteIp": "",
-                "HealthCheckStatus": "",
+                "HealthCheckLocalIp": "169.254.168.2",
+                "HealthCheckRemoteIp": "169.254.168.1",
+                "HealthCheckStatus": "AVAILABLE",
                 "TagSet": []
             }
         ],

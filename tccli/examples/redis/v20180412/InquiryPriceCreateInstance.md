@@ -6,20 +6,27 @@ Input:
 
 ```
 tccli redis InquiryPriceCreateInstance --cli-unfold-argument  \
-    --ZoneId 100002 \
-    --TypeId 6 \
+    --TypeId 9 \
     --MemSize 4096 \
-    --GoodsNum 1 \
+    --GoodsNum 3 \
     --Period 1 \
-    --BillingMode 1
+    --BillingMode 0 \
+    --ZoneId 100002 \
+    --RedisShardNum 1 \
+    --RedisReplicasNum 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Price": 30400,
-        "RequestId": "0115d979-2c38-4ad2-b282-bec09d5b4c0b"
+        "AmountUnit": "pent",
+        "Currency": "CNY",
+        "HighPrecisionOriginalPrice": 280.0224,
+        "HighPrecisionPrice": 280.0224,
+        "OriginalPrice": 280,
+        "Price": 280,
+        "RequestId": "e250b8cf-6beb-462f-aa17-34b08ed6c164"
     }
 }
 ```

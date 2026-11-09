@@ -4,115 +4,232 @@
       "document": "本接口用于关闭语音流异步识别任务。",
       "input": "CloseAsyncRecognitionTaskRequest",
       "name": "语音流异步识别任务关闭",
-      "output": "CloseAsyncRecognitionTaskResponse"
+      "output": "CloseAsyncRecognitionTaskResponse",
+      "status": "online"
+    },
+    "CreateAsrKeyWordLib": {
+      "document": "用户通过本接口进行关键字词表的创建。\n<br>•   默认每个用户最多可创建30个关键字词表。\n<br>•   每个关键词词表最多可添加100个词，每个词最多5个汉字或15个字符。\n<br>•   词表通过本地文件形式上传。\n<br>•   本地文件必须为UTF-8编码格式，每行仅添加一个词且不能包含标点和特殊字符。",
+      "input": "CreateAsrKeyWordLibRequest",
+      "name": "创建关键词表",
+      "output": "CreateAsrKeyWordLibResponse",
+      "status": "online"
     },
     "CreateAsrVocab": {
-      "document": "用户通过本接口进行热词表的创建。\n<br>•   默认最多可创建30个热词表。\n<br>•   每个热词表最多可添加128个词，每个词最长10个字，不能超出限制。\n<br>•   热词表可以通过数组或者本地文件形式上传。\n<br>•   本地文件必须为UTF-8编码格式，每行仅添加一个热词且不能包含标点和特殊字符。\n<br>•   热词权重取值范围为[1,10]之间的整数，权重越大代表该词被识别出来的概率越大。",
+      "document": "用户通过本接口进行热词表的创建。\n<br>•   默认最多可创建30个热词表。\n<br>•   每个热词表最多可添加1000个词，每个词最长10个汉字或30个英文字符，不能超出限制。\n<br>•   热词表可以通过数组或者本地文件形式上传。\n<br>•   本地文件必须为UTF-8编码格式，每行仅添加一个热词且不能包含标点和特殊字符。\n<br>•   热词权重取值范围为[1,11]之间的整数或者100，权重越大代表该词被识别出来的概率越大。\n<br>• 注意:  热词权重设置为11时，当前热词将升级为超级热词，建议仅将重要且必须生效的热词设置到11，设置过多权重为11的热词将影响整体字准率。",
       "input": "CreateAsrVocabRequest",
       "name": "创建热词表",
-      "output": "CreateAsrVocabResponse"
+      "output": "CreateAsrVocabResponse",
+      "status": "online"
     },
     "CreateAsyncRecognitionTask": {
-      "document": "本接口用于对语音流进行准实时识别，通过异步回调来返回识别结果。适用于直播审核等场景。\n<br>• 支持rtmp、rtsp等流媒体协议，以及各类基于http协议的直播流(不支持hls)\n<br>• 音频流时长无限制，服务会自动拉取音频流数据，若连续10分钟拉不到流数据时，服务会终止识别任务\n<br>• 服务通过回调的方式来提供识别结果，用户需要提供CallbackUrl。回调时机为一小段话(最长15秒)回调一次。\n<br>• 签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n<br>• 默认单账号限制并发数为20路，如您有提高并发限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
+      "document": "本接口用于对语音流进行准实时识别，通过异步回调来返回识别结果。适用于直播审核等场景。\n<br>• 支持rtmp、rtsp等流媒体协议，以及各类基于http协议的直播流(不支持hls)\n<br>• 音频流时长无限制，服务会自动拉取音频流数据，若连续10分钟拉不到流或流数据无人声时，服务会终止识别任务\n<br>• 服务通过回调的方式来提供识别结果，用户需要提供CallbackUrl。回调时机为一小段话(最长15秒)回调一次。\n<br>• 签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n<br>• 默认单账号限制并发数为20路，如您有提高并发限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
       "input": "CreateAsyncRecognitionTaskRequest",
       "name": "语音流异步识别任务创建",
-      "output": "CreateAsyncRecognitionTaskResponse"
+      "output": "CreateAsyncRecognitionTaskResponse",
+      "status": "online"
     },
     "CreateCustomization": {
-      "document": "用户使用该接口可以创建自学习模型，以供识别调用",
+      "document": "用户使用该接口可以创建自学习模型，以供识别调用。\n\n注意：调用该接口后，模型会自动训练。新建模型成功后，调用ModifyCustomizationState接口修改为上线状态，即可在识别请求中使用对应模型ID。",
       "input": "CreateCustomizationRequest",
       "name": "创建自学习模型",
-      "output": "CreateCustomizationResponse"
+      "output": "CreateCustomizationResponse",
+      "status": "online"
     },
     "CreateRecTask": {
-      "document": "本接口服务对时长5小时以内的录音文件进行识别，异步返回识别全部结果。\n• 支持中文普通话、英语、粤语、日语、上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话。\n• 支持通用、音视频领域\n• 支持wav、mp3、m4a、flv、mp4、wma、3gp、amr、aac、ogg-opus、flac格式\n• 支持语音 URL 和本地语音文件两种请求方式\n• 语音 URL 的音频时长不能长于5小时，文件大小不超过512MB\n• 本地语音文件不能大于5MB\n• 提交录音文件识别请求后，在3小时内完成识别（大多数情况下1小时音频约3分钟以内完成识别，半小时内发送超过1000小时录音或者2万条识别任务的除外），识别结果在服务端可保存7天\n• 支持回调或轮询的方式获取结果，结果获取请参考[ 录音文件识别结果查询](https://cloud.tencent.com/document/product/1093/37822)。\n•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n• 默认接口请求频率限制：20次/秒，如您有提高请求频率限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
+      "document": "本接口可对较长的录音文件进行识别。如希望直接使用带界面的语音识别产品，请访问[产品体验中心](https://console.cloud.tencent.com/asr/demonstrate)。产品计费标准请查阅 [计费概述（在线版）](https://cloud.tencent.com/document/product/1093/35686)\n• 接口默认限频：20次/秒。此处仅限制任务提交频次，与识别结果返回时效无关\n• 返回时效：异步回调，非实时返回。最长3小时返回识别结果，**大多数情况下，1小时的音频1-3分钟即可完成识别**。请注意：上述返回时长不含音频下载时延，且30分钟内发送超过1000小时录音或2万条任务的情况除外\n• 音频格式：wav、mp3、m4a、flv、mp4、wma、3gp、amr、aac、ogg-opus、flac\n• 支持语言：在本页面上搜索 **EngineModelType**，或前往 [产品功能](https://cloud.tencent.com/document/product/1093/35682) 查看\n• 音频提交方式：本接口支持**音频 URL 、本地音频文件**两种请求方式。推荐使用 [腾讯云COS](https://cloud.tencent.com/document/product/436/38484) 来存储、生成URL并提交任务，此种方式将不产生外网和流量下行费用，可节约成本、提升任务速度（可参考COS预签名指南：[使用预签名 URL 访问 COS](https://cloud.tencent.com/document/product/436/68284) ，获取COS预签名url）\n• 音频限制：音频 URL 时长不能大于5小时，文件大小不超过1GB；本地音频文件不能大于5MB\n• 如何获取识别结果：支持**回调或轮询**的方式获取结果，具体请参考 [录音文件识别结果查询](https://cloud.tencent.com/document/product/1093/37822)\n• 识别结果有效时间：识别结果在服务端保存24小时\n• 签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法 v3",
       "input": "CreateRecTaskRequest",
       "name": "录音文件识别请求",
-      "output": "CreateRecTaskResponse"
+      "output": "CreateRecTaskResponse",
+      "status": "online"
+    },
+    "DeleteAsrKeyWordLib": {
+      "document": "用户通过本接口进行关键词表的删除。",
+      "input": "DeleteAsrKeyWordLibRequest",
+      "name": "删除关键词表",
+      "output": "DeleteAsrKeyWordLibResponse",
+      "status": "online"
     },
     "DeleteAsrVocab": {
       "document": "用户通过本接口进行热词表的删除。",
       "input": "DeleteAsrVocabRequest",
       "name": "删除热词表",
-      "output": "DeleteAsrVocabResponse"
+      "output": "DeleteAsrVocabResponse",
+      "status": "online"
     },
     "DeleteCustomization": {
       "document": "用户通过该接口可以删除自学习模型",
       "input": "DeleteCustomizationRequest",
       "name": "删除自学习模型",
-      "output": "DeleteCustomizationResponse"
+      "output": "DeleteCustomizationResponse",
+      "status": "online"
     },
     "DescribeAsyncRecognitionTasks": {
       "document": "本接口用于查询当前在运行的语音流异步识别任务列表。\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。",
       "input": "DescribeAsyncRecognitionTasksRequest",
       "name": "语音流异步识别任务列表",
-      "output": "DescribeAsyncRecognitionTasksResponse"
+      "output": "DescribeAsyncRecognitionTasksResponse",
+      "status": "online"
     },
     "DescribeTaskStatus": {
-      "document": "在调用录音文件识别请求接口后，有回调和轮询两种方式获取识别结果。\n<br>• 当采用回调方式时，识别完成后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见[ 录音识别结果回调 ](https://cloud.tencent.com/document/product/1093/52632)。\n<br>• 当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见下文说明。\n<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n<br>•   默认接口请求频率限制：50次/秒，如您有提高请求频率限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
+      "document": "调用录音文件识别请求接口后，有回调和轮询两种方式获取识别结果。\n• **注意任务有效期为24小时，超过24小时的任务请不要再查询，且不要依赖TaskId作为业务唯一ID，不同日期可能出现重复TaskId。**\n• 当采用回调方式时，识别完成后会将结果通过 POST 请求的形式通知到用户在请求时填写的回调 URL，具体请参见[ 录音识别结果回调 ](https://cloud.tencent.com/document/product/1093/52632)。\n• 当采用轮询方式时，需要主动提交任务ID来轮询识别结果，共有任务成功、等待、执行中和失败四种结果，具体信息请参见下文说明。\n•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n•   默认接口请求频率限制：50次/秒，如您有提高请求频率限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
       "input": "DescribeTaskStatusRequest",
       "name": "录音文件识别结果查询",
-      "output": "DescribeTaskStatusResponse"
+      "output": "DescribeTaskStatusResponse",
+      "status": "online"
     },
     "DownloadAsrVocab": {
       "document": "用户通过本接口进行热词表的下载，获得词表权重文件形式的 base64 值，文件形式为通过 “|” 分割的词和权重，即 word|weight 的形式。",
       "input": "DownloadAsrVocabRequest",
       "name": "下载热词表",
-      "output": "DownloadAsrVocabResponse"
+      "output": "DownloadAsrVocabResponse",
+      "status": "online"
     },
     "DownloadCustomization": {
       "document": "用户通过该接口可以下载自学习模型的语料",
       "input": "DownloadCustomizationRequest",
       "name": "下载自学习模型语料",
-      "output": "DownloadCustomizationResponse"
+      "output": "DownloadCustomizationResponse",
+      "status": "online"
+    },
+    "GetAsrKeyWordLibList": {
+      "document": "用户通过该接口，可获得所有的关键词表及其信息。",
+      "input": "GetAsrKeyWordLibListRequest",
+      "name": "列举关键词表",
+      "output": "GetAsrKeyWordLibListResponse",
+      "status": "online"
     },
     "GetAsrVocab": {
       "document": "用户根据词表的ID可以获取对应的热词表信息",
       "input": "GetAsrVocabRequest",
       "name": "获取热词表",
-      "output": "GetAsrVocabResponse"
+      "output": "GetAsrVocabResponse",
+      "status": "online"
     },
     "GetAsrVocabList": {
       "document": "用户通过该接口，可获得所有的热词表及其信息。",
       "input": "GetAsrVocabListRequest",
       "name": "列举热词表",
-      "output": "GetAsrVocabListResponse"
+      "output": "GetAsrVocabListResponse",
+      "status": "online"
     },
     "GetCustomizationList": {
       "document": "查询自学习模型列表",
       "input": "GetCustomizationListRequest",
       "name": "查询自学习模型列表",
-      "output": "GetCustomizationListResponse"
+      "output": "GetCustomizationListResponse",
+      "status": "online"
+    },
+    "GetModelInfo": {
+      "document": "通过自学习模型id获取自学习模型详细信息",
+      "input": "GetModelInfoRequest",
+      "name": "获取自学习模型信息",
+      "output": "GetModelInfoResponse",
+      "status": "online"
+    },
+    "GetUsageByDate": {
+      "document": "查询用户用量",
+      "input": "GetUsageByDateRequest",
+      "name": "通过日期查询用量",
+      "output": "GetUsageByDateResponse",
+      "status": "online"
     },
     "ModifyCustomization": {
       "document": "用户通过该接口可以更新自学习模型，如模型名称、模型类型、模型语料。",
       "input": "ModifyCustomizationRequest",
       "name": "更新自学习模型",
-      "output": "ModifyCustomizationResponse"
+      "output": "ModifyCustomizationResponse",
+      "status": "online"
     },
     "ModifyCustomizationState": {
       "document": "通过该接口，用户可以修改自学习模型状态，上下线自学习模型",
       "input": "ModifyCustomizationStateRequest",
       "name": "修改自学习模型状态",
-      "output": "ModifyCustomizationStateResponse"
+      "output": "ModifyCustomizationStateResponse",
+      "status": "online"
     },
     "SentenceRecognition": {
-      "document": "本接口用于对60秒之内的短音频文件进行识别。<br>•   支持中文普通话、英语、粤语、日语、上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话。<br>•   支持本地语音文件上传和语音URL上传两种请求方式，音频时长不能超过60s，音频文件大小不能超过3MB。<br>•   音频格式支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac。<br>•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"<br>•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。<br>•   默认接口请求频率限制：25次/秒，如您有提高请求频率限制的需求，请提[工单](https://console.cloud.tencent.com/workorder/category)进行咨询。",
+      "document": "本接口用于对60秒之内的短音频文件进行识别。\n•   支持中文普通话、英语、粤语、日语、越南语、马来语、印度尼西亚语、菲律宾语、泰语、葡萄牙语、土耳其语、阿拉伯语、印地语、法语、德语、上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话。\n•   支持本地语音文件上传和语音URL上传两种请求方式，音频时长不能超过60s，音频文件大小不能超过3MB。推荐使用 [腾讯云COS](https://cloud.tencent.com/document/product/436/38484) 来存储音频、生成URL并提交请求，此种方式会走内网下载音频，极大降低整体请求时延；并且不会产生外网和流量下行费用，可节约成本（可参考COS预签名指南：[使用预签名 URL 访问 COS](https://cloud.tencent.com/document/product/436/68284) ，获取COS预签名url）\n•   音频格式支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac、 amr。\n•   请求方法为 HTTP POST , Content-Type为\"application/json; charset=utf-8\"\n•   签名方法参考 [公共参数](https://cloud.tencent.com/document/api/1093/35640) 中签名方法v3。\n•   默认接口请求频率限制：30次/秒，如您有提高请求频率限制的需求，请[前往购买](https://buy.cloud.tencent.com/asr)。",
       "input": "SentenceRecognitionRequest",
       "name": "一句话识别",
-      "output": "SentenceRecognitionResponse"
+      "output": "SentenceRecognitionResponse",
+      "status": "online"
     },
     "SetVocabState": {
       "document": "用户通过该接口可以设置热词表的默认状态。初始状态为0，用户可设置状态为1，即为默认状态。默认状态表示用户在请求识别时，如不设置热词表ID，则默认使用状态为1的热词表。",
       "input": "SetVocabStateRequest",
       "name": "设置热词表状态",
-      "output": "SetVocabStateResponse"
+      "output": "SetVocabStateResponse",
+      "status": "online"
+    },
+    "UpdateAsrKeyWordLib": {
+      "document": "用户通过本接口进行对应的关键词表信息更新。",
+      "input": "UpdateAsrKeyWordLibRequest",
+      "name": "更新关键词表",
+      "output": "UpdateAsrKeyWordLibResponse",
+      "status": "online"
     },
     "UpdateAsrVocab": {
       "document": "用户通过本接口进行对应的词表信息更新。",
       "input": "UpdateAsrVocabRequest",
       "name": "更新热词表",
-      "output": "UpdateAsrVocabResponse"
+      "output": "UpdateAsrVocabResponse",
+      "status": "online"
+    },
+    "VoicePrintCompare": {
+      "document": "通过比对两段音频内说话人的声纹，得到一个打分，可通过打分判断两段音频声纹相似度,  打分区间[0 - 100]。 音频要求：16k采样率， 16bit位深，pcm或者wav格式， 单声道，总时长不超过30秒的音频，base64编码数据大小不超过2M，音频内容只有一个说话人声音，并且尽可能清晰，这样结果更加准确。",
+      "input": "VoicePrintCompareRequest",
+      "name": "说话人比对",
+      "output": "VoicePrintCompareResponse",
+      "status": "online"
+    },
+    "VoicePrintCount": {
+      "document": "统计并返回注册的说话人id总数",
+      "input": "VoicePrintCountRequest",
+      "name": "说话人注册数量统计",
+      "output": "VoicePrintCountResponse",
+      "status": "online"
+    },
+    "VoicePrintDelete": {
+      "document": "本接口用于以删除已经注册的说话人信息（删除之后，原有的说话人ID和说话人音频数据都会失效）",
+      "input": "VoicePrintDeleteRequest",
+      "name": "说话人删除",
+      "output": "VoicePrintDeleteResponse",
+      "status": "online"
+    },
+    "VoicePrintEnroll": {
+      "document": "说话人注册接口用于注册一个指定音频，生成一个唯一的说话人id，后续可通过说话人验证接口验证其它音频和已有的说话人ID匹配度，注册时可指定说话人昵称，方便标识说话人ID，  说话人昵称可重复配置。 \n（注：一个appid最多可以注册10000个说话人ID，一个group最多可容纳20个说话人ID，一个说话人ID仅支持条音频注册，可通过更新接口进行更新。**当前支持免费注册1000个说话人ID，超出 1000 个的部分，以月底实际存储数量按【0.05 元/个/月】 计费，声纹注册后5分钟生效**）\n\n使用须知\n支持的输入格式：编码文件(PCM, WAV)、16 bit采样位数、单声道（mono）。\n\n支持的音频采样率：16000 Hz。",
+      "input": "VoicePrintEnrollRequest",
+      "name": "说话人注册",
+      "output": "VoicePrintEnrollResponse",
+      "status": "online"
+    },
+    "VoicePrintGroupList": {
+      "document": "返回注册的说话人分组信息列表",
+      "input": "VoicePrintGroupListRequest",
+      "name": "说话人分组列表",
+      "output": "VoicePrintGroupListResponse",
+      "status": "online"
+    },
+    "VoicePrintGroupVerify": {
+      "document": "说话人验证1:N接口，可以通过传入一段说话人音频，并且指定已存在的groupId, 和返回topN,  接口返回groupId内所有声纹和传入音频声纹比对打分TopN的结果。",
+      "input": "VoicePrintGroupVerifyRequest",
+      "name": "说话人验证1:N",
+      "output": "VoicePrintGroupVerifyResponse",
+      "status": "online"
+    },
+    "VoicePrintUpdate": {
+      "document": "本接口用于更新和覆盖已注册的音频数据和说话人昵称，更新后原有的音频数据将失效。",
+      "input": "VoicePrintUpdateRequest",
+      "name": "说话人更新",
+      "output": "VoicePrintUpdateResponse",
+      "status": "online"
+    },
+    "VoicePrintVerify": {
+      "document": "本接口用于校验传入音频与已注册音频的匹配程度，通过指定说话人ID（VoicePrintId）和一段音频进行音频和说话人的匹配度判断",
+      "input": "VoicePrintVerifyRequest",
+      "name": "说话人认证",
+      "output": "VoicePrintVerifyResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -123,23 +240,25 @@
   },
   "objects": {
     "AsyncRecognitionTaskInfo": {
-      "document": "音频流异步识别任务信息",
+      "document": "[音频流异步识别](https://cloud.tencent.com/document/api/1093/37824#AsyncRecognitionTasks)任务信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务ID",
+          "example": "12******135",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "音频流Url",
+          "example": "https://www.audio.com/audio.wav",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -147,14 +266,15 @@
       "usage": "out"
     },
     "AsyncRecognitionTasks": {
-      "document": "音频流异步识别任务列表",
+      "document": "[音频流异步识别任务列表](https://cloud.tencent.com/document/product/1093/52060#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AsyncRecognitionTaskInfo",
           "name": "Tasks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -165,7 +285,7 @@
       "document": "CloseAsyncRecognitionTask请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "语音流异步识别任务的唯一标识，在创建任务时会返回",
           "example": "9000254964",
           "member": "int64",
@@ -180,7 +300,53 @@
       "document": "CloseAsyncRecognitionTask返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAsrKeyWordLibRequest": {
+      "document": "CreateAsrKeyWordLib请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>词表名称，长度在1-20之间<br>仅限中英文数字-_</p>",
+          "example": "测试词表",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>词文件（纯文本文件）的二进制base64编码，以行分隔<br>格式要求：TXT<br>每行只有一个词，不满足格式则报错无法上传<br>每个词限制<strong>5个汉字，15个字符</strong>，单个词库最多不超过100个词<br>注意不要有空行，尤其是最后一行</p>",
+          "example": "避风港(进行base64编码)",
+          "member": "string",
+          "name": "KeyWordFile",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAsrKeyWordLibResponse": {
+      "document": "CreateAsrKeyWordLib返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>词表ID数据</p>",
+          "example": "无",
+          "member": "KeyWordLibIdData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -192,32 +358,36 @@
       "document": "CreateAsrVocab请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "热词表名称，长度在1-255之间",
+          "disabled": false,
+          "document": "<p>热词表名称，长度在1-255之间, 注意: 仅允许中英文、数字、下划线、中英文标点、空格、横线</p>",
+          "example": "避风港",
           "member": "string",
           "name": "Name",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "热词表描述，长度在0-1000之间",
+          "disabled": false,
+          "document": "<p>热词表描述，长度在0-1000之间</p>",
+          "example": "热词",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "词权重数组，包含全部的热词和对应的权重。每个热词的长度不大于10，权重为[1,10]之间整数，数组长度不大于128",
+          "disabled": false,
+          "document": "<p>词权重数组，包含全部的热词和对应的权重。每个热词的长度不大于10个汉字或30个英文字符，权重为[1,11]之间整数或者100，数组长度不大于1000<br>注意: </p><ul><li>热词权重设置为11时，当前热词将升级为超级热词，建议仅将重要且必须生效的热词设置到11，设置过多权重为11的热词将影响整体字准率。</li><li>热词权重设置为100时，当前热词开启热词增强同音替换功能（仅支持8k_zh,16k_zh），举例：热词配置“蜜制|100”时，与“蜜制”同拼音（mizhi）的“秘制”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。建议仅将重要且必须生效的热词设置到100，设置过多权重为100的热词将影响整体字准率。</li></ul>",
+          "example": "无",
           "member": "HotWord",
           "name": "WordWeights",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
-          "document": "词权重文件（纯文本文件）的二进制base64编码，以行分隔，每行的格式为word|weight，即以英文符号|为分割，左边为词，右边为权重，如：你好|5。\n当用户传此参数（参数长度大于0），即以此参数解析词权重，WordWeights会被忽略",
+          "disabled": false,
+          "document": "<p>词权重文件（纯文本文件）的二进制base64编码，以行分隔，每行的格式为word|weight，即以英文符号|为分割，左边为词，右边为权重，如：你好|5。<br>当用户传此参数（参数长度大于0），即以此参数解析词权重，WordWeights会被忽略</p>",
+          "example": "避风港|10 (进行bas64编码)",
           "member": "string",
           "name": "WordWeightStr",
           "required": false,
@@ -230,14 +400,17 @@
       "document": "CreateAsrVocab返回参数结构体",
       "members": [
         {
-          "document": "词表ID，可用于获取词表信息",
+          "disabled": false,
+          "document": "<p>词表ID，可用于获取词表信息</p>",
+          "example": "adsdadsdsad",
           "member": "string",
           "name": "VocabId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -249,8 +422,8 @@
       "document": "CreateAsyncRecognitionTask请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "引擎模型类型。\n• 16k_zh：16k 中文普通话通用；\n• 16k_zh_video：16k 音视频领域；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；",
+          "disabled": false,
+          "document": "引擎模型类型。\n• 16k_zh：中文普通话通用；\n• 16k_en：英语；\n• 16k_id：印度尼西亚语；\n• 16k_fil：菲律宾语；\n• 16k_th：泰语；\n• 16k_pt：葡萄牙语；\n• 16k_tr：土耳其语；\n• 16k_ar：阿拉伯语；\n• 16k_es：西班牙语；\n• 16k_hi：印地语；\n• 16k_fr：法语；\n• 16k_de：德语；",
           "example": "16k_zh",
           "member": "string",
           "name": "EngineType",
@@ -258,34 +431,34 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "语音流地址，支持rtmp、rtsp等流媒体协议，以及各类基于http协议的直播流(不支持hls)",
-          "example": "无",
+          "disabled": false,
+          "document": "语音流地址，支持rtmp、rtsp等流媒体协议，以及各类基于http协议的直播流(不支持hls, m3u8)",
+          "example": "https://www.audio.com/audio.wav",
           "member": "string",
           "name": "Url",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "支持HTTP和HTTPS协议，用于接收识别结果，您需要自行搭建公网可调用的服务。回调格式&内容详见：[语音流异步识别回调说明](https://cloud.tencent.com/document/product/1093/52633)",
-          "example": "无",
+          "example": "https://www.audio.com/callback",
           "member": "string",
           "name": "CallbackUrl",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "用于生成回调通知中的签名",
-          "example": "无",
+          "example": "xadjjfshjask******lksadlakd",
           "member": "string",
           "name": "SignToken",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0",
           "example": "0",
           "member": "int64",
@@ -294,8 +467,8 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0",
+          "disabled": false,
+          "document": "是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0",
           "example": "0",
           "member": "int64",
           "name": "FilterModal",
@@ -303,7 +476,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认为0",
           "example": "0",
           "member": "int64",
@@ -312,7 +485,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1",
           "example": "1",
           "member": "int64",
@@ -321,7 +494,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认为0",
           "example": "0",
           "member": "int64",
@@ -330,18 +503,18 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。",
-          "example": "无",
+          "example": "sifhsadhuasjh*****djsahdsg",
           "member": "string",
           "name": "HotwordId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "回调数据中，是否需要对应音频数据。",
-          "example": "flase",
+          "example": "false",
           "member": "bool",
           "name": "AudioData",
           "required": false,
@@ -354,16 +527,17 @@
       "document": "CreateAsyncRecognitionTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "请求返回结果，包含本次的任务ID(TaskId)",
           "example": "无",
           "member": "Task",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -375,34 +549,34 @@
       "document": "CreateCustomization请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "自学习模型名称，需在1-20字符之间",
-          "example": "无",
+          "example": "出行模型",
           "member": "string",
           "name": "ModelName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos",
-          "example": "无",
+          "example": "https://xxx.xx.com/text",
           "member": "string",
           "name": "TextUrl",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "自学习模型类型，填写8k或者16k",
-          "example": "无",
+          "example": "8k",
           "member": "string",
           "name": "ModelType",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": true,
           "document": "标签信息",
           "example": "无",
           "member": "string",
@@ -417,16 +591,17 @@
       "document": "CreateCustomization返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "模型ID",
-          "example": "无",
+          "example": "769762ae-xxxxxxxxxx-ec3cda3142e",
           "member": "string",
           "name": "ModelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -438,8 +613,8 @@
       "document": "CreateRecTask请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "引擎模型类型。注意：非电话场景请务必使用16k的引擎。\n电话场景：\n• 8k_en：电话 8k 英语；\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_zh_video：16k 音视频领域；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n• 16k_zh_edu 中文教育；\n• 16k_en_edu 英文教育；\n• 16k_zh_medical  医疗；\n• 16k_th 泰语；",
+          "disabled": false,
+          "document": "<p>引擎模型类型<br>识别引擎采用分级计费方案，分为通用引擎、大模型1.0版引擎（原大模型版引擎）、大模型2.0版引擎。<a href=\"https://cloud.tencent.com/document/product/1093/35686\">点击这里</a> 查看不同引擎的计费说明。</p><p><strong>大模型2.0引擎：</strong><br><strong>• 16k_zh_en_2.0：</strong>中英大模型引擎【大模型2.0版】。当前模型同时支持中文、英语、粤语、四川、陕西、河南、上海、湖南、湖北、安徽、闽南、潮汕等 <a href=\"https://cloud.tencent.com/document/product/1093/35682\">31种方言</a> 的识别，且支持说话人分离能力。该模型针对噪声大、回音大、人声小、人声远等低质量音频的识别准确率极大提升，<a href=\"https://console.cloud.tencent.com/asr/demonstrate\">点击这里</a>对比中文普通话常规版本与中英大模型版本的识别效果；<br><strong>• 16k_zh_en_meeting：</strong>中英大模型引擎【大模型2.0版】。当前模型同时支持中文、英语、粤语、四川、陕西、河南、上海、湖南、湖北、安徽、闽南、潮汕等 <a href=\"https://cloud.tencent.com/document/product/1093/137594\">31种方言</a> 的识别，适用于多人对话场景，使用时请开启说话人分离。该模型在多说话人重叠发声场景下，转写准确率与说话人分离准确率均表现突出，<a href=\"https://console.cloud.tencent.com/asr/demonstrate\">点击这里</a>对比中文普通话常规版本与中英大模型版本的识别效果；</p><p><strong>大模型1.0引擎：</strong><br><strong>• 8k_zh_large：</strong>中文电话场景专用大模型引擎【大模型1.0版】。当前模型同时支持中文、上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话、闽南语、客家话、粤语、南宁话方言识别，通过显著提升模型参数规模与语言建模能力，实现对电话音频中复杂场景（如口音干扰、背景噪声）的高精度识别，识别准确率较常规版本大幅提升。<a href=\"https://console.cloud.tencent.com/asr/demonstrate\">点击这里</a> 对比常规版本与普方大模型效果；<br>• <strong>16k_zh_en：</strong>中英大模型引擎【大模型1.0版】。当前模型同时支持中文、英语、粤语、四川、陕西、河南、上海、湖南、湖北、安徽、闽南、潮汕等 <a href=\"https://cloud.tencent.com/document/product/1093/35682\">31种方言</a> 的识别，针对噪声大、回音大、人声小、人声远等低质量音频的识别准确率极大提升，<a href=\"https://console.cloud.tencent.com/asr/demonstrate\">点击这里</a>对比中文普通话常规版本与中英大模型版本的识别效果；<br>• <strong>16k_multi_lang：</strong>多语种大模型引擎【大模型1.0版】。当前模型同时支持英语、日语、韩语、阿拉伯语、菲律宾语、法语、印地语、印尼语、马来语、葡萄牙语、西班牙语、泰语、土耳其语、越南语、德语的识别，可实现15个语种的自动识别(句子/段落级别)；<br>• <strong>16k_en_large：</strong>英语大模型引擎。</p><p><strong>通用引擎：</strong><br>• 8k_zh：中文电话通讯；<br>• 8k_en：英文电话通讯；</p><p><strong>注意：电话通讯场景请务必使用8k引擎，电话通讯场景以外的其它识别场景，请务必使用16k引擎。</strong>如您有电话通讯场景识别需求，但发现需求语种仅支持16k，可将8k音频传入下方16k引擎，亦能获取识别结果。但<strong>16k引擎并非基于电话通讯数据训练，无法承诺此种调用方式的识别效果，需由您自行验证识别结果是否可用。</strong></p><p>• <strong>16k_zh：</strong>中文普通话通用引擎，支持中文普通话和少量英语，使用丰富的中文普通话语料训练，覆盖场景广泛，适用于除电话通讯外的所有中文普通话识别场景；<br>• <strong>16k_en：</strong>英语；<br>• <strong>16k_yue：</strong>粤语；<br>• <strong>16k_zh-PY：</strong>中英粤混合引擎，使用一个引擎同时识别中文普通话、英语、粤语三个语言;<br>• <strong>16k_zh-TW</strong>：中文繁体；<br>• <strong>16k_ja：</strong>日语；<br>• <strong>16k_ko：</strong>韩语；<br>• <strong>16k_vi：</strong>越南语；<br>• <strong>16k_ms：</strong>马来语；<br>• <strong>16k_id：</strong>印度尼西亚语；<br>• <strong>16k_fil：</strong>菲律宾语；<br>• <strong>16k_th：</strong>泰语；<br>• <strong>16k_pt：</strong>葡萄牙语；<br>• <strong>16k_tr：</strong>土耳其语；<br>• <strong>16k_ar：</strong>阿拉伯语；<br>• <strong>16k_es：</strong>西班牙语；<br>• <strong>16k_hi：</strong>印地语；<br>• <strong>16k_fr：</strong>法语；<br>• <strong>16k_zh_medical：</strong>中文医疗引擎；<br>• <strong>16k_de：</strong>德语；</p><p>枚举值：</p><ul><li>16k_zh_en_2.0： 中文普通话通用引擎，支持中文普通话和少量英语，使用丰富的中文普通话语料训练，覆盖场景广泛，适用于除电话通讯外的所有中文普通话识别场景</li></ul>",
           "example": "16k_zh",
           "member": "string",
           "name": "EngineModelType",
@@ -447,8 +622,8 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "识别声道数。1：单声道（非电话场景，直接选择单声道即可，忽略音频声道数）；2：双声道（仅支持8k_zh电话场景，双声道应分别对应通话双方）。注意：双声道的电话音频已物理分离说话人，无需再开启说话人分离功能。",
+          "disabled": false,
+          "document": "<p>识别声道数<br>1：单声道（16k音频仅支持单声道，<strong>请勿</strong>设置为双声道）；<br>2：双声道（仅支持8k电话音频，且双声道应分别为通话双方）</p><p>注意：<br>• 16k音频：仅支持单声道识别，<strong>需设置ChannelNum=1</strong>；<br>• 8k电话音频：支持单声道、双声道识别，<strong>建议设置ChannelNum=2，即双声道</strong>。双声道能够物理区分说话人、避免说话双方重叠产生的识别错误，能达到最好的说话人分离效果和识别效果。设置双声道后，将自动区分说话人，因此<strong>无需再开启说话人分离功能</strong>，相关参数（<strong>SpeakerDiarization、SpeakerNumber</strong>）使用默认值即可，返回的ResultDetail中的speakerId的值为0代表左声道，值为1代表右声道。</p>",
           "example": "1",
           "member": "uint64",
           "name": "ChannelNum",
@@ -456,8 +631,8 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "识别结果返回形式。0： 识别结果文本(含分段时间戳)； 1：词级别粒度的[详细识别结果](https://cloud.tencent.com/document/api/1093/37824#SentenceDetail)(不含标点，含语速值)；2：词级别粒度的详细识别结果（包含标点、语速值）；3: 标点符号分段，包含每段时间戳，特别适用于字幕场景（包含词级时间、标点、语速值）。",
+          "disabled": false,
+          "document": "<p>识别结果返回样式<br>0：基础识别结果（仅包含有效人声时间戳，无词粒度的<a href=\"https://cloud.tencent.com/document/api/1093/37824#SentenceDetail\">详细识别结果</a>）；<br>1：基础识别结果之上，增加词粒度的<a href=\"https://cloud.tencent.com/document/api/1093/37824#SentenceDetail\">详细识别结果</a>（包含词级别时间戳、语速值，<strong>不含标点</strong>）；<br>2：基础识别结果之上，增加词粒度的<a href=\"https://cloud.tencent.com/document/api/1093/37824#SentenceDetail\">详细识别结果</a>（包含词级别时间戳、语速值和标点）；<br>3：基础识别结果之上，增加词粒度的<a href=\"https://cloud.tencent.com/document/api/1093/37824#SentenceDetail\">详细识别结果</a>（包含词级别时间戳、语速值和标点），且识别结果按标点符号分段，<strong>适用字幕场景</strong>；<br>4：<strong>【增值付费功能】</strong>基础识别结果之上，增加词粒度的<a href=\"https://cloud.tencent.com/document/api/1093/37824#SentenceDetail\">详细识别结果</a>（包含词级别时间戳、语速值和标点），且识别结果按nlp语义分段，<strong>适用会议、庭审记录转写等场景</strong>，仅支持8k_zh/16k_zh引擎；<br>5：<strong>【增值付费功能】</strong>基础识别结果之上，增加词粒度的<a href=\"https://cloud.tencent.com/document/api/1093/37824#SentenceDetail\">详细识别结果</a>（包含词级别时间戳、语速值和标点），并输出口语转书面语转写结果，该结果去除语气词、重复词、精简冗余表达，并修正发言人口误，实现口语转书面语的效果，<strong>适用于线上、线下会议直接总结为书面会议纪要的场景</strong>，仅支持8k_zh/16k_zh引擎；<br>7:<strong>【增值付费功能】</strong>基础识别结果之上，增加大模型后处理功能，支持章节摘要、全文总结、待办事项、角色识别、方言转普通话、司乘角色分离六个功能点。<br>注意：<br>以下引擎仅支持参数值设置为0：16k_multi_lang、16k_ja、16k_ko、16k_vi、16k_ms、16k_id、16k_fil、16k_th、16k_pt、16k_tr、16k_ar、16k_es、16k_hi、16k_fr、16k_zh_medical、16k_de<br>如果传入参数值4，需确保账号已购买<a href=\"https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b\">语义分段资源包</a>，或账号开启后付费；<strong>若当前账号已开启后付费功能，并传入参数值4，将<a href=\"https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852\">自动计费</a></strong><br>如果传入参数值5，需确保账号已购买<a href=\"https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b\">口语转书面语资源包</a>，或账号开启后付费；<strong>若当前账号已开启后付费功能，并传入参数值5，将<a href=\"https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852\">自动计费</a></strong><br>如果传入参数值7，需确保账号已开启后付费；<strong>若当前账号已开启后付费功能，并传入参数值7，配合设置Extra中LlmFeatures参数，将根据实际使用的功能点<a href=\"https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852\">计费</a>，如同时使用多项功能，将叠加计费</strong></p>",
           "example": "0",
           "member": "uint64",
           "name": "ResTextFormat",
@@ -465,8 +640,8 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "语音数据来源。0：语音 URL；1：语音数据（post body）。",
+          "disabled": false,
+          "document": "<p>音频数据来源<br>0：音频URL；<br>1：音频数据（post body）</p>",
           "example": "0",
           "member": "uint64",
           "name": "SourceType",
@@ -474,35 +649,26 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video，单声道音频)，默认值为 0。\n注意：8k电话场景建议使用双声道来区分通话双方，设置ChannelNum=2即可，不用开启说话人分离。",
-          "example": "0",
-          "member": "int64",
-          "name": "SpeakerDiarization",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "说话人分离人数（需配合开启说话人分离使用），取值范围：0-10，0代表自动分离（目前仅支持≤6个人），1-10代表指定说话人数分离。默认值为 0。\n注：话者分离目前是beta版本，请根据您的需要谨慎使用",
-          "example": "0",
-          "member": "int64",
-          "name": "SpeakerNumber",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "回调 URL，用户自行搭建的用于接收识别结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。回调格式&内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)",
-          "example": "无",
+          "disabled": false,
+          "document": "<p>音频数据base64编码<br><strong>当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写</strong></p><p>注意：音频数据要小于5MB（含）</p>",
+          "example": "UklGRka1CQBXQVZFZm10zOjQzAABJU0ZUDgAAAE",
           "member": "string",
-          "name": "CallbackUrl",
+          "name": "Data",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "语音的URL地址，需要公网环境浏览器可下载。当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写。注意：请确保录音文件时长在5个小时之内，否则可能识别失败。请保证文件的下载速度，否则可能下载失败。",
+          "disabled": false,
+          "document": "<p>数据长度（此数据长度为数据未进行base64编码时的长度）</p>",
+          "example": "50",
+          "member": "uint64",
+          "name": "DataLen",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频URL的地址（需要公网环境浏览器可下载）<br><strong>当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写</strong></p><p>注意：</p><ol><li>请确保录音文件时长在5个小时（含）之内，否则可能识别失败；</li><li>请保证文件的下载速度，否则可能下载失败</li></ol>",
           "example": "https://audio.cos.ap-guangzhou.myqcloud.com/example.wav",
           "member": "string",
           "name": "Url",
@@ -510,26 +676,80 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "语音数据base64编码，当SourceType 值为1时必须填写，为0可不写。音频数据要小于5MB。",
-          "example": "无",
+          "disabled": false,
+          "document": "<p>回调 URL<br>用户自行搭建的用于接收识别结果的服务URL<br>回调格式和内容详见：<a href=\"https://cloud.tencent.com/document/product/1093/52632\">录音识别回调说明</a></p><p>注意：</p><ul><li>如果用户使用轮询方式获取识别结果，则无需提交该参数</li><li>建议在回调URL中带上您的业务ID等信息，以便处理业务逻辑</li></ul>",
+          "example": "https://xxxx.xxx.xxx/callback",
           "member": "string",
-          "name": "Data",
+          "name": "CallbackUrl",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "数据长度，非必填（此数据长度为数据未进行base64编码时的数据长度）。",
-          "example": "无",
-          "member": "uint64",
-          "name": "DataLen",
+          "disabled": false,
+          "document": "<p>是否开启说话人分离<br>0：不开启；<br>1：开启（仅支持以下引擎：8k_zh/8k_zh_large/16k_zh_en_2.0/16k_zh_en_meeting/16k_zh_en/16k_zh/16k_ms/16k_en/16k_id/16k_zh_dialect/16k_es/16k_fr/16k_ja/16k_ko，且ChannelNum=1时可用）；<br>3: 开启角色分离，需配合SpeakerRoles参数使用（增值服务，仅支持16k_zh_en_2.0、16k_zh_en引擎，可支持传入声纹对录音文件内的说话人进行角色认证）<br>默认值为 0</p><p>注意：<br>8k双声道电话音频请按 <strong>ChannelNum 识别声道数</strong> 的参数描述使用默认值。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeakerDiarization",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
-          "document": "是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。",
+          "disabled": false,
+          "document": "<p>说话人分离人数<br><strong>需配合开启说话人分离使用，不开启无效</strong>，取值范围：0-10<br>0：自动分离（最多分离出20个人）；<br>1-10：指定人数分离；<br>默认值为 0<br>注:16k引擎不支持指定人数分离</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SpeakerNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>热词表id<br>如不设置该参数，将自动生效默认热词表；<br>如设置该参数，将生效对应id的热词表；<br>点击这里查看<a href=\"https://cloud.tencent.com/document/product/1093/40996\">热词表配置方法</a></p>",
+          "example": "769762aexxxxxxxxxxec3cda3142e",
+          "member": "string",
+          "name": "HotwordId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "<p>热词增强功能（目前仅支持中文普通话引擎）1：开启热词增强功能注意：热词增强功能开启后，将对传入的热词表id开启同音替换功能，可以在这里查看<a href=\"https://cloud.tencent.com/document/product/1093/40996\">热词表配置方法</a>。效果举例：在热词表中配置“蜜制”一词，并开启增强功能，与“蜜制”（mìzhì）同音同调的“秘制”（mìzhì）的识别结果会被强制替换成“蜜制”。<strong>建议客户根据实际的业务需求开启该功能</strong></p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ReinforceHotword",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自学习定制模型 id<br>如设置了该参数，将生效对应id的自学习定制模型；<br>点击这里查看<a href=\"https://cloud.tencent.com/document/product/1093/38416\">自学习定制模型配置方法</a></p>",
+          "example": "769762aexxxxxxxxxxec3cda3142e",
+          "member": "string",
+          "name": "CustomizationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p><strong>【增值付费功能】</strong>情绪识别能力（目前仅支持 16k_zh ,  16k_zh_en_2.0 ,  16k_zh_en , 8k_zh ）0：不开启；1：开启情绪识别，但不在文本展示情绪标签；2：开启情绪识别，并且在文本展示情绪标签（<strong>该功能需要设置ResTextFormat 大于0</strong>）默认值为0支持的情绪分类为：高兴、伤心、愤怒注意：1. <strong>本功能为增值服务</strong>，需将参数设置为1或2时方可按对应方式生效；2. 如果传入参数值1或2，需确保账号已购买<a href=\"https://cloud.tencent.com/document/product/1093/35686#97ae4aa0-29a0-4066-9f07-ccaf8856a16b\">情绪识别资源包</a>，或账号开启后付费；<strong>若当前账号已开启后付费功能，并传入参数值1或2，将<a href=\"https://cloud.tencent.com/document/product/1093/35686#d912167d-ffd5-41a9-8b1c-2e89845a6852\">自动计费</a>）</strong>；3. 参数设置为0时，无需购买资源包，也不会消耗情绪识别对应资源</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EmotionRecognition",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>情绪能量值<br>取值为音量分贝值/10，取值范围：[1,10]，值越高情绪越强烈<br>0：不开启；<br>1：开启；<br>默认值为0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EmotionalEnergy",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>阿拉伯数字智能转换（目前支持中文普通话引擎）<br>0：不转换，直接输出中文数字；<br>1：根据场景智能转换为阿拉伯数字；<br>3：打开数学相关数字转换（如：阿尔法转写为α）；<br>默认值为 1</p>",
           "example": "0",
           "member": "int64",
           "name": "ConvertNumMode",
@@ -537,8 +757,8 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。",
+          "disabled": false,
+          "document": "<p>脏词过滤（目前支持中文普通话引擎）<br>0：不过滤脏词；<br>1：过滤脏词；<br>2：将脏词替换为 * ；<br>默认值为 0</p>",
           "example": "0",
           "member": "int64",
           "name": "FilterDirty",
@@ -546,35 +766,8 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "热词表id。如不设置该参数，自动生效默认热词表；如设置了该参数，那么将生效对应的热词表。",
-          "example": "无",
-          "member": "string",
-          "name": "HotwordId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "自学习模型 id。如设置了该参数，将生效对应的自学习模型。",
-          "example": "无",
-          "member": "string",
-          "name": "CustomizationId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "附加参数(该参数无意义，忽略即可)",
-          "example": "无",
-          "member": "string",
-          "name": "Extra",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "default": "",
-          "document": "是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认值为 0。",
+          "disabled": false,
+          "document": "<p>标点符号过滤（目前支持中文普通话引擎）<br>0：不过滤标点；<br>1：过滤句末标点；<br>2：过滤所有标点；<br>默认值为 0</p>",
           "example": "0",
           "member": "int64",
           "name": "FilterPunc",
@@ -582,13 +775,67 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。",
+          "disabled": false,
+          "document": "<p>语气词过滤（目前支持中文普通话引擎）<br>0：不过滤语气词；<br>1：过滤部分语气词；<br>2：严格过滤语气词；<br>默认值为 0</p>",
           "example": "0",
           "member": "int64",
           "name": "FilterModal",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单标点最多字数（目前支持中文普通话引擎）<br><strong>可控制单行字幕最大字数，适用于字幕生成场景</strong>，取值范围：[6，40]<br>0：不开启该功能；<br>默认值为0</p><p>注意：需设置ResTextFormat为3，解析返回的ResultDetail列表，通过结构中FinalSentence获取单个标点断句结果</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SentenceMaxLength",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>传入额外参数，默认为空字符串，如果传入必须是合法的 JSON 字符串，用于开启增值能力，目前支持的能力有：</p><ol><li>领域增强：提升特定领域的识别效果</li><li>大模型后处理：支持Abstract（章节摘要）、Summary（全文总结）、TodoList（待办事项）、RoleIdentify（角色识别）、DialectTranslation（方言转普通话）、RideshareSep（司乘角色分离）六个功能点</li></ol><p>下面是每个能力的详细使用说明：</p><p><strong>领域增强Domain</strong>：提升特定领域识别效果</p><ul><li>0：不开启</li><li>1：科技领域</li><li>2：电影领域</li><li>3：歌曲领域<br>默认值为0</li></ul><p><strong>大模型后处理LlmFeatures</strong>：支持Abstract（章节摘要）、Summary（全文总结）、TodoList（待办事项）、RoleIdentify（角色识别）、DialectTranslation（方言转普通话）、RideshareSep（司乘角色分离）六个功能点<br>可填入需要调用的能力，如果一次使用多个功能，用英文逗号隔开，支持功能如下：</p><ul><li><p>Abstract：章节摘要</p></li><li><p>Summary：全文总结</p></li><li><p>TodoList：待办事项</p></li><li><p>RoleIdentify：角色识别</p></li><li><p>DialectTranslation：方言转普通话</p></li><li><p>RideshareSep：司乘角色分离</p></li></ul><p>注意：不同能力可以组合使用。比如如果同时开启科技领域增强，并使用大模型后处理做待办提取，Extra 参数可以是：<br>Extra: {“Domain”: 1, “LlmFeatures”: “TodoList，Summary&quot;}</p>",
+          "example": "0",
+          "member": "string",
+          "name": "Extra",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>临时热词表：该参数用于提升识别准确率。</p><ul><li><p>单个热词限制：&quot;热词|权重&quot;，单个热词不超过30个字符（最多10个汉字），权重[1-11]或者100，如：“腾讯云|5” 或“ASR|11”；</p></li><li><p>临时热词表限制：多个热词用英文逗号分割，最多支持128个热词，如：“腾讯云|10,语音识别|5,ASR|11”；</p></li><li><p>参数 hotword_id（热词表） 与 hotword_list（临时热词表） 区别：</p><ul><li><p>hotword_id：热词表。需要先在控制台或接口创建热词表，获得对应hotword_id传入参数来使用热词功能；</p></li><li><p>hotword_list：临时热词表。每次请求时直接传入临时热词表来使用热词功能，云端不保留临时热词表。适用于有极大量热词需求的用户；</p></li></ul></li></ul><p>注意：</p><ul><li><p>如果同时传入了 hotword_id 和 hotword_list，只有hotword_list 生效；</p></li><li><p>热词权重设置为11时，当前热词将升级为超级热词，建议仅将重要且必须生效的热词设置到11，设置过多权重为11的热词将影响整体字准率。</p></li><li><p>热词权重设置为100时，当前热词开启热词增强同音同调替换功能（仅支持8k_zh,16k_zh），举例：热词配置“蜜制|100”时，与“蜜制”同拼音（mizhi）的“秘制”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。建议仅将重要且必须生效的热词设置到100，设置过多权重为100的热词将影响整体字准率。</p></li></ul>",
+          "example": "腾讯云|10,语音识别|5,ASR|11",
+          "member": "string",
+          "name": "HotwordList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键词识别ID列表，默认空为不进行识别，最多10个</p>",
+          "example": "[\"sdsdasdasf\",\"asdfasdasd\"]",
+          "member": "string",
+          "name": "KeyWordLibIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>替换词汇表id,  适用于热词和自学习场景也无法解决的极端case词组,  会对识别结果强制替换。具体可参考<a href=\"https://console.cloud.tencent.com/asr/replaceword\">配置控制台</a>;强制替换功能可能会影响正常识别结果，请谨慎使用</p><p>注意：</p><ol><li>本功能配置完成后，预计在10分钟后生效</li></ol>",
+          "example": "26910027******d9fa530f9f39dcd35d8",
+          "member": "string",
+          "name": "ReplaceTextId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启角色分离能力配合SpeakerDiarization: 3 使用。</p><p>ASR增值服务，<br>使用方式一：<strong>仅可传入一个声纹信息</strong>进行角色认证，仅支持16k_zh_en_2.0和16k_zh_en引擎。需传入SpeakerRoleInfo数据组，确定说话人的角色信息，涉及RoleAudioUrl和RoleName两个参数。 RoleAudioUrl：需要认证角色的声纹音频地址，建议30s内的纯净人声，最长不能超过45s。 RoleName：需要认证角色的名称，若匹配成功，会替换话者分离中的SpeakerID。<br>使用方式二：<strong>可传入一组声纹信息</strong>进行角色认证，仅支持16k_zh_en_meeting引擎。需传入SpeakerRoleInfo数据组，确定说话人的角色信息，涉及VoicePrintId和SpeakerNick两个参数。 VoicePrintId：需要认证角色的声纹ID（需提前进行<a href=\"https://cloud.tencent.com/document/product/1093/94483\">说话人注册</a>），建议30s的纯净人声，最长不能超过45s，有效人声不得低于1s。 SpeakerNick：需要认证角色的名称，会替换话者分离中的SpeakerID，如不传则复用说话人注册时的名称。<br><strong>注意：声纹注册后5分钟生效</strong></p><p> 示例： &quot;{\"EngineModelType\":\"16k_zh_en\",\"ChannelNum\":1,\"ResTextFormat\":1,\"SourceType\":0,\"Url\":\"需要进行ASR识别的音频链接\",\"SpeakerDiarization\":3,\"SpeakerRoles\":[{\"RoleAudioUrl\":\"需要认证角色的声纹音频地址\",\"RoleName\":\"需要认证角色的名称\"}]}&quot;</p>",
+          "example": "无",
+          "member": "SpeakerRoleInfo",
+          "name": "SpeakerRoles",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -597,16 +844,44 @@
       "document": "CreateRecTask返回参数结构体",
       "members": [
         {
-          "document": "录音文件识别的请求返回结果，包含结果查询需要的TaskId",
+          "disabled": false,
+          "document": "<p>录音文件识别的请求返回结果，包含结果查询需要的TaskId。<br><strong>注意：TaskId有效期为24小时，不同日期可能出现重复TaskId，请不要依赖TaskId作为您业务系统里的唯一ID。</strong></p>",
           "example": "无",
           "member": "Task",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAsrKeyWordLibRequest": {
+      "document": "DeleteAsrKeyWordLib请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词表ID",
+          "example": "ed9d5b5a9fa14f4a86dc71360e6a3835",
+          "member": "string",
+          "name": "KeyWordLibId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAsrKeyWordLibResponse": {
+      "document": "DeleteAsrKeyWordLib返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -618,8 +893,9 @@
       "document": "DeleteAsrVocab请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "热词表Id",
+          "example": "xcxdsada",
           "member": "string",
           "name": "VocabId",
           "required": true,
@@ -632,7 +908,7 @@
       "document": "DeleteAsrVocab返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -644,9 +920,9 @@
       "document": "DeleteCustomization请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "要删除的模型ID",
-          "example": "无",
+          "example": "sdsafjasj*****sdfasfjj",
           "member": "string",
           "name": "ModelId",
           "required": true,
@@ -659,7 +935,7 @@
       "document": "DeleteCustomization返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -676,14 +952,17 @@
       "document": "DescribeAsyncRecognitionTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "AsyncRecognitionTasks",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -695,8 +974,8 @@
       "document": "DescribeTaskStatus请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。",
+          "disabled": false,
+          "document": "<p>从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。<br><strong>注意：TaskId有效期为24小时，超过24小时的TaskId请不要再查询。</strong></p>",
           "example": "4500055927",
           "member": "uint64",
           "name": "TaskId",
@@ -710,16 +989,17 @@
       "document": "DescribeTaskStatus返回参数结构体",
       "members": [
         {
-          "document": "录音文件识别的请求返回结果。",
-          "example": "{     \"Response\": {         \"RequestId\": \"8824366f-0e8f-4bd4-892",
+          "disabled": false,
+          "document": "<p>录音文件识别的请求返回结果。</p>",
+          "example": "无",
           "member": "TaskStatus",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -731,8 +1011,9 @@
       "document": "DownloadAsrVocab请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "词表ID。",
+          "example": "ssdasdasd",
           "member": "string",
           "name": "VocabId",
           "required": true,
@@ -745,21 +1026,27 @@
       "document": "DownloadAsrVocab返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "词表ID。",
+          "example": "dasdsadasd",
           "member": "string",
           "name": "VocabId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "词表权重文件形式的base64值。",
+          "example": "1",
           "member": "string",
           "name": "WordWeightStr",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -771,9 +1058,9 @@
       "document": "DownloadCustomization请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "自学习模型ID",
-          "example": "无",
+          "example": "sdsafjasj*****sdfasfjj",
           "member": "string",
           "name": "ModelId",
           "required": true,
@@ -786,16 +1073,81 @@
       "document": "DownloadCustomization返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "下载地址",
-          "example": "无",
+          "example": "https://www.model.com/model.txt",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAsrKeyWordLibListRequest": {
+      "document": "GetAsrKeyWordLibList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页Offset",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页Limit",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "词库名称或者UIN检索",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "SpecifyNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "只看用户自己创建的",
+          "example": "0",
+          "member": "bool",
+          "name": "OnlySelf",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAsrKeyWordLibListResponse": {
+      "document": "GetAsrKeyWordLibList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词列表返回数据",
+          "example": "无",
+          "member": "KeyWordLibListData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -807,27 +1159,27 @@
       "document": "GetAsrVocabList请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": true,
           "document": "标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”",
-          "example": "无",
+          "example": "sdasdasda****daad",
           "member": "string",
           "name": "TagInfos",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "分页Offset",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "分页Limit",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -840,25 +1192,27 @@
       "document": "GetAsrVocabList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "热词表列表",
           "example": "无",
           "member": "Vocab",
           "name": "VocabList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "热词列表总数",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -870,8 +1224,9 @@
       "document": "GetAsrVocab请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "热词表ID",
+          "example": "ashsdhsdshsjh",
           "member": "string",
           "name": "VocabId",
           "required": true,
@@ -884,56 +1239,77 @@
       "document": "GetAsrVocab返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "热词表名称",
+          "example": "热词",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "热词表描述",
+          "example": "我是热词",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "热词表ID",
+          "example": "xasddasds",
           "member": "string",
           "name": "VocabId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "词权重列表",
+          "example": "1",
           "member": "HotWord",
           "name": "WordWeights",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "词表创建时间",
+          "example": "1",
           "member": "datetime_iso",
           "name": "CreateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "词表更新时间",
+          "example": "1",
           "member": "datetime_iso",
           "name": "UpdateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "热词表状态，1为默认状态即在识别时默认加载该热词表进行识别，0为初始状态",
+          "example": "0",
           "member": "int64",
           "name": "State",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -945,7 +1321,7 @@
       "document": "GetCustomizationList请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": true,
           "document": "标签信息，格式为“$TagKey : $TagValue ”，中间分隔符为“空格”+“:”+“空格”",
           "example": "无",
           "member": "string",
@@ -954,18 +1330,18 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "分页大小，默认1000",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "分页offset，默认0",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -978,25 +1354,119 @@
       "document": "GetCustomizationList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自学习模型数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Model",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "自学习模型总量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetModelInfoRequest": {
+      "document": "GetModelInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型id",
+          "example": "sdsafjasj*****sdfasfjj",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetModelInfoResponse": {
+      "document": "GetModelInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型信息",
+          "example": "无",
+          "member": "Model",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUsageByDateRequest": {
+      "document": "GetUsageByDate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要查询的业务类型名字列表\n- asr_rt 实时识别\n- asr_rec 录音文件识别",
+          "example": "[\"asr_rec\"]",
+          "member": "string",
+          "name": "BizNameList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间\n开始时间包含当天，支持 YYYY-MM-DD 日期以国内时区为准\n开始时间到结束时间需要在3个月以内",
+          "example": "2024-09-01",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间\n结束时间包含当天，，支持 YYYY-MM-DD 日期以国内时区为准\n开始时间到结束时间需要在3个月以内",
+          "example": "2024-09-06",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUsageByDateResponse": {
+      "document": "GetUsageByDate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用量次数",
+          "example": "无",
+          "member": "UsageByDateInfoData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1005,101 +1475,289 @@
       "type": "object"
     },
     "HotWord": {
-      "document": "热词的词和权重",
+      "document": "[热词的词和权重](https://cloud.tencent.com/document/product/1093/41111#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0)",
       "members": [
         {
-          "default": "",
-          "document": "热词",
+          "disabled": false,
+          "document": "热词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "秘制",
           "member": "string",
           "name": "Word",
+          "output_required": false,
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KeyWordLib": {
+      "document": "关键词表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词表ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aa6f402f263f******6fc81fbecfd0sd",
+          "member": "string",
+          "name": "KeyWordLibId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关键词表名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试词表",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关键词列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"a\",\"b\"]",
+          "member": "string",
+          "name": "KeyWordList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-01T12:00:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-01-01T12:00:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KeyWordLibIdData": {
+      "document": "关键词ID",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dsadsdadas******adada",
+          "member": "string",
+          "name": "KeyWordLibId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KeyWordLibListData": {
+      "document": "查询列表返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词表列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyWordLib",
+          "name": "KeyWordLibList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关键词列表总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KeyWordResult": {
+      "document": "关键字识别结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词库ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abcdedfh",
+          "member": "string",
+          "name": "KeyWordLibID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关键词库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试词库",
+          "member": "string",
+          "name": "KeyWordLibName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配到的关键词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"冰淇淋\",\"月亮\",\"六便士\"]",
+          "member": "string",
+          "name": "KeyWords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LlmResult": {
+      "document": "一个能力的名字和结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>能力名</p>",
+          "example": "TodoList",
+          "member": "string",
+          "name": "Feature",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "权重",
-          "member": "int64",
-          "name": "Weight",
-          "required": true,
-          "type": "int",
+          "disabled": false,
+          "document": "<p>结果</p>",
+          "example": "无明确的待办事项（文本主要为对granola.ai产品的介绍、使用体验及创始人访谈观点分享，未提及具体需执行的事项、时间及涉及人员）。",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>这个能力是否成功得到结果</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Success",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "out"
     },
     "Model": {
-      "document": "自学习模型信息",
+      "document": "[自学习模型信息](https://cloud.tencent.com/document/product/1093/90813#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "模型名称",
+          "example": "通用模型",
           "member": "string",
           "name": "ModelName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "模型文件名称",
+          "example": "model.txt",
           "member": "string",
           "name": "DictName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "模型Id",
+          "example": "dassxas*****daadsda",
           "member": "string",
           "name": "ModelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "模型类型，“8k”或者”16k“",
+          "example": "8k",
           "member": "string",
           "name": "ModelType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "服务类型",
+          "example": "0",
           "member": "string",
           "name": "ServiceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "模型状态，-1下线状态，1上线状态, 0训练中, -2 训练失败",
+          "disabled": false,
+          "document": "模型状态：\n-2：模型训练失败；\n-1：已下线；\n0：训练中；\n1：已上线；\n3：上线中；\n4：下线中；",
+          "example": "0",
           "member": "int64",
           "name": "ModelState",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "最后更新时间",
+          "example": "\t2024-01-01T12:00:00",
           "member": "string",
           "name": "AtUpdated",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": true,
           "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TagInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -1110,36 +1768,36 @@
       "document": "ModifyCustomization请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "要修改的模型ID",
-          "example": "无",
+          "example": "fsamdfiuh****xfdsgdsh",
           "member": "string",
           "name": "ModelId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "要修改的模型名称，长度需在1-20个字符之间",
-          "example": "无",
+          "example": "通用模型",
           "member": "string",
           "name": "ModelName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "要修改的模型类型，为8k或者16k",
-          "example": "无",
+          "example": "8k",
           "member": "string",
           "name": "ModelType",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "要修改的模型语料的下载地址，目前仅支持腾讯云cos",
-          "example": "无",
+          "example": "https://www.modle.com/model.txt",
           "member": "string",
           "name": "TextUrl",
           "required": false,
@@ -1152,7 +1810,7 @@
       "document": "ModifyCustomization返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1164,7 +1822,7 @@
       "document": "ModifyCustomizationState请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "自学习模型ID",
           "example": "无",
           "member": "string",
@@ -1173,7 +1831,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "想要变换的模型状态，-1代表下线，1代表上线",
           "example": "无",
           "member": "int64",
@@ -1188,16 +1846,17 @@
       "document": "ModifyCustomizationState返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "自学习模型ID",
           "example": "无",
           "member": "string",
           "name": "ModelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1209,84 +1868,154 @@
       "document": "单句的详细识别结果，包含单个词的时间偏移，一般用于生成字幕的场景。",
       "members": [
         {
-          "default": "",
-          "document": "单句最终识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "你好，测试",
+          "disabled": false,
+          "document": "<p>单句最终识别结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "你好，今天很开心",
           "member": "string",
           "name": "FinalSentence",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "单句中间识别结果，使用空格拆分为多个词\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "你好 测试",
+          "disabled": false,
+          "document": "<p>单句中间识别结果，使用空格拆分为多个词</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "你好 今天 很 开心",
           "member": "string",
           "name": "SliceSentence",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "单句开始时间（毫秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "<p>口语转书面语结果，开启该功能才有值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "你好，今天很开心。",
+          "member": "string",
+          "name": "WrittenText",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>单句开始时间（毫秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "StartMs",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "单句结束时间（毫秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "<p>单句结束时间（毫秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2000",
           "member": "int64",
           "name": "EndMs",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "单句中词个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "<p>单句中词个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
           "name": "WordsNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "单句中词详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"OffsetStartMs\": 120}]",
+          "disabled": false,
+          "document": "<p>单句中词详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SentenceWords",
           "name": "Words",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "单句语速，单位：字数/秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "<p>单句语速，单位：字数/秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5.9",
           "member": "float",
           "name": "SpeechSpeed",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "<p>声道或说话人 Id（请求中如果设置了 speaker_diarization或者ChannelNum为双声道，可区分说话人或声道）<br>单声道话者分离时不同的值代表不同的说话人； 8k双声道话者分离时speakerId的值为0代表左声道，值为1代表右声道。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "SpeakerId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "EmotionalEnergy",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>本句与上一句之间的静音时长（ms）</p><p>枚举值：</p><ul><li>0： 表示无静音间隔</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SilenceTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>情绪类型（可能为空，有2种情况 1、没有对应资源包；2、情绪跟语音效果相关，如果情绪不够强烈时可能无法识别）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"happy\"]",
+          "member": "string",
+          "name": "EmotionType",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键词识别结果列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyWordResult",
+          "name": "KeyWordResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>多语言识别类型</p><ul><li>中文    chinese</li><li>英语    english</li><li>日语    japanese</li><li>韩语    korean</li><li>阿拉伯语    arabic</li><li>菲律宾语    filipino</li><li>法语    french</li><li>印地语    hindi</li><li>印尼语    indonesian</li><li>马来语    malay</li><li>葡萄牙语    portugal</li><li>西班牙语    spanish</li><li>泰语    thai</li><li>土耳其语    turkish</li><li>越南语    vietnam</li><li>德语    german</li></ul>",
+          "example": "chinese",
+          "member": "string",
+          "name": "LangType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人角色名称</p>",
+          "example": "李明",
+          "member": "string",
+          "name": "SpeakerRoleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1295,26 +2024,8 @@
       "document": "SentenceRecognition请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "腾讯云项目 ID，废弃参数，默认填写0即可。",
-          "example": "0",
-          "member": "uint64",
-          "name": "ProjectId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "子服务类型。2： 一句话识别。",
-          "example": "2",
-          "member": "uint64",
-          "name": "SubServiceType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "default": "",
-          "document": "引擎模型类型。\n电话场景：\n• 8k_en：电话 8k 英语；\n• 8k_zh：电话 8k 中文普通话通用；\n非电话场景：\n• 16k_zh：16k 中文普通话通用；\n• 16k_en：16k 英语；\n• 16k_ca：16k 粤语；\n• 16k_ja：16k 日语；\n• 16k_zh_medical：16k 医疗；",
+          "disabled": false,
+          "document": "引擎模型类型。\n电话场景：\n• 8k_zh：中文电话通用；\n• 8k_en：英文电话通用；\n\n非电话场景：\n• 16k_zh：中文通用；\n• 16k_zh-PY：中英粤;\n• 16k_zh_medical：中文医疗；\n• 16k_en：英语；\n• 16k_yue：粤语；\n• 16k_ja：日语；\n• 16k_ko：韩语；\n• 16k_vi：越南语；\n• 16k_ms：马来语；\n• 16k_id：印度尼西亚语；\n• 16k_fil：菲律宾语；\n• 16k_th：泰语；\n• 16k_pt：葡萄牙语；\n• 16k_tr：土耳其语；\n• 16k_ar：阿拉伯语；\n• 16k_es：西班牙语；\n• 16k_hi：印地语；\n• 16k_fr：法语；\n• 16k_de：德语；\n• 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；",
           "example": "16k_en",
           "member": "string",
           "name": "EngSerViceType",
@@ -1322,7 +2033,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "语音数据来源。0：语音 URL；1：语音数据（post body）。",
           "example": "1",
           "member": "uint64",
@@ -1331,8 +2042,8 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac。",
+          "disabled": false,
+          "document": "识别音频的音频格式，支持wav、pcm、ogg-opus、speex、silk、mp3、m4a、aac、amr。",
           "example": "wav",
           "member": "string",
           "name": "VoiceFormat",
@@ -1340,17 +2051,26 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "用户端对此任务的唯一标识。废弃参数，忽略即可。",
-          "example": "d4ce3bb438dd0743",
-          "member": "string",
-          "name": "UsrAudioKey",
-          "required": true,
-          "type": "string"
+          "disabled": true,
+          "document": "腾讯云项目 ID，废弃参数，填写0即可。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
         },
         {
-          "default": "",
-          "document": "语音的URL地址，需要公网环境浏览器可下载。当 SourceType 值为 0时须填写该字段，为 1 时不填。音频时长不能超过60s，音频文件大小不能超过3MB。",
+          "disabled": true,
+          "document": "子服务类型。2： 一句话识别。",
+          "example": "2",
+          "member": "uint64",
+          "name": "SubServiceType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "语音的URL地址，需要公网环境浏览器可下载。当 SourceType 值为 0时须填写该字段，为 1 时不填。音频时长不能超过60s，音频文件大小不能超过3MB。\n\n注意：推荐使用 [腾讯云COS](https://cloud.tencent.com/document/product/436/38484) 来存储音频、生成URL并提交请求，此种方式会走内网下载音频，极大降低整体请求时延；并且不会产生外网和流量下行费用，可节约成本（COS桶权限需要设置公有读私有写，或URL设置时效访问签名）",
           "example": "http://test.voice.com/test.wav",
           "member": "string",
           "name": "Url",
@@ -1358,16 +2078,25 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": true,
+          "document": "废弃参数，填写任意字符串即可。",
+          "example": "d4ce3bb*****dd0743",
+          "member": "string",
+          "name": "UsrAudioKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "语音数据，当SourceType 值为1（本地语音数据上传）时必须填写，当SourceType 值为0（语音 URL上传）可不写。要使用base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频时长不能超过60s，音频文件大小不能超过3MB（Base64后）。",
-          "example": "无",
+          "example": "dGVzdA==",
           "member": "string",
           "name": "Data",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据长度，单位为字节。当 SourceType 值为1（本地语音数据上传）时必须填写，当 SourceType 值为0（语音 URL上传）可不写（此数据长度为数据未进行base64编码时的数据长度）。",
           "example": "6400",
           "member": "int64",
@@ -1376,7 +2105,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。",
           "example": "0",
           "member": "int64",
@@ -1385,7 +2114,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。",
           "example": "0",
           "member": "int64",
@@ -1394,8 +2123,8 @@
           "type": "int"
         },
         {
-          "default": "",
-          "document": "是否过语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。",
+          "disabled": false,
+          "document": "是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。",
           "example": "0",
           "member": "int64",
           "name": "FilterModal",
@@ -1403,7 +2132,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否过滤标点符号（目前支持中文普通话引擎）。 0：不过滤，1：过滤句末标点，2：过滤所有标点。默认值为 0。",
           "example": "0",
           "member": "int64",
@@ -1412,7 +2141,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否进行阿拉伯数字智能转换。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字。默认值为1。",
           "example": "0",
           "member": "int64",
@@ -1421,20 +2150,56 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。",
-          "example": "966ecea2abd537c8",
+          "example": "966ecea2a*****537c8",
           "member": "string",
           "name": "HotwordId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "自学习模型 id。如设置了该参数，将生效对应的自学习模型。",
-          "example": "966ecea2abd537c8",
+          "example": "966ecea******d537c8",
           "member": "string",
           "name": "CustomizationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "热词增强功能。1:开启后（仅支持8k_zh,16k_zh），将开启同音替换功能，同音字、词在热词中配置。举例：热词配置“蜜制”并开启增强功能后，与“蜜制”同拼音（mizhi）的“秘制”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。",
+          "example": "0",
+          "member": "int64",
+          "name": "ReinforceHotword",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "临时热词表：该参数用于提升识别准确率。\n单个热词限制：\"热词|权重\"，单个热词不超过30个字符（最多10个汉字），权重1-11或者100，如：“腾讯云|5” 或 “ASR|11”；\n临时热词表限制：多个热词用英文逗号分割，最多支持128个热词，如：“腾讯云|10,语音识别|5,ASR|11”；\n参数 hotword_list（临时热词表） 与 hotword_id（热词表） 区别：\nhotword_id：热词表。需要先在控制台或接口创建热词表，获得对应hotword_id传入参数来使用热词功能；\nhotword_list：临时热词表。每次请求时直接传入临时热词表来使用热词功能，云端不保留临时热词表。适用于有极大量热词需求的用户；\n注意：\n• 如果同时传入了 hotword_id 和 hotword_list，会优先使用 hotword_list；\n• 热词权重设置为11时，当前热词将升级为超级热词，建议仅将重要且必须生效的热词设置到11，设置过多权重为11的热词将影响整体字准率。\n• 热词权重设置为100时，当前热词开启热词增强同音替换功能（仅支持8k_zh,16k_zh），举例：热词配置“蜜制|100”时，与“蜜制”同拼音（mizhi）的“秘制”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。建议仅将重要且必须生效的热词设置到100，设置过多权重为100的热词将影响整体字准率。",
+          "example": "腾讯云|10,语音识别|5,ASR|11",
+          "member": "string",
+          "name": "HotwordList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "支持pcm格式的8k音频在与引擎采样率不匹配的情况下升采样到16k后识别，能有效提升识别准确率。仅支持：8000。如：传入 8000 ，则pcm音频采样率为8k，当引擎选用16k_zh， 那么该8k采样率的pcm音频可以在16k_zh引擎下正常识别。 注：此参数仅适用于pcm格式音频，不传入值将维持默认状态，即默认调用的引擎采样率等于pcm音频采样率。",
+          "example": "0",
+          "member": "int64",
+          "name": "InputSampleRate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "替换词id。用于调用对应的替换词表。",
+          "example": "976dfea2a*****537c8",
+          "member": "string",
+          "name": "ReplaceTextId",
           "required": false,
           "type": "string"
         }
@@ -1445,43 +2210,47 @@
       "document": "SentenceRecognition返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "识别结果。",
           "example": "测试输出结果",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "请求的音频时长，单位为ms",
           "example": "1500",
           "member": "int64",
           "name": "AudioDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "词时间戳列表的长度\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
           "name": "WordSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
+          "disabled": false,
           "document": "词时间戳列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "array",
+          "example": "无",
           "member": "SentenceWord",
           "name": "WordList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1490,32 +2259,35 @@
       "type": "object"
     },
     "SentenceWord": {
-      "document": "一句话识别返回的词时间戳",
+      "document": "[一句话识别](https://cloud.tencent.com/document/product/1093/35646#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)返回的词时间戳",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "词结果",
+          "example": "腾讯云",
           "member": "string",
           "name": "Word",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "词在音频中的开始时间",
+          "example": "0",
           "member": "int64",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "词在音频中的结束时间",
+          "example": "1024",
           "member": "int64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1526,29 +2298,32 @@
       "document": "识别结果中词文本，以及对应时间偏移",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "词文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "晴天",
           "member": "string",
           "name": "Word",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "在句子中的开始时间偏移量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
           "member": "int64",
           "name": "OffsetStartMs",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "在句子中的结束时间偏移量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "400",
           "member": "int64",
           "name": "OffsetEndMs",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -1559,16 +2334,18 @@
       "document": "SetVocabState请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "热词表ID。",
+          "example": "dsadsdas",
           "member": "string",
           "name": "VocabId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "热词表状态，1：设为默认状态；0：设为非默认状态。",
+          "example": "1",
           "member": "int64",
           "name": "State",
           "required": true,
@@ -1581,14 +2358,17 @@
       "document": "SetVocabState返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "热词表ID",
+          "example": "dasdasd",
           "member": "string",
           "name": "VocabId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1596,16 +2376,58 @@
       ],
       "type": "object"
     },
-    "Task": {
-      "document": "录音文件识别、实时语音异步识别请求的返回数据",
+    "SpeakerRoleInfo": {
+      "document": "说话人注册角色声纹信息",
       "members": [
         {
-          "default": "",
-          "document": "任务ID，可通过此ID在轮询接口获取识别状态与结果。注意：TaskId数据类型为uint64",
+          "disabled": false,
+          "document": "<p>音频url地址，建议不超过30秒，最大45秒（配合RoleName字段一起使用，仅限16k_zh_en、16k_zh_en_2.0引擎）</p>",
+          "example": "http://cosname.url",
+          "member": "string",
+          "name": "RoleAudioUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>不超过30字节（配合RoleAudioUrl字段一起使用，仅限16k_zh_en、16k_zh_en_2.0引擎）</p>",
+          "example": "角色名称",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>声纹 ID（与SpeakerNick配合使用，仅限16k_zh_en_meeting引擎支持），注意：- 传入未注册或不属于本 AppId 的声纹 ID，该 ID 会被跳过（不报错，相当于没有传入这个说话人信息）</p>",
+          "example": "vpr_001",
+          "member": "string",
+          "name": "VoicePrintId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色昵称（与VoicePrintId配合使用，仅限16k_zh_en_meeting引擎支持），注意：- 传空字符串或者不传入则使用声纹注册时指定的角色名- 否则将覆盖声纹注册时指定的角色名- 角色名不超过 30 字节，仅支持字母、数字、下划线和中文。- 这里指定的角色名只影响本次识别，不影响声纹库中注册的角色名</p>",
+          "example": "角色名称",
+          "member": "string",
+          "name": "SpeakerNick",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "Task": {
+      "document": "[录音文件识别](https://cloud.tencent.com/document/product/1093/37823#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)、[实时语音异步识别](https://cloud.tencent.com/document/product/1093/52061#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)请求的返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID，可通过此ID在轮询接口获取识别状态与结果。TaskId数据类型为**uint64**。\n**注意：TaskId有效期为24小时，不同日期可能出现重复TaskId，请不要依赖TaskId作为您业务系统里的唯一ID。**",
           "example": "400000000",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1613,86 +2435,151 @@
       "usage": "out"
     },
     "TaskStatus": {
-      "document": "获取录音识别结果的返回参数",
+      "document": "[获取录音识别结果的返回参数](https://cloud.tencent.com/document/product/1093/37822#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)",
       "members": [
         {
-          "default": "",
-          "document": "任务标识。",
-          "example": "123",
+          "disabled": false,
+          "document": "任务标识。注意：TaskId数据类型为uint64。",
+          "example": "1002301",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务状态码，0：任务等待，1：任务执行中，2：任务成功，3：任务失败。",
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务状态，waiting：任务等待，doing：任务执行中，success：任务成功，failed：任务失败。",
           "example": "waiting",
           "member": "string",
           "name": "StatusStr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "识别结果。",
-          "example": "无",
+          "example": "今天天气真好",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "失败原因说明。",
-          "example": "无",
+          "example": "Failed to download audio file!",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "识别结果详情，包含每个句子中的词时间偏移，一般用于生成字幕的场景。(录音识别请求中ResTextFormat=1时该字段不为空)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SentenceDetail",
           "name": "ResultDetail",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "音频时长(秒)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.2",
           "member": "float",
           "name": "AudioDuration",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "大模型后处理结果",
+          "example": "无",
+          "member": "LlmResult",
+          "name": "LlmResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "UpdateAsrKeyWordLibRequest": {
+      "document": "UpdateAsrKeyWordLib请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>关键词表ID</p>",
+          "example": "aa6f402******2ea856fc81fbecfd0sd",
+          "member": "string",
+          "name": "KeyWordLibId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>词表名称，长度在1-20之间<br>仅限中英文数字-_</p>",
+          "example": "新的词表名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<ul><li>词文件（纯文本文件）以行分隔 ，进行二进制base64编码</li><li>格式要求：TXT 每行只有一个词，不满足格式则报错无法上传 </li><li>每个词最多5个汉字或15个字符，单个词库最多不超过100个词</li><li>此参数为空则只更新词表名称</li></ul>",
+          "example": "<文件base64>",
+          "member": "string",
+          "name": "KeyWordFile",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAsrKeyWordLibResponse": {
+      "document": "UpdateAsrKeyWordLib返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>关键词表ID数据</p>",
+          "example": "无",
+          "member": "KeyWordLibIdData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateAsrVocabRequest": {
       "document": "UpdateAsrVocab请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "热词表ID",
           "example": "aa6f402f263f12ea856fc81fbecfd0sd",
           "member": "string",
@@ -1701,7 +2588,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "热词表名称，长度在1-255之间",
           "example": "新的词表名称",
           "member": "string",
@@ -1710,8 +2597,8 @@
           "type": "string"
         },
         {
-          "default": "",
-          "document": "词权重数组，包含全部的热词和对应的权重。每个热词的长度不大于10，权重为[1,10]之间整数，数组长度不大于128",
+          "disabled": false,
+          "document": "词权重数组，包含全部的热词和对应的权重。每个热词的长度不大于10个汉字或30个英文字符，权重为[1,11]之间整数或100，数组长度不大于1000 (注意：如果仅更新热词表名称或者描述字段，请求不用带本参数）",
           "example": "无",
           "member": "HotWord",
           "name": "WordWeights",
@@ -1719,16 +2606,16 @@
           "type": "list"
         },
         {
-          "default": "",
-          "document": "词权重文件（纯文本文件）的二进制base64编码，以行分隔，每行的格式为word|weight，即以英文符号|为分割，左边为词，右边为权重，如：你好|5。\n当用户传此参数（参数长度大于0），即以此参数解析词权重，WordWeights会被忽略",
-          "example": "无",
+          "disabled": false,
+          "document": "词权重文件（纯文本文件）的二进制base64编码，以行分隔，每行的格式为word|weight，即以英文符号|为分割，左边为词，右边为权重，如：你好|5。\n当用户传此参数（参数长度大于0），即以此参数解析词权重，WordWeights会被忽略\n (注意：如果仅更新热词表名称或者描述字段，请求不用带本参数）",
+          "example": "蜜汁|10",
           "member": "string",
           "name": "WordWeightStr",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "热词表描述，长度在0-1000之间",
           "example": "新的词表描述",
           "member": "string",
@@ -1743,16 +2630,17 @@
       "document": "UpdateAsrVocab返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "热词表ID",
-          "example": "aa6f402f263f12ea856fc81fbecfd0sd",
+          "example": "aa6f402f263f*****a856fc81fbecfd0sd",
           "member": "string",
           "name": "VocabId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1760,83 +2648,856 @@
       ],
       "type": "object"
     },
-    "Vocab": {
-      "document": "词表内容",
+    "UsageByDateInfo": {
+      "document": "用户用量信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
+          "document": "业务类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "BizName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "识别次数\n单位：次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "识别时长\n单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UsageByDateInfoData": {
+      "document": "用户用量信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用量信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UsageByDateInfo",
+          "name": "UsageByDateInfoList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "VerifyTop": {
+      "document": "声纹组对比结果top数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "相似度打分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.70",
+          "member": "string",
+          "name": "Score",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "说话人id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dsadcsds-dsads-dsadasd",
+          "member": "string",
+          "name": "VoicePrintId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "说话人昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "小明",
+          "member": "string",
+          "name": "SpeakerId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "VerifyTopResult": {
+      "document": "说话人验证1:N返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对比打分结果，按照打分降序排列返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VerifyTop",
+          "name": "VerifyTops",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Vocab": {
+      "document": "[词表内容](https://cloud.tencent.com/document/product/1093/41484#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)",
+      "members": [
+        {
+          "disabled": false,
           "document": "热词表名称",
+          "example": "通用热词",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "热词表描述",
+          "example": "适用通用场景",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "热词表ID",
+          "example": "xsddsffa****dsafgdf",
           "member": "string",
           "name": "VocabId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "词权重列表",
+          "example": "无",
           "member": "HotWord",
           "name": "WordWeights",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "词表创建时间",
+          "example": "2024-01-01T12:00:00",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "词表更新时间",
+          "example": "2024-01-01T12:00:00",
           "member": "datetime_iso",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "热词表状态，1为默认状态即在识别时默认加载该热词表进行识别，0为初始状态",
+          "example": "0",
           "member": "int64",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxxxx****xxxx",
           "member": "string",
           "name": "TagInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "VoicePrintBaseData": {
+      "document": "[说话人基础数据](https://cloud.tencent.com/document/product/1093/94483#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)，包括说话人id和说话人昵称",
+      "members": [
+        {
+          "disabled": false,
+          "document": "说话人id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xasdfgfgf****gvdffdsf",
+          "member": "string",
+          "name": "VoicePrintId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "说话人昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "SpeakerNick",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VoicePrintCompareData": {
+      "document": "音频声纹比对结果，包含比对分数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配度 取值范围(0.0 - 100.0)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100.0",
+          "member": "string",
+          "name": "Score",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "验证结果 0: 未通过 1: 通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Decision",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VoicePrintCompareRequest": {
+      "document": "VoicePrintCompare请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频格式 0: pcm, 1: wav；pcm和wav音频无损压缩，识别准确度更高",
+          "example": "0",
+          "member": "int64",
+          "name": "VoiceFormat",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频采样率，目前仅支持16k，请填写16000",
+          "example": "16000",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "对比源音频数据, 音频要求：base64 编码,16k采样率， 16bit位深，pcm或者wav格式， 单声道，音频时长不超过30秒的音频，base64编码数据大小不超过2M",
+          "example": "UklGRka1CQBXQVZFZm10zOjQzAABJU0ZUDgAAAE",
+          "member": "string",
+          "name": "SrcAudioData",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比目标音频数据, 音频要求：base64 编码,16k采样率， 16bit位深，pcm或者wav格式， 单声道，音频时长不超过30秒的音频，base64编码数据大小不超过2M",
+          "example": "UklGRka1CQBXQVZFZm10zOjQzAABJU0ZUDgAAAE",
+          "member": "string",
+          "name": "DestAudioData",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintCompareResponse": {
+      "document": "VoicePrintCompare返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频声纹比对结果，包含相似度打分",
+          "example": "无",
+          "member": "VoicePrintCompareData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintCountData": {
+      "document": "统计返回[说话人注册数量](https://cloud.tencent.com/document/product/1093/96061#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "说话人id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VoicePrintBaseData",
+          "name": "VoicePrintList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VoicePrintCountRequest": {
+      "document": "VoicePrintCount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组ID,仅支持大小写字母和下划线的组合，不超过128个字符",
+          "example": "sdasf***dasdaffsasd",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "统计模式\n0: 统计所有声纹数量\n1: 统计指定分组下的声纹数量",
+          "example": "0",
+          "member": "int64",
+          "name": "CountMod",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintCountResponse": {
+      "document": "VoicePrintCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计数据",
+          "example": "无",
+          "member": "VoicePrintCountData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintDeleteRequest": {
+      "document": "VoicePrintDelete请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "说话人id，说话人唯一标识",
+          "example": "sdsafjasj*****sdfasfjj",
+          "member": "string",
+          "name": "VoicePrintId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "说话人分组ID,仅支持大小写字母和下划线的组合，不超过128个字符",
+          "example": "分组1",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "删除模式: \n0.默认值，删除该条声纹\n1.从分组中删除该条声纹，声纹本身不删除\n2.从声纹库中删除分组，仅删除分组信息，不会真正删除分组中的声纹",
+          "example": "0",
+          "member": "int64",
+          "name": "DelMod",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintDeleteResponse": {
+      "document": "VoicePrintDelete返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "说话人基本信息",
+          "example": "无",
+          "member": "VoicePrintBaseData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintEnrollRequest": {
+      "document": "VoicePrintEnroll请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>音频格式 0: pcm, 1: wav</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "VoiceFormat",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频采样率，目前支持16000，单位：Hz，必填</p>",
+          "example": "16000",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M</p>",
+          "example": "UklGRka1CQBXQVZFZm10IBAAAAABAAEAgD4E",
+          "member": "string",
+          "name": "Data",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人昵称  不超过32字节</p>",
+          "example": "李九州",
+          "member": "string",
+          "name": "SpeakerNick",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分组id, 仅支持大小写字母和下划线的组合，不超过128个字符</p><p><strong>注意：</strong></p><ul><li><p>一个group最多可容纳20个说话人ID</p></li><li><p>group主要用在声纹1：N比对场景</p></li></ul>",
+          "example": "group_A",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>声纹cos url 注意:仅支持腾讯云cos url 地址</p>",
+          "example": "\"https://xxx-test-xxx.cos.ap-nanjing.myqcloud.com/%E5%A3%Bxxxxx%E6%8D%AE/xxxx.mp3\"",
+          "member": "string",
+          "name": "AudioUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否对注册/更新的音频做质量检测。开启后使用质检专用引擎提取特征，对音频进行多说话人、信噪比、截幅等检查，不合格返回对应错误码；关闭时不做这些检查，沿用常规注册流。默认false</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "QualityCheck",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintEnrollResponse": {
+      "document": "VoicePrintEnroll返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>说话人基本数据</p>",
+          "example": "无",
+          "member": "VoicePrintBaseData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintGroupList": {
+      "document": "声纹分组名称列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分组名称列表</p>",
+          "example": "[\"group_name\"]",
+          "member": "string",
+          "name": "GroupIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VoicePrintGroupListRequest": {
+      "document": "VoicePrintGroupList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "VoicePrintGroupListResponse": {
+      "document": "VoicePrintGroupList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回分组名称列表数据</p>",
+          "example": "无",
+          "member": "VoicePrintGroupList",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintGroupVerifyRequest": {
+      "document": "VoicePrintGroupVerify请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频格式 0: pcm, 1: wav",
+          "example": "0",
+          "member": "int64",
+          "name": "VoiceFormat",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频采样率，目前支持16000，单位：Hz，必填",
+          "example": "16000",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M",
+          "example": "UklGRka1CQBXQVZFZm10zOjQzAABJU0ZUDgAAAE*",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分组id, 支持数字，字母，下划线，长度不超过128",
+          "example": "home_group",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回打分结果降序排列topN, TopN大于0， 小于可创建声纹最大数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TopN",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintGroupVerifyResponse": {
+      "document": "VoicePrintGroupVerify返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TopN 返回结果;系统建议打分70分以上为同一个人音色，评分也取决于音频质量、长度等其他原因影响，您可以按照业务需求适当提高或降低分数要求",
+          "example": "无",
+          "member": "VerifyTopResult",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintUpdateRequest": {
+      "document": "VoicePrintUpdate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>音频格式 0: pcm, 1: wav</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "VoiceFormat",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频采样率 目前仅支持16000 单位Hz</p>",
+          "example": "16000",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人id， 说话人唯一标识</p>",
+          "example": "sdsafjasj*****sdfasfjj",
+          "member": "string",
+          "name": "VoicePrintId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M</p>",
+          "example": "ADDAFASAFASA",
+          "member": "string",
+          "name": "Data",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人昵称  不超过32字节</p>",
+          "example": "小明",
+          "member": "string",
+          "name": "SpeakerNick",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>声纹cos url 注意:仅支持腾讯云cos url 地址</p>",
+          "example": "https://adison-testxxxx.cos.ap-nanjing.myqcloud.com/%E5%xx%B0%E7xxx%BA%B9%E6%95%B0%E6%8D%AE/xxxx.wav",
+          "member": "string",
+          "name": "AudioUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintUpdateResponse": {
+      "document": "VoicePrintUpdate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>说话人基础数据</p>",
+          "example": "无",
+          "member": "VoicePrintBaseData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintVerifyData": {
+      "document": "[说话人验证数据](https://cloud.tencent.com/document/product/1093/94481#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)",
+      "members": [
+        {
+          "disabled": false,
+          "document": "说话人id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VoicePrintId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配度 取值范围(0.0 - 100.0)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Score",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "验证结果 0: 未通过 1: 通过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Decision",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VoicePrintVerifyRequest": {
+      "document": "VoicePrintVerify请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>音频格式 0: pcm, 1: wav</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "VoiceFormat",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频采样率，目前支持16000，单位：Hz，必填</p>",
+          "example": "16000",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>说话人id, 说话人唯一标识</p>",
+          "example": "dasdagfd****sdsada",
+          "member": "string",
+          "name": "VoicePrintId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M</p>",
+          "example": "ADKFG****ALDHASG",
+          "member": "string",
+          "name": "Data",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>声纹cos url 注意:仅支持腾讯云cos url 地址</p>",
+          "example": "https://xxxxtest-xxxx.cos.ap-nanjing.myqcloud.com/%E5%A3%B0%E7%BA%B9%E6%95%xxxxxD%AE/test.wav",
+          "member": "string",
+          "name": "AudioUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VoicePrintVerifyResponse": {
+      "document": "VoicePrintVerify返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>说话人验证数据</p>",
+          "example": "无",
+          "member": "VoicePrintVerifyData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

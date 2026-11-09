@@ -17,86 +17,58 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 10,
         "Histories": [
             {
-                "AlarmId": "c36494f8-ae38-45cb-8089-e14006bcfc67",
-                "MonitorType": "MT_QCE",
+                "AlarmId": "23456789-12ab-45cd-8ef0-123456789",
+                "MonitorType": "cvm",
                 "Namespace": "cvm_device",
-                "AlarmObject": "10.104.126.8 (内) | 服务器01 | 基础网络",
-                "Content": "CPU利用率 >0%",
-                "FirstOccurTime": 1603117860,
-                "LastOccurTime": 1603162964,
-                "AlarmStatus": "ALARM",
-                "PolicyId": "policy-abc01",
-                "PolicyName": "CVM告警策略1",
-                "VPC": "0",
-                "ProjectId": 0,
-                "ProjectName": "默认项目",
+                "AlarmObject": "ins-123456",
+                "Content": "实例 ins-123456 CPU 使用率过高",
+                "FirstOccurTime": 1672531200,
+                "LastOccurTime": 1672534800,
+                "AlarmStatus": "2",
+                "PolicyId": "policy-123456",
+                "PolicyName": "云服务器 CPU 使用率告警策略",
+                "VPC": "vpc-123456",
+                "ProjectId": 12345,
+                "ProjectName": "项目 A",
                 "InstanceGroup": [
                     {
-                        "Id": 430,
-                        "Name": "example-instance-group"
+                        "Id": 1,
+                        "Name": "生产环境实例组"
                     }
                 ],
-                "ReceiverUids": [],
+                "ReceiverUids": [
+                    1001,
+                    1002
+                ],
                 "ReceiverGroups": [
-                    1544
+                    2001
                 ],
                 "NoticeWays": [
-                    "SMS",
-                    "EMAIL",
-                    "WECHAT"
+                    "sms",
+                    "email"
                 ],
-                "EventId": 0,
-                "AlarmType": "METRIC",
-                "OriginId": "1278441",
-                "Region": "gz",
+                "OriginId": "1234567890",
+                "AlarmType": "metric_alarm",
+                "EventId": 123456,
+                "Region": "ap-guangzhou",
                 "PolicyExists": 1,
                 "MetricsInfo": [
                     {
                         "QceNamespace": "qce/cvm",
-                        "MetricName": "CpuUsage",
+                        "MetricName": "cpu_utilization",
                         "Period": 60,
-                        "Value": "86.5",
-                        "Description": "CPU利用率"
+                        "Value": "80",
+                        "Description": "云服务器 CPU 使用率指标"
                     }
                 ],
-                "Dimensions": null
-            },
-            {
-                "AlarmId": "779d129a-40a1-4acf-b226-d9c2ae26e63b",
-                "MonitorType": "MT_QCE",
-                "Namespace": "cvm_device",
-                "AlarmObject": "10.104.126.9 (内) | 服务器02 | 基础网络",
-                "Content": "CPU利用率 >0%",
-                "FirstOccurTime": 1603117860,
-                "LastOccurTime": 1603162964,
-                "AlarmStatus": "ALARM",
-                "PolicyId": "policy-abc02",
-                "PolicyName": "CVM告警策略2",
-                "VPC": "0",
-                "ProjectId": 0,
-                "ProjectName": "默认项目",
-                "InstanceGroup": [
-                    {
-                        "Id": 430,
-                        "Name": "example-instance-group"
-                    }
-                ],
-                "ReceiverUids": [],
-                "ReceiverGroups": [],
-                "NoticeWays": [],
-                "EventId": 0,
-                "AlarmType": "METRIC",
-                "OriginId": "1276973",
-                "Region": "gz",
-                "PolicyExists": 1,
-                "MetricsInfo": null,
-                "Dimensions": null
+                "Dimensions": "{\"InstanceId\":\"ins-123456\"}",
+                "AlarmLevel": "high"
             }
         ],
-        "RequestId": "4bzogxhgsgs95hgmxne5ei6y9jjxvi1f",
-        "TotalCount": 486
+        "RequestId": "1234567890abcdef"
     }
 }
 ```
@@ -129,84 +101,58 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 10,
         "Histories": [
             {
-                "AlarmId": "c36494f8-ae38-45cb-8089-e14006bcfc67",
-                "MonitorType": "MT_QCE",
+                "AlarmId": "23456789-12ab-45cd-8ef0-123456789",
+                "MonitorType": "cvm",
                 "Namespace": "cvm_device",
-                "AlarmObject": "10.104.126.8 (内) | 服务器01 | 基础网络",
-                "Content": "CPU利用率 >0%",
-                "FirstOccurTime": 1603117860,
-                "LastOccurTime": 1603162964,
-                "AlarmStatus": "ALARM",
-                "PolicyId": "policy-abc01",
-                "PolicyName": "CVM告警策略1",
-                "VPC": "0",
-                "ProjectId": 0,
-                "ProjectName": "默认项目",
+                "AlarmObject": "ins-123456",
+                "Content": "实例 ins-123456 CPU 使用率过高",
+                "FirstOccurTime": 1672531200,
+                "LastOccurTime": 1672534800,
+                "AlarmStatus": "2",
+                "PolicyId": "policy-123456",
+                "PolicyName": "云服务器 CPU 使用率告警策略",
+                "VPC": "vpc-123456",
+                "ProjectId": 12345,
+                "ProjectName": "项目 A",
                 "InstanceGroup": [
                     {
-                        "Id": 430,
-                        "Name": "example-instance-group"
+                        "Id": 1,
+                        "Name": "生产环境实例组"
                     }
                 ],
-                "ReceiverUids": [],
+                "ReceiverUids": [
+                    1001,
+                    1002
+                ],
                 "ReceiverGroups": [
-                    1544
+                    2001
                 ],
                 "NoticeWays": [
-                    "SMS",
-                    "EMAIL",
-                    "WECHAT"
+                    "sms",
+                    "email"
                 ],
-                "EventId": 0,
-                "AlarmType": "METRIC",
-                "OriginId": "1278441",
-                "Region": "gz",
+                "OriginId": "1234567890",
+                "AlarmType": "metric_alarm",
+                "EventId": 123456,
+                "Region": "ap-guangzhou",
                 "PolicyExists": 1,
                 "MetricsInfo": [
                     {
                         "QceNamespace": "qce/cvm",
-                        "MetricName": "CpuUsage",
+                        "MetricName": "cpu_utilization",
                         "Period": 60,
-                        "Value": "86.5",
-                        "Description": "CPU利用率"
-                    }
-                ]
-            },
-            {
-                "AlarmId": "779d129a-40a1-4acf-b226-d9c2ae26e63b",
-                "MonitorType": "MT_QCE",
-                "Namespace": "cvm_device",
-                "AlarmObject": "10.104.126.9 (内) | 服务器02 | 基础网络",
-                "Content": "CPU利用率 >0%",
-                "FirstOccurTime": 1603117860,
-                "LastOccurTime": 1603162964,
-                "AlarmStatus": "ALARM",
-                "PolicyId": "policy-abc02",
-                "PolicyName": "CVM告警策略2",
-                "VPC": "0",
-                "ProjectId": 0,
-                "ProjectName": "默认项目",
-                "InstanceGroup": [
-                    {
-                        "Id": 430,
-                        "Name": "example-instance-group"
+                        "Value": "80",
+                        "Description": "云服务器 CPU 使用率指标"
                     }
                 ],
-                "ReceiverUids": [],
-                "ReceiverGroups": [],
-                "NoticeWays": [],
-                "EventId": 0,
-                "AlarmType": "METRIC",
-                "OriginId": "1276973",
-                "Region": "gz",
-                "PolicyExists": 1,
-                "MetricsInfo": null
+                "Dimensions": "{\"InstanceId\":\"ins-123456\"}",
+                "AlarmLevel": "high"
             }
         ],
-        "RequestId": "4bzogxhgsgs95hgmxne5ei6y9jjxvi1f",
-        "TotalCount": 486
+        "RequestId": "1234567890abcdef"
     }
 }
 ```

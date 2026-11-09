@@ -1,4 +1,4 @@
-**Example 1: 创建人员接口**
+**Example 1: 创建人员成功示例**
 
 
 
@@ -39,48 +39,9 @@ Output:
 }
 ```
 
-**Example 2: 创建人员接口-2**
+**Example 2: 创建人员时ID重复错误示例**
 
-创建人员
 
-Input: 
-
-```
-tccli iai CreatePerson --cli-unfold-argument  \
-    --GroupId TencentShenZhenEmployee \
-    --PersonName evanliao \
-    --PersonId 1001 \
-    --Gender 1 \
-    --Url http://test.image.myqcloud.com/testA.jpg \
-    --PersonExDescriptionInfos.0.PersonExDescriptionIndex 0 \
-    --PersonExDescriptionInfos.0.PersonExDescription 云与智慧产业事业群 \
-    --PersonExDescriptionInfos.1.PersonExDescriptionIndex 1 \
-    --PersonExDescriptionInfos.1.PersonExDescription 人工智能产品中心 \
-    --PersonExDescriptionInfos.2.PersonExDescriptionIndex 2 \
-    --PersonExDescriptionInfos.2.PersonExDescription 人脸识别产品组
-```
-
-Output: 
-```
-{
-    "Response": {
-        "FaceId": "3454816969590585881",
-        "SimilarPersonId": "",
-        "FaceRect": {
-            "X": 172,
-            "Y": 122,
-            "Width": 178,
-            "Height": 228
-        },
-        "FaceModelVersion": "3.0",
-        "RequestId": "269a6bc0-0016-47e8-a63d-517ce4052b0e"
-    }
-}
-```
-
-**Example 3: 错误示例**
-
-人员ID不可重复
 
 Input: 
 
@@ -97,14 +58,18 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.PersonIdAlreadyExist",
+            "Message": "人员ID已经存在。人员ID不可重复。"
+        },
         "RequestId": "76dedef7-af27-4a20-9064-c5ef3133926d"
     }
 }
 ```
 
-**Example 4: 错误示例-2**
+**Example 3: 创建人员时库ID不存在错误示例**
 
-人员库ID不存在
+
 
 Input: 
 
@@ -121,6 +86,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.GroupIdNotExist",
+            "Message": "人员库ID不存在。"
+        },
         "RequestId": "dfa512fc-fd07-4bf1-a292-cb497b620857"
     }
 }

@@ -1,6 +1,6 @@
 **Example 1: 查询容器部署组列表**
 
-
+查询容器部署组列表
 
 Input: 
 
@@ -27,12 +27,16 @@ Output:
                     "TagName": "20190517xxxxxxx",
                     "CpuRequest": "",
                     "MemLimit": "4096.00",
-                    "GroupName": "test",
+                    "GroupName": "testGroup",
+                    "RepoName": "tsf_410xxxxxxx/test",
                     "CreateTime": "",
                     "NamespaceId": "namespace-xxxxxxx",
                     "MemRequest": "",
                     "ClusterName": "示例",
-                    "NamespaceName": "test"
+                    "NamespaceName": "testNamespace",
+                    "Alias": "aliasNamespace",
+                    "KubeInjectEnable": true,
+                    "UpdatedTime": ""
                 }
             ]
         }

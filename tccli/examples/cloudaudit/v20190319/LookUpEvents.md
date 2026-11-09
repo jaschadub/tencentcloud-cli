@@ -8,7 +8,7 @@ Input:
 tccli cloudaudit LookUpEvents --cli-unfold-argument  \
     --EndTime 1553056687 \
     --LookupAttributes.0.AttributeKey AccessKeyId \
-    --LookupAttributes.0.AttributeValue XXXX \
+    --LookupAttributes.0.AttributeValue a9266b0599ff \
     --StartTime 1553056487
 ```
 
@@ -26,7 +26,9 @@ Output:
                 "ErrorCode": 0,
                 "RequestID": "15936031437374_1553056587.6815_v2",
                 "AccountID": 1150691759,
+                "Location": "未知",
                 "SourceIPAddress": "59.37.125.124",
+                "ResourceRegion": "ap-guangzhou",
                 "EventSource": "cloudaudit.api.tencentyun.com/v2/index.php",
                 "EventRegion": "ap-guangzhou",
                 "Resources": {
@@ -34,12 +36,13 @@ Output:
                     "ResourceType": "cloudaudit"
                 },
                 "Username": "root",
-                "ResourceTypeCn": "云审计",
+                "ResourceTypeCn": "操作审计",
                 "EventNameCn": "检索日志"
             }
         ],
         "NextToken": "DnF1ZXJ5VGhlbkZldGNoDwAAAAAAACBuFjNoRHJ5YTd4U1B5YWY4c1ZmMmxBQWcAAAAAAAAgnBZZZkZoYy04LVJJeVpJNnZJS2hIVTdRAAAAAAAAI1QWYk5mQmZXTzhTWXFNZjFMVlhHY1RjdwAAAAAAAB9sFmhZbV8xbm1FUXE2NGVDQndWSlNoMncAAAAAAAAd9BZOelN1aGMycFNydUVEQ0dQbzdCcEZBAAAAAAAALroWMTh4c00xalhRbk9wR0NsYWZvV20tQQAAAAAAACCdFllmRmhjLTgtUkl5Wkk2dklLaEhVN1EAAAAAAAAuuRYxOHhzTTFqWFFuT3BHQ2xhZm9XbS1BAAAAAAAAIJ4WWWZGaGMtOC1SSXlaSTZ2SUtoSFU3UQAAAAAAAB81FnN5aTBfTWJKU25HdXZuMWxsRkdJZ3cAAAAAAAApMhZ1UjdybjlCY1NRYUZVYWRub2x4YW9RAAAAAAAAHzQWc3lpMF9NYkpTbkd1dm4xbGxGR0lndwAAAAAAAB31Fk56U3VoYzJwU3J1RURDR1BvN0JwRkEAAAAAAAAfbRZoWW1fMW5tRVFxNjRlQ0J3VkpTaDJ3AAAAAAAAH24WaFltXzFubUVRcTY0ZUNCd1ZKU2gydw==",
         "ListOver": true,
+        "TotalCount": 1,
         "RequestId": "91e2998d-edc0-4ba0-a76d-cebbbfd99391"
     }
 }

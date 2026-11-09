@@ -15,27 +15,35 @@ Output:
 ```
 {
     "Response": {
-        "Total": 3,
-        "RequestId": "xx",
         "TaskSet": [
             {
-                "Status": 1,
-                "Name": "xx",
-                "Parameters": "{}",
-                "Interval": 30,
+                "Name": "cron测试",
                 "TaskId": "task-xx",
-                "TaskType": 1,
+                "TaskType": 0,
                 "Nodes": [
-                    "10001"
+                    "10000"
                 ],
+                "NodeIpType": 0,
+                "Interval": 0,
+                "Parameters": "{\"ipType\":0,\"netIcmpOn\":1,\"netIcmpActivex\":0,\"netIcmpTimeout\":20,\"netIcmpInterval\":\"0.5\",\"netIcmpNum\":4,\"netIcmpSize\":4,\"netIcmpDataCut\":1,\"netDnsOn\":0,\"netTracertOn\":1,\"netTracertTimeout\":20,\"netTracertNum\":0}",
+                "Status": 0,
+                "TargetAddress": "www.test.com",
+                "PayMode": 0,
+                "OrderState": 0,
+                "TaskCategory": 0,
+                "CreatedAt": "2024-01-02 16:57:15",
+                "Cron": "* 0-6 * * *",
+                "CronState": 0,
                 "TagInfoList": [
                     {
-                        "Key": "tag_key1",
-                        "Value": "tag_value1"
+                        "Key": "部门",
+                        "Value": "部门 1"
                     }
                 ]
             }
-        ]
+        ],
+        "Total": 0,
+        "RequestId": "720b3231-5a85-4f05-aaab-c9b9596xxxxx"
     }
 }
 ```

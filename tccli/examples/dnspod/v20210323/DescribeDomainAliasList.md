@@ -1,6 +1,6 @@
 **Example 1: 获取域名别名列表**
 
-
+ 
 
 Input: 
 
@@ -17,7 +17,8 @@ Output:
         "DomainAliasList": [
             {
                 "DomainAlias": "cc.cc",
-                "Id": 16063
+                "Id": 16063,
+                "Status": 2
             }
         ]
     }

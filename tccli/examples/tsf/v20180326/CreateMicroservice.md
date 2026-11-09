@@ -6,16 +6,21 @@ Input:
 
 ```
 tccli tsf CreateMicroservice --cli-unfold-argument  \
-    --NamespaceId namespace-xxxxxxx \
-    --MicroserviceName consumer-demo1
+    --NamespaceId namespace-9ynm2mea \
+    --MicroserviceName app-jolyonzheng \
+    --MicroserviceDesc this is desc \
+    --ServiceType SDK \
+    --ServiceUrl www.tsf.com \
+    --Protocol http \
+    --ServiceDiscovery DNS
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2bb5b35d-cdad-45a0-96ce-bc48abe98cc7",
-        "Result": true
+        "Result": true,
+        "RequestId": "41521ae0-bce6-4bbe-af2a-753f7bb177ed"
     }
 }
 ```

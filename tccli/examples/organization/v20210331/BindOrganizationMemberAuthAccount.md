@@ -1,4 +1,4 @@
-**Example 1: 绑定成员和子账号的授权关系**
+**Example 1: 绑定组织成员和组织管理员子账号的授权关系**
 
 
 
@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli organization BindOrganizationMemberAuthAccount --cli-unfold-argument  \
-    --MemberUin 100000546922 \
-    --PolicyId 98081 \
-    --OrgSubAccountUins 100000546921
+    --MemberUin 111111111111 \
+    --PolicyId 101 \
+    --OrgSubAccountUins 222222222222
 ```
 
 Output: 

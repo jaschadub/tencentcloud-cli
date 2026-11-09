@@ -17,102 +17,43 @@ Output:
         "AIRecognitionTemplateSet": [
             {
                 "Definition": 30,
-                "Name": "模板1",
+                "Name": "Presetting Template30",
+                "Comment": "默认模板，打开所有识别开关，只使用户自定义库且不带过滤标签",
                 "Type": "Preset",
-                "Comment": "智能识别模板",
                 "FaceConfigure": {
                     "Switch": "ON",
-                    "Score": 0.0,
-                    "FaceLibrary": "All",
-                    "DefaultLibraryLabelSet": [
-                        "xx"
-                    ],
-                    "UserDefineLibraryLabelSet": [
-                        "xx"
-                    ]
+                    "Score": 95,
+                    "DefaultLibraryLabelSet": [],
+                    "UserDefineLibraryLabelSet": [],
+                    "FaceLibrary": "UserDefine"
                 },
                 "OcrFullTextConfigure": {
                     "Switch": "ON"
                 },
                 "OcrWordsConfigure": {
-                    "Switch": "OFF",
-                    "LabelSet": [
-                        "xx"
-                    ]
-                },
-                "AsrFullTextConfigure": {
                     "Switch": "ON",
-                    "SubtitleFormat": "xx"
-                },
-                "AsrWordsConfigure": {
-                    "Switch": "OFF",
-                    "LabelSet": [
-                        "xx"
-                    ]
-                },
-                "CreateTime": "2019-01-01T12:00:00Z",
-                "UpdateTime": "2019-01-01T16:00:00Z"
-            }
-        ],
-        "RequestId": "19ae8d8e-dce3-4151-9d4b-5594384987a9"
-    }
-}
-```
-
-**Example 2: 获取指定个数的视频内容识别模板**
-
-获取序号从 0 开始，总共 10 个视频内容识别模板。
-
-Input: 
-
-```
-tccli mps DescribeAIRecognitionTemplates --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 10
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TotalCount": 1,
-        "AIRecognitionTemplateSet": [
-            {
-                "Definition": 30,
-                "Name": "模板1",
-                "Comment": "智能识别模板",
-                "Type": "Preset",
-                "FaceConfigure": {
-                    "Switch": "ON",
-                    "Score": 0.0,
-                    "FaceLibrary": "All",
-                    "DefaultLibraryLabelSet": [
-                        "xx"
-                    ],
-                    "UserDefineLibraryLabelSet": [
-                        "xx"
-                    ]
-                },
-                "OcrFullTextConfigure": {
-                    "Switch": "ON"
-                },
-                "OcrWordsConfigure": {
-                    "Switch": "OFF",
                     "LabelSet": []
                 },
                 "AsrFullTextConfigure": {
                     "Switch": "ON",
-                    "SubtitleFormat": "xx"
+                    "SubtitleFormat": "vtt",
+                    "SourceLanguage": "zh"
                 },
                 "AsrWordsConfigure": {
-                    "Switch": "OFF",
+                    "Switch": "ON",
                     "LabelSet": []
                 },
-                "CreateTime": "2019-01-01T12:00:00Z",
-                "UpdateTime": "2019-01-01T16:00:00Z"
+                "TranslateConfigure": {
+                    "Switch": "OFF",
+                    "SourceLanguage": "en",
+                    "DestinationLanguage": "zh",
+                    "SubtitleFormat": "vtt"
+                },
+                "CreateTime": "2019-06-13T11:07:07+08:00",
+                "UpdateTime": "2020-01-06T08:21:46+08:00"
             }
         ],
-        "RequestId": "19ae8d8e-dce3-4151-9d4b-5594384987a9"
+        "RequestId": "9a12345af0-4a9c-ae02-704f3d5a8040"
     }
 }
 ```

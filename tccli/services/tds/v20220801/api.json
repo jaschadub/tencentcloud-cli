@@ -1,22 +1,39 @@
 {
   "actions": {
+    "DescribeFinanceFraudUltimate": {
+      "document": "查询设备标识及风险（金融旗舰版）",
+      "input": "DescribeFinanceFraudUltimateRequest",
+      "name": "查询设备标识及风险（金融旗舰版）",
+      "output": "DescribeFinanceFraudUltimateResponse",
+      "status": "online"
+    },
     "DescribeFraudBase": {
       "document": "查询设备风险",
       "input": "DescribeFraudBaseRequest",
       "name": "查询设备风险",
-      "output": "DescribeFraudBaseResponse"
+      "output": "DescribeFraudBaseResponse",
+      "status": "online"
     },
     "DescribeFraudPremium": {
       "document": "查询设备标识及风险",
       "input": "DescribeFraudPremiumRequest",
       "name": "查询设备标识及风险",
-      "output": "DescribeFraudPremiumResponse"
+      "output": "DescribeFraudPremiumResponse",
+      "status": "online"
+    },
+    "DescribeFraudUltimate": {
+      "document": "查询设备标识及风险（旗舰版）",
+      "input": "DescribeFraudUltimateRequest",
+      "name": "查询设备标识及风险（旗舰版）",
+      "output": "DescribeFraudUltimateResponse",
+      "status": "online"
     },
     "DescribeTrustedID": {
       "document": "查询设备标识",
       "input": "DescribeTrustedIDRequest",
       "name": "查询设备标识",
-      "output": "DescribeTrustedIDResponse"
+      "output": "DescribeTrustedIDResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -26,12 +43,350 @@
     "serviceShortName": "tds"
   },
   "objects": {
+    "DataAuthorizationInfo": {
+      "document": "数据授权信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据委托方、需求方：客户主体名称。",
+          "example": "某某有限公司",
+          "member": "string",
+          "name": "DataProviderName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据受托方、提供方：腾讯云主体名称。\n\n固定填：腾讯云计算（北京）有限责任公司",
+          "example": "腾讯云计算（北京）有限责任公司",
+          "member": "string",
+          "name": "DataRecipientName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户请求所涉及的用户个人信息类型，支持多选。实际以接口请求传参为准。\n1-手机号；\n2-微信开放账号；\n3-QQ开放账号；\n4-IP地址；",
+          "example": "[1, 4]",
+          "member": "uint64",
+          "name": "UserDataType",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "客户是否已按合规指南要求获取用户授权，同意客户委托腾讯云处理入参信息，结合已合法收集的用户数据进行必要处理得出服务结果，并返回给客户。\n\n1-已授权；其它值为未授权。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsAuthorize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "客户获得的用户授权期限时间戳（单位秒）。\n\n不填或0默认无固定期限。",
+          "example": "1719805604",
+          "member": "uint64",
+          "name": "AuthorizationTerm",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "客户获得用户授权所依赖的协议地址。",
+          "example": "https://www.*****.com/*****",
+          "member": "string",
+          "name": "PrivacyPolicyLink",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DescribeFinanceFraudUltimateRequest": {
+      "document": "DescribeFinanceFraudUltimate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>客户端通过SDK获取的设备Token</p>",
+          "example": "eHh4eHh4eHg=",
+          "member": "string",
+          "name": "DeviceToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用场景。目前仅支持login-登录场景、register-注册场景</p>",
+          "example": "login",
+          "member": "string",
+          "name": "SceneCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户唯一标识</p>",
+          "example": "15000000000",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件时间戳（毫秒）</p>",
+          "example": "1666684836384",
+          "member": "uint64",
+          "name": "EventTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件耗时（毫秒），例如进入登录界面到点击登录按钮耗时</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ElapsedTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>微信的OpenId</p>",
+          "example": "oOn8tchm7************0vlzm",
+          "member": "string",
+          "name": "WeChatOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>手机号码（注：不需要带国家代码 例如：15xxxxxxxxx）。可以传入原文、MD5或SHA256</p>",
+          "example": "15*********",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务客户端IP</p>",
+          "example": "183.60.88.11",
+          "member": "string",
+          "name": "BizClientIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>QQ的OpenId</p>",
+          "example": "A8E0232CD************2058B0EA885",
+          "member": "string",
+          "name": "QQOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据授权信息</p>",
+          "example": "无",
+          "member": "DataAuthorizationInfo",
+          "name": "DataAuthorization",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFinanceFraudUltimateResponse": {
+      "document": "DescribeFinanceFraudUltimate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>App版本信息</p>",
+          "example": "6.8.50",
+          "member": "string",
+          "name": "AppVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>品牌</p>",
+          "example": "OPPO",
+          "member": "string",
+          "name": "Brand",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端IP</p>",
+          "example": "2409:8929:270b:316:16f2:2dd6:2987:390a",
+          "member": "string",
+          "name": "ClientIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机型</p>",
+          "example": "PEMM00",
+          "member": "string",
+          "name": "Model",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络类型</p>",
+          "example": "1",
+          "member": "string",
+          "name": "NetworkType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用包名</p>",
+          "example": "com.xx.xxx",
+          "member": "string",
+          "name": "PackageName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台（2-Android，3-iOS，4-H5，5-微信小程序）</p>",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统版本</p>",
+          "example": "11",
+          "member": "string",
+          "name": "SystemVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SDK版本号</p>",
+          "example": "74",
+          "member": "string",
+          "name": "SdkBuildNo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实时风险信息</p>",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "RiskInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>离线风险信息</p>",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "HistRiskInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备匿名标识</p>",
+          "example": "85ADB490D96D6A0044D00798",
+          "member": "string",
+          "name": "Openid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>场景风险信息</p>",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "SceneRiskInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>建议等级。1-极差，2-较差，3-中等，4-良好，5-优秀</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuggestionLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图灵盾统一ID</p>",
+          "example": "BCC4AD40983ACF9CA18A55BC0A4401489833F362",
+          "member": "string",
+          "name": "Unionid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测时间戳（毫秒）</p>",
+          "example": "1774319387108",
+          "member": "string",
+          "name": "RiskCheckTimestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外信息</p>",
+          "example": "无",
+          "member": "ExtraInfo",
+          "name": "ExtraInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFraudBaseRequest": {
       "document": "DescribeFraudBase请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "客户端通过SDK获取的设备Token",
+          "disabled": false,
+          "document": "<p>客户端通过SDK获取的设备Token</p>",
           "example": "eHh4eHh4eHg=",
           "member": "string",
           "name": "DeviceToken",
@@ -45,106 +400,137 @@
       "document": "DescribeFraudBase返回参数结构体",
       "members": [
         {
-          "document": "App版本信息",
+          "disabled": false,
+          "document": "<p>App版本信息</p>",
           "example": "6.8.50",
           "member": "string",
           "name": "AppVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "品牌",
+          "disabled": false,
+          "document": "<p>品牌</p>",
           "example": "OPPO",
           "member": "string",
           "name": "Brand",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "客户端IP",
+          "disabled": false,
+          "document": "<p>客户端IP</p>",
           "example": "2409:8929:270b:316:16f2:2dd6:2987:390a",
           "member": "string",
           "name": "ClientIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "机型",
+          "disabled": false,
+          "document": "<p>机型</p>",
           "example": "PEMM00",
           "member": "string",
           "name": "Model",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "网络类型",
+          "disabled": false,
+          "document": "<p>网络类型</p>",
           "example": "1",
           "member": "string",
           "name": "NetworkType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "应用包名",
+          "disabled": false,
+          "document": "<p>应用包名</p>",
           "example": "com.xx.xxx",
           "member": "string",
           "name": "PackageName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "平台（2-Android，3-iOS，4-H5，5-微信小程序）",
+          "disabled": false,
+          "document": "<p>平台（2-Android，3-iOS，4-H5，5-微信小程序）</p>",
           "example": "2",
           "member": "string",
           "name": "Platform",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "系统版本",
+          "disabled": false,
+          "document": "<p>系统版本</p>",
           "example": "11",
           "member": "string",
           "name": "SystemVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "SDK版本号",
+          "disabled": false,
+          "document": "<p>SDK版本号</p>",
           "example": "74",
           "member": "string",
           "name": "SdkBuildNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "实时风险信息",
+          "disabled": false,
+          "document": "<p>实时风险信息</p>",
           "example": "无",
           "member": "RiskInfo",
           "name": "RiskInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "离线风险信息",
+          "disabled": false,
+          "document": "<p>离线风险信息</p>",
           "example": "无",
           "member": "RiskInfo",
           "name": "HistRiskInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "disabled": false,
+          "document": "<p>检测时间戳（毫秒）</p>",
+          "example": "1774319416861",
+          "member": "string",
+          "name": "RiskCheckTimestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外信息</p>",
+          "example": "无",
+          "member": "ExtraInfo",
+          "name": "ExtraInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -156,8 +542,8 @@
       "document": "DescribeFraudPremium请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "客户端通过SDK获取的设备Token",
+          "disabled": false,
+          "document": "<p>客户端通过SDK获取的设备Token</p>",
           "example": "eHh4eHh4eHg=",
           "member": "string",
           "name": "DeviceToken",
@@ -171,115 +557,425 @@
       "document": "DescribeFraudPremium返回参数结构体",
       "members": [
         {
-          "document": "App版本信息",
+          "disabled": false,
+          "document": "<p>App版本信息</p>",
           "example": "6.8.50",
           "member": "string",
           "name": "AppVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "品牌",
+          "disabled": false,
+          "document": "<p>品牌</p>",
           "example": "OPPO",
           "member": "string",
           "name": "Brand",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "客户端IP",
+          "disabled": false,
+          "document": "<p>客户端IP</p>",
           "example": "2409:8929:270b:316:16f2:2dd6:2987:390a",
           "member": "string",
           "name": "ClientIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "机型",
+          "disabled": false,
+          "document": "<p>机型</p>",
           "example": "PEMM00",
           "member": "string",
           "name": "Model",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "网络类型",
+          "disabled": false,
+          "document": "<p>网络类型</p>",
           "example": "1",
           "member": "string",
           "name": "NetworkType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "应用包名",
+          "disabled": false,
+          "document": "<p>应用包名</p>",
           "example": "com.xx.xxx",
           "member": "string",
           "name": "PackageName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "平台（2-Android，3-iOS，4-H5，5-微信小程序）",
+          "disabled": false,
+          "document": "<p>平台（2-Android，3-iOS，4-H5，5-微信小程序）</p>",
           "example": "2",
           "member": "string",
           "name": "Platform",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "系统版本",
+          "disabled": false,
+          "document": "<p>系统版本</p>",
           "example": "11",
           "member": "string",
           "name": "SystemVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "SDK版本号",
+          "disabled": false,
+          "document": "<p>SDK版本号</p>",
           "example": "74",
           "member": "string",
           "name": "SdkBuildNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "实时风险信息",
+          "disabled": false,
+          "document": "<p>实时风险信息</p>",
           "example": "无",
           "member": "RiskInfo",
           "name": "RiskInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "离线风险信息",
+          "disabled": false,
+          "document": "<p>离线风险信息</p>",
           "example": "无",
           "member": "RiskInfo",
           "name": "HistRiskInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "设备匿名标识",
+          "disabled": false,
+          "document": "<p>设备匿名标识</p>",
           "example": "85ADB490D96D6A0044D00798",
           "member": "string",
           "name": "Openid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "disabled": false,
+          "document": "<p>检测时间戳（毫秒）</p>",
+          "example": "1774320086302",
+          "member": "string",
+          "name": "RiskCheckTimestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外信息</p>",
+          "example": "无",
+          "member": "ExtraInfo",
+          "name": "ExtraInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFraudUltimateRequest": {
+      "document": "DescribeFraudUltimate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>客户端通过SDK获取的设备Token</p>",
+          "example": "eHh4eHh4eHg=",
+          "member": "string",
+          "name": "DeviceToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用场景。目前仅支持login-登录场景、register-注册场景</p>",
+          "example": "login",
+          "member": "string",
+          "name": "SceneCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户唯一标识</p>",
+          "example": "15000000000",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件时间戳（毫秒）</p>",
+          "example": "1666684836384",
+          "member": "uint64",
+          "name": "EventTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件耗时（毫秒），例如进入登录界面到点击登录按钮耗时</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ElapsedTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>微信的OpenId</p>",
+          "example": "oOn8tchm7************0vlzm",
+          "member": "string",
+          "name": "WeChatOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>手机号码（注：不需要带国家代码 例如：15xxxxxxxxx）。可以传入原文、MD5或SHA256</p>",
+          "example": "15*********",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端IP</p>",
+          "example": "183.60.88.11",
+          "member": "string",
+          "name": "ClientIP",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>QQ的OpenId</p>",
+          "example": "A8E0232CD************2058B0EA885",
+          "member": "string",
+          "name": "QQOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据授权信息</p>",
+          "example": "无",
+          "member": "DataAuthorizationInfo",
+          "name": "DataAuthorization",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFraudUltimateResponse": {
+      "document": "DescribeFraudUltimate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>App版本信息</p>",
+          "example": "6.8.50",
+          "member": "string",
+          "name": "AppVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>品牌</p>",
+          "example": "OPPO",
+          "member": "string",
+          "name": "Brand",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端IP</p>",
+          "example": "2409:8929:270b:316:16f2:2dd6:2987:390a",
+          "member": "string",
+          "name": "ClientIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机型</p>",
+          "example": "PEMM00",
+          "member": "string",
+          "name": "Model",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络类型</p>",
+          "example": "1",
+          "member": "string",
+          "name": "NetworkType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用包名</p>",
+          "example": "com.xx.xxx",
+          "member": "string",
+          "name": "PackageName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台（2-Android，3-iOS，4-H5，5-微信小程序）</p>",
+          "example": "2",
+          "member": "string",
+          "name": "Platform",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统版本</p>",
+          "example": "11",
+          "member": "string",
+          "name": "SystemVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SDK版本号</p>",
+          "example": "74",
+          "member": "string",
+          "name": "SdkBuildNo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实时风险信息</p>",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "RiskInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>离线风险信息</p>",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "HistRiskInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备匿名标识</p>",
+          "example": "85ADB490D96D6A0044D00798",
+          "member": "string",
+          "name": "Openid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>场景风险信息</p>",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "SceneRiskInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>建议等级。1-极差，2-较差，3-中等，4-良好，5-优秀</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuggestionLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图灵盾统一ID</p>",
+          "example": "BCC4AD40983ACF9CA18A55BC0A4401489833F362",
+          "member": "string",
+          "name": "Unionid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测时间戳（毫秒）</p>",
+          "example": "1774319866532",
+          "member": "string",
+          "name": "RiskCheckTimestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外信息</p>",
+          "example": "无",
+          "member": "ExtraInfo",
+          "name": "ExtraInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -291,7 +987,7 @@
       "document": "DescribeTrustedID请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "客户端通过SDK获取的设备Token",
           "example": "eHh4eHh4eHg=",
           "member": "string",
@@ -306,6 +1002,7 @@
       "document": "DescribeTrustedID返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备匿名标识",
           "example": "85ADB490D96D6A0044D00798",
           "member": "string",
@@ -315,6 +1012,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "App版本信息",
           "example": "6.8.50",
           "member": "string",
@@ -324,6 +1022,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "品牌",
           "example": "OPPO",
           "member": "string",
@@ -333,6 +1032,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "客户端IP",
           "example": "2409:8929:270b:316:16f2:2dd6:2987:390a",
           "member": "string",
@@ -342,6 +1042,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "机型",
           "example": "PEMM00",
           "member": "string",
@@ -351,6 +1052,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "网络类型",
           "example": "1",
           "member": "string",
@@ -360,6 +1062,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "应用包名",
           "example": "com.xx.xxx",
           "member": "string",
@@ -369,6 +1072,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "平台（2-Android，3-iOS，4-H5，5-微信小程序）",
           "example": "2",
           "member": "string",
@@ -378,6 +1082,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "系统版本",
           "example": "11",
           "member": "string",
@@ -387,6 +1092,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "SDK版本号",
           "example": "74",
           "member": "string",
@@ -396,7 +1102,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -404,26 +1110,52 @@
       ],
       "type": "object"
     },
+    "ExtraInfo": {
+      "document": "附加信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>附加信息名字</p>",
+          "example": "DegradationType",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>附加信息内容</p>",
+          "example": "2",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RiskInfo": {
       "document": "风险信息",
       "members": [
         {
-          "default": "",
-          "document": "风险类型",
+          "disabled": false,
+          "document": "风险类型。更多详情请参见：[Android](https://cloud.tencent.com/document/product/1628/85898)、[iOS](https://cloud.tencent.com/document/product/1628/85896)、[H5](https://cloud.tencent.com/document/product/1628/85897)、[小程序](https://cloud.tencent.com/document/product/1628/85895)、[场景风险](https://cloud.tencent.com/document/product/1628/88912)",
           "example": "201",
           "member": "uint64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "风险等级",
+          "disabled": false,
+          "document": "[风险等级](https://cloud.tencent.com/document/product/1628/85308)",
           "example": "1",
           "member": "uint64",
           "name": "Level",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

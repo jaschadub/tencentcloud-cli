@@ -30,23 +30,23 @@ Output:
         "TotalCount": 1,
         "TableResults": [
             {
-                "TableIdlType": "xx",
-                "TableGroupId": "xx",
-                "TaskIds": [
-                    "xx"
-                ],
-                "TableInstanceId": "xx",
-                "TableName": "xx",
-                "TaskId": "xx",
+                "TableInstanceId": "tcaplus-12142",
+                "TaskId": "8223",
+                "TableName": "nametable",
+                "TableType": "PROTO",
+                "TableIdlType": "proto",
+                "TableGroupId": "13242",
                 "Error": {
-                    "Message": "xx",
-                    "Code": "xx"
+                    "Code": "",
+                    "Message": ""
                 },
-                "ApplicationId": "xx",
-                "TableType": "xx"
+                "TaskIds": [
+                    "43231"
+                ],
+                "ApplicationId": "14232"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "32942-131513"
     }
 }
 ```

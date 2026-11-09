@@ -1,42 +1,22 @@
-**Example 1: 调用成功示例**
+**Example 1: 人脸美颜请求示例**
 
-
+人脸美颜请求
 
 Input: 
 
 ```
 tccli fmu BeautifyPic --cli-unfold-argument  \
-    --Url http://i2.sinaimg.cn/ty/nba/2015-07-05/U10236P6T12D7648505F44DT20150705114547.jpg \
-    --Version 2019-12-13
+    --Url https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg \
+    --RspImgType url
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ResultImage": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAFuAiYDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqr...",
-        "RequestId": "9cf173a5-4ae5-46fb-9898-6c876263770d"
-    }
-}
-```
-
-**Example 2: 调用失败示例**
-
-
-
-Input: 
-
-```
-tccli fmu BeautifyPic --cli-unfold-argument  \
-    --Url IamNotAUrl \
-    --Version 2019-12-13
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "897d8a3d-6677-4c41-b647-f0a19a6dc13f"
+        "ResultUrl": "https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c",
+        "ResultImage": "",
+        "RequestId": "1a2e88a4-3614-48a0-96b9-d09bf6de2fe4"
     }
 }
 ```

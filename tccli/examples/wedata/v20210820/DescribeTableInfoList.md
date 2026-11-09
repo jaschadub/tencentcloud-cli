@@ -20,8 +20,15 @@ Output:
 ```
 {
     "Response": {
-        "TableInfo": "xx",
-        "RequestId": "xx"
+        "TableInfo": [
+            {
+                "TableId": "1",
+                "TableName": "table1",
+                "OriginDatabaseName": "mysql",
+                "OriginSchemaName": "datasource"
+            }
+        ],
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

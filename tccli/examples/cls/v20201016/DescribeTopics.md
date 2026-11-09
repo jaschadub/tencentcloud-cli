@@ -1,44 +1,52 @@
 **Example 1: 获取日志主题列表**
 
-
+获取日志主题列表
 
 Input: 
 
 ```
 tccli cls DescribeTopics --cli-unfold-argument  \
-    --Offset 10 \
-    --Limit 30
+    --Offset 0 \
+    --Limit 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "RequestId": "9402a324-xxxx-xxxx-xxxx-2bc613cd187e",
         "Topics": [
             {
-                "Status": true,
-                "TopicId": "xx",
-                "Tags": [
-                    {
-                        "Value": "xx",
-                        "Key": "xx"
-                    }
-                ],
-                "StorageType": "xx",
-                "PartitionCount": 1,
-                "MaxSplitPartitions": 0,
-                "Period": 0,
+                "AssumerName": "",
+                "AssumerUin": 0,
                 "AutoSplit": true,
-                "TopicName": "xx",
-                "AssumerName": "xx",
-                "SubAssumerName": "xx",
+                "BizType": 0,
+                "CreateTime": "2024-12-26 19:28:55",
+                "Describes": "",
+                "EffectiveDate": "",
+                "Extends": {
+                    "AnonymousAccess": null
+                },
+                "HotPeriod": 0,
                 "Index": true,
-                "CreateTime": "xx",
-                "LogsetId": "xx"
+                "IsWebTracking": false,
+                "KeyId": "",
+                "LogsetId": "fd0605ca-xxxx-xxxx-xxxx-592e5233c2db",
+                "MaxSplitPartitions": 50,
+                "MigrationStatus": 0,
+                "PartitionCount": 1,
+                "Period": 1,
+                "RoleName": "",
+                "Status": true,
+                "StorageType": "hot",
+                "SubAssumerName": "",
+                "Tags": [],
+                "TopicAsyncTaskID": "",
+                "TopicId": "8a41c585-xxxx-xxxx-xxxx-c358a595f662",
+                "TopicName": "topic-name-test"
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 1544
     }
 }
 ```

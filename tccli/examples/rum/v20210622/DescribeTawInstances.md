@@ -1,11 +1,18 @@
-**Example 1: 查询实例**
+**Example 1: 查询 RUM 业务系统信息**
 
-
+查询 RUM 业务系统信息
 
 Input: 
 
 ```
-tccli rum DescribeTawInstances --cli-unfold-argument ```
+tccli rum DescribeTawInstances --cli-unfold-argument  \
+    --Offset 0 \
+    --Limit 1 \
+    --Filters.0.Name Region \
+    --Filters.0.Values ap-guangzhou \
+    --Filters.1.Name InstanceType \
+    --Filters.1.Values 1
+```
 
 Output: 
 ```
@@ -13,36 +20,28 @@ Output:
     "Response": {
         "InstanceSet": [
             {
-                "AreaId": "1",
+                "AreaId": 1,
                 "ChargeStatus": 1,
                 "ChargeType": 1,
-                "ClusterId": "1",
-                "CreatedAt": "2021-04-29 20:51:05",
-                "DataRetentionDays": "30",
-                "InstanceDesc": "",
-                "InstanceId": "taw-VJ2mHDEb",
-                "InstanceName": "test",
+                "ClusterId": 0,
+                "CreatedAt": "2024-12-17 11:12:55",
+                "DataRetentionDays": 30,
+                "InstanceDesc": "test333",
+                "InstanceId": "****GmpbKG4",
+                "InstanceName": "test-333",
                 "InstanceStatus": 2,
-                "Tags": [],
-                "UpdatedAt": "2021-04-29 20:51:05"
-            },
-            {
-                "AreaId": "1",
-                "ChargeStatus": 1,
-                "ChargeType": 1,
-                "ClusterId": "1",
-                "CreatedAt": "2021-04-29 20:59:15",
-                "DataRetentionDays": "30",
-                "InstanceDesc": "",
-                "InstanceId": "taw-mE08H4Ez",
-                "InstanceName": "test",
-                "InstanceStatus": 2,
-                "Tags": [],
-                "UpdatedAt": "2021-04-29 20:59:15"
+                "InstanceType": 1,
+                "Tags": [
+                    {
+                        "Key": "二级业务",
+                        "Value": "未分配业务_200003722"
+                    }
+                ],
+                "UpdatedAt": "2024-12-18 18:22:01"
             }
         ],
-        "RequestId": "d356e035-ac3d-4237-add9-50a44c01dd39",
-        "TotalCount": "2"
+        "RequestId": "8c3247ac-bafa-4e62-a73b-0b8c88e05202",
+        "TotalCount": 1
     }
 }
 ```

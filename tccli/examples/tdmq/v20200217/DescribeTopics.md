@@ -1,12 +1,18 @@
 **Example 1: 获取环境下主题列表**
 
-
+获取环境下主题列表
 
 Input: 
 
 ```
 tccli tdmq DescribeTopics --cli-unfold-argument  \
-    --EnvironmentId test1
+    --EnvironmentId devNs \
+    --TopicName devTopic \
+    --Offset 1 \
+    --Limit 1 \
+    --TopicType 1 \
+    --ClusterId pulsar-uahenidn \
+    --TopicCreator 1
 ```
 
 Output: 
@@ -14,44 +20,44 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "bee03397-31dd-4688-8fe0-81c691c3c1ae",
         "TopicSets": [
             {
                 "PulsarTopicType": 0,
                 "TopicType": 1,
-                "ProducerCount": "xx",
-                "ConsumerLimit": "xx",
-                "ConsumerCount": "xx",
-                "LastLedgerCreatedTimestamp": "xx",
-                "MsgThroughputIn": "xx",
+                "ProducerCount": "1",
+                "ConsumerLimit": "1000",
+                "ConsumerCount": "200",
+                "LastLedgerCreatedTimestamp": "14578964532",
+                "MsgThroughputIn": "24",
                 "UpdateTime": "2020-09-22 00:00:00",
-                "AverageMsgSize": "xx",
+                "AverageMsgSize": "20",
                 "Partitions": 1,
-                "Remark": "xx",
-                "LastConfirmedEntry": "xx",
-                "TotalSize": "xx",
-                "NumberOfEntries": "xx",
-                "MsgRateOut": "xx",
-                "ProducerLimit": "xx",
-                "EnvironmentId": "xx",
-                "TopicName": "xx",
-                "MsgRateIn": "xx",
-                "MsgThroughputOut": "xx",
+                "Remark": "devRemark",
+                "LastConfirmedEntry": "23",
+                "TotalSize": "1",
+                "NumberOfEntries": "12",
+                "MsgRateOut": "10",
+                "ProducerLimit": "10",
+                "EnvironmentId": "devNs",
+                "TopicName": "devTopic",
+                "MsgRateIn": "12",
+                "MsgThroughputOut": "100",
                 "SubTopicSets": [
                     {
                         "TopicType": 1,
-                        "ProducerCount": "xx",
-                        "LastConfirmedEntry": "xx",
-                        "TotalSize": "xx",
-                        "NumberOfEntries": "xx",
-                        "ConsumerCount": "xx",
-                        "MsgRateOut": "xx",
-                        "AverageMsgSize": "xx",
-                        "MsgThroughputIn": "xx",
-                        "MsgRateIn": "xx",
+                        "ProducerCount": "1",
+                        "LastConfirmedEntry": "100",
+                        "TotalSize": "1",
+                        "NumberOfEntries": "100",
+                        "ConsumerCount": "1",
+                        "MsgRateOut": "100",
+                        "AverageMsgSize": "1",
+                        "MsgThroughputIn": "100",
+                        "MsgRateIn": "100",
                         "Partitions": 0,
-                        "LastLedgerCreatedTimestamp": "xx",
-                        "MsgThroughputOut": "xx"
+                        "LastLedgerCreatedTimestamp": "124567885324",
+                        "MsgThroughputOut": "100"
                     }
                 ],
                 "CreateTime": "2020-09-22 00:00:00"

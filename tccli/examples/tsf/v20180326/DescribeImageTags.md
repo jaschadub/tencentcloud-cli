@@ -6,53 +6,44 @@ Input:
 
 ```
 tccli tsf DescribeImageTags --cli-unfold-argument  \
-    --TcrRepoInfo.RegistryName xx \
-    --TcrRepoInfo.Namespace xx \
-    --TcrRepoInfo.Region xx \
-    --TcrRepoInfo.RegistryId xx \
-    --TcrRepoInfo.RepoName xx \
-    --QueryImageIdFlag 0 \
-    --Limit 0 \
-    --SearchWord xx \
-    --Offset 0 \
-    --RepoType xx \
-    --ApplicationId xx
+    --ApplicationId application-yx8kjmra \
+    --Limit 20
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "4df95eea-e433-41c6-9c65-cfd1bd05d5d0",
         "Result": {
             "Content": [
                 {
-                    "UpdateTime": "xx",
-                    "DockerVersion": "xx",
-                    "Author": "xx",
+                    "Architecture": "amd64",
+                    "Author": "",
+                    "CreationTime": "2024-12-17T11:55:49Z",
+                    "DockerVersion": "",
+                    "ImageId": "sha256:b774178107747295705e9f919e5cf009d2dad7f343f18dea74a9f3b13e03b6ec",
+                    "Os": "",
+                    "PushTime": "2024-12-17T11:55:49Z",
+                    "RepoName": "tsf_100011913960/mesh-no-spec",
+                    "Size": "72 MB",
+                    "SizeByte": 72225778,
+                    "TagId": "sha256:4c270bbe6abe54d0b9c5186d5c2d79a32b932fc65f5628518b88c093f69ecc19",
+                    "TagName": "1217",
                     "TcrRepoInfo": {
-                        "RegistryName": "xx",
-                        "Namespace": "xx",
-                        "Region": "xx",
-                        "RegistryId": "xx",
-                        "RepoName": "xx"
+                        "Region": "gz",
+                        "RegistryId": "id",
+                        "RegistryName": "name",
+                        "Namespace": "namespace",
+                        "RepoName": "repo-name"
                     },
-                    "TagId": "xx",
-                    "CreationTime": "xx",
-                    "RepoName": "xx",
-                    "ImageId": "xx",
-                    "SizeByte": 0,
-                    "Architecture": "xx",
-                    "TagName": "xx",
-                    "PushTime": "xx",
-                    "Os": "xx",
-                    "Size": "xx"
+                    "UpdateTime": "2024-12-17T11:55:57Z"
                 }
             ],
-            "TotalCount": 0,
-            "RepoName": "xx",
-            "Server": "xx"
-        },
-        "RequestId": "xx"
+            "RepoName": "tsf_100011913960/mesh-no-spec",
+            "Server": "ccr.ccs.tencentyun.com",
+            "TotalCount": 1
+        }
     }
 }
 ```

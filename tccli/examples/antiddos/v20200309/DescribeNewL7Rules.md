@@ -1,18 +1,19 @@
-**Example 1: 获取7层规则**
+**Example 1: 获取高防ip所有规则**
 
-
+获取高防ip所有规则
 
 Input: 
 
 ```
 tccli antiddos DescribeNewL7Rules --cli-unfold-argument  \
     --StatusList 1 \
-    --Domain xx \
-    --Business xx \
-    --Ip xx \
+    --Domain www.abc.com \
+    --Business bgp \
+    --Ip 1.1.1.1 \
     --Limit 1 \
     --Offset 1 \
-    --ProtocolList xx
+    --ProtocolList 1.1.1.1 \
+    --Cname www.abc.com
 ```
 
 Output: 
@@ -21,56 +22,64 @@ Output:
     "Response": {
         "Rules": [
             {
-                "KeepTime": 1,
-                "HttpsToHttpEnable": 1,
-                "Status": 1,
-                "LbType": 1,
-                "CCLevel": "xx",
-                "CCEnable": 1,
-                "CCThreshold": 1,
                 "Region": 1,
-                "VirtualPort": 1,
+                "Id": "bgp-121",
+                "Ip": "1.1.1.1",
+                "RuleId": "idxxx",
+                "RuleName": "namexxx",
+                "Protocol": "http",
+                "Domain": "www.abc.com",
+                "LbType": 1,
+                "KeepEnable": 1,
+                "KeepTime": 1,
+                "SourceType": 1,
+                "CertType": 1,
+                "SSLId": "idxxx",
+                "Cert": "cert",
+                "PrivateKey": "key",
                 "SourceList": [
                     {
-                        "Source": "xx",
-                        "Weight": 1
-                    },
-                    {
-                        "Source": "xx",
-                        "Weight": 1
+                        "Source": "1.1.1.1",
+                        "Weight": 1,
+                        "Port": 1,
+                        "Backup": 1
                     }
                 ],
-                "Cert": "xx",
-                "KeepEnable": 1,
-                "ModifyTime": "2020-09-22 00:00:00",
-                "Domain": "xx",
-                "Protocol": "xx",
-                "SourceType": 1,
-                "RuleId": "xx",
-                "Ip": "xx",
-                "PrivateKey": "xx",
-                "CertType": 1,
-                "RuleName": "xx",
+                "Status": 1,
                 "CCStatus": 1,
-                "SSLId": "xx",
-                "Id": "xx"
+                "CCEnable": 1,
+                "CCThreshold": 1,
+                "CCLevel": "2",
+                "ModifyTime": "2020-09-22 00:00:00",
+                "HttpsToHttpEnable": 1,
+                "VirtualPort": 1,
+                "RewriteHttps": 1,
+                "ErrCode": 1,
+                "Version": 1
             }
         ],
         "Healths": [
             {
                 "Status": 1,
                 "Enable": 1,
-                "RuleId": "xx",
-                "Url": "xx",
+                "RuleId": "ruleid",
+                "Url": "url",
                 "Interval": 1,
                 "AliveNum": 1,
                 "KickNum": 1,
-                "Method": "xx",
-                "StatusCode": 1
+                "Method": "get",
+                "StatusCode": 1,
+                "ProtocolFlag": 1,
+                "PassiveEnable": 1,
+                "BlockInter": 1,
+                "FailedCountInter": 1,
+                "FailedThreshold": 1,
+                "PassiveStatusCode": 1,
+                "PassiveStatus": 1
             }
         ],
         "Total": 1,
-        "RequestId": "xx"
+        "RequestId": "08afbb87-5a2c-4562-acbd-eef06a47c7db"
     }
 }
 ```

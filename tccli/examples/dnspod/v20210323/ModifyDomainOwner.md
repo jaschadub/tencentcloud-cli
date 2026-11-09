@@ -1,13 +1,13 @@
 **Example 1: 域名过户**
 
-
+ 
 
 Input: 
 
 ```
 tccli dnspod ModifyDomainOwner --cli-unfold-argument  \
     --Domain dnspod.com \
-    --Account test@gmail.com
+    --Account 100000000328
 ```
 
 Output: 

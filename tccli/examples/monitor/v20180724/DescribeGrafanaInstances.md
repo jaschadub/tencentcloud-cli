@@ -11,8 +11,8 @@ tccli monitor DescribeGrafanaInstances --cli-unfold-argument  \
     --TagFilters.0.Key tagKeyTest \
     --TagFilters.0.Value tagValueTest \
     --InstanceStatus 2 \
-    --InstanceName xx \
-    --InstanceIds xx
+    --InstanceName myGrafana \
+    --InstanceIds grafana-ab***fgh
 ```
 
 Output: 
@@ -21,66 +21,66 @@ Output:
     "Response": {
         "InstanceSet": [
             {
+                "InstanceName": "myGrafana",
+                "InstanceId": "grafana-ab***fgh",
+                "Region": "ap-guangzhou",
+                "VpcId": "vpc-r9***9yo",
+                "VpcName": "",
+                "SubnetIds": [
+                    "subnet-ay***78h"
+                ],
+                "SubnetName": "",
+                "InternetUrl": "",
+                "InternalUrl": "1.0.0.1:8080",
+                "CreatedAt": "2020-09-22 00:00:00",
                 "InstanceStatus": 0,
-                "VpcId": "xx",
-                "RootUrl": "xx",
-                "Version": "xx",
-                "Zone": "xx",
                 "TagSpecification": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Key": "tagKeyTest",
+                        "Value": "tagValueTest"
                     }
                 ],
-                "InstanceId": "xx",
-                "SubnetIds": [
-                    "xx"
-                ],
-                "RegionId": 0,
                 "InstanceChargeType": 0,
-                "InternalUrl": "xx",
-                "VpcName": "xx",
-                "EnableSSOCamCheck": true,
-                "SubnetName": "xx",
-                "InternetUrl": "xx",
+                "RegionId": 1,
+                "RootUrl": "https://grafana-ab***fgh.grafana.tencent-cloud.com/",
                 "EnableSSO": true,
-                "InstanceName": "xx",
-                "Region": "xx",
-                "CreatedAt": "2020-09-22 00:00:00"
+                "EnableSSOCamCheck": true,
+                "Zone": "",
+                "Version": "v11.6.3"
             }
         ],
         "TotalCount": 1,
-        "RequestId": "xx",
         "Instances": [
             {
+                "InstanceName": "myGrafana",
+                "InstanceId": "grafana-ab***fgh",
+                "Region": "ap-guangzhou",
+                "VpcId": "vpc-r9***9yo",
+                "VpcName": "",
+                "SubnetIds": [
+                    "subnet-ay***78h"
+                ],
+                "SubnetName": "",
+                "InternetUrl": "",
+                "InternalUrl": "1.0.0.1:8080",
+                "CreatedAt": "2020-09-22 00:00:00",
                 "InstanceStatus": 0,
-                "VpcId": "xx",
-                "RootUrl": "xx",
-                "Version": "xx",
-                "Zone": "xx",
                 "TagSpecification": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Key": "tagKeyTest",
+                        "Value": "tagValueTest"
                     }
                 ],
-                "InstanceId": "xx",
-                "SubnetIds": [
-                    "xx"
-                ],
-                "RegionId": 0,
                 "InstanceChargeType": 0,
-                "InternalUrl": "xx",
-                "VpcName": "xx",
-                "EnableSSOCamCheck": true,
-                "SubnetName": "xx",
-                "InternetUrl": "xx",
+                "RegionId": 1,
+                "RootUrl": "https://grafana-ab***fgh.grafana.tencent-cloud.com/",
                 "EnableSSO": true,
-                "InstanceName": "xx",
-                "Region": "xx",
-                "CreatedAt": "2020-09-22 00:00:00"
+                "EnableSSOCamCheck": true,
+                "Zone": "",
+                "Version": "v11.6.3"
             }
-        ]
+        ],
+        "RequestId": "18cff5ac-9110-4512-abe2-5459804c9c35"
     }
 }
 ```

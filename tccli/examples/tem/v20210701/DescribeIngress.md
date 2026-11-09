@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tem DescribeIngress --cli-unfold-argument  \
-    --EnvironmentId xx \
-    --ClusterNamespace xx \
+    --EnvironmentId en-xxxxxx \
+    --ClusterNamespace default \
     --SourceChannel 0 \
-    --IngressName xx
+    --IngressName name-xxx
 ```
 
 Output: 
@@ -17,43 +17,45 @@ Output:
 {
     "Response": {
         "Result": {
-            "Tls": [
-                {
-                    "CertificateId": "xx",
-                    "Hosts": [
-                        "xxx.com"
-                    ],
-                    "SecretName": "xx"
-                }
-            ],
-            "EnvironmentId": "xx",
-            "ClusterNamespace": "xx",
+            "EnvironmentId": "en-xxxxxx",
+            "AddressIPVersion": "IPV4",
+            "IngressName": "ingress-name-xxx",
             "Rules": [
                 {
-                    "Protocol": "xx",
-                    "Host": "xx",
+                    "Host": "11.xx.xx.xx",
                     "Http": {
                         "Paths": [
                             {
-                                "Path": "xx",
+                                "Path": "/path",
                                 "Backend": {
-                                    "ServiceName": "xx",
-                                    "ServicePort": 443
+                                    "ServiceName": "svc-name-xxx",
+                                    "ServicePort": 8080
                                 }
                             }
                         ]
-                    }
+                    },
+                    "Protocol": "TCP"
                 }
             ],
-            "ClbId": "xx",
-            "ClusterId": "xx",
-            "IngressName": "xx",
-            "Vip": "xx",
+            "ClbId": "lb-xxx",
+            "ClusterNamespace": "default",
+            "Tls": [
+                {
+                    "Hosts": [
+                        "11.xx.xx.xx"
+                    ],
+                    "SecretName": "secret-name-xxx",
+                    "CertificateId": "certId-xxx"
+                }
+            ],
+            "ClusterId": "cls-xxxxxx",
+            "Vip": "11.xx.xx.xx",
+            "CreateTime": "2024-12-04 20:46:29",
             "Mixed": true,
-            "AddressIPVersion": "xx",
-            "CreateTime": "xx"
+            "RewriteType": "AUTO",
+            "Domain": ""
         },
-        "RequestId": "xx"
+        "RequestId": "abc-xxx-xxx-xxx"
     }
 }
 ```

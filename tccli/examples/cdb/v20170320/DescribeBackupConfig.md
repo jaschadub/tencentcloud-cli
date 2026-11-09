@@ -1,6 +1,6 @@
 **Example 1: 查询云数据库备份配置信息**
 
-
+查询云数据库备份配置信息
 
 Input: 
 
@@ -19,6 +19,9 @@ Output:
         "StartTimeMin": 10,
         "StartTimeMax": 14,
         "BackupTimeWindow": {
+            "BackupPeriodStrategy": "weekly",
+            "BackupPeriodTime": "00:00-12:00",
+            "Days": [],
             "Friday": "10:00-14:00",
             "Monday": "10:00-14:00",
             "Saturday": "10:00-14:00",
@@ -36,6 +39,10 @@ Output:
         "BackupArchiveDays": 180,
         "EnableBinlogArchive": "on",
         "BinlogArchiveDays": 180,
+        "EnableBackupStandby": "on",
+        "BackupStandbyDays": 30,
+        "EnableBinlogStandby": "on",
+        "BinlogStandbyDays": 30,
         "RequestId": "9d73ec37-89b8-4d36-9f40-123123123"
     }
 }

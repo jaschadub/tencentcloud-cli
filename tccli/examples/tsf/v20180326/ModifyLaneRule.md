@@ -1,4 +1,4 @@
-**Example 1: 更新泳道规则**
+**Example 1: 更新灰度发布规则**
 
 
 
@@ -6,20 +6,24 @@ Input:
 
 ```
 tccli tsf ModifyLaneRule --cli-unfold-argument  \
-    --RuleId 1 \
-    --RuleName 1 \
-    --Remark 1 \
-    --RuleTagList 1 \
+    --RuleId lane-r-yqg4kmbd \
+    --RuleName rule_app \
+    --Remark This is desc \
+    --RuleTagList.0.TagName user_tag \
+    --RuleTagList.0.TagOperator EQUAL \
+    --RuleTagList.0.TagValue 1 \
     --RuleTagRelationship RELEATION_AND \
-    --LaneId lane-fdsjakhfds \
-    --Enable 1
+    --LaneId lane-ap62k7ol \
+    --Enable True
 ```
 
 Output: 
 ```
 {
-    "RequestId": "e448ce99-83af-47cd-b422-a203aa18d862",
-    "Result": true
+    "Response": {
+        "RequestId": "3ab21a41-5ab1-4988-8092-904541aa6877",
+        "Result": true
+    }
 }
 ```
 

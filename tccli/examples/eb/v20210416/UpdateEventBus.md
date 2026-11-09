@@ -1,13 +1,13 @@
 **Example 1: 更新事件集**
 
-
+更新事件集
 
 Input: 
 
 ```
 tccli eb UpdateEventBus --cli-unfold-argument  \
-    --EventBusName test111 \
-    --EventBusId eb-l65vlc2
+    --EventBusName EventBusName \
+    --EventBusId eb-l6***c2
 ```
 
 Output: 

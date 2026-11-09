@@ -1,4 +1,4 @@
-**Example 1: 添加子用户**
+**Example 1: 创建子用户**
 
 
 
@@ -6,28 +6,24 @@ Input:
 
 ```
 tccli cam AddUser --cli-unfold-argument  \
-    --Name test124 \
-    --Remark test \
-    --ConsoleLogin 1 \
-    --UseApi 1 \
-    --Password test123456 \
-    --NeedResetPassword 0 \
-    --PhoneNum 10086 \
+    --Name c***** \
+    --PhoneNum 132*****828 \
     --CountryCode 86 \
-    --Email 123%40qq.com
+    --Email gavinh************t.com
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Uid": 5648765,
-        "Uin": 100000546533,
-        "Name": "test124",
-        "Password": "test123456",
-        "SecretId": "faweffewagwaegawe",
-        "SecretKey": "fawef23rjhiuaefhuaifhiuawef",
-        "RequestId": "b46d2afe-6893-4529-bc96-2c82d9214957"
+        "Name": "c*****",
+        "Password": "",
+        "PhoneNumVerifyLink": "https://cloud.tencent.com/cam/verifyPhone?token=81bf4ca3537447af****************",
+        "SecretId": "",
+        "SecretKey": "",
+        "Uid": 900000000,
+        "Uin": 700003000000,
+        "RequestId": "bfbeba3a-40a2-4eb9-b760-3fdf2c92170f"
     }
 }
 ```

@@ -6,13 +6,17 @@ Input:
 
 ```
 tccli tiia DetectLabelPro --cli-unfold-argument  \
-    --ImageUrl https://123.jpg
+    --ImageUrl https://cos.ap-singapore.myqcloud.com/input.png
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "FailedOperation.DownLoadError",
+            "Message": "下载失败"
+        },
         "RequestId": "a169390a-6ff3-4c42-ad25-a7858c35e576"
     }
 }
@@ -26,7 +30,7 @@ Input:
 
 ```
 tccli tiia DetectLabelPro --cli-unfold-argument  \
-    --ImageUrl https://test.jpg
+    --ImageUrl https://cos.ap-singapore.myqcloud.com/input.png
 ```
 
 Output: 

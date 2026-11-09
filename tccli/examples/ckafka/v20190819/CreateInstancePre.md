@@ -1,16 +1,26 @@
-**Example 1: 创建实例(预付费包年包月)**
+**Example 1: 创建一个预付费专业版实例**
 
-
+创建一个预付费专业版实例
 
 Input: 
 
 ```
 tccli ckafka CreateInstancePre --cli-unfold-argument  \
-    --MsgRetentionTime 1440 \
+    --InstanceName ckafka测试 \
+    --VpcId vpc-rmcgxxxx \
+    --SubnetId subnet-mnzcxxxx \
+    --ZoneId 450001 \
     --Period 1m \
-    --InstanceName test \
+    --RenewFlag 0 \
     --InstanceType 1 \
-    --ZoneId 100003
+    --KafkaVersion 2.4.1 \
+    --SpecificationsType profession \
+    --DiskSize 200 \
+    --BandWidth 20 \
+    --Partition 400 \
+    --DiskType CLOUD_PREMIUM \
+    --PublicNetworkMonthly 0 \
+    --CustomSSLCertId TPNd2oBB
 ```
 
 Output: 
@@ -18,17 +28,25 @@ Output:
 {
     "Response": {
         "Result": {
-            "ReturnCode": "0",
-            "ReturnMessage": "ok",
-            "DeleteRouteTimestamp": "xx",
             "Data": {
-                "FlowId": 0,
+                "DealNameInstanceIdMapping": [
+                    {
+                        "DealName": "20251204581021815942281",
+                        "InstanceIdList": [
+                            "ckafka-ma4ab5n5"
+                        ]
+                    }
+                ],
                 "DealNames": [
-                    "1111111111"
-                ]
-            }
+                    "20251204581021815942281"
+                ],
+                "FlowId": 0,
+                "InstanceId": "ckafka-ma4ab5n5"
+            },
+            "ReturnCode": "0",
+            "ReturnMessage": "ok"
         },
-        "RequestId": "1ba4ac83-1e9e-497b-b3e1-4c10872a4068"
+        "RequestId": "8c8050a7-ea8d-44f1-a00e-c09cd673afa3"
     }
 }
 ```

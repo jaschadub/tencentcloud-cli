@@ -7,8 +7,8 @@ Input:
 ```
 tccli cdb DescribeAccountPrivileges --cli-unfold-argument  \
     --InstanceId cdb-f35wr6wj \
-    --User ajnnw \
-    --Host 127.0.0.1
+    --Host 127.0.0.1 \
+    --User ajnnw
 ```
 
 Output: 
@@ -64,10 +64,11 @@ Output:
                     "CREATE",
                     "DROP"
                 ],
-                "Database": "jersey_test"
+                "Database": "jersey"
             }
         ]
-    }
+    },
+    "HasWithGrantOption": true
 }
 ```
 

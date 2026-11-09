@@ -1,12 +1,12 @@
 **Example 1: 运单识别示例代码**
 
-
+运单识别示例代码
 
 Input: 
 
 ```
 tccli ocr WaybillOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg
 ```
 
 Output: 

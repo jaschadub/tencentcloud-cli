@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DeleteRoute --cli-unfold-argument  \
-    --InstanceId xxx \
+    --InstanceId ckafka \
     --RouteId 1 \
     --CallerAppid 1
 ```
@@ -16,13 +16,16 @@ Output:
 {
     "Response": {
         "Result": {
-            "ReturnMessage": "xx",
-            "ReturnCode": "xx",
+            "ReturnMessage": "success",
+            "ReturnCode": "0",
             "Data": {
-                "FlowId": 0
+                "FlowId": 0,
+                "RouteDTO": {
+                    "RouteId": 0
+                }
             }
         },
-        "RequestId": "xx"
+        "RequestId": "3d0d9aeb-82f9-440a-ab9b-a016212c6fb0"
     }
 }
 ```

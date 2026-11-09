@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli privatedns DeletePrivateZoneRecord --cli-unfold-argument  \
-    --ZoneId zone-xxxxxx \
-    --RecordId 11111
+    --ZoneId zone-p0152fh2 \
+    --RecordId 2657842
 ```
 
 Output: 
@@ -27,8 +27,8 @@ Input:
 
 ```
 tccli privatedns DeletePrivateZoneRecord --cli-unfold-argument  \
-    --ZoneId zone-xxxxxx \
-    --RecordIdSet 10001 20201 33401 11111
+    --ZoneId zone-p0152fh2 \
+    --RecordIdSet 2657842 2657843
 ```
 
 Output: 

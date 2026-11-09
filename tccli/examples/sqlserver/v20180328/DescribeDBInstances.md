@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli sqlserver DescribeDBInstances --cli-unfold-argument  \
-    --ProjectId 0 \
-    --InstanceIdSet mssql-3l3fgqn7 \
     --Status 2 \
-    --VipSet 172.1.0.12 \
-    --InstanceNameSet 数仓 \
-    --VersionSet 2008R2 \
-    --Zone ap-guangzhou-2 \
-    --TagKeys 测试tag \
-    --Offset 0 \
-    --Limit 3 \
-    --PayMode 1 \
+    --SearchKey 172.17.0.12 \
     --VpcId vpc-mknbt351 \
+    --Zone ap-guangzhou-3 \
+    --VersionSet 2008R2 \
+    --ProjectId 0 \
+    --Offset 0 \
+    --PayMode 1 \
+    --Limit 3 \
+    --InstanceIdSet mssql-3l3fgqn7 \
     --SubnetId subnet-f72hylo6 \
-    --SearchKey 172.17.0.12
+    --TagKeys 测试tag \
+    --VipSet 172.1.0.12 \
+    --InstanceNameSet 数仓
 ```
 
 Output: 
@@ -28,60 +28,80 @@ Output:
     "Response": {
         "DBInstances": [
             {
-                "BackupModel": "master_pkg",
-                "BackupTime": "06:15:15",
-                "Cpu": 1,
-                "CreateTime": "2021-05-07 15:26:58",
+                "Architecture": "MULTI",
+                "BackupCycle": [
+                    1
+                ],
+                "BackupCycleType": "daily",
+                "BackupModel": "master_no_pkg",
+                "BackupSaveDays": 7,
+                "BackupTime": "00:15:15",
+                "Collation": "Chinese_PRC_CI_AS",
+                "Cpu": 2,
+                "CreateTime": "2024-09-26 20:00:59",
+                "CrossBackupEnabled": "disable",
+                "CrossBackupSaveDays": 0,
+                "CrossRegions": [],
+                "DnsPodDomain": "",
                 "EndTime": "0000-00-00 00:00:00",
                 "HAFlag": "MIRROR",
-                "InstanceId": "mssql-m0031jhf",
+                "InstanceId": "mssql-25psend9",
+                "InstanceNote": "",
+                "InstanceType": "cvmMultiHA",
+                "IsDrZone": true,
                 "IsolateOperator": "",
                 "IsolateTime": "0000-00-00 00:00:00",
-                "Memory": 2,
-                "Model": 1,
-                "Name": "2008_1",
+                "Memory": 4,
+                "Model": 7,
+                "MultiSlaveZones": [
+                    {
+                        "DrInstanceId": "mssqldr-phqpv3mz",
+                        "SlaveZone": "ap-guangzhou-3",
+                        "SlaveZoneName": "广州三区"
+                    },
+                    {
+                        "DrInstanceId": "mssqldr-6fcqb0vd",
+                        "SlaveZone": "ap-guangzhou-3",
+                        "SlaveZoneName": "广州三区"
+                    }
+                ],
+                "Name": "ac9488be-9cd7-4db9-93f0-d698795833db",
                 "PayMode": 0,
-                "Pid": 10908,
+                "Pid": 1038028,
                 "ProjectId": 0,
                 "ROFlag": "",
                 "Region": "ap-guangzhou",
                 "RegionId": 1,
                 "RenewFlag": 0,
                 "ResourceTags": null,
-                "StartTime": "2021-05-07 15:26:58",
+                "SlaveZones": {
+                    "SlaveZone": "",
+                    "SlaveZoneName": ""
+                },
+                "StartTime": "2024-09-26 20:00:59",
                 "Status": 2,
-                "Storage": 10,
+                "Storage": 20,
+                "Style": "EXCLUSIVE",
                 "SubFlag": "",
-                "SubnetId": 29802,
-                "Type": "TS85",
-                "Uid": "gamedb.gz570.cdb.db",
-                "UniqSubnetId": "subnet-57pxp1bq",
-                "UniqVpcId": "vpc-3p65tezp",
-                "UpdateTime": "2021-05-07 16:56:15",
+                "SubnetId": 2920039,
+                "TgwWanVPort": 0,
+                "TimeZone": "China Standard Time",
+                "Type": "CLOUD_BSSD",
+                "Uid": "gamedb.gz1000432.mssql.db",
+                "UniqSubnetId": "subnet-1qz3tgim",
+                "UniqVpcId": "vpc-idmq8dwn",
+                "UpdateTime": "2024-09-26 20:30:29",
                 "UsedStorage": 0,
-                "Version": "2008R2",
-                "VersionName": "SQL Server 2008 Enterprise",
-                "Vip": "172.16.1.116",
-                "VpcId": 206194,
+                "Version": "2017",
+                "VersionName": "SQL Server 2017 Enterprise",
+                "Vip": "172.16.64.6",
+                "VpcId": 81006,
                 "Vport": 1433,
-                "Zone": "ap-guangzhou-2",
-                "ZoneId": 100002,
-                "BackupSaveDays": 7,
-                "BackupCycleType": "weekly",
-                "InstanceNote": "test",
-                "InstanceType": "HA",
-                "BackupCycle": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5,
-                    6,
-                    7
-                ]
+                "Zone": "ap-guangzhou-6",
+                "ZoneId": 100006
             }
         ],
-        "RequestId": "de641788-0565-4617-a7f4-639de128772b",
+        "RequestId": "eca79e80-7c7a-11ef-95d0-525400853186",
         "TotalCount": 1
     }
 }

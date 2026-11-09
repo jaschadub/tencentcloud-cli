@@ -1,12 +1,12 @@
 **Example 1: 查询套餐-成功返回**
 
-
+查询套餐-成功返回
 
 Input: 
 
 ```
 tccli lighthouse DescribeBundles --cli-unfold-argument  \
-    --BundleIds bundle_bw_small1_1 bundle_ntp_small1_500
+    --BundleIds bundle_ntp_small1_500 bundle_bw_small1_1
 ```
 
 Output: 
@@ -15,54 +15,83 @@ Output:
     "Response": {
         "BundleSet": [
             {
-                "BundleId": "bundle_bw_small1_1",
-                "CPU": 1,
-                "Memory": 1,
+                "BundleId": "bundle2022_gen_02",
+                "CPU": 2,
+                "Memory": 2,
                 "SystemDiskType": "CLOUD_SSD",
-                "SystemDiskSize": 20,
-                "InternetMaxBandwidthOut": 1,
-                "InternetChargeType": "BANDWIDTH_POSTPAID_BY_HOUR",
-                "MonthlyTraffic": 1,
-                "Price": {
-                    "InstancePrice": {
-                        "OriginalBundlePrice": 60,
-                        "OriginalPrice": 60,
-                        "Discount": 65,
-                        "DiscountPrice": 39
-                    }
-                },
-                "SupportLinuxUnixPlatform": true,
-                "SupportWindowsPlatform": false,
-                "BundleType": "GENERAL_BUNDLE",
-                "BundleSalesState": "AVAILABLE",
-                "BundleDisplayLabel": "NORMAL"
-            },
-            {
-                "BundleId": "bundle_ntp_small1_500",
-                "CPU": 1,
-                "Memory": 1,
-                "SystemDiskType": "CLOUD_SSD",
-                "SystemDiskSize": 40,
-                "InternetMaxBandwidthOut": 3,
+                "SystemDiskSize": 50,
+                "InternetMaxBandwidthOut": 5,
                 "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
                 "MonthlyTraffic": 500,
                 "Price": {
                     "InstancePrice": {
-                        "OriginalBundlePrice": 90,
-                        "OriginalPrice": 90,
-                        "Discount": 65,
-                        "DiscountPrice": 58.5
+                        "Currency": "CNY",
+                        "OriginalBundlePrice": 60,
+                        "OriginalPrice": 60,
+                        "Discount": 66.229933,
+                        "DiscountPrice": 39.74
                     }
                 },
                 "SupportLinuxUnixPlatform": true,
                 "SupportWindowsPlatform": true,
                 "BundleType": "GENERAL_BUNDLE",
+                "BundleTypeDescription": "通用型",
                 "BundleSalesState": "AVAILABLE",
                 "BundleDisplayLabel": "NORMAL"
             }
         ],
-        "TotalCount": 2,
-        "RequestId": "6d4c966d-bc42-4425-8c98-a39f36c7ad1b"
+        "TotalCount": 1,
+        "RequestId": "b2563b1d-e93f-4e05-9c6f-096e0c403add"
+    }
+}
+```
+
+**Example 2: 查询套餐时指定镜像**
+
+查询套餐时指定镜像
+
+Input: 
+
+```
+tccli lighthouse DescribeBundles --cli-unfold-argument  \
+    --BundleIds bundle_starter_mc_med2_01 \
+    --BlueprintId lhbp-etg1zbmm
+```
+
+Output: 
+```
+{
+    "Response": {
+        "BundleSet": [
+            {
+                "BundleDisplayLabel": "NORMAL",
+                "BundleId": "bundle_starter_mc_med2_01",
+                "BundleSalesState": "SOLD_OUT",
+                "BundleType": "STARTER_BUNDLE",
+                "BundleTypeDescription": "入门型",
+                "CPU": 2,
+                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                "InternetMaxBandwidthOut": 3,
+                "Memory": 2,
+                "MonthlyTraffic": 200,
+                "Price": {
+                    "InstancePrice": {
+                        "Currency": "CNY",
+                        "Discount": 100,
+                        "DiscountPrice": 40,
+                        "OriginalBundlePrice": 40,
+                        "OriginalPrice": 40
+                    }
+                },
+                "SupportLinuxUnixPlatform": true,
+                "SupportWindowsPlatform": true,
+                "SystemDiskSize": 40,
+                "SystemDiskType": "CLOUD_SSD",
+                "TrafficUnlimited": false
+            }
+        ],
+        "TotalCount": 1,
+        "RequestId": "34069df6-5f6c-4a7e-9895-6bd266d67e7d"
     }
 }
 ```

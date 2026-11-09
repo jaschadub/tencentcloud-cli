@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ivld DeleteMedia --cli-unfold-argument  \
-    --MediaId media-12345678
+    --MediaId media-2aHsU6sj
 ```
 
 Output: 
@@ -26,14 +26,18 @@ Input:
 
 ```
 tccli ivld DeleteMedia --cli-unfold-argument  \
-    --MediaId media-a1b2c3d4
+    --MediaId media-2aHsU6sj
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "4d608fa8-66a3-4a25-94ce-1b904d4807f3"
+        "RequestId": "4d608fa8-66a3-4a25-94ce-1b904d4807f3",
+        "Error": {
+            "Code": "ResourceNotFound.MediaNotFound",
+            "Message": "媒资不存在"
+        }
     }
 }
 ```

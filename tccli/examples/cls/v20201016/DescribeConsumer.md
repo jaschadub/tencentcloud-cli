@@ -1,36 +1,44 @@
 **Example 1: 获取投递配置**
 
-
+获取投递配置
 
 Input: 
 
 ```
 tccli cls DescribeConsumer --cli-unfold-argument  \
-    --TopicId xxx-xxx-xxx-xxx
+    --TopicId bowwwang-json-test-1254139626
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx",
-        "Effective": true,
         "Ckafka": {
-            "Vip": "10.123.123.123",
-            "Vport": "8888",
-            "InstanceId": "xxxxx",
-            "InstanceName": "myname",
-            "TopicId": "xxxxx",
-            "TopicName": "xxxxx"
+            "InstanceId": "ckafka-8j4ro593",
+            "InstanceName": "kafka协议消费***(******测试******",
+            "TopicId": "topic-78joudry",
+            "TopicName": "ri****st",
+            "Vip": "10.***.**",
+            "Vport": "90**"
         },
+        "Compression": 0,
         "Content": {
+            "AutoConvertNumber": false,
             "EnableTag": true,
+            "JsonType": 1,
             "MetaFields": [
                 "__SOURCE__"
-            ]
+            ],
+            "TagJsonNotTiled": false,
+            "TimestampAccuracy": 2
         },
+        "CreateTime": 1729504453000,
+        "Effective": false,
+        "ExternalId": "",
         "NeedContent": true,
-        "Compression": 0
+        "RoleArn": "",
+        "TaskStatus": 0,
+        "RequestId": "530f50db-ae27-4438-8d6b-bca035faebc9"
     }
 }
 ```

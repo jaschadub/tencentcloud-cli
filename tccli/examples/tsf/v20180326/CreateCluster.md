@@ -1,25 +1,25 @@
 **Example 1: 创建集群**
 
-
+创建集群
 
 Input: 
 
 ```
 tccli tsf CreateCluster --cli-unfold-argument  \
+    --VpcId vpc-6a79x94v \
     --ClusterName DEMO-DOCKER \
-    --TsfRegionId ap-guangzhou \
     --TsfZoneId 100004 \
     --ClusterType C \
-    --VpcId vpc-xxxxxxx \
-    --ClusterCIDR 172.16.0.0/16
+    --ClusterCIDR 172.16.0.0/16 \
+    --TsfRegionId ap-guangzhou
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "c33a0bd5-f41a-4ac5-8480-e31fa972ec7e",
-        "Result": true
+        "Result": "cluster-6a79x94v",
+        "RequestId": "96561cf1-738a-47d6-943b-dec7ebbccabe"
     }
 }
 ```

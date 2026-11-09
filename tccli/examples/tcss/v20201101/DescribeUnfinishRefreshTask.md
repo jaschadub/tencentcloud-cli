@@ -11,9 +11,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "e7e5ce68-b074-4fb7-8354-f2b87260063e",
-        "TaskId": 0,
-        "TaskStatus": "Task_NoExist"
+        "TaskId": 1,
+        "TaskStatus": "AssetCheckFinished",
+        "NewTaskID": "1700157600010579384",
+        "RequestId": "f249013b-c9ca-444c-8430-2f97a422859a"
     }
 }
 ```

@@ -18,7 +18,7 @@ Output:
 {
     "Response": {
         "RequestId": "a1df9725-51c6-466d-a038-4c86461a8e26",
-        "TotalCount": 3,
+        "TotalCount": 1,
         "InvocationTaskSet": [
             {
                 "CommandId": "cmd-13axrtuq",
@@ -27,36 +27,9 @@ Output:
                     "CommandType": "SHELL",
                     "Timeout": 1,
                     "Username": "root",
-                    "WorkingDirectory": "/root/"
-                },
-                "InvocationId": "inv-1vll7hda",
-                "InvocationTaskId": "invt-afwuqts2",
-                "TaskStatus": "SUCCESS",
-                "InstanceId": "ins-zj0f57ev",
-                "TaskResult": {
-                    "ExitCode": 0,
-                    "Output": "cm9vdAo=",
-                    "Dropped": 0,
-                    "OutputUploadCOSErrorInfo": "",
-                    "OutputUrl": "",
-                    "ExecStartTime": "2020-11-05T07:49:58+00:00",
-                    "ExecEndTime": "2020-11-05T07:50:04+00:00"
-                },
-                "ErrorInfo": "",
-                "InvocationSource": "xx",
-                "StartTime": "2020-11-05T07:49:58+00:00",
-                "EndTime": "2020-11-05T07:50:04+00:00",
-                "CreatedTime": "2020-11-05T07:49:56+00:00",
-                "UpdatedTime": "2020-11-05T07:50:06+00:00"
-            },
-            {
-                "CommandId": "cmd-13axrtuq",
-                "CommandDocument": {
-                    "Content": "d2hvYW1p",
-                    "CommandType": "SHELL",
-                    "Timeout": 1,
-                    "Username": "root",
-                    "WorkingDirectory": "/root/"
+                    "WorkingDirectory": "/root/",
+                    "OutputCOSBucketUrl": "https://example-123456789.cos.ap-beijing.myqcloud.com",
+                    "OutputCOSKeyPrefix": "datalog"
                 },
                 "InvocationId": "inv-1vll7hda",
                 "InvocationTaskId": "invt-08oe5fe2",
@@ -72,36 +45,7 @@ Output:
                     "ExecEndTime": "2020-11-05T07:50:04+00:00"
                 },
                 "ErrorInfo": "",
-                "InvocationSource": "xx",
-                "StartTime": "2020-11-05T07:49:58+00:00",
-                "EndTime": "2020-11-05T07:50:04+00:00",
-                "CreatedTime": "2020-11-05T07:49:56+00:00",
-                "UpdatedTime": "2020-11-05T07:50:06+00:00"
-            },
-            {
-                "CommandId": "cmd-13axrtuq",
-                "CommandDocument": {
-                    "Content": "d2hvYW1p",
-                    "CommandType": "SHELL",
-                    "Timeout": 1,
-                    "Username": "root",
-                    "WorkingDirectory": "/root/"
-                },
-                "InvocationId": "inv-1vll7hda",
-                "InvocationTaskId": "invt-91cpqs22",
-                "TaskStatus": "SUCCESS",
-                "InstanceId": "ins-zj0f57ew",
-                "TaskResult": {
-                    "ExitCode": 0,
-                    "Output": "cm9vdAo=",
-                    "Dropped": 0,
-                    "OutputUploadCOSErrorInfo": "",
-                    "OutputUrl": "",
-                    "ExecStartTime": "2020-11-05T07:49:58+00:00",
-                    "ExecEndTime": "2020-11-05T07:50:04+00:00"
-                },
-                "ErrorInfo": "",
-                "InvocationSource": "xx",
+                "InvocationSource": "user",
                 "StartTime": "2020-11-05T07:49:58+00:00",
                 "EndTime": "2020-11-05T07:50:04+00:00",
                 "CreatedTime": "2020-11-05T07:49:56+00:00",

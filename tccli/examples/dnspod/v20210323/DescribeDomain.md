@@ -1,50 +1,57 @@
 **Example 1: 获取域名信息**
 
-
+ 
 
 Input: 
 
 ```
 tccli dnspod DescribeDomain --cli-unfold-argument  \
-    --Domain dnspod.com
+    --Domain dnspod.cn
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "ab4f1426-ea15-42ea-8183-dc1b44151166",
         "DomainInfo": {
-            "DnspodNsList": [
-                "source.dnspod.net",
-                "low.dnspod.net"
-            ],
-            "ActualNsList": [
-                "f1g1ns1.dnspod.net",
-                "f1g1ns2.dnspod.net"
-            ],
-            "RecordCount": 2,
-            "DomainId": 61,
+            "ActualNsList": [],
+            "CnameSpeedup": "disable",
+            "CreatedOn": "2023-03-21 17:27:40",
             "DnsStatus": "dnserror",
-            "IsVip": "no",
-            "Punycode": "tencent8.com",
+            "DnspodNsList": [
+                "temporary.dnspod.net",
+                "barman.dnspod.net"
+            ],
+            "Domain": "dnspod.cn",
+            "DomainId": 12620688,
             "Grade": "DP_FREE",
             "GradeLevel": 2,
             "GradeTitle": "免费版",
-            "Status": "enable",
             "GroupId": 1,
+            "IsGracePeriod": "no",
             "IsMark": "no",
+            "IsSubDomain": false,
+            "IsVip": "no",
+            "Owner": "qcloud_uin_100000******@qcloud.com",
+            "OwnerNick": "昵称",
+            "Punycode": "dnspod.cn",
+            "RecordCount": 182761,
             "Remark": "",
-            "UserId": 1,
-            "CreatedOn": "2021-04-06 15:51:45",
-            "UpdatedOn": "2021-04-06 15:51:45",
+            "SearchEnginePush": "no",
+            "SlaveDNS": "no",
+            "Status": "enable",
             "TTL": 600,
-            "Owner": "qcloud_uin_100000014226@qcloud.com",
-            "CnameSpeedup": "disable",
-            "Uin": "100000014226",
-            "OwnerNick": "Loccsser",
-            "Domain": "tencent8.com"
-        }
+            "TagList": [],
+            "Uin": "100000******",
+            "UpdatedOn": "2024-12-30 10:16:57",
+            "UserId": 5301126,
+            "VipAutoRenew": null,
+            "VipBuffered": "no",
+            "VipEndAt": null,
+            "VipResourceId": null,
+            "VipStartAt": null
+        },
+        "RequestId": "c1ea5ee3-aa4b-446e-a42d-859b9461487b"
     }
 }
 ```

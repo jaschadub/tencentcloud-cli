@@ -1,61 +1,47 @@
-**Example 1: 调用示例**
+**Example 1: jpg文件转换示例**
 
-
+适用场景：将jpg文件转换为pdf
 
 Input: 
 
 ```
 tccli ess CreateConvertTaskApi --cli-unfold-argument  \
-    --ResourceType doc \
-    --ResourceId yDRvQUUgygqt75qpUuO4zjERW6iCFCEl \
-    --Organization.OrganizationOpenId  \
-    --Organization.OrganizationId  \
-    --Organization.ClientIp  \
-    --Organization.ProxyIp  \
-    --Organization.Channel  \
-    --Operator.ProxyIp  \
-    --Operator.ClientIp 8.8.8.8 \
-    --Operator.UserId yDxHyUyKQDHrGYUuO4zjEEGgzwY0Ak1p \
-    --Operator.Channel  \
-    --Operator.OpenId  \
-    --ResourceName hello.docx
+    --ResourceType jpg \
+    --ResourceName 合同图片.jpg \
+    --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
+    --ResourceId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "b2eae803-fe6e-4b1c-8901-c61cfaf19a21",
-        "TaskId": "20220726175923011294"
+        "RequestId": "d245a68d-e13b-xxxx-xxxx-e5adc794db24",
+        "TaskId": "202xxxx3011294"
     }
 }
 ```
 
-**Example 2: test示例**
+**Example 2: word文件转换示例**
 
-
+适用场景：将docx文件转换为pdf
 
 Input: 
 
 ```
 tccli ess CreateConvertTaskApi --cli-unfold-argument  \
-    --ResourceType doc \
-    --ResourceName hello.docx \
-    --Operator.ProxyIp 8.8.8.8 \
-    --Operator.ClientIp 8.8.8.8 \
-    --Operator.UserId yDxoQUUgydjfn4yaUuO4zjEyd1h2hnnR \
-    --Organization.OrganizationId 682c1d5bdce884ad3df5ba5fabb6fcf1 \
-    --Organization.ClientIp 8.8.8.8 \
-    --Organization.ProxyIp 8.8.8.8 \
-    --ResourceId yDRvQUUgygqt75qpUuO4zjERW6iCFCEl
+    --ResourceType docx \
+    --ResourceName 员工劳动合同.docx \
+    --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
+    --ResourceId yDRSRUUgygj6qnyvUuO4zjE1vLuGdWjL
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "fbf25f31-1b45-4ed5-9b45-8afed19e9849",
-        "TaskId": "20220728163549202141"
+        "RequestId": "d245a68d-e13b-xxxx-xxxx-e5adc794db24",
+        "TaskId": "20220xxxx549202141"
     }
 }
 ```

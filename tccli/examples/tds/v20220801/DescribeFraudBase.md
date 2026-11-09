@@ -1,4 +1,4 @@
-**Example 1: 查询设备标识**
+**Example 1: 查询设备风险**
 
 
 
@@ -6,23 +6,30 @@ Input:
 
 ```
 tccli tds DescribeFraudBase --cli-unfold-argument  \
-    --DeviceToken xx
+    --DeviceToken v3:AVbaFsoWz9V5oORxxxxxxxxx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Brand": "xx",
-        "SdkBuildNo": "xx",
-        "AppVersion": "xx",
-        "Platform": "xx",
-        "SystemVersion": "xx",
-        "RequestId": "xx",
-        "NetworkType": "xx",
-        "Model": "xx",
-        "PackageName": "xx",
-        "ClientIp": "xx",
+        "Brand": "HONOR",
+        "SdkBuildNo": "75",
+        "AppVersion": "1.0.0",
+        "Platform": "2",
+        "SystemVersion": "10",
+        "RequestId": "19a13dc5-1c2c-4d0e-bd08-13534b53c8f4",
+        "NetworkType": "0",
+        "Model": "LLD-AL20",
+        "PackageName": "a.b.c",
+        "ClientIp": "223.73.63.151",
+        "ExtraInfos": [
+            {
+                "Key": "DegradationType",
+                "Value": "2"
+            }
+        ],
+        "RiskCheckTimestamp": "1774319387108",
         "RiskInfos": [
             {
                 "Type": 201,

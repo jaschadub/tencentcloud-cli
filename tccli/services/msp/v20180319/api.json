@@ -1,46 +1,53 @@
 {
   "actions": {
     "DeregisterMigrationTask": {
-      "document": "取消注册迁移任务",
+      "document": "接口已经废弃不再使用\n\n取消注册迁移任务",
       "input": "DeregisterMigrationTaskRequest",
       "name": "取消注册迁移任务",
-      "output": "DeregisterMigrationTaskResponse"
+      "output": "DeregisterMigrationTaskResponse",
+      "status": "deprecated"
     },
     "DescribeMigrationTask": {
       "document": "获取指定迁移任务详情",
       "input": "DescribeMigrationTaskRequest",
       "name": "获取指定迁移任务详情",
-      "output": "DescribeMigrationTaskResponse"
+      "output": "DescribeMigrationTaskResponse",
+      "status": "online"
     },
     "ListMigrationProject": {
       "document": "获取迁移项目名称列表",
       "input": "ListMigrationProjectRequest",
       "name": "获取迁移项目名称列表",
-      "output": "ListMigrationProjectResponse"
+      "output": "ListMigrationProjectResponse",
+      "status": "online"
     },
     "ListMigrationTask": {
       "document": "获取迁移任务列表",
       "input": "ListMigrationTaskRequest",
       "name": "获取迁移任务列表",
-      "output": "ListMigrationTaskResponse"
+      "output": "ListMigrationTaskResponse",
+      "status": "online"
     },
     "ModifyMigrationTaskBelongToProject": {
       "document": "更改迁移任务所属项目",
       "input": "ModifyMigrationTaskBelongToProjectRequest",
       "name": "更改迁移任务所属项目",
-      "output": "ModifyMigrationTaskBelongToProjectResponse"
+      "output": "ModifyMigrationTaskBelongToProjectResponse",
+      "status": "online"
     },
     "ModifyMigrationTaskStatus": {
       "document": "更新迁移任务状态",
       "input": "ModifyMigrationTaskStatusRequest",
       "name": "更新迁移任务状态",
-      "output": "ModifyMigrationTaskStatusResponse"
+      "output": "ModifyMigrationTaskStatusResponse",
+      "status": "online"
     },
     "RegisterMigrationTask": {
       "document": "注册迁移任务",
       "input": "RegisterMigrationTaskRequest",
       "name": "注册迁移任务",
-      "output": "RegisterMigrationTaskResponse"
+      "output": "RegisterMigrationTaskResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -54,8 +61,9 @@
       "document": "DeregisterMigrationTask请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务ID",
+          "example": "",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -68,7 +76,7 @@
       "document": "DeregisterMigrationTask返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -80,8 +88,9 @@
       "document": "DescribeMigrationTask请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务ID，例如msp-jitoh33n",
+          "example": "",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -94,14 +103,16 @@
       "document": "DescribeMigrationTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "迁移详情列表",
+          "example": "",
           "member": "TaskStatus",
           "name": "TaskStatus",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -113,8 +124,9 @@
       "document": "迁移目的信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移目的地域",
+          "example": "",
           "member": "string",
           "name": "Region",
           "required": false,
@@ -122,8 +134,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移目的Ip",
+          "example": "",
           "member": "string",
           "name": "Ip",
           "required": false,
@@ -131,8 +144,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移目的端口",
+          "example": "",
           "member": "string",
           "name": "Port",
           "required": false,
@@ -140,8 +154,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移目的实例Id",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -155,16 +170,18 @@
       "document": "ListMigrationProject请求参数结构体",
       "members": [
         {
-          "default": "0",
+          "disabled": false,
           "document": "记录起始数，默认值为0",
+          "example": "",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "500",
+          "disabled": false,
           "document": "返回条数，默认值为500",
+          "example": "",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -177,21 +194,25 @@
       "document": "ListMigrationProject返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "项目列表",
+          "example": "",
           "member": "Project",
           "name": "Projects",
           "type": "list",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "项目总数",
+          "example": "",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -203,24 +224,27 @@
       "document": "ListMigrationTask请求参数结构体",
       "members": [
         {
-          "default": "0",
+          "disabled": false,
           "document": "记录起始数，默认值为0",
+          "example": "",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "10",
+          "disabled": false,
           "document": "记录条数，默认值为10",
+          "example": "",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "项目ID，默认值为空",
+          "example": "",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -233,21 +257,25 @@
       "document": "ListMigrationTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "记录总条数",
+          "example": "",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "迁移任务列表",
+          "example": "",
           "member": "Task",
           "name": "Tasks",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -259,16 +287,18 @@
       "document": "ModifyMigrationTaskBelongToProject请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务ID，例如msp-jitoh33n",
+          "example": "",
           "member": "string",
           "name": "TaskId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "项目ID，例如10005",
+          "example": "",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -281,7 +311,7 @@
       "document": "ModifyMigrationTaskBelongToProject返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -293,16 +323,18 @@
       "document": "ModifyMigrationTaskStatus请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务状态，取值为unstart，migrating，finish，fail之一，分别代表该迁移任务状态为迁移未开始，迁移中，迁移完成，迁移失败",
+          "example": "",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务ID，例如msp-jitoh33n",
+          "example": "",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -315,7 +347,7 @@
       "document": "ModifyMigrationTaskStatus返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -327,8 +359,9 @@
       "document": "列表类型",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "项目ID",
+          "example": "",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -336,8 +369,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "项目名称",
+          "example": "",
           "member": "string",
           "name": "ProjectName",
           "required": true,
@@ -351,96 +385,108 @@
       "document": "RegisterMigrationTask请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务类型，取值database（数据库迁移）、file（文件迁移）、host（主机迁移）",
+          "example": "",
           "member": "string",
           "name": "TaskType",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务名称",
+          "example": "",
           "member": "string",
           "name": "TaskName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "服务提供商名称",
+          "example": "",
           "member": "string",
           "name": "ServiceSupplier",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移任务创建时间",
+          "example": "",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移任务更新时间",
+          "example": "",
           "member": "datetime",
           "name": "UpdateTime",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移类别，如数据库迁移中mysql:mysql代表从mysql迁移到mysql，文件迁移中oss:cos代表从阿里云oss迁移到腾讯云cos",
+          "example": "",
           "member": "string",
           "name": "MigrateClass",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移任务源信息",
+          "example": "",
           "member": "SrcInfo",
           "name": "SrcInfo",
           "required": false,
           "type": "object"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移任务目的信息",
+          "example": "",
           "member": "DstInfo",
           "name": "DstInfo",
           "required": false,
           "type": "object"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "源实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)",
+          "example": "",
           "member": "string",
           "name": "SrcAccessType",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "源实例数据库类型，数据库迁移时填写，取值为mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb 之一",
+          "example": "",
           "member": "string",
           "name": "SrcDatabaseType",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "目标实例接入类型，数据库迁移时填写值为：extranet(外网),cvm(cvm自建实例),dcg(专线接入的实例),vpncloud(云vpn接入的实例),vpnselfbuild(自建vpn接入的实例)，cdb(云上cdb实例)",
+          "example": "",
           "member": "string",
           "name": "DstAccessType",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "目标实例数据库类型,数据库迁移时填写，取值为mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb 之一",
+          "example": "",
           "member": "string",
           "name": "DstDatabaseType",
           "required": false,
@@ -453,14 +499,16 @@
       "document": "RegisterMigrationTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务ID",
+          "example": "",
           "member": "string",
           "name": "TaskId",
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -472,8 +520,9 @@
       "document": "迁移源信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移源地域",
+          "example": "",
           "member": "string",
           "name": "Region",
           "required": false,
@@ -481,8 +530,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移源Ip",
+          "example": "",
           "member": "string",
           "name": "Ip",
           "required": false,
@@ -490,8 +540,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移源端口",
+          "example": "",
           "member": "string",
           "name": "Port",
           "required": false,
@@ -499,8 +550,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移源实例Id",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -514,8 +566,9 @@
       "document": "迁移任务类别",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务Id",
+          "example": "",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -523,8 +576,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务名称",
+          "example": "",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -532,8 +586,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移类型",
+          "example": "",
           "member": "string",
           "name": "MigrationType",
           "required": true,
@@ -541,8 +596,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移状态",
+          "example": "",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -550,8 +606,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "项目Id",
+          "example": "",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -559,8 +616,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "项目名称",
+          "example": "",
           "member": "string",
           "name": "ProjectName",
           "required": true,
@@ -568,8 +626,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移源信息",
+          "example": "",
           "member": "SrcInfo",
           "name": "SrcInfo",
           "required": true,
@@ -577,8 +636,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移时间信息",
+          "example": "",
           "member": "TimeObj",
           "name": "MigrationTimeLine",
           "required": true,
@@ -586,8 +646,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "状态更新时间",
+          "example": "",
           "member": "datetime",
           "name": "Updated",
           "required": true,
@@ -595,8 +656,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移目的信息",
+          "example": "",
           "member": "DstInfo",
           "name": "DstInfo",
           "required": true,
@@ -610,8 +672,9 @@
       "document": "迁移详情列表",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移状态",
+          "example": "",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -619,8 +682,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移进度",
+          "example": "",
           "member": "string",
           "name": "Progress",
           "required": true,
@@ -628,8 +692,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "迁移日期",
+          "example": "",
           "member": "datetime",
           "name": "UpdateTime",
           "required": true,
@@ -643,8 +708,9 @@
       "document": "时间对象",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "创建时间",
+          "example": "",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -652,8 +718,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "结束时间",
+          "example": "",
           "member": "datetime",
           "name": "EndTime",
           "required": true,

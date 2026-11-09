@@ -1,15 +1,15 @@
 **Example 1: 互动直播、CDN业务按日期获取用量明细**
 
-
+互动直播、CDN业务按日期获取用量明细
 
 Input: 
 
 ```
 tccli billing DescribeDosageDetailByDate --cli-unfold-argument  \
     --StartDate 2019-01-01 \
+    --Domain www.gdxxb.com \
     --EndDate 2019-01-01 \
-    --ProductCode 10181 \
-    --Domain www.gdxxb.com
+    --ProductCode 102383
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "RetCode": 0,
-        "RetMsg": "",
+        "RetMsg": "ok",
         "Unit": "bps",
         "DetailSets": [
             {
@@ -38,16 +38,16 @@ Output:
 
 **Example 2: CLB、EIP，视频直播业务按日期获取用量明细**
 
-
+CLB、EIP，视频直播业务按日期获取用量明细
 
 Input: 
 
 ```
 tccli billing DescribeDosageDetailByDate --cli-unfold-argument  \
     --StartDate 2019-01-01 \
+    --Domain lb-1zvuxyml \
     --EndDate 2019-01-01 \
-    --ProductCode 10181 \
-    --Domain ' ""'
+    --ProductCode 102383
 ```
 
 Output: 
@@ -55,11 +55,11 @@ Output:
 {
     "Response": {
         "RetCode": 0,
-        "RetMsg": "",
+        "RetMsg": "ok",
         "Unit": "GB",
         "DetailSets": [
             {
-                "Domain": "",
+                "Domain": "lb-1zvuxyml",
                 "InstanceID": "lb-1zvuxyml",
                 "DetailPoints": [
                     {

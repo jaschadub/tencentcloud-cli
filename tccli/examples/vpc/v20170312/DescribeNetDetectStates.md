@@ -1,6 +1,6 @@
 **Example 1: 根据ID查询网络探测验证结果列表**
 
-
+根据ID查询网络探测验证结果列表
 
 Input: 
 
@@ -15,7 +15,7 @@ Output:
     "Response": {
         "NetDetectStateSet": [
             {
-                "NetDetectId": "netd-2owwwwd0",
+                "NetDetectId": "netd-6v2ht8q5",
                 "NetDetectIpStateSet": [
                     {
                         "DetectDestinationIp": "10.0.0.2",

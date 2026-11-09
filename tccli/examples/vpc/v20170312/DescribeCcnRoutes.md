@@ -1,6 +1,6 @@
 **Example 1: 查询云联网路由列表**
 
-
+查询云联网路由列表
 
 Input: 
 
@@ -24,7 +24,7 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "3e866888-83ea-4716-b99b-21592cba6548",
         "RouteSet": [
             {
                 "DestinationCidrBlock": "10.33.0.0/16",
@@ -33,12 +33,12 @@ Output:
                 "InstanceId": "vpc-r1ckkpid",
                 "InstanceUin": "234532345",
                 "Enabled": true,
-                "InstanceExtraName": "test",
+                "InstanceExtraName": "instance-1",
                 "IsBgp": true,
                 "InstanceRegion": "ap-guangzhou",
                 "ExtraState": "Running",
                 "RouteId": "ccnr-bvipc87w",
-                "InstanceName": "test",
+                "InstanceName": "instance-1",
                 "InstanceType": "VPC"
             },
             {
@@ -46,9 +46,9 @@ Output:
                 "UpdateTime": "2020-09-22 00:00:00",
                 "RoutePriority": 1,
                 "InstanceId": "vpc-r1ckkpid",
-                "InstanceName": "test",
+                "InstanceName": "instance-2",
                 "Enabled": true,
-                "InstanceExtraName": "test",
+                "InstanceExtraName": "instance-2",
                 "IsBgp": true,
                 "InstanceRegion": "ap-guangzhou",
                 "ExtraState": "Running",

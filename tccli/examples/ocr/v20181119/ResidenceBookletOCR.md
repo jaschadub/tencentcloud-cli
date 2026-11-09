@@ -1,4 +1,4 @@
-**Example 1: 户口本识别示例代码**
+**Example 1: ResidenceBookletOCR调用**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr ResidenceBookletOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg
 ```
 
 Output: 
@@ -18,18 +18,18 @@ Output:
         "BirthPlace": "上海市",
         "BloodType": "",
         "EducationDegree": "小学",
-        "FormerName": "xxx",
+        "FormerName": "李新星",
         "Height": "",
         "HomePageNumber": "",
         "Household": "",
         "HouseholdNumber": "",
         "HouseholderName": "",
-        "IdCardNumber": "xxxx",
+        "IdCardNumber": "310110199909192329",
         "IssueDate": "",
         "MaritalStatus": "未婚",
         "MoveToCityInformation": "",
         "MoveToSiteInformation": "",
-        "Name": "xxx",
+        "Name": "李晨曦",
         "Nation": "汉",
         "NativePlace": "江苏省江阴市",
         "OtherAddresses": "",
@@ -37,7 +37,7 @@ Output:
         "RegistrationDate": "2010年07月13日",
         "Relationship": "子",
         "ReligiousBelief": "",
-        "RequestId": "9df0f3a9-e624-4924-ae6b-49d5d0258e0b",
+        "RequestId": "037d6b99-6ca4-401a-a537-fe5e16f1d777",
         "ServicePlace": "丰镇小学",
         "Sex": "男",
         "Signature": "",

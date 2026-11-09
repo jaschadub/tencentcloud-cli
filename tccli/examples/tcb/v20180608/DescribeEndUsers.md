@@ -1,6 +1,6 @@
 **Example 1: 获取终端用户列表**
 
-
+获取终端用户列表
 
 Input: 
 
@@ -14,24 +14,26 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "dee235ec-b92e-4ca7-a3e7-77d2410ab776",
         "Total": 1,
         "Users": [
             {
-                "UUId": "00000000963b4a85a9b34e2d1fe0c685",
-                "WXOpenId": "",
-                "QQOpenId": "",
-                "Phone": "",
-                "Email": "",
-                "NickName": "",
-                "Gender": "",
-                "AvatarUrl": "",
-                "UpdateTime": "",
-                "CreateTime": "2020-03-04 18:08:13",
+                "UserName": "admin",
+                "QQOpenId": "openid123",
+                "UpdateTime": "2025-01-01",
+                "UUId": "abc123",
+                "AvatarUrl": "https://www.baidu.com",
+                "Gender": "male",
+                "IsDisabled": false,
                 "IsAnonymous": true,
-                "IsDisabled": false
+                "CreateTime": "2025-01-01",
+                "HasPassword": true,
+                "Phone": "13092030921",
+                "WXOpenId": "openwx123",
+                "NickName": "steven",
+                "Email": "steven@tencent.com"
             }
-        ]
+        ],
+        "RequestId": "abc12345667"
     }
 }
 ```

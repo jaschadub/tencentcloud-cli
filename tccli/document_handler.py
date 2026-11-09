@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 
 from tccli.loaders import Loader, BASE_TYPE, CLI_BASE_TYPE
-
+import six
 
 class BaseDocumentHandler(object):
     def __init__(self, doc):
@@ -80,9 +80,10 @@ class ServiceDocumentHandler(BaseDocumentHandler):
         self.doc.style.h2('Available Versions')
         versions = self._cli_data.get_available_services()[self._service]
         for version in versions:
-            self.doc.doc_title_indent(version)
-        # self.doc.style.new_line()
-        self.doc.doc_description_indent(u"默认只展示最新版本信息，查看其它版本帮助信息加 --version xxxx-xx-xx")
+            if version == versions[0]:
+                self.doc.doc_title_indent(version + "  (recommended)")
+            else:
+                self.doc.doc_title_indent(version)
 
     def description(self):
         self.doc.style.h2('Description')
@@ -174,6 +175,14 @@ class ActionDocumentHandler(BaseDocumentHandler):
                     self.doc.write('[%s ...]' % (param_info["members"]))
                 else:
                     self.doc.doc_description('[%s ...]' % (param_info["members"]))
+            elif isinstance(param_info["members"], six.string_types):
+                # 自引用截断占位：members 为类型名字符串（如 "AllocationRuleExpression"），
+                # 直接渲染 recursive 提示占位，不再向下展开
+                placeholder = '[<recursive: fill with a JSON object of type %s, same shape as parent> ...]' % param_info["members"]
+                if self.doc.style.indentation > 2:
+                    self.doc.write(placeholder)
+                else:
+                    self.doc.doc_description(placeholder)
             else:
                 self.doc.write('[') if self.doc.style.indentation > 2 \
                     else self.doc.doc_description('[')
@@ -186,8 +195,15 @@ class ActionDocumentHandler(BaseDocumentHandler):
                 self.doc.style.new_line()
                 self.doc.doc_description(']')
         else:
-            if param_info["members"] not in BASE_TYPE:
-                self._handle_object_members(param_info["members"], param_info["type"])
+            if param_info["members"] in BASE_TYPE:
+                return
+            if isinstance(param_info["members"], six.string_types):
+                # 自引用截断占位（非 Array 形态）：members 为类型名字符串，
+                # 直接渲染 recursive 提示占位
+                self.doc.doc_description(
+                    '<recursive: fill with a JSON object of type %s, same shape as parent>' % param_info["members"])
+                return
+            self._handle_object_members(param_info["members"], param_info["type"])
 
     def _handle_object_members(self, param_info, param_type):
         if param_type == "Array" or self.doc.style.indentation == 2:
@@ -215,6 +231,9 @@ class ActionDocumentHandler(BaseDocumentHandler):
     def _unfold_complex_object(self, param_info):
         if not param_info["type"] == "Array" and param_info["members"] in BASE_TYPE:
             return
+        # 自引用截断占位：非 Array 且 members 为类型名字符串，无可展开内容，直接跳过
+        if not param_info["type"] == "Array" and isinstance(param_info["members"], six.string_types):
+            return
 
         self.doc.style.new_line()
         self.doc.doc_title('JSON Syntax')
@@ -231,13 +250,18 @@ class ActionDocumentHandler(BaseDocumentHandler):
     def _complex_object_doc(self, param_info, option):
         if param_info["members"] in BASE_TYPE:
             return
+        # 自引用截断占位：members 为类型名字符串，无子成员可遍历，直接返回
+        if not isinstance(param_info["members"], dict):
+            return
         self.doc.style.indent()
         for sub_param, sub_param_info in param_info["members"].items():
             self.doc.style.new_line()
             self._doc_title(option, sub_param, sub_param_info)
             self.doc.doc_description('%s' % sub_param_info["document"])
             self.doc.style.new_line()
-            if sub_param_info["members"] not in BASE_TYPE:
+            # 仅当子成员的 members 仍然是 dict（即未被截断且非基础类型）时才继续递归
+            if sub_param_info["members"] not in BASE_TYPE \
+                    and isinstance(sub_param_info["members"], dict):
                 self._complex_object_doc(sub_param_info, option)
         self.doc.style.dedent()
         self.doc.style.new_line()
@@ -255,7 +279,7 @@ class ActionDocumentHandler(BaseDocumentHandler):
 
     def _doc_title(self, option, param, param_info):
         if option == "Available Parameters":
-            self.doc.doc_title('--%s (%s | %s)' % (param, self._param_type(param_info), param_info["required"]))
+            self.doc.doc_title('--%s (%s | %s)' % (param, self._param_type(param_info), param_info.get("required")))
         else:
             self.doc.doc_title('%s -> (%s)' % (param, self._param_type(param_info)))
 
@@ -319,8 +343,10 @@ class ActionDocumentHandler(BaseDocumentHandler):
         self.doc.style.dedent()
 
     def example(self):
-        self.doc.style.h2('Examples')
         examples = self._cli_data.generate_cli_example(self._service, self._version, self._action)
+        if not examples:
+            return
+        self.doc.style.h2('Examples')
         self.doc.style.indent()
         for idx, example in enumerate(examples):
             self.doc.style.new_line()

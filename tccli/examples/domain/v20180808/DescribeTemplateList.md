@@ -1,6 +1,6 @@
 **Example 1: 信息模板列表**
 
-
+信息模板列表
 
 Input: 
 
@@ -10,7 +10,7 @@ tccli domain DescribeTemplateList --cli-unfold-argument  \
     --Limit 20 \
     --Status InAudit \
     --Type E \
-    --Keyword xx
+    --Keyword search_name
 ```
 
 Output: 
@@ -18,43 +18,48 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "099e5c01-42b5-468a-97f8-b76af37fa8d4",
         "TemplateSet": [
             {
-                "AuditReason": "注册人审核资料上传失败",
-                "IsValidTemplate": 1,
-                "UpdatedOn": "2020-07-20 16:05:10",
-                "AuditStatus": "Reject",
-                "CreatedOn": "2020-07-20 12:44:49",
-                "InvalidReason": "",
-                "CertificateInfo": {
-                    "CertificateType": "YYZZ",
-                    "CertificateCode": "888888888888888888",
-                    "ImgUrl": "https://xxx.xxx.com/xxxx.jpg"
-                },
-                "TemplateId": "tmpl-xxxxxxxx",
-                "UserUin": "88888888",
+                "AuditReason": "",
                 "ContactInfo": {
-                    "Province": "guang dong sheng",
-                    "RegistrantType": "E",
-                    "OrganizationName": "tenxungongsi",
-                    "OrganizationNameCN": "tencent公司",
+                    "Province": "hu nan sheng",
+                    "RegistrantType": "I",
+                    "OrganizationName": "org name",
+                    "OrganizationNameCN": "企业名称",
                     "Country": "CN",
-                    "RegistrantName": "tencent Gong Si",
-                    "ZipCode": "100011",
-                    "Email": "tencent@qq.com",
-                    "City": "shen zhen shi",
-                    "RegistrantNameCN": "腾讯公司",
-                    "StreetCN": "深南大道",
-                    "Street": "shen nan da dao ",
-                    "ProvinceCN": "广东省",
+                    "RegistrantName": "shi ming name",
+                    "ZipCode": "425000",
+                    "Telephone": "155***",
+                    "City": "ce shi",
+                    "RegistrantNameCN": "实名人",
+                    "StreetCN": "咸嘉湖街道",
+                    "Street": "xian jia hu jie dao",
+                    "ProvinceCN": "湖南省",
+                    "CityCN": "长沙市",
                     "CountryCN": "中国",
-                    "CityCN": "深圳市",
-                    "Telephone": "4009100100"
+                    "Email": "**d@dnspod.com"
                 },
-                "IsDefault": "yes"
+                "UpdatedOn": "2020-07-28 13:33:55",
+                "AuditStatus": "InAudit",
+                "IsBlack": false,
+                "CreatedOn": "2020-07-28 12:50:23",
+                "UserUin": "12334***",
+                "IsDefault": "no",
+                "TemplateId": "tmpl-pe2",
+                "InvalidReason": "",
+                "IsValidTemplate": 1,
+                "CertificateInfo": {
+                    "CertificateType": "SFZ",
+                    "CertificateCode": "1279",
+                    "ImgUrl": "https://age.com/******",
+                    "OriginImgUrl": "https://un.com/******",
+                    "RegistrantCertificateCode": "19",
+                    "RegistrantCertificateType": "SFZ",
+                    "RegistrantImgUrl": "https://e.com/******"
+                }
             }
-        ]
+        ],
+        "RequestId": "skdwwdw"
     }
 }
 ```

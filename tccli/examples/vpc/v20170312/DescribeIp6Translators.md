@@ -6,44 +6,39 @@ Input:
 
 ```
 tccli vpc DescribeIp6Translators --cli-unfold-argument  \
-    --Ip6TranslatorId ip6-90pt7p9q
+    --Ip6TranslatorIds ip6-mhnrv51i
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 3,
+        "TotalCount": 1,
         "Ip6TranslatorSet": [
             {
-                "Ip6TranslatorId": "ip6-ml2hm2dg",
-                "Ip6TranslatorName": "未命名",
-                "Vip6": null,
-                "IspName": "",
-                "TranslatorStatus": "CREATING",
-                "CreatedTime": "2019-01-10T06:05:37Z",
-                "Ip6RuleCount": 0
-            },
-            {
-                "Ip6TranslatorId": "ip6-90pt7p9q",
-                "Ip6TranslatorName": "kkkk",
-                "Vip6": "2402:4e00:20:100::2:1011",
-                "IspName": "",
+                "Ip6TranslatorId": "ip6-mhnrv51i",
+                "Ip6TranslatorName": "ukiotest1",
+                "Vip6": "2402:4e00:40:40::2:2a6",
+                "IspName": "BGP",
                 "TranslatorStatus": "RUNNING",
-                "CreatedTime": "2019-01-10T01:33:32Z",
-                "Ip6RuleCount": 5
-            },
-            {
-                "Ip6TranslatorId": "ip6-8svxwtts",
-                "Ip6TranslatorName": "未命名",
-                "Vip6": null,
-                "IspName": "",
-                "TranslatorStatus": "CREATING",
-                "CreatedTime": "2019-01-09T13:50:06Z",
-                "Ip6RuleCount": 0
+                "CreatedTime": "2023-07-13T11:12:06Z",
+                "Ip6RuleCount": 1,
+                "IP6RuleSet": [
+                    {
+                        "Ip6RuleId": "rule6-ganlwp48",
+                        "Ip6RuleName": "未命名",
+                        "Vip6": "2402:4e00:40:40::2:2a6",
+                        "Vport6": 80,
+                        "Protocol": "TCP",
+                        "Vip": "10.0.0.0",
+                        "Vport": 80,
+                        "RuleStatus": "RUNNING",
+                        "CreatedTime": "2023-07-26T02:27:16Z"
+                    }
+                ]
             }
         ],
-        "RequestId": "fb44e0a1-1827-4d3d-abde-9514e884dbeb"
+        "RequestId": "c5ad87da-28fb-4f5d-8fce-bf19a06cfe6d"
     }
 }
 ```
@@ -56,8 +51,8 @@ Input:
 
 ```
 tccli vpc DescribeIp6Translators --cli-unfold-argument  \
-    --Filters.0.Name ip6-translator-uid \
-    --Filters.0.Values ip6-8svxwtts
+    --Filters.0.Name ip6-translator-vip6 \
+    --Filters.0.Values 2402:4e00:40:40::2:2a6
 ```
 
 Output: 
@@ -67,16 +62,29 @@ Output:
         "TotalCount": 1,
         "Ip6TranslatorSet": [
             {
-                "Ip6TranslatorId": "ip6-8svxwtts",
-                "Ip6TranslatorName": "未命名",
-                "Vip6": null,
-                "IspName": "",
-                "TranslatorStatus": "CREATING",
-                "CreatedTime": "2019-01-09T13:50:06Z",
-                "Ip6RuleCount": 0
+                "Ip6TranslatorId": "ip6-mhnrv51i",
+                "Ip6TranslatorName": "ukiotest1",
+                "Vip6": "2402:4e00:40:40::2:2a6",
+                "IspName": "BGP",
+                "TranslatorStatus": "RUNNING",
+                "CreatedTime": "2023-07-13T11:12:06Z",
+                "Ip6RuleCount": 1,
+                "IP6RuleSet": [
+                    {
+                        "Ip6RuleId": "rule6-ganlwp48",
+                        "Ip6RuleName": "未命名",
+                        "Vip6": "2402:4e00:40:40::2:2a6",
+                        "Vport6": 80,
+                        "Protocol": "TCP",
+                        "Vip": "10.0.0.0",
+                        "Vport": 80,
+                        "RuleStatus": "RUNNING",
+                        "CreatedTime": "2023-07-26T02:27:16Z"
+                    }
+                ]
             }
         ],
-        "RequestId": "cbf8a954-d135-4b52-9935-89e9ec88b536"
+        "RequestId": "c5ad87da-28fb-4f5d-8fce-bf19a06cfe6d"
     }
 }
 ```

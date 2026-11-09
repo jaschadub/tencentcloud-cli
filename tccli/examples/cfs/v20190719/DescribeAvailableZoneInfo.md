@@ -16,67 +16,100 @@ Output:
                 "Region": "ap-guangzhou",
                 "RegionName": "gz",
                 "RegionCnName": "广州",
-                "RegionStatus": "AVAILABLE",
                 "Zones": [
-                    {
-                        "Zone": "ap-guangzhou-2",
-                        "ZoneId": 100002,
-                        "ZoneName": "广州二区",
-                        "ZoneCnName": "广州二区",
-                        "Types": [
-                            {
-                                "Type": "SD",
-                                "Prepayment": true,
-                                "Protocols": [
-                                    {
-                                        "Protocol": "NFS",
-                                        "SaleStatus": "saling"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
                     {
                         "Zone": "ap-guangzhou-3",
                         "ZoneId": 100003,
-                        "ZoneName": "广州三区",
                         "ZoneCnName": "广州三区",
+                        "ZoneName": "广州三区",
                         "Types": [
                             {
                                 "Type": "SD",
-                                "Prepayment": true,
+                                "Version": "v1.5",
+                                "Protocols": [
+                                    {
+                                        "Protocol": "NFS",
+                                        "SaleStatus": "saling"
+                                    },
+                                    {
+                                        "Protocol": "CIFS",
+                                        "SaleStatus": "saling"
+                                    }
+                                ],
+                                "Prepayment": true
+                            },
+                            {
+                                "Type": "HP",
+                                "Version": "v1.5",
                                 "Protocols": [
                                     {
                                         "Protocol": "NFS",
                                         "SaleStatus": "saling"
                                     }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "Zone": "ap-guangzhou-4",
-                        "ZoneId": 100004,
-                        "ZoneName": "广州四区",
-                        "ZoneCnName": "广州四区",
-                        "Types": [
+                                ],
+                                "Prepayment": false
+                            },
                             {
                                 "Type": "SD",
-                                "Prepayment": true,
+                                "Version": "v3.1",
                                 "Protocols": [
                                     {
                                         "Protocol": "NFS",
                                         "SaleStatus": "saling"
+                                    },
+                                    {
+                                        "Protocol": "CIFS",
+                                        "SaleStatus": "saling"
                                     }
-                                ]
+                                ],
+                                "Prepayment": true
+                            },
+                            {
+                                "Type": "HP",
+                                "Version": "v3.1",
+                                "Protocols": [
+                                    {
+                                        "Protocol": "NFS",
+                                        "SaleStatus": "saling"
+                                    },
+                                    {
+                                        "Protocol": "CIFS",
+                                        "SaleStatus": "no_saling"
+                                    }
+                                ],
+                                "Prepayment": false
+                            },
+                            {
+                                "Type": "TB",
+                                "Version": "v4.0",
+                                "Protocols": [
+                                    {
+                                        "Protocol": "TURBO",
+                                        "SaleStatus": "sale_out"
+                                    }
+                                ],
+                                "Prepayment": false
+                            },
+                            {
+                                "Type": "TP",
+                                "Version": "v4.0",
+                                "Protocols": [
+                                    {
+                                        "Protocol": "TURBO",
+                                        "SaleStatus": "sale_out"
+                                    }
+                                ],
+                                "Prepayment": false
                             }
                         ]
                     }
-                ]
+                ],
+                "RegionStatus": "AVAILABLE"
             }
         ],
-        "RequestId": "a7493b9c-8650-409a-a950-8d4afa18b5ec"
-    }
+        "RequestId": "02f70cc9-3c48-4a34-9491-31faec9944af"
+    },
+    "code": 0
 }
 ```
 

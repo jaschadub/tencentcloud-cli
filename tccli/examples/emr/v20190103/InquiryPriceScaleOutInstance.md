@@ -1,19 +1,19 @@
 **Example 1: 扩容询价**
 
-
+扩容询价
 
 Input: 
 
 ```
 tccli emr InquiryPriceScaleOutInstance --cli-unfold-argument  \
-    --TimeUnit s \
     --TimeSpan 3600 \
-    --ZoneId 100003 \
-    --PayMode 0 \
     --InstanceId emr-3ida6zmi \
     --CoreCount 1 \
-    --TaskCount 0 \
+    --ZoneId 100003 \
+    --PayMode 0 \
     --Currency CNY \
+    --TaskCount 0 \
+    --TimeUnit s \
     --RouterCount 0
 ```
 
@@ -21,23 +21,48 @@ Output:
 ```
 {
     "Response": {
-        "DiscountCost": "1.26",
+        "DiscountCost": "0.65",
+        "MultipleEmrPrice": [
+            {
+                "DiscountCost": "0.65",
+                "OriginalCost": "1.21",
+                "PriceSpec": {
+                    "Cpu": 4,
+                    "DiskCnt": 0,
+                    "DiskNum": 0,
+                    "DiskSize": 200,
+                    "DiskType": "CLOUD_HSSD",
+                    "InstanceType": "S6.LARGE8",
+                    "LocalDiskNum": 0,
+                    "MemSize": 8192,
+                    "MultiDisks": [],
+                    "RootSize": 70,
+                    "Spec": "CVM.S6",
+                    "StorageType": 6,
+                    "Tags": null
+                },
+                "SupportSpotPaid": true,
+                "Unit": "s"
+            }
+        ],
+        "OriginalCost": "1.21",
         "PriceSpec": {
-            "InstanceType": "S5",
-            "DiskCnt": 1,
-            "StorageType": 1,
-            "DiskNum": 1,
-            "DiskType": "2",
+            "Cpu": 4,
+            "DiskCnt": 0,
+            "DiskNum": 0,
+            "DiskSize": 200,
+            "DiskType": "CLOUD_HSSD",
+            "InstanceType": "S6.LARGE8",
             "LocalDiskNum": 0,
-            "Cpu": 0,
-            "DiskSize": 100,
-            "MemSize": 100,
-            "RootSize": 50,
-            "Spec": "S5.2XLARGE8"
+            "MemSize": 8192,
+            "MultiDisks": [],
+            "RootSize": 70,
+            "Spec": "CVM.S6",
+            "StorageType": 6,
+            "Tags": null
         },
-        "Unit": "s",
-        "OriginalCost": "1.74",
-        "RequestId": "04daa603-e1e7-4243-b25d-31e6a6736528"
+        "RequestId": "e0acae32-c70d-4d32-80bd-b2e528a33026",
+        "Unit": "s"
     }
 }
 ```

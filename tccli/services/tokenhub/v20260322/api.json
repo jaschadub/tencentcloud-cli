@@ -1,0 +1,5730 @@
+{
+  "actions": {
+    "CreateApiKey": {
+      "document": "创建 API 密钥。\n\n创建一个新的 API 密钥，创建成功后返回 API 密钥 ID。需指定平台类型、绑定方式和初始状态。",
+      "input": "CreateApiKeyRequest",
+      "name": "创建 API 密钥",
+      "output": "CreateApiKeyResponse",
+      "status": "online"
+    },
+    "CreateEndpoint": {
+      "document": "创建推理服务。\n\n创建一个在线推理服务，创建成功后返回推理服务 ID。",
+      "input": "CreateEndpointRequest",
+      "name": "创建推理服务",
+      "output": "CreateEndpointResponse",
+      "status": "online"
+    },
+    "CreateGlossary": {
+      "document": "创建术语库。(单个用户默认最多可以创建50个术语库)\n\n在当前应用下创建一个新的翻译术语库，用于自定义源语言到目标语言的术语映射。创建成功后返回术语库 ID，可通过该 ID 进一步管理术语条目。",
+      "input": "CreateGlossaryRequest",
+      "name": "创建术语库",
+      "output": "CreateGlossaryResponse",
+      "status": "online"
+    },
+    "CreateGlossaryEntries": {
+      "document": "批量创建术语条目。\n\n在指定术语库下批量创建术语条目。单次最多创建 100 条。\n单个术语库默认最多总共可以创建10000个术语对",
+      "input": "CreateGlossaryEntriesRequest",
+      "name": "批量创建术语条目",
+      "output": "CreateGlossaryEntriesResponse",
+      "status": "online"
+    },
+    "CreateTokenPlanApiKeys": {
+      "document": "批量创建 TokenPlan APIKey。\n\n传入名称前缀和数量，自动按 {ApiKeyName}-{序号} 格式生成名称（如 aaa-1, aaa-2）。允许同名。支持部分成功，最多 100 条。",
+      "input": "CreateTokenPlanApiKeysRequest",
+      "name": "批量创建 Token Plan 套餐的 API Key",
+      "output": "CreateTokenPlanApiKeysResponse",
+      "status": "online"
+    },
+    "CreateTokenPlanTeamOrderAndBuy": {
+      "document": "购买套餐（重新开通过期的套餐续费也通过该接口实现，需要额外传已过期套餐teamId。注：续费成功后套餐包总周期数（TotalCycles）会包含历史周期数，实际套餐包生效周期以生效时间（StartTime）和到期时间（ExpireTime）为准）。\n\n发起 TokenPlan 套餐下单并完成支付，成功后返回大订单 ID 及关联的子订单、资源信息。",
+      "input": "CreateTokenPlanTeamOrderAndBuyRequest",
+      "name": "创建或重新开通 Token Plan 套餐",
+      "output": "CreateTokenPlanTeamOrderAndBuyResponse",
+      "status": "online"
+    },
+    "DeleteApiKey": {
+      "document": "删除指定的 API 密钥，同时清理关联的模型绑定关系。",
+      "input": "DeleteApiKeyRequest",
+      "name": "删除 API 密钥",
+      "output": "DeleteApiKeyResponse",
+      "status": "online"
+    },
+    "DeleteEndpoint": {
+      "document": "删除推理服务。\n\n删除指定的推理服务端点，操作不可逆。调用接口后，若通过 DescribeEndpoint 接口查询不到对应的端点，则表示删除成功。",
+      "input": "DeleteEndpointRequest",
+      "name": "删除推理服务",
+      "output": "DeleteEndpointResponse",
+      "status": "online"
+    },
+    "DeleteGlossary": {
+      "document": "删除术语库。\n\n删除指定的术语库及其下所有术语条目。删除操作幂等，对不存在的术语库返回成功。调用接口后，若通过 DescribeGlossaries 接口查询不到对应术语库，则表示删除成功。",
+      "input": "DeleteGlossaryRequest",
+      "name": "删除术语库",
+      "output": "DeleteGlossaryResponse",
+      "status": "online"
+    },
+    "DeleteGlossaryEntries": {
+      "document": "批量删除术语条目。\n\n在指定术语库下批量删除术语条目。单次最多删除 200 条。若术语库不存在或不属于当前应用，返回 ResourceNotFound 错误。",
+      "input": "DeleteGlossaryEntriesRequest",
+      "name": "批量删除术语条目",
+      "output": "DeleteGlossaryEntriesResponse",
+      "status": "online"
+    },
+    "DeleteTokenPlanApiKey": {
+      "document": "删除 TokenPlan APIKey。\n\n同时删除额度中心子额度包并通知网关清除缓存。",
+      "input": "DeleteTokenPlanApiKeyRequest",
+      "name": "删除 Token Plan 套餐的 API Key",
+      "output": "DeleteTokenPlanApiKeyResponse",
+      "status": "online"
+    },
+    "DescribeApiKey": {
+      "document": "根据 API 密钥 ID 或密钥值查询 API 密钥详情，返回明文密钥。ApiKeyId 和 ApiKey 至少需传入其一，优先使用 ApiKeyId。",
+      "input": "DescribeApiKeyRequest",
+      "name": "查询 API 密钥详情",
+      "output": "DescribeApiKeyResponse",
+      "status": "online"
+    },
+    "DescribeApiKeyList": {
+      "document": "查询 API 密钥列表。\n\n查询当前用户的 API 密钥列表，密钥值脱敏展示。支持分页、过滤和排序。",
+      "input": "DescribeApiKeyListRequest",
+      "name": "查询 API 密钥列表",
+      "output": "DescribeApiKeyListResponse",
+      "status": "online"
+    },
+    "DescribeEndpoint": {
+      "document": "查询推理服务详情。\n\n根据推理服务 ID 查询推理服务的详细信息，包括计费信息、免费额度、API 调用地址等。",
+      "input": "DescribeEndpointRequest",
+      "name": "查询推理服务详情",
+      "output": "DescribeEndpointResponse",
+      "status": "online"
+    },
+    "DescribeGlossaries": {
+      "document": "查询术语库列表。\n\n查询当前应用下的术语库列表。支持分页、过滤和排序。",
+      "input": "DescribeGlossariesRequest",
+      "name": "查询术语库列表",
+      "output": "DescribeGlossariesResponse",
+      "status": "online"
+    },
+    "DescribeGlossaryEntries": {
+      "document": "查询术语条目列表。\n\n查询指定术语库下的术语条目。支持分页。",
+      "input": "DescribeGlossaryEntriesRequest",
+      "name": "查询术语条目列表",
+      "output": "DescribeGlossaryEntriesResponse",
+      "status": "online"
+    },
+    "DescribeModelEndpointList": {
+      "document": "查询模型接入点列表。\n\n以模型为基准展示所有在线文本类型模型的接入点概览，支持按状态、计费方式、创建来源等条件筛选，使用 Offset/Limit 分页。",
+      "input": "DescribeModelEndpointListRequest",
+      "name": "查询模型接入点列表",
+      "output": "DescribeModelEndpointListResponse",
+      "status": "online"
+    },
+    "DescribeModelList": {
+      "document": "查询模型列表。\n\n支持按模型 ID、模型名称、模型能力等条件筛选，支持分页和排序。",
+      "input": "DescribeModelListRequest",
+      "name": "查询模型列表",
+      "output": "DescribeModelListResponse",
+      "status": "online"
+    },
+    "DescribeModelQuota": {
+      "document": "查询指定模型的 TPM 和 QPM 配额上限。",
+      "input": "DescribeModelQuotaRequest",
+      "name": "查询模型配额",
+      "output": "DescribeModelQuotaResponse",
+      "status": "online"
+    },
+    "DescribeTokenPlan": {
+      "document": "查询 TokenPlan 套餐详情。\n\n返回套餐基本信息及额度中心主额度包余量。",
+      "input": "DescribeTokenPlanRequest",
+      "name": "查询 Token Plan 套餐详情",
+      "output": "DescribeTokenPlanResponse",
+      "status": "online"
+    },
+    "DescribeTokenPlanApiKey": {
+      "document": "查询 TokenPlan APIKey 详情。\n\n返回 APIKey 完整信息（含明文密钥）及子额度包余量。",
+      "input": "DescribeTokenPlanApiKeyRequest",
+      "name": "查询 Token Plan 套餐的 API Key 详情",
+      "output": "DescribeTokenPlanApiKeyResponse",
+      "status": "online"
+    },
+    "DescribeTokenPlanApiKeyList": {
+      "document": "查询 TokenPlan APIKey 列表。\n\n返回指定套餐下的 APIKey 列表，密钥已脱敏。主账号可查看全部，子账号仅可查看自己创建的。",
+      "input": "DescribeTokenPlanApiKeyListRequest",
+      "name": "查询 Token Plan 套餐的 API Key 列表",
+      "output": "DescribeTokenPlanApiKeyListResponse",
+      "status": "online"
+    },
+    "DescribeTokenPlanApiKeySecret": {
+      "document": "查询 TokenPlan APIKey 密钥（明文）。\n\n返回指定 APIKey 的明文密钥值，请妥善保管。",
+      "input": "DescribeTokenPlanApiKeySecretRequest",
+      "name": "查询 Token Plan 套餐的 API Key 密钥（明文）",
+      "output": "DescribeTokenPlanApiKeySecretResponse",
+      "status": "online"
+    },
+    "DescribeTokenPlanApiKeyUsageDetail": {
+      "document": "查询 TokenPlan APIKey 调用明细。\n\n从 CLS 日志服务查询套餐下的调用明细，按 team_id 过滤，支持游标分页。",
+      "input": "DescribeTokenPlanApiKeyUsageDetailRequest",
+      "name": "查询 TokenPlan 企业版 API Key 调用明细",
+      "output": "DescribeTokenPlanApiKeyUsageDetailResponse",
+      "status": "online"
+    },
+    "DescribeTokenPlanList": {
+      "document": "查询 TokenPlan 套餐列表。\n\n支持分页、过滤和排序。主账号可查看全部，子账号仅可查看自己创建的。返回结果包含每个套餐关联的额度中心主额度包详情。",
+      "input": "DescribeTokenPlanListRequest",
+      "name": "查询 Token Plan 套餐列表",
+      "output": "DescribeTokenPlanListResponse",
+      "status": "online"
+    },
+    "DescribeUsageRankList": {
+      "document": "查询用量排行列表。\n\n指标族（MetricType）\n- `tokens`（默认）：Token 用量统计。支持 Dimension = apikey / endpoint / model。\n  返回指标：TotalToken（总）/ InputTotalToken（输入）/ OutputTotalToken（输出）/ CacheTotalToken（读缓存）。\n- `search`：联网搜索用量统计。支持 Dimension = apikey / endpoint / model。\n  返回指标：SearchRequestCount（搜索请求数）/ SearchCount（搜索引擎调用次数）。\n- `apikey_usage`：APIKey 锚定用量统计（某 APIKey 下按模型或接入点展开）。支持 Dimension = endpoint / model。\n  返回指标：TotalToken（总 Token）/ InputTotalToken（输入 Token）/ OutputTotalToken（输出 Token）/ CacheTotalToken（读缓存）/ RequestCount（请求次数）/ SuccessCount（成功次数）。\n\n响应内容\n- MetricType 字段用于切换指标族，响应回显 MetricType 与 MetricKeys。\n- TotalStats：时间窗内全部对象的整段聚合值。\n- PageStats：当前翻页内对象的整段聚合值。\n- TopList：按MetricKeys[0]降序的对象列表，含整段聚合值与逐时间点曲线。",
+      "input": "DescribeUsageRankListRequest",
+      "name": "查询用量排行列表",
+      "output": "DescribeUsageRankListResponse",
+      "status": "online"
+    },
+    "ModifyApiKeyBindings": {
+      "document": "更新 API 密钥绑定。\n\n更新 API 密钥的绑定关系和绑定类型。BindType 为 all 时 Bindings 必须为空，BindType含 custom 时 Bindings 为绑定列表。",
+      "input": "ModifyApiKeyBindingsRequest",
+      "name": "更新 API 密钥绑定",
+      "output": "ModifyApiKeyBindingsResponse",
+      "status": "online"
+    },
+    "ModifyApiKeyInfo": {
+      "document": "更新 API 密钥信息。\n\n更新 API 密钥的备注信息、 IP 白名单和 Token 限额（修改限额推荐使用QuotaDesired参数）。所有可选参数不传表示不修改。",
+      "input": "ModifyApiKeyInfoRequest",
+      "name": "更新 API 密钥信息",
+      "output": "ModifyApiKeyInfoResponse",
+      "status": "online"
+    },
+    "ModifyApiKeyStatus": {
+      "document": "更新 API 密钥的启用或禁用状态。",
+      "input": "ModifyApiKeyStatusRequest",
+      "name": "更新 API 密钥状态",
+      "output": "ModifyApiKeyStatusResponse",
+      "status": "online"
+    },
+    "ModifyEndpoint": {
+      "document": "修改推理服务。\n\n修改推理服务的属性，支持修改服务名称、QPM/TPM 限流上限、TPM 包续费设置、智能路由开关和手动重试 TPM 购买。\n\n注意事项：\n- 不支持通过本接口切换计费类型（ChargeType），计费类型仅可在创建推理服务（CreateEndpoint）时指定。\n- 不支持通过本接口修改 TPM 预付费保障包的 quota（TpmInputLimit/TpmOutputLimit/TimeSpan），这些值仅可在创建推理服务时指定。\n- 当 RetryTPMPurchase 为 true 时，系统会异步重试 TPM 包购买，调用后需轮询推理服务状态确认结果。",
+      "input": "ModifyEndpointRequest",
+      "name": "修改推理服务",
+      "output": "ModifyEndpointResponse",
+      "status": "online"
+    },
+    "ModifyGlossaryEntries": {
+      "document": "批量修改术语条目。\n\n在指定术语库下批量修改术语条目。单次最多修改 200 条。",
+      "input": "ModifyGlossaryEntriesRequest",
+      "name": "批量修改术语条目",
+      "output": "ModifyGlossaryEntriesResponse",
+      "status": "online"
+    },
+    "ModifyTokenPlanApiKey": {
+      "document": "修改 TokenPlan APIKey 配置（网关关注字段）。\n\n修改后自动通知网关更新缓存并同步额度中心。",
+      "input": "ModifyTokenPlanApiKeyRequest",
+      "name": "修改 Token Plan 套餐的 API Key 配置",
+      "output": "ModifyTokenPlanApiKeyResponse",
+      "status": "online"
+    },
+    "ModifyTokenPlanApiKeySecret": {
+      "document": "重置 TokenPlan APIKey 密钥。\n\n重新生成密钥值，密钥版本号递增，旧密钥立即失效。APIKey ID 不变。重置后需通过 DescribeTokenPlanApiKeySecret 查询新密钥。",
+      "input": "ModifyTokenPlanApiKeySecretRequest",
+      "name": "重置 Token Plan 套餐的 API Key 密钥",
+      "output": "ModifyTokenPlanApiKeySecretResponse",
+      "status": "online"
+    },
+    "RenewTokenPlanTeamOrder": {
+      "document": "续费套餐。\n\n对已有的 TokenPlan 套餐发起续费下单并完成支付，成功后返回大订单 ID 及关联的子订单、资源信息。",
+      "input": "RenewTokenPlanTeamOrderRequest",
+      "name": "续费 Token Plan 套餐",
+      "output": "RenewTokenPlanTeamOrderResponse",
+      "status": "online"
+    },
+    "UpgradeTokenPlanTeamOrder": {
+      "document": "升配套餐。\n\n对已有的 TokenPlan 套餐发起升配下单并完成支付，扩容积分或 Token 额度，成功后返回大订单 ID 及关联的子订单、资源信息。新额度必须大于当前额度。",
+      "input": "UpgradeTokenPlanTeamOrderRequest",
+      "name": "升配 Token Plan 套餐",
+      "output": "UpgradeTokenPlanTeamOrderResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2026-03-22",
+    "api_brief": "TokenHub 管控面云 API",
+    "serviceNameCN": "TokenHub",
+    "serviceShortName": "tokenhub"
+  },
+  "objects": {
+    "ApiKeyDetail": {
+      "document": "API 密钥详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API 密钥 ID。",
+          "example": "ak-20260320-a1b2c3d4",
+          "member": "string",
+          "name": "ApiKeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称。",
+          "example": "my-api-key",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API 密钥值。接口返回脱敏值",
+          "example": "sk-abc***defg",
+          "member": "string",
+          "name": "ApiKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注。",
+          "example": "test api key",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平台类型。当前支持填值：maas",
+          "example": "maas",
+          "member": "string",
+          "name": "Platform",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号。",
+          "example": "100000000001",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号。",
+          "example": "100000000002",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态。取值：enable（启用）、disable（禁用）。",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定类型。取值：all（全部模型和服务）、model_all_endpoint_custom（全部模型+自定义服务）、model_custom_endpoint_all（自定义模型+全部服务）、model_custom_endpoint_custom（自定义模型+自定义服务）。",
+          "example": "all",
+          "member": "string",
+          "name": "BindType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。格式：YYYY-MM-DD HH:mm:ss。",
+          "example": "2026-03-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。格式：YYYY-MM-DD HH:mm:ss。",
+          "example": "2026-03-01 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用 ID。",
+          "example": "1300000001",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可编辑。true 表示可编辑，false 表示不可编辑。",
+          "example": "true",
+          "member": "bool",
+          "name": "Editable",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定资源列表，区分 endpoint 和 model 类型。",
+          "example": "无",
+          "member": "BindingItem",
+          "name": "BindingItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP 白名单列表。支持 IPv4 和 CIDR 格式。空数组表示不限制 IP。",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "IpWhitelist",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当Platform为maas时该字段为空",
+          "example": "张三",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Token 限额信息多维度列表。未配置限额时不返回该字段。",
+          "example": "无",
+          "member": "QuotaInfo",
+          "name": "QuotaSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Token 限额状态。空字符串表示未配置任何限额包；active 表示已配置且当前可用；inactive 表示已配置但额度耗尽",
+          "example": "active",
+          "member": "string",
+          "name": "QuotaStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchCreateFailedItem": {
+      "document": "批量创建失败项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "失败项的序号（从 1 开始，对应后缀编号）。",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败项的名称。",
+          "example": "aaa-1-x7k2m9",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败原因。",
+          "example": "create sub package failed",
+          "member": "string",
+          "name": "Reason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BindingItem": {
+      "document": "绑定资源项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源 ID（模型 ID 或服务 ID）。</p>",
+          "example": "ep-xxx",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型。取值：endpoint（推理服务）、model（模型）。推荐绑定endpoint，绑定model即将下线。已绑定model的apikey仍可使用，但控制台回显将不会展示模型绑定列表。</p><p>枚举值：</p><ul><li>endpoint： 绑定到endpoint（默认推理服务或自定义推理服务）</li></ul>",
+          "example": "endpoint",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源状态</p>",
+          "example": "pre-offline",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateApiKeyRequest": {
+      "document": "CreateApiKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>API 密钥名称，创建后不可修改。</p>",
+          "example": "my-api-key",
+          "member": "string",
+          "name": "ApiKeyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台类型。取值：maas</p>",
+          "example": "maas",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定类型。取值：all（全部模型和接入点）、model_custom_endpoint_custom（自定义模型+自定义接入点）。</p><p>枚举值：</p><ul><li>all： 全部模型和接入点</li><li>model_custom_endpoint_custom： 自定义模型+自定义接入点</li></ul>",
+          "example": "all",
+          "member": "string",
+          "name": "BindType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注信息</p>",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>初始状态。取值：enable（启用）、disable（禁用）。不传默认 enable。</p>",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源绑定列表（model 和 endpoint 混合），每项需显式指定 ResourceType。BindType 为 all 时不填；BindType 为model_custom_endpoint_custom时必填。</p>",
+          "example": "无",
+          "member": "BindingItem",
+          "name": "Bindings",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP 白名单列表。支持 IPv4（如 1.2.3.4）和 CIDR（如 10.0.0.0/24）格式，IPv6暂不支持。最多 50 个条目，不支持重复。不传或传空数组表示不限制 IP。</p>",
+          "example": "[\"1.2.3.4\"]",
+          "member": "string",
+          "name": "IpWhitelist",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Token 限额配置多维度列表。可选，不传表示不开启限额。</p>",
+          "example": "无",
+          "member": "QuotaCreateItem",
+          "name": "Quotas",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApiKeyResponse": {
+      "document": "CreateApiKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>apikey id</p>",
+          "example": "ak-20260624-39f1918de39ec5a7abc48f7a99c4e1a3",
+          "member": "string",
+          "name": "ApiKeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApiKeysResultItem": {
+      "document": "批量创建成功项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "APIKey ID。",
+          "example": "ak-tp-20260401-a1b2c3d4",
+          "member": "string",
+          "name": "ApiKeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateEndpointRequest": {
+      "document": "CreateEndpoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务名称。最大 64 字符。</p>",
+          "example": "test-endpoint",
+          "member": "string",
+          "name": "EndpointName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 ID。可通过 DescribeModelList 接口获取。</p>",
+          "example": "deepseek-v4-pro",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费方式。取值：FREE（免费体验）、TOKEN（按 Token 计费）、TPM（TPM 保障）、COMPUTE_UNIT（按算力单元计费）。</p>",
+          "example": "TOKEN",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>RPM（每分钟请求数）限流上限。可选。必须大于 0，且不能超过用户在该模型上的 RPM 上限。不传则使用默认值（60）。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "RPM",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TPM（每分钟 Token 数）限流上限，单位为 tokens/min。可选。必须大于 0，且不能超过用户在该模型上的 TPM 上限。设置后会同时作用于输入 TPM 和输出 TPM。不传则使用默认值（0 表示不限流）。</p>",
+          "example": "1000000",
+          "member": "int64",
+          "name": "TPM",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动调整配额</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoAdjustQuota",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义推理服务 id</p>",
+          "example": "ep-123456",
+          "member": "string",
+          "name": "EndpointId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEndpointResponse": {
+      "document": "CreateEndpoint返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理服务 ID。</p>",
+          "example": "ep-abcd123",
+          "member": "string",
+          "name": "EndpointId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理服务详情信息。</p>",
+          "example": "无",
+          "member": "EndpointCreateDetail",
+          "name": "Endpoint",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>停止原因。当推理服务状态为已停止时返回。取值：FREE_QUOTA_EXHAUSTED（免费额度已用尽）、NO_FREE_PACKAGE（无可用免费包）、INSUFFICIENT_BALANCE（余额不足）、BILLING_ISOLATED（账户欠费隔离）、INTERNAL_ERROR（内部错误）。</p>",
+          "example": "INSUFFICIENT_BALANCE",
+          "member": "string",
+          "name": "StopReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlossaryEntriesRequest": {
+      "document": "CreateGlossaryEntries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID。可通过 DescribeGlossaries 接口获取。",
+          "example": "aa5efee60bd5275d0ebc4bdf528eebb4",
+          "member": "string",
+          "name": "GlossaryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "术语条目列表。单次最多 100 个。",
+          "example": "无",
+          "member": "GlossaryEntryInput",
+          "name": "Entries",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlossaryEntriesResponse": {
+      "document": "CreateGlossaryEntries返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建成功的术语条目列表。",
+          "example": "无",
+          "member": "GlossaryEntryItem",
+          "name": "Entries",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlossaryRequest": {
+      "document": "CreateGlossary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库名称。最大 50 字符。",
+          "example": "my-glossary",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源语言代码。最大 16 字符。例如：zh（中文）、en（英文）。",
+          "example": "zh",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标语言代码。最大 16 字符。例如：zh（中文）、en（英文）。",
+          "example": "en",
+          "member": "string",
+          "name": "Target",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "术语库描述。最大 255 字符。",
+          "example": "test glossary",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlossaryResponse": {
+      "document": "CreateGlossary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID。",
+          "example": "glossary-a1b2c3d4",
+          "member": "string",
+          "name": "GlossaryId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "术语库名称。",
+          "example": "my-glossary",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。Unix 时间戳（毫秒）。",
+          "example": "1717000000000",
+          "member": "int64",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTokenPlanApiKeysRequest": {
+      "document": "CreateTokenPlanApiKeys请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐 ID。可通过DescribeTokenPlanList接口获取。",
+          "example": "tp-ent-a1b2c3d4",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API Key 名称，最大 128 字符。如果创建 API Key 的数量超过1个，实际名称格式为 {ApiKeyName}-{序号}（如 mykey-1, mykey-2）。",
+          "example": "生产Key",
+          "member": "string",
+          "name": "ApiKeyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建数量。取值范围：1 ~ 10。",
+          "example": "5",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可用模型列表。如果套餐类型为企业版专业套餐，可以指定模型，也可以传入“all”，传入 “all“表示可以使用套餐支持的所有模型，如果要指定具体模型，传入 Model ID，“all“和具体的 Model ID 不能同时传入，如果不传则表示该API Key不支持任何模型，从而影响API Key的正常使用。如果套餐类型为企业版轻享套餐，则无论是否传入该字段，以及该字段传入什么值，都会被强制覆盖为[\"auto\"]。",
+          "example": "[\"glm-5\",\"kimi-k2.5\"]",
+          "member": "string",
+          "name": "AllowedModels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "独占额度。不传则为0，代表该 API Key 不被分配任何独占配额。单位说明如下：\n- 套餐类型为专业，单位取值为积分；\n- 套餐类型为轻享套餐，单位取值为 token。",
+          "example": "500000",
+          "member": "int64",
+          "name": "ExclusiveQuota",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "总额度上限。-1 表示不限，必须为 -1 或 >= API Key 当前的 ExclusiveQuota（独占额度）。不传表示不设置上限。单位说明如下：\n- 套餐类型为专业，单位取值为积分；\n- 套餐类型为轻享套餐，单位取值为 token。",
+          "example": "-1",
+          "member": "int64",
+          "name": "TotalQuota",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "TPM（Tokens Per Minute）限制。不传使用套餐级别 TPM。必须 >= 0 且 <= 套餐 TPM。",
+          "example": "4400",
+          "member": "int64",
+          "name": "TPM",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTokenPlanApiKeysResponse": {
+      "document": "CreateTokenPlanApiKeys返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成功创建的项列表。",
+          "example": "无",
+          "member": "CreateApiKeysResultItem",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建失败的项列表。",
+          "example": "无",
+          "member": "BatchCreateFailedItem",
+          "name": "FailedItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTokenPlanTeamOrderAndBuyRequest": {
+      "document": "CreateTokenPlanTeamOrderAndBuy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。</p>",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ProductType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐名称。只能包含中文、字母、数字、下划线、连字符，以中文或者字母开头，以中文或字母或数字结尾，2~50个字符</p>",
+          "example": "my-token-plan",
+          "member": "string",
+          "name": "TeamName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买时长。单位：月。必须大于 0，支持1个月～12个月。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买的套餐规格。套餐类型为专业套餐（enterprise），单位取值为积分；轻享套餐（enterprise-auto），单位取值为 tokens。</p>",
+          "example": "1000000",
+          "member": "int64",
+          "name": "CreditOrToken",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启自动续费。默认不开启。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableAutoRenew",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>已有套餐 ID（非空时走过期续费，空时走新购）</p>",
+          "example": "tp-ent-xxxxxx",
+          "member": "string",
+          "name": "TeamId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTokenPlanTeamOrderAndBuyResponse": {
+      "document": "CreateTokenPlanTeamOrderAndBuy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>腾讯云订单 ID。用于关联一次购买操作下的所有子订单。</p>",
+          "example": "20260101000000000000001",
+          "member": "string",
+          "name": "BigOrderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApiKeyRequest": {
+      "document": "DeleteApiKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>API 密钥 ID。</p>",
+          "example": "ak-20260710-d41f81de4bb89ae10384b856c5692519",
+          "member": "string",
+          "name": "ApiKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台类型。取值：maas。</p>",
+          "example": "maas",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApiKeyResponse": {
+      "document": "DeleteApiKey返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEndpointRequest": {
+      "document": "DeleteEndpoint请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteEndpointResponse": {
+      "document": "DeleteEndpoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlossaryEntriesRequest": {
+      "document": "DeleteGlossaryEntries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID。可通过 DescribeGlossaries 接口获取。",
+          "example": "glossary-a1b2c3d4",
+          "member": "string",
+          "name": "GlossaryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待删除的术语条目列表。单次最多 200 个。",
+          "example": "无",
+          "member": "DeleteGlossaryEntryInput",
+          "name": "Entries",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlossaryEntriesResponse": {
+      "document": "DeleteGlossaryEntries返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlossaryEntryInput": {
+      "document": "删除术语条目项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语条目 ID。可通过 DescribeGlossaryEntries 接口获取。",
+          "example": "0b93af68c6cdc928b99d5b3fed6a3f93",
+          "member": "string",
+          "name": "EntryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DeleteGlossaryRequest": {
+      "document": "DeleteGlossary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID。可通过 DescribeGlossaries 接口获取。",
+          "example": "glossary-a1b2c3d4",
+          "member": "string",
+          "name": "GlossaryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlossaryResponse": {
+      "document": "DeleteGlossary返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTokenPlanApiKeyRequest": {
+      "document": "DeleteTokenPlanApiKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API Key ID。可通过DescribeTokenPlanApiKeyList接口获取。",
+          "example": "ak-tp-20260401-a1b2c3d4",
+          "member": "string",
+          "name": "ApiKeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTokenPlanApiKeyResponse": {
+      "document": "DeleteTokenPlanApiKey返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiKeyListRequest": {
+      "document": "DescribeApiKeyList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "平台类型。当前支持填值：maas",
+          "example": "maas",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件列表。支持的过滤字段：apikeyId（API 密钥 ID）、apiKeyName（名称）、platform（平台类型）、status（状态）、bindType（绑定类型）。",
+          "example": "无",
+          "member": "RequestFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序条件列表。支持的排序字段：apiKeyName",
+          "example": "无",
+          "member": "RequestSort",
+          "name": "Sorts",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiKeyListResponse": {
+      "document": "DescribeApiKeyList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API 密钥列表。",
+          "example": "无",
+          "member": "ApiKeyDetail",
+          "name": "ApiKeySet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的 API 密钥总数。",
+          "example": "50",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiKeyRequest": {
+      "document": "DescribeApiKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "平台类型。当前支持填值：maas",
+          "example": "maas",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API 密钥 ID，与 ApiKey 至少需传入其一，优先使用 ApiKeyId。",
+          "example": "ak-20260320-a1b2c3d4",
+          "member": "string",
+          "name": "ApiKeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API 密钥明文，与 ApiKeyId 至少需传入其一。",
+          "example": "sk-xxx",
+          "member": "string",
+          "name": "ApiKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiKeyResponse": {
+      "document": "DescribeApiKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API 密钥 ID。",
+          "example": "ak-20260320-a1b2c3d4",
+          "member": "string",
+          "name": "ApiKeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称。",
+          "example": "my-api-key",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API 密钥值（明文）。",
+          "example": "sk-abcdefghijklmnopqrstuvwxyz123456",
+          "member": "string",
+          "name": "ApiKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注。",
+          "example": "test api key",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平台类型。枚举：maas",
+          "example": "maas",
+          "member": "string",
+          "name": "Platform",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号。",
+          "example": "100000000001",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号。",
+          "example": "100000000002",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态。取值：enable（启用）、disable（禁用）。",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定类型。取值：all（全部模型和接入点）、model_all_endpoint_custom（全部模型+自定义接入点）、model_custom_endpoint_all（自定义模型+全部接入点）、model_custom_endpoint_custom（自定义模型+自定义接入点）。",
+          "example": "all",
+          "member": "string",
+          "name": "BindType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。格式：YYYY-MM-DD HH:mm:ss。",
+          "example": "2026-03-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。格式：YYYY-MM-DD HH:mm:ss。",
+          "example": "2026-03-01 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用 ID。",
+          "example": "1300000001",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可编辑。true 表示可编辑，false 表示不可编辑。",
+          "example": "true",
+          "member": "bool",
+          "name": "Editable",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定资源列表，区分 endpoint 和 model 类型。",
+          "example": "无",
+          "member": "BindingItem",
+          "name": "BindingItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP 白名单列表。支持 IPv4和 CIDR 格式。空数组表示不限制 IP。",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "IpWhitelist",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当Platform为maas时该字段为空",
+          "example": "张三",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Token 限额多维度信息。未配置限额时不返回该字段。",
+          "example": "无",
+          "member": "QuotaInfo",
+          "name": "QuotaSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Token 限额状态。空字符串表示未配置任何限额包；active 表示已配置且当前可用；inactive 表示已配置但额度耗尽",
+          "example": "active",
+          "member": "string",
+          "name": "QuotaStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEndpointRequest": {
+      "document": "DescribeEndpoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理服务 ID。可通过 DescribeEndpointList 接口获取。</p>",
+          "example": "ep-abcd123",
+          "member": "string",
+          "name": "EndpointId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEndpointResponse": {
+      "document": "DescribeEndpoint返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理服务详情。</p>",
+          "example": "无",
+          "member": "EndpointDetail",
+          "name": "Endpoint",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlossariesRequest": {
+      "document": "DescribeGlossaries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数量。默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件列表。支持的过滤字段：GlossaryId（术语库 ID）、Name（名称）、Source（源语言代码）、Target（目标语言代码）。",
+          "example": "无",
+          "member": "RequestFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序条件列表。支持的排序字段：CreatedTime（创建时间）、UpdatedTime（更新时间）。",
+          "example": "无",
+          "member": "RequestSort",
+          "name": "Sorts",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlossariesResponse": {
+      "document": "DescribeGlossaries返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库列表。",
+          "example": "无",
+          "member": "GlossaryItem",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的术语库总数。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前页码。",
+          "example": "1",
+          "member": "int64",
+          "name": "Current",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页大小。",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlossaryEntriesRequest": {
+      "document": "DescribeGlossaryEntries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID。可通过 DescribeGlossaries 接口获取。",
+          "example": "glossary-a1b2c3d4",
+          "member": "string",
+          "name": "GlossaryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码。默认为 1。",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页大小。默认为 20，最大值为 200。",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlossaryEntriesResponse": {
+      "document": "DescribeGlossaryEntries返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语条目列表。",
+          "example": "无",
+          "member": "GlossaryEntryItem",
+          "name": "Entries",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的术语条目总数。",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前页码。",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页大小。",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelEndpointListRequest": {
+      "document": "DescribeModelEndpointList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>偏移量，从 0 开始，默认为 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页返回数量，默认为 20，最大值为 100。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件列表。支持的过滤字段：Status（状态，取值 ACTIVE/INACTIVE）、ChargeType（计费方式，取值 FREE/TOKEN）、RequestSource（创建来源，取值 MC/GW）、ModelName（模型名称）、ModelId（模型 ID）、PaymentEnabled（是否已开启后付费，取值 true/false）。</p>",
+          "example": "无",
+          "member": "RequestFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序条件列表。支持的排序字段：CreatedTime、UpdatedTime。不传时使用默认排序规则。</p>",
+          "example": "无",
+          "member": "RequestSort",
+          "name": "Sorts",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelEndpointListResponse": {
+      "document": "DescribeModelEndpointList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型接入点列表。</p>",
+          "example": "无",
+          "member": "ModelEndpointView",
+          "name": "ModelEndpointSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的总数。</p>",
+          "example": "543",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelListRequest": {
+      "document": "DescribeModelList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型 ID 列表。最多支持 10 个，不支持重复。</p>",
+          "example": "[\"hy3\"]",
+          "member": "string",
+          "name": "ModelIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称列表。最多支持 10 个，不支持重复。</p>",
+          "example": "[\"Hy3\"]",
+          "member": "string",
+          "name": "ModelNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类型列表，筛选指定类型的模型。最多支持 10 个，不支持重复。取值：Text（文本）、Vision（视觉）、Multimodal（多模态）、Speech（语音）、Embedding（向量）。</p>",
+          "example": "[\"Text\"]",
+          "member": "string",
+          "name": "ModelTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型标签</p>",
+          "example": "[\"深度思考\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，默认为 20，最大值为 100。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，默认为 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelListResponse": {
+      "document": "DescribeModelList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型列表。</p>",
+          "example": "无",
+          "member": "Model",
+          "name": "ModelSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的模型总数。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelQuotaRequest": {
+      "document": "DescribeModelQuota请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型 ID。可通过 DescribeModelList 获取。</p>",
+          "example": "deepseek-v3.2",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelQuotaResponse": {
+      "document": "DescribeModelQuota返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型 ID。</p>",
+          "example": "deepseek-v3.2",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TPM 限制（Tokens Per Minute）。模型无配额配置时不返回此字段。</p>",
+          "example": "5000000",
+          "member": "int64",
+          "name": "TPMLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>RPM 限制（Request Per Minute）。模型无配额配置时不返回此字段。</p>",
+          "example": "601",
+          "member": "int64",
+          "name": "RPMLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TPM 保障包 input 配额</p>",
+          "example": "20000000",
+          "member": "int64",
+          "name": "TPMInputQuotaLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TPM 保障包 output 配额</p>",
+          "example": "2000000",
+          "member": "int64",
+          "name": "TPMOutputQuotaLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TPM 预留 input 配额</p>",
+          "example": "10000000",
+          "member": "int64",
+          "name": "TPMInputReserveLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TPM 预留 output 配额</p>",
+          "example": "1000000",
+          "member": "int64",
+          "name": "TPMOutputReserveLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TPM 预留后付费 input 配额</p>",
+          "example": "1000000",
+          "member": "int64",
+          "name": "TPMInputReservePostPaidLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TPM 预留后付费 output 配额</p>",
+          "example": "1000000",
+          "member": "int64",
+          "name": "TPMOutputReservePostPaidLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenPlanApiKeyListRequest": {
+      "document": "DescribeTokenPlanApiKeyList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐 ID。可通过DescribeTokenPlanList接口获取。",
+          "example": "tp-ent-abcdefgh",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询返回数量，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询过滤条件列表。支持的过滤字段：ApiKeyId （API Key ID）、Name （API Key 名称）、Status （API Key是否可用）、StopReason （API Key停用原因）、UseStatus （API Key用户侧开关）。",
+          "example": "无",
+          "member": "RequestFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询排序条件列表。支持的排序字段：CreatedAt（创建时间）、UpdatedAt（更新时间）。默认按 CreatedAt 降序。",
+          "example": "无",
+          "member": "RequestSort",
+          "name": "Sorts",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenPlanApiKeyListResponse": {
+      "document": "DescribeTokenPlanApiKeyList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API Key 列表。",
+          "example": "无",
+          "member": "TokenPlanApiKeyListItem",
+          "name": "ApiKeySet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API Key总数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenPlanApiKeyRequest": {
+      "document": "DescribeTokenPlanApiKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API Key ID。可通过DescribeTokenPlanApiKeyList接口获取。",
+          "example": "ak-tp-20260401-a1b2c3d4",
+          "member": "string",
+          "name": "ApiKeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenPlanApiKeyResponse": {
+      "document": "DescribeTokenPlanApiKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API Key 详情信息。",
+          "example": "无",
+          "member": "TokenPlanApiKeyInfo",
+          "name": "ApiKey",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API Key 额度及用量信息。",
+          "example": "无",
+          "member": "SubPackageBalance",
+          "name": "Balance",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenPlanApiKeySecretRequest": {
+      "document": "DescribeTokenPlanApiKeySecret请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API Key ID。可通过DescribeTokenPlanApiKeyList接口获取。",
+          "example": "ak-tp-20260401-a1b2c3d4",
+          "member": "string",
+          "name": "ApiKeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenPlanApiKeySecretResponse": {
+      "document": "DescribeTokenPlanApiKeySecret返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "APIKey ID。",
+          "example": "ak-tp-20260401-a1b2c3d4",
+          "member": "string",
+          "name": "ApiKeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "APIKey 密钥值（明文）。请妥善保管。",
+          "example": "sk-tp-GCgjOgMSzNpMXZ8UxKyJR5rICMTNHwFe",
+          "member": "string",
+          "name": "ApiKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenPlanApiKeyUsageDetailRequest": {
+      "document": "DescribeTokenPlanApiKeyUsageDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐 ID。可通过DescribeTokenPlanList接口获取。",
+          "example": "tp-ent-abcdefgh",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间，RFC3339 格式。不传默认为结束时间前 15 分钟。",
+          "example": "2026-04-06T00:00:00Z",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，RFC3339 格式。不传默认为当前时间。",
+          "example": "2026-04-06T12:00:00Z",
+          "member": "string",
+          "name": "To",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式。取值：asc（升序）、desc（降序），默认为 desc。",
+          "example": "desc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回条数，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "翻页上下文，首次查询不传，后续传入上次返回的 Context，直到 ListOver 为 true。",
+          "example": "Context",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按 API Key ID 精确过滤。最大 128 字符。与 ApiKeyName 至少需传入其一，都传时以 ApiKeyId 为准。可通过 DescribeTokenPlanApiKeyList 接口获取。",
+          "example": "ak-tp-20260511-e72cbd58f07906010f862a5acd597010",
+          "member": "string",
+          "name": "ApiKeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按 API Key 名称模糊过滤。最大 64 字符。与 ApiKeyId 至少需传入其一，都传时以 ApiKeyId 为准。",
+          "example": "apikey-test",
+          "member": "string",
+          "name": "ApiKeyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按模型 ID (Model ID) 精确过滤。需要按模型名称过滤时传入该字段。",
+          "example": "auto",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenPlanApiKeyUsageDetailResponse": {
+      "document": "DescribeTokenPlanApiKeyUsageDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "翻页上下文，传入下一次请求的 Context 参数继续翻页。",
+          "example": "Context",
+          "member": "string",
+          "name": "Context",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已到末尾，为 true 时无需继续翻页。",
+          "example": "true",
+          "member": "bool",
+          "name": "ListOver",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用明细列表。",
+          "example": "无",
+          "member": "UsageDetailItem",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "\t 套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ProductType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenPlanListRequest": {
+      "document": "DescribeTokenPlanList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页查询偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询返回数量，默认为 20，最大值为 100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询过滤条件列表。支持的过滤字段：TeamId（套餐 ID）、Name（套餐名称）、StopReason（关停原因）、ProductType（套餐类型）。",
+          "example": "无",
+          "member": "RequestFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序条件列表。支持的排序字段：CreatedAt（创建时间）、UpdatedAt（更新时间）。默认按 CreatedAt 降序。",
+          "example": "无",
+          "member": "RequestSort",
+          "name": "Sorts",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenPlanListResponse": {
+      "document": "DescribeTokenPlanList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐列表。",
+          "example": "无",
+          "member": "TokenPlanListItem",
+          "name": "TokenPlanSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐总数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenPlanRequest": {
+      "document": "DescribeTokenPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐 ID。可通过 DescribeTokenPlanList 接口获取。",
+          "example": "tp-ent-abcdefgh",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenPlanResponse": {
+      "document": "DescribeTokenPlan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐 ID。",
+          "example": "tp-ent-abcdefgh",
+          "member": "string",
+          "name": "TeamId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐名称。",
+          "example": "生产环境套餐",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号 APP ID。",
+          "example": "1300000001",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号 UIN。",
+          "example": "100000000001",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态。取值：enable（启用）、disable（停用）。",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关停原因。取值：取值：NORMAL（套餐正常）、ISOLATED（隔离/欠费）、FROZEN（冻结）、EXHAUSTED（额度耗尽）、DESTROYED（已销毁）。",
+          "example": "none",
+          "member": "string",
+          "name": "StopReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可创建APIKey 上限。",
+          "example": "1000",
+          "member": "int64",
+          "name": "ApiKeyMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云计费预付费资源包 ID。",
+          "example": "pre-abc12345",
+          "member": "string",
+          "name": "PrepayResourceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建人，子账号创建的套餐将展示子账号UIN。",
+          "example": "100000000002",
+          "member": "string",
+          "name": "Creator",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2026-04-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。",
+          "example": "2026-04-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐包基本信息",
+          "example": "无",
+          "member": "TokenPlanPackageInfo",
+          "name": "PackageInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识。取值：0（手动续费）、1（自动续费）、2（明确不自动续费）。未绑定预付费资源时不返回。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前已创建的 API Key 数量",
+          "example": "5",
+          "member": "int64",
+          "name": "ApiKeyCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前周期 Token 用量明细",
+          "example": "无",
+          "member": "TokenSummary",
+          "name": "TokenSummary",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ProductType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsageRankListRequest": {
+      "document": "DescribeUsageRankList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>统计维度。取值：apikey（按 APIKey 统计）、endpoint（按接入点统计）、model（按模型统计）。</p>",
+          "example": "apikey",
+          "member": "string",
+          "name": "Dimension",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>起始时间（闭区间），RFC3339 格式。</p>",
+          "example": "2026-04-09T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间（开区间），RFC3339 格式。与 StartTime 的跨度最大 90 天。</p>",
+          "example": "2026-05-09T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标族切换字段。</p><ul><li>tokens（默认）：Token 用量消耗（statistics=sum），支持 Dimension = apikey/endpoint/model</li><li>search：联网搜索调用次数（statistics=sum），仅支持 Dimension = model</li><li>apikey_usage: APIKey 锚定用量统计（某 APIKey 下按模型或接入点展开）（statistics=sum），支持 Dimension = endpoint/model</li><li>其他值返回 InvalidParameter。</li></ul>",
+          "example": "tokens",
+          "member": "string",
+          "name": "MetricType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>锚定对象，用于缩小统计范围「在哪个具体对象之内」，MetricType 为 apikey_usage 时必填。<br>各 MetricType 是否支持/如何使用 Anchor，见 MetricType 字段说明。</p>",
+          "example": "ak-20260618-**************************",
+          "member": "string",
+          "name": "Anchor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>维度过滤值。空字符串表示查询全部对象，非空时仅查询指定单个对象（如指定 APIKey ID）。最大 256 字符。</p>",
+          "example": "ak-20260618-**************************",
+          "member": "string",
+          "name": "Target",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>统计粒度（秒）。取值：60、300、3600、86400。必须不小于跨度对应下限：跨度 ≤ 1 天 → 60；1 ~ 5 天 → 300；5 ~ 10 天 → 3600；&gt; 10 天 → 86400。仅 ShowAll=false 时使用。</p>",
+          "example": "300",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>翻页起点，从 0 起，默认 0。ShowAll=true 时忽略。页大小固定为 10。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否返回全量结果。</p><ul><li>false（默认）：按 Offset 分页返回 TopList（每页 10 条），每个对象包含<br>Series 时序点用于绘制曲线。</li><li>true：忽略 Offset，返回全量对象列表，不返回 Series（CSV 导出场景）。</li></ul>",
+          "example": "false",
+          "member": "bool",
+          "name": "ShowAll",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序指标键（可选），具体值见响应 MetricKeys。为空时按 <code>MetricKeys[0]</code> 降序排序（tokens/apikey_usage 族为 TotalToken，search 族为 SearchRequestCount）。非法值返回 InvalidParameter。</p>",
+          "example": "TotalToken",
+          "member": "string",
+          "name": "SortKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsageRankListResponse": {
+      "document": "DescribeUsageRankList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>回填请求的统计维度。</p>",
+          "example": "apikey",
+          "member": "string",
+          "name": "Dimension",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回填请求的指标族：取值同入参 MetricType（tokens / search / apikey_usage）</p><p>枚举值：</p><ul><li>tokens： tokens</li></ul>",
+          "example": "tokens",
+          "member": "string",
+          "name": "MetricType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次响应中 Stats / Series / PageStats / TotalStats 实际包含的 metric key 列表，按MetricType 区分：<br>tokens=[TotalToken, InputTotalToken, OutputTotalToken, CacheTotalToken]<br>search=[SearchRequestCount,SearchCount]<br>apikey_usage=[TotalToken, InputTotalToken, OutputTotalToken, CacheTotalToken, RequestCount, RequestFailCount]</p>",
+          "example": "[\"TotalToken\",\"InputTotalToken\",\"OutputTotalToken\"]",
+          "member": "string",
+          "name": "MetricKeys",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视图（数据来源）</p>",
+          "example": "tokenhub_uin_apikeyid",
+          "member": "string",
+          "name": "ViewName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回填请求的统计粒度（秒）。ShowAll=true 时为 0。</p>",
+          "example": "300",
+          "member": "int64",
+          "name": "Period",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回填请求的起始时间。</p>",
+          "example": "2026-04-09T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回填请求的结束时间。</p>",
+          "example": "2026-05-09T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全量对象数。</p>",
+          "example": "53",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回填请求的翻页起点。ShowAll=true 时为 0。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>页大小，恒为 10。ShowAll=true 时为 Total。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Series 数组对应的时间戳序列（Unix 秒）。ShowAll=true 时为空数组。</p>",
+          "example": "[1715000000,1715000300]",
+          "member": "int64",
+          "name": "Timestamps",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对象排行列表，按 SortKey 降序排序。ShowAll=false 时为当前页 10 个对象（含 Series）；ShowAll=true 时为全量对象（不含 Series，用于 CSV 导出）。</p>",
+          "example": "无",
+          "member": "UsageRankItem",
+          "name": "TopList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页统计结果</p>",
+          "example": "无",
+          "member": "UsageStats",
+          "name": "PageStats",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总统计结果</p>",
+          "example": "无",
+          "member": "UsageStats",
+          "name": "TotalStats",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序指标键</p>",
+          "example": "TotalToken",
+          "member": "string",
+          "name": "SortKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EndpointCreateDetail": {
+      "document": "创建推理服务返回的详情信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预付费包 id",
+          "example": "free-new-test",
+          "member": "string",
+          "name": "PreResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EndpointDetail": {
+      "document": "推理服务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理服务 ID。</p>",
+          "example": "ep-abcd123",
+          "member": "string",
+          "name": "EndpointId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称。</p>",
+          "example": "测试推理服务",
+          "member": "string",
+          "name": "EndpointName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称。</p>",
+          "example": "deepseek-v4-pro",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 ID。</p>",
+          "example": "deepseek",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态。取值：ACTIVE（使用中）、INACTIVE（停止中）。</p>",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型。取值：TEXT_GENERATION（文本生成）、IMAGE_GENERATION（图片生成）、VIDEO_GENERATION（视频生成）。</p>",
+          "example": "TEXT_GENERATION",
+          "member": "string",
+          "name": "ServiceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费方式。取值：FREE（免费体验）、TOKEN（按 Token 计费）</p><p>枚举值：</p><ul><li>FREE： 免费体验</li><li>TOKEN： 按 Token 计费</li></ul>",
+          "example": "TOKEN",
+          "member": "string",
+          "name": "ChargeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启付费计费。true 表示已开启付费资源包，false 表示仅使用免费额度。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "PaymentEnabled",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费详情信息，JSON 格式字符串。不同 ChargeType 对应不同的 JSON 结构：</p><ul><li>免费额度信息（所有类型均可能包含）：{&quot;FreeQuota&quot;: {&quot;TotalQuota&quot;: 200, &quot;UsedQuota&quot;: 56, &quot;UsagePercent&quot;: 28, &quot;ExpireTime&quot;: &quot;2026-06-15T00:00:00Z&quot;}}</li><li>TPM 类型额外包含：{&quot;Tpm&quot;: {&quot;TpmInputLimit&quot;: 1000, &quot;TpmOutputLimit&quot;: 1000}}</li><li>其他类型：预留扩展。</li></ul>",
+          "example": "\"{}\"",
+          "member": "string",
+          "name": "ChargeDetail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>停止原因。当状态为 INACTIVE 时返回。取值：FREE_QUOTA_EXHAUSTED（免费额度已用尽）、NO_FREE_PACKAGE（无可用免费包）、INSUFFICIENT_BALANCE（余额不足，格式为 INSUFFICIENT_BALANCE:&lt;待支付资源ID&gt;）、BILLING_ISOLATED（账户欠费隔离）、INTERNAL_ERROR（内部错误）。当值为 INSUFFICIENT_BALANCE 时，冒号后附带待支付的 TPM 包资源 ID，前端可据此引导用户前往对应订单页完成支付。</p>",
+          "example": "FREE_QUOTA_EXHAUSTED",
+          "member": "string",
+          "name": "StopReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TPM（每分钟 Token 限流）。当推理服务未单独设置时，回退为关联模型的默认 TPM 值。</p>",
+          "example": "1000000",
+          "member": "int64",
+          "name": "TPM",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动调整配额</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoAdjustQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>RPM（每分钟请求数限流）。当推理服务未单独设置时，回退为关联模型的默认 RPM 值。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "RPM",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型状态</p><p>枚举值：</p><ul><li>online： 在线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护</li><li>offline： 下线</li></ul>",
+          "example": "online",
+          "member": "string",
+          "name": "ModelStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GlossaryEntryInput": {
+      "document": "新建术语条目项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源语言术语。最大 1000 字符。",
+          "example": "云服务器",
+          "member": "string",
+          "name": "SourceTerm",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标语言术语。最大 1000 字符。",
+          "example": "Cloud Server",
+          "member": "string",
+          "name": "TargetTerm",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "GlossaryEntryItem": {
+      "document": "术语条目详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语条目 ID。",
+          "example": "0b93af68c6cdc928b99d5b3fed6a3f93",
+          "member": "string",
+          "name": "EntryId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源语言术语。",
+          "example": "云服务器",
+          "member": "string",
+          "name": "SourceTerm",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标语言术语。",
+          "example": "Cloud Server",
+          "member": "string",
+          "name": "TargetTerm",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。Unix 时间戳（毫秒）。",
+          "example": "1780561971",
+          "member": "int64",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GlossaryItem": {
+      "document": "术语库详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID。",
+          "example": "glossary-a1b2c3d4",
+          "member": "string",
+          "name": "GlossaryId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "术语库名称。",
+          "example": "my-glossary",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "术语库描述。",
+          "example": "test glossary",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源语言代码。",
+          "example": "zh",
+          "member": "string",
+          "name": "Source",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标语言代码。",
+          "example": "en",
+          "member": "string",
+          "name": "Target",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2026-03-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。",
+          "example": "2026-03-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Model": {
+      "document": "模型信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "Hy3 preview",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 ID。</p>",
+          "example": "hy3-preview",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型id别名列表</p>",
+          "example": "[\"deepseek\"]",
+          "member": "string",
+          "name": "ExtraModelIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型显示名称。</p>",
+          "example": "Hy3 preview",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型描述。</p>",
+          "example": "混元 Hy3 preview 面向 Agent 工作负载设计，采用 295B/21B 激活的 MoE 架构。",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型概要。</p>",
+          "example": "代码生成、长上下文与 Agent 能力扎实，适合 Coding Agent、文档自动化及多步工具调用工作流",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类型。取值：Text（文本）、Vision（视觉）、Multimodal（多模态）、Speech（语音）、Embedding（向量）。</p><p>枚举值：</p><ul><li>Text： 语言模型</li><li>Vision： 视觉模型</li><li>Multimodal： 多模态模型</li></ul>",
+          "example": "Text",
+          "member": "string",
+          "name": "ModelType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型品牌。</p>",
+          "example": "混元",
+          "member": "string",
+          "name": "Brand",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型图标。</p>",
+          "example": "无",
+          "member": "ModelImage",
+          "name": "ModelImage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型供应商。</p>",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "Provider",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>markdown 原生内容的模型提供方详情</p>",
+          "example": "# 模型提供方 - 杭州深度求索人工智能基础技术研究有限公司",
+          "member": "string",
+          "name": "ProviderIntroduction",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li></ul>",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表。</p>",
+          "example": "[                             \"深度思考\",                             \"文本生成\"                         ]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费信息列表。</p>",
+          "example": "无",
+          "member": "ModelChargingInfo",
+          "name": "ModelChargingInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型规格。</p>",
+          "example": "无",
+          "member": "ModelSpec",
+          "name": "ModelSpec",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>发布时间。</p>",
+          "example": "2026-04-23T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ReleaseAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>推荐顺序，值越小排序越靠前。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "RecommendWeight",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型访问信息。包含模型在各站点和地域的可用性配置。为空时表示未配置地域信息，模型不可用。</p>",
+          "example": "无",
+          "member": "ModelAccessInfo",
+          "name": "ModelAccessInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>体验包信息。</p>",
+          "example": "无",
+          "member": "ModelFreeTrialInfo",
+          "name": "FreeTrialInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型下线时间，Status=pre-offline 时，会配置模型下线时间</p>",
+          "example": "2026-05-02T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "OfflineAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>停止新购时间</p>",
+          "example": "2026-05-02T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "DiscontinuedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelAccessInfo": {
+      "document": "模型访问信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "各站点的地域可用性列表。为空时表示未配置地域信息，模型不可用。",
+          "example": "无",
+          "member": "ModelSiteRegion",
+          "name": "ModelSiteRegions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelChargingInfo": {
+      "document": "模型计费信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费类型。取值：Uniform（统一计费）、Tiered（阶梯计费）。",
+          "example": "Tiered",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费名称，阶梯计费时表示区间标识，统一计费为空。",
+          "example": "0<=输入<32k",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费场景，用于区分同一产品不同功能的计费。",
+          "example": "在线推理",
+          "member": "string",
+          "name": "Scenario",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费条目列表，顺序即前端展示顺序。",
+          "example": "无",
+          "member": "ModelChargingItem",
+          "name": "ChargingItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费单位。取值：TOKEN（词元）、COUNT（次）、CREDIT（积分）、PICTURE（张）。",
+          "example": "TOKEN",
+          "member": "string",
+          "name": "ChargeUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费参考链接。",
+          "example": "https://cloud.tencent.com/document/product/1804/123461#7aff517a-9178-43a0-9093-9f822dc07739",
+          "member": "string",
+          "name": "Reference",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelChargingItem": {
+      "document": "计费条目",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>价格维度标识。取值：Input（输入）、Output（输出）、Cache（缓存命中）、Thinking（思考）、BatchInput（批量输入）、BatchOutput（批量输出）、BatchCache（批量缓存命中）、ImageInput（输入图片）、ImageOutput（输出图片）、Search（搜索调用）。</p>",
+          "example": "Input",
+          "member": "string",
+          "name": "PriceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>价格维度展示名，后端直接提供当前语言文本（如 输入、Input），前端无需翻译。</p>",
+          "example": "输入",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>价格数值。</p>",
+          "example": "1",
+          "member": "string",
+          "name": "Price",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>价格单位，后端直接提供当前语言文本（如 元/百万tokens、元/张、积分/次）。</p>",
+          "example": "元/百万tokens",
+          "member": "string",
+          "name": "PriceUnit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高峰价格，为空表示无高峰定价</p>",
+          "example": "1",
+          "member": "string",
+          "name": "PeakPrice",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规格描述，例如视觉/语音类模型有值（如 有参考视频 540P、图生视频 首帧 720P、动作控制 1080P、有声-未指定音色），其他模型为空。</p>",
+          "example": "有参考视频 540P",
+          "member": "string",
+          "name": "Specification",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Token 用量描述，例如视觉/语音类模型有值（如 第1秒 62,500 Tokens，后续每秒 15,625 Tokens），其他模型为空。</p>",
+          "example": "第1秒 62,500 Tokens，后续每秒 15,625 Tokens",
+          "member": "string",
+          "name": "Usage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参考费用/预估费用描述，例如视觉/语音类模型有值（如 第1秒 0.625 元，后续每秒 0.15625 元），其他模型为空。</p>",
+          "example": "第1秒 0.625 元，后续每秒 0.15625 元",
+          "member": "string",
+          "name": "ReferencePrice",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelEndpointView": {
+      "document": "模型接入点概览信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理服务 ID。网关默认创建的 id 与模型 id 相同；控制台自定义推理服务以 ep- 开头。</p>",
+          "example": "ep-abcd123",
+          "member": "string",
+          "name": "EndpointId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理服务名称。未激活时与 ModelId 相同。</p>",
+          "example": "测试推理服务",
+          "member": "string",
+          "name": "EndpointName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 ID。</p>",
+          "example": "deepseek-v4-pro",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型id别名列表</p>",
+          "example": "[\"deepseek\"]",
+          "member": "string",
+          "name": "ExtraModelIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称。</p>",
+          "example": "deepseek-v4-pro",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态。取值：ACTIVE（运行中）、INACTIVE（已停止）。</p>",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型状态</p><p>枚举值：</p><ul><li>online： 在线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li><li>offline： 下线</li></ul>",
+          "example": "online",
+          "member": "string",
+          "name": "ModelStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型。固定为 TEXT_GENERATION（文本生成）。</p>",
+          "example": "TEXT_GENERATION",
+          "member": "string",
+          "name": "ServiceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费方式。取值：FREE（免费体验）、TOKEN（按 Token 计费）。未激活时为空。</p>",
+          "example": "FREE",
+          "member": "string",
+          "name": "ChargeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否已开启后付费。true 表示已开启，false 表示未开启。未激活时为 false。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "PaymentEnabled",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费详情信息，JSON 格式字符串，包含免费额度用量等信息。未激活时为空。</p>",
+          "example": "{\"FreeQuota\":{\"TotalQuota\":1000000,\"UsedQuota\":27,\"UsagePercent\":0,\"ExpireTime\":\"2026-08-12T11:03:44Z\"}}",
+          "member": "string",
+          "name": "ChargeDetail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>停止原因。当状态为 INACTIVE 时返回。取值：FREE_QUOTA_EXHAUSTED（免费额度已用尽）、NO_FREE_PACKAGE（无可用免费包）、INSUFFICIENT_BALANCE（余额不足）、BILLING_ISOLATED（账户欠费隔离）、INTERNAL_ERROR（内部错误）。</p>",
+          "example": "FREE_QUOTA_EXHAUSTED",
+          "member": "string",
+          "name": "StopReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理服务的 rpm 限制，没设置就按模型维度 rpm 限制展示</p>",
+          "example": "60",
+          "member": "int64",
+          "name": "RPM",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理服务的tpm 限制，没设置就按模型维度 tpm 限制展示</p>",
+          "example": "1000000",
+          "member": "int64",
+          "name": "TPM",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelFreeTrialInfo": {
+      "document": "模型体验包信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推荐顺序，值越小排序越靠前。为空表示使用模型默认权重。",
+          "example": "1",
+          "member": "int64",
+          "name": "RecommendWeight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "体验包容量大小。",
+          "example": "1000000",
+          "member": "int64",
+          "name": "CapacitySize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容量单位。取值：token。",
+          "example": "token",
+          "member": "string",
+          "name": "Unit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效期天数（如90天）。为空表示不限期。",
+          "example": "90",
+          "member": "int64",
+          "name": "ValidityDays",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelImage": {
+      "document": "模型图标信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图标 URL。",
+          "example": "https://qcloudimg.tencent-cloud.cn/raw/672552a315809509bda19ecb65230671.png",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelSiteRegion": {
+      "document": "模型上线的站点、地域信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点标识。取值：domestic（国内站）、international（国际站）。",
+          "example": "domestic",
+          "member": "string",
+          "name": "Site",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该站点下可用的地域列表，遵循腾讯云标准地域编码（如 ap-guangzhou、ap-beijing、ap-singapore、na-siliconvalley 等）。为空数组时表示该站点无可用地域。",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "Regions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelSpec": {
+      "document": "模型规格信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每分钟处理 Token 数（Tokens Per Minute）。",
+          "example": "1000k",
+          "member": "string",
+          "name": "TPM",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每分钟请求数（Queries Per Minute）。",
+          "example": "60",
+          "member": "string",
+          "name": "QPM",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大输入 Token 长度。",
+          "example": "192k",
+          "member": "string",
+          "name": "MaxInputToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大输出 Token 长度。",
+          "example": "128k",
+          "member": "string",
+          "name": "MaxOutputToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上下文窗口长度。",
+          "example": "256k",
+          "member": "string",
+          "name": "ContextLength",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "并发数。",
+          "example": "10",
+          "member": "string",
+          "name": "Concurrency",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入要求描述。",
+          "example": "图片分辨率不超过4k (4096*2160)，视频分辨率不超过2k (2048*1080)",
+          "member": "string",
+          "name": "InputDescription",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyApiKeyBindingsRequest": {
+      "document": "ModifyApiKeyBindings请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>API 密钥 ID。</p>",
+          "example": "ak-xxx",
+          "member": "string",
+          "name": "ApiKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台类型。取值：maas。</p>",
+          "example": "maas",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定类型。取值：all（全部模型和接入点）、model_custom_endpoint_custom（自定义模型+自定义接入点）。</p><p>枚举值：</p><ul><li>model_custom_endpoint_custom： 自定义模型+自定义接入点</li></ul>",
+          "example": "model_custom_endpoint_custom： 自定义模型+自定义接入点",
+          "member": "string",
+          "name": "BindType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改后的apikey的模型或服务绑定列表</p>",
+          "example": "无",
+          "member": "BindingItem",
+          "name": "Bindings",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApiKeyBindingsResponse": {
+      "document": "ModifyApiKeyBindings返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApiKeyInfoRequest": {
+      "document": "ModifyApiKeyInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>API 密钥 ID。</p>",
+          "example": "ak-20260624-39f1918de39ec5a7abc48f7a99c4e1a3",
+          "member": "string",
+          "name": "ApiKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台类型。取值：maas。</p>",
+          "example": "maas",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>API 密钥名称。最大 128 字符。不传表示不修改。</p>",
+          "example": "apikey-new-name",
+          "member": "string",
+          "name": "ApiKeyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注。</p>",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP 白名单列表。支持 IPv4（如 1.2.3.4）、CIDR（如 10.0.0.0/24）格式，IPv6暂不支持。最多 50 个，不支持重复。传入空数组表示清空白名单（不限制 IP）。不传表示不修改。</p>",
+          "example": "[\"1.2.3.4\"]",
+          "member": "string",
+          "name": "IpWhitelist",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>【修改限额推荐使用QuotaDesired参数】Token 限额期望状态。可选，不传表示不修改，传入空数组表示清空。和 Quotas（Token限额配置）字段互斥，不支持同时传入</p>",
+          "example": "无",
+          "member": "QuotasDesired",
+          "name": "QuotasDesired",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApiKeyInfoResponse": {
+      "document": "ModifyApiKeyInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApiKeyStatusRequest": {
+      "document": "ModifyApiKeyStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>API 密钥 ID。</p>",
+          "example": "ak-20260710-d41f81de4bb89ae10384b856c5692519",
+          "member": "string",
+          "name": "ApiKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台类型。取值：maas。</p>",
+          "example": "maas",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态。取值：enable（启用）、disable（禁用）。</p>",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApiKeyStatusResponse": {
+      "document": "ModifyApiKeyStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEndpointRequest": {
+      "document": "ModifyEndpoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自动调整配额</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoAdjustQuota",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEndpointResponse": {
+      "document": "ModifyEndpoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlossaryEntriesRequest": {
+      "document": "ModifyGlossaryEntries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语库 ID。可通过 DescribeGlossaries 接口获取。",
+          "example": "glossary-a1b2c3d4",
+          "member": "string",
+          "name": "GlossaryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "术语条目列表。单次最多 200 个。",
+          "example": "无",
+          "member": "ModifyGlossaryEntryInput",
+          "name": "Entries",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlossaryEntriesResponse": {
+      "document": "ModifyGlossaryEntries返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改后的术语条目列表。",
+          "example": "无",
+          "member": "GlossaryEntryItem",
+          "name": "Entries",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlossaryEntryInput": {
+      "document": "修改术语条目项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语条目 ID。可通过 DescribeGlossaryEntries 接口获取。",
+          "example": "3a82012132f4da00ab3cf623b43a6aa1",
+          "member": "string",
+          "name": "EntryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源语言术语。最大 1000 字符。不传则保持不变。",
+          "example": "云服务器",
+          "member": "string",
+          "name": "SourceTerm",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标语言术语。最大 1000 字符。不传则保持不变。",
+          "example": "cloud server",
+          "member": "string",
+          "name": "TargetTerm",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyTokenPlanApiKeyRequest": {
+      "document": "ModifyTokenPlanApiKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API Key ID。",
+          "example": "ak-tp-20260401-a1b2c3d4",
+          "member": "string",
+          "name": "ApiKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可用模型列表。不传则不修改。\n\n- 如果套餐类型为企业版专业套餐：\n1）传入“all“ ：使用套餐支持的所有模型\n2）传入 Model ID：指定具体模型。“all“和具体的 Model ID 不能同时传入。\n\n- 如果套餐类型为企业版轻享套餐，不允许传该参数。",
+          "example": "[\"glm-5\",\"kimi-k2.5\"]",
+          "member": "string",
+          "name": "AllowedModels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "独占额度，不传则不修改。单位说明：\n\n- 套餐类型为专业套餐，单位取值为积分；\n- 套餐类型为轻享套餐，单位取值为 token。",
+          "example": "500000",
+          "member": "int64",
+          "name": "ExclusiveQuota",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "总额度上限。-1 表示不限，必须为 -1 或 >= API Key 当前的 ExclusiveQuota（独占额度），不传则不修改。单位说明如下：\n- 套餐类型为专业套餐，单位取值为积分；\n- 套餐类型为轻享套餐，单位取值为 token。",
+          "example": "-1",
+          "member": "int64",
+          "name": "TotalQuota",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用该 API Key。取值：enable（启用）、disable（停用），不传则不修改。",
+          "example": "enable",
+          "member": "string",
+          "name": "UseStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TPM（Tokens Per Minute）限制。不传则不修改。必须 >= 0 且 <= 套餐 TPM。",
+          "example": "4400",
+          "member": "int64",
+          "name": "TPM",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTokenPlanApiKeyResponse": {
+      "document": "ModifyTokenPlanApiKey返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTokenPlanApiKeySecretRequest": {
+      "document": "ModifyTokenPlanApiKeySecret请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API Key ID。可通过DescribeTokenPlanApiKeyList接口获取。",
+          "example": "ak-tp-20260401-a1b2c3d4",
+          "member": "string",
+          "name": "ApiKeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTokenPlanApiKeySecretResponse": {
+      "document": "ModifyTokenPlanApiKeySecret返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API Key ID。",
+          "example": "ak-tp-20260401-a1b2c3d4",
+          "member": "string",
+          "name": "ApiKeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重置后的密钥版本号。",
+          "example": "2",
+          "member": "int64",
+          "name": "KeyVersion",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QuotaCreateItem": {
+      "document": "Token 限额配置项（创建 API 密钥时用）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>限额周期。取值：d（按日）、m（按月）、lifetime（总额度，不重置）。</p>",
+          "example": "m",
+          "member": "string",
+          "name": "CycleUnit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>维度当期限额总量（Token 数），不能大于10万亿。使用字符串避免大数精度丢失。</p>",
+          "example": "1000",
+          "member": "string",
+          "name": "CycleCredits",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>月度限额起始日。CycleUnit 为 m 时可选，1~31，默认 1。小月（如 2 月）由下游自动取该月最后一天。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MonthStartDay",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "QuotaInfo": {
+      "document": "Token 限额信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "限额包 ID。",
+          "example": "limit-6xaznx2ke5",
+          "member": "string",
+          "name": "PkgId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限额包状态。取值：1（正常）、3（已耗尽）、4（已销毁）。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限额周期。取值：d（按日）、m（按月）、lifetime（总额度，不重置）。",
+          "example": "d",
+          "member": "string",
+          "name": "CycleUnit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维度当期限额总量（Token 数）。使用字符串避免大数精度丢失。",
+          "example": "1000",
+          "member": "string",
+          "name": "CycleCredits",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维度当期已使用量（Token 数）。使用字符串避免大数精度丢失。",
+          "example": "0",
+          "member": "string",
+          "name": "CycleUsed",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限额生效起始时间。",
+          "example": "2026-06-09T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限额过期时间。",
+          "example": "2046-06-09T21:12:17+08:00",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QuotasDesired": {
+      "document": "Token 限额期望状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>限额周期，必填。取值：d（按日）、m（按月）、lifetime（总额度）。</p>",
+          "example": "m",
+          "member": "string",
+          "name": "CycleUnit",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单周期额度（Token 数），必填，不能大于10万亿。使用字符串避免大数精度丢失。同维度若与现网不同视为升配/降配。</p>",
+          "example": "1000",
+          "member": "string",
+          "name": "CycleCredits",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>月度限额起始日。CycleUnit=m 时可选，1~31，默认 1。小月（如 2 月）由下游自动取该月最后一天。已有月度限额包时，更新月起始日视为周期窗口切换，会 delete 旧包后 add 新包，累计额度会重置</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "MonthStartDay",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RenewTokenPlanTeamOrderRequest": {
+      "document": "RenewTokenPlanTeamOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐 ID。可通过 DescribeTokenPlanList 接口获取。",
+          "example": "tp-ent-abcdefgh",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费时长。单位：月。必须大于 0。",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewTokenPlanTeamOrderResponse": {
+      "document": "RenewTokenPlanTeamOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云订单 ID。用于关联一次续费操作下的所有子订单。",
+          "example": "20260101000000000000001",
+          "member": "string",
+          "name": "BigOrderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RequestFilter": {
+      "document": "过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤字段名称。",
+          "example": "ResourceType",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤操作符。取值：EXACT（精确匹配）、FUZZY（模糊匹配）、NOT（排除匹配）。",
+          "example": "EXACT",
+          "member": "string",
+          "name": "Op",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤值列表。最多支持 10 个。",
+          "example": "[\"model\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "RequestSort": {
+      "document": "排序条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排序字段名称。",
+          "example": "CreatedAt",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方向。取值：ASC（升序）、DESC（降序）。",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "SubPackageBalance": {
+      "document": "API Key 额度及用量信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>独占额度。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>",
+          "example": "500000",
+          "member": "string",
+          "name": "ExclusiveQuota",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>独占额度已用量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>",
+          "example": "100000",
+          "member": "string",
+          "name": "ExclusiveUsed",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>独占额度剩余量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>",
+          "example": "400000",
+          "member": "string",
+          "name": "ExclusiveRemain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享额度上限，-1 表示不限。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>",
+          "example": "-1",
+          "member": "string",
+          "name": "SharedQuota",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享额度已用量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>",
+          "example": "50000",
+          "member": "string",
+          "name": "SharedUsed",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享额度剩余量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>",
+          "example": "-1",
+          "member": "string",
+          "name": "SharedRemain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前周期已用总量 exclusive_used + shared_used + overflow_used</p>",
+          "example": "50000",
+          "member": "string",
+          "name": "TotalUsed",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>API Key 额度包状态。取值：0（正常）、1（耗尽）。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TokenPlanApiKeyInfo": {
+      "document": "Token Plan API Key 详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API Key ID。",
+          "example": "ak-tp-20260401-a1b2c3d4",
+          "member": "string",
+          "name": "ApiKeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API Key 密钥值（脱敏）。",
+          "example": "sk-tp-xxxxxxxx",
+          "member": "string",
+          "name": "ApiKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API Key 名称。",
+          "example": "生产环境主Key",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属套餐 ID。",
+          "example": "tp-ent-abcdefgh",
+          "member": "string",
+          "name": "TeamId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号APP ID。",
+          "example": "1300000001",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号 UIN。",
+          "example": "100000000001",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API Key 可用模型列表（JSON 数组字符串）。",
+          "example": "[\"glm-5\",\"kimi-k2.5\",\"tc-code-latest\"]",
+          "member": "string",
+          "name": "AllowedModels",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API Key 是否可用。取值：enable（启用）、disable（停用）。",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API Key 停用原因。取值：NORMAL（正常，默认值），QUOTA_EXHAUSTED（API Key额度包耗尽），ABNORMAL（异常，需人工介入）",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "StopReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户侧开关。取值：enable（启用）、disable（停用）。",
+          "example": "enable",
+          "member": "string",
+          "name": "UseStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥版本号。",
+          "example": "1",
+          "member": "int64",
+          "name": "KeyVersion",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近一次重置时间。（ISO 8601）",
+          "example": "2026-04-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "LastRotatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建人，如果是子账号创建，则该值为子账号UIN。",
+          "example": "100000000002",
+          "member": "string",
+          "name": "Creator",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2026-04-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。",
+          "example": "2026-04-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TPM 限制（Tokens Per Minute）。",
+          "example": "1000000",
+          "member": "int64",
+          "name": "TPM",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ProductType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TokenPlanApiKeyListItem": {
+      "document": "Token Plan API Key 列表项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API Key ID。",
+          "example": "ak-tp-20260401-a1b2c3d4",
+          "member": "string",
+          "name": "ApiKeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API Key 密钥值（脱敏）。",
+          "example": "sk-tp-****xxxx",
+          "member": "string",
+          "name": "ApiKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API Key 名称。",
+          "example": "生产Key",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属套餐 ID。",
+          "example": "team-tp-20260401-a1b2c3d4",
+          "member": "string",
+          "name": "TeamId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号APP ID。",
+          "example": "1300000001",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号 UIN。最大 128 字符。",
+          "example": "100000000001",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API Key 可用模型列表（JSON 数组字符串）。",
+          "example": "[\"glm-5\"]",
+          "member": "string",
+          "name": "AllowedModels",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API Key 是否可用。取值：enable（启用）、disable（停用）。",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API Key 停用原因。取值：NORMAL（正常，默认值），QUOTA_EXHAUSTED（API Key额度包耗尽），ABNORMAL（异常，需人工介入）",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "StopReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户侧开关。取值：enable（启用）、disable（停用）。",
+          "example": "enable",
+          "member": "string",
+          "name": "UseStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥版本号。",
+          "example": "1",
+          "member": "int64",
+          "name": "KeyVersion",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近一次重置时间。（ISO 8601）",
+          "example": "2026-04-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "LastRotatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建人，如果是子账号创建，则该值为子账号UIN。",
+          "example": "100000000002",
+          "member": "string",
+          "name": "Creator",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2026-04-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。",
+          "example": "2026-04-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API Key 额度用量信息",
+          "example": "无",
+          "member": "SubPackageBalance",
+          "name": "Balance",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ProductType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TokenPlanListItem": {
+      "document": "Token Plan 套餐列表项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>套餐 ID。</p>",
+          "example": "tp-ent-abcdefgh",
+          "member": "string",
+          "name": "TeamId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）</p>",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ProductType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐名称。最大 128 字符。</p>",
+          "example": "生产环境套餐",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号 APP ID。</p>",
+          "example": "1300000001",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主账号 UIN。</p>",
+          "example": "100000000001",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐状态。取值：enable（启用）、disable（停用）。</p>",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐关停原因。取值：NORMAL（正常）、ISOLATED（隔离/欠费）、FROZEN（冻结）、EXHAUSTED（额度耗尽）、DESTROYED（已销毁）</p>",
+          "example": "none",
+          "member": "string",
+          "name": "StopReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可创建 API Key 上限。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ApiKeyMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前已创建的 APIKey 数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ApiKeyCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云计费预付费资源包 ID。</p>",
+          "example": "prepay-123",
+          "member": "string",
+          "name": "PrepayResourceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人。若为子账号创建的套餐，则该值为子账号UIN。</p>",
+          "example": "100000000002",
+          "member": "string",
+          "name": "Creator",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "2026-04-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间。</p>",
+          "example": "2026-04-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐包基本信息。</p>",
+          "example": "无",
+          "member": "TokenPlanPackageInfo",
+          "name": "PackageInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启自动续费。取值：0（未开启），1（开启）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TokenPlanPackageInfo": {
+      "document": "主额度包信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总额度。根据套餐类型区分单位：credits（企业版专业套餐），tokens（企业版auto套餐）",
+          "example": "1000000",
+          "member": "string",
+          "name": "TotalQuota",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总已使用额度。根据套餐类型区分单位：credits（企业版专业套餐），tokens（企业版auto套餐）",
+          "example": "100000",
+          "member": "string",
+          "name": "TotalUsed",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总周期数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCycles",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期单位。取值：month（月）",
+          "example": "month",
+          "member": "string",
+          "name": "CycleUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐包生效时间。",
+          "example": "2026-04-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐包到期时间。",
+          "example": "2027-04-01T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "独占池已分配额度。根据套餐类型区分单位：credits（企业版专业套餐），tokens（企业版auto套餐）",
+          "example": "500000",
+          "member": "string",
+          "name": "ExclusiveAllocated",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "独占池已用额度。根据套餐类型区分单位：credits（企业版专业套餐），tokens（企业版auto套餐）",
+          "example": "100000",
+          "member": "string",
+          "name": "ExclusiveUsed",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享池总额度。根据套餐类型区分单位：credits（企业版专业套餐），tokens（企业版auto套餐）",
+          "example": "500000",
+          "member": "string",
+          "name": "SharedPool",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享已用额度。根据套餐类型区分单位：credits（企业版专业套餐），tokens（企业版auto套餐）",
+          "example": "50000",
+          "member": "string",
+          "name": "SharedUsed",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当期额度。根据套餐类型区分单位：credits（企业版专业套餐），tokens（企业版auto套餐）",
+          "example": "1000000",
+          "member": "string",
+          "name": "CycleQuota",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前周期。",
+          "example": "1",
+          "member": "int64",
+          "name": "CurrentCycle",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余周期。",
+          "example": "0",
+          "member": "int64",
+          "name": "RemainCycles",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TokenSummary": {
+      "document": "主包Token总结",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐包当前计费周期序号",
+          "example": "1",
+          "member": "int64",
+          "name": "CycleSeq",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐包计费周期开始时间（RFC3339）",
+          "example": "2026-04-01T00:00:00+08:00",
+          "member": "string",
+          "name": "CycleStartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐包当前计费周期结束时间（RFC3339）",
+          "example": "2026-05-01T00:00:00+08:00",
+          "member": "string",
+          "name": "CycleEndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "按计费项分组的 token 汇总列表",
+          "example": "无",
+          "member": "TokenSummaryBillingItem",
+          "name": "BillingItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TokenSummaryBillingItem": {
+      "document": "Token 汇总计费项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费项。取值：input（输入 Token）、output（输出 Token）、cache（缓存 Token）、call_count（调用次数）。",
+          "example": "input",
+          "member": "string",
+          "name": "BillingItem",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该计费项在周期内的原始用量汇总，单位：tokens。",
+          "example": "1500000",
+          "member": "int64",
+          "name": "TotalQty",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UpgradeTokenPlanTeamOrderRequest": {
+      "document": "UpgradeTokenPlanTeamOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐 ID。可通过 DescribeTokenPlanList 接口获取。",
+          "example": "tp-ent-abcdefgh",
+          "member": "string",
+          "name": "TeamId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "升配后的新规格额度。套餐类型为 enterprise 时表示积分额度，套餐类型为 enterprise-auto 时表示 Token 数。必须大于当前额度。",
+          "example": "1000000",
+          "member": "int64",
+          "name": "NewCreditOrToken",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeTokenPlanTeamOrderResponse": {
+      "document": "UpgradeTokenPlanTeamOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云订单 ID。用于关联一次升配操作下的所有子订单。",
+          "example": "20260101000000000000001",
+          "member": "string",
+          "name": "BigOrderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UsageDetailItem": {
+      "document": "Token Plan 企业版套餐调用明细项（字段与 CLS 日志对齐）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主账号 UIN。",
+          "example": "700002501094",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型名称。",
+          "example": "deepseek-v3.2",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "APIKey ID。",
+          "example": "ak-test",
+          "member": "string",
+          "name": "ApiKeyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "APIKey 名称。",
+          "example": "hello-world",
+          "member": "string",
+          "name": "ApiKeyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求 ID。",
+          "example": "test-001",
+          "member": "string",
+          "name": "RequestId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求时间（RFC3339 格式）。",
+          "example": "2026-04-06T12:00:00Z",
+          "member": "string",
+          "name": "RequestTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入 token 数。",
+          "example": "1200",
+          "member": "int64",
+          "name": "InputToken",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "缓存 token 数。",
+          "example": "100",
+          "member": "int64",
+          "name": "CacheToken",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出 token 数。",
+          "example": "800",
+          "member": "int64",
+          "name": "OutputToken",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总 token 数。",
+          "example": "2100",
+          "member": "int64",
+          "name": "TotalToken",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未命中缓存输入消耗额度。单位说明如下：\n- 套餐类型为专业套餐（enterprise），单位取值为积分；\n- 套餐类型轻享套餐（enterprise-auto），单位取值为 token。",
+          "example": "1000",
+          "member": "string",
+          "name": "InputQuota",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "缓存消耗额度。单位说明如下：\n- 套餐类型为专业套餐（enterprise），单位取值为积分；\n- 套餐类型轻享套餐（enterprise-auto），单位取值为 token。",
+          "example": "500",
+          "member": "string",
+          "name": "CacheQuota",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出消耗额度。单位说明如下：\n- 套餐类型为专业套餐（enterprise），单位取值为积分；\n- 套餐类型轻享套餐（enterprise-auto），单位取值为 token。",
+          "example": "500",
+          "member": "string",
+          "name": "OutputQuota",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总消耗额度。单位说明如下：\n- 套餐类型为专业套餐（enterprise），单位取值为积分；\n- 套餐类型轻享套餐（enterprise-auto），单位取值为 token。",
+          "example": "2000",
+          "member": "string",
+          "name": "TotalQuota",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UsageRankItem": {
+      "document": "排行列表中的单个对象用量项，含对象标识、时间周期内的统计值（Stats）和时间周期内的时序点列表（Series，仅 ShowAll=false 时返回）。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全局排名（从 1 起）。分页场景下仍为全量排序中的位次，非页内序号",
+          "example": "11",
+          "member": "int64",
+          "name": "Rank",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象标识。apikey 维度为 APIKey ID；endpoint 维度为接入点；model 维度为模型名。",
+          "example": "ak-xxx",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象展示名。apikey 维度返回 APIKey 名称（已删除的 APIKey 仍保留原名）；\nendpoint / model 维度等于 Key。",
+          "example": "syytest123",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间周期内的统计值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UsageStats",
+          "name": "Stats",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间周期内的时序点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UsageSeries",
+          "name": "Series",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UsageSeries": {
+      "document": "用量时间周期内的时序点列表（按 metric key 索引）。为 JSON 数组的字符串形式,数组长度与响应 Timestamps 一致，无数据点处为 null。具体包含哪些 key 由响应 MetricKeys 决定。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>[tokens / apikey_usage 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>",
+          "example": "[12,null,15]",
+          "member": "string",
+          "name": "TotalToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[tokens / apikey_usage 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>",
+          "example": "[7,null,9]",
+          "member": "string",
+          "name": "InputTotalToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[tokens / apikey_usage 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>",
+          "example": "[5,null,6]",
+          "member": "string",
+          "name": "OutputTotalToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[tokens / apikey_usage 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>",
+          "example": "[5,null,6]",
+          "member": "string",
+          "name": "CacheTotalToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[search 族] 搜索请求数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>",
+          "example": "[5,null,6]",
+          "member": "string",
+          "name": "SearchRequestCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[search 族] 搜索引擎调用次数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>",
+          "example": "[5,null,6]",
+          "member": "string",
+          "name": "SearchCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[apikey_usage 族] 请求次数在时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>",
+          "example": "[5,null,6]",
+          "member": "string",
+          "name": "RequestCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[apikey_usage 族] 请求失败次数在时间周期内的 JSON 字符串形式，如 &quot;[12,null,15]&quot;。</p>",
+          "example": "[5,null,6]",
+          "member": "string",
+          "name": "RequestFailCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UsageStats": {
+      "document": "时间周期内的统计聚合值，按 MetricKeys 实际返回取值，参见响应顶层 `MetricKeys` 字段。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>[tokens / apikey_usage 族] 时间周期内的累计总 token 数。</p>",
+          "example": "1834000",
+          "member": "int64",
+          "name": "TotalToken",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[tokens / apikey_usage 族] 时间周期内的累计输入 token 数。</p>",
+          "example": "1100000",
+          "member": "int64",
+          "name": "InputTotalToken",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[tokens / apikey_usage 族] 时间周期内的累计输出 token 数。</p>",
+          "example": "734000",
+          "member": "int64",
+          "name": "OutputTotalToken",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[tokens / apikey_usage 族] 时间周期内的累计读缓存 token 数（命中缓存部分）注意：CacheTotalToken 是 InputTotalToken 的子集（已包含在内）。</p>",
+          "example": "120000",
+          "member": "int64",
+          "name": "CacheTotalToken",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[search 族] 时间周期内的累计联网搜索请求数</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "SearchRequestCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[search 族] 时间周期内的累计搜索引擎调用次数</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "SearchCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[apikey_usage 族] 时间周期内的累计请求次数</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "RequestCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[apikey_usage 族] 时间周期内的累计请求失败次数</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "RequestFailCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

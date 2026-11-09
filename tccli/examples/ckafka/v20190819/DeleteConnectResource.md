@@ -1,12 +1,12 @@
-**Example 1: 删除Datahub连接源**
+**Example 1: 删除连接器连接**
 
-
+删除连接器连接
 
 Input: 
 
 ```
 tccli ckafka DeleteConnectResource --cli-unfold-argument  \
-    --ResourceId reource-xxx
+    --ResourceId reource-test
 ```
 
 Output: 
@@ -14,9 +14,9 @@ Output:
 {
     "Response": {
         "Result": {
-            "ResourceId": "resource-xx"
+            "ResourceId": "reource-test"
         },
-        "RequestId": "xx"
+        "RequestId": "84770b4b-df34-4ccf-8e22-41d3b1d0fe0d"
     }
 }
 ```

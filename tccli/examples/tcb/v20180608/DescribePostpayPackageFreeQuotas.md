@@ -1,12 +1,13 @@
 **Example 1: 获取后付费免费额度**
 
-
+获取后付费免费额度 
 
 Input: 
 
 ```
 tccli tcb DescribePostpayPackageFreeQuotas --cli-unfold-argument  \
-    --PackageName basic
+    --EnvId env-xxyyzzaq \
+    --FreeQuotaType free
 ```
 
 Output: 

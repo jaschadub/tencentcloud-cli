@@ -1,22 +1,22 @@
 **Example 1: 删除云数据库的账号**
 
-
+删除云数据库的账号
 
 Input: 
 
 ```
 tccli cdb DeleteAccounts --cli-unfold-argument  \
-    --InstanceId cdb-f35wr6wj \
-    --Accounts.0.user ajnnw \
-    --Accounts.0.host 127.0.0.1
+    --InstanceId cdb-mw6uxcyt \
+    --DeleteAccounts.0.User account_a \
+    --DeleteAccounts.0.Host %
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
-        "AsyncRequestId": "256117ed-efa08b54-61784d44-91781bbd"
+        "AsyncRequestId": "ae9cf84b-83c5074c-defa82f1-3a49ebe7",
+        "RequestId": "893a5643-30c7-4168-ab29-9e952092fe14"
     }
 }
 ```

@@ -1,6 +1,6 @@
 **Example 1: 查询资产管理数据库列表**
 
-
+查询资产管理数据库列表
 
 Input: 
 
@@ -11,39 +11,52 @@ Output:
 ```
 {
     "Response": {
-        "Total": 1,
-        "RequestId": "xx",
         "Databases": [
             {
-                "OsInfo": "xx",
-                "Version": "xx",
-                "MachineWanIp": "xx",
-                "ErrorLogPath": "xx",
-                "Proto": "xx",
+                "MachineIp": "10.0.0.11",
+                "MachineWanIp": "1.1.1.1",
+                "Quuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "Uuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "OsInfo": "CentOs Bit64",
                 "ProjectId": 1,
-                "Permission": "xx",
-                "LogPath": "xx",
-                "DataPath": "xx",
-                "Param": "xx",
-                "ConfigPath": "xx",
-                "BinPath": "xx",
                 "Tag": [
                     {
-                        "TagId": 1,
                         "Rid": 0,
-                        "Name": "xx"
+                        "Name": "test-name",
+                        "TagId": 1
                     }
                 ],
-                "Quuid": "xx",
-                "PlugInPath": "xx",
-                "Ip": "xx",
-                "Uuid": "xx",
-                "Name": "xx",
-                "Port": "xx",
-                "MachineIp": "xx",
-                "User": "xx"
+                "Name": "test-name",
+                "Version": "0.1.1",
+                "Port": "22",
+                "Proto": "tcp",
+                "User": "root",
+                "Ip": "10.0.0.11",
+                "ConfigPath": "/root",
+                "LogPath": "/root",
+                "DataPath": "/root",
+                "Permission": "root",
+                "ErrorLogPath": "/root",
+                "PlugInPath": "/root",
+                "BinPath": "/root",
+                "Param": "iparam",
+                "Id": "10001",
+                "UpdateTime": "2024-10-11 12:23:34",
+                "FirstTime": "2024-10-11 12:23:34",
+                "IsNew": 0,
+                "MachineName": "test-name",
+                "MachineExtraInfo": {
+                    "WanIP": "1.1.1.1",
+                    "PrivateIP": "10.0.0.11",
+                    "NetworkType": 0,
+                    "NetworkName": "vpc-id",
+                    "InstanceID": "ins-id",
+                    "HostName": "test-name"
+                }
             }
-        ]
+        ],
+        "Total": 1,
+        "RequestId": "37b6df34-68f1-4ab8-a3d8-7b89de604c82"
     }
 }
 ```

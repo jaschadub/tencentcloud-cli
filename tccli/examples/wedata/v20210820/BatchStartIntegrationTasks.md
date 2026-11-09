@@ -6,19 +6,22 @@ Input:
 
 ```
 tccli wedata BatchStartIntegrationTasks --cli-unfold-argument  \
-    --ProjectId xx \
-    --TaskIds 123 124 \
-    --TaskType 201
+    --TaskIds 20220506145218687 \
+    --TaskType 201 \
+    --ProjectId 11022568003970304
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "SuccessCount": 1,
-        "FailedCount": 1,
-        "TotalCount": 2,
-        "RequestId": "xx"
+        "SuccessCount": 0,
+        "FailedCount": 0,
+        "TotalCount": 0,
+        "TaskNames": [
+            "20220506145218687"
+        ],
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

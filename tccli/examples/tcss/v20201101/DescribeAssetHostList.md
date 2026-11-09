@@ -1,6 +1,6 @@
 **Example 1: 查询主机列表**
 
-
+查询主机列表
 
 Input: 
 
@@ -11,44 +11,43 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "List": [
             {
-                "Status": "xx",
-                "PublicIp": "xx",
-                "HostID": "xx",
-                "Group": "xx",
-                "DockerVersion": "xx",
-                "IsContainerd": true,
-                "InstanceID": "xx",
-                "HostName": "xx",
+                "HostID": "223e6323-1db6-42cf-8094-200916841684",
+                "HostIP": "10.0.0.11",
+                "HostName": "ins-1684ad1f2",
+                "Group": "staffs",
+                "DockerVersion": "1.0.0",
+                "DockerFileSystemDriver": "ZFS",
                 "ImageCnt": 1,
-                "DockerFileSystemDriver": "xx",
-                "HostIP": "xx",
-                "RegionID": 0,
-                "MachineType": "xx",
                 "ContainerCnt": 1,
-                "Uuid": "xx"
-            },
-            {
-                "Status": "xx",
-                "ImageCnt": 1,
-                "HostID": "xx",
-                "Group": "xx",
-                "DockerVersion": "xx",
+                "Status": "ONLINE",
                 "IsContainerd": true,
-                "InstanceID": "xx",
-                "HostName": "xx",
-                "PublicIp": "xx",
-                "DockerFileSystemDriver": "xx",
-                "HostIP": "xx",
-                "RegionID": 0,
-                "MachineType": "xx",
-                "ContainerCnt": 1,
-                "Uuid": "xx"
+                "MachineType": "CVM",
+                "PublicIp": "112.46.12.11",
+                "Uuid": "223e6323-1db6-42cf-8094-200916841684",
+                "InstanceID": "ins-1684ad1f2",
+                "RegionID": 1,
+                "Project": {
+                    "ProjectName": "ap-beijing",
+                    "ProjectID": 0
+                },
+                "Tags": [
+                    {
+                        "TagKey": "adone",
+                        "TagValue": "mark"
+                    }
+                ],
+                "ClusterID": "csbd-cawfdfafd",
+                "ClusterName": "cls-test1",
+                "ClusterAccessedStatus": "1",
+                "ChargeCoresCnt": 1,
+                "DefendStatus": "running",
+                "CoresCnt": 1
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 1,
+        "RequestId": "dc56fda9-58c8-4c4f-9e8c-b7296836c1fe"
     }
 }
 ```

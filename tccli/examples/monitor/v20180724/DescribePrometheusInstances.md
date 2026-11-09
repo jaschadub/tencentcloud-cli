@@ -22,11 +22,40 @@ Output:
                 "InstanceStatus": 1,
                 "RegionId": 1,
                 "Zone": "ap-guangzhou-1",
+                "GrafanaInstanceId": "grafana-as2sad2",
+                "AuthToken": "zh32ksa~wq(a",
+                "RecordingRuleLimit": 0,
                 "VpcId": "vpcID",
                 "SubnetId": "subnetid",
+                "MigrationType": 0,
                 "IPv4Address": "",
+                "RemoteWrite": "http://10.0.16.63:9090/api/v1/prom/write",
                 "DataRetentionTime": 30,
                 "EnableGrafana": 0,
+                "ExpireTime": "2020-07-07T10:39:18Z",
+                "SpecName": "共享版",
+                "Grant": {
+                    "HasChargeOperation": 0,
+                    "HasVpcDisplay": 0,
+                    "HasGrafanaStatusChange": 0,
+                    "HasAgentManage": 0,
+                    "HasTkeManage": 0,
+                    "HasApiOperation": 0
+                },
+                "ProxyAddress": "10.0.16.63:9090",
+                "IsNearExpire": 0,
+                "GrafanaStatus": 0,
+                "GrafanaIpWhiteList": "",
+                "ApiRootPath": "10.0.16.63:9090",
+                "TagSpecification": [
+                    {
+                        "Key": "creator",
+                        "Value": "tmp"
+                    }
+                ],
+                "AutoRenewFlag": 0,
+                "AlertRuleLimit": 0,
+                "ChargeStatus": 0,
                 "GrafanaURL": "",
                 "CreatedAt": "2020-07-07T10:39:18Z"
             }

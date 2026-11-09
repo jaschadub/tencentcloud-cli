@@ -1,251 +1,100 @@
 **Example 1: 获取证书详情**
 
-获取审核中的证书详情
+
 
 Input: 
 
 ```
 tccli ssl DescribeCertificateDetail --cli-unfold-argument  \
-    --CertificateId aClRkC90
+    --CertificateId QL*****M
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "From": "xx",
-        "SubjectAltName": [
-            "xx"
-        ],
-        "VulnerabilityReport": "xx",
-        "EncryptCertFingerprint": "xx",
-        "EncryptPrivateKey": "xx",
-        "CertificatePrivateKey": "xx",
-        "CertificatePublicKey": "xx",
-        "StatusName": "xx",
-        "RenewAble": false,
+        "OwnerUin": "1000****920",
+        "ProjectId": "0",
+        "From": "trustasia",
+        "OrderId": "xQOzHUgs_Cwm2Vhn0",
+        "CertificateType": "SVR",
+        "PackageType": "83",
+        "ProductZhName": "TrustAsia C1 DV Free",
+        "Domain": "lukesky.online",
+        "Alias": "",
         "Status": 1,
-        "IsDv": false,
-        "IsVulnerability": false,
-        "CertBeginTime": "2020-09-22 00:00:00",
-        "TypeName": "xx",
+        "StatusMsg": null,
+        "VulnerabilityStatus": "INACTIVE",
+        "RootCert": {
+            "Sign": null,
+            "Encrypt": null,
+            "Standard": "-----BEGIN CERTIFICATE-----***********-----END CERTIFICATE-----\n"
+        },
+        "EncryptCert": null,
+        "EncryptPrivateKey": null,
+        "CertificatePrivateKey": "-----BEGIN RSA PRIVATE KEY-----******-----END RSA PRIVATE KEY-----\r\n",
+        "CertificatePublicKey": "-----BEGIN CERTIFICATE----*******\n-----END CERTIFICATE-----\n",
+        "CertBeginTime": "2026-02-28 08:00:00",
+        "CertEndTime": "2026-05-29 07:59:59",
+        "ValidityPeriod": "3",
+        "InsertTime": "2026-02-28 11:23:09",
+        "VulnerabilityReport": null,
+        "CertificateId": "QL*****M",
+        "TypeName": "TrustAsia C1 DV Free",
+        "StatusName": "已颁发",
         "CertificateExtra": {
-            "ReplacedBy": "xx",
-            "ReplacedFor": "xx",
-            "OriginCertificateId": "xx",
-            "DomainNumber": "xx",
-            "RenewOrder": "xx"
+            "SMCert": 0,
+            "ReplacedBy": null,
+            "OriginCertificateId": null,
+            "ReplacedFor": null,
+            "RenewOrder": null,
+            "DomainNumber": "1",
+            "CompanyType": 1
         },
         "DvAuthDetail": {
-            "DvAuths": [
-                {
-                    "DvAuthSubDomain": "xx",
-                    "DvAuthVerifyType": "xx",
-                    "DvAuthDomain": "xx",
-                    "DvAuthValue": "xx",
-                    "DvAuthKey": "xx",
-                    "DvAuthPath": "xx"
-                }
-            ],
-            "DvAuthKeySubDomain": "xx",
-            "DvAuthDomain": "xx",
-            "DvAuthValue": "xx",
-            "DvAuthKey": "xx",
-            "DvAuthPath": "xx"
+            "DvAuths": null,
+            "DvAuthKey": null,
+            "DvAuthValue": null,
+            "DvAuthDomain": null,
+            "DvAuthPath": null,
+            "DvAuthKeySubDomain": ""
         },
-        "VerifyType": "xx",
-        "StatusMsg": "xx",
-        "RootCert": {
-            "Standard": "xx",
-            "Encrypt": "xx",
-            "Sign": "xx"
-        },
-        "ProjectId": "xx",
-        "OwnerUin": "xx",
-        "ProductZhName": "xx",
-        "CertEndTime": "2020-09-22 00:00:00",
-        "PackageType": "xx",
-        "RequestId": "xx",
-        "InsertTime": "2020-09-22 00:00:00",
-        "CertificateType": "xx",
-        "IsVip": true,
-        "ValidityPeriod": "xx",
-        "OrderId": "xx",
-        "CertFingerprint": "xx",
-        "Domain": "xx",
-        "CertificateId": "xx",
-        "Alias": "xx",
-        "SubmittedData": {
-            "OrganizationCity": "xx",
-            "CsrContent": "xx",
-            "OrganizationName": "xx",
-            "CertificateDomain": "xx",
-            "AdminPhoneNum": "xx",
-            "AdminPosition": "xx",
-            "OrganizationDivision": "xx",
-            "DomainList": [
-                "test-11111111111111.com",
-                "test-222222222222.com"
-            ],
-            "AdminFirstName": "xx",
-            "ContactLastName": "xx",
-            "ContactEmail": "xx",
-            "ContactNumber": "xx",
-            "CsrType": "xx",
-            "PhoneAreaCode": "xx",
-            "VerifyType": "xx",
-            "AdminLastName": "xx",
-            "ContactFirstName": "xx",
-            "OrganizationCountry": "xx",
-            "ContactPosition": "xx",
-            "OrganizationRegion": "xx",
-            "PhoneNumber": "xx",
-            "PostalCode": "xx",
-            "AdminEmail": "xx",
-            "KeyPassword": "xx",
-            "OrganizationAddress": "xx"
-        },
-        "Tags": [
-            {
-                "TagKey": "xx",
-                "TagValue": "xx"
-            },
-            {
-                "TagKey": "xx",
-                "TagValue": "xx"
-            }
-        ],
-        "IsWildcard": false,
-        "Deployable": false,
-        "EncryptCert": "xx",
-        "EncryptAlgorithm": "RSA 2048",
-        "VulnerabilityStatus": "xx"
-    }
-}
-```
-
-**Example 2: 获取证书详情-2**
-
-获取已经审核通过的证书详情
-
-Input: 
-
-```
-tccli ssl DescribeCertificateDetail --cli-unfold-argument  \
-    --CertificateId aCMEQWHt
-```
-
-Output: 
-```
-{
-    "Response": {
-        "From": "xx",
+        "VerifyType": "DNS_AUTO",
+        "DvRevokeAuthDetail": [],
         "SubjectAltName": [
-            "xx"
+            "www.lukesky.online"
         ],
-        "VulnerabilityReport": "xx",
-        "EncryptCertFingerprint": "xx",
-        "EncryptPrivateKey": "xx",
-        "CertificatePrivateKey": "xx",
-        "CertificatePublicKey": "xx",
-        "StatusName": "xx",
-        "RenewAble": false,
-        "Status": 1,
-        "IsDv": false,
+        "IsVip": false,
+        "IsWildcard": false,
+        "IsDv": true,
         "IsVulnerability": false,
-        "CertBeginTime": "2020-09-22 00:00:00",
-        "TypeName": "xx",
-        "CertificateExtra": {
-            "ReplacedBy": "xx",
-            "ReplacedFor": "xx",
-            "OriginCertificateId": "xx",
-            "DomainNumber": "xx",
-            "RenewOrder": "xx"
-        },
-        "DvAuthDetail": {
-            "DvAuths": [
-                {
-                    "DvAuthSubDomain": "xx",
-                    "DvAuthVerifyType": "xx",
-                    "DvAuthDomain": "xx",
-                    "DvAuthValue": "xx",
-                    "DvAuthKey": "xx",
-                    "DvAuthPath": "xx"
-                }
-            ],
-            "DvAuthKeySubDomain": "xx",
-            "DvAuthDomain": "xx",
-            "DvAuthValue": "xx",
-            "DvAuthKey": "xx",
-            "DvAuthPath": "xx"
-        },
-        "VerifyType": "xx",
-        "StatusMsg": "xx",
-        "RootCert": {
-            "Standard": "xx",
-            "Encrypt": "xx",
-            "Sign": "xx"
-        },
-        "ProjectId": "xx",
-        "OwnerUin": "xx",
-        "ProductZhName": "xx",
-        "CertEndTime": "2020-09-22 00:00:00",
-        "PackageType": "xx",
-        "RequestId": "xx",
-        "InsertTime": "2020-09-22 00:00:00",
-        "CertificateType": "xx",
-        "IsVip": true,
-        "ValidityPeriod": "xx",
-        "OrderId": "xx",
-        "CertFingerprint": "xx",
-        "Domain": "xx",
-        "CertificateId": "xx",
-        "Alias": "xx",
-        "SubmittedData": {
-            "OrganizationCity": "xx",
-            "CsrContent": "xx",
-            "OrganizationName": "xx",
-            "CertificateDomain": "xx",
-            "AdminPhoneNum": "xx",
-            "AdminPosition": "xx",
-            "OrganizationDivision": "xx",
-            "DomainList": [
-                "test-11111111111111.com",
-                "test-222222222222.com"
-            ],
-            "AdminFirstName": "xx",
-            "ContactLastName": "xx",
-            "ContactEmail": "xx",
-            "ContactNumber": "xx",
-            "CsrType": "xx",
-            "PhoneAreaCode": "xx",
-            "VerifyType": "xx",
-            "AdminLastName": "xx",
-            "ContactFirstName": "xx",
-            "OrganizationCountry": "xx",
-            "ContactPosition": "xx",
-            "OrganizationRegion": "xx",
-            "PhoneNumber": "xx",
-            "PostalCode": "xx",
-            "AdminEmail": "xx",
-            "KeyPassword": "xx",
-            "OrganizationAddress": "xx"
-        },
-        "Tags": [
+        "SubmittedData": null,
+        "RenewAble": true,
+        "Deployable": true,
+        "Tags": [],
+        "CertFingerprint": "97E056C1BBDDC*******9CCCE112DF8",
+        "EncryptCertFingerprint": null,
+        "EncryptAlgorithm": "RSA 2048",
+        "CertChainInfo": [
             {
-                "TagKey": "xx",
-                "TagValue": "xx"
+                "Issuer": "TrustAsia DV TLS RSA CA 2025",
+                "Subject": "lukesky.online",
+                "Fingerprint": "97e05*************3a89ccce112df8",
+                "ValidFrom": "2026-02-28 08:00:00",
+                "ValidTo": "2026-05-29 07:59:59"
             },
             {
-                "TagKey": "xx",
-                "TagValue": "xx"
+                "Issuer": "DigiCert Global Root G2",
+                "Subject": "TrustAsia DV TLS RSA CA 2025",
+                "Fingerprint": "7b8a18d***********7c0c634c24994",
+                "ValidFrom": "2025-01-08 08:00:00",
+                "ValidTo": "2035-01-08 07:59:59"
             }
         ],
-        "IsWildcard": false,
-        "Deployable": false,
-        "EncryptCert": "xx",
-        "EncryptAlgorithm": "RSA 2048",
-        "VulnerabilityStatus": "xx"
+        "UseCrossSignRoot": false,
+        "DomainType": 1,
+        "CertType": "DV",
+        "RequestId": "858497b3-d960-4628-9b7c-bbcf96d294e6"
     }
 }
 ```

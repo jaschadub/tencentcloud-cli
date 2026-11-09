@@ -1,65 +1,72 @@
 **Example 1: 获取证书信息**
 
-
+获取证书信息
 
 Input: 
 
 ```
 tccli ssl DescribeCertificate --cli-unfold-argument  \
-    --CertificateId CertificateId
+    --CertificateId hhe**jjsj
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "From": "trustasia",
-        "SubjectAltName": [],
-        "VulnerabilityReport": null,
-        "StatusName": "已通过",
-        "CertificateExtra": {
-            "OriginCertificateId": null,
-            "ReplacedBy": null,
-            "ReplacedFor": "a8xHcaIs",
-            "DomainNumber": null
-        },
-        "RenewAble": false,
-        "Status": 1,
-        "IsDv": true,
-        "CertBeginTime": "2020-01-14 16:00:00",
-        "IsVulnerability": false,
-        "DvAuthDetail": null,
-        "VerifyType": "DNS",
-        "StatusMsg": null,
+        "OwnerUin": "100017***920",
         "ProjectId": "0",
-        "OwnerUin": "20548499",
-        "ProductZhName": "TrustAsia TLS RSA CA",
-        "CertEndTime": "2020-02-12 16:00:00",
-        "PackageType": "2",
-        "RequestId": "6209102a-0f05-411d-a05c-c841431cb636",
-        "InsertTime": "2020-01-14 10:54:47",
+        "From": "trustasia",
         "CertificateType": "SVR",
-        "IsVip": false,
-        "ValidityPeriod": "0",
-        "OrderId": "TBD8NHC9J_01",
-        "Domain": "wgc.red",
-        "CertificateId": "a90XEOtj",
-        "Alias": "a8xHcaIs的重颁发订单",
-        "SubmittedData": null,
-        "IsWildcard": false,
-        "PackageTypeName": "TrustAsia TLS RSA CA",
+        "PackageType": "83",
+        "ProductZhName": "TrustAsia C1 DV Free",
+        "Domain": "zrhh.online",
+        "Alias": "",
+        "Status": 1,
+        "StatusMsg": "CA-REVIEWING",
+        "VerifyType": "DNS_AUTO",
         "VulnerabilityStatus": "INACTIVE",
+        "CertBeginTime": "2024-11-27 08:00:00",
+        "CertEndTime": "2025-02-26 07:59:59",
+        "ValidityPeriod": "3",
+        "InsertTime": "2024-11-27 17:44:36",
+        "OrderId": "Hy***85G_mZOLxSuw",
+        "DvAuthDetail": {
+            "DvAuths": null,
+            "DvAuthKey": null,
+            "DvAuthValue": null,
+            "DvAuthDomain": null,
+            "DvAuthPath": null,
+            "DvAuthKeySubDomain": ""
+        },
+        "VulnerabilityReport": null,
+        "CertificateId": "Juz8JAxn",
+        "StatusName": "已颁发",
+        "SubjectAltName": [
+            "www.zrhh.online"
+        ],
+        "IsVip": false,
+        "IsWildcard": false,
+        "IsDv": true,
+        "IsVulnerability": false,
+        "RenewAble": false,
+        "SubmittedData": null,
         "Deployable": true,
-        "Tags": [
-            {
-                "TagKey": "责任人",
-                "TagValue": "yaxinliu"
-            },
-            {
-                "TagKey": "部门",
-                "TagValue": "IT部"
-            }
-        ]
+        "Tags": [],
+        "CAEncryptAlgorithms": [],
+        "CACommonNames": [],
+        "CAEndTimes": [],
+        "DvRevokeAuthDetail": [],
+        "CertificateExtra": {
+            "SMCert": 0,
+            "ReplacedBy": null,
+            "OriginCertificateId": null,
+            "ReplacedFor": null,
+            "RenewOrder": null,
+            "DomainNumber": "1",
+            "CompanyType": 1
+        },
+        "PackageTypeName": "TrustAsia C1 DV Free",
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

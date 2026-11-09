@@ -15,8 +15,19 @@ Output:
     "Response": {
         "DirectConnectGatewaySet": [
             {
+                "LocalZone": true,
+                "NewAfc": 1,
+                "EnableBGPCommunity": true,
+                "Zone": "demo",
+                "FlowDetailsUpdateTime": "demo",
+                "AccessNetworkType": "demo",
+                "VXLANSupport": [
+                    true
+                ],
+                "ModeType": "demo",
+                "NatGatewayId": "demo",
                 "DirectConnectGatewayId": "dcg-6eeis68f",
-                "DirectConnectGatewayName": "shiliangxie_test",
+                "DirectConnectGatewayName": "我的网关01",
                 "DirectConnectGatewayIp": "10.6.223.4",
                 "GatewayType": "NORMAL",
                 "NetworkType": "CCN",
@@ -25,24 +36,43 @@ Output:
                 "CcnId": "",
                 "CcnRouteType": "STATIC",
                 "EnableBGP": false,
-                "CreateTime": "2018-10-22 21:22:26"
+                "CreateTime": "2018-10-22 21:22:26",
+                "HaZoneList": [
+                    "demo"
+                ],
+                "EnableFlowDetails": 1
             },
             {
                 "DirectConnectGatewayId": "dcg-94cdyvfr",
-                "DirectConnectGatewayName": "test",
+                "DirectConnectGatewayName": "我的网关02",
                 "DirectConnectGatewayIp": "10.144.25.62",
                 "GatewayType": "NORMAL",
                 "NetworkType": "CCN",
                 "NetworkInstanceId": "",
+                "EnableFlowDetails": 1,
                 "VpcId": "vpc-f796it7v",
                 "CcnId": "",
                 "CcnRouteType": "STATIC",
                 "EnableBGP": false,
-                "CreateTime": "2018-08-21 11:40:09"
+                "CreateTime": "2018-08-21 11:40:09",
+                "HaZoneList": [
+                    "demo"
+                ],
+                "LocalZone": true,
+                "NewAfc": 1,
+                "EnableBGPCommunity": true,
+                "Zone": "demo",
+                "FlowDetailsUpdateTime": "demo",
+                "AccessNetworkType": "demo",
+                "VXLANSupport": [
+                    true
+                ],
+                "ModeType": "demo",
+                "NatGatewayId": "demo"
             },
             {
                 "DirectConnectGatewayId": "dcg-dimeg9zd",
-                "DirectConnectGatewayName": "test",
+                "DirectConnectGatewayName": "我的网关03",
                 "DirectConnectGatewayIp": "10.144.25.62",
                 "GatewayType": "NORMAL",
                 "NetworkType": "CCN",
@@ -50,8 +80,23 @@ Output:
                 "VpcId": "vpc-eg3eig77",
                 "CcnId": "ccn-atw2c2j1",
                 "CcnRouteType": "STATIC",
+                "EnableFlowDetails": 1,
                 "EnableBGP": false,
-                "CreateTime": "2018-08-21 11:36:50"
+                "CreateTime": "2018-08-21 11:36:50",
+                "HaZoneList": [
+                    "demo"
+                ],
+                "LocalZone": true,
+                "NewAfc": 1,
+                "EnableBGPCommunity": true,
+                "Zone": "demo",
+                "FlowDetailsUpdateTime": "demo",
+                "AccessNetworkType": "demo",
+                "VXLANSupport": [
+                    true
+                ],
+                "ModeType": "demo",
+                "NatGatewayId": "nat"
             }
         ],
         "TotalCount": 3,
@@ -69,7 +114,7 @@ Input:
 ```
 tccli vpc DescribeDirectConnectGateways --cli-unfold-argument  \
     --Filters.0.Name direct-connect-gateway-name \
-    --Filters.0.Values test \
+    --Filters.0.Values 我的网关 \
     --Filters.1.Name gateway-type \
     --Filters.1.Values NORMAL \
     --Filters.2.Name vpc-id \
@@ -83,7 +128,7 @@ Output:
         "DirectConnectGatewaySet": [
             {
                 "DirectConnectGatewayId": "dcg-94cdyvfr",
-                "DirectConnectGatewayName": "test",
+                "DirectConnectGatewayName": "我的网关",
                 "DirectConnectGatewayIp": "10.144.25.62",
                 "GatewayType": "NORMAL",
                 "NetworkType": "CCN",
@@ -92,11 +137,26 @@ Output:
                 "CcnId": "",
                 "CcnRouteType": "STATIC",
                 "EnableBGP": false,
-                "CreateTime": "2018-08-21 11:40:09"
+                "EnableFlowDetails": 1,
+                "CreateTime": "2018-08-21 11:40:09",
+                "HaZoneList": [
+                    "demo"
+                ],
+                "LocalZone": true,
+                "NewAfc": 1,
+                "EnableBGPCommunity": true,
+                "Zone": "demo",
+                "FlowDetailsUpdateTime": "demo",
+                "AccessNetworkType": "demo",
+                "VXLANSupport": [
+                    true
+                ],
+                "ModeType": "demo",
+                "NatGatewayId": "demo"
             },
             {
                 "DirectConnectGatewayId": "dcg-6eeis68f",
-                "DirectConnectGatewayName": "shiliangxie_test",
+                "DirectConnectGatewayName": "我的网关",
                 "DirectConnectGatewayIp": "10.6.223.4",
                 "GatewayType": "NORMAL",
                 "NetworkType": "CCN",
@@ -105,7 +165,22 @@ Output:
                 "CcnId": "",
                 "CcnRouteType": "STATIC",
                 "EnableBGP": false,
-                "CreateTime": "2018-10-22 21:22:26"
+                "CreateTime": "2018-10-22 21:22:26",
+                "HaZoneList": [
+                    "demo"
+                ],
+                "LocalZone": true,
+                "NewAfc": 1,
+                "EnableBGPCommunity": true,
+                "Zone": "demo",
+                "FlowDetailsUpdateTime": "demo",
+                "AccessNetworkType": "demo",
+                "EnableFlowDetails": 1,
+                "VXLANSupport": [
+                    true
+                ],
+                "ModeType": "demo",
+                "NatGatewayId": "demo"
             }
         ],
         "TotalCount": 2,

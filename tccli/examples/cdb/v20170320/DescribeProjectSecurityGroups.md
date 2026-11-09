@@ -13,6 +13,7 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
         "Groups": [
             {
@@ -20,8 +21,8 @@ Output:
                 "SecurityGroupName": "CDB",
                 "Inbound": [],
                 "ProjectId": 0,
-                "SecurityGroupId": "sg-ajr1jzgj",
-                "SecurityGroupRemark": "",
+                "SecurityGroupId": "sg-xx",
+                "SecurityGroupRemark": "cdb安全组",
                 "CreateTime": "2017-04-13 15:00:06"
             }
         ]

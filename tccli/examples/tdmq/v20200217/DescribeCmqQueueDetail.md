@@ -1,6 +1,6 @@
 **Example 1: 获取cmq队列详情**
 
-
+获取队列详情
 
 Input: 
 
@@ -13,54 +13,40 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "3d7a859c-4991-4d1d-bb8c-a25676c049d6",
         "QueueDescribe": {
-            "QueueId": "xx",
-            "RewindSeconds": 1,
-            "CreateUin": 1,
-            "TenantId": "xx",
-            "LastModifyTime": 1,
-            "VisibilityTimeout": 1,
-            "QueueName": "xx",
-            "Trace": true,
-            "Tags": [
-                {
-                    "TagKey": "xx",
-                    "TagValue": "xx"
-                }
-            ],
-            "NamespaceName": "xx",
-            "RewindMsgNum": 1,
-            "MaxDelaySeconds": 1,
-            "TransactionPolicy": {
-                "MaxQueryCount": 1,
-                "FirstQueryInterval": 1
-            },
-            "MsgRetentionSeconds": 1,
-            "DelayMsgNum": 1,
-            "MaxMsgHeapNum": 1,
-            "PollingWaitSeconds": 1,
-            "Bps": 1,
-            "InactiveMsgNum": 1,
-            "DeadLetterPolicy": {
-                "DeadLetterQueue": "xx",
-                "Policy": 1,
-                "MaxTimeToLive": 1,
-                "MaxReceiveCount": 1
-            },
-            "ActiveMsgNum": 1,
-            "MaxMsgSize": 1,
-            "MinMsgTime": 1,
-            "DeadLetterSource": [
-                {
-                    "QueueId": "xx",
-                    "QueueName": "xx"
-                }
-            ],
-            "Transaction": true,
-            "Qps": 1,
-            "CreateTime": 1
-        },
-        "RequestId": "xx"
+            "QueueId": "cmqq-d88rxnbv2",
+            "QueueName": "test1120",
+            "Qps": 5000,
+            "Bps": 52428800,
+            "MaxDelaySeconds": 3600,
+            "MaxMsgHeapNum": 1000000,
+            "PollingWaitSeconds": 3,
+            "MsgRetentionSeconds": 7200,
+            "VisibilityTimeout": 30,
+            "MaxMsgSize": 1048576,
+            "RewindSeconds": 0,
+            "RetentionSizeInMB": 0,
+            "CreateTime": 1732096676000,
+            "LastModifyTime": 1732096676000,
+            "ActiveMsgNum": 20,
+            "InactiveMsgNum": 0,
+            "DelayMsgNum": 0,
+            "RewindMsgNum": null,
+            "MinMsgTime": null,
+            "MaxUnackedMsgNum": 100000,
+            "DeadLetterPolicy": null,
+            "DeadLetterSource": null,
+            "Transaction": null,
+            "TransactionPolicy": null,
+            "CreateUin": null,
+            "Trace": null,
+            "Tags": null,
+            "TenantId": "cmq-131242",
+            "NamespaceName": "CMQ_QUEUE-test1120",
+            "Status": 1,
+            "MaxMsgBacklogSize": 10737418240
+        }
     }
 }
 ```

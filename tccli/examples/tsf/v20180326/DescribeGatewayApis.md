@@ -6,44 +6,51 @@ Input:
 
 ```
 tccli tsf DescribeGatewayApis --cli-unfold-argument  \
-    --GroupId grp-5yk7oor1 \
-    --GatewayDeployGroupId group-e42d597 \
+    --GroupId grp-nb08ur29 \
+    --SearchWord /swagger \
     --Offset 0 \
-    --Limit 10
+    --Limit 5 \
+    --GatewayDeployGroupId group-yd3b588a \
+    --ReleaseStatus released
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d996e5507e42d5970cd2e25ed5267a",
+        "RequestId": "223e1309-700b-47be-bbc6-cddcc510ece4",
         "Result": {
-            "TotalCount": 30,
             "Content": [
                 {
-                    "UpdatedTime": "2021-03-17 10:44:27",
-                    "PathMapping": "/pd/v1/echo",
-                    "MicroserviceName": "服务名称",
-                    "Description": "描述",
-                    "MicroserviceId": "服务ID",
-                    "NamespaceName": "命名空间名称",
-                    "ApiId": "api-d5970cd2",
-                    "UsableStatus": "enabled",
+                    "ApiId": "api-1eqe6556",
+                    "ApiMatchType": "normal",
                     "ApiType": "ms",
-                    "ReleaseStatus": "released",
-                    "GroupName": "分组名称",
-                    "Host": "xx",
-                    "Method": "POST",
-                    "RateLimitStatus": "disabled",
-                    "Timeout": 0,
-                    "NamespaceId": "命名空间ID",
-                    "CreatedTime": "2021-03-17 10:44:27",
-                    "Path": "/provider-demo/v1/echo",
-                    "ReleasedTime": "2021-03-17 10:44:27",
+                    "CreatedTime": "2024-12-23 01:29:41",
+                    "Description": null,
+                    "GatewayDeployGroupId": null,
+                    "GroupId": "grp-nb08ur29",
+                    "GroupName": null,
+                    "Host": null,
+                    "Md5": "c35e5178b28d1844054982d61481912e",
+                    "Method": "GET",
+                    "MicroserviceId": "ms-ba2jlxvk",
+                    "MicroserviceName": "provider-demo",
                     "MockStatus": "disabled",
-                    "GroupId": "grp-ib3xchsw"
+                    "NamespaceId": "namespace-qab7bq9v",
+                    "NamespaceName": "shedfree_default",
+                    "Path": "/swagger/getMessageBoxAddress",
+                    "PathMapping": null,
+                    "RateLimitStatus": null,
+                    "ReleaseStatus": "released",
+                    "ReleasedTime": null,
+                    "RpcExt": null,
+                    "RpcType": "http",
+                    "Timeout": null,
+                    "UpdatedTime": "2024-12-23 01:30:03",
+                    "UsableStatus": "enabled"
                 }
-            ]
+            ],
+            "TotalCount": 7
         }
     }
 }

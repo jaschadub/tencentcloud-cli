@@ -1,6 +1,6 @@
 **Example 1: 创建专用集群订单**
 
-
+创建专用集群订单
 
 Input: 
 
@@ -12,7 +12,9 @@ tccli cdc CreateDedicatedClusterOrder --cli-unfold-argument  \
     --CosInfo.Size 1 \
     --CosInfo.Type COS \
     --CbsInfo.Size 1 \
-    --CbsInfo.Type SSD
+    --CbsInfo.Type SSD \
+    --PurchaseSource cloudApi \
+    --DedicatedClusterOrderId ord-12345678
 ```
 
 Output: 

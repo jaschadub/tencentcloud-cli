@@ -6,155 +6,104 @@ Input:
 
 ```
 tccli tem DescribeDeployApplicationDetail --cli-unfold-argument  \
-    --EnvironmentId xx \
-    --ApplicationId xx
+    --ApplicationId app-xxxxxx \
+    --EnvironmentId en-xxxxxx \
+    --VersionId version-xxx
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "7559e31e-4e32-476d-93f2-db6bcbab530a",
         "Result": {
-            "Status": "xx",
-            "NewVersionPackageInfo": "xx",
-            "NextBatchStartTime": 0,
-            "OldDeployVersion": "xx",
-            "BetaBatchDetail": {
-                "NewPods": [
-                    {
-                        "Webshell": "xx",
-                        "PodStatus": [
-                            "xx"
-                        ],
-                        "Zone": "xx",
-                        "PodId": "xx",
-                        "CreateTime": "xx",
-                        "PodVersion": "xx"
-                    }
-                ],
-                "NewPodList": {
-                    "Webshell": "xx",
-                    "PodStatus": [
-                        "xx"
-                    ],
-                    "Zone": "xx",
-                    "PodId": "xx",
-                    "CreateTime": "xx",
-                    "PodVersion": "xx"
-                },
-                "BatchIndex": 0,
-                "OldPodList": {
-                    "Webshell": "xx",
-                    "PodStatus": [
-                        "xx"
-                    ],
-                    "Zone": "xx",
-                    "PodId": "xx",
-                    "CreateTime": "xx",
-                    "PodVersion": "xx"
-                },
-                "NextBatchStartTime": 0,
-                "OldPods": [
-                    {
-                        "Webshell": "xx",
-                        "PodStatus": [
-                            "xx"
-                        ],
-                        "Zone": "xx",
-                        "PodId": "xx",
-                        "CreateTime": "xx",
-                        "PodVersion": "xx"
-                    }
-                ],
-                "BatchStatus": "xx",
-                "PodNum": 0
-            },
-            "ErrorMessage": "xx",
             "DeployStrategyConf": {
-                "TotalBatchCount": 0,
-                "DeployStrategyType": 0,
+                "TotalBatchCount": 1,
+                "BetaBatchNum": 0,
+                "DeployStrategyType": 3,
                 "BatchInterval": 0,
-                "BetaBatchNum": 0
+                "MinAvailable": 1,
+                "Force": true
             },
-            "NewDeployVersion": "xx",
-            "StartTime": "xx",
+            "StartTime": "2024-12-20 17:00:17",
+            "EndTime": "",
+            "Status": "Error",
+            "CurrentBatchStatus": "Finish",
+            "ErrorMessage": "",
+            "BetaBatchDetail": null,
             "OtherBatchDetail": [
                 {
+                    "OldPods": [],
                     "NewPods": [
                         {
-                            "Webshell": "xx",
+                            "PodId": "app0925-4sbct",
+                            "PodVersion": "",
+                            "CreateTime": "2024-12-20 17:00:23",
+                            "Zone": "ap-shanghai-2",
+                            "Webshell": "https://tkecache.cloud.tencent.com/xxx",
+                            "Status": "CrashLoopBackOff",
                             "PodStatus": [
-                                "xx"
-                            ],
-                            "Zone": "xx",
-                            "PodId": "xx",
-                            "CreateTime": "xx",
-                            "PodVersion": "xx"
-                        }
-                    ],
-                    "NewPodList": {
-                        "Webshell": "xx",
-                        "PodStatus": [
-                            "xx"
-                        ],
-                        "Zone": "xx",
-                        "PodId": "xx",
-                        "CreateTime": "xx",
-                        "PodVersion": "xx"
-                    },
-                    "BatchIndex": 0,
-                    "OldPodList": {
-                        "Webshell": "xx",
-                        "PodStatus": [
-                            "xx"
-                        ],
-                        "Zone": "xx",
-                        "PodId": "xx",
-                        "CreateTime": "xx",
-                        "PodVersion": "xx"
-                    },
-                    "NextBatchStartTime": 0,
-                    "OldPods": [
+                                "CrashLoopBackOff"
+                            ]
+                        },
                         {
-                            "Webshell": "xx",
+                            "PodId": "app0925-s4vpj",
+                            "PodVersion": "",
+                            "CreateTime": "2024-12-20 17:00:23",
+                            "Zone": "ap-shanghai-2",
+                            "Webshell": "https://tkecache.cloud.tencent.com/xxx",
+                            "Status": "CrashLoopBackOff",
                             "PodStatus": [
-                                "xx"
-                            ],
-                            "Zone": "xx",
-                            "PodId": "xx",
-                            "CreateTime": "xx",
-                            "PodVersion": "xx"
+                                "CrashLoopBackOff"
+                            ]
                         }
                     ],
-                    "BatchStatus": "xx",
-                    "PodNum": 0
+                    "BatchStatus": "Finish",
+                    "PodNum": 3,
+                    "BatchIndex": 0,
+                    "NextBatchStartTime": 0,
+                    "OldPodList": null,
+                    "NewPodList": null
                 }
             ],
-            "CurrentBatchIndex": 0,
-            "EndTime": "xx",
-            "CurrentBatchStatus": "xx",
             "OldVersionPodList": {
-                "TotalCount": 0,
-                "Limit": 0,
-                "RequestId": "xx",
+                "Offset": 0,
+                "Limit": 1,
+                "TotalCount": 1,
                 "PodList": [
                     {
-                        "Webshell": "xx",
-                        "Status": "xx",
+                        "Zone": "ap-shanghai-2",
+                        "NodeInfo": {
+                            "Name": "eklet-subnet-8indzsuv-457482",
+                            "Zone": "ap-shanghai-2",
+                            "SubnetId": "subnet-8indzsuv",
+                            "AvailableIpCount": "226",
+                            "Cidr": "10.0.30.0-24"
+                        },
+                        "DeployVersion": "20241202165113",
                         "RestartCount": 0,
-                        "Zone": "xx",
-                        "PodId": "xx",
-                        "DeployVersion": "xx",
-                        "PodIp": "xx",
-                        "ContainerState": "xx",
                         "Ready": true,
-                        "CreateTime": "xx"
+                        "StartTime": "2024-12-19T03:12:44Z",
+                        "ContainerState": "running",
+                        "Unhealthy": null,
+                        "UnhealthyWarningMsg": "",
+                        "VersionId": "revision-57moqvm5",
+                        "ApplicationName": "app0925",
+                        "Status": "Running",
+                        "CreateTime": "2024-12-19 11:11:32",
+                        "Webshell": "https://tkecache.cloud.tencent.com/xxx",
+                        "PodId": "app0925-jt5bn",
+                        "PodIp": "10.0.30.158"
                     }
                 ],
-                "Offset": 0
-            }
-        },
-        "RequestId": "xx"
+                "RequestId": ""
+            },
+            "CurrentBatchIndex": 0,
+            "NewVersionPackageInfo": "K8sEventDemo-1.0.jar",
+            "NewDeployVersion": "20241202165113",
+            "OldDeployVersion": "20241202165113",
+            "NextBatchStartTime": null
+        }
     }
 }
 ```

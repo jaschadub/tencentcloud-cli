@@ -1,6 +1,6 @@
 **Example 1: 请求示例**
 
-
+创建 直播截图&鉴黄 模板。
 
 Input: 
 
@@ -13,7 +13,7 @@ tccli live CreateLiveSnapshotTemplate --cli-unfold-argument  \
     --CosBucket bucket \
     --TemplateName testName \
     --Height 250 \
-    --CosAppId 123 \
+    --CosAppId 8954511 \
     --Width 250
 ```
 

@@ -1,4 +1,4 @@
-**Example 1: 获取私有域解析账号列表**
+**Example 1: 获取关联账号列表**
 
 
 
@@ -9,7 +9,7 @@ tccli privatedns DescribePrivateDNSAccountList --cli-unfold-argument  \
     --Limit 200 \
     --Offset 0 \
     --Filters.0.Name AccountUin \
-    --Filters.0.Values 123456789
+    --Filters.0.Values 1000230100
 ```
 
 Output: 

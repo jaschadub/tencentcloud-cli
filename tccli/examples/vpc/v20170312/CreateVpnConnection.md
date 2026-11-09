@@ -1,19 +1,19 @@
 **Example 1: 创建VPN通道**
 
-
+创建VPN通道
 
 Input: 
 
 ```
 tccli vpc CreateVpnConnection --cli-unfold-argument  \
     --VpnConnectionName TEST_CONN \
-    --PreShareKey 654321 \
+    --PreShareKey 6325ac \
     --VpcId vpc-gapcv96p \
     --Tags.0.Value shanghai \
     --Tags.0.Key city \
     --IPSECOptionsSpecification.PfsDhGroup NULL \
     --IPSECOptionsSpecification.EncryptAlgorithm 3DES-CBC \
-    --IPSECOptionsSpecification.IntegrityAlgorith MD5 \
+    --IPSECOptionsSpecification.IntegrityAlgorith SHA1 \
     --SecurityPolicyDatabases.0.LocalCidrBlock 10.8.4.0/24 \
     --SecurityPolicyDatabases.0.RemoteCidrBlock 58.211.1.0/24 \
     --VpnGatewayId vpngw-1w9tue3d \
@@ -34,53 +34,51 @@ Output:
 {
     "Response": {
         "VpnConnection": {
-            "VpnConnectionId": "vpnr-12ds042",
-            "VpnConnectionName": "TEST_CONN",
-            "PreShareKey": "654321",
             "VpcId": "vpc-gapcv96p",
-            "HealthCheckRemoteIp": "",
-            "NetStatus": "",
-            "EnableHealthCheck": true,
-            "EncryptProto": "IKE",
-            "VpnProto": "IPSEC",
-            "IPSECOptionsSpecification": {
-                "PfsDhGroup": "",
-                "IPSECSaLifetimeTraffic": 1,
-                "EncryptAlgorithm": "",
-                "IPSECSaLifetimeSeconds": 1,
-                "IntegrityAlgorith": ""
-            },
-            "SecurityPolicyDatabaseSet": [
-                {
-                    "LocalCidrBlock": "10.8.4.0/24",
-                    "RemoteCidrBlock": [
-                        "58.211.1.0/24"
-                    ]
-                }
-            ],
-            "State": "PENGDING",
-            "HealthCheckLocalIp": "",
-            "HealthCheckStatus": "",
+            "VpnConnectionId": "vpnx-axc13cega",
+            "VpnConnectionName": "TEST_CONN",
             "VpnGatewayId": "vpngw-1w9tue3d",
-            "CreatedTime": "2020-09-22 00:00:00",
             "CustomerGatewayId": "cgw-qa9sxpy7",
+            "State": "PENDING",
+            "PreShareKey": "6325ac",
+            "NegotiationType": "active",
+            "DpdEnable": -1,
+            "DpdTimeout": "30",
+            "DpdAction": "clear",
+            "VpnProto": "IPSEC",
+            "EncryptProto": "IKE",
+            "RouteType": "STATIC",
+            "CreatedTime": "0000-00-00 00:00:00",
+            "NetStatus": "AVAILABLE",
+            "SecurityPolicyDatabaseSet": [],
             "IKEOptionsSpecification": {
-                "IKEVersion": "",
-                "RemoteIdentity": "",
-                "PropoAuthenAlgorithm": "",
-                "RemoteAddress": "",
-                "LocalFqdnName": "",
-                "LocalIdentity": "",
-                "LocalAddress": "",
-                "RemoteFqdnName": "",
-                "ExchangeMode": "",
-                "IKESaLifetimeSeconds": 1,
-                "PropoEncryAlgorithm": "",
-                "DhGroupName": ""
+                "PropoEncryAlgorithm": "3DES-CBC",
+                "PropoAuthenAlgorithm": "MD5",
+                "ExchangeMode": "MAIN",
+                "LocalIdentity": "ADDRESS",
+                "RemoteIdentity": "ADDRESS",
+                "LocalAddress": "58.211.2.5",
+                "RemoteAddress": "1.2.3.4",
+                "LocalFqdnName": "local-name",
+                "RemoteFqdnName": "remote-name",
+                "DhGroupName": "GROUP1",
+                "IKESaLifetimeSeconds": 86400,
+                "IKEVersion": "IKEV1"
             },
-            "RouteType": "STATIC"
+            "IPSECOptionsSpecification": {
+                "EncryptAlgorithm": "3DES-CBC",
+                "IntegrityAlgorith": "SHA1",
+                "IPSECSaLifetimeSeconds": 3600,
+                "IPSECSaLifetimeTraffic": 1843200,
+                "PfsDhGroup": "NULL"
+            },
+            "EnableHealthCheck": false,
+            "HealthCheckLocalIp": "169.254.168.2",
+            "HealthCheckRemoteIp": "169.254.168.1",
+            "HealthCheckStatus": "AVAILABLE",
+            "TagSet": []
         },
-        "RequestId": "74883e1b-5901-46de-ae1e-d6e2cf591c5b"
+        "RequestId": "4b71dd4d-a3ee-4ac1-b99a-99d65f6443fd"
     }
 }
 ```

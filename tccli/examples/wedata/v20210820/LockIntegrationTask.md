@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli wedata LockIntegrationTask --cli-unfold-argument  \
-    --ProjectId xx \
-    --TaskId xx
+    --TaskId 20220410163642075 \
+    --ProjectId 1486446569620893696
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "Data": true
+        "Data": true,
+        "RequestId": "0c049ae3-d147-4557-8d24-9457c471037c"
     }
 }
 ```

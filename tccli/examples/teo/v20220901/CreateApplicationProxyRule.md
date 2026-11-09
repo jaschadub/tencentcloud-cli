@@ -1,6 +1,6 @@
 **Example 1: 创建应用代理规则**
 
-
+创建应用代理规则
 
 Input: 
 
@@ -14,7 +14,8 @@ tccli teo CreateApplicationProxyRule --cli-unfold-argument  \
     --OriginValue 1.1.1.1 \
     --OriginPort 99-110 \
     --ForwardClientIp TOA \
-    --SessionPersist False
+    --SessionPersist False \
+    --RuleTag rule-service-1
 ```
 
 Output: 

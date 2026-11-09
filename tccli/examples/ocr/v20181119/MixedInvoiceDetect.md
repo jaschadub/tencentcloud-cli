@@ -1,12 +1,12 @@
 **Example 1: 混贴票据分类示例代码**
 
-
+混贴票据分类
 
 Input: 
 
 ```
 tccli ocr MixedInvoiceDetect --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg \
     --ReturnImage False
 ```
 

@@ -1,6 +1,6 @@
 **Example 1: 查询集群参数**
 
-
+查询集群参数
 
 Input: 
 
@@ -13,39 +13,32 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 226,
         "Items": [
             {
-                "MatchValue": "",
-                "CurrentValue": "4096",
-                "Min": "1024",
-                "Default": "4096",
-                "Description": "xx",
-                "Max": "65536",
-                "ParamType": "integer",
-                "EnumValue": null,
-                "ParamName": "work_mem",
-                "MatchType": "",
-                "NeedReboot": 0
-            },
-            {
-                "MatchValue": "",
-                "CurrentValue": "base64",
-                "Min": "",
-                "Default": "base64",
-                "Description": "xx",
-                "Max": "",
-                "ParamType": "enum",
+                "CurrentValue": "1000",
+                "Default": "60000",
                 "EnumValue": [
-                    "base64",
-                    "hex"
+                    "OFF",
+                    "ON"
                 ],
-                "ParamName": "xmlbinary",
+                "Max": "65535",
+                "Min": "1",
+                "ParamName": "auto_increment_increment",
+                "NeedReboot": 0,
+                "ParamType": "integer",
                 "MatchType": "",
-                "NeedReboot": 0
+                "MatchValue": "",
+                "Description": "Determines the starting point for the AUTO_INCREMENT column value.",
+                "IsGlobal": 1,
+                "ModifiableInfo": {
+                    "IsModifiable": 1
+                },
+                "IsFunc": true,
+                "Func": "{MIN(DBInitMemory/%d*%d,%d)},4000,32768,2097152"
             }
         ],
-        "RequestId": "117812",
-        "TotalCount": 2
+        "RequestId": "806fe1c8-5567-4aa8-a521-ea2414c793b4"
     }
 }
 ```

@@ -6,94 +6,91 @@ Input:
 
 ```
 tccli dlc DescribeDMSPartitions --cli-unfold-argument  \
-    --Name xx \
-    --TableName xx \
-    --PartValues xx \
-    --Values xx \
-    --DatabaseName xx \
-    --PartitionNames xx \
-    --SchemaName xx
+    --Name partition1 \
+    --TableName table1 \
+    --PartValues 1 \
+    --Values 1 \
+    --DatabaseName database1 \
+    --PartitionNames partition1 \
+    --SchemaName schema1 \
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "Total": 100,
         "Partitions": [
             {
-                "Sds": {
-                    "OutputFormat": "xx",
-                    "SortCols": {
-                        "Col": "xx",
-                        "Order": 0
-                    },
-                    "InputFormat": "xx",
-                    "SerdeLib": "xx",
-                    "Cols": [
-                        {
-                            "Name": "xx",
-                            "BizParams": [
-                                {
-                                    "Value": "xx",
-                                    "Key": "xx"
-                                }
-                            ],
-                            "IsPartition": true,
-                            "Params": [
-                                {
-                                    "Value": "xx",
-                                    "Key": "xx"
-                                }
-                            ],
-                            "Position": 0,
-                            "Type": "xx",
-                            "Description": "xx"
-                        }
-                    ],
-                    "Compressed": true,
-                    "Params": [
-                        {
-                            "Value": "xx",
-                            "Key": "xx"
-                        }
-                    ],
-                    "Location": "xx",
-                    "NumBuckets": 0,
-                    "SerdeParams": [
-                        {
-                            "Value": "xx",
-                            "Key": "xx"
-                        }
-                    ],
-                    "SerdeName": "xx",
-                    "StoredAsSubDirectories": true,
-                    "BucketCols": [
-                        "xx"
-                    ]
-                },
-                "Name": "xx",
-                "ModifiedTime": "2020-09-22T00:00:00+00:00",
+                "DatabaseName": "database1",
+                "SchemaName": "schema1",
+                "TableName": "table1",
                 "DataVersion": 0,
-                "RecordCount": 0,
-                "TableName": "xx",
-                "LastAccessTime": "2020-09-22T00:00:00+00:00",
+                "Name": "partition1",
                 "Values": [
-                    "xx"
+                    "1"
                 ],
-                "DatabaseName": "xx",
+                "StorageSize": 0,
+                "RecordCount": 0,
+                "CreateTime": "2020-09-22T00:00:00+00:00",
+                "ModifiedTime": "2020-09-22T00:00:00+00:00",
+                "LastAccessTime": "2020-09-22T00:00:00+00:00",
                 "Params": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Key": "param1",
+                        "Value": "default"
                     }
                 ],
-                "SchemaName": "xx",
-                "StorageSize": 0,
-                "CreateTime": "2020-09-22T00:00:00+00:00"
+                "Sds": {
+                    "Location": "cosn://*******",
+                    "InputFormat": "org.apache.hadoop.mapred.TextInputFormat",
+                    "OutputFormat": "org.apache.hadoop.hive.ql.io.IgnoreKeyTextOutputFormat",
+                    "NumBuckets": 0,
+                    "Compressed": true,
+                    "StoredAsSubDirectories": true,
+                    "SerdeLib": "org.apache.hadoop.hive.serde2.OpenCSVSerde",
+                    "SerdeName": "serdename",
+                    "BucketCols": [
+                        "column1"
+                    ],
+                    "SerdeParams": [
+                        {
+                            "Key": "serde param",
+                            "Value": "default"
+                        }
+                    ],
+                    "Params": [
+                        {
+                            "Key": "param1",
+                            "Value": "default"
+                        }
+                    ],
+                    "SortCols": {
+                        "Col": "column1",
+                        "Order": 0
+                    },
+                    "Cols": [
+                        {
+                            "Name": "column1",
+                            "Description": "default description",
+                            "Type": "int",
+                            "Position": 0,
+                            "IsPartition": true,
+                            "BizParams": [],
+                            "Params": []
+                        }
+                    ],
+                    "SortColumns": [
+                        {
+                            "Col": "column1",
+                            "Order": 0
+                        }
+                    ]
+                }
             }
-        ]
+        ],
+        "Total": 1,
+        "RequestId": "*******-********"
     }
 }
 ```

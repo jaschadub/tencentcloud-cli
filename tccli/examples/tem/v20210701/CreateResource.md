@@ -6,10 +6,11 @@ Input:
 
 ```
 tccli tem CreateResource --cli-unfold-argument  \
-    --ResourceType xx \
-    --EnvironmentId xx \
+    --EnvironmentId en-xxxxxx \
+    --ResourceType CFS \
+    --ResourceId resource-xxxxxx \
     --SourceChannel 0 \
-    --ResourceId xx
+    --ResourceFrom existing
 ```
 
 Output: 

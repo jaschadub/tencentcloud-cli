@@ -1,4 +1,4 @@
-**Example 1: 五官定位接口**
+**Example 1: 五官定位接口成功示例**
 
 
 
@@ -400,6 +400,31 @@ Output:
         ],
         "FaceModelVersion": "3.0",
         "RequestId": "a8eb4545-a154-4f86-9510-57a8be9cae0c"
+    }
+}
+```
+
+**Example 2: 五官定位接口失败示例**
+
+
+
+Input: 
+
+```
+tccli iai AnalyzeFace --cli-unfold-argument  \
+    --Mode 0 \
+    --Url http://test.image.myqcloud.com/testB.jpg
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "c964ad35-5476-486e-a03f-311faa6652e6",
+        "Error": {
+            "Code": "InvalidParameterValue.NoFaceInPhoto",
+            "Message": "图片中没有人脸。"
+        }
     }
 }
 ```

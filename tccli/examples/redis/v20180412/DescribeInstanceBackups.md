@@ -1,4 +1,4 @@
-**Example 1: 请求示例**
+**Example 1: 示例 1**
 
 
 
@@ -6,41 +6,35 @@ Input:
 
 ```
 tccli redis DescribeInstanceBackups --cli-unfold-argument  \
-    --Limit 5 \
-    --Offset 0 \
-    --InstanceId crs-5a4py64p
+    --InstanceId crs-ei43p3gr
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2d4387ee-2011-449e-a32b-87f9366f3ef4",
-        "TotalCount": 2,
         "BackupSet": [
             {
-                "StartTime": "2018-09-04 12:51:21",
-                "BackupId": "2e4127f8-affe-11e8-941e-4846fb00c75d",
-                "BackupType": "0",
-                "Status": 2,
-                "Remark": "测试使用",
-                "Locked": 0,
-                "BackupSize": 543534435,
+                "BackupId": "165706342-5832225-1641692389",
+                "BackupSize": 537,
+                "BackupType": "1",
+                "Encrypted": false,
+                "EndTime": "2026-06-01 02:01:09",
+                "ExpireTime": "2026-06-08 02:00:48",
+                "FileType": "RDB-Redis 6.2",
                 "FullBackup": 0,
-                "InstanceType": 6
-            },
-            {
-                "StartTime": "2018-09-04 12:53:06",
-                "BackupId": "6cbbf53a-affe-11e8-905b-4846fb00c75d",
-                "BackupType": "0",
-                "Status": 2,
-                "Remark": "xxx",
+                "InstanceId": "crs-ei43p3gr",
+                "InstanceName": "testbackup",
+                "InstanceType": 16,
                 "Locked": 0,
-                "BackupSize": 3124324,
-                "FullBackup": 0,
-                "InstanceType": 7
+                "Region": "ap-guangzhou",
+                "Remark": "",
+                "StartTime": "2026-06-01 02:00:48",
+                "Status": 2
             }
-        ]
+        ],
+        "TotalCount": 6,
+        "RequestId": "66bb2e15-b864-46ea-894d-529885087fb8"
     }
 }
 ```

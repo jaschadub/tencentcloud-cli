@@ -1,6 +1,6 @@
 **Example 1: 查询域名的解析记录**
 
-
+ 
 
 Input: 
 
@@ -8,9 +8,9 @@ Input:
 tccli dnspod DescribeRecordList --cli-unfold-argument  \
     --Offset 0 \
     --Limit 2 \
-    --Domain shenjianing.com \
+    --Domain dnspod.cn \
     --DomainId 123 \
-    --Subdomain www \
+    --SubDomain www \
     --Keyword dnspod \
     --RecordType NS \
     --RecordLine 默认 \
@@ -44,7 +44,8 @@ Output:
                 "MonitorStatus": "",
                 "Remark": "",
                 "TTL": 86400,
-                "MX": 0
+                "MX": 0,
+                "DefaultNS": true
             },
             {
                 "RecordId": 556507779,
@@ -59,7 +60,8 @@ Output:
                 "MonitorStatus": "",
                 "Remark": "",
                 "TTL": 86400,
-                "MX": 0
+                "MX": 0,
+                "DefaultNS": true
             }
         ]
     }

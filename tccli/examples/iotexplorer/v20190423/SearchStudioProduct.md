@@ -7,10 +7,10 @@ Input:
 ```
 tccli iotexplorer SearchStudioProduct --cli-unfold-argument  \
     --ProjectId prj-zunfat46 \
-    --ProductName testtproduct \
-    --Limit 0 \
+    --DevStatus dev \
     --Offset 0 \
-    --DevStatus dev
+    --Limit 0 \
+    --ProductName testtproduct
 ```
 
 Output: 
@@ -20,23 +20,24 @@ Output:
         "Total": 1,
         "Products": [
             {
-                "DevStatus": "dev",
-                "EncryptionType": "2",
-                "DataProtocol": 1,
-                "ProjectId": "prj-zunfat46",
-                "Region": "gz",
-                "EnableProductScript": "",
-                "UpdateTime": 1560341975,
-                "ProductName": "testtproduct",
-                "ProductDesc": "desc",
-                "NetType": "else",
+                "ProductId": "productId",
+                "ProductName": "name",
+                "CategoryId": 593,
                 "ProductType": 0,
+                "EncryptionType": "2",
+                "NetType": "wifi",
+                "DataProtocol": 1,
+                "ProductDesc": "",
+                "ProjectId": "prj-wg9**b2",
+                "DevStatus": "dev",
+                "CreateTime": 1686100765,
+                "UpdateTime": 1686100802,
+                "Region": "gz",
                 "ModuleId": 0,
-                "CreateTime": 1560341975,
-                "CategoryId": 3,
-                "CreateUserId": 0,
-                "CreatorNickName": "xx",
-                "ProductId": "BJQM4UXMKN"
+                "EnableProductScript": "",
+                "CreatorNickName": "name",
+                "CreateUserId": 1,
+                "BindStrategy": 0
             }
         ],
         "RequestId": "0935a11f-a172-4bd8-8bae-f143444aaff3"

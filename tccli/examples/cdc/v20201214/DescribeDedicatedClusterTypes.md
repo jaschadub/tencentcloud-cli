@@ -1,11 +1,17 @@
 **Example 1: 查询专有集群配置列表**
 
-
+查询专用集群订单配置列表。
 
 Input: 
 
 ```
-tccli cdc DescribeDedicatedClusterTypes --cli-unfold-argument ```
+tccli cdc DescribeDedicatedClusterTypes --cli-unfold-argument  \
+    --Name yuan dedicated \
+    --DedicatedClusterTypeIds dctype-lkm17jbu dctype-1yo16f1a dctype-b38d7sl6 dctype-z387eu8j \
+    --Offset 0 \
+    --Limit 10 \
+    --IsCompute True
+```
 
 Output: 
 ```
@@ -26,7 +32,7 @@ Output:
                     "S5"
                 ],
                 "Weight": 3000,
-                "PowerDrawKva": "2000.800000",
+                "PowerDrawKva": 2000.8,
                 "ComputeFormatDesc": "M5.21XLARGE700 4、S5.21XLARGE320 2"
             },
             {
@@ -44,7 +50,7 @@ Output:
                     "S5"
                 ],
                 "Weight": 3273,
-                "PowerDrawKva": "4156.700000",
+                "PowerDrawKva": 4156.7,
                 "ComputeFormatDesc": "M5.21XLARGE700 4、S5.21XLARGE320 2"
             },
             {
@@ -61,7 +67,7 @@ Output:
                     "S3"
                 ],
                 "Weight": 3724,
-                "PowerDrawKva": "3829.100000",
+                "PowerDrawKva": 3829.1,
                 "ComputeFormatDesc": "M5.21XLARGE700 4、S5.21XLARGE320 2"
             },
             {
@@ -76,7 +82,7 @@ Output:
                 ],
                 "SupportedInstanceFamily": [],
                 "Weight": 3724,
-                "PowerDrawKva": "3829.100000",
+                "PowerDrawKva": 3829.1,
                 "ComputeFormatDesc": "M5.21XLARGE700 4、S5.21XLARGE320 2"
             }
         ],

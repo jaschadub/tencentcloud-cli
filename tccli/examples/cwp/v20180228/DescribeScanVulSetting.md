@@ -11,16 +11,18 @@ Output:
 ```
 {
     "Response": {
-        "VulCategories": "xx",
-        "TimerTime": "xx",
-        "VulLevels": "xx",
-        "VulEmergency": 1,
-        "RequestId": "xx",
+        "ClickTimeout": 0,
+        "EnableScan": 0,
+        "EndTime": "23:50",
+        "RequestId": "54111d3a-373d-4175-80dd-8d855b595647",
+        "ScanMethod": 0,
+        "StartTime": "00:40",
         "TimerInterval": 1,
-        "EndTime": "",
-        "EnableScan": 1,
-        "StartTime": "",
-        "ClickTimeout": 0
+        "TimerTime": "00:40",
+        "Uuids": [],
+        "VulCategories": "4;5;1;2",
+        "VulEmergency": 1,
+        "VulLevels": "1;2;3;4"
     }
 }
 ```

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ckafka CreateConsumer --cli-unfold-argument  \
-    --InstanceId ckafka-xxx \
-    --TopicName topic-xxx \
-    --GroupName group-xxx
+    --InstanceId ckafka-test \
+    --TopicName topic-test \
+    --GroupName group-test
 ```
 
 Output: 
@@ -16,13 +16,16 @@ Output:
 {
     "Response": {
         "Result": {
-            "ReturnMessage": "xx",
-            "ReturnCode": "xx",
+            "ReturnMessage": "success",
+            "ReturnCode": "ok",
             "Data": {
-                "FlowId": 0
+                "FlowId": 0,
+                "RouteDTO": {
+                    "RouteId": 0
+                }
             }
         },
-        "RequestId": "xx"
+        "RequestId": "9e6d209b-69fd-4a00-b064-75131aa0a0f8"
     }
 }
 ```

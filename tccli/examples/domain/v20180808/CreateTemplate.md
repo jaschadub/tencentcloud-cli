@@ -1,70 +1,75 @@
 **Example 1: 创建模板**
 
-
+创建模板
 
 Input: 
 
 ```
 tccli domain CreateTemplate --cli-unfold-argument  \
-    --ContactInfo.Province xx \
-    --ContactInfo.OrganizationNameCN xx \
-    --ContactInfo.OrganizationName xx \
-    --ContactInfo.City xx \
-    --ContactInfo.CityCN xx \
-    --ContactInfo.RegistrantName xx \
-    --ContactInfo.Telephone xx \
-    --ContactInfo.ZipCode xx \
-    --ContactInfo.RegistrantNameCN xx \
-    --ContactInfo.StreetCN xx \
-    --ContactInfo.Street xx \
-    --ContactInfo.ProvinceCN xx \
-    --ContactInfo.Country xx \
-    --ContactInfo.RegistrantType xx \
-    --ContactInfo.CountryCN xx \
-    --ContactInfo.Email xx \
-    --CertificateInfo.CertificateType xx \
-    --CertificateInfo.CertificateCode xx \
-    --CertificateInfo.ImgUrl xx
+    --ContactInfo.Province sheng \
+    --ContactInfo.OrganizationNameCN xx企业 \
+    --ContactInfo.OrganizationName xx企业 \
+    --ContactInfo.City shang hai \
+    --ContactInfo.CityCN 上海 \
+    --ContactInfo.RegistrantName 张三 \
+    --ContactInfo.Telephone 1***88 \
+    --ContactInfo.ZipCode qweqwe \
+    --ContactInfo.RegistrantNameCN qweqwe \
+    --ContactInfo.StreetCN asdqw \
+    --ContactInfo.Street sdqw \
+    --ContactInfo.ProvinceCN sdw \
+    --ContactInfo.Country CN \
+    --ContactInfo.RegistrantType E \
+    --ContactInfo.CountryCN 上海 \
+    --ContactInfo.Email **@qq.com \
+    --CertificateInfo.CertificateType SFZ \
+    --CertificateInfo.CertificateCode 430234123 \
+    --CertificateInfo.ImgUrl --
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "ca29ee8d-3034-1234-9060-699a971e9f5f",
         "Template": {
             "AuditReason": "",
-            "IsValidTemplate": 0,
-            "UpdatedOn": "2020-10-16 00:00:00",
-            "AuditStatus": "Approve",
-            "CreatedOn": "2020-10-16 00:00:00",
+            "IsValidTemplate": 1,
+            "UpdatedOn": "2024-12-18 12:23:28",
+            "AuditStatus": "InAudit",
+            "CreatedOn": "2024-12-18 12:23:28",
+            "IsBlack": false,
             "InvalidReason": "",
             "CertificateInfo": {
-                "CertificateType": "xx",
-                "CertificateCode": "xx",
-                "ImgUrl": "xx"
+                "OriginImgUrl": "https://domain-***.com/1000***3.jpg",
+                "CertificateCode": "***56",
+                "RegistrantCertificateCode": "",
+                "RegistrantImgUrl": "",
+                "RegistrantCertificateType": "",
+                "CertificateType": "SFZ",
+                "ImgUrl": "https://domain-***.com/1000***3.jpg"
             },
-            "TemplateId": "xx",
-            "UserUin": "xx",
+            "TemplateId": "tmpl-***u",
+            "UserUin": "***07",
             "ContactInfo": {
-                "Province": "xx",
-                "OrganizationNameCN": "xx",
-                "OrganizationName": "xx",
-                "City": "xx",
-                "CityCN": "xx",
-                "RegistrantName": "xx",
-                "Telephone": "xx",
-                "ZipCode": "xx",
-                "RegistrantNameCN": "xx",
-                "StreetCN": "xx",
-                "Street": "xx",
-                "ProvinceCN": "xx",
-                "Country": "xx",
-                "RegistrantType": "xx",
-                "CountryCN": "xx",
-                "Email": "xx"
+                "Province": "shang hai shi",
+                "RegistrantType": "I",
+                "OrganizationName": "*u",
+                "OrganizationNameCN": "*名",
+                "Country": "CN",
+                "RegistrantName": "*名",
+                "ZipCode": "***1",
+                "Email": "*@qq.com",
+                "City": "shang hai shi",
+                "RegistrantNameCN": "*名",
+                "StreetCN": "***117号",
+                "Street": "***1117 Hao",
+                "ProvinceCN": "上海市",
+                "CountryCN": "中国",
+                "CityCN": "上海市",
+                "Telephone": "***29"
             },
-            "IsDefault": "xx"
+            "IsDefault": "no"
         }
     }
 }

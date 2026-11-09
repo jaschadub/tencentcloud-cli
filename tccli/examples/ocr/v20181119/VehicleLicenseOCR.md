@@ -1,12 +1,12 @@
-**Example 1: 行驶证主页正面识别示例代码1**
+**Example 1: 行驶证主页正面识别示例**
 
-
+行驶证主页正面识别示例
 
 Input: 
 
 ```
 tccli ocr VehicleLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/vehicle/VehicleLicenseOCR/VehicleLicenseOCR2.jpg \
     --CardSide FRONT
 ```
 
@@ -25,29 +25,29 @@ Output:
             "EngineNo": "8B54321",
             "RegisterDate": "2011-10-10",
             "IssueDate": "",
-            "Seal": "上海市公安局交通警寨总队"
+            "Seal": "上海市公安局交通警察总队"
         },
         "BackInfo": null,
         "RecognizeWarnCode": [
-            -9106
+            -9102
         ],
         "RecognizeWarnMsg": [
-            "WARN_DRIVER_LICENSE_PS_CARD"
+            "WARN_DRIVER_LICENSE_COPY_CARD"
         ],
         "RequestId": "820916b4-b391-40a8-9203-7ae87e3f1954"
     }
 }
 ```
 
-**Example 2: 行驶证副页正面识别示例代码2**
+**Example 2: 行驶证副页正面识别示例**
 
-
+行驶证副页正面识别示例
 
 Input: 
 
 ```
 tccli ocr VehicleLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/vehicle/VehicleLicenseBackOCR/VehicleLicenseBackOCR1.jpg \
     --CardSide BACK
 ```
 
@@ -57,64 +57,24 @@ Output:
     "Response": {
         "FrontInfo": null,
         "BackInfo": {
-            "PlateNo": "皖AC4L50",
-            "FileNo": "A00-00476807",
+            "PlateNo": "粤B2177C",
+            "FuelType": "汽油",
+            "FileNo": "440681681182",
             "AllowNum": "5人",
-            "TotalMass": "1837kg",
-            "CurbWeight": "1431kg",
+            "TotalMass": "2085kg",
+            "CurbWeight": "1610kg",
             "LoadQuality": "--",
-            "ExternalSize": "4620×1780×1498mm",
+            "ExternalSize": "4667×1839×1694mm",
             "TotalQuasiMass": "--",
             "Marks": "",
-            "Record": "检验有效期至2015年11月皖A(4S)"
+            "Record": "检验有效期至2019年11月粤E(01)汽油",
+            "SubPageCode": "4460040587965"
         },
         "RecognizeWarnCode": [
-            -9106
+            -9102
         ],
         "RecognizeWarnMsg": [
-            "WARN_DRIVER_LICENSE_PS_CARD"
-        ],
-        "RequestId": "e2ebfaa0-19d3-4d2b-9ed8-7c7c21eb2b74"
-    }
-}
-```
-
-**Example 3: 行驶证副页正面识别示例代码3**
-
-
-
-Input: 
-
-```
-tccli ocr VehicleLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
-    --CardSide BACK
-```
-
-Output: 
-```
-{
-    "Response": {
-        "FrontInfo": null,
-        "BackInfo": {
-            "PlateNo": "皖AC4L50",
-            "FileNo": "A00-00476807",
-            "AllowNum": "5人",
-            "TotalMass": "1837kg",
-            "CurbWeight": "1431kg",
-            "LoadQuality": "--",
-            "ExternalSize": "4620×1780×1498mm",
-            "TotalQuasiMass": "--",
-            "Marks": "",
-            "Record": "检验有效期至2015年11月皖A(4S)"
-        },
-        "RecognizeWarnCode": [
-            -9106,
-            -9103
-        ],
-        "RecognizeWarnMsg": [
-            "WARN_DRIVER_LICENSE_PS_CARD",
-            "WARN_DRIVER_LICENSE_SCREENED_CARD"
+            "WARN_DRIVER_LICENSE_COPY_CARD"
         ],
         "RequestId": "e2ebfaa0-19d3-4d2b-9ed8-7c7c21eb2b74"
     }

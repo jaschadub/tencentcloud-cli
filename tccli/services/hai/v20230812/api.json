@@ -1,0 +1,3804 @@
+{
+  "actions": {
+    "CreateApplication": {
+      "document": "本接口（CreateApplication）用于对HAI实例制作自定义应用。",
+      "input": "CreateApplicationRequest",
+      "name": "创建自定义应用",
+      "output": "CreateApplicationResponse",
+      "status": "online"
+    },
+    "CreateInferServiceByTemplate": {
+      "document": "本接口(CreateInferServiceByTemplate)用于根据模板创建服务",
+      "input": "CreateInferServiceByTemplateRequest",
+      "name": "根据模板创建服务",
+      "output": "CreateInferServiceByTemplateResponse",
+      "status": "online"
+    },
+    "CreateMuskPrompt": {
+      "document": "创建musk prompt 任务",
+      "input": "CreateMuskPromptRequest",
+      "name": "创建Prompt请求任务",
+      "output": "CreateMuskPromptResponse",
+      "status": "online"
+    },
+    "DeleteService": {
+      "document": "本接口 (DeleteService) 用于删除一个指定配置的实例。",
+      "input": "DeleteServiceRequest",
+      "name": "删除服务",
+      "output": "DeleteServiceResponse",
+      "status": "online"
+    },
+    "DeployInferService": {
+      "document": "本接口(DeployInferService)用于部署推理服务",
+      "input": "DeployInferServiceRequest",
+      "name": "部署推理服务",
+      "output": "DeployInferServiceResponse",
+      "status": "online"
+    },
+    "DescribeApplications": {
+      "document": "本接口（DescribeApplications）用于查询应用",
+      "input": "DescribeApplicationsRequest",
+      "name": "查询应用",
+      "output": "DescribeApplicationsResponse",
+      "status": "online"
+    },
+    "DescribeDeployTemplates": {
+      "document": "本接口(DescribeDeployTemplates)用于查询模型支持的部署模板。传入 ServiceId 时按当前服务占用过滤重装候选模板。",
+      "input": "DescribeDeployTemplatesRequest",
+      "name": "查询模型支持的部署模板",
+      "output": "DescribeDeployTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeInstanceNetworkStatus": {
+      "document": "本接口（DescribeInstanceNetworkStatus）用于查询实例的网络配置及消耗情况",
+      "input": "DescribeInstanceNetworkStatusRequest",
+      "name": "查询实例的网络配置及消耗情况",
+      "output": "DescribeInstanceNetworkStatusResponse",
+      "status": "online"
+    },
+    "DescribeInstances": {
+      "document": "本接口（DescribeInstances）用户查询实例",
+      "input": "DescribeInstancesRequest",
+      "name": "查询实例",
+      "output": "DescribeInstancesResponse",
+      "status": "online"
+    },
+    "DescribeModels": {
+      "document": "本接口(DescribeModels)用于查询模型。传入 ServiceId 时按当前服务占用过滤重装候选模型。",
+      "input": "DescribeModelsRequest",
+      "name": "查询模型",
+      "output": "DescribeModelsResponse",
+      "status": "online"
+    },
+    "DescribeMuskPrompts": {
+      "document": "获取prompt任务列表",
+      "input": "DescribeMuskPromptsRequest",
+      "name": "获取Prompt任务列表",
+      "output": "DescribeMuskPromptsResponse",
+      "status": "online"
+    },
+    "DescribeRegions": {
+      "document": "本接口（DescribeRegions）用于查询地域列表",
+      "input": "DescribeRegionsRequest",
+      "name": "查询地域列表",
+      "output": "DescribeRegionsResponse",
+      "status": "online"
+    },
+    "DescribeScenes": {
+      "document": "本接口（DescribeScenes）用于查询场景",
+      "input": "DescribeScenesRequest",
+      "name": "查询场景",
+      "output": "DescribeScenesResponse",
+      "status": "online"
+    },
+    "DescribeServiceLoginSettings": {
+      "document": "本接口（DescribeServiceLoginSettings）用于查询服务登录配置",
+      "input": "DescribeServiceLoginSettingsRequest",
+      "name": "查询服务登录配置",
+      "output": "DescribeServiceLoginSettingsResponse",
+      "status": "online"
+    },
+    "DescribeServices": {
+      "document": "本接口 (DescribeServices) 用于查询一个或多个服务",
+      "input": "DescribeServicesRequest",
+      "name": "查询服务",
+      "output": "DescribeServicesResponse",
+      "status": "online"
+    },
+    "DescribeServicesCallInfo": {
+      "document": "本接口 (DescribeServciesCallInfo) 用于查询服务调用信息。",
+      "input": "DescribeServicesCallInfoRequest",
+      "name": "查询服务调用信息",
+      "output": "DescribeServicesCallInfoResponse",
+      "status": "online"
+    },
+    "GetServicePodLogs": {
+      "document": "本接口(GetServicePodLogs)用于查询推理服务Pod日志",
+      "input": "GetServicePodLogsRequest",
+      "name": "查询推理服务Pod日志",
+      "output": "GetServicePodLogsResponse",
+      "status": "online"
+    },
+    "InquirePriceRunInstances": {
+      "document": "本接口 (InquirePriceRunInstances) 用于实例询价。",
+      "input": "InquirePriceRunInstancesRequest",
+      "name": "创建实例询价",
+      "output": "InquirePriceRunInstancesResponse",
+      "status": "online"
+    },
+    "InquirePriceUpdateServiceConfigs": {
+      "document": "本接口(InquirePriceUpdateServiceConfigs)用于更新服务配置询价",
+      "input": "InquirePriceUpdateServiceConfigsRequest",
+      "name": "更新服务配置询价",
+      "output": "InquirePriceUpdateServiceConfigsResponse",
+      "status": "online"
+    },
+    "ResetInstancesPassword": {
+      "document": "本接口 (ResetInstancesPassword) 用于重置实例的用户密码。",
+      "input": "ResetInstancesPasswordRequest",
+      "name": "重置实例的用户密码",
+      "output": "ResetInstancesPasswordResponse",
+      "status": "online"
+    },
+    "ResizeInstanceDisk": {
+      "document": "本接口（ResizeInstanceDisk）用于对指定HAI实例进行扩容云硬盘操作。",
+      "input": "ResizeInstanceDiskRequest",
+      "name": "扩容实例云硬盘",
+      "output": "ResizeInstanceDiskResponse",
+      "status": "online"
+    },
+    "RunInstances": {
+      "document": "本接口 (RunInstances) 用于创建一个或多个指定配置的实例。",
+      "input": "RunInstancesRequest",
+      "name": "创建实例",
+      "output": "RunInstancesResponse",
+      "status": "online"
+    },
+    "StartInstance": {
+      "document": "本接口 (StartInstance) 用于主动启动实例。\n‘运行中’、‘预付费’的实例不支持启动实例",
+      "input": "StartInstanceRequest",
+      "name": "启动实例",
+      "output": "StartInstanceResponse",
+      "status": "online"
+    },
+    "StopInstance": {
+      "document": "本接口 (StopInstance) 用于主动关闭实例。\n‘已关机’、‘预付费’的实例不支持关机",
+      "input": "StopInstanceRequest",
+      "name": "关闭实例",
+      "output": "StopInstanceResponse",
+      "status": "online"
+    },
+    "TerminateInstances": {
+      "document": "本接口 (TerminateInstances) 用于主动退还实例。",
+      "input": "TerminateInstancesRequest",
+      "name": "销毁实例",
+      "output": "TerminateInstancesResponse",
+      "status": "online"
+    },
+    "UpdateServiceConfigs": {
+      "document": "本接口(UpdateServiceConfigs)用于更新服务配置。",
+      "input": "UpdateServiceConfigsRequest",
+      "name": "更新服务配置",
+      "output": "UpdateServiceConfigsResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-08-12",
+    "api_brief": "介绍如何使用API对高性能应用服务进行相关操作，包括创建、销毁、硬盘扩容等",
+    "serviceNameCN": "高性能应用服务",
+    "serviceShortName": "hai"
+  },
+  "objects": {
+    "ApplicationInfo": {
+      "document": "应用信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用id\n",
+          "example": "app-7j7f9jhn",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "混元-DiT WebUI",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用描述\n",
+          "example": "混元-DiT是腾讯自研的高性能细粒度中文理解多分辨率扩散Transformer模型。提供双语生成能力，中国元素理解具有优势。",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用的环境配置",
+          "example": "Ubuntu20.04, Python 3.8.12, CUDA 11.7, cuDNN 8, HunYuanDiT, JupyterLab, Gradio",
+          "member": "string",
+          "name": "ConfigEnvironment",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统盘大小下限，单位GB",
+          "example": "150",
+          "member": "int64",
+          "name": "MinSystemDiskSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用类型，目前该项取值可以为PUBLIC_APPLICATION（公共应用）；PRIVATE_APPLICATION（自定义应用）；COMMUNITY_APPLICATION（社区应用）",
+          "example": "PUBLIC_APPLICATION",
+          "member": "string",
+          "name": "ApplicationType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用状态：CREATING-创建中；ONLINE -正常在线；DELETING -删除中；ARREARS - 欠费隔离\n示例值：ONLINE",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "ApplicationState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用创建时间，格式：%Y-%m-%d %H:%M:%S",
+          "example": "2024-07-11 16:36:08",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用大小，单位GB",
+          "example": "120",
+          "member": "int64",
+          "name": "ApplicationSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "COSStorage": {
+      "document": "cos挂载信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cos桶uri",
+          "example": "cos://hai-model-bj-1319662662/Qwen/Qwen3-Reranker-8B",
+          "member": "string",
+          "name": "URI",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CallInfo": {
+      "document": "服务调用信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "svc-fnay2k0u",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务调用地址",
+          "example": "http://lb-kiogvjyj-a6ejxd0rvihp9tyo.clb.bj-tencentclb.net",
+          "member": "string",
+          "name": "PublicEndpoint",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务调用的API_KEY",
+          "example": "6e38ef289496e88d7876b22b82190a41a56b2bbdf1f9c80f26154f00353781dc",
+          "member": "string",
+          "name": "ApiKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网调用地址",
+          "example": "http://127.0.0.1",
+          "member": "string",
+          "name": "VpcEndpoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ComputeDetail": {
+      "document": "算力详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>算力套餐ID</p>",
+          "example": "96G_A*8",
+          "member": "string",
+          "name": "BundleType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点数量</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>显卡数量</p>",
+          "example": "16",
+          "member": "string",
+          "name": "GPUCount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>显存</p>",
+          "example": "1536",
+          "member": "string",
+          "name": "GPUMemory",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>算力</p>",
+          "example": "704",
+          "member": "string",
+          "name": "GPUPerformance",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU核数</p>",
+          "example": "768",
+          "member": "string",
+          "name": "CPU",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存</p>",
+          "example": "4608",
+          "member": "string",
+          "name": "Memory",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该套餐是否支持包年包月</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "PrepaidEnable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该套餐是否支持按量计费</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "PostpaidEnable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该算力套餐支持的计费模式列表：POSTPAID_BY_HOUR（按量）、PREPAID（包年包月）、SPOT（竞价）</p>",
+          "example": "",
+          "member": "string",
+          "name": "SupportedChargeTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ComputeInfo": {
+      "document": "资源相关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源类型及数量</p>",
+          "example": "无",
+          "member": "ComputeResource",
+          "name": "ComputeResources",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>副本数</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Replicas",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComputeResource": {
+      "document": "推理服务的算力资源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "算力套餐的类型",
+          "example": "96G_A*8",
+          "member": "string",
+          "name": "BundleType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "ContainerInfo": {
+      "document": "容器信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>镜像相关信息</p>",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "Image",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务监听端口</p>",
+          "example": "30000",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>启动命令</p>",
+          "example": "[\"echo \\\"Hello, World!\\\"\"]",
+          "member": "string",
+          "name": "Scripts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量列表</p>",
+          "example": "无",
+          "member": "EnvParam",
+          "name": "Envs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储挂载配置</p>",
+          "example": "无",
+          "member": "StorageInfo",
+          "name": "Storages",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>探针信息</p>",
+          "example": "无",
+          "member": "ProbeInfo",
+          "name": "Probe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateApplicationRequest": {
+      "document": "CreateApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要制作自定义应用的HAI实例ID",
+          "example": "hai-0asd1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义应用的应用名称",
+          "example": " 我的HAI应用",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义应用的描述",
+          "example": "这是我的pytorch HAI自定义应用",
+          "member": "string",
+          "name": "ApplicationDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationResponse": {
+      "document": "CreateApplication返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HAI自定义应用ID",
+          "example": "app-lfflw9lw",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInferServiceByTemplateRequest": {
+      "document": "CreateInferServiceByTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模版ID</p>",
+          "example": "tpl-gxbn79mi",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>",
+          "example": "Qwen3-235B-A22B",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>副本数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Replicas",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费方式：POSTPAID_BY_HOUR 按量后付费，PREPAID_BY_MONTH 包年包月，SPOT 竞价售卖（竞价需先调用 BidSpotInferService 对套餐出价）</p>",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "ServiceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述了服务的超参数配置</p>",
+          "example": "无",
+          "member": "HyperParam",
+          "name": "HyperParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络设置</p>",
+          "example": "无",
+          "member": "NetworkSetting",
+          "name": "NetworkSetting",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理服务安全类型</p><p>枚举值：</p><ul><li>STANDARD： 标准推理服务</li><li>CONFIDENTIAL： 可信推理服务</li></ul>",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "SecurityType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>包年包月参数(ServiceChargeType为包月时必填)</p>",
+          "example": "无",
+          "member": "ServiceChargePrepaid",
+          "name": "ServiceChargePrepaid",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInferServiceByTemplateResponse": {
+      "document": "CreateInferServiceByTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>",
+          "example": "svc-rwyu5sv2",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMuskPromptRequest": {
+      "document": "CreateMuskPrompt请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "workgroup id",
+          "example": "4a3f3be9-f35b-40bf-b6bb-2af812dd63cb",
+          "member": "string",
+          "name": "WorkgroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "workflow id",
+          "example": "wf-b9dbb48a-f4cd-40f3-9a68-2af4c78d31a7",
+          "member": "string",
+          "name": "WorkflowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "prompt 参数",
+          "example": "{\"6\":{\"inputs\":{\"text\":\"cute anime girl with massive fluffy fennec ears and a big fluffy tail blonde messy long hair blue eyes wearing a maid outfit with a long black gold leaf pattern dress and a white apron mouth open holding a fancy black forest cake with candles on top in the kitchen of an old dark Victorian mansion lit by candlelight with a bright window to the foggy forest and very expensive stuff everywhere\",\"clip\":[\"11\",0]},\"class_type\":\"CLIPTextEncode\",\"_meta\":{\"title\":\"CLIP Text Encode (Positive Prompt)\"}},\"8\":{\"inputs\":{\"samples\":[\"13\",0],\"vae\":[\"10\",0]},\"class_type\":\"VAEDecode\",\"_meta\":{\"title\":\"VAE解码\"}},\"9\":{\"inputs\":{\"filename_prefix\":\"ComfyUI\",\"images\":[\"8\",0]},\"class_type\":\"SaveImage\",\"_meta\":{\"title\":\"保存图像\"}},\"10\":{\"inputs\":{\"vae_name\":\"ae.sft\"},\"class_type\":\"VAELoader\",\"_meta\":{\"title\":\"加载VAE\"}},\"11\":{\"inputs\":{\"clip_name1\":\"t5xxl_fp8_e4m3fn.safetensors\",\"clip_name2\":\"clip_l.safetensors\",\"type\":\"flux\"},\"class_type\":\"DualCLIPLoader\",\"_meta\":{\"title\":\"双CLIP加载器\"}},\"12\":{\"inputs\":{\"unet_name\":\"flux1-dev-fp8.safetensors\",\"weight_dtype\":\"fp8_e4m3fn\"},\"class_type\":\"UNETLoader\",\"_meta\":{\"title\":\"加载扩散模型\"}},\"13\":{\"inputs\":{\"noise\":[\"25\",0],\"guider\":[\"22\",0],\"sampler\":[\"16\",0],\"sigmas\":[\"17\",0],\"latent_image\":[\"27\",0]},\"class_type\":\"SamplerCustomAdvanced\",\"_meta\":{\"title\":\"自定义采样器（高级）\"}},\"16\":{\"inputs\":{\"sampler_name\":\"euler\"},\"class_type\":\"KSamplerSelect\",\"_meta\":{\"title\":\"K采样器选择\"}},\"17\":{\"inputs\":{\"scheduler\":\"simple\",\"steps\":20,\"denoise\":1,\"model\":[\"30\",0]},\"class_type\":\"BasicScheduler\",\"_meta\":{\"title\":\"基本调度器\"}},\"22\":{\"inputs\":{\"model\":[\"30\",0],\"conditioning\":[\"26\",0]},\"class_type\":\"BasicGuider\",\"_meta\":{\"title\":\"基本引导器\"}},\"25\":{\"inputs\":{\"noise_seed\":317016131367339},\"class_type\":\"RandomNoise\",\"_meta\":{\"title\":\"随机噪声\"}},\"26\":{\"inputs\":{\"guidance\":3.5,\"conditioning\":[\"6\",0]},\"class_type\":\"FluxGuidance\",\"_meta\":{\"title\":\"Flux引导\"}},\"27\":{\"inputs\":{\"width\":1024,\"height\":1024,\"batch_size\":1},\"class_type\":\"EmptySD3LatentImage\",\"_meta\":{\"title\":\"空SD3潜空间图像\"}},\"30\":{\"inputs\":{\"max_shift\":1.15,\"base_shift\":0.5,\"width\":1024,\"height\":1024,\"model\":[\"12\",0]},\"class_type\":\"ModelSamplingFlux\",\"_meta\":{\"title\":\"模型采样Flux\"}}}",
+          "member": "string",
+          "name": "PromptParams",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMuskPromptResponse": {
+      "document": "CreateMuskPrompt返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "prompt id",
+          "example": "edc6e6ec-072c-41dd-8672-c956b739fd31",
+          "member": "string",
+          "name": "PromptId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceRequest": {
+      "document": "DeleteService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>",
+          "example": "svc-fnay2k0u",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteServiceResponse": {
+      "document": "DeleteService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployInferServiceRequest": {
+      "document": "DeployInferService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务元数据信息，如服务名</p>",
+          "example": "无",
+          "member": "ServiceMetaData",
+          "name": "ServiceMetaData",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源相关信息</p>",
+          "example": "无",
+          "member": "ComputeInfo",
+          "name": "ComputeInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务部署信息</p>",
+          "example": "无",
+          "member": "DeploymentConfig",
+          "name": "DeploymentConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务超参数配置</p>",
+          "example": "无",
+          "member": "HyperParam",
+          "name": "HyperParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络设置</p>",
+          "example": "无",
+          "member": "NetworkSetting",
+          "name": "NetworkSetting",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全类型</p><p>枚举值：</p><ul><li>STANDARD： 标准推理</li><li>CONFIDENTIAL： 可信推理</li></ul>",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "SecurityType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>包年包月参数(包月时必填)</p>",
+          "example": "无",
+          "member": "ServiceChargePrepaid",
+          "name": "ServiceChargePrepaid",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployInferServiceResponse": {
+      "document": "DeployInferService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>",
+          "example": "svc-6cjxl264",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeploymentConfig": {
+      "document": "服务部署信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>容器配置</p>",
+          "example": "无",
+          "member": "ContainerInfo",
+          "name": "Container",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器数量</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "ContainerCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeApplicationsRequest": {
+      "document": "DescribeApplications请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用id列表。单次请求数量上限为100个。",
+          "example": "[\"app-q69qsc9v\"]",
+          "member": "string",
+          "name": "ApplicationIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器，跟ApplicationIds不能共用，支持的filter主要有：application-id: 精确匹配;scene-id: 精确匹配，通过调用接口 [DescribeScenes](https://cloud.tencent.com/document/api/1721/101608)获取;application-name: 模糊匹配;application-type: 精确匹配，枚举类型如下：PUBLIC_APPLICATION（公共应用）/ PRIVATE_APPLICATION（自定义应用）/ COMMUNITY_APPLICATION（社区应用）;",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，不得小于0，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回量，不得大于100，默认为20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用列表排序的依据字段。取值范围：\"CREATED_TIME\"：依据应用的创建时间排序。 \"APPLICATION_SIZE\"：依据应用的大小排序。默认按应用的创建时间排序。",
+          "example": "CREATE_TIME",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输出应用列表的排列顺序。取值范围：\"ASC\"：升序排列。 \"DESC\"：降序排列。默认按降序排列。",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationsResponse": {
+      "document": "DescribeApplications返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页返回的应用列表",
+          "example": "无",
+          "member": "ApplicationInfo",
+          "name": "ApplicationSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeployTemplatesRequest": {
+      "document": "DescribeDeployTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型ID",
+          "example": "mdl-s1cop2oq",
+          "member": "string",
+          "name": "ModelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可选。传入当前推理服务 ID 时，仅返回与该服务占用兼容的模板：同一 Scene、卡型家族兼容、机数相等、非机密计算。",
+          "example": "svc-xxxxxxxx",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeployTemplatesResponse": {
+      "document": "DescribeDeployTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板列表",
+          "example": "无",
+          "member": "TemplateDetail",
+          "name": "TemplateSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持的推理引擎",
+          "example": "[\"Sglang\"]",
+          "member": "string",
+          "name": "EngineTypes",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceNetworkStatusRequest": {
+      "document": "DescribeInstanceNetworkStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID数组，单次请求最多不超过100个实例；实例ID通过调用接口[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612)获取。",
+          "example": "[\"hai-12345678\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceNetworkStatusResponse": {
+      "document": "DescribeInstanceNetworkStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果集长度",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结果集",
+          "example": "[{\"InstanceId\":\"hai-12345678\",\"AddressIp\":\"1.1.1.1\",\"Bandwidth\":5,\"TotalTrafficAmount\":500.0,\"RemainingTrafficAmount\":499.5}]",
+          "member": "NetworkStatus",
+          "name": "NetworkStatusSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例元组，数量上限100",
+          "example": "[\"hai-12345678\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有： instance-id，实例id； instance-state，实例状态：RUNNING，PENDING，STOPPED，ARREARS，STOPPED_NO_CHARGE； charge-type，付费方式：PREPAID_BY_MONTH，POSTPAID_BY_HOUR； public-ip-address，公网IP过滤",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0，不得大于100",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回量，默认为20，不能小于0",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例总数\n",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页实例详情\n",
+          "example": "无",
+          "member": "Instance",
+          "name": "InstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelsRequest": {
+      "document": "DescribeModels请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型id",
+          "example": "[\"mdl-k8vm3q7f\"]",
+          "member": "string",
+          "name": "ModelIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器。Name的可选值有scene-id",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，不得小于0，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回量，不得大于100，默认为20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可选。传入当前推理服务 ID 时，仅返回与该服务同一 Scene、且至少有一条兼容重装模板的模型。自定义部署、机密计算、具身智能服务返回空列表。",
+          "example": "svc-xxxxxxxx",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelsResponse": {
+      "document": "DescribeModels返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型总数",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页返回的模型列表",
+          "example": "无",
+          "member": "ModelDetail",
+          "name": "ModelSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMuskPromptsRequest": {
+      "document": "DescribeMuskPrompts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "workgroup id",
+          "example": "4a3f3be9-f35b-40bf-b6bb-2af812dd63cb",
+          "member": "string",
+          "name": "WorkgroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "workflow id",
+          "example": "wf-b9dbb48a-f4cd-40f3-9a68-2af4c78d31a7",
+          "member": "string",
+          "name": "WorkflowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "offset ",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "limit",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数 支持过滤的键值： PromptId，Status",
+          "example": "[{\"Name\":\"PromptId\", Values:[\"dhfhds-dhdhd-xxdfdf-iejmrhf\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMuskPromptsResponse": {
+      "document": "DescribeMuskPrompts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "total count",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "prompt列表详情",
+          "example": "无",
+          "member": "MuskPromptInfo",
+          "name": "MuskPromptInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegionsRequest": {
+      "document": "DescribeRegions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeRegionsResponse": {
+      "document": "DescribeRegions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域列表",
+          "example": "[{\"Region\":\"ap-guangzhou\",\"RegionName\":\"广州\",\"RegionState\":\"AVAILABLE\",\"ScholarRocketSupportState\":\"ALREADY_SUPPORT\"}]",
+          "member": "RegionInfo",
+          "name": "RegionSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScenesRequest": {
+      "document": "DescribeScenes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "场景id列表，单次能查询100个场景id",
+          "example": "[\"sc-7ramp21e\"]",
+          "member": "string",
+          "name": "SceneIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScenesResponse": {
+      "document": "DescribeScenes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "场景详情",
+          "example": "[{\"SceneId\":\"sc-7ramp21e\",\"SceneName\":\"AI模型\"}]",
+          "member": "SceneInfo",
+          "name": "SceneSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceLoginSettingsRequest": {
+      "document": "DescribeServiceLoginSettings请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID通过调用接口[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612)获取。",
+          "example": "hai-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "jupyter",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceLoginSettingsResponse": {
+      "document": "DescribeServiceLoginSettings返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务登录配置详情",
+          "example": "[{\"ServiceName\": \"jupyter\",\"Url\": \"http://1.14.52.185:80?40a0153b6c8ff839b2b83f9a3918daa55facad3c3e7a9b4a0e2377bd08f4aaa2\"}]",
+          "member": "LoginSetting",
+          "name": "LoginSettings",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServicesCallInfoRequest": {
+      "document": "DescribeServicesCallInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推理服务ID列表",
+          "example": "[\"svc-fnay2k0u\"]",
+          "member": "string",
+          "name": "ServiceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServicesCallInfoResponse": {
+      "document": "DescribeServicesCallInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用信息",
+          "example": "无",
+          "member": "CallInfo",
+          "name": "CallInfoSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServicesRequest": {
+      "document": "DescribeServices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务列表</p>",
+          "example": "[\"svc-bx0xe65y\"]",
+          "member": "string",
+          "name": "ServiceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页大小</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态</p><p>枚举值：</p><ul><li>RUNNING： 运行中</li><li>CREATING： 创建中</li><li>CREATE_FAILED： 部署失败</li><li>DELETING： 删除中</li><li>UPDATING： 更新中</li><li>RESTARTING： 重启中</li><li>ISOLATING： 隔离中</li><li>ARREARS： 欠费中</li><li>RESTORING： 冲正恢复中</li></ul>",
+          "example": "[\"CREATE_FAILED\"]",
+          "member": "string",
+          "name": "States",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServicesResponse": {
+      "document": "DescribeServices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "38",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务列表</p>",
+          "example": "无",
+          "member": "ServiceDetail",
+          "name": "ServiceInfoSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnvParam": {
+      "document": "环境变量键值对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境变量名",
+          "example": "MODEL_NAME",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境变量值",
+          "example": "Qwen3-Embedding-8B",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n- 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n- 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要过滤的字段。\t",
+          "example": "instance-id",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字段的过滤值。",
+          "example": "[\"hai-12345678\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "GetServicePodLogsRequest": {
+      "document": "GetServicePodLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务Id</p>",
+          "example": "svc-k0wjijg0",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Pod名称</p>",
+          "example": "svc-k0wjijg0-router-58bf678cf8-n4g4x",
+          "member": "string",
+          "name": "PodName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志行数</p>",
+          "example": "2000",
+          "member": "string",
+          "name": "TailLines",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetServicePodLogsResponse": {
+      "document": "GetServicePodLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志内容</p>",
+          "example": "[\"Both --prefill-policy and --decode-policy are specified. The main --policy flag will be ignored for PD mode.\"]",
+          "member": "string",
+          "name": "LogLines",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "HiCacheInfo": {
+      "document": "HiCache信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HiCache缓存等级",
+          "example": "L3",
+          "member": "string",
+          "name": "HiCacheLevel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HttpConfig": {
+      "document": "http配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定健康检查的URL路径</p>",
+          "example": "/health",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定健康检查的端口</p>",
+          "example": "30000",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HyperParam": {
+      "document": "描述了服务的超参数配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>HiCache缓存</p>",
+          "example": "无",
+          "member": "HiCacheInfo",
+          "name": "HiCache",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageInfo": {
+      "document": "镜像相关配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>tcr仓库地址</p>",
+          "example": "hai-beijing.tencentcloudcr.com/ai/vllm:v0.11.2",
+          "member": "string",
+          "name": "ImageRegistryUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库用户名</p>",
+          "example": "10*03*751422",
+          "member": "string",
+          "name": "ImageRegistryUsername",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库密码</p>",
+          "example": "eyJhbGciOiJSUzI1NiIsI",
+          "member": "string",
+          "name": "ImageRegistryPassword",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "InquirePriceRunInstancesRequest": {
+      "document": "InquirePriceRunInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID通过调用接口[DescribeApplications](https://cloud.tencent.com/document/api/1721/101609)获取。",
+          "example": "app-jknfna",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算力套餐类型, 枚举：XL,XL_2X, 3XL, 3XL_2X, 4XL, 24GB_A.",
+          "example": "XL",
+          "member": "string",
+          "name": "BundleType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
+          "example": "{\"DiskType\":\"CLOUD_PREMIUM\",\"DiskSize\":250}",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "购买实例数量，单次请求实例数量上限为10。",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例显示名称，名称长度限制为128个字符。",
+          "example": "hai",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "幂等请求token",
+          "example": "hai-0-109261e6-c992-4d68-8b91-a70fac0da7b4",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DryRun为True就是只验接口连通性，默认为False",
+          "example": "False",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "付费方式，POSTPAID_BY_HOUR按量后付费，PREPAID_BY_MONTH预付费按月，PREPAID_BY_DAY预付费按天",
+          "example": "PREPAID_BY_MONTH",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预付费参数",
+          "example": "{'Period':2,'RenewFlag':'NOTIFY_AND_MANUAL_RENEW'，‘TimeUnit’: 'DAY'}",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceRunInstancesResponse": {
+      "document": "InquirePriceRunInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发货参数对应的价格组合，当DryRun=True，会返回空",
+          "example": "{\"Price\":{\"CloudDiskPrice\":{\"DiscountUnitPrice\":0.01,\"UnitPrice\":0.01},\"InstancePrice\":{\"DiscountUnitPrice\":1,\"UnitPrice\":1}}}",
+          "member": "Price",
+          "name": "Price",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceUpdateServiceConfigsRequest": {
+      "document": "InquirePriceUpdateServiceConfigs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "InquirePriceUpdateServiceConfigsResponse": {
+      "document": "InquirePriceUpdateServiceConfigs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发货参数对应的价格组合。",
+          "example": "无",
+          "member": "ServicePriceDetail",
+          "name": "Price",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Instance": {
+      "document": "实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "hai-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "PENDING",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态：\nPENDING：表示创建中\nLAUNCH_FAILED：表示创建失败\nRUNNING：表示运行中\nARREARS：表示待回收\nSTOPPED_NO_CHARGE：表示关机不收费\nTERMINATING：表示销毁中\nTERMINATED：表示已销毁",
+          "example": "PENDING",
+          "member": "string",
+          "name": "InstanceState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用名称\n",
+          "example": "Pytorch2.0.0",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "算力套餐名称\n",
+          "example": "基础型",
+          "member": "string",
+          "name": "BundleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所包含的GPU卡数",
+          "example": "1",
+          "member": "uint64",
+          "name": "GPUCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "算力\n",
+          "example": "8+TFlops SP",
+          "member": "string",
+          "name": "GPUPerformance",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "显存，单位：GB",
+          "example": "16GB+",
+          "member": "string",
+          "name": "GPUMemory",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU核数，单位：核",
+          "example": "8核",
+          "member": "string",
+          "name": "CPU",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存，单位：GB\n",
+          "example": "32GB",
+          "member": "string",
+          "name": "Memory",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统盘数据",
+          "example": "无",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网ip地址",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "PrivateIpAddresses",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网ip地址",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "PublicIpAddresses",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组ID\n",
+          "example": "[\"sg-12345678\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例最新操作",
+          "example": "RunInstances",
+          "member": "string",
+          "name": "LatestOperation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例最新操作状态：\nSUCCESS：表示操作成功\nOPERATING：表示操作执行中\nFAILED：表示操作失败\n",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "LatestOperationState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例创建时间，时间格式：\"YYYY-MM-DD HH:MM:SS\"",
+          "example": "2023-11-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网出带宽上限，默认10Mbps，单位：Mbps",
+          "example": "10Mbps",
+          "member": "string",
+          "name": "MaxOutBandwidth",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每月免费流量，默认500G，单位：GB",
+          "example": "500",
+          "member": "string",
+          "name": "MaxFreeTraffic",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用配置环境",
+          "example": "Ubuntu20.04, Python 3.8, Pytorch 2.0.0, CUDA 11.7, cuDNN 8，JupyteLab",
+          "member": "string",
+          "name": "ConfigurationEnvironment",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例包含的登录服务详情",
+          "example": "无",
+          "member": "LoginService",
+          "name": "LoginServices",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用服务的操作系统类型；参数：linux、windows",
+          "example": "linux or windows",
+          "member": "string",
+          "name": "OSType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceChargePrepaid": {
+      "document": "实例预付费入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时长，默认值：1",
+          "example": "1",
+          "member": "uint64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "续费标志可选参数：\nNOTIFY_AND_MANUAL_RENEW：表示默认状态(用户未设置，即初始状态：若用户有预付费不停服特权，也会对该值进行自动续费)\nNOTIFY_AND_AUTO_RENEW：表示自动续费\nDISABLE_NOTIFY_AND_MANUAL_RENEW：表示明确不自动续费(用户设置)\n默认值：NOTIFY_AND_MANUAL_RENEW\n",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时长单位，枚举： MONTH, DAY, HOUR；释义：月，日，小时",
+          "example": "MONTH",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ItemPrice": {
+      "document": "套餐价格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "原单价，元",
+          "example": "100.00",
+          "member": "float",
+          "name": "UnitPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣后单价，元",
+          "example": "50.00",
+          "member": "float",
+          "name": "DiscountUnitPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣",
+          "example": "0.5",
+          "member": "float",
+          "name": "Discount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单位：时/月\n",
+          "example": "HOUR，释义：小时",
+          "member": "string",
+          "name": "ChargeUnit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "商品数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Amount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原价",
+          "example": "100.00",
+          "member": "float",
+          "name": "OriginPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣价",
+          "example": "88.8",
+          "member": "float",
+          "name": "DiscountPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ItemPriceDetail": {
+      "document": "分实例价格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "hai-k31lvhiv",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例价格详情",
+          "example": "无",
+          "member": "ItemPrice",
+          "name": "InstancePrice",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "磁盘价格详情",
+          "example": "无",
+          "member": "ItemPrice",
+          "name": "CloudDiskPrice",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该实例的总价钱",
+          "example": "无",
+          "member": "ItemPrice",
+          "name": "InstanceTotalPrice",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LoginService": {
+      "document": "登录服务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "登录方式名称",
+          "example": "Jupyter",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LoginSetting": {
+      "document": "某服务的登录配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "JupyterLab",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务登录url",
+          "example": "http://1.1.1.1:80/lab?token=ed68d8b88aaa15c1b8309c921ae1e76e9cf0ff48d3fb6407b7beb41b716f464e",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelDetail": {
+      "document": "模型详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "DeepSeek-V3.2-Channel-INT8",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型ID</p>",
+          "example": "mdl-s1cop2oq",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用描述</p>",
+          "example": "DeepSeek-V3.2-Channel-INT8量化版本",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>官方社区链接</p>",
+          "example": "https://tairos.tencent.com/docs",
+          "member": "string",
+          "name": "CommunityUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最佳实践链接</p>",
+          "example": "https://tairos.tencent.com/docs",
+          "member": "string",
+          "name": "GuideUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型状态</p>",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "ModelState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用对应的标签，如机器学习</p>",
+          "example": "[\"大语言模型\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置环境</p>",
+          "example": "CentOS 5.4 64位; nvidia 535.216.01| cuda12.2 | LLM",
+          "member": "string",
+          "name": "ConfigEnvironment",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MuskPromptInfo": {
+      "document": "musk prompt详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "workflow id",
+          "example": "wf-c23b5551-4008-4c9f-844a-4c4dd30f84f7",
+          "member": "string",
+          "name": "WorkflowId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "workgroup id",
+          "example": "wg-4a3f3be9-f35b-40bf-b6bb-2af812dd63cb",
+          "member": "string",
+          "name": "WorkgroupId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "prompt id",
+          "example": "4a3f3be9-f35b-40bf-b6bb-2af812dd63cb",
+          "member": "string",
+          "name": "PromptId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成的内容",
+          "example": "[\"image\"]",
+          "member": "string",
+          "name": "OutputResource",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "prompt status \n0: 执行中\n1: 执行成功\n2: 执行失败",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-12-30",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2024-12-30",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行耗时，单位毫秒",
+          "example": "0",
+          "member": "uint64",
+          "name": "Cost",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行失败错误信息",
+          "example": " ",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NetworkSetting": {
+      "document": "推理集群的网络设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公网访问",
+          "example": "true",
+          "member": "bool",
+          "name": "PublicEndpointEnable",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网访问",
+          "example": "false",
+          "member": "bool",
+          "name": "VpcEndpointEnable",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc内网ID",
+          "example": "vpc-a1b2c3d4",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-a1b2c3d4",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NetworkStatus": {
+      "document": "HAI 实例的网络配置和消耗情况",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HAI 的实例 ID",
+          "example": "hai-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网 IP 地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "AddressIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出带宽上限，单位Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "流量包总量，单位GB",
+          "example": "500.0",
+          "member": "float",
+          "name": "TotalTrafficAmount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量包剩余量，单位GB",
+          "example": "499.5",
+          "member": "float",
+          "name": "RemainingTrafficAmount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Price": {
+      "document": "费用数据结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例价格信息",
+          "example": "{\"Amount\":1,\"ChargeUnit\":\"HOUR\",\"Discount\":100,\"DiscountUnitPrice\":1.2,\"UnitPrice\":1.2}",
+          "member": "ItemPrice",
+          "name": "InstancePrice",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云盘价格信息",
+          "example": "{\"Amount\":1,\"ChargeUnit\":\"HOUR\",\"Discount\":100,\"DiscountUnitPrice\":0.01,\"UnitPrice\":0.01}",
+          "member": "ItemPrice",
+          "name": "CloudDiskPrice",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分实例价格",
+          "example": "{\"InstanceId\":\"hai-xxx\",\"InstancePrice\":{\"OriginPrice\":1.0,\"DiscountPrice\":1.0,\"Discount\":100,\"ChargeUnit\":\"MONTH\"},\"CloudDiskPrice\":{\"OriginPrice\":1.0,\"DiscountPrice\":1.0,\"Discount\":100,\"ChargeUnit\":\"MONTH\"}}",
+          "member": "ItemPriceDetail",
+          "name": "PriceDetailSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProbeConfig": {
+      "document": "探针配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>HTTP GET请求进行健康检查</p>",
+          "example": "无",
+          "member": "HttpConfig",
+          "name": "HttpGet",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器启动后，等待多少秒开始第一次探测</p>",
+          "example": "60",
+          "member": "int64",
+          "name": "InitialDelaySeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每次执行探测的间隔时间（秒）</p>",
+          "example": "35",
+          "member": "int64",
+          "name": "PeriodSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每次探测等待响应的超时时间（秒）</p>",
+          "example": "35",
+          "member": "int64",
+          "name": "TimeoutSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>探测失败后，最小连续成功次数才被认为成功</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SuccessThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>探测失败后，Kubernetes的重试次数</p>",
+          "example": "400",
+          "member": "int64",
+          "name": "FailureThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TCP Socket请求进行健康检查</p>",
+          "example": "无",
+          "member": "TcpSocketConfig",
+          "name": "TcpSocket",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProbeInfo": {
+      "document": "探针信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存活探针</p>",
+          "example": "无",
+          "member": "ProbeConfig",
+          "name": "LivenessProbe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>就绪探针</p>",
+          "example": "无",
+          "member": "ProbeConfig",
+          "name": "ReadinessProbe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>启动探针</p>",
+          "example": "无",
+          "member": "ProbeConfig",
+          "name": "StartupProbe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RegionInfo": {
+      "document": "地域列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域名称",
+          "example": "华南地区(广州)",
+          "member": "string",
+          "name": "RegionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域是否可用状态\nAVAILABLE：可用\n",
+          "example": "AVAILABLE",
+          "member": "string",
+          "name": "RegionState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "学术加速是否支持：\nNO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。",
+          "example": "ALREADY_SUPPORT",
+          "member": "string",
+          "name": "ScholarRocketSupportState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResetInstancesPasswordRequest": {
+      "document": "ResetInstancesPassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID列表",
+          "example": "['hai-2dfajzo4q']\t",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例密码必须8-30位，推荐使用12位以上密码，不能以“/”开头，至少包含以下字符中的三种不同字符，字符种类：<br><li>小写字母：[a-z]</li><br><li>大写字母：[A-Z]</li><br><li>数字：0-9</li><br><li>特殊字符： ()\\`\\~!@#$%^&\\*-+=\\_|{}[]:;'<>,.?/</li>",
+          "example": "test@11111.",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认为False，True代表只验证接口连通性",
+          "example": "False",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetInstancesPasswordResponse": {
+      "document": "ResetInstancesPassword返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "task任务id",
+          "example": "23898659",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResizeInstanceDiskRequest": {
+      "document": "ResizeInstanceDisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要扩容云盘的HAI实例ID",
+          "example": "hai-0asd1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扩容云硬盘大小，单位为GB，必须大于当前云硬盘大小。",
+          "example": "180",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResizeInstanceDiskResponse": {
+      "document": "ResizeInstanceDisk返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RoleStatusInfo": {
+      "document": "角色状态信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "WorkloadType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "WorkloadName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "int64",
+          "name": "RunningReplicas",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "int64",
+          "name": "TargetReplicas",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "int64",
+          "name": "ContainerCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "LastObservedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RunInstancesRequest": {
+      "document": "RunInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID通过调用接口[DescribeApplications](https://cloud.tencent.com/document/api/1721/101609)获取。",
+          "example": "app-jknfna",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算力套餐类型, 枚举：XL,XL_2X, 3XL, 3XL_2X, 4XL, 24GB_A",
+          "example": "XL",
+          "member": "string",
+          "name": "BundleType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
+          "example": "{\"DiskType\":\"CLOUD_PREMIUM\",\"DiskSize\":250}",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "购买实例数量，单次请求实例数量上限为10.",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例显示名称，名称长度限制为128个字符.",
+          "example": "hai",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "幂等请求的token",
+          "example": "hai-0-109261e6-c992-4d68-8b91-a70fac0da7b4",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DryRun为True就是只验接口连通性，默认为False",
+          "example": "False",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RunInstancesResponse": {
+      "document": "RunInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID列表",
+          "example": "['hai-df99mzt1']",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SceneInfo": {
+      "document": "场景详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "场景id\n",
+          "example": "sc-abcdefgh",
+          "member": "string",
+          "name": "SceneId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景名\n",
+          "example": "AI框架",
+          "member": "string",
+          "name": "SceneName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceChargePrepaid": {
+      "document": "服务级包年包月入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>购买时长，默认1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时长单位：MONTH(月)/DAY(天)</p>",
+          "example": "MONTH",
+          "member": "string",
+          "name": "TimeUnit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动续费：NOTIFY_AND_AUTO_RENEW/NOTIFY_AND_MANUAL_RENEW/DISABLE_NOTIFY_AND_MANUAL_RENEW</p>",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceDetail": {
+      "document": "服务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务id</p>",
+          "example": "svc-6cidi7xs",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>",
+          "example": "hai-infer",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务状态</p>",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "ServiceState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行中的副本数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "RunningReplicas",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>期望的副本总数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalReplicas",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-02-13 12:25:55",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>算力套餐详情</p>",
+          "example": "无",
+          "member": "ComputeDetail",
+          "name": "ComputeSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "Kimi-k2.5",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务部署信息</p>",
+          "example": "无",
+          "member": "DeploymentConfig",
+          "name": "DeploymentConfigs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务超参数配置</p>",
+          "example": "无",
+          "member": "HyperParam",
+          "name": "HyperParam",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色状态</p>",
+          "example": "无",
+          "member": "RoleStatusInfo",
+          "name": "RoleStatuses",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全类型</p>",
+          "example": "CONFIDENTIAL",
+          "member": "string",
+          "name": "SecurityType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色算力配置列表</p>",
+          "example": "无",
+          "member": "ComputeDetail",
+          "name": "RoleComputeSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标副本数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TargetReplicas",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费类型：POSTPAID_BY_HOUR(按量)/PREPAID_BY_MONTH(包月)</p>",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "ChargeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>到期时间(包月)，按量为空</p>",
+          "example": "2026-08-09 18:05:29",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动续费标识(包月)</p>",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>受限状态(如欠费隔离)</p>",
+          "example": "ISOLATED",
+          "member": "string",
+          "name": "RestrictState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自定义部署：1是 0否</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "IsCustomDeploy",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ServiceMetaData": {
+      "document": "服务元数据信息，如服务名",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "Qwen3-Reranker-8B",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费方式：POSTPAID_BY_HOUR 按量后付费，PREPAID_BY_MONTH 包年包月，SPOT 竞价售卖（竞价需先调用 BidSpotInferService 对套餐出价）</p>",
+          "example": "POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "ServiceChargeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ServicePriceDetail": {
+      "document": "推理集群费用数据结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推理集群价格信息\t",
+          "example": "无",
+          "member": "ItemPrice",
+          "name": "ServicePrice",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StartInstanceRequest": {
+      "document": "StartInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID。",
+          "example": "hai-2dfajzo4q",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认为False，True代表只验证接口连通性",
+          "example": "False",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "StartInstanceResponse": {
+      "document": "StartInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "task任务id",
+          "example": "232558431",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopInstanceRequest": {
+      "document": "StopInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID。",
+          "example": "hai-2dfajzo4q",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "hai实例关机的模式，目前仅支持关机不收费：\nSTOP_CHARGE -- 关闭hai实例，释放计算资源，停止收取计算资源的费用。\n注意：默认值为STOP_CHARGE",
+          "example": "STOP_CHARGE",
+          "member": "string",
+          "name": "StopMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认为False，True代表只验证接口连通性",
+          "example": "False",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "StopInstanceResponse": {
+      "document": "StopInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "task任务id",
+          "example": "232558431",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StorageInfo": {
+      "document": "存储信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "挂载路径",
+          "example": "/hai",
+          "member": "string",
+          "name": "MountPath",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos挂载信息",
+          "example": "无",
+          "member": "COSStorage",
+          "name": "COSStorage",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SystemDisk": {
+      "document": "描述了操作系统所在块设备即系统盘的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "系统盘类型。取值范围：<li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_HSSD：增强型SSD云盘</li>默认取值：当前有库存的硬盘类型。",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "DiskType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统盘大小，单位：GB。默认值为 80，取值范围：80-1000",
+          "example": "250",
+          "member": "int64",
+          "name": "DiskSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统盘分区盘符",
+          "example": "vda2",
+          "member": "string",
+          "name": "DiskName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TcpSocketConfig": {
+      "document": "推理服务TcpSocket的配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TemplateDetail": {
+      "document": "模板详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板id",
+          "example": "tpl-2czq2lnm",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署方式",
+          "example": "SINGLE_NODE",
+          "member": "string",
+          "name": "DeployMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "推理引擎",
+          "example": "Sglang",
+          "member": "string",
+          "name": "EngineType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "算力详情",
+          "example": "无",
+          "member": "ComputeDetail",
+          "name": "ComputeSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前部署模板所支持的增强功能",
+          "example": "[\"hicache\"]",
+          "member": "string",
+          "name": "SupportFunc",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "ComputeDetail",
+          "name": "RoleComputeSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TerminateInstancesRequest": {
+      "document": "TerminateInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID列表。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID列表。单次能查询100个InstanceId。",
+          "example": "['hai-2dfajzo4q']\t",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认为False，True代表只验证接口连通性",
+          "example": "False",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateInstancesResponse": {
+      "document": "TerminateInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateServiceConfigsRequest": {
+      "document": "UpdateServiceConfigs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>",
+          "example": "svc-3m6xrkjj",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>期望副本数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TargetReplicas",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>启动参数、环境变量等参数</p>",
+          "example": "无",
+          "member": "DeploymentConfig",
+          "name": "DeploymentConfigs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateServiceConfigsResponse": {
+      "document": "UpdateServiceConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

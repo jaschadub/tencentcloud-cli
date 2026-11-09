@@ -1,12 +1,12 @@
 **Example 1: 创建数据集**
 
-
+CreateDataset
 
 Input: 
 
 ```
 tccli tione CreateDataset --cli-unfold-argument  \
-    --DatasetName test \
+    --DatasetName dataset-example \
     --AnnotationStatus STATUS_NON_ANNOTATED \
     --SchemaInfos.0.Type  \
     --SchemaInfos.0.Name  \
@@ -16,9 +16,8 @@ tccli tione CreateDataset --cli-unfold-argument  \
     --StorageLabelPath.Paths output/ \
     --StorageLabelPath.Region ap-guangzhou \
     --StorageLabelPath.Bucket test-1256580188 \
-    --DatasetType TYPE_DATASET_TEXT \
-    --IsSchemaExisted False \
-    --ContentType TYPE_TEXT_LINE
+    --DatasetType TYPE_DATASET_IMAGE \
+    --IsSchemaExisted False
 ```
 
 Output: 

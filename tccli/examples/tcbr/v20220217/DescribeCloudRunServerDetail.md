@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcbr DescribeCloudRunServerDetail --cli-unfold-argument  \
-    --ServerName xx \
-    --EnvId xx
+    --EnvId prod-2g59lad002c864a6 \
+    --ServerName golang-h7yv
 ```
 
 Output: 
@@ -15,59 +15,54 @@ Output:
 {
     "Response": {
         "BaseInfo": {
-            "Status": "xx",
-            "ServerName": "xx",
-            "CustomDomainName": "xx",
-            "UpdateTime": "xx",
-            "DefaultDomainName": "xx"
-        },
-        "ServerConfig": {
-            "EnvId": "xx",
-            "MaxNum": 1,
-            "BuildDir": "xx",
-            "Mem": 0.0,
-            "ServerName": "xx",
-            "InitialDelaySeconds": 1,
-            "CustomLogs": "xx",
-            "CreateTime": "xx",
-            "MinNum": 1,
-            "HasDockerfile": true,
-            "EnvParams": "xx",
-            "Dockerfile": "xx",
-            "Port": "xx",
-            "Cpu": 0.0
+            "AccessTypes": [],
+            "CustomDomainName": "",
+            "CustomDomainNames": [],
+            "DefaultDomainName": "https://golang-h7yv-121864-6-1258467748.sh.run.tcloudbase.com",
+            "ServerName": "golang-h7yv",
+            "Status": "running",
+            "UpdateTime": "2024-09-13 10:31:56"
         },
         "OnlineVersionInfos": [
             {
-                "VersionName": "test-001",
-                "ImageUrl": "test:01"
+                "FlowRatio": "100",
+                "ImageUrl": "ccr.ccs.tencentyun.com/weixincloud/weixincloud_golang:10",
+                "VersionName": "golang-h7yv-001"
             }
         ],
-        "RequestId": "xx"
-    }
-}
-```
-
-**Example 2: success**
-
-
-
-Input: 
-
-```
-tccli tcbr DescribeCloudRunServerDetail --cli-unfold-argument  \
-    --ServerName 字符串 \
-    --EnvId 字符串
-```
-
-Output: 
-```
-{
-    "Response": {
-        "BaseInfo": null,
-        "RequestId": "34143393-ede8-43ac-ad78-12a5bfea9663",
-        "ServerConfig": null,
-        "OnlineVersionInfos": null
+        "RequestId": "ec98425e-cc3f-4c95-a231-cd144757c9bd",
+        "ServerConfig": {
+            "BuildDir": "",
+            "Cpu": 1,
+            "CreateTime": "2024-09-13 10:31:17",
+            "CustomLogs": "stdout",
+            "Dockerfile": "Dockerfile",
+            "EnvId": "prod-2g59lad002c864a6",
+            "EnvParams": "",
+            "HasDockerfile": false,
+            "InitialDelaySeconds": 2,
+            "LogParseType": "",
+            "LogSetId": "",
+            "LogTopicId": "",
+            "LogType": "",
+            "MaxNum": 5,
+            "Mem": 2,
+            "MinNum": 0,
+            "OpenAccessTypes": [],
+            "PolicyDetails": [
+                {
+                    "PolicyThreshold": 60,
+                    "PolicyType": "cpu"
+                },
+                {
+                    "PolicyThreshold": 60,
+                    "PolicyType": "mem"
+                }
+            ],
+            "Port": 8080,
+            "ServerName": "golang-h7yv",
+            "Tag": ""
+        }
     }
 }
 ```

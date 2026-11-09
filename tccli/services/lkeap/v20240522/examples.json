@@ -1,0 +1,123 @@
+{
+  "actions": {
+    "CancelTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"09acd0b71761213495865\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be78765e-a8e2-4098-91c5-0e208fa5d6dc\"\n    }\n}",
+        "title": "取消任务"
+      }
+    ],
+    "ChatCompletions": [
+      {
+        "document": "流式请求",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatCompletions\n<公共请求参数>\n\n{\n    \"Model\": \"deepseek-r1\",\n    \"Messages\": [\n        {\n            \"Role\": \"user\",\n            \"Content\": \"你是谁\"\n        }\n    ],\n    \"Stream\": true\n}",
+        "output": "data:{\"Choices\":[{\"Delta\":{\"Role\":\"assistant\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"ReasoningContent\":\"\\n\\n\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"\\n\\n\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"您好\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"！\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"我是\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"由\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"中国的\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"深度\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"求\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"索\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"（\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"Deep\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"Se\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"ek\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"）\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"公司\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"开发的\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"智能\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"助手\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"Deep\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"Se\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"ek\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"-R\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"1\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"。\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"如\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"您\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"有任何\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"任何\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"问题\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"，\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"我会\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"尽\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"我\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"所能\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"为您\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"提供\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"帮助\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"Content\":\"。\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{},\"FinishReason\":\"stop\",\"Index\":0}],\"Created\":1738697505,\"Id\":\"60c97fbd7cfd14db07b75d56069a131f\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:[DONE]",
+        "title": "流式请求"
+      },
+      {
+        "document": "在输出最终回答之前，模型会先输出一段思维链内容，以提升最终答案的准确性。ReasoningContent表示思维链内容，Content表示回答的内容。仅deepseek-r1推理模型支持返回ReasoningContent参数",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatCompletions\n<公共请求参数>\n\n{\n    \"Model\": \"deepseek-r1\",\n    \"Messages\": [\n        {\n            \"Role\": \"user\",\n            \"Content\": \"9.11和9.8哪个大\"\n        }\n    ],\n    \"Stream\": true\n}",
+        "output": "data:{\"Choices\":[{\"Delta\":{\"ReasoningContent\":\"确定\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697628,\"Id\":\"9c91b95dc4df49f2e9596ba07541e41a\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"ReasoningContent\":\"9\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697628,\"Id\":\"9c91b95dc4df49f2e9596ba07541e41a\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"ReasoningContent\":\".\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697628,\"Id\":\"9c91b95dc4df49f2e9596ba07541e41a\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}\n\ndata:{\"Choices\":[{\"Delta\":{\"ReasoningContent\":\"11\"},\"FinishReason\":\"\",\"Index\":0}],\"Created\":1738697628,\"Id\":\"9c91b95dc4df49f2e9596ba07541e41a\",\"Model\":\"deepseek-r1\",\"Object\":\"chat.completion.chunk\",\"Usage\":{\"InputTokens\":0,\"OutputTokens\":0,\"TotalTokens\":0}}",
+        "title": "思维链示例"
+      }
+    ],
+    "CreateReconstructDocumentFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReconstructDocumentFlow\n<公共请求参数>\n\n{\n    \"FileType\": \"PDF\",\n    \"FileUrl\": \"http://example.com/example.pdf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d569fb4-4c9d-4141-bbd7-e1d8735bd1a9\",\n        \"TaskId\": \"123123123\"\n    }\n}",
+        "title": "接口请求成功示例"
+      }
+    ],
+    "CreateSplitDocumentFlow": [
+      {
+        "document": "对外部在线文档进行拆分",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSplitDocumentFlow\n<公共请求参数>\n\n{\n    \"FileType\": \"PDF\",\n    \"FileName\": \"example.pdf\",\n    \"FileUrl\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/example/example.pdf\",\n    \"FileStartPageNumber\": 1,\n    \"FileEndPageNumber\": 2,\n    \"Config\": {\n        \"EnableMllm\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e148c27-9c21-43cd-992c-799117bb4216\",\n        \"TaskId\": \"236e51fd-827b-41cb-b303-56003a817ce5\"\n    }\n}",
+        "title": "创建PDF拆分任务"
+      }
+    ],
+    "GetCharacterUsage": [
+      {
+        "document": "获取使用的字符数与字符容量",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCharacterUsage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec5608e7-e8f9-4a15-b536-b1651d954c82\",\n        \"Total\": 300000000,\n        \"Used\": 124331524\n    }\n}",
+        "title": "获取使用的字符数与字符容量"
+      }
+    ],
+    "GetEmbedding": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Model\": \"lke-text-embedding-v1\",\n    \"Inputs\": [\n        \"你好\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Embedding\": [\n                    0\n                ]\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Usage\": {\n            \"TotalTokens\": 3\n        }\n    }\n}",
+        "title": "获取特征向量"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Model\": \"lke-text-embedding-v1\",\n    \"Inputs\": [\n        \"1\"\n    ],\n    \"TextType\": \"query\",\n    \"Instruction\": \"query:\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Embedding\": [\n                    0.009212733\n                ]\n            }\n        ],\n        \"Usage\": {\n            \"TotalTokens\": 3\n        },\n        \"RequestId\": \"b69e784e-8807-440e-a8df-f970eca48f3c\"\n    }\n}",
+        "title": "获取特征向量v1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Model\": \"lke-text-embedding-v2\",\n    \"Inputs\": [\n        \"1\"\n    ],\n    \"TextType\": \"document\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Embedding\": [\n                    0.009212733\n                ]\n            }\n        ],\n        \"Usage\": {\n            \"TotalTokens\": 3\n        },\n        \"RequestId\": \"d4b6b8fb-597c-43f3-860d-715916c787b8\"\n    }\n}",
+        "title": "获取特征向量v2"
+      }
+    ],
+    "GetReconstructDocumentResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetReconstructDocumentResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"85f2890d1758900375298\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3824428a-989f-4d57-992c-b507aa12fbf9\",\n        \"Status\": \"Failed\",\n        \"TaskErrInfo\": {}\n    }\n}",
+        "title": "任务失败场景"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetReconstructDocumentResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"a68882281758900286804\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DocumentRecognizeResultUrl\": \"https://example.cos.ap-guangzhou.myqcloud.com/public/example/example.zip\",\n        \"RequestId\": \"ead3347b-7c39-4fb0-98fb-dad02dd122b9\",\n        \"Status\": \"Success\",\n        \"Usage\": {\n            \"FileSize\": 591574,\n            \"PageNumber\": 17,\n            \"SuccessPageNum\": 17,\n            \"TotalTokens\": 21533\n        }\n    }\n}",
+        "title": "获取解析结果"
+      }
+    ],
+    "GetSplitDocumentResult": [
+      {
+        "document": "查询文档拆分结果",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSplitDocumentResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"236e51fd-827b-41cb-b303-56003a817ce5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DocumentRecognizeResultUrl\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/example/example.zip\",\n        \"RequestId\": \"ffe23ed8-2b64-4835-aedc-ca9a5b5a7384\",\n        \"Status\": \"Success\",\n        \"Usage\": {\n            \"PageNumber\": 10,\n            \"TotalTokens\": 2048\n        }\n    }\n}",
+        "title": "查询文档拆分结果"
+      }
+    ],
+    "QueryRewrite": [
+      {
+        "document": "多轮改写",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryRewrite\n<公共请求参数>\n\n{\n    \"Messages\": [\n        {\n            \"Role\": \"user\",\n            \"Content\": \"你家在哪里\"\n        },\n        {\n            \"Role\": \"assistant\",\n            \"Content\": \"我家在国内\"\n        },\n        {\n            \"Role\": \"user\",\n            \"Content\": \"国内哪里\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": \"你家在国内哪里？\",\n        \"RequestId\": \"4de60215-13cd-4f90-afc4-9fe4ef63e245\",\n        \"Usage\": {\n            \"InputTokens\": 45,\n            \"OutputTokens\": 6,\n            \"TotalTokens\": 51\n        }\n    }\n}",
+        "title": "多轮改写"
+      }
+    ],
+    "ReconstructDocumentSSE": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReconstructDocumentSSE\n<公共请求参数>\n\n{\n    \"FileType\": \"PDF\",\n    \"FileUrl\": \"https://ocr.example.pdf\"\n}",
+        "output": "{\n  \"RequestId\": \"0c7bbfbc-641a-4321-bee2-56b1e1e046e9\",\n  \"TaskId\": \"0c7bbfbc-641a-4321-bee2-56b1e1e046e9\",\n  \"ResponseType\": \"PROGRESS\",\n  \"Progress\": \"0\",\n  \"ProgressMessage\": \"开始文档解析\",\n  \"DocumentRecognizeResultUrl\": \"\",\n  \"FailedPages\": []\n}",
+        "title": "ReconstructDocumentSSE处理中回包示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReconstructDocumentSSE\n<公共请求参数>\n\n{\n    \"FileType\": \"PDF\",\n    \"FileUrl\": \"https://ocr.example.pdf\"\n}",
+        "output": "{\n  \"RequestId\": \"0c7cabfbc-641a-4321-bee2-56b1e1adwq6e9\",\n  \"TaskId\": \"0c7bbfbc-641a-4321-bee2-5dds1e1e04fe9\",\n  \"ResponseType\": \"TASK_RSP\",\n  \"Progress\": \"100\",\n  \"ProgressMessage\": \"完成文档解析\",\n  \"DocumentRecognizeResultUrl\": \"https://document-restruction-sse-1258344699.cos.ap-guangzhou.myqcloud.com/output_files%2F0c7bbfbc-641a-4321-bee2-545de1e046e9_parse.zip?q-sign-algorithm=sha1&q-ak=xxxxxx&q-sign-time=1720006266%3B1720006866&q-key-time=1720006266%3B1720006866&q-header-list=host&q-url-param-list=&q-signature=xxxxxxxx\",\n  \"FailedPages\": []\n}",
+        "title": "ReconstructDocumentSSE处理完成回包示例"
+      }
+    ],
+    "RunRerank": [
+      {
+        "document": "重排序",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunRerank\n<公共请求参数>\n\n{\n    \"Query\": \"知识引擎大模型\",\n    \"Docs\": [\n        \"混元大模型\",\n        \"腾讯知识引擎\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"766383fd-5219-4d13-aa1a-7ae00766640c\",\n        \"ScoreList\": [\n            -9.006162,\n            2.8577538\n        ],\n        \"Usage\": {\n            \"TotalTokens\": 27\n        }\n    }\n}",
+        "title": "重排序"
+      }
+    ]
+  },
+  "version": "1.0"
+}

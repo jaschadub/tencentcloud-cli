@@ -18,8 +18,8 @@ Output:
         "TrendsData": [
             {
                 "StatisticName": [
-                    "a",
-                    "b"
+                    "testa",
+                    "testb"
                 ],
                 "StatisticValue": [
                     2,
@@ -28,7 +28,7 @@ Output:
                 "StatisticType": "typeA"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

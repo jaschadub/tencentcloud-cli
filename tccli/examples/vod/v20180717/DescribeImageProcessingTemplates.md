@@ -1,6 +1,6 @@
-**Example 1: 读取多个模板**
+**Example 1: 查询图片即时处理模板**
 
-
+查询图片即时处理模板。
 
 Input: 
 
@@ -27,14 +27,18 @@ Output:
                         "CenterCut": {
                             "Type": "Circle",
                             "Radius": 30
-                        }
+                        },
+                        "Scale": {},
+                        "Blur": {}
                     },
                     {
                         "Type": "Scale",
                         "Scale": {
                             "Type": "ShortEdgeFirst",
                             "ShortEdge": 100
-                        }
+                        },
+                        "CenterCut": {},
+                        "Blur": {}
                     }
                 ]
             },
@@ -50,7 +54,9 @@ Output:
                         "Scale": {
                             "Type": "WidthFirst",
                             "Width": 200
-                        }
+                        },
+                        "CenterCut": {},
+                        "Blur": {}
                     }
                 ]
             }

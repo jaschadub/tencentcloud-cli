@@ -1,4 +1,4 @@
-**Example 1: 创建App隐私合规基础诊断任务**
+**Example 1: 本地化任务**
 
 
 
@@ -6,9 +6,40 @@ Input:
 
 ```
 tccli acp CreateAppScanTask --cli-unfold-argument  \
-    --AppPackage com.test.app \
-    --Source 2 \
+    --Remark Remark备注信息 \
     --Platform 0 \
+    --TelNumber 138XXXXXXXX \
+    --Source 2 \
+    --SalesPerson 张三 \
+    --ContactName 张三 \
+    --TaskType 2 \
+    --CorpName ****科技有限公司 \
+    --Email user****@tencent.com \
+    --IsAgreePrivacy 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "6c296e5b-48ad-4cfb-a90d-8010c9951341",
+        "Result": 0,
+        "TaskID": "271***520"
+    }
+}
+```
+
+**Example 2: 提交漏洞扫描app任务**
+
+
+
+Input: 
+
+```
+tccli acp CreateAppScanTask --cli-unfold-argument  \
+    --Platform 0 \
+    --Source 3 \
+    --AppDownloadUrl https://bm***berJdezPIV926.apk \
     --TaskType 0
 ```
 
@@ -16,14 +47,14 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxxxx",
+        "RequestId": "0b496234-892d-4f58-8261-9eb7ac3062a9",
         "Result": 0,
-        "TaskID": "170143813*******360"
+        "TaskID": "347***496"
     }
 }
 ```
 
-**Example 2: 创建小程序基本检测任务**
+**Example 3: 创建小程序基本检测任务**
 
 
 
@@ -48,37 +79,6 @@ Output:
 }
 ```
 
-**Example 3: 本地化任务**
-
-
-
-Input: 
-
-```
-tccli acp CreateAppScanTask --cli-unfold-argument  \
-    --Remark 备注信息啦 \
-    --Platform 0 \
-    --TelNumber 10086 \
-    --Source 2 \
-    --SalesPerson 张三 \
-    --ContactName 老王 \
-    --TaskType 2 \
-    --CorpName 测试有限公司 \
-    --Email test@test.com \
-    --IsAgreePrivacy 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "6c296e5b-48ad-4cfb-a90d-8010c9951341",
-        "Result": 0,
-        "TaskID": "271***520"
-    }
-}
-```
-
 **Example 4: App专家版隐私合规诊断示例**
 
 
@@ -90,16 +90,16 @@ tccli acp CreateAppScanTask --cli-unfold-argument  \
     --PrivacyTextName 腾讯iOA隐私保护指引.txt \
     --AppDownloadUrl https://bm****OYpo8YKRrbnTofaB.apk \
     --Platform 0 \
-    --TelNumber 10086 \
+    --TelNumber 138XXXXXXXX \
     --AppName ioa \
     --PrivacyTextUrl https://bm****jc7yrar9xIKPYyvpEgVA.txt \
     --AppPackage com.***.i**oa \
     --Source 2 \
     --SalesPerson 张三 \
-    --ContactName 老王 \
+    --ContactName 张三 \
     --TaskType 1 \
-    --CorpName 测试有限企业 \
-    --Email test@test.com \
+    --CorpName ****科技有限公司 \
+    --Email user****@tencent.com \
     --IsAgreePrivacy 1
 ```
 
@@ -149,7 +149,7 @@ Output:
 }
 ```
 
-**Example 6: 提交漏洞扫描app任务**
+**Example 6: 创建App隐私合规基础诊断任务**
 
 
 
@@ -157,9 +157,9 @@ Input:
 
 ```
 tccli acp CreateAppScanTask --cli-unfold-argument  \
+    --AppPackage com.test.app \
+    --Source 2 \
     --Platform 0 \
-    --Source 3 \
-    --AppDownloadUrl https://bm***berJdezPIV926.apk \
     --TaskType 0
 ```
 
@@ -167,9 +167,9 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "0b496234-892d-4f58-8261-9eb7ac3062a9",
+        "RequestId": "ed2aa90dc-2354a9d8ee8304-a7a9-4a29-0",
         "Result": 0,
-        "TaskID": "347***496"
+        "TaskID": "170143813*******360"
     }
 }
 ```

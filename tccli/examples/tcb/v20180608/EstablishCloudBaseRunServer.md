@@ -1,30 +1,31 @@
 **Example 1: 创建云应用服务**
 
-
+创建云应用服务
 
 Input: 
 
 ```
 tccli tcb EstablishCloudBaseRunServer --cli-unfold-argument  \
-    --Remark xx \
-    --EnvId xx \
+    --Remark  \
+    --EnvId  \
     --IsPublic True \
-    --EsInfo.Index xx \
-    --EsInfo.Account xx \
-    --EsInfo.Ip xx \
+    --EsInfo.Index  \
+    --EsInfo.Account  \
+    --EsInfo.Ip  \
     --EsInfo.Id 0 \
-    --EsInfo.SecretName xx \
-    --EsInfo.Password xx \
+    --EsInfo.SecretName  \
+    --EsInfo.Password  \
     --EsInfo.Port 0 \
-    --ServiceName xx \
-    --ImageRepo xx
+    --ServiceName  \
+    --ImageRepo 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5620b49e-a25a-4007-84ef-03c9035c584d"
+        "Result": "succ",
+        "RequestId": "sdfsdff"
     }
 }
 ```

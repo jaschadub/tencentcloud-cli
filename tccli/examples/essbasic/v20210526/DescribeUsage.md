@@ -1,22 +1,20 @@
-**Example 1: 渠道用量查询查询-无需汇总**
+**Example 1: 查询明细消耗**
 
-
+NeedAggregate设置为false为查询明细消耗
 
 Input: 
 
 ```
 tccli essbasic DescribeUsage --cli-unfold-argument  \
-    --StartDate 2020-07-11 \
-    --EndDate 2020-07-12 \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
     --Agent.ProxyAppId  \
-    --Agent.ProxyOperator.OpenId  \
-    --Agent.ProxyOperator.ClientIp  \
-    --Agent.ProxyOperator.CustomUserId  \
-    --Agent.ProxyOperator.ProxyIp  \
-    --Agent.ProxyOperator.Channel  \
-    --Agent.ProxyOrganizationId  \
-    --Agent.AppId testappid1 \
-    --NeedAggregate False
+    --StartDate 2023-11-06 \
+    --EndDate 2023-11-08 \
+    --NeedAggregate False \
+    --Limit 1000 \
+    --Offset 0
 ```
 
 Output: 
@@ -26,54 +24,60 @@ Output:
         "Total": 4,
         "Details": [
             {
-                "Date": "2020-07-11",
-                "ProxyOrganizationOpenId": "org1",
-                "Usage": 50,
-                "ProxyOrganizationName": "合作企业"
+                "ProxyOrganizationOpenId": "org_zhansan",
+                "ProxyOrganizationName": "张三示例企业",
+                "Date": "2023-11-06",
+                "Usage": 12,
+                "Cancel": 0,
+                "FlowChannel": "企业版"
             },
             {
-                "Date": "2020-07-12",
-                "ProxyOrganizationOpenId": "org1",
-                "Usage": 50,
-                "ProxyOrganizationName": "合作企业"
+                "ProxyOrganizationOpenId": "org_dianziqian",
+                "ProxyOrganizationName": "典子谦示例企业",
+                "Date": "2023-11-07",
+                "Usage": 30,
+                "Cancel": 0,
+                "FlowChannel": "企业版"
             },
             {
-                "Date": "2020-07-11",
-                "ProxyOrganizationOpenId": "org2",
-                "Usage": 80,
-                "ProxyOrganizationName": "合作企业"
+                "ProxyOrganizationOpenId": "org_lisi",
+                "ProxyOrganizationName": "李四示例企业",
+                "Date": "2023-11-07",
+                "Usage": 0,
+                "Cancel": 5,
+                "FlowChannel": "企业版"
             },
             {
-                "Date": "2020-07-12",
-                "ProxyOrganizationOpenId": "org2",
-                "Usage": 86,
-                "ProxyOrganizationName": "合作企业"
+                "ProxyOrganizationOpenId": "org_dianziqian",
+                "ProxyOrganizationName": "典子谦示例企业",
+                "Date": "2023-11-08",
+                "Usage": 6,
+                "Cancel": 0,
+                "FlowChannel": "企业版"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "5f01d19e-d4dc-4e8b-b709-024132d16da9"
     }
 }
 ```
 
-**Example 2: 渠道用量查询-需要汇总**
+**Example 2: 查询汇总消耗**
 
-
+NeedAggregate设置为true为查询汇总消耗
 
 Input: 
 
 ```
 tccli essbasic DescribeUsage --cli-unfold-argument  \
-    --StartDate 2020-07-11 \
-    --EndDate 2020-07-12 \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
     --Agent.ProxyAppId  \
-    --Agent.ProxyOperator.OpenId  \
-    --Agent.ProxyOperator.ClientIp  \
-    --Agent.ProxyOperator.CustomUserId  \
-    --Agent.ProxyOperator.ProxyIp  \
-    --Agent.ProxyOperator.Channel  \
-    --Agent.ProxyOrganizationId  \
-    --Agent.AppId testappid1 \
-    --NeedAggregate True
+    --StartDate 2023-11-06 \
+    --EndDate 2023-11-08 \
+    --NeedAggregate True \
+    --Limit 1000 \
+    --Offset 0
 ```
 
 Output: 
@@ -83,19 +87,23 @@ Output:
         "Total": 2,
         "Details": [
             {
-                "Date": "",
-                "ProxyOrganizationOpenId": "org1",
-                "Usage": 100,
-                "ProxyOrganizationName": "合作企业"
+                "ProxyOrganizationOpenId": "org_zhangsan",
+                "ProxyOrganizationName": "张三实例企业",
+                "Date": "1970-01-01",
+                "Usage": 0,
+                "Cancel": 5,
+                "FlowChannel": "企业版"
             },
             {
-                "Date": "",
-                "ProxyOrganizationOpenId": "org2",
-                "Usage": 166,
-                "ProxyOrganizationName": "合作企业"
+                "ProxyOrganizationOpenId": "org_dianziqian",
+                "ProxyOrganizationName": "典子谦示例企业",
+                "Date": "1970-01-01",
+                "Usage": 48,
+                "Cancel": 0,
+                "FlowChannel": "企业版"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "f6ad02ec-0399-46c8-a9d9-4dde2aedc036"
     }
 }
 ```

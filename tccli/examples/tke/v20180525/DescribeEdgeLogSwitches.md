@@ -1,12 +1,12 @@
 **Example 1: 查询开关列表接口示例**
 
-
+边缘集群日志开关
 
 Input: 
 
 ```
 tccli tke DescribeEdgeLogSwitches --cli-unfold-argument  \
-    --ClusterIds cls-xxx1 cls-xxx2
+    --ClusterIds cls-e55paxnt cls-e55paxnt
 ```
 
 Output: 
@@ -14,44 +14,9 @@ Output:
 {
     "Response": {
         "SwitchSet": [
-            {
-                "ClusterId": "cls-xxx1",
-                "Audit": {
-                    "Enable": true,
-                    "TopicSet": "xxxxx",
-                    "TopicId": "xxxxx"
-                },
-                "Event": {
-                    "Enable": true,
-                    "TopicSet": "xxxxx",
-                    "TopicId": "xxxxx"
-                },
-                "Log": {
-                    "Enable": true,
-                    "TopicSet": "xxxxx",
-                    "TopicId": "xxxxx"
-                }
-            },
-            {
-                "ClusterId": "cls-xxx2",
-                "Audit": {
-                    "Enable": true,
-                    "TopicSet": "xxxxx",
-                    "TopicId": "xxxxx"
-                },
-                "Event": {
-                    "Enable": true,
-                    "TopicSet": "xxxxx",
-                    "TopicId": "xxxxx"
-                },
-                "Log": {
-                    "Enable": true,
-                    "TopicSet": "xxxxx",
-                    "TopicId": "xxxxx"
-                }
-            }
+            "logsetid: 8hhy32hru27"
         ],
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RequestId": "iu3u89fvfsyr37819hi9"
     }
 }
 ```

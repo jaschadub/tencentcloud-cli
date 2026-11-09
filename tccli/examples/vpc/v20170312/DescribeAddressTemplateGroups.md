@@ -1,13 +1,13 @@
 **Example 1: 查询IP地址模板集合**
 
-
+查询IP地址模板集合
 
 Input: 
 
 ```
 tccli vpc DescribeAddressTemplateGroups --cli-unfold-argument  \
     --Filters.0.Name address-template-group-name \
-    --Filters.0.Values TestName \
+    --Filters.0.Values demo \
     --Filters.1.Name address-template-group-id \
     --Filters.1.Values ipmg-mdunqeb6
 ```
@@ -17,21 +17,24 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "8ed052ce-dddf-4af9-9cf5-9c150ff75210",
         "AddressTemplateGroupSet": [
             {
-                "CreatedTime": "2020-12-03 16:12:15",
-                "AddressTemplateGroupName": "测试1",
+                "AddressTemplateGroupName": "demo",
+                "AddressTemplateGroupId": "ipmg-mdunqeb6",
                 "AddressTemplateIdSet": [
-                    "ipm-mdunqeb6"
+                    "ipm-xxxxxxxx",
+                    "ipm-yyyyyyyy"
                 ],
                 "AddressTemplateSet": [
                     {
-                        "To": "10.1.1.2/22",
-                        "From": "10.1.1.3/22"
+                        "AddressTemplateId": "ipm-siqmaox1",
+                        "AddressTemplateName": "ipm demo",
+                        "From": "",
+                        "To": ""
                     }
                 ],
-                "AddressTemplateGroupId": "ipmg-ivrc58q8"
+                "CreatedTime": "2022-12-06 20:00:00"
             }
         ]
     }

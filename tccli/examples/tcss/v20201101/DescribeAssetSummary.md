@@ -1,6 +1,6 @@
 **Example 1: 查询账户容器、镜像等统计信息**
 
-
+查询账户容器、镜像等统计信息
 
 Input: 
 
@@ -11,27 +11,34 @@ Output:
 ```
 {
     "Response": {
-        "AppCnt": 14,
-        "ContainerCnt": 223,
-        "ContainerPause": 1,
-        "ContainerRunning": 56,
-        "ContainerStop": 166,
-        "CreateTime": "2020-11-02T12:55:02.043Z",
-        "DbCnt": 2,
-        "HostCnt": 122,
-        "HostOnline": 119,
-        "ImageCnt": 339,
-        "ImageHasRiskInfoCnt": 145,
-        "ImageHasVirusCnt": 22,
-        "ImageHasVulsCnt": 325,
-        "ImageUnsafeCnt": 326,
-        "ImageUntrustCnt": 4,
-        "LatestImageScanTime": "2021-01-29T06:10:17.043Z",
-        "ListenPortCnt": 58,
-        "ProcessCnt": 87,
-        "RequestId": "c2ac8fcc-f9af-4aa6-97fc-26c855bf9a6b",
-        "WebServiceCnt": 7,
-        "HostUnInstallCnt": 1
+        "AppCnt": 926,
+        "ContainerCnt": 1453849,
+        "ContainerPause": 239,
+        "ContainerRunning": 1275740,
+        "ContainerStop": 175512,
+        "CreateTime": "2021-06-04 17:24:40",
+        "DbCnt": 41,
+        "HostCnt": 57,
+        "HostOnline": 42,
+        "HostUnInstallCnt": 2,
+        "ImageCnt": 6859,
+        "ImageHasRiskInfoCnt": 33,
+        "ImageHasVirusCnt": 196,
+        "ImageHasVulsCnt": 1833,
+        "ImageUnsafeCnt": 1833,
+        "ImageUntrustCnt": 6246,
+        "LatestImageScanTime": "2024-10-30 02:02:24",
+        "ListenPortCnt": 1390,
+        "ProcessCnt": 4398,
+        "RecommendedFixImageCnt": 12,
+        "RequestId": "c409c2f3-eaa0-4732-8f2b-e585c2515f3e",
+        "ScannedImageCnt": 733,
+        "SuperNodeCnt": 30,
+        "SuperNodeRunningCnt": 30,
+        "TodayNewImageCnt": 0,
+        "TodayUnsafeImageCnt": 0,
+        "UnScannedImageCnt": 12,
+        "WebServiceCnt": 35
     }
 }
 ```

@@ -4,151 +4,176 @@
       "document": "使用指定时间点的备份克隆一个新的集群",
       "input": "CloneClusterToPointInTimeRequest",
       "name": "克隆集群",
-      "output": "CloneClusterToPointInTimeResponse"
+      "output": "CloneClusterToPointInTimeResponse",
+      "status": "online"
     },
     "CreateCluster": {
       "document": "创建集群",
       "input": "CreateClusterRequest",
       "name": "创建集群",
-      "output": "CreateClusterResponse"
+      "output": "CreateClusterResponse",
+      "status": "online"
     },
     "CreateClusterInstances": {
       "document": "在集群中新建实例",
       "input": "CreateClusterInstancesRequest",
       "name": "创建实例",
-      "output": "CreateClusterInstancesResponse"
+      "output": "CreateClusterInstancesResponse",
+      "status": "online"
     },
     "DeleteCluster": {
       "document": "删除集群，集群中的实例和数据都将被删除，且无法恢复。只有当集群状态处于isolated(已隔离)时才生效。",
       "input": "DeleteClusterRequest",
       "name": "删除集群",
-      "output": "DeleteClusterResponse"
+      "output": "DeleteClusterResponse",
+      "status": "online"
     },
     "DeleteClusterInstances": {
       "document": "删除实例。只有当实例状态处于isolated(已隔离)时才生效。",
       "input": "DeleteClusterInstancesRequest",
       "name": "删除实例",
-      "output": "DeleteClusterInstancesResponse"
+      "output": "DeleteClusterInstancesResponse",
+      "status": "online"
     },
     "DescribeAccounts": {
       "document": "查询数据库账号信息",
       "input": "DescribeAccountsRequest",
       "name": "查询数据库账号信息",
-      "output": "DescribeAccountsResponse"
+      "output": "DescribeAccountsResponse",
+      "status": "online"
     },
     "DescribeClusterBackups": {
       "document": "查询集群的备份集",
       "input": "DescribeClusterBackupsRequest",
       "name": "查询集群的备份集",
-      "output": "DescribeClusterBackupsResponse"
+      "output": "DescribeClusterBackupsResponse",
+      "status": "online"
     },
     "DescribeClusterEndpoints": {
       "document": "查询集群接入点信息",
       "input": "DescribeClusterEndpointsRequest",
       "name": "查询集群接入点",
-      "output": "DescribeClusterEndpointsResponse"
+      "output": "DescribeClusterEndpointsResponse",
+      "status": "online"
     },
     "DescribeClusterInstances": {
       "document": "查询实例",
       "input": "DescribeClusterInstancesRequest",
       "name": "查询实例",
-      "output": "DescribeClusterInstancesResponse"
+      "output": "DescribeClusterInstancesResponse",
+      "status": "online"
     },
     "DescribeClusterRecoveryTimeRange": {
       "document": "查询集群可回档时间范围",
       "input": "DescribeClusterRecoveryTimeRangeRequest",
       "name": "查询集群可回档时间范围",
-      "output": "DescribeClusterRecoveryTimeRangeResponse"
+      "output": "DescribeClusterRecoveryTimeRangeResponse",
+      "status": "online"
     },
     "DescribeClusters": {
       "document": "查询集群",
       "input": "DescribeClustersRequest",
       "name": "查询集群",
-      "output": "DescribeClustersResponse"
+      "output": "DescribeClustersResponse",
+      "status": "online"
     },
     "DescribeResourcesByDealName": {
       "document": "根据订单号获取资源信息",
       "input": "DescribeResourcesByDealNameRequest",
       "name": "根据订单号获取资源信息",
-      "output": "DescribeResourcesByDealNameResponse"
+      "output": "DescribeResourcesByDealNameResponse",
+      "status": "online"
     },
     "IsolateCluster": {
       "document": "隔离集群，集群的接入点网络将会断掉无法连接使用数据库。只有当集群状态处于running(运行中)时才生效。",
       "input": "IsolateClusterRequest",
       "name": "隔离集群",
-      "output": "IsolateClusterResponse"
+      "output": "IsolateClusterResponse",
+      "status": "online"
     },
     "IsolateClusterInstances": {
       "document": "隔离实例。此接口只针对状态为running的实例生效，使用场景包括：\n - 批量隔离集群内所有的实例\n - 在读写实例为running(运行中)时，单个/批量隔离只读实例\n - 集群内所有只读实例为isolated(已隔离)时，单独隔离读写实例",
       "input": "IsolateClusterInstancesRequest",
       "name": "隔离实例",
-      "output": "IsolateClusterInstancesResponse"
+      "output": "IsolateClusterInstancesResponse",
+      "status": "online"
     },
     "ModifyAccountDescription": {
       "document": "修改数据库账号描述",
       "input": "ModifyAccountDescriptionRequest",
       "name": "修改数据库账号描述",
-      "output": "ModifyAccountDescriptionResponse"
+      "output": "ModifyAccountDescriptionResponse",
+      "status": "online"
     },
     "ModifyClusterEndpointWanStatus": {
       "document": "开启或者关闭接入点外网",
       "input": "ModifyClusterEndpointWanStatusRequest",
       "name": "修改接入点外网状态",
-      "output": "ModifyClusterEndpointWanStatusResponse"
+      "output": "ModifyClusterEndpointWanStatusResponse",
+      "status": "online"
     },
     "ModifyClusterInstancesSpec": {
       "document": "修改实例规格，此接口只针对状态为running(运行中)的实例生效",
       "input": "ModifyClusterInstancesSpecRequest",
       "name": "修改实例规格",
-      "output": "ModifyClusterInstancesSpecResponse"
+      "output": "ModifyClusterInstancesSpecResponse",
+      "status": "online"
     },
     "ModifyClusterName": {
       "document": "修改集群名字",
       "input": "ModifyClusterNameRequest",
       "name": "修改集群名字",
-      "output": "ModifyClusterNameResponse"
+      "output": "ModifyClusterNameResponse",
+      "status": "online"
     },
     "ModifyClustersAutoRenewFlag": {
       "document": "修改集群自动续费，只对预付费集群生效。",
       "input": "ModifyClustersAutoRenewFlagRequest",
       "name": "修改集群自动续费",
-      "output": "ModifyClustersAutoRenewFlagResponse"
+      "output": "ModifyClustersAutoRenewFlagResponse",
+      "status": "online"
     },
     "RecoverCluster": {
       "document": "恢复集群，恢复集群的接入点网络，恢复后继续连接使用数据库。只有当集群状态处于isolated(已隔离)时才生效。",
       "input": "RecoverClusterRequest",
       "name": "恢复集群",
-      "output": "RecoverClusterResponse"
+      "output": "RecoverClusterResponse",
+      "status": "online"
     },
     "RecoverClusterInstances": {
       "document": "恢复实例。此接口的使用场景包括：\n - 读写实例状态为running(运行中)时，批量恢复状态为isolated(已隔离)的只读实例\n - 读写实例状态为isolated(已隔离)时，恢复读写实例\n - 读写实例状态为isolated(已隔离)时，批量恢复读写实例以及状态为isolated(已隔离)的只读实例",
       "input": "RecoverClusterInstancesRequest",
       "name": "恢复实例",
-      "output": "RecoverClusterInstancesResponse"
+      "output": "RecoverClusterInstancesResponse",
+      "status": "online"
     },
     "RenewCluster": {
       "document": "续费集群",
       "input": "RenewClusterRequest",
       "name": "续费集群",
-      "output": "RenewClusterResponse"
+      "output": "RenewClusterResponse",
+      "status": "online"
     },
     "ResetAccountPassword": {
       "document": "重置数据库账号密码",
       "input": "ResetAccountPasswordRequest",
       "name": "重置数据库账号密码",
-      "output": "ResetAccountPasswordResponse"
+      "output": "ResetAccountPasswordResponse",
+      "status": "online"
     },
     "RestartClusterInstances": {
       "document": "重启实例，此接口只针对状态为running(运行中)的实例生效。",
       "input": "RestartClusterInstancesRequest",
       "name": "重启实例",
-      "output": "RestartClusterInstancesResponse"
+      "output": "RestartClusterInstancesResponse",
+      "status": "online"
     },
     "TransformClusterPayMode": {
       "document": "转换集群付费模式，目前只支持从 后付费 转换成 与预付费。",
       "input": "TransformClusterPayModeRequest",
       "name": "转换集群付费模式",
-      "output": "TransformClusterPayModeResponse"
+      "output": "TransformClusterPayModeResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -162,7 +187,7 @@
       "document": "数据库账户信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "数据库账号名",
           "example": "root",
           "member": "string",
@@ -172,7 +197,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -182,7 +207,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据库账号描述",
           "example": "xxx",
           "member": "string",
@@ -192,7 +217,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据库账号创建时间。按照RFC3339标准表示，并且使用东八区时区时间，格式为：YYYY-MM-DDThh:mm:ss+08:00。",
           "example": "2021-11-18T18:10:25+08:00",
           "member": "string",
@@ -202,7 +227,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据库账号信息更新时间。按照RFC3339标准表示，并且使用东八区时区时间，格式为：YYYY-MM-DDThh:mm:ss+08:00。",
           "example": "2021-11-18T18:10:25+08:00",
           "member": "string",
@@ -218,7 +243,7 @@
       "document": "可以回档时间范围",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "可回档起始时间。按照RFC3339标准表示，并且使用东八区时区时间，格式为：YYYY-MM-DDThh:mm:ss+08:00。",
           "example": "2021-11-18T18:10:25+08:00",
           "member": "string",
@@ -228,7 +253,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "可回档结束时间。按照RFC3339标准表示，并且使用东八区时区时间，格式为：YYYY-MM-DDThh:mm:ss+08:00。",
           "example": "2021-11-18T18:10:25+08:00",
           "member": "string",
@@ -244,7 +269,7 @@
       "document": "集群备份集信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "备份集ID，集群内唯一",
           "example": "1",
           "member": "int64",
@@ -254,7 +279,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "备份集类型，目前只支持 SNAPSHOT：快照",
           "example": "SNAPSHOT",
           "member": "string",
@@ -264,7 +289,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "备份集产生的方案，目前只支持 AUTO：自动",
           "example": "AUTO",
           "member": "string",
@@ -274,7 +299,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "备份集对应的数据时间。按照RFC3339标准表示，并且使用东八区时区时间，格式为：YYYY-MM-DDThh:mm:ss+08:00。",
           "example": "2021-11-18T18:10:25+08:00",
           "member": "string",
@@ -284,7 +309,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "备份集数据大小，单位GiB",
           "example": "10",
           "member": "int64",
@@ -294,7 +319,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "备份集对应的任务开始时间。按照RFC3339标准表示，并且使用东八区时区时间，格式为：YYYY-MM-DDThh:mm:ss+08:00。",
           "example": "2021-11-18T18:10:25+08:00",
           "member": "string",
@@ -304,7 +329,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "备份集对应的任务结束时间。按照RFC3339标准表示，并且使用东八区时区时间，格式为：YYYY-MM-DDThh:mm:ss+08:00。",
           "example": "2021-11-18T18:10:25Z+08:00",
           "member": "string",
@@ -314,7 +339,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "备份集对应的任务状态  SUCCESS：成功",
           "example": "SUCCESS",
           "member": "string",
@@ -330,7 +355,7 @@
       "document": "CloneClusterToPointInTime请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-2",
           "member": "string",
@@ -339,7 +364,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据库版本，目前仅支持 10.17",
           "example": "10.17",
           "member": "string",
@@ -348,7 +373,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "CPU核数。取值参考文档【购买指南】",
           "example": "1",
           "member": "uint64",
@@ -357,7 +382,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "内存大小，单位GiB。取值参考文档【购买指南】",
           "example": "2",
           "member": "uint64",
@@ -366,7 +391,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有网络ID",
           "example": "vpc-xxx\t",
           "member": "string",
@@ -375,7 +400,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "已配置的私有网络中的子网ID",
           "example": "subnet-xxx\t",
           "member": "string",
@@ -384,7 +409,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "集群付费模式\n- PREPAID：预付费，即包年包月\n- POSTPAID_BY_HOUR：按小时后付费",
           "example": "PREPAID",
           "member": "string",
@@ -393,7 +418,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "对应的备份数据来源集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -402,7 +427,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "对应的备份数据时间点。按照RFC3339标准表示，并且使用东八区时区时间。格式为：YYYY-MM-DDThh:mm:ss+08:00。",
           "example": "2021-11-18T18:10:25+08:00",
           "member": "string",
@@ -411,7 +436,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "集群名，1-60个字符，可以包含中文、英文、数字和符号\"-\"、\"_\"、\".\"。不输入此参数时默认与ClusterId保持一致。",
           "example": "MyClusterName",
           "member": "string",
@@ -420,7 +445,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "项目Id，默认为0表示默认项目",
           "example": "0",
           "member": "uint64",
@@ -429,7 +454,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "连接数据库时，Endpoint使用的端口。取值范围为[1,65534]，默认值为5432",
           "example": "5432",
           "member": "uint64",
@@ -438,7 +463,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "集群下实例数量。取值范围为[1,4]，默认值为1",
           "example": "1",
           "member": "uint64",
@@ -447,7 +472,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "购买时长，单位：月。取值范围为[1,60]，默认值为1。\n只有当PayMode为PREPAID时生效。",
           "example": "1",
           "member": "uint64",
@@ -456,7 +481,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否自动续费，0-不 1-是。默认为0，只有当PayMode为PREPAID时生效。",
           "example": "0",
           "member": "uint64",
@@ -465,7 +490,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "存储付费模式\n - PREPAID：预付费，即包年包月\n - POSTPAID_BY_HOUR：按小时后付费\n默认为POSTPAID_BY_HOUR，实例付费模式为按小时付费时，存储付费模式不支持包年包月",
           "example": "PREPAID",
           "member": "string",
@@ -474,7 +499,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "存储最大使用量，单位GB。取值参考文档【购买指南】。存储使用预付费模式时必须设置，存储使用按小时后付费时不可设置",
           "example": "100",
           "member": "uint64",
@@ -489,6 +514,7 @@
       "document": "CloneClusterToPointInTime返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "订单号",
           "example": "[\"aaaa\"]",
           "member": "string",
@@ -498,7 +524,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -510,7 +536,7 @@
       "document": "集群信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID，集群的唯一标识",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -520,7 +546,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "集群名字，不修改时默认和集群ID相同",
           "example": "MyClusterName",
           "member": "string",
@@ -530,7 +556,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -540,7 +566,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-3",
           "member": "string",
@@ -550,7 +576,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "TDSQL-C PostgreSQL 合入的社区版本号",
           "example": "10.17",
           "member": "string",
@@ -560,7 +586,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "项目ID",
           "example": "0",
           "member": "uint64",
@@ -570,7 +596,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "集群状态。目前包括\n - creating ：创建中\n - running : 运行中\n - isolating : 隔离中\n - isolated : 已隔离\n - recovering : 恢复中\n - deleting : 删除中\n - deleted : 已删除",
           "example": "running",
           "member": "string",
@@ -580,7 +606,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "集群状态中文含义",
           "example": "运行中",
           "member": "string",
@@ -590,7 +616,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "集群创建时间。按照RFC3339标准表示，并且使用东八区时区时间，格式为：YYYY-MM-DDThh:mm:ss+08:00。",
           "example": "2021-11-18T18:10:25+08:00",
           "member": "string",
@@ -600,7 +626,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "存储当前使用量，单位GiB",
           "example": "0.13",
           "member": "float",
@@ -610,7 +636,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "存储最大使用量，单位GiB",
           "example": "1024",
           "member": "uint64",
@@ -620,7 +646,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "付费模式：\n - PREPAID : 预付费，即包年包月\n - POSTPAID_BY_HOUR : 按小时结算后付费",
           "example": "PREPAID",
           "member": "string",
@@ -630,7 +656,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "预付费集群到期时间。按照RFC3339标准表示，并且使用东八区时区时间，格式为：YYYY-MM-DDThh:mm:ss+08:00。",
           "example": "2021-11-18T18:10:25+08:00",
           "member": "string",
@@ -640,7 +666,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "预付费集群自动续费标签\n - 0 : 到期不自动续费\n - 1 : 到期自动续费",
           "example": "1",
           "member": "uint64",
@@ -650,7 +676,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据库字符集",
           "example": "UTF8",
           "member": "string",
@@ -660,7 +686,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "集群内实例的数量",
           "example": "1",
           "member": "uint64",
@@ -670,7 +696,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "集群内访问点信息",
           "example": "[]",
           "member": "Endpoint",
@@ -680,7 +706,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "TDSQL-C PostgreSQL 合入的社区主要版本号",
           "example": "10",
           "member": "string",
@@ -690,7 +716,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "TDSQL-C PostgreSQL 内核版本号",
           "example": "v10.17_r1.4",
           "member": "string",
@@ -700,7 +726,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "存储付费模式\n - PREPAID：预付费，即包年包月\n - POSTPAID_BY_HOUR：按小时后付费\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PREPAID",
           "member": "string",
@@ -716,7 +742,7 @@
       "document": "CreateClusterInstances请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -725,7 +751,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "CPU核数。取值参考文档【购买指南】",
           "example": "1",
           "member": "uint64",
@@ -734,7 +760,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "内存大小，单位GiB。取值参考文档【购买指南】",
           "example": "2",
           "member": "uint64",
@@ -743,7 +769,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例名，1-60个字符，可以包含中文、英文、数字和符号\"-\"、\"_\"、\".\"。不输入此参数时默认与InstanceId一致。",
           "example": "MyInstanceName",
           "member": "string",
@@ -752,7 +778,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "新建实例的数量，默认为1。单集群下实例数量目前不能超过4个。",
           "example": "1",
           "member": "uint64",
@@ -767,6 +793,7 @@
       "document": "CreateClusterInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "订单号",
           "example": "[\"aaaa\"]",
           "member": "string",
@@ -776,7 +803,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -788,7 +815,7 @@
       "document": "CreateCluster请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-2",
           "member": "string",
@@ -797,7 +824,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据库用户密码，必须满足 8-64个字符，至少包含 大写字母、小写字母、数字和符号~!@#$%^&*_-+=`|\\(){}[]:;'<>,.?/中的任意三种",
           "example": "1111@AAAA",
           "member": "string",
@@ -806,7 +833,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "CPU核数。取值参考文档【购买指南】",
           "example": "1",
           "member": "uint64",
@@ -815,7 +842,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "内存大小，单位GiB。取值参考文档【购买指南】",
           "example": "2",
           "member": "uint64",
@@ -824,7 +851,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有网络ID",
           "example": "vpc-xxx\t",
           "member": "string",
@@ -833,7 +860,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "已配置的私有网络中的子网ID",
           "example": "subnet-xxx\t",
           "member": "string",
@@ -842,7 +869,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例付费模式\n - PREPAID：预付费，即包年包月\n - POSTPAID_BY_HOUR：按小时后付费",
           "example": "PREPAID",
           "member": "string",
@@ -851,7 +878,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "集群名，1-60个字符，可以包含中文、英文、数字和符号\"-\"、\"_\"、\".\"。不输入此参数时默认与ClusterId保持一致",
           "example": "MyClusterName",
           "member": "string",
@@ -860,7 +887,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "TDSQL-C PostgreSQL 合入的社区版本号。\n支持入参值为：10.17。当输入该参数时，会基于此版本号创建对应的最新DBKernelVersion数据库内核。\n注：该参数与DBMajorVersion、DBKernelVersion只能传递一个，且需要传递一个。",
           "example": "10.17",
           "member": "string",
@@ -869,7 +896,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "项目Id，默认为0表示默认项目",
           "example": "0",
           "member": "uint64",
@@ -878,7 +905,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "连接数据库时，Endpoint使用的端口。取值范围为[1,65534]，默认值为5432",
           "example": "5432",
           "member": "uint64",
@@ -887,7 +914,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "集群下实例数量。取值范围为[1,4]，默认值为1",
           "example": "1",
           "member": "uint64",
@@ -896,7 +923,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "购买时长，单位：月。取值范围为[1,60]，默认值为1。\n只有当PayMode为PREPAID时生效。",
           "example": "1",
           "member": "uint64",
@@ -905,7 +932,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否自动续费，0-不 1-是。默认值为0，只有当PayMode为PREPAID时生效。",
           "example": "0",
           "member": "uint64",
@@ -914,7 +941,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "TDSQL-C PostgreSQL 合入的社区主要版本号。\n支持入参值为：10。当输入该参数时，会基于此版本号创建对应的最新DBKernelVersion数据库内核。\n注：该参数和DBVersion、DBKernelVersion只能传递一个，且需要传递一个。",
           "example": "10",
           "member": "string",
@@ -923,7 +950,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "TDSQL-C PostgreSQL 内核版本号。\n支持入参值为：v10.17_r1.4。当输入该参数时，会创建此版本号对应的数据库内核。\n注：该参数和DBVersion、DBMajorVersion只能传递一个，且需要传递一个。",
           "example": "v10.17_r1.4",
           "member": "string",
@@ -932,7 +959,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "存储付费模式\n - PREPAID：预付费，即包年包月\n - POSTPAID_BY_HOUR：按小时后付费\n默认为POSTPAID_BY_HOUR，实例付费模式为按小时付费时，存储付费模式不支持包年包月",
           "example": "PREPAID",
           "member": "string",
@@ -941,7 +968,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "存储最大使用量，单位GB。取值参考文档【购买指南】。存储使用预付费模式时必须设置，存储使用按小时后付费时不可设置",
           "example": "100",
           "member": "uint64",
@@ -956,6 +983,7 @@
       "document": "CreateCluster返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "订单号",
           "example": "[\"aaaa\"]",
           "member": "string",
@@ -965,7 +993,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -977,7 +1005,7 @@
       "document": "DeleteClusterInstances请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -986,7 +1014,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例ID列表",
           "example": "[tdcpg-ins-xxx,tdcpg-ins-xxx]",
           "member": "string",
@@ -1001,7 +1029,7 @@
       "document": "DeleteClusterInstances返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1013,7 +1041,7 @@
       "document": "DeleteCluster请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -1028,7 +1056,7 @@
       "document": "DeleteCluster返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1040,7 +1068,7 @@
       "document": "DescribeAccounts请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -1055,6 +1083,7 @@
       "document": "DescribeAccounts返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总条数",
           "example": "100",
           "member": "int64",
@@ -1064,6 +1093,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "账号信息列表",
           "example": "无",
           "member": "Account",
@@ -1073,7 +1103,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1085,7 +1115,7 @@
       "document": "DescribeClusterBackups请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -1094,7 +1124,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "页码，取值范围为[1,INF)，默认值为1",
           "example": "1",
           "member": "int64",
@@ -1103,7 +1133,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "每页个数，取值范围为默认为[1,100]，默认值为20",
           "example": "10",
           "member": "int64",
@@ -1118,6 +1148,7 @@
       "document": "DescribeClusterBackups返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总条数",
           "example": "100",
           "member": "int64",
@@ -1127,6 +1158,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "备份列表信息",
           "example": "[]",
           "member": "Backup",
@@ -1136,7 +1168,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1148,7 +1180,7 @@
       "document": "DescribeClusterEndpoints请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -1163,6 +1195,7 @@
       "document": "DescribeClusterEndpoints返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总条数",
           "example": "100",
           "member": "int64",
@@ -1172,6 +1205,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "接入点列表",
           "example": "[]",
           "member": "Endpoint",
@@ -1181,7 +1215,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1193,7 +1227,7 @@
       "document": "DescribeClusterInstances请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -1202,7 +1236,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "页码，取值范围为[1,INF)，默认值为1",
           "example": "1",
           "member": "uint64",
@@ -1211,7 +1245,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "每页个数，取值范围为默认为[1,100]，默认值为20",
           "example": "10",
           "member": "uint64",
@@ -1220,7 +1254,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "目前支持查询条件包括：\n - InstanceId : 实例ID\n - InstanceName : 实例名\n - EndpointId : 接入点ID\n - Status : 实例状态\n - InstanceType : 实例类型",
           "example": "无",
           "member": "Filter",
@@ -1229,7 +1263,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序字段，可选字段：\n- CreateTime : 实例创建时间(默认值)\n- PayPeriodEndTime : 实例过期时间",
           "example": "CLUSTER_CREATE_TIME",
           "member": "string",
@@ -1238,7 +1272,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序方式，可选字段：\n- DESC : 降序(默认值)\n- ASC : 升序",
           "example": "DESC",
           "member": "string",
@@ -1253,25 +1287,27 @@
       "document": "DescribeClusterInstances返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总条数",
           "example": "100",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "实例列表信息",
           "example": "[]",
           "member": "Instance",
           "name": "InstanceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1283,7 +1319,7 @@
       "document": "DescribeClusterRecoveryTimeRange请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -1292,7 +1328,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "期望的回档时间点，传入从集群创建时间到当前时间之间的时间点。按照RFC3339标准表示，并且使用东八区时区时间，格式为：YYYY-MM-DDThh:mm:ss+08:00。",
           "example": "2022-01-08T19:50:54+08:00",
           "member": "string",
@@ -1307,6 +1343,7 @@
       "document": "DescribeClusterRecoveryTimeRange返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "可回档时间范围列表",
           "example": "无",
           "member": "AvailableRecoveryTimeRange",
@@ -1316,7 +1353,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1328,7 +1365,7 @@
       "document": "DescribeClusters请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "页码，取值范围为[1,INF)，默认值为1",
           "example": "1",
           "member": "uint64",
@@ -1337,7 +1374,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "每页条数，取值范围为默认为[1,100]，默认值为20",
           "example": "10",
           "member": "uint64",
@@ -1346,7 +1383,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "目前支持查询条件包括：\n - ClusterId : 集群ID\n - ClusterName : 集群名\n - ProjectId : 项目ID\n - Status : 集群状态\n - PayMode : 付费模式",
           "example": "无",
           "member": "Filter",
@@ -1355,7 +1392,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序字段，可选字段：\n - CreateTime : 集群创建时间(默认值)\n - PayPeriodEndTime : 集群过期时间",
           "example": "CLUSTER_CREATE_TIME",
           "member": "string",
@@ -1364,7 +1401,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序方式，可选字段：\n - DESC : 降序(默认值)\n - ASC : 升序",
           "example": "DESC",
           "member": "string",
@@ -1379,25 +1416,27 @@
       "document": "DescribeClusters返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "总条数",
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "集群列表信息",
           "example": "[]",
           "member": "Cluster",
           "name": "ClusterSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1409,7 +1448,7 @@
       "document": "DescribeResourcesByDealName请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "计费订单id（如果计费还没回调业务发货，可能出现错误码InvalidParameterValue.DealNameNotFound，这种情况需要业务重试DescribeResourcesByDealName接口直到成功）",
           "example": "xxxx",
           "member": "string",
@@ -1424,6 +1463,7 @@
       "document": "DescribeResourcesByDealName返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "资源ID信息列表",
           "example": "无",
           "member": "ResourceIdInfo",
@@ -1433,7 +1473,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1445,7 +1485,7 @@
       "document": "集群的连接点信息，包含访问数据库的相关网络信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "连接点ID，集群内唯一",
           "example": "tdcpg-ep-xxx",
           "member": "string",
@@ -1455,7 +1495,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "连接点所属的集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -1465,7 +1505,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "连接点名字，默认和连接点ID一致",
           "example": "tdcpg-ep-xxx",
           "member": "string",
@@ -1475,7 +1515,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "连接点类型\n - RW : 读写\n - RO : 只读",
           "example": "RW",
           "member": "string",
@@ -1485,7 +1525,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有网络VPC实例ID",
           "example": "vpc-xxxx",
           "member": "string",
@@ -1495,7 +1535,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有网络VPC下子网实例ID",
           "example": "subnet-xxx",
           "member": "string",
@@ -1505,7 +1545,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有网络VPC下用于访问数据库的IP",
           "example": "10.0.0.1",
           "member": "string",
@@ -1515,7 +1555,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有网络VPC下用于访问数据库的端口",
           "example": "5432",
           "member": "uint64",
@@ -1525,7 +1565,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "公共网络用户访问数据库的IP",
           "example": "111.0.0.1",
           "member": "string",
@@ -1535,7 +1575,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "公共网络用户访问数据库的端口",
           "example": "5432",
           "member": "uint64",
@@ -1545,7 +1585,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "公共网络用户访问数据库的域名",
           "example": "gz-tdcpg-ep-xxx.sql.tencentcdb.com",
           "member": "string",
@@ -1561,7 +1601,7 @@
       "document": "过滤条件",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "过滤条件名",
           "example": "ClusterId",
           "member": "string",
@@ -1571,7 +1611,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "过滤条件值数组",
           "example": "[tdsqlcpg-xxxx,tdsqlcpg-xxx]",
           "member": "string",
@@ -1581,7 +1621,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "true:精确匹配(默认值) false:(模糊匹配)",
           "example": "true",
           "member": "bool",
@@ -1597,7 +1637,7 @@
       "document": "集群下的实例信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "实例ID，集群下唯一",
           "example": "tdcpg-ins-xxx",
           "member": "string",
@@ -1607,7 +1647,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例名字，默认和实例ID一致",
           "example": "MyInstanceName",
           "member": "string",
@@ -1617,7 +1657,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -1627,7 +1667,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例所在的访问点ID",
           "example": "tdcpg-ep-xxx",
           "member": "string",
@@ -1637,7 +1677,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -1647,7 +1687,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-2",
           "member": "string",
@@ -1657,7 +1697,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据库版本",
           "example": "10.17",
           "member": "string",
@@ -1667,7 +1707,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例状态",
           "example": "running",
           "member": "string",
@@ -1677,7 +1717,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例状态中文含义",
           "example": "运行中",
           "member": "string",
@@ -1687,7 +1727,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例创建时间。按照RFC3339标准表示，并且使用东八区时区时间，格式为：YYYY-MM-DDThh:mm:ss+08:00。",
           "example": "2021-11-18T18:10:25+08:00",
           "member": "string",
@@ -1697,7 +1737,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "付费模式：\n- PREPAID : 预付费\n- POSTPAID_BY_HOUR : 按小时结算后付费\n\n同一集群下付费模式需要保持一致。",
           "example": "PREPAID",
           "member": "string",
@@ -1707,7 +1747,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例到期时间。同一集群下到期时间需要保持一致。按照RFC3339标准表示，并且使用东八区时区时间，格式为：YYYY-MM-DDThh:mm:ss+08:00。",
           "example": "2021-11-18T18:10:25+08:00",
           "member": "string",
@@ -1717,7 +1757,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "CPU核数",
           "example": "1",
           "member": "uint64",
@@ -1727,7 +1767,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "内存大小，单位GiB",
           "example": "2",
           "member": "uint64",
@@ -1737,7 +1777,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例类型\n - RW：读写实例\n - RO：只读实例",
           "example": "RW",
           "member": "string",
@@ -1747,7 +1787,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "TDSQL-C PostgreSQL 合入的社区主要版本号",
           "example": "10",
           "member": "string",
@@ -1757,7 +1797,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "TDSQL-C PostgreSQL 内核版本号",
           "example": "v10.17_r1.4",
           "member": "string",
@@ -1773,7 +1813,7 @@
       "document": "IsolateClusterInstances请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -1782,7 +1822,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例ID列表",
           "example": "[tdcpg-ins-xxx,tdcpg-ins-xxx]",
           "member": "string",
@@ -1797,7 +1837,7 @@
       "document": "IsolateClusterInstances返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1809,7 +1849,7 @@
       "document": "IsolateCluster请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -1824,7 +1864,7 @@
       "document": "IsolateCluster返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1836,7 +1876,7 @@
       "document": "ModifyAccountDescription请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -1845,7 +1885,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "账号名字",
           "example": "root",
           "member": "string",
@@ -1854,7 +1894,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "账号描述，0-256个字符",
           "example": "我的账号",
           "member": "string",
@@ -1869,7 +1909,7 @@
       "document": "ModifyAccountDescription返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1881,7 +1921,7 @@
       "document": "ModifyClusterEndpointWanStatus请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -1890,7 +1930,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "接入点ID",
           "example": "tdcpg-ep-xxx",
           "member": "string",
@@ -1899,7 +1939,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "取值为： \n - OPEN：开启外网 \n - CLOSE：关闭外网",
           "example": "OPEN",
           "member": "string",
@@ -1914,7 +1954,7 @@
       "document": "ModifyClusterEndpointWanStatus返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1926,7 +1966,7 @@
       "document": "ModifyClusterInstancesSpec请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -1935,7 +1975,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例ID列表，目前只支持单个实例修改",
           "example": "[tdcpg-ins-xxx]",
           "member": "string",
@@ -1944,7 +1984,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "修改后的CPU核数。取值参考文档【购买指南】",
           "example": "1",
           "member": "uint64",
@@ -1953,7 +1993,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "修改后的内存大小，单位GiB。取值参考文档【购买指南】",
           "example": "2",
           "member": "uint64",
@@ -1962,7 +2002,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作时机\n - IMMEDIATE：立即执行 \n - MAINTAIN_PERIOD：维护窗口期执行",
           "example": "IMMIDIATE",
           "member": "string",
@@ -1977,7 +2017,7 @@
       "document": "ModifyClusterInstancesSpec返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1989,7 +2029,7 @@
       "document": "ModifyClusterName请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -1998,7 +2038,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "集群名，1-60个字符，可以包含中文、英文、数字和符号\"-\"、\"_\"、\".\"",
           "example": "MyClusterName",
           "member": "string",
@@ -2013,7 +2053,7 @@
       "document": "ModifyClusterName返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2025,7 +2065,7 @@
       "document": "ModifyClustersAutoRenewFlag请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID列表",
           "example": "[tdcpg-xxx,tdcpg-xxx]",
           "member": "string",
@@ -2034,7 +2074,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否自动续费，0-不 1-是。默认为0，只有当集群的PayMode为PREPAID时生效。",
           "example": "1",
           "member": "uint64",
@@ -2049,7 +2089,7 @@
       "document": "ModifyClustersAutoRenewFlag返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2061,7 +2101,7 @@
       "document": "RecoverClusterInstances请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -2070,7 +2110,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例ID列表",
           "example": "[tdcpg-ins-xxx,tdcpg-ins-xxx]",
           "member": "string",
@@ -2079,7 +2119,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "购买时长，单位：月。取值范围为[1,60]，默认值为1。\n只有当PayMode为PREPAID时生效。",
           "example": "1",
           "member": "uint64",
@@ -2094,7 +2134,7 @@
       "document": "RecoverClusterInstances返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2106,7 +2146,7 @@
       "document": "RecoverCluster请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -2115,7 +2155,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "购买时长，单位：月。取值范围为[1,60]，默认值为1。\n只有当PayMode为PREPAID时生效。",
           "example": "1",
           "member": "uint64",
@@ -2130,7 +2170,7 @@
       "document": "RecoverCluster返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2142,7 +2182,7 @@
       "document": "RenewCluster请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -2151,7 +2191,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "续费时间，单位：月。取值范围为[1,60]，默认值为1。",
           "example": "1",
           "member": "uint64",
@@ -2166,7 +2206,7 @@
       "document": "RenewCluster返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2178,7 +2218,7 @@
       "document": "ResetAccountPassword请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -2187,7 +2227,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "账号名字",
           "example": "root",
           "member": "string",
@@ -2196,7 +2236,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据库用户密码，必须满足 8-64个字符，至少包含 大写字母、小写字母、数字和符号~!@#$%^&*_-+=`|(){}[]:;'<>,.?/中的任意三种",
           "example": "123@aa",
           "member": "string",
@@ -2211,7 +2251,7 @@
       "document": "ResetAccountPassword返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2223,7 +2263,7 @@
       "document": "资源ID信息，包括ClusterID和InstanceID",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -2233,7 +2273,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例ID列表",
           "example": "[tdcpg-ins-xxx,tdcpg-ins-xxx]",
           "member": "string",
@@ -2249,7 +2289,7 @@
       "document": "RestartClusterInstances请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -2258,7 +2298,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例ID列表，目前只支持单个实例重启",
           "example": "[tdcpg-ins-xxx]",
           "member": "string",
@@ -2273,7 +2313,7 @@
       "document": "RestartClusterInstances返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2285,7 +2325,7 @@
       "document": "TransformClusterPayMode请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "集群ID",
           "example": "tdcpg-xxx",
           "member": "string",
@@ -2294,7 +2334,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "当前付费模式，目前只支持：POSTPAID_BY_HOUR(按小时后付费)",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
@@ -2303,7 +2343,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "目标付费模式，目前只支持：PREPAID(预付费)",
           "example": "PREPAID",
           "member": "string",
@@ -2312,7 +2352,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "购买时长，单位：月。取值范围为[1,60]，默认值为1。",
           "example": "1",
           "member": "uint64",
@@ -2327,7 +2367,7 @@
       "document": "TransformClusterPayMode返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"

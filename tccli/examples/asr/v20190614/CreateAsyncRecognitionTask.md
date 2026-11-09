@@ -1,13 +1,13 @@
 **Example 1: 语音流异步识别任务创建**
 
-
+创建一个异步识别任务，通过接口返回拿到任务ID
 
 Input: 
 
 ```
 tccli asr CreateAsyncRecognitionTask --cli-unfold-argument  \
     --EngineType 16k_zh \
-    --Url http://tes.cos.ap-guangzhou.myqcloud.com/test.wav \
+    --Url rtmp://test.com/test_stream \
     --CallbackUrl http://test.com/callback \
     --SignToken 
 ```

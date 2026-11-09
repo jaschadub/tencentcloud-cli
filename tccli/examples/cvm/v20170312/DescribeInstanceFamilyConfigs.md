@@ -5,9 +5,7 @@
 Input: 
 
 ```
-tccli cvm DescribeInstanceFamilyConfigs --cli-unfold-argument  \
-    --Region ap-guangzhou
-```
+tccli cvm DescribeInstanceFamilyConfigs --cli-unfold-argument ```
 
 Output: 
 ```
@@ -85,14 +83,6 @@ Output:
             {
                 "InstanceFamilyName": "共享核",
                 "InstanceFamily": "SHARED"
-            },
-            {
-                "InstanceFamilyName": "特殊机型",
-                "InstanceFamily": "SPECIAL"
-            },
-            {
-                "InstanceFamilyName": "其他",
-                "InstanceFamily": "OTHER"
             }
         ],
         "RequestId": "b061782b-934a-4e53-b1eb-d5f2fed8130e"

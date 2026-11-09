@@ -6,36 +6,32 @@ Input:
 
 ```
 tccli tdmq DescribePublishers --cli-unfold-argument  \
-    --Sort.Name xx \
-    --Sort.Order xx \
-    --ClusterId xx \
-    --Namespace xx \
-    --Topic xx \
-    --Limit 0 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --Offset 0
+    --ClusterId pulsar-xk3ne8k2qkp8 \
+    --Namespace devNs \
+    --Topic devTopic \
+    --Offset 0 \
+    --Limit 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 0,
-        "RequestId": "xx",
+        "TotalCount": 1,
         "Publishers": [
             {
-                "ConnectedSince": "xx",
-                "MsgThroughputIn": 0.0,
-                "ClientVersion": "xx",
                 "ProducerId": 0,
-                "Partition": 0,
-                "AverageMsgSize": 0.0,
-                "ProducerName": "xx",
-                "Address": "xx",
-                "MsgRateIn": 0.0
+                "ProducerName": "p1",
+                "Address": "127.0.0.1",
+                "ClientVersion": "2.9",
+                "MsgRateIn": 0,
+                "MsgThroughputIn": 0,
+                "AverageMsgSize": 0,
+                "ConnectedSince": "dev",
+                "Partition": 0
             }
-        ]
+        ],
+        "RequestId": "1004f1de-6fb8-41d5-965e-3aae8c87183a"
     }
 }
 ```

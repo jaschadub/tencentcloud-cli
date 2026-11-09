@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ft ChangeAgePic --cli-unfold-argument  \
-    --Image xxxxx \
+    --Image /9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z \
     --AgeInfos.0.Age 10 \
     --AgeInfos.0.FaceRect.X 10 \
     --AgeInfos.0.FaceRect.Y 10 \
@@ -18,6 +18,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.ParameterValueError",
+            "Message": "参数字段或者值有误。"
+        },
         "RequestId": "b68b7c3a-410d-4af1-b63c-97450683b09b"
     }
 }
@@ -31,7 +35,7 @@ Input:
 
 ```
 tccli ft ChangeAgePic --cli-unfold-argument  \
-    --Image xxxxx \
+    --Image /9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z \
     --AgeInfos.0.Age 10 \
     --AgeInfos.0.FaceRect.X 10 \
     --AgeInfos.0.FaceRect.Y 10 \
@@ -43,7 +47,8 @@ Output:
 ```
 {
     "Response": {
-        "ResultImage": "base64编码的图片",
+        "ResultImage": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
+        "ResultUrl": "",
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }

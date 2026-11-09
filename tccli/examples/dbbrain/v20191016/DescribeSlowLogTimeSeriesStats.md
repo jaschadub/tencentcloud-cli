@@ -1,12 +1,12 @@
 **Example 1: 获取慢日志统计柱状图**
 
-
+获取慢日志统计柱状图。
 
 Input: 
 
 ```
 tccli dbbrain DescribeSlowLogTimeSeriesStats --cli-unfold-argument  \
-    --InstanceId test \
+    --InstanceId cdb-test1234 \
     --StartTime '2019-01-01 00:00:00' \
     --EndTime '2019-01-01 01:00:00'
 ```

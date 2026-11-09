@@ -1,13 +1,13 @@
 **Example 1: 创建VPNGW**
 
-
+创建VPNGW
 
 Input: 
 
 ```
 tccli vpc CreateVpnGateway --cli-unfold-argument  \
-    --VpcId "vpc-xxxx" \
     --VpnGatewayName "test" \
+    --VpcId "vpc-xxxx" \
     --InstanceChargeType "POSTPAID_BY_HOUR" \
     --InternetMaxBandwidthOut 5
 ```
@@ -17,34 +17,34 @@ Output:
 {
     "Response": {
         "VpnGateway": {
+            "VpnGatewayId": "vpngw-awdawc",
+            "VpcId": "vpc-adxczc",
+            "VpnGatewayName": "vpn-name",
+            "Type": "IPSEC",
+            "State": "Pending",
+            "PublicIpAddress": "13.15.41.4",
+            "RenewFlag": "",
+            "InstanceChargeType": "POSTPAID_BY_HOUR",
+            "InternetMaxBandwidthOut": 10,
+            "CreatedTime": "2020-09-22 00:00:00",
+            "ExpiredTime": "2020-09-22 00:00:00",
+            "IsAddressBlocked": false,
+            "NewPurchasePlan": "",
+            "RestrictState": "NORMAL",
+            "Zone": "",
             "VpnGatewayQuotaSet": [
                 {
-                    "Bandwidth": 1,
-                    "Cname": "xx",
-                    "Name": "xx"
+                    "Bandwidth": 5,
+                    "Cname": "微小型",
+                    "Name": "cdmini"
                 }
             ],
-            "MaxConnection": 1,
-            "VpcId": "xx",
-            "RenewFlag": "xx",
-            "Zone": "xx",
-            "VpnGatewayName": "xx",
-            "InstanceChargeType": "xx",
-            "CdcId": "xx",
-            "IsAddressBlocked": true,
-            "InternetMaxBandwidthOut": 1,
-            "State": "xx",
-            "Version": "xx",
-            "VpnGatewayId": "xx",
-            "PublicIpAddress": "xx",
-            "CreatedTime": "2020-09-22 00:00:00",
-            "NewPurchasePlan": "xx",
-            "ExpiredTime": "2020-09-22 00:00:00",
-            "Type": "xx",
-            "NetworkInstanceId": "xx",
-            "RestrictState": "xx"
+            "Version": "ver3.1",
+            "NetworkInstanceId": "",
+            "CdcId": "",
+            "MaxConnection": 10
         },
-        "RequestId": "xx"
+        "RequestId": "b2187525-ab9d-42cb-82ee-998ead365bbe"
     }
 }
 ```

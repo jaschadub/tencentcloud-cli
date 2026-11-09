@@ -16,79 +16,111 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
         "DeviceSet": [
             {
+                "Id": 1,
+                "InstanceId": "Ins-89j1",
+                "Name": "运维主机",
+                "PublicIp": "192.0.2.123",
+                "PrivateIp": "10.0.0.123",
+                "ApCode": "ap-guangzhou",
+                "OsName": "linux",
                 "Kind": 1,
+                "Port": 1,
                 "GroupSet": [
                     {
-                        "Department": {
-                            "Managers": [
-                                "xx"
-                            ],
-                            "Id": "xx",
-                            "Name": "xx"
-                        },
                         "Id": 1,
-                        "Name": "xx"
+                        "Name": "group1213",
+                        "Department": {
+                            "Id": "dept1415",
+                            "Name": "deptName1617",
+                            "Managers": [
+                                "manager1819"
+                            ],
+                            "ManagerUsers": [
+                                {
+                                    "ManagerId": "managerId2021",
+                                    "ManagerName": "managerName2223"
+                                }
+                            ]
+                        },
+                        "Count": 1
                     }
                 ],
+                "AccountCount": 1,
+                "VpcId": "vpc-2425",
+                "SubnetId": "subnet-2627",
                 "Resource": {
-                    "RenewFlag": 1,
-                    "Zone": "xx",
-                    "SubnetName": "xx",
+                    "ResourceId": "bh-saas-resource",
+                    "ApCode": "ap3031",
+                    "SvArgs": "sv3233",
+                    "VpcId": "vpc3435",
                     "Nodes": 1,
+                    "RenewFlag": 1,
+                    "ExpireTime": "2020-09-22T00:00:00+00:00",
                     "Status": 1,
-                    "VpcId": "xx",
-                    "SubProductCode": "xx",
-                    "ResourceId": "xx",
-                    "PackageBandwidth": 1,
-                    "VpcName": "xx",
-                    "ApCode": "xx",
-                    "SubnetId": "xx",
-                    "ResourceName": "xx",
+                    "ResourceName": "resource3637",
+                    "Pid": 1,
+                    "CreateTime": "2020-09-22T00:00:00+00:00",
+                    "ProductCode": "product3839",
+                    "SubProductCode": "subproduct4041",
+                    "Zone": "zone4243",
                     "Expired": true,
                     "Deployed": true,
-                    "ProductCode": "xx",
+                    "VpcName": "vpc-4445",
+                    "VpcCidrBlock": "10.0.0.0/16",
+                    "SubnetId": "subnet-4647",
+                    "SubnetName": "subnetName4849",
+                    "CidrBlock": "10.0.1.0/24",
                     "PublicIpSet": [
-                        "xx"
+                        "192.0.2.123"
+                    ],
+                    "PrivateIpSet": [
+                        "10.0.0.123"
                     ],
                     "ModuleSet": [
-                        "xx"
+                        "module5051"
                     ],
-                    "ExtendPoints": 1,
                     "UsedNodes": 1,
-                    "PrivateIpSet": [
-                        "xx"
-                    ],
-                    "Pid": 1,
-                    "VpcCidrBlock": "xx",
+                    "ExtendPoints": 1,
+                    "PackageBandwidth": 1,
                     "PackageNode": 1,
-                    "ExpireTime": "2020-09-22T00:00:00+00:00",
-                    "SvArgs": "xx",
-                    "CidrBlock": "xx",
-                    "CreateTime": "2020-09-22T00:00:00+00:00"
-                },
-                "Name": "xx",
-                "InstanceId": "xx",
-                "OsName": "xx",
-                "AccountCount": 1,
-                "PrivateIp": "xx",
-                "PublicIp": "xx",
-                "Department": {
-                    "Managers": [
-                        "xx"
+                    "LogDeliveryArgs": "log5253",
+                    "ClbSet": [
+                        {
+                            "ClbIp": "192.0.2.123"
+                        }
                     ],
-                    "Id": "xx",
-                    "Name": "xx"
+                    "DomainCount": 1,
+                    "UsedDomainCount": 1,
+                    "Trial": 1,
+                    "LogDelivery": "log5455",
+                    "CdcClusterId": "cdc5657",
+                    "DeployModel": 1
                 },
-                "VpcId": "xx",
-                "ApCode": "xx",
-                "SubnetId": "xx",
-                "Port": 1,
-                "Id": 1
+                "Department": {
+                    "Id": "dept6061",
+                    "Name": "deptName6263",
+                    "Managers": [
+                        "manager6465"
+                    ],
+                    "ManagerUsers": [
+                        {
+                            "ManagerId": "managerId6667",
+                            "ManagerName": "managerName6869"
+                        }
+                    ]
+                },
+                "IpPortSet": [
+                    "192.0.2.123:80"
+                ],
+                "DomainId": "net-default",
+                "DomainName": "默认网络域",
+                "EnableSSL": 0,
+                "SSLCertName": "bh-test-cert"
             }
-        ]
+        ],
+        "RequestId": "dfac9070-8b23-499e-83b2-a50e3ca059af"
     }
 }
 ```

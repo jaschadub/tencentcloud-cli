@@ -6,49 +6,41 @@ Input:
 
 ```
 tccli gaap DescribeProxyGroupList --cli-unfold-argument  \
-    --ProjectId 0 \
     --Offset 0 \
-    --Limit 20
+    --Limit 1 \
+    --ProjectId 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 2,
-        "RequestId": "8b6bb93c-0dce-4513-a274-1410f276307c",
         "ProxyGroupList": [
             {
-                "Status": 0,
+                "CreateTime": 1768205812,
                 "Domain": null,
+                "FeatureBitmap": 7,
+                "GroupId": "lg-joaaddy1",
+                "GroupName": "group-name-01",
+                "Http3Supported": 1,
                 "ProjectId": 0,
-                "GroupName": "t4",
-                "TagSet": [],
+                "ProxyType": 0,
                 "RealServerRegionInfo": {
-                    "RegionId": "EastChina",
-                    "RegionName": "EastChina",
+                    "FeatureBitmap": 207,
+                    "IDCType": "dc",
                     "RegionArea": "EastChina",
                     "RegionAreaName": "EastChina",
-                    "IDCType": "ec"
+                    "RegionId": "Shanghai",
+                    "RegionName": "上海（原中国大陆-华东大区）",
+                    "SupportFeature": null
                 },
-                "GroupId": "lg-mh4k07v5"
-            },
-            {
-                "Status": 0,
-                "Domain": null,
-                "ProjectId": 0,
-                "GroupName": "sandytest2",
+                "Status": "CHANGING",
                 "TagSet": [],
-                "RealServerRegionInfo": {
-                    "RegionId": "EastChina",
-                    "RegionName": "EastChina",
-                    "RegionArea": "EastChina",
-                    "RegionAreaName": "EastChina",
-                    "IDCType": "ec"
-                },
-                "GroupId": "lg-d5y6ei3b"
+                "Version": "3.0"
             }
-        ]
+        ],
+        "TotalCount": 17,
+        "RequestId": "5fa9ade4-b5b7-4306-9b62-7e67ee3823fc"
     }
 }
 ```

@@ -1,4 +1,4 @@
-**Example 1: 更新泳道信息**
+**Example 1: 更新泳道配置信息**
 
 
 
@@ -6,16 +6,18 @@ Input:
 
 ```
 tccli tsf ModifyLane --cli-unfold-argument  \
-    --LaneId 1 \
-    --LaneName 1 \
-    --Remark 1
+    --LaneId lane-ap62k7ol \
+    --LaneName rule_app \
+    --Remark This is desc
 ```
 
 Output: 
 ```
 {
-    "RequestId": "aa9c0ea6-5bc1-42c1-90d3-ad2b0653ed56",
-    "Result": true
+    "Response": {
+        "RequestId": "3ad3847e-b102-4b45-8f90-bb64112cc27f",
+        "Result": true
+    }
 }
 ```
 

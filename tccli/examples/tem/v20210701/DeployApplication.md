@@ -6,61 +6,59 @@ Input:
 
 ```
 tccli tem DeployApplication --cli-unfold-argument  \
-    --Service.ApplicationName xx \
-    --Service.ExternalIp xx \
-    --Service.Name xx \
-    --Service.PortMappings.0.Protocol xx \
-    --Service.PortMappings.0.TargetPort 0 \
-    --Service.PortMappings.0.Port 0 \
-    --Service.Yaml xx \
-    --Service.LoadBalanceId xx \
-    --Service.VersionName xx \
-    --Service.ClusterIp xx \
-    --Service.SubnetId xx \
-    --Service.Type xx \
-    --Service.Ports 0 \
-    --JvmOpts xx \
-    --StorageConfs.0.StorageVolName xx \
-    --StorageConfs.0.StorageVolIp xx \
-    --StorageConfs.0.StorageVolPath xx \
-    --ImgRepo xx \
-    --EnvConf.0.Value xx \
-    --EnvConf.0.Key xx \
-    --ImageCommand xx \
-    --Description xx \
-    --JdkVersion xx \
-    --ApplicationId xx \
-    --LogOutputConf.ClsLogTopicId xx \
-    --LogOutputConf.ClsLogsetName xx \
-    --LogOutputConf.ClsLogsetId xx \
-    --LogOutputConf.ClsLogTopicName xx \
-    --LogOutputConf.OutputType xx \
-    --UseRegistryDefaultConfig True \
-    --CpuSpec 0.0 \
-    --DeployMode xx \
-    --SecurityGroupIds xx \
-    --SourceChannel 0 \
-    --DeployVersion xx \
-    --InitPodNum 1 \
-    --VersionDesc xx \
-    --ImageArgs xx \
-    --MemorySpec 0.0 \
-    --EnvironmentId xx \
-    --LogConfs xx \
-    --PkgName xx \
-    --StorageMountConfs.0.VolumeName xx \
-    --StorageMountConfs.0.MountPath xx \
-    --EsInfo.MinAliveInstances 0 \
-    --EsInfo.EsStrategy 0 \
-    --EsInfo.VersionId xx \
-    --EsInfo.Threshold 1 \
-    --EsInfo.MaxAliveInstances 2 \
-    --VersionId xx \
-    --SettingConfs.0.ConfigDataName xx \
-    --SettingConfs.0.MountedPath xx \
-    --SettingConfs.0.Data.0.Value xx \
-    --SettingConfs.0.Data.0.Key xx \
-    --OsFlavour ALPINE
+    --ApplicationId app-5vaz8x85 \
+    --ConfEdited False \
+    --DeployMode JAR \
+    --JdkVersion KONA:11 \
+    --PkgName tem/pkg/130xxxx/app-5vaz8x85/1733xxxx/K8sDemo-1.0.jar \
+    --SpeedUp True \
+    --OsFlavour ALPINE \
+    --DeployVersion 20241202165113 \
+    --JvmOpts -Xms128m -XX:MetaspaceSize=128m \
+    --InitPodNum 3 \
+    --CpuSpec 1 \
+    --MemorySpec 2 \
+    --EnvConf.0.Key key \
+    --EnvConf.0.Value val \
+    --EnvConf.0.Type default \
+    --EnvConf.0.Config  \
+    --EnvConf.0.Secret  \
+    --LogEnable 0 \
+    --SecurityGroupIds sg-1zwhplpi \
+    --EnvironmentId en-dpxydze5 \
+    --Service.ServicePortMappingList.0.Type CLUSTER \
+    --Service.ServicePortMappingList.0.ServiceName k8s-svc-test \
+    --Service.ServicePortMappingList.0.ClusterIp 172.16.56.122 \
+    --Service.ServicePortMappingList.0.ExternalIp 10.xx.xx.xx \
+    --Service.ServicePortMappingList.0.ExternalDomain ext.domain.com \
+    --Service.ServicePortMappingList.0.SubnetId subnet-xxx \
+    --Service.ServicePortMappingList.0.VpcId vpc-oxyzq5xx \
+    --Service.ServicePortMappingList.0.LoadBalanceId 10.xx.xx.xx \
+    --Service.ServicePortMappingList.0.Yaml apiVersion: xxxxx \
+    --Service.ServicePortMappingList.0.Ports 8080 \
+    --Service.ServicePortMappingList.0.PortMappingItemList.0.Port 8080 \
+    --Service.ServicePortMappingList.0.PortMappingItemList.0.TargetPort 8080 \
+    --Service.ServicePortMappingList.0.PortMappingItemList.0.Protocol TCP \
+    --Service.EnableRegistryNextDeploy 0 \
+    --Service.FlushAll True \
+    --UseRegistryDefaultConfig False \
+    --EnableTracing 0 \
+    --SettingConfs.0.ConfigDataName cfg-test-1 \
+    --SettingConfs.0.MountedPath /data \
+    --SettingConfs.0.SecretDataName secret-name \
+    --DeployStrategyConf.TotalBatchCount 1 \
+    --DeployStrategyConf.BetaBatchNum 0 \
+    --DeployStrategyConf.DeployStrategyType 3 \
+    --DeployStrategyConf.MinAvailable 1 \
+    --DeployStrategyConf.Force True \
+    --DeployStrategyConf.BatchInterval 0 \
+    --PostStart /bin/sh
+-c
+curl localhost:8080/postStart \
+    --PreStop /bin/sh
+-c
+wget --server-response --spider -S --no-verbose --header="Content-Type:application/json" --post-data='{"serverName":"api-basic"}' "http://localhost:9900/actuator/stopmsg"
+sleep 30s
 ```
 
 Output: 
@@ -68,74 +66,7 @@ Output:
 {
     "Response": {
         "RequestId": "81f74023-563c-437d-abf7-8139449ef178",
-        "Result": "version-xxx"
-    }
-}
-```
-
-**Example 2: nanjing-test-20220111**
-
-
-
-Input: 
-
-```
-tccli tem DeployApplication --cli-unfold-argument  \
-    --Service.Name 字符串 \
-    --JvmOpts 字符串 \
-    --SpeedUp false \
-    --PreStop 字符串 \
-    --ImgRepo 字符串 \
-    --EnvConf.0.Config 字符串 \
-    --EnvConf.0.Type 字符串 \
-    --EnvConf.0.Key 字符串 \
-    --EnvConf.0.Value 字符串 \
-    --ImageCommand 字符串 \
-    --Description 字符串 \
-    --JdkVersion 字符串 \
-    --ApplicationId 字符串 \
-    --LogOutputConf.ClsLogTopicName 字符串 \
-    --LogOutputConf.ClsLogsetName 字符串 \
-    --LogOutputConf.ClsLogTopicId 字符串 \
-    --LogOutputConf.OutputType 字符串 \
-    --LogOutputConf.ClsLogsetId 字符串 \
-    --ConfEdited false \
-    --EnvironmentId 字符串 \
-    --CpuSpec 0.1 \
-    --DeployMode 字符串 \
-    --SecurityGroupIds 字符串 \
-    --SourceChannel 0 \
-    --LogEnable 0 \
-    --InitPodNum 2 \
-    --VersionDesc 字符串 \
-    --ImageArgs 字符串 \
-    --MemorySpec 1024 \
-    --UseRegistryDefaultConfig true \
-    --LogConfs 字符串 \
-    --PkgName 字符串 \
-    --StorageMountConfs.0.VolumeName 字符串 \
-    --StorageMountConfs.0.MountPath 字符串 \
-    --DeployVersion 字符串 \
-    --VersionId 字符串 \
-    --SettingConfs.0.ConfigDataName 字符串 \
-    --SettingConfs.0.MountedPath 字符串 \
-    --SettingConfs.0.Data.0.Config 字符串 \
-    --SettingConfs.0.Data.0.Type 字符串 \
-    --SettingConfs.0.Data.0.Key 字符串 \
-    --SettingConfs.0.Data.0.Value 字符串 \
-    --StorageConfs.0.StorageVolPath 字符串 \
-    --StorageConfs.0.StorageVolIp 字符串 \
-    --StorageConfs.0.StorageVolName 字符串 \
-    --PostStart 字符串 \
-    --OsFlavour ALPINE
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "422a54ac-9913-4d46-8439-9c05600003b3",
-        "Result": "version-success"
+        "Result": "revision-xxxxxx"
     }
 }
 ```

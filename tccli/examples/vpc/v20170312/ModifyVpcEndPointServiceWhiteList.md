@@ -1,13 +1,13 @@
 **Example 1: 修改终端节点服务白名单**
 
-
+修改终端节点服务白名单
 
 Input: 
 
 ```
 tccli vpc ModifyVpcEndPointServiceWhiteList --cli-unfold-argument  \
-    --UserUin 123 \
-    --Description 测试 \
+    --UserUin 700000483554 \
+    --Description demo \
     --EndPointServiceId vpcsvc-b2mrmmx7
 ```
 

@@ -1,4 +1,4 @@
-**Example 1: 图像标签检测请求成功**
+**Example 1: 图像标签检测请求失败**
 
 
 
@@ -6,7 +6,31 @@ Input:
 
 ```
 tccli tiia DetectLabel --cli-unfold-argument  \
-    --ImageUrl https://test.jpg \
+    --ImageUrl https://cos.ap-singapore.myqcloud.com/input.png
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation.DownLoadError",
+            "Message": "下载失败"
+        },
+        "RequestId": "a169390a-6ff3-4c42-ad25-a7858c35e576"
+    }
+}
+```
+
+**Example 2: 图像标签检测请求成功**
+
+
+
+Input: 
+
+```
+tccli tiia DetectLabel --cli-unfold-argument  \
+    --ImageUrl https://cos.ap-singapore.myqcloud.com/input.png \
     --Scenes WEB CAMERA ALBUM
 ```
 
@@ -113,26 +137,6 @@ Output:
             }
         ],
         "RequestId": "e6d685b1-d898-4dc9-a545-cfeb3a988da8"
-    }
-}
-```
-
-**Example 2: 图像标签检测请求失败**
-
-
-
-Input: 
-
-```
-tccli tiia DetectLabel --cli-unfold-argument  \
-    --ImageUrl https://123.jpg
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "a169390a-6ff3-4c42-ad25-a7858c35e576"
     }
 }
 ```

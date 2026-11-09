@@ -19,6 +19,9 @@ Output:
             {
                 "TaskId": "taskId1",
                 "TaskType": "WorkflowTask",
+                "SubTaskTypes": [
+                    "action-trans"
+                ],
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
@@ -26,6 +29,9 @@ Output:
             {
                 "TaskId": "taskId2",
                 "TaskType": "WorkflowTask",
+                "SubTaskTypes": [
+                    "action-trans"
+                ],
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
@@ -33,6 +39,9 @@ Output:
             {
                 "TaskId": "taskId3",
                 "TaskType": "WorkflowTask",
+                "SubTaskTypes": [
+                    "action-trans"
+                ],
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
@@ -40,6 +49,9 @@ Output:
             {
                 "TaskId": "taskId4",
                 "TaskType": "WorkflowTask",
+                "SubTaskTypes": [
+                    "action-trans"
+                ],
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
@@ -47,6 +59,9 @@ Output:
             {
                 "TaskId": "taskId5",
                 "TaskType": "WorkflowTask",
+                "SubTaskTypes": [
+                    "action-trans"
+                ],
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
@@ -58,39 +73,7 @@ Output:
 }
 ```
 
-**Example 2: 获取任务列表-处理中**
-
-
-
-Input: 
-
-```
-tccli mps DescribeTasks --cli-unfold-argument  \
-    --Status PROCESSING \
-    --Limit 5
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TotalCount": 1,
-        "TaskSet": [
-            {
-                "TaskId": "taskId7",
-                "TaskType": "WorkflowTask",
-                "CreateTime": "2018-12-27T13:57:15Z",
-                "BeginProcessTime": "2018-12-27T13:57:15Z",
-                "FinishTime": "0000-00-00T00:00:00Z"
-            }
-        ],
-        "ScrollToken": "",
-        "RequestId": "46311b39-10ce-47eb-b2b6-7ce82bb4476d"
-    }
-}
-```
-
-**Example 3: 获取任务列表-翻页**
+**Example 2: 获取任务列表-翻页**
 
 
 
@@ -112,9 +95,47 @@ Output:
             {
                 "TaskId": "taskId6",
                 "TaskType": "WorkflowTask",
+                "SubTaskTypes": [
+                    "action-trans"
+                ],
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
+            }
+        ],
+        "ScrollToken": "",
+        "RequestId": "46311b39-10ce-47eb-b2b6-7ce82bb4476d"
+    }
+}
+```
+
+**Example 3: 获取任务列表-处理中**
+
+
+
+Input: 
+
+```
+tccli mps DescribeTasks --cli-unfold-argument  \
+    --Status PROCESSING \
+    --Limit 5
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 1,
+        "TaskSet": [
+            {
+                "TaskId": "taskId7",
+                "TaskType": "WorkflowTask",
+                "SubTaskTypes": [
+                    "action-trans"
+                ],
+                "CreateTime": "2018-12-27T13:57:15Z",
+                "BeginProcessTime": "2018-12-27T13:57:15Z",
+                "FinishTime": "0000-00-00T00:00:00Z"
             }
         ],
         "ScrollToken": "",

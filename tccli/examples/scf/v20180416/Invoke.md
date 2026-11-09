@@ -1,12 +1,12 @@
 **Example 1: 运行函数**
 
-
+运行函数
 
 Input: 
 
 ```
 tccli scf Invoke --cli-unfold-argument  \
-    --FunctionName xxxx
+    --FunctionName function-demo
 ```
 
 Output: 

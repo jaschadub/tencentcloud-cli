@@ -1,7 +1,26 @@
-
+# -*- coding: utf-8 -*-
+import argparse
 import json
 from tccli.exceptions import ParamError
 from tccli.loaders import CLI_BASE_TYPE
+
+
+def _escape_argparse_help(text):
+    """在 argparse 执行百分号格式化前转义字面量百分号。"""
+    if not text:
+        return text
+    return text.replace('%', '%%')
+
+
+def str_to_bool(value):
+    if isinstance(value, bool):
+        return value
+    if value.lower() in ('true', 't', '1'):
+        return True
+    elif value.lower() in ('false', 'f', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Value of Boolean must be true/false, t/f, 1/0')
 
 
 class BaseArgument(object):
@@ -169,7 +188,7 @@ class CLIArgument(BaseArgument):
         'Float': float,
         'Integer': int,
         'Timestamp': str,
-        'Boolean': str
+        'Boolean': str_to_bool
     }
 
     def __init__(self, name, argument_model, action_model,
@@ -212,7 +231,7 @@ class CLIArgument(BaseArgument):
         cli_name = self.cli_name
         parser.add_argument(
             cli_name,
-            help=self.documentation,
+            help=_escape_argparse_help(self.documentation),
             type=self.cli_type,
             required=self.required)
 
@@ -295,7 +314,7 @@ class BooleanArgument(CLIArgument):
 
     def add_to_parser(self, parser):
         parser.add_argument(self.cli_name,
-                            help=self.documentation,
+                            help=_escape_argparse_help(self.documentation),
                             action=self._action,
                             default=self._default,
                             dest=self._destination)

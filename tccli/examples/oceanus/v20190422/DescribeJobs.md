@@ -1,53 +1,62 @@
-**Example 1: 查询作业列表**
+**Example 1: demo**
 
 
 
 Input: 
 
 ```
-tccli oceanus DescribeJobs --cli-unfold-argument ```
+tccli oceanus DescribeJobs --cli-unfold-argument  \
+    --JobIds cql-c02rgjsj
+```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "JobSet": [
             {
-                "TotalRunMillis": 2264500,
-                "Zone": "xx",
-                "Remark": "xx",
-                "FlinkVersion": "xx",
-                "WebUIUrl": "xx",
-                "Name": "xx",
-                "Status": 4,
-                "UpdateTime": "xx",
-                "CreatorUin": "xx",
-                "WorkSpaceName": "xx",
-                "RunningCu": 0.0,
-                "ClusterId": "xx",
-                "JobId": "xx",
-                "WorkSpaceId": "xx",
-                "LastOpResult": "xx",
-                "RunningCuNum": 1,
-                "SchedulerType": 1,
+                "JobId": "cql-c02rgjsj",
+                "Region": "ap-chongqing",
+                "Zone": "ap-chongqing-1",
+                "AppId": 1257052345,
+                "OwnerUin": "1002342346",
+                "CreatorUin": "1000372342342",
+                "Name": "paimon120test",
                 "JobType": 1,
+                "ClusterName": "rwr0707",
+                "RunningCuNum": 2,
+                "RunningCu": 2,
                 "CuMem": 4,
-                "LatestJobConfigVersion": 2,
-                "Region": "xx",
-                "OwnerUin": "xx",
-                "StopTime": "xx",
-                "PublishedJobConfigVersion": 2,
-                "StatusDesc": "xx",
-                "ClusterName": "xx",
-                "StartTime": "xx",
-                "AppId": 1234567890,
-                "ClusterStatus": 0,
-                "CurrentRunMillis": 3201,
-                "CreateTime": "xx"
+                "LatestJobConfigVersion": 1,
+                "LatestValidJobConfigVersion": 1,
+                "PublishedJobConfigVersion": 1,
+                "Status": 4,
+                "StatusDesc": "running",
+                "CreateTime": "2026-07-30 16:26:29",
+                "StartTime": "2026-07-30 16:29:44",
+                "StopTime": "2026-07-30 16:30:06",
+                "UpdateTime": "2026-07-30 16:30:06",
+                "CurrentRunMillis": 424807099,
+                "TotalRunMillis": 424807099,
+                "Remark": "",
+                "Description": "",
+                "LastOpResult": "",
+                "ClusterId": "cluster-sdfsa",
+                "WebUIUrl": "https://ap-chongqing.flinkui.qcloudoceanus.com/cluster-sdfsa/cql-c02rgjsj-837534/?defaultToken=0",
+                "SchedulerType": 2,
+                "ClusterStatus": 2,
+                "FlinkVersion": "Flink-1.20",
+                "JdkVersion": "8",
+                "WorkSpaceId": "space-dzsdfn3",
+                "WorkSpaceName": "Default",
+                "Tags": null,
+                "EventInfo": {
+                    "ErrorEventTotal": 0
+                }
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "e27d0353-bsdfs7-496c-b13f-1b241d935d6f",
+        "TotalCount": 31
     }
 }
 ```

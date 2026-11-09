@@ -1,6 +1,6 @@
-**Example 1: 查询可售卖实例规格信息**
+**Example 1: 查询购买页可购买的实例规格**
 
-
+该接口（DescribeInstanceSpecs）用于查询购买页可购买的实例规格
 
 Input: 
 
@@ -15,39 +15,25 @@ Output:
     "Response": {
         "InstanceSpecSet": [
             {
+                "Cpu": 1,
+                "Memory": 1,
                 "MaxStorageSize": 1,
+                "MinStorageSize": 1,
+                "HasStock": true,
+                "MachineType": "exclusive",
+                "MaxIops": 0,
+                "MaxIoBandWidth": 0,
                 "ZoneStockInfos": [
                     {
+                        "Zone": "ap-beijing-3",
                         "HasStock": true,
-                        "Zone": "xx"
+                        "StockCount": 0
                     }
                 ],
-                "MachineType": "xx",
-                "HasStock": true,
-                "Memory": 1,
-                "MinStorageSize": 1,
-                "MaxIoBandWidth": 0,
-                "Cpu": 1,
-                "MaxIops": 0
-            },
-            {
-                "MaxStorageSize": 1,
-                "ZoneStockInfos": [
-                    {
-                        "HasStock": true,
-                        "Zone": "xx"
-                    }
-                ],
-                "MachineType": "xx",
-                "HasStock": true,
-                "Memory": 1,
-                "MinStorageSize": 1,
-                "MaxIoBandWidth": 0,
-                "Cpu": 1,
-                "MaxIops": 0
+                "StockCount": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "1c7f08d0-e143-4305-9554-ea236d1a2981"
     }
 }
 ```

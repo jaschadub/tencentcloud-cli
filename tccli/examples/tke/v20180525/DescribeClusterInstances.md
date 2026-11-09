@@ -6,55 +6,57 @@ Input:
 
 ```
 tccli tke DescribeClusterInstances --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx
+    --ClusterId cls-7ph3twqe
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "InstanceSet": [
             {
+                "InstanceId": "ins-ocd7e1lx",
+                "LanIP": "9.165.0.2",
+                "InstanceRole": "WORKER",
+                "InstanceState": "running",
+                "NodePoolId": "",
+                "AutoscalingGroupId": "",
+                "FailedReason": "=Ready:True",
+                "DrainStatus": "",
                 "InstanceAdvancedSettings": {
-                    "DockerGraphPath": "xx",
+                    "MountTarget": "",
+                    "DockerGraphPath": "",
+                    "UserScript": "",
+                    "Unschedulable": 0,
                     "Labels": [
                         {
-                            "Name": "xx",
-                            "Value": "xx"
+                            "Name": "node-type",
+                            "Value": "controller"
+                        }
+                    ],
+                    "Taints": null,
+                    "DataDisks": [
+                        {
+                            "DiskType": "CLOUD_PREMIUM",
+                            "FileSystem": "ext4",
+                            "DiskSize": 200,
+                            "AutoFormatAndMount": true,
+                            "MountTarget": "/var/lib/docker",
+                            "DiskPartition": ""
                         }
                     ],
                     "ExtraArgs": {
-                        "Kubelet": [
-                            "xx"
-                        ]
+                        "Kubelet": []
                     },
-                    "Unschedulable": 0,
-                    "UserScript": "xx",
-                    "MountTarget": "xx",
-                    "DataDisks": [
-                        {
-                            "DiskPartition": "xx",
-                            "DiskType": "xx",
-                            "DiskSize": 0,
-                            "FileSystem": "xx",
-                            "AutoFormatAndMount": true,
-                            "MountTarget": "xx"
-                        }
-                    ]
+                    "DesiredPodNumber": 32,
+                    "GPUArgs": null,
+                    "PreStartUserScript": null
                 },
-                "InstanceId": "xx",
-                "InstanceRole": "xx",
-                "LanIP": "xx",
-                "DrainStatus": "xx",
-                "AutoscalingGroupId": "xx",
-                "InstanceState": "xx",
-                "CreatedTime": "xx",
-                "NodePoolId": "xx",
-                "FailedReason": "xx"
+                "CreatedTime": "2021-03-09T08:26:51Z"
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "xx"
+        "RequestId": "342ea0aa-e45a-41dd-84f5-f7a2929d3fac"
     }
 }
 ```

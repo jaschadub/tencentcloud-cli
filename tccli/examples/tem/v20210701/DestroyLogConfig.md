@@ -6,8 +6,9 @@ Input:
 
 ```
 tccli tem DestroyLogConfig --cli-unfold-argument  \
-    --EnvironmentId xx \
-    --Name xx
+    --EnvironmentId en-xxxxxx \
+    --Name name-xxx \
+    --ApplicationId app-xxxxxx
 ```
 
 Output: 

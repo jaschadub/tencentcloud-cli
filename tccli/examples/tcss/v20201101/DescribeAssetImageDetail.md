@@ -6,42 +6,44 @@ Input:
 
 ```
 tccli tcss DescribeAssetImageDetail --cli-unfold-argument  \
-    --ImageID dskaldjskld
+    --ImageID sha256:707540fd8a54ab3ebc086ecc96d2d6143fd92c1cac4d0b23353e1b7078b5937b
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "AgentError": "",
-        "Architecture": "",
-        "Author": "",
-        "BuildHistory": "file:c92c248239f8c7b9b3c067650954815f391b7bcb09023f984972c082ace2a8d0 in  ",
-        "ContainerCnt": 0,
-        "CreateTime": "2021-01-29T04:03:11Z",
-        "HostCnt": 1,
-        "ImageID": "sha256:1c19ee40bfafd313400cde57a50b38b16ed4751c6b62a64141f18629a0e9d430",
-        "ImageName": "<none>:<none>",
+        "AgentError": "timeout",
+        "Architecture": "Metadata",
+        "Author": "symon",
+        "BuildHistory": "# create_time:2021-09-15 18:20:05 tags:docker.io/centos:latest,yancyw:1,yancyw:2,yancyw:3, ADD file:1114113413411342942e068863ce2a8491bb71522c652f31fb466 in / ",
+        "ContainerCnt": 51,
+        "CreateTime": "2021-09-16 02:20:05",
+        "HostCnt": 24,
+        "SuperNodeCnt": 1,
+        "ImageDigest": "sha256:707540fd8a54ab3ebc086ecc96d2d6143fd92c1cac4d0b23353e1b7078b5937b",
+        "ImageID": "sha256:707540fd8a54ab3ebc086ecc96d2d6143fd92c1cac4d0b23353e1b7078b5937b",
+        "ImageName": "docker.io/centos:latest",
+        "IsAuthorized": 1,
         "IsTrustImage": true,
-        "OsName": "alpine:v3.12",
+        "OsName": "centos:8.4.2105",
         "RemainScanTime": 0,
-        "RequestId": "1d1ca0b5-f2ca-40bb-8797-39132bdbf35e",
-        "RiskCnt": 7,
-        "ScanError": "",
-        "ScanRiskError": "",
-        "ScanRiskProgress": 100,
-        "ScanStatus": "SCAN_ERR",
-        "ScanTime": "2021-01-29T05:26:18.07Z",
-        "ScanVirusError": " 失败",
-        "ScanVirusProgress": 100,
-        "ScanVulError": "",
-        "ScanVulProgress": 100,
+        "RequestId": "a11d268f-1601-4f63-9131-0382537b9e55",
+        "RiskCnt": 211,
+        "ScanError": "timeout",
+        "ScanRiskError": "timeout",
+        "ScanRiskProgress": 0,
+        "ScanStatus": "SCANNED",
+        "ScanTime": "2024-10-25 16:13:39",
+        "ScanVirusError": "timeout",
+        "ScanVirusProgress": 0,
+        "ScanVulError": "timeout",
+        "ScanVulProgress": 0,
         "SensitiveInfoCnt": 0,
-        "Size": 16159906,
-        "Status": 3,
-        "VirusCnt": 11,
-        "VulCnt": 5,
-        "IsAuthorized": 0
+        "Size": 231268856,
+        "Status": 5,
+        "VirusCnt": 0,
+        "VulCnt": 230
     }
 }
 ```

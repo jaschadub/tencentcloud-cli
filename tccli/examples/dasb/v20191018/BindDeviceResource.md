@@ -6,15 +6,16 @@ Input:
 
 ```
 tccli dasb BindDeviceResource --cli-unfold-argument  \
-    --ResourceId xx \
-    --DeviceIdSet 1
+    --ResourceId bh-saas-fphjn2p3 \
+    --DeviceIdSet 5186 \
+    --DomainId net-4sovwr11w7
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "dfac9070-8b23-499e-83b2-a50e3ca059af"
     }
 }
 ```

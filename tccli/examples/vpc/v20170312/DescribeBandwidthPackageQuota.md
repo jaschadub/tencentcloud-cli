@@ -1,6 +1,6 @@
 **Example 1: 查询带宽包配额**
 
-
+查询带宽包配额。
 
 Input: 
 
@@ -14,6 +14,7 @@ Output:
         "QuotaSet": [
             {
                 "QuotaId": "TOTAL_BANDWIDTHPKG_QUOTA",
+                "QuotaGroup": "ap-guangzhou",
                 "QuotaCurrent": 1,
                 "QuotaLimit": 20
             }

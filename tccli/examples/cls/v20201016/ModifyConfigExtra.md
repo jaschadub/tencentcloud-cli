@@ -1,14 +1,14 @@
 **Example 1: 修改特殊采集配置任务**
 
-
+修改特殊采集配置任务
 
 Input: 
 
 ```
 tccli cls ModifyConfigExtra --cli-unfold-argument  \
-    --ConfigExtraId xxxx-xx-xx-xx-xxxxxxxx \
+    --ConfigExtraId 6ef60bec-0242-43af-bb20-270359fb54a8 \
     --Name testname \
-    --TopicId xxxxxx-xxx-xxxxxx \
+    --TopicId 6ef60bec-0242-43af-bb20-270359fb54a8 \
     --Type host_file \
     --HostFile.LogPath /var/log/tmep \
     --HostFile.FilePattern *.log \
@@ -20,14 +20,13 @@ tccli cls ModifyConfigExtra --cli-unfold-argument  \
     --ExtractRule.LogRegex .* \
     --ExtractRule.BeginRegex ^ \
     --ExtractRule.Keys date  content \
-    --ExtractRule.FilterKeyRegex.0.Key xxx \
+    --ExtractRule.FilterKeyRegex.0.Key test-key \
     --ExtractRule.FilterKeyRegex.0.Regex ssss \
     --ExtractRule.UnMatchLogKey testlog \
     --ExtractRule.UnMatchUpLoadSwitch True \
     --ExtractRule.Backtracking -1 \
-    --ExcludePaths.0.Type xx \
-    --ExcludePaths.0.Value xx \
-    --UserDefineRule xxxxxx
+    --ExcludePaths.0.Type path \
+    --ExcludePaths.0.Value /var/log
 ```
 
 Output: 

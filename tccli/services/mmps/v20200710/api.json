@@ -4,97 +4,112 @@
       "document": "创建小程序隐私合规诊断任务",
       "input": "CreateAppScanTaskRequest",
       "name": "创建小程序隐私合规诊断任务",
-      "output": "CreateAppScanTaskResponse"
+      "output": "CreateAppScanTaskResponse",
+      "status": "online"
     },
     "CreateAppScanTaskRepeat": {
       "document": "小程序隐私合规诊断重试任务",
       "input": "CreateAppScanTaskRepeatRequest",
       "name": "隐私合规诊断重试任务",
-      "output": "CreateAppScanTaskRepeatResponse"
+      "output": "CreateAppScanTaskRepeatResponse",
+      "status": "online"
     },
     "CreateFlySecMiniAppProfessionalScanTask": {
       "document": "创建小程序安全深度诊断任务",
       "input": "CreateFlySecMiniAppProfessionalScanTaskRequest",
       "name": "提交深度诊断任务",
-      "output": "CreateFlySecMiniAppProfessionalScanTaskResponse"
+      "output": "CreateFlySecMiniAppProfessionalScanTaskResponse",
+      "status": "online"
     },
     "CreateFlySecMiniAppScanTask": {
       "document": "创建小程序翼扬安全的基础或深度诊断任务",
       "input": "CreateFlySecMiniAppScanTaskRequest",
       "name": "创建小程序翼扬安全诊断任务",
-      "output": "CreateFlySecMiniAppScanTaskResponse"
+      "output": "CreateFlySecMiniAppScanTaskResponse",
+      "status": "online"
     },
     "CreateFlySecMiniAppScanTaskRepeat": {
       "document": "重新提交基础诊断任务",
       "input": "CreateFlySecMiniAppScanTaskRepeatRequest",
       "name": "重新提交诊断任务",
-      "output": "CreateFlySecMiniAppScanTaskRepeatResponse"
+      "output": "CreateFlySecMiniAppScanTaskRepeatResponse",
+      "status": "online"
     },
     "DescribeBasicDiagnosisResourceUsageInfo": {
       "document": "查询翼扬安全基础诊断资源使用情况",
       "input": "DescribeBasicDiagnosisResourceUsageInfoRequest",
       "name": "查询基础诊断资源使用情况",
-      "output": "DescribeBasicDiagnosisResourceUsageInfoResponse"
+      "output": "DescribeBasicDiagnosisResourceUsageInfoResponse",
+      "status": "online"
     },
     "DescribeFlySecMiniAppReportUrl": {
       "document": "获取翼扬诊断任务报告链接地址",
       "input": "DescribeFlySecMiniAppReportUrlRequest",
       "name": "获取诊断任务报告链接",
-      "output": "DescribeFlySecMiniAppReportUrlResponse"
+      "output": "DescribeFlySecMiniAppReportUrlResponse",
+      "status": "online"
     },
     "DescribeFlySecMiniAppScanReportList": {
       "document": "查询指定小程序版本的翼扬诊断安全得分",
       "input": "DescribeFlySecMiniAppScanReportListRequest",
       "name": "查询指定小程序版本的安全得分",
-      "output": "DescribeFlySecMiniAppScanReportListResponse"
+      "output": "DescribeFlySecMiniAppScanReportListResponse",
+      "status": "online"
     },
     "DescribeFlySecMiniAppScanTaskList": {
       "document": "获取翼扬安全诊断任务列表",
       "input": "DescribeFlySecMiniAppScanTaskListRequest",
       "name": "获取诊断任务列表",
-      "output": "DescribeFlySecMiniAppScanTaskListResponse"
+      "output": "DescribeFlySecMiniAppScanTaskListResponse",
+      "status": "online"
     },
     "DescribeFlySecMiniAppScanTaskParam": {
       "document": "获取用户提交的基础诊断任务参数信息",
       "input": "DescribeFlySecMiniAppScanTaskParamRequest",
       "name": "获取诊断任务参数信息",
-      "output": "DescribeFlySecMiniAppScanTaskParamResponse"
+      "output": "DescribeFlySecMiniAppScanTaskParamResponse",
+      "status": "online"
     },
     "DescribeFlySecMiniAppScanTaskStatus": {
       "document": "查询翼扬安全诊断任务状态",
       "input": "DescribeFlySecMiniAppScanTaskStatusRequest",
       "name": "查询诊断任务状态",
-      "output": "DescribeFlySecMiniAppScanTaskStatusResponse"
+      "output": "DescribeFlySecMiniAppScanTaskStatusResponse",
+      "status": "online"
     },
     "DescribeResourceUsageInfo": {
       "document": "查询翼扬安全资源使用情况",
       "input": "DescribeResourceUsageInfoRequest",
       "name": "查询安全资源使用情况",
-      "output": "DescribeResourceUsageInfoResponse"
+      "output": "DescribeResourceUsageInfoResponse",
+      "status": "online"
     },
     "DescribeScanTaskList": {
       "document": "获取小程序隐私合规诊断任务列表",
       "input": "DescribeScanTaskListRequest",
       "name": "获取隐私合规诊断任务列表",
-      "output": "DescribeScanTaskListResponse"
+      "output": "DescribeScanTaskListResponse",
+      "status": "online"
     },
     "DescribeScanTaskReportUrl": {
       "document": "获取小程序合规诊断任务报告url",
       "input": "DescribeScanTaskReportUrlRequest",
       "name": "获取合规诊断任务报告url",
-      "output": "DescribeScanTaskReportUrlResponse"
+      "output": "DescribeScanTaskReportUrlResponse",
+      "status": "online"
     },
     "DescribeScanTaskStatus": {
       "document": "查询小程序隐私合规诊断任务状态",
       "input": "DescribeScanTaskStatusRequest",
       "name": "查询隐私合规诊断任务状态",
-      "output": "DescribeScanTaskStatusResponse"
+      "output": "DescribeScanTaskStatusResponse",
+      "status": "online"
     }
   },
   "metadata": {
     "apiVersion": "2020-07-10",
-    "api_brief": "",
-    "serviceNameCN": "小程序安全",
+    "api_brief": "## 概述\n\n小程序安全检测（Mini Program Security Scan，MPSS）为用户提供小程序全生命周期的一站式安全解决方案，主要包括**小程序安全加固**和**小程序安全扫描**两个子功能，并提供两个子功能的公有云和私有化部署服务。\n- 小程序安全加固在不改变应用源代码的情况下，针对小程序前端代码进行加密，实现字符串加密、属性加密、调用转换、代码混淆、反调试、防破解等多项保护措施；\n- 小程序安全扫描针对小程序前端和后台 Web 端整体提供自动化风险检测，覆盖 SQL 注入、XSS 跨站脚本、目录遍历、信息泄露等主流 Web 攻击方式的防范。\n\n小程序安全检测目前已广泛应用于金融、互联网、政务等多个行业，使个人和企业的小程序开发建设更加安全便捷。\n\n本章节介绍的小程序安全检测 API 接口均为 API 3.0 接口。\n\n您可以调用 API 对小程序安全检测进行操作，例如提交小程序加固任务、查询加固结果、发起小程序安全扫描任务、查询扫描检测结果等。\n\n小程序安全检测支持的所有接口信息，请参见 [API 概览](https://cloud.tencent.com/document/product/1223/75152)。\n\n\n## 术语表\n\n小程序安全检测 API 接口的常见术语请参见下表：\n\n| 术语 | 描述 |\n|---------|---------|\n| AppID | 小程序在微信/第三方开放平台注册后获得的公开唯一标识，用于定位待加固或待扫描的小程序。 |\n| UserID | 用户在小程序安全平台的账号标识，用于关联加固/扫描任务归属方。 |\n| 小程序安全加固 | 在不改变小程序源代码的前提下，对前端代码进行字符串加密、属性加密、调用转换、代码混淆、反调试、防破解等处理，防止代码被逆向分析的能力。 |\n| 小程序安全扫描 | 针对小程序前台代码与后台 Web/CGI 接口进行的自动化安全风险检测能力，覆盖 SQL 注入、XSS、目录遍历、信息泄露、API 使用不规范等风险项。 |\n| 加固任务 | 用户提交的一次小程序代码加固处理请求，包含加固前源码上传、加固策略配置、加固结果产出等过程。 |\n| 扫描任务 | 用户提交的一次小程序安全检测请求，系统会自动遍历小程序代码与网络请求，完成检测后生成扫描报告。 |\n| 爬虫引擎 | 通过 Native 层 Hook 方式劫持 V8 引擎执行流程，用于全面遍历爬取小程序代码和网络请求数据的检测组件。 |\n| 私有化部署 | 支持在无网络环境下将小程序安全加固/扫描能力部署到用户自有环境中使用的部署模式。 |\n\n\n## 使用限制\n\n- 使用小程序安全扫描功能时，仅需提供小程序公开的 AppID 和 UserID 即可发起自动化扫描，无需提供小程序源码。\n- 小程序安全加固后对页面加载时间影响较低，可以在热门 Top 300 机型（如华为、OPPO、vivo、小米等主流机型）上正常运行，加固方案不涉及兼容性问题。\n- 私有化部署场景下，加固与扫描能力均支持无网络环境使用；公有云场景下需保证服务端网络可正常访问小程序安全检测相关接口。\n- 具体接口调用频率限制、单次任务代码包大小限制等信息，请参见各接口文档的详细说明。\n\n\n## API 快速入门\n\n您可以使用 **API Explorer** 工具在线调用 API。\n本文以**提交一个小程序翼扬安全诊断任务**为例，通过 API Explorer 工具调用 API 接口的步骤如下：\n\n1. 进入[ API Explorer](https://console.cloud.tencent.com/api/explorer) 工具页面。更多 API Explorer 工具使用信息，请参见 [使用 API Explorer](https://cloud.tencent.com/document/product/1278/46697)。\n2. 调用 [CreateFlySecMiniAppScanTask ](https://cloud.tencent.com/document/product/1223/75142) 接口（翼扬安全诊断），提交小程序安全诊断任务。\n3. 诊断任务提交后，即可通过 [DescribeFlySecMiniAppScanTaskStatus](https://cloud.tencent.com/document/product/1223/75137) 接口查询任务状态，并通过 [DescribeFlySecMiniAppReportUrl](https://cloud.tencent.com/document/product/1223/75140) 获取诊断报告下载链接。",
+    "serviceNameCN": "小程序安全检测",
     "serviceShortName": "mmps"
   },
   "objects": {
@@ -102,94 +117,124 @@
       "document": "隐私合规应用信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序apiiid",
           "example": "wx66e50f1e*******6f",
           "member": "string",
           "name": "AppPackage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "小程序应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "小程序应用名称",
           "example": "测试小程序",
           "member": "string",
           "name": "AppName",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "小程序应用版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "小程序应用版本",
           "example": "小程序版本",
           "member": "string",
           "name": "AppVersion",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "应用平台, 0:android, 1:ios, 2:小程序",
           "example": "2",
           "member": "int64",
           "name": "Platform",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "小程序隐私诊断报告下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "小程序隐私诊断报告下载链接",
           "example": "诊断报告下载链接",
           "member": "string",
           "name": "ReportUrl",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "小程序隐私诊断报告名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "小程序隐私诊断报告名称",
           "example": "诊断报告名称",
           "member": "string",
           "name": "ReportTitle",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "小程序隐私诊断堆栈报告下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "小程序隐私诊断堆栈报告下载链接",
           "example": "诊断堆栈报告下载链接",
           "member": "string",
           "name": "BehaviorUrl",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "小程序隐私诊断堆栈报告名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "小程序隐私诊断堆栈报告名称",
           "example": "诊断堆栈报告名称",
           "member": "string",
           "name": "BehaviorTitle",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "诊断风险项数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "诊断风险项数量",
           "example": "5",
           "member": "int64",
           "name": "HighRiskCount",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "隐私申明文件名称",
+          "example": "隐私申明文本.txt",
+          "member": "string",
+          "name": "PrivacyTextName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "软件MD5",
+          "example": "c799****************************593f",
+          "member": "string",
+          "name": "SoftwareMD5",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "隐私文本MD5",
+          "example": "3bc1****************************4523",
+          "member": "string",
+          "name": "PrivacyTextMD5",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -198,82 +243,92 @@
       "document": "应用隐私合规诊断任务数据",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务id",
           "example": "1701438134******0",
           "member": "string",
           "name": "TaskID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务类型, 0:基础版, 1:专家版, 2:本地化",
           "example": "0",
           "member": "int64",
           "name": "TaskType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "0:默认值(待检测/待咨询), 1.检测中, 2:待评估, 3:评估中, 4:任务完成/咨询完成, 5:任务失败, 6:咨询中;",
           "example": "0",
           "member": "int64",
           "name": "TaskStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "错误信息",
           "example": "内部错误",
           "member": "string",
           "name": "TaskErrMsg",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务来源,0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
           "example": "0",
           "member": "int64",
           "name": "Source",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "应用信息",
           "example": " 复杂类型",
           "member": "AppInfoItem",
           "name": "AppInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务启动时间",
           "example": "2021-09-30 10:57:34",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务完成时间(更新时间)",
           "example": "2021-10-11 14:53:36",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "联系人信息",
+          "example": "张三",
+          "member": "string",
+          "name": "ContactName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -284,7 +339,7 @@
       "document": "CreateAppScanTaskRepeat请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务类型, 0:基础版, 1:专家版, 2:本地化",
           "example": "0",
           "member": "int64",
@@ -293,7 +348,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
           "example": "0",
           "member": "int64",
@@ -302,7 +357,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序AppID",
           "example": "wx66e50f1e*******6f",
           "member": "string",
@@ -311,7 +366,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "应用平台, 0:android, 1:ios, 2:小程序",
           "example": "2",
           "member": "int64",
@@ -320,7 +375,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "原诊断任务ID",
           "example": "170143813*******360",
           "member": "string",
@@ -335,6 +390,7 @@
       "document": "CreateAppScanTaskRepeat返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
@@ -344,6 +400,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务id",
           "example": "170143813*******360",
           "member": "string",
@@ -353,7 +410,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -365,7 +422,7 @@
       "document": "CreateAppScanTask请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务类型, 0:基础版, 1:专家版, 2:本地化",
           "example": "0",
           "member": "int64",
@@ -374,7 +431,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
           "example": "0",
           "member": "int64",
@@ -383,7 +440,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序AppID",
           "example": "wx66e50f1e*******6f",
           "member": "string",
@@ -392,7 +449,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "应用平台, 0:android, 1:ios, 2:小程序",
           "example": "2",
           "member": "int64",
@@ -401,7 +458,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序名称",
           "example": "测试小程序",
           "member": "string",
@@ -410,7 +467,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序版本",
           "example": "v1.0",
           "member": "string",
@@ -419,34 +476,34 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "联系人信息",
-          "example": "王某",
+          "example": "张三",
           "member": "string",
           "name": "ContactName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "联系电话",
-          "example": "13800138000",
+          "example": "138XXXXXXXX",
           "member": "string",
           "name": "TelNumber",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "公司名称",
-          "example": "小程序测试有限公司",
+          "example": "****科技有限公司",
           "member": "string",
           "name": "CorpName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "商务对接人员",
           "example": "张三",
           "member": "string",
@@ -455,9 +512,9 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "公司邮箱",
-          "example": "test@test.com",
+          "example": "user****@tencent.com",
           "member": "string",
           "name": "Email",
           "required": false,
@@ -470,25 +527,27 @@
       "document": "CreateAppScanTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务id",
           "example": "170143813*******360",
           "member": "string",
           "name": "TaskID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -500,7 +559,7 @@
       "document": "CreateFlySecMiniAppProfessionalScanTask请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序AppID",
           "example": "wx66e50f1e*******6f",
           "member": "string",
@@ -509,7 +568,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序名称",
           "example": "测试小程序",
           "member": "string",
@@ -518,7 +577,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断模式 2:深度诊断",
           "example": "2",
           "member": "int64",
@@ -527,36 +586,36 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "公司名称",
-          "example": "微信小程序有限公司",
+          "example": "****科技有限公司",
           "member": "string",
           "name": "CorpName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "手机号码",
-          "example": "13800138000",
+          "example": "138XXXXXXXX",
           "member": "string",
           "name": "Mobile",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "电子邮箱",
-          "example": "wechat@tencent.com",
+          "example": "user****@tencent.com",
           "member": "string",
           "name": "Email",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "备注信息",
-          "example": "thanks",
+          "example": "Remark备注信息",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -569,16 +628,17 @@
       "document": "CreateFlySecMiniAppProfessionalScanTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
           "name": "Ret",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -590,7 +650,7 @@
       "document": "CreateFlySecMiniAppScanTaskRepeat请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序AppID",
           "example": "wx66e50f1e*******6f",
           "member": "string",
@@ -599,7 +659,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断模式 1:基础诊断",
           "example": "1",
           "member": "int64",
@@ -608,7 +668,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "原任务id",
           "example": "170143813*******360",
           "member": "string",
@@ -617,7 +677,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序测试账号(自有账号体系需提供,其他情况不需要)",
           "example": "Test",
           "member": "string",
@@ -626,7 +686,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序测试密码(自有账号体系需提供,其他情况不需要)",
           "example": "TestPwd",
           "member": "string",
@@ -635,7 +695,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断扫描版本 0:正式版 1:体验版",
           "example": "0",
           "member": "int64",
@@ -650,6 +710,7 @@
       "document": "CreateFlySecMiniAppScanTaskRepeat返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
@@ -659,6 +720,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务id",
           "example": "170143813*******360",
           "member": "string",
@@ -668,7 +730,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -680,7 +742,7 @@
       "document": "CreateFlySecMiniAppScanTask请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序AppID",
           "example": "wx66e50f1e*******6f",
           "member": "string",
@@ -689,7 +751,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断模式 1:基础诊断",
           "example": "1",
           "member": "int64",
@@ -698,7 +760,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序测试账号(自有账号体系需提供,其他情况不需要)",
           "example": "Test",
           "member": "string",
@@ -707,7 +769,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序测试密码(自有账号体系需提供,其他情况不需要)",
           "example": "TestPwd",
           "member": "string",
@@ -716,7 +778,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序所属行业",
           "example": "电商",
           "member": "string",
@@ -725,7 +787,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序调查问卷json字符串",
           "example": "{\"wx66e50f1e*******6f\":{\"1\":[\"B\"],\"n\":[\"A\",\"B\",\"D\"]}}",
           "member": "string",
@@ -734,34 +796,34 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "手机号码",
-          "example": "13800138000",
+          "example": "138XXXXXXXX",
           "member": "string",
           "name": "Mobile",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "邮箱地址",
-          "example": "wechat@tencent.com",
+          "example": "user****@tencent.com",
           "member": "string",
           "name": "Email",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "商务合作接口人",
-          "example": "王某",
+          "example": "张三",
           "member": "string",
           "name": "SalesPerson",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断扫描版本 0:正式版 1:体验版",
           "example": "0",
           "member": "int64",
@@ -776,25 +838,27 @@
       "document": "CreateFlySecMiniAppScanTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
           "name": "Ret",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务id",
           "example": "170143813*******360",
           "member": "string",
           "name": "TaskID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -806,7 +870,7 @@
       "document": "DescribeBasicDiagnosisResourceUsageInfo请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断模式 1:基础诊断，2:深度诊断",
           "example": "1",
           "member": "int64",
@@ -821,43 +885,47 @@
       "document": "DescribeBasicDiagnosisResourceUsageInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
           "name": "Ret",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "资源类型",
           "example": "sv_mps_safety_diagnosis_basic_diagnosis",
           "member": "string",
           "name": "ResourceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "资源总数",
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "资源未使用次数",
           "example": "1",
           "member": "int64",
           "name": "UnusedCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -869,7 +937,7 @@
       "document": "DescribeFlySecMiniAppReportUrl请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务id",
           "example": "1701438134******0",
           "member": "string",
@@ -878,7 +946,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序appid",
           "example": "wx66e50f1e*******6f",
           "member": "string",
@@ -887,7 +955,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断方式 1:基础诊断，2:深度诊断",
           "example": "1",
           "member": "int64",
@@ -896,7 +964,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断报告类型 0:基础诊断报告，1:总裁版诊断报告，2:诊断报告json结果",
           "example": "0",
           "member": "int64",
@@ -911,25 +979,27 @@
       "document": "DescribeFlySecMiniAppReportUrl返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
           "name": "Ret",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "诊断报告下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "诊断报告下载链接",
           "example": "诊断报告下载链接",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -941,7 +1011,7 @@
       "document": "DescribeFlySecMiniAppScanReportList请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序AppID",
           "example": "wx66e50f1e*******6f",
           "member": "string",
@@ -950,7 +1020,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断方式 1:基础诊断，2:深度诊断",
           "example": "1",
           "member": "int64",
@@ -959,7 +1029,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断状态 -1:查询全部, 0:排队中, 1:成功, 2:失败, 3:进行中",
           "example": "1",
           "member": "int64",
@@ -968,7 +1038,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "查询数量, 0:查询所有, 其他值:最近几次的诊断数量",
           "example": "10",
           "member": "int64",
@@ -977,7 +1047,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序版本",
           "example": "V125",
           "member": "string",
@@ -992,34 +1062,37 @@
       "document": "DescribeFlySecMiniAppScanReportList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
           "name": "Ret",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "诊断报告数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "disabled": false,
+          "document": "诊断报告数据",
+          "example": "{\"TaskID\":\"\"}",
           "member": "FlySecMiniAppReportData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "诊断任务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "诊断任务数",
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1031,7 +1104,7 @@
       "document": "DescribeFlySecMiniAppScanTaskList请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断方式 1:基础诊断，2:深度诊断",
           "example": "1",
           "member": "int64",
@@ -1040,7 +1113,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断状态 -1:查询全部, 0:排队中, 1:成功, 2:失败, 3:进行中",
           "example": "1",
           "member": "int64",
@@ -1049,7 +1122,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "查询数量, 0:查询所有, 其他值:最近几次的诊断数量",
           "example": "10",
           "member": "int64",
@@ -1058,7 +1131,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序appid(为空的时候,则查询当前用户诊断的所有小程序)",
           "example": "wx66e50f1e*******6f",
           "member": "string",
@@ -1073,34 +1146,37 @@
       "document": "DescribeFlySecMiniAppScanTaskList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
           "name": "Ret",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "诊断任务数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "诊断任务数据列表",
           "example": "无",
           "member": "FlySecMiniAppTaskData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "诊断任务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "诊断任务数",
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1112,7 +1188,7 @@
       "document": "DescribeFlySecMiniAppScanTaskParam请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务id",
           "example": "1701438134******0",
           "member": "string",
@@ -1127,61 +1203,67 @@
       "document": "DescribeFlySecMiniAppScanTaskParam返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
           "name": "Ret",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "小程序AppID",
           "example": "wx66e50f1e*******6f",
           "member": "string",
           "name": "MiniAppID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "诊断模式 1:基础诊断，2:深度诊断",
           "example": "1",
           "member": "int64",
           "name": "Mode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "小程序测试账号(自有账号体系需提供,其他情况不需要)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "小程序测试账号(自有账号体系需提供,其他情况不需要)",
           "example": "Test",
           "member": "string",
           "name": "MiniAppTestAccount",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "小程序测试密码(自有账号体系需提供,其他情况不需要)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "小程序测试密码(自有账号体系需提供,其他情况不需要)",
           "example": "TestPwd",
           "member": "string",
           "name": "MiniAppTestPwd",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "诊断扫描版本 0:正式版 1:体验版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "诊断扫描版本 0:正式版 1:体验版",
           "example": "0",
           "member": "int64",
           "name": "ScanVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1193,7 +1275,7 @@
       "document": "DescribeFlySecMiniAppScanTaskStatus请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务id",
           "example": "1701438134******0",
           "member": "string",
@@ -1208,52 +1290,57 @@
       "document": "DescribeFlySecMiniAppScanTaskStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
           "name": "Ret",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "诊断状态, 0:排队中, 1:成功, 2:失败, 3:进行中",
           "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "诊断失败错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "诊断失败错误码",
           "example": "100010",
           "member": "int64",
           "name": "Errno",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "小程序名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "小程序名称",
           "example": "微信小程序",
           "member": "string",
           "name": "MiniAppName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "小程序版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "小程序版本",
           "example": "V125",
           "member": "string",
           "name": "MiniAppVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1270,34 +1357,37 @@
       "document": "DescribeResourceUsageInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
           "name": "Ret",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "安全资源数据列表",
           "example": "无",
           "member": "ResourceUsageInfoData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "安全资源数量",
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1309,7 +1399,7 @@
       "document": "DescribeScanTaskList请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务来源, -1:所有, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
           "example": "-1",
           "member": "int64",
@@ -1318,7 +1408,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "应用平台, 0:android, 1:ios, 2:小程序",
           "example": "2",
           "member": "int64",
@@ -1327,7 +1417,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务状态,可多值查询,例如:\"1,2,3\" 0:默认值(待检测/待咨询), 1.检测中, 2:待评估, 3:评估中, 4:任务完成/咨询完成, 5:任务失败, 6:咨询中;",
           "example": "1,2,3",
           "member": "string",
@@ -1336,7 +1426,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务类型,可多值查询,采用逗号分隔,例如:\"0,1\" 0:基础版, 1:专家版, 2:本地化",
           "example": "0,1",
           "member": "string",
@@ -1345,7 +1435,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "页码",
           "example": "0",
           "member": "int64",
@@ -1354,7 +1444,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "页码大小",
           "example": "10",
           "member": "int64",
@@ -1363,16 +1453,16 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "应用名称或小程序名称(可选参数)",
-          "example": "测试",
+          "example": "waf",
           "member": "string",
           "name": "AppName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "查询时间范围, 查询开始时间(2021-09-30 或 2021-09-30 10:57:34)",
           "example": "2021-09-30 10:57:34",
           "member": "string",
@@ -1381,7 +1471,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "查询时间范围, 查询结束时间(2021-09-30 或 2021-09-30 10:57:34)",
           "example": "2021-10-10 10:57:34",
           "member": "string",
@@ -1396,34 +1486,37 @@
       "document": "DescribeScanTaskList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "诊断任务数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "诊断任务数据列表",
           "example": "无",
           "member": "AppTaskData",
           "name": "Data",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "任务总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "任务总数量",
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1435,7 +1528,7 @@
       "document": "DescribeScanTaskReportUrl请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
           "example": "0",
           "member": "int64",
@@ -1444,7 +1537,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务id",
           "example": "1701438134******0",
           "member": "string",
@@ -1453,7 +1546,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "应用平台, 0:android, 1:ios, 2:小程序",
           "example": "2",
           "member": "int64",
@@ -1462,7 +1555,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "报告类型, 0:诊断报告, 1:堆栈报告(预留), 2:视频证据(预留), 3:报告json结果",
           "example": "0",
           "member": "int64",
@@ -1471,7 +1564,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务类型, 0:基础版, 1:专家版, 2:本地化",
           "example": "0",
           "member": "int64",
@@ -1486,43 +1579,47 @@
       "document": "DescribeScanTaskReportUrl返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "诊断报告/堆栈信息下载链接",
           "example": "诊断报告下载链接",
           "member": "string",
           "name": "ReportUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "诊断报告/堆栈名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "诊断报告/堆栈名称",
           "example": "诊断报告名称",
           "member": "string",
           "name": "ReportTitle",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "诊断json结果内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "诊断json结果内容",
           "example": "诊断json结果内容",
           "member": "string",
           "name": "ReportResult",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1534,7 +1631,7 @@
       "document": "DescribeScanTaskStatus请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务类型, 0:基础版, 1:专家版, 2:本地化",
           "example": "0",
           "member": "int64",
@@ -1543,7 +1640,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);",
           "example": "0",
           "member": "int64",
@@ -1552,7 +1649,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务id",
           "example": "1701438134******0",
           "member": "string",
@@ -1561,7 +1658,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "应用平台, 0:android, 1:ios, 2:小程序",
           "example": "2",
           "member": "int64",
@@ -1576,43 +1673,47 @@
       "document": "DescribeScanTaskStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回值, 0:成功, 其他值请查看“返回值”定义",
           "example": "0",
           "member": "int64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "0:默认值(待检测/待咨询), 1.检测中,  4:任务完成/咨询完成, 5:任务失败, 6:咨询中;",
           "example": "4",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "诊断失败的错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "诊断失败的错误信息",
           "example": "内部原因",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "任务流详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "任务流详情",
           "example": "无",
           "member": "TaskFlowStepsInfo",
           "name": "FlowSteps",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1624,7 +1725,7 @@
       "document": "翼扬诊断小程序报告数据",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务id",
           "example": "1701438134******0",
           "member": "string",
@@ -1634,7 +1735,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序appid",
           "example": "wx66e50f1e*******6f",
           "member": "string",
@@ -1644,7 +1745,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序名称",
           "example": "微信小程序",
           "member": "string",
@@ -1654,7 +1755,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序版本",
           "example": "V125",
           "member": "string",
@@ -1664,7 +1765,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断模式 1:基础诊断，2:深度诊断",
           "example": "1",
           "member": "int64",
@@ -1674,7 +1775,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断状态, 0:排队中, 1:成功, 2:失败, 3:进行中",
           "example": "1",
           "member": "int64",
@@ -1684,7 +1785,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断时间",
           "example": "1617796174",
           "member": "int64",
@@ -1694,7 +1795,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断得分",
           "example": "62.1",
           "member": "string",
@@ -1704,7 +1805,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断风险等级 1:高风险 2:中风险 3:低风险",
           "example": "1",
           "member": "int64",
@@ -1714,7 +1815,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断8大维度得分情况(每项总分100分)",
           "example": "无",
           "member": "FlySecMiniAppRiskItems",
@@ -1730,7 +1831,7 @@
       "document": "翼扬诊断小程序的诊断报告风险数据",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "代码防护(基础诊断)",
           "example": "0",
           "member": "int64",
@@ -1740,7 +1841,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "开发测试信息泄露(基础诊断)",
           "example": "30",
           "member": "int64",
@@ -1750,7 +1851,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "编码规范(基础诊断)",
           "example": "70",
           "member": "int64",
@@ -1760,7 +1861,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "配置风险(基础诊断)",
           "example": "40",
           "member": "int64",
@@ -1770,7 +1871,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "账号安全(基础诊断)",
           "example": "50",
           "member": "int64",
@@ -1780,7 +1881,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "用户信息安全(基础诊断)",
           "example": "100",
           "member": "int64",
@@ -1790,7 +1891,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "内部信息泄露(基础诊断)",
           "example": "80",
           "member": "int64",
@@ -1800,7 +1901,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "其他安全(基础诊断)",
           "example": "100",
           "member": "int64",
@@ -1816,7 +1917,7 @@
       "document": "翼扬诊断小程序任务数据",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务id",
           "example": "1701438134******0",
           "member": "string",
@@ -1826,7 +1927,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序appid",
           "example": "wx66e50f1e*******6f",
           "member": "string",
@@ -1836,7 +1937,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序名称",
           "example": "微信小程序",
           "member": "string",
@@ -1846,7 +1947,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "小程序版本",
           "example": "V125",
           "member": "string",
@@ -1856,7 +1957,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断模式 1:基础诊断，2:深度诊断",
           "example": "1",
           "member": "int64",
@@ -1866,7 +1967,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断时间",
           "example": "1617796174",
           "member": "int64",
@@ -1876,7 +1977,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断状态, 0:排队中, 1:成功, 2:失败, 3:进行中",
           "example": "2",
           "member": "int64",
@@ -1886,7 +1987,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "诊断失败错误码",
           "example": "100010",
           "member": "int64",
@@ -1902,7 +2003,7 @@
       "document": "翼扬安全资源使用情况",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "资源名称, 具体名称请查看产品配置",
           "example": "sv_mps_detection_public_basic",
           "member": "string",
@@ -1912,7 +2013,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "资源总数",
           "example": "10",
           "member": "int64",
@@ -1922,7 +2023,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "资源未使用次数",
           "example": "5",
           "member": "int64",
@@ -1938,64 +2039,64 @@
       "document": "任务流步骤详情",
       "members": [
         {
-          "default": "",
-          "document": "流程编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "流程编号",
           "example": "1.1",
           "member": "string",
           "name": "FlowNo",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "流程名称",
           "example": "APK 下载",
           "member": "string",
           "name": "FlowName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "流程状态, 其他值:进行中, 2:成功, 3:失败",
           "example": "1",
           "member": "int64",
           "name": "FlowStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "流程状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "流程状态描述",
           "example": "进行中",
           "member": "string",
           "name": "FlowStateDesc",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "流程启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "流程启动时间",
           "example": "2022-03-21 15:17:18",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "流程完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "流程完成时间",
           "example": "2022-03-21 15:17:18",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

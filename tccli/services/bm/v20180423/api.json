@@ -4,325 +4,378 @@
       "document": "服务器绑定CAM角色，该角色授权访问黑石物理服务器服务，为黑石物理服务器提供了访问资源的权限，如请求服务器的临时证书",
       "input": "AttachCamRoleRequest",
       "name": "服务器绑定CAM角色",
-      "output": "AttachCamRoleResponse"
+      "output": "AttachCamRoleResponse",
+      "status": "online"
     },
     "BindPsaTag": {
       "document": "为预授权规则绑定标签",
       "input": "BindPsaTagRequest",
       "name": "为预授权规则绑定标签",
-      "output": "BindPsaTagResponse"
+      "output": "BindPsaTagResponse",
+      "status": "online"
     },
     "BuyDevices": {
       "document": "购买黑石物理机",
       "input": "BuyDevicesRequest",
       "name": "购买物理机",
-      "output": "BuyDevicesResponse"
+      "output": "BuyDevicesResponse",
+      "status": "online"
     },
     "CreateCustomImage": {
       "document": "创建自定义镜像<br>\n每个AppId在每个可用区最多保留20个自定义镜像",
       "input": "CreateCustomImageRequest",
       "name": "创建自定义镜像",
-      "output": "CreateCustomImageResponse"
+      "output": "CreateCustomImageResponse",
+      "status": "online"
     },
     "CreatePsaRegulation": {
       "document": "创建预授权规则",
       "input": "CreatePsaRegulationRequest",
       "name": "创建预授权规则",
-      "output": "CreatePsaRegulationResponse"
+      "output": "CreatePsaRegulationResponse",
+      "status": "online"
     },
     "CreateSpotDevice": {
       "document": "创建黑石竞价实例",
       "input": "CreateSpotDeviceRequest",
       "name": "创建黑石竞价实例",
-      "output": "CreateSpotDeviceResponse"
+      "output": "CreateSpotDeviceResponse",
+      "status": "online"
     },
     "CreateUserCmd": {
       "document": "创建自定义脚本",
       "input": "CreateUserCmdRequest",
       "name": "创建自定义脚本",
-      "output": "CreateUserCmdResponse"
+      "output": "CreateUserCmdResponse",
+      "status": "online"
     },
     "DeleteCustomImages": {
       "document": "删除自定义镜像<br>\n正用于部署或重装中的镜像被删除后，镜像文件将保留一段时间，直到部署或重装结束",
       "input": "DeleteCustomImagesRequest",
       "name": "删除自定义镜像",
-      "output": "DeleteCustomImagesResponse"
+      "output": "DeleteCustomImagesResponse",
+      "status": "online"
     },
     "DeletePsaRegulation": {
       "document": "删除预授权规则",
       "input": "DeletePsaRegulationRequest",
       "name": "删除预授权规则",
-      "output": "DeletePsaRegulationResponse"
+      "output": "DeletePsaRegulationResponse",
+      "status": "online"
     },
     "DeleteUserCmds": {
       "document": "删除自定义脚本",
       "input": "DeleteUserCmdsRequest",
       "name": "删除自定义脚本",
-      "output": "DeleteUserCmdsResponse"
+      "output": "DeleteUserCmdsResponse",
+      "status": "online"
     },
     "DescribeCustomImageProcess": {
       "document": "查询自定义镜像制作进度",
       "input": "DescribeCustomImageProcessRequest",
       "name": "查询自定义镜像制作进度",
-      "output": "DescribeCustomImageProcessResponse"
+      "output": "DescribeCustomImageProcessResponse",
+      "status": "online"
     },
     "DescribeCustomImages": {
       "document": "查看自定义镜像列表",
       "input": "DescribeCustomImagesRequest",
       "name": "查看自定义镜像列表",
-      "output": "DescribeCustomImagesResponse"
+      "output": "DescribeCustomImagesResponse",
+      "status": "online"
     },
     "DescribeDeviceClass": {
       "document": "获取设备类型",
       "input": "DescribeDeviceClassRequest",
       "name": "查询设备型号",
-      "output": "DescribeDeviceClassResponse"
+      "output": "DescribeDeviceClassResponse",
+      "status": "online"
     },
     "DescribeDeviceClassPartition": {
       "document": "查询机型支持的RAID方式， 并返回系统盘的分区和逻辑盘的列表",
       "input": "DescribeDeviceClassPartitionRequest",
       "name": "查询机型RAID方式以及系统盘大小",
-      "output": "DescribeDeviceClassPartitionResponse"
+      "output": "DescribeDeviceClassPartitionResponse",
+      "status": "online"
     },
     "DescribeDeviceHardwareInfo": {
       "document": "查询设备硬件配置信息，如 CPU 型号，内存大小，磁盘大小和数量",
       "input": "DescribeDeviceHardwareInfoRequest",
       "name": "查询设备硬件配置信息",
-      "output": "DescribeDeviceHardwareInfoResponse"
+      "output": "DescribeDeviceHardwareInfoResponse",
+      "status": "online"
     },
     "DescribeDeviceInventory": {
       "document": "查询设备库存",
       "input": "DescribeDeviceInventoryRequest",
       "name": "查询设备库存",
-      "output": "DescribeDeviceInventoryResponse"
+      "output": "DescribeDeviceInventoryResponse",
+      "status": "online"
     },
     "DescribeDeviceOperationLog": {
       "document": "查询设备操作日志， 如设备重启，重装，设置密码等操作",
       "input": "DescribeDeviceOperationLogRequest",
       "name": "查询设备操作日志",
-      "output": "DescribeDeviceOperationLogResponse"
+      "output": "DescribeDeviceOperationLogResponse",
+      "status": "online"
     },
     "DescribeDevicePartition": {
       "document": "获取物理机的分区格式",
       "input": "DescribeDevicePartitionRequest",
       "name": "获取物理机的分区格式",
-      "output": "DescribeDevicePartitionResponse"
+      "output": "DescribeDevicePartitionResponse",
+      "status": "online"
     },
     "DescribeDevicePosition": {
       "document": "查询服务器所在的位置，如机架，上联交换机等信息",
       "input": "DescribeDevicePositionRequest",
       "name": "查询设备位置信息",
-      "output": "DescribeDevicePositionResponse"
+      "output": "DescribeDevicePositionResponse",
+      "status": "online"
     },
     "DescribeDevicePriceInfo": {
       "document": "查询服务器价格信息，支持设备的批量查找，支持标准机型和弹性机型的混合查找",
       "input": "DescribeDevicePriceInfoRequest",
       "name": "查询服务器价格信息",
-      "output": "DescribeDevicePriceInfoResponse"
+      "output": "DescribeDevicePriceInfoResponse",
+      "status": "online"
     },
     "DescribeDevices": {
       "document": "查询物理服务器，可以按照实例，业务IP等过滤",
       "input": "DescribeDevicesRequest",
       "name": "查询物理机信息",
-      "output": "DescribeDevicesResponse"
+      "output": "DescribeDevicesResponse",
+      "status": "online"
     },
     "DescribeHardwareSpecification": {
       "document": "查询自定义机型部件信息，包括CpuId对应的型号，DiskTypeId对应的磁盘类型",
       "input": "DescribeHardwareSpecificationRequest",
       "name": "查询自定义机型部件信息",
-      "output": "DescribeHardwareSpecificationResponse"
+      "output": "DescribeHardwareSpecificationResponse",
+      "status": "online"
     },
     "DescribeHostedDeviceOutBandInfo": {
       "document": "查询托管设备带外信息",
       "input": "DescribeHostedDeviceOutBandInfoRequest",
       "name": "查询托管设备带外信息",
-      "output": "DescribeHostedDeviceOutBandInfoResponse"
+      "output": "DescribeHostedDeviceOutBandInfoResponse",
+      "status": "online"
     },
     "DescribeOperationResult": {
       "document": "获取异步操作状态的完成状态",
       "input": "DescribeOperationResultRequest",
       "name": "查询异步任务状态",
-      "output": "DescribeOperationResultResponse"
+      "output": "DescribeOperationResultResponse",
+      "status": "online"
     },
     "DescribeOsInfo": {
       "document": "查询指定机型所支持的操作系统",
       "input": "DescribeOsInfoRequest",
       "name": "查询操作系统信息",
-      "output": "DescribeOsInfoResponse"
+      "output": "DescribeOsInfoResponse",
+      "status": "online"
     },
     "DescribePsaRegulations": {
       "document": "获取预授权规则列表",
       "input": "DescribePsaRegulationsRequest",
       "name": "获取预授权规则列表",
-      "output": "DescribePsaRegulationsResponse"
+      "output": "DescribePsaRegulationsResponse",
+      "status": "online"
     },
     "DescribeRegions": {
       "document": "查询地域以及可用区",
       "input": "DescribeRegionsRequest",
       "name": "查询地域以及可用区",
-      "output": "DescribeRegionsResponse"
+      "output": "DescribeRegionsResponse",
+      "status": "online"
     },
     "DescribeRepairTaskConstant": {
       "document": "维修任务配置获取",
       "input": "DescribeRepairTaskConstantRequest",
       "name": "维修任务配置获取",
-      "output": "DescribeRepairTaskConstantResponse"
+      "output": "DescribeRepairTaskConstantResponse",
+      "status": "online"
     },
     "DescribeTaskInfo": {
       "document": "获取用户维修任务列表及详细信息<br>\n<br>\nTaskStatus（任务状态ID）与状态中文名的对应关系如下：<br>\n1：未授权<br>\n2：处理中<br>\n3：待确认<br>\n4：未授权-暂不处理<br>\n5：已恢复<br>\n6：待确认-未恢复<br>",
       "input": "DescribeTaskInfoRequest",
       "name": "维修任务信息获取",
-      "output": "DescribeTaskInfoResponse"
+      "output": "DescribeTaskInfoResponse",
+      "status": "online"
     },
     "DescribeTaskOperationLog": {
       "document": "获取维修任务操作日志",
       "input": "DescribeTaskOperationLogRequest",
       "name": "维修任务操作日志获取",
-      "output": "DescribeTaskOperationLogResponse"
+      "output": "DescribeTaskOperationLogResponse",
+      "status": "online"
     },
     "DescribeUserCmdTaskInfo": {
       "document": "获取自定义脚本任务详细信息",
       "input": "DescribeUserCmdTaskInfoRequest",
       "name": "获取自定义脚本任务详细信息",
-      "output": "DescribeUserCmdTaskInfoResponse"
+      "output": "DescribeUserCmdTaskInfoResponse",
+      "status": "online"
     },
     "DescribeUserCmdTasks": {
       "document": "获取自定义脚本任务列表",
       "input": "DescribeUserCmdTasksRequest",
       "name": "获取自定义脚本任务列表",
-      "output": "DescribeUserCmdTasksResponse"
+      "output": "DescribeUserCmdTasksResponse",
+      "status": "online"
     },
     "DescribeUserCmds": {
       "document": "获取自定义脚本信息列表",
       "input": "DescribeUserCmdsRequest",
       "name": "获取自定义脚本信息列表",
-      "output": "DescribeUserCmdsResponse"
+      "output": "DescribeUserCmdsResponse",
+      "status": "online"
     },
     "DetachCamRole": {
       "document": "服务器绑定CAM角色",
       "input": "DetachCamRoleRequest",
       "name": "服务器解绑CAM角色",
-      "output": "DetachCamRoleResponse"
+      "output": "DetachCamRoleResponse",
+      "status": "online"
     },
     "ModifyCustomImageAttribute": {
       "document": "用于修改自定义镜像名或描述",
       "input": "ModifyCustomImageAttributeRequest",
       "name": "修改自定义镜像属性",
-      "output": "ModifyCustomImageAttributeResponse"
+      "output": "ModifyCustomImageAttributeResponse",
+      "status": "online"
     },
     "ModifyDeviceAliases": {
       "document": "修改服务器名称",
       "input": "ModifyDeviceAliasesRequest",
       "name": "修改服务器名称",
-      "output": "ModifyDeviceAliasesResponse"
+      "output": "ModifyDeviceAliasesResponse",
+      "status": "online"
     },
     "ModifyDeviceAutoRenewFlag": {
       "document": "修改物理机服务器自动续费标志",
       "input": "ModifyDeviceAutoRenewFlagRequest",
       "name": "修改物理机服务器自动续费标志",
-      "output": "ModifyDeviceAutoRenewFlagResponse"
+      "output": "ModifyDeviceAutoRenewFlagResponse",
+      "status": "online"
     },
     "ModifyLanIp": {
       "document": "修改物理机内网IP（不重装系统）",
       "input": "ModifyLanIpRequest",
       "name": "修改物理机内网IP（不重装系统）",
-      "output": "ModifyLanIpResponse"
+      "output": "ModifyLanIpResponse",
+      "status": "online"
     },
     "ModifyPayModePre2Post": {
       "document": "将设备的预付费模式修改为后付费计费模式，支持批量转换。（前提是客户要加入黑石物理机后付费计费的白名单，申请黑石物理机后付费可以联系腾讯云客服）",
       "input": "ModifyPayModePre2PostRequest",
       "name": "将设备从预付费转换为后付费",
-      "output": "ModifyPayModePre2PostResponse"
+      "output": "ModifyPayModePre2PostResponse",
+      "status": "online"
     },
     "ModifyPsaRegulation": {
       "document": "允许修改规则信息及关联故障类型",
       "input": "ModifyPsaRegulationRequest",
       "name": "修改预授权规则",
-      "output": "ModifyPsaRegulationResponse"
+      "output": "ModifyPsaRegulationResponse",
+      "status": "online"
     },
     "ModifyUserCmd": {
       "document": "修改自定义脚本",
       "input": "ModifyUserCmdRequest",
       "name": "修改自定义脚本",
-      "output": "ModifyUserCmdResponse"
+      "output": "ModifyUserCmdResponse",
+      "status": "online"
     },
     "OfflineDevices": {
       "document": "销毁黑石物理机实例：可以销毁物理机列表中的竞价实例，或回收站列表中所有计费模式的实例",
       "input": "OfflineDevicesRequest",
       "name": "退还服务器",
-      "output": "OfflineDevicesResponse"
+      "output": "OfflineDevicesResponse",
+      "status": "online"
     },
     "RebootDevices": {
       "document": "重启机器",
       "input": "RebootDevicesRequest",
       "name": "重启机器",
-      "output": "RebootDevicesResponse"
+      "output": "RebootDevicesResponse",
+      "status": "online"
     },
     "RecoverDevices": {
       "document": "恢复回收站中的物理机（仅限后付费的物理机）",
       "input": "RecoverDevicesRequest",
       "name": "恢复物理机",
-      "output": "RecoverDevicesResponse"
+      "output": "RecoverDevicesResponse",
+      "status": "online"
     },
     "ReloadDeviceOs": {
       "document": "重装操作系统",
       "input": "ReloadDeviceOsRequest",
       "name": "重装操作系统",
-      "output": "ReloadDeviceOsResponse"
+      "output": "ReloadDeviceOsResponse",
+      "status": "online"
     },
     "RepairTaskControl": {
       "document": "此接口用于操作维修任务<br>\n入参TaskId为维修任务ID<br>\n入参Operate表示对维修任务的操作，支持如下取值：<br>\nAuthorizeRepair（授权维修）<br>\nIgnore（暂不提醒）<br>\nConfirmRecovered（维修完成后，确认故障恢复）<br>\nConfirmUnRecovered（维修完成后，确认故障未恢复，该操作已不推荐用）<br>\nNeedRepairAgain（维修完成后，故障未恢复，需要重新维修，推荐用此操作打回）<br>\n入参OperateRemark仅在Operate为NeedRepairAgain时有效，表示打回重修原因，建议给出打回的具体原因。<br>\n<br>\n操作约束（当前任务状态(TaskStatus)->对应可执行的操作）：<br>\n未授权(1)->授权维修；暂不处理<br>\n暂不处理(4)->授权维修<br>\n待确认(3)->确认故障恢复；确认故障未恢复；需要重新维修<br>\n未恢复(6)->确认故障恢复<br>\n<br>\n对于Ping不可达故障的任务，还允许：<br>\n未授权->确认故障恢复<br>\n暂不处理->确认故障恢复<br>\n<br>\n处理中与已恢复状态的任务不允许进行操作。<br>\n<br>\n详细信息请访问：https://cloud.tencent.com/document/product/386/18190",
       "input": "RepairTaskControlRequest",
       "name": "维修任务管理",
-      "output": "RepairTaskControlResponse"
+      "output": "RepairTaskControlResponse",
+      "status": "online"
     },
     "ResetDevicePassword": {
       "document": "重置服务器密码",
       "input": "ResetDevicePasswordRequest",
       "name": "重置密码",
-      "output": "ResetDevicePasswordResponse"
+      "output": "ResetDevicePasswordResponse",
+      "status": "online"
     },
     "ReturnDevices": {
       "document": "退回物理机至回收站，支持批量退还不同计费模式的物理机（包括预付费、后付费、预付费转后付费）",
       "input": "ReturnDevicesRequest",
       "name": "退回物理机",
-      "output": "ReturnDevicesResponse"
+      "output": "ReturnDevicesResponse",
+      "status": "online"
     },
     "RunUserCmd": {
       "document": "运行自定义脚本",
       "input": "RunUserCmdRequest",
       "name": "运行自定义脚本",
-      "output": "RunUserCmdResponse"
+      "output": "RunUserCmdResponse",
+      "status": "online"
     },
     "SetOutBandVpnAuthPassword": {
       "document": "设置带外VPN认证用户密码",
       "input": "SetOutBandVpnAuthPasswordRequest",
       "name": "设置带外VPN认证用户密码",
-      "output": "SetOutBandVpnAuthPasswordResponse"
+      "output": "SetOutBandVpnAuthPasswordResponse",
+      "status": "online"
     },
     "ShutdownDevices": {
       "document": "关闭服务器",
       "input": "ShutdownDevicesRequest",
       "name": "关闭服务器",
-      "output": "ShutdownDevicesResponse"
+      "output": "ShutdownDevicesResponse",
+      "status": "online"
     },
     "StartDevices": {
       "document": "开启服务器",
       "input": "StartDevicesRequest",
       "name": "开启服务器",
-      "output": "StartDevicesResponse"
+      "output": "StartDevicesResponse",
+      "status": "online"
     },
     "UnbindPsaTag": {
       "document": "解除标签与预授权规则的绑定",
       "input": "UnbindPsaTagRequest",
       "name": "解除标签与预授权规则的绑定",
-      "output": "UnbindPsaTagResponse"
+      "output": "UnbindPsaTagResponse",
+      "status": "online"
     }
   },
   "metadata": {
     "apiVersion": "2018-04-23",
     "api_brief": "介绍如何使用API对黑石物理服务器进行相关操作，包括创建、更改带宽、重启等。",
-    "serviceNameCN": "黑石物理服务器1.0",
+    "serviceNameCN": "黑石物理服务器CPM",
     "serviceShortName": "bm"
   },
   "objects": {
@@ -330,16 +383,18 @@
       "document": "AttachCamRole请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "服务器ID",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "角色名称。",
+          "example": "",
           "member": "string",
           "name": "RoleName",
           "required": true,
@@ -352,7 +407,7 @@
       "document": "AttachCamRole返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -364,24 +419,27 @@
       "document": "BindPsaTag请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "预授权规则ID",
+          "example": "",
           "member": "string",
           "name": "PsaId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "需要绑定的标签key",
+          "example": "",
           "member": "string",
           "name": "TagKey",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "需要绑定的标签value",
+          "example": "",
           "member": "string",
           "name": "TagValue",
           "required": true,
@@ -394,7 +452,7 @@
       "document": "BindPsaTag返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -406,320 +464,360 @@
       "document": "BuyDevices请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "可用区ID。通过接口[查询地域以及可用区(DescribeRegions)](https://cloud.tencent.com/document/api/386/33564)获取可用区信息",
+          "example": "",
           "member": "string",
           "name": "Zone",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "部署服务器的操作系统ID。通过接口[查询操作系统信息(DescribeOsInfo)](https://cloud.tencent.com/document/product/386/32902)获取操作系统信息",
+          "example": "",
           "member": "uint64",
           "name": "OsTypeId",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "RAID类型ID。通过接口[查询机型RAID方式以及系统盘大小(DescribeDeviceClassPartition)](https://cloud.tencent.com/document/api/386/32910)获取RAID信息",
+          "example": "",
           "member": "uint64",
           "name": "RaidId",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "购买数量",
+          "example": "",
           "member": "uint64",
           "name": "GoodsCount",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "购买至私有网络ID",
+          "example": "",
           "member": "string",
           "name": "VpcId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "购买至子网ID",
+          "example": "",
           "member": "string",
           "name": "SubnetId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "购买的机型ID。通过接口[查询设备型号(DescribeDeviceClass)](https://cloud.tencent.com/document/api/386/32911)获取机型信息",
+          "example": "",
           "member": "string",
           "name": "DeviceClassCode",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "购买时长单位，取值：M(月) D(天)",
+          "example": "",
           "member": "string",
           "name": "TimeUnit",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "购买时长",
+          "example": "",
           "member": "uint64",
           "name": "TimeSpan",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否安装安全Agent，取值：1(安装) 0(不安装)，默认取值0",
+          "example": "",
           "member": "uint64",
           "name": "NeedSecurityAgent",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否安装监控Agent，取值：1(安装) 0(不安装)，默认取值0",
+          "example": "",
           "member": "uint64",
           "name": "NeedMonitorAgent",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否安装EMR Agent，取值：1(安装) 0(不安装)，默认取值0",
+          "example": "",
           "member": "uint64",
           "name": "NeedEMRAgent",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否安装EMR软件包，取值：1(安装) 0(不安装)，默认取值0",
+          "example": "",
           "member": "uint64",
           "name": "NeedEMRSoftware",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否分配弹性公网IP，取值：1(分配) 0(不分配)，默认取值0",
+          "example": "",
           "member": "uint64",
           "name": "ApplyEip",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "弹性公网IP计费模式，取值：Flow(按流量计费) Bandwidth(按带宽计费)，默认取值Flow",
+          "example": "",
           "member": "string",
           "name": "EipPayMode",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "弹性公网IP带宽限制，单位Mb",
+          "example": "",
           "member": "uint64",
           "name": "EipBandwidth",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据盘是否格式化，取值：1(格式化) 0(不格式化)，默认取值为1",
+          "example": "",
           "member": "uint64",
           "name": "IsZoning",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "物理机计费模式，取值：1(预付费) 2(后付费)，默认取值为1",
+          "example": "",
           "member": "uint64",
           "name": "CpmPayMode",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "自定义镜像ID，取值生效时用自定义镜像部署物理机",
+          "example": "",
           "member": "string",
           "name": "ImageId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设置Linux root或Windows Administrator的密码",
+          "example": "",
           "member": "string",
           "name": "Password",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "自动续费标志位，取值：1(自动续费) 0(不自动续费)，默认取值0",
+          "example": "",
           "member": "uint64",
           "name": "AutoRenewFlag",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "系统盘根分区大小，单位为G，默认取值10G。通过接口[查询机型RAID方式以及系统盘大小(DescribeDeviceClassPartition)](https://cloud.tencent.com/document/api/386/32910)获取根分区信息",
+          "example": "",
           "member": "uint64",
           "name": "SysRootSpace",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "系统盘swap分区或/boot/efi分区的大小，单位为G。若是uefi启动的机器，分区为/boot/efi，且此值是默认是2G。 普通机器为swap分区，可以不指定此分区。 机型是否是uefi启动，参见接口[查询设备型号(DescribeDeviceClass)](https://cloud.tencent.com/document/api/386/32911)",
+          "example": "",
           "member": "uint64",
           "name": "SysSwaporuefiSpace",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "/usr/local分区大小，单位为G",
+          "example": "",
           "member": "uint64",
           "name": "SysUsrlocalSpace",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "/data分区大小，单位为G。如果系统盘还有剩余大小，会分配给/data分区。（特殊情况：如果剩余空间不足10G，并且没有指定/data分区，则剩余空间会分配给Root分区）",
+          "example": "",
           "member": "uint64",
           "name": "SysDataSpace",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否开启超线程，取值：1(开启) 0(关闭)，默认取值1",
+          "example": "",
           "member": "uint64",
           "name": "HyperThreading",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "指定的内网IP列表，不指定时自动分配",
+          "example": "",
           "member": "string",
           "name": "LanIps",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备名称列表",
+          "example": "",
           "member": "string",
           "name": "Aliases",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "CPU型号ID，自定义机型需要传入，取值：\n<br/><li>1: E5-2620v3 (6核) &#42; 2</li><li>2: E5-2680v4 (14核) &#42; 2</li><li>3: E5-2670v3 (12核) &#42; 2</li><li>4: E5-2620v4 (8核) &#42; 2</li><li>5: 4110 (8核) &#42; 2</li><li>6: 6133 (20核) &#42; 2</li><br/>",
+          "example": "",
           "member": "uint64",
           "name": "CpuId",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否有RAID卡，取值：1(有) 0(无)，自定义机型需要传入",
+          "example": "",
           "member": "uint64",
           "name": "ContainRaidCard",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "内存大小，单位为G，自定义机型需要传入。取值参考接口[查询自定义机型部件信息(DescribeHardwareSpecification)](https://cloud.tencent.com/document/api/386/33565)返回值",
+          "example": "",
           "member": "uint64",
           "name": "MemSize",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "系统盘ID，自定义机型需要传入。取值参考接口[查询自定义机型部件信息(DescribeHardwareSpecification)](https://cloud.tencent.com/document/api/386/33565)返回值",
+          "example": "",
           "member": "uint64",
           "name": "SystemDiskTypeId",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "系统盘数量，自定义机型需要传入。取值参考接口[查询自定义机型部件信息(DescribeHardwareSpecification)](https://cloud.tencent.com/document/api/386/33565)返回值",
+          "example": "",
           "member": "uint64",
           "name": "SystemDiskCount",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据盘ID，自定义机型需要传入。取值参考接口[查询自定义机型部件信息(DescribeHardwareSpecification)](https://cloud.tencent.com/document/api/386/33565)返回值",
+          "example": "",
           "member": "uint64",
           "name": "DataDiskTypeId",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据盘数量，自定义机型需要传入。取值参考接口[查询自定义机型部件信息(DescribeHardwareSpecification)](https://cloud.tencent.com/document/api/386/33565)返回值",
+          "example": "",
           "member": "uint64",
           "name": "DataDiskCount",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "绑定的标签列表",
+          "example": "",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "指定数据盘的文件系统格式，当前支持 EXT4和XFS选项， 默认为EXT4。 参数适用于数据盘和Linux， 且在IsZoning为1时生效",
+          "example": "",
           "member": "string",
           "name": "FileSystem",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "此参数是为了防止重复发货。如果两次调用传入相同的BuySession，只会发货一次。 不要以设备别名作为BuySession，这样只会第一次购买成功。参数长度为128位，合法字符为大小字母，数字，下划线，横线。",
+          "example": "",
           "member": "string",
           "name": "BuySession",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "绑定已有的安全组ID。仅在NeedSecurityAgent为1时生效",
+          "example": "",
           "member": "string",
           "name": "SgId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "安全组模板ID，由模板创建新安全组并绑定。TemplateId和SgId不能同时传入",
+          "example": "",
           "member": "string",
           "name": "TemplateId",
           "required": false,
@@ -732,14 +830,16 @@
       "document": "BuyDevices返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "购买的物理机实例ID列表",
+          "example": "",
           "member": "string",
           "name": "InstanceIds",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -751,8 +851,9 @@
       "document": "cpu信息",
       "members": [
         {
-          "default": "0",
+          "disabled": false,
           "document": "CPU的ID",
+          "example": "",
           "member": "uint64",
           "name": "CpuId",
           "required": true,
@@ -760,8 +861,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "CPU型号描述",
+          "example": "",
           "member": "string",
           "name": "CpuDescription",
           "required": true,
@@ -769,8 +871,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
+          "disabled": false,
           "document": "机型序列",
+          "example": "",
           "member": "uint64",
           "name": "Series",
           "required": true,
@@ -778,8 +881,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "支持的RAID方式，0：有RAID卡，1：没有RAID卡",
+          "example": "",
           "member": "uint64",
           "name": "ContainRaidCard",
           "required": true,
@@ -793,7 +897,7 @@
       "document": "CreateCustomImage请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "用于制作镜像的物理机ID",
           "example": "testid",
           "member": "string",
@@ -802,7 +906,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "镜像别名",
           "example": "aa678",
           "member": "string",
@@ -811,7 +915,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "镜像描述",
           "example": "876aa",
           "member": "string",
@@ -826,6 +930,7 @@
       "document": "CreateCustomImage返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "黑石异步任务ID",
           "example": "123",
           "member": "uint64",
@@ -835,6 +940,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像ID",
           "example": "bm-img-1a2b3c4d",
           "member": "string",
@@ -844,7 +950,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -856,32 +962,36 @@
       "document": "CreatePsaRegulation请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "规则别名",
+          "example": "",
           "member": "string",
           "name": "PsaName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "关联的故障类型ID列表",
+          "example": "",
           "member": "uint64",
           "name": "TaskTypeIds",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "维修实例上限，默认为5",
+          "example": "",
           "member": "uint64",
           "name": "RepairLimit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "规则备注",
+          "example": "",
           "member": "string",
           "name": "PsaDescription",
           "required": false,
@@ -894,14 +1004,16 @@
       "document": "CreatePsaRegulation返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建的预授权规则ID",
+          "example": "",
           "member": "string",
           "name": "PsaId",
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -913,72 +1025,81 @@
       "document": "CreateSpotDevice请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "可用区名称。如ap-guangzhou-bls-1, 通过DescribeRegions获取",
+          "example": "",
           "member": "string",
           "name": "Zone",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "计算单元类型, 如v3.c2.medium，更详细的ComputeType参考[竞价实例产品文档](https://cloud.tencent.com/document/product/386/30256)",
+          "example": "",
           "member": "string",
           "name": "ComputeType",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作系统类型ID",
+          "example": "",
           "member": "uint64",
           "name": "OsTypeId",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有网络ID",
+          "example": "",
           "member": "string",
           "name": "VpcId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "子网ID",
+          "example": "",
           "member": "string",
           "name": "SubnetId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "购买的计算单元个数",
+          "example": "",
           "member": "uint64",
           "name": "GoodsNum",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "出价策略。可取值为SpotWithPriceLimit和SpotAsPriceGo。SpotWithPriceLimit，用户设置价格上限，需要传SpotPriceLimit参数， 如果市场价高于用户的指定价格，则购买不成功;  SpotAsPriceGo 是随市场价的策略。",
+          "example": "",
           "member": "string",
           "name": "SpotStrategy",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "用户设置的价格。当为SpotWithPriceLimit竞价策略时有效",
+          "example": "",
           "member": "float",
           "name": "SpotPriceLimit",
           "required": false,
           "type": "float"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设置竞价实例密码。可选参数，没有指定会生成随机密码",
+          "example": "",
           "member": "string",
           "name": "Passwd",
           "required": false,
@@ -991,21 +1112,25 @@
       "document": "CreateSpotDevice返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "创建的服务器ID",
+          "example": "",
           "member": "string",
           "name": "ResourceIds",
           "type": "list",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务ID",
+          "example": "",
           "member": "uint64",
           "name": "FlowId",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1017,24 +1142,27 @@
       "document": "CreateUserCmd请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "用户自定义脚本的名称",
+          "example": "",
           "member": "string",
           "name": "Alias",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "命令适用的操作系统类型，取值linux或xserver",
+          "example": "",
           "member": "string",
           "name": "OsType",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "脚本内容，必须经过base64编码",
+          "example": "",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -1047,14 +1175,16 @@
       "document": "CreateUserCmd返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "脚本ID",
+          "example": "",
           "member": "string",
           "name": "CmdId",
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1066,8 +1196,9 @@
       "document": "自定义镜像信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "镜像ID",
+          "example": "",
           "member": "string",
           "name": "ImageId",
           "required": true,
@@ -1075,8 +1206,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "镜像别名",
+          "example": "",
           "member": "string",
           "name": "ImageName",
           "required": true,
@@ -1084,8 +1216,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "镜像状态码",
+          "example": "",
           "member": "uint64",
           "name": "ImageStatus",
           "required": true,
@@ -1093,8 +1226,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "镜像OS名",
+          "example": "",
           "member": "string",
           "name": "OsClass",
           "required": true,
@@ -1102,8 +1236,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "镜像OS版本",
+          "example": "",
           "member": "string",
           "name": "OsVersion",
           "required": true,
@@ -1111,8 +1246,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "OS是64还是32位",
+          "example": "",
           "member": "uint64",
           "name": "OsBit",
           "required": true,
@@ -1120,8 +1256,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "镜像大小(M)",
+          "example": "",
           "member": "uint64",
           "name": "ImageSize",
           "required": true,
@@ -1129,8 +1266,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "创建时间",
+          "example": "",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -1138,8 +1276,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "分区信息",
+          "example": "",
           "member": "PartitionInfo",
           "name": "PartitionInfoSet",
           "required": true,
@@ -1147,8 +1286,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "适用机型",
+          "example": "",
           "member": "string",
           "name": "DeviceClassCode",
           "required": true,
@@ -1156,8 +1296,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "备注",
+          "example": "",
           "member": "string",
           "name": "ImageDescription",
           "required": true,
@@ -1165,8 +1306,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "原始镜像id",
+          "example": "",
           "member": "uint64",
           "name": "OsTypeId",
           "required": true,
@@ -1180,8 +1322,9 @@
       "document": "镜像制作进度列表",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "步骤",
+          "example": "",
           "member": "string",
           "name": "StepName",
           "required": true,
@@ -1189,8 +1332,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "此步骤开始时间",
+          "example": "",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -1198,8 +1342,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "0: 已完成 1: 当前进行 2: 未开始",
+          "example": "",
           "member": "uint64",
           "name": "StepType",
           "required": true,
@@ -1213,8 +1358,9 @@
       "document": "DeleteCustomImages请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "准备删除的镜像ID列表",
+          "example": "",
           "member": "string",
           "name": "ImageIds",
           "required": true,
@@ -1227,14 +1373,16 @@
       "document": "DeleteCustomImages返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "黑石异步任务ID",
+          "example": "",
           "member": "uint64",
           "name": "TaskId",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1246,8 +1394,9 @@
       "document": "DeletePsaRegulation请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "预授权规则ID",
+          "example": "",
           "member": "string",
           "name": "PsaId",
           "required": true,
@@ -1260,7 +1409,7 @@
       "document": "DeletePsaRegulation返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1272,8 +1421,9 @@
       "document": "DeleteUserCmds请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "需要删除的脚本ID",
+          "example": "",
           "member": "string",
           "name": "CmdIds",
           "required": true,
@@ -1286,7 +1436,7 @@
       "document": "DeleteUserCmds返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1298,8 +1448,9 @@
       "document": "DescribeCustomImageProcess请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "镜像ID",
+          "example": "",
           "member": "string",
           "name": "ImageId",
           "required": true,
@@ -1312,14 +1463,16 @@
       "document": "DescribeCustomImageProcess返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "镜像制作进度",
+          "example": "",
           "member": "CustomImageProcess",
           "name": "CustomImageProcessSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1331,56 +1484,63 @@
       "document": "DescribeCustomImages请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "偏移量",
+          "example": "",
           "member": "uint64",
           "name": "Offset",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数量限制",
+          "example": "",
           "member": "uint64",
           "name": "Limit",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序字段，仅支持CreateTime",
+          "example": "",
           "member": "string",
           "name": "OrderField",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序方式 0:递增(默认) 1:递减",
+          "example": "",
           "member": "uint64",
           "name": "Order",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "按ImageId查找指定镜像信息，ImageId字段存在时其他字段失效",
+          "example": "",
           "member": "string",
           "name": "ImageId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "模糊查询过滤，可以查询镜像ID或镜像名",
+          "example": "",
           "member": "string",
           "name": "SearchKey",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "<ul>\n镜像状态过滤列表，有效取值为：\n<li>1：制作中</li>\n<li>2：制作失败</li>\n<li>3：正常</li>\n<li>4：删除中</li>\n</ul>",
+          "example": "",
           "member": "uint64",
           "name": "ImageStatus",
           "required": false,
@@ -1393,21 +1553,25 @@
       "document": "DescribeCustomImages返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回镜像数量",
+          "example": "",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "镜像信息列表",
+          "example": "",
           "member": "CustomImage",
           "name": "CustomImageSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1419,72 +1583,81 @@
       "document": "DescribeDeviceClassPartition请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "设备类型代号。代号通过接口[查询设备型号(DescribeDeviceClass)](https://cloud.tencent.com/document/api/386/32911)查询。标准机型需要传入此参数。虽是可选参数，但DeviceClassCode和InstanceId参数，必须要填写一个。",
+          "example": "",
           "member": "string",
           "name": "DeviceClassCode",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "需要查询自定义机型RAID信息时，传入自定义机型实例ID。InstanceId存在时其余参数失效。",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "CPU型号ID，查询自定义机型时需要传入",
+          "example": "",
           "member": "uint64",
           "name": "CpuId",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "内存大小，单位为G，查询自定义机型时需要传入",
+          "example": "",
           "member": "uint64",
           "name": "MemSize",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否有RAID卡，取值：1(有) 0(无)。查询自定义机型时需要传入",
+          "example": "",
           "member": "uint64",
           "name": "ContainRaidCard",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "系统盘类型ID，查询自定义机型时需要传入",
+          "example": "",
           "member": "uint64",
           "name": "SystemDiskTypeId",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "系统盘数量，查询自定义机型时需要传入",
+          "example": "",
           "member": "uint64",
           "name": "SystemDiskCount",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据盘类型ID，查询自定义机型时可传入",
+          "example": "",
           "member": "uint64",
           "name": "DataDiskTypeId",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据盘数量，查询自定义机型时可传入",
+          "example": "",
           "member": "uint64",
           "name": "DataDiskCount",
           "required": false,
@@ -1497,14 +1670,16 @@
       "document": "DescribeDeviceClassPartition返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "支持的RAID格式列表",
+          "example": "",
           "member": "DeviceClassPartitionInfo",
           "name": "DeviceClassPartitionInfoSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1516,16 +1691,18 @@
       "document": "DescribeDeviceClass请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "是否仅查询在售标准机型配置信息。取值0：查询所有机型；1：查询在售机型。默认为1",
+          "example": "",
           "member": "uint64",
           "name": "OnSale",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否返回价格信息。取值0：不返回价格信息，接口返回速度更快；1：返回价格信息。默认为1",
+          "example": "",
           "member": "uint64",
           "name": "NeedPriceInfo",
           "required": false,
@@ -1538,14 +1715,16 @@
       "document": "DescribeDeviceClass返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "物理机设备类型列表",
+          "example": "",
           "member": "DeviceClass",
           "name": "DeviceClassSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1557,8 +1736,9 @@
       "document": "DescribeDeviceHardwareInfo请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "设备 ID 列表",
+          "example": "",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -1571,14 +1751,16 @@
       "document": "DescribeDeviceHardwareInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "设备硬件配置信息",
+          "example": "",
           "member": "DeviceHardwareInfo",
           "name": "DeviceHardwareInfoSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1590,88 +1772,99 @@
       "document": "DescribeDeviceInventory请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "可用区",
+          "example": "",
           "member": "string",
           "name": "Zone",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备型号",
+          "example": "",
           "member": "string",
           "name": "DeviceClassCode",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有网络ID",
+          "example": "",
           "member": "string",
           "name": "VpcId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "子网ID",
+          "example": "",
           "member": "string",
           "name": "SubnetId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "CPU型号ID，查询自定义机型时必填",
+          "example": "",
           "member": "uint64",
           "name": "CpuId",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "内存大小，单位为G，查询自定义机型时必填",
+          "example": "",
           "member": "uint64",
           "name": "MemSize",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否有RAID卡，取值：1(有) 0(无)，查询自定义机型时必填",
+          "example": "",
           "member": "uint64",
           "name": "ContainRaidCard",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "系统盘类型ID，查询自定义机型时必填",
+          "example": "",
           "member": "uint64",
           "name": "SystemDiskTypeId",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "系统盘数量，查询自定义机型时必填",
+          "example": "",
           "member": "uint64",
           "name": "SystemDiskCount",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据盘类型ID，查询自定义机型时可填",
+          "example": "",
           "member": "uint64",
           "name": "DataDiskTypeId",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据盘数量，查询自定义机型时可填",
+          "example": "",
           "member": "uint64",
           "name": "DataDiskCount",
           "required": false,
@@ -1684,14 +1877,16 @@
       "document": "DescribeDeviceInventory返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "库存设备数量",
+          "example": "",
           "member": "uint64",
           "name": "DeviceCount",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1703,40 +1898,45 @@
       "document": "DescribeDeviceOperationLog请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "设备实例ID",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "查询开始日期",
+          "example": "",
           "member": "date",
           "name": "StartTime",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "查询结束日期",
+          "example": "",
           "member": "date",
           "name": "EndTime",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "偏移量",
+          "example": "",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "返回数量",
+          "example": "",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1749,21 +1949,25 @@
       "document": "DescribeDeviceOperationLog返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "操作日志列表",
+          "example": "",
           "member": "DeviceOperationLog",
           "name": "DeviceOperationLogSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "返回数目",
+          "example": "",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1775,8 +1979,9 @@
       "document": "DescribeDevicePartition请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "物理机ID",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1789,14 +1994,16 @@
       "document": "DescribeDevicePartition返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "物理机分区格式",
+          "example": "",
           "member": "DevicePartition",
           "name": "DevicePartition",
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1808,48 +2015,54 @@
       "document": "DescribeDevicePosition请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "偏移量",
+          "example": "",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数量限制",
+          "example": "",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有网络ID",
+          "example": "",
           "member": "string",
           "name": "VpcId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "子网ID",
+          "example": "",
           "member": "string",
           "name": "SubnetId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例ID列表",
+          "example": "",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例别名",
+          "example": "",
           "member": "string",
           "name": "Alias",
           "required": false,
@@ -1862,21 +2075,25 @@
       "document": "DescribeDevicePosition返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回数量",
+          "example": "",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "设备所在机架信息",
+          "example": "",
           "member": "DevicePositionInfo",
           "name": "DevicePositionInfoSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1888,24 +2105,27 @@
       "document": "DescribeDevicePriceInfo请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "需要查询的实例列表",
+          "example": "",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "购买时长单位，当前只支持取值为m",
+          "example": "",
           "member": "string",
           "name": "TimeUnit",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "购买时长",
+          "example": "",
           "member": "uint64",
           "name": "TimeSpan",
           "required": false,
@@ -1918,14 +2138,16 @@
       "document": "DescribeDevicePriceInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "服务器价格信息列表",
+          "example": "",
           "member": "DevicePriceInfo",
           "name": "DevicePriceInfoSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1937,7 +2159,7 @@
       "document": "DescribeDevices请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "偏移量",
           "example": "0",
           "member": "uint64",
@@ -1946,7 +2168,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
           "example": "20",
           "member": "uint64",
@@ -1955,7 +2177,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "机型ID，通过接口[查询设备型号(DescribeDeviceClass)](https://cloud.tencent.com/document/api/386/32911)查询",
           "example": "PS001v1",
           "member": "string",
@@ -1964,7 +2186,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备ID数组",
           "example": "cpm-1a2b3c4d",
           "member": "string",
@@ -1973,7 +2195,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "外网IP数组",
           "example": "123.123.123.123",
           "member": "string",
@@ -1982,7 +2204,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "内网IP数组",
           "example": "10.0.0.1",
           "member": "string",
@@ -1991,7 +2213,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备名称",
           "example": "test",
           "member": "string",
@@ -2000,7 +2222,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "模糊IP查询",
           "example": "88",
           "member": "string",
@@ -2009,7 +2231,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备到期时间查询的起始时间",
           "example": "2018-01-01 18:00:00",
           "member": "datetime",
@@ -2018,7 +2240,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备到期时间查询的结束时间",
           "example": "2018-12-01 18:00:00",
           "member": "datetime",
@@ -2027,7 +2249,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "自动续费标志 0:不自动续费，1:自动续费",
           "example": "1",
           "member": "uint64",
@@ -2036,7 +2258,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有网络唯一ID",
           "example": "vpc-3c7b2102",
           "member": "string",
@@ -2045,7 +2267,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "子网唯一ID",
           "example": "subnet-3c7b2102",
           "member": "string",
@@ -2054,7 +2276,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "标签列表",
           "example": "无",
           "member": "Tag",
@@ -2063,7 +2285,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备类型，取值有: compute(计算型), standard(标准型), storage(存储型) 等",
           "example": "standard",
           "member": "string",
@@ -2072,7 +2294,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "竞价实例机器的过滤。如果未指定此参数，则不做过滤。0: 查询非竞价实例的机器; 1: 查询竞价实例的机器。",
           "example": "0",
           "member": "uint64",
@@ -2081,7 +2303,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序字段",
           "example": "SubnetId",
           "member": "string",
@@ -2090,7 +2312,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序方式，取值：0:增序(默认)，1:降序",
           "example": "1",
           "member": "uint64",
@@ -2099,7 +2321,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "按照维保方式过滤。可取值为 Maintain: 在保;  WillExpire: 即将过保; Expire: 已过保",
           "example": "Maintain",
           "member": "string",
@@ -2114,6 +2336,7 @@
       "document": "DescribeDevices返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回数量",
           "example": "2",
           "member": "uint64",
@@ -2123,6 +2346,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "物理机信息列表",
           "example": "无",
           "member": "DeviceInfo",
@@ -2132,7 +2356,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2149,28 +2373,34 @@
       "document": "DescribeHardwareSpecification返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "CPU型号列表",
+          "example": "",
           "member": "CpuInfo",
           "name": "CpuInfoSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "内存的取值，单位为G",
+          "example": "",
           "member": "uint64",
           "name": "MemSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "硬盘型号列表",
+          "example": "",
           "member": "DiskInfo",
           "name": "DiskInfoSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2182,16 +2412,18 @@
       "document": "DescribeHostedDeviceOutBandInfo请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "托管设备的唯一ID数组,数组个数不超过20",
+          "example": "",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "可用区ID",
+          "example": "",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -2204,14 +2436,16 @@
       "document": "DescribeHostedDeviceOutBandInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "托管设备带外信息",
+          "example": "",
           "member": "HostedDeviceOutBandInfo",
           "name": "HostedDeviceOutBandInfoSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2223,8 +2457,9 @@
       "document": "DescribeOperationResult请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "异步任务ID",
+          "example": "",
           "member": "uint64",
           "name": "TaskId",
           "required": true,
@@ -2237,21 +2472,25 @@
       "document": "DescribeOperationResult返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "任务的整体状态，取值如下：<br>\n1：成功<br>\n2：失败<br>\n3：部分成功，部分失败<br>\n4：未完成<br>\n5：部分成功，部分未完成<br>\n6：部分未完成，部分失败<br>\n7：部分未完成，部分失败，部分成功",
+          "example": "",
           "member": "uint64",
           "name": "TaskStatus",
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "各实例对应任务的状态ID",
+          "example": "",
           "member": "SubtaskStatus",
           "name": "SubtaskStatusSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2263,8 +2502,9 @@
       "document": "DescribeOsInfo请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "设备类型代号。 可以从DescribeDeviceClass查询设备类型列表",
+          "example": "",
           "member": "string",
           "name": "DeviceClassCode",
           "required": false,
@@ -2277,14 +2517,16 @@
       "document": "DescribeOsInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "操作系统信息列表",
+          "example": "",
           "member": "OsInfo",
           "name": "OsInfoSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2296,56 +2538,63 @@
       "document": "DescribePsaRegulations请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "数量限制",
+          "example": "",
           "member": "uint64",
           "name": "Limit",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "偏移量",
+          "example": "",
           "member": "uint64",
           "name": "Offset",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "规则ID过滤，支持模糊查询",
+          "example": "",
           "member": "string",
           "name": "PsaIds",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "规则别名过滤，支持模糊查询",
+          "example": "",
           "member": "string",
           "name": "PsaNames",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "标签过滤",
+          "example": "",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序字段，取值支持：CreateTime",
+          "example": "",
           "member": "string",
           "name": "OrderField",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序方式 0:递增(默认) 1:递减",
+          "example": "",
           "member": "uint64",
           "name": "Order",
           "required": false,
@@ -2358,21 +2607,25 @@
       "document": "DescribePsaRegulations返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回规则数量",
+          "example": "",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "返回规则列表",
+          "example": "",
           "member": "PsaRegulation",
           "name": "PsaRegulations",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2384,8 +2637,9 @@
       "document": "DescribeRegions请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "地域整型ID，目前黑石可用地域包括：8-北京，4-上海，1-广州， 19-重庆",
+          "example": "",
           "member": "uint64",
           "name": "RegionId",
           "required": false,
@@ -2398,14 +2652,16 @@
       "document": "DescribeRegions返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "地域信息",
+          "example": "",
           "member": "RegionInfo",
           "name": "RegionInfoSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2422,14 +2678,16 @@
       "document": "DescribeRepairTaskConstant返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "故障类型ID与对应中文名列表",
+          "example": "",
           "member": "TaskType",
           "name": "TaskTypeSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2441,7 +2699,7 @@
       "document": "DescribeTaskInfo请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "开始位置",
           "example": "0",
           "member": "uint64",
@@ -2450,7 +2708,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据条数",
           "example": "20",
           "member": "uint64",
@@ -2459,7 +2717,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "时间过滤下限",
           "example": "2018-07-10",
           "member": "date",
@@ -2468,7 +2726,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "时间过滤上限",
           "example": "2018-07-19",
           "member": "date",
@@ -2477,7 +2735,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务状态ID过滤",
           "example": "[\"1\\r\\n\"]",
           "member": "uint64",
@@ -2486,7 +2744,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序字段，目前支持：CreateTime，AuthTime，EndTime",
           "example": "CreateTime",
           "member": "string",
@@ -2495,7 +2753,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序方式 0:递增(默认) 1:递减",
           "example": "1",
           "member": "uint64",
@@ -2504,7 +2762,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务ID过滤",
           "example": "[\"b\\r\\n\"]",
           "member": "string",
@@ -2513,7 +2771,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例ID过滤",
           "example": "[\"o\\r\\n\"]",
           "member": "string",
@@ -2522,7 +2780,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例别名过滤",
           "example": "[\"-\\r\\n\"]",
           "member": "string",
@@ -2531,7 +2789,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "故障类型ID过滤",
           "example": "[\"44\\r\\n\",\"49\\r\\n\"]",
           "member": "uint64",
@@ -2546,6 +2804,7 @@
       "document": "DescribeTaskInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回任务总数量",
           "example": "2",
           "member": "int64",
@@ -2555,6 +2814,7 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "任务信息列表",
           "example": "无",
           "member": "TaskInfo",
@@ -2564,7 +2824,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2576,24 +2836,27 @@
       "document": "DescribeTaskOperationLog请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "维修任务ID",
+          "example": "",
           "member": "string",
           "name": "TaskId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序字段，目前支持：OperationTime",
+          "example": "",
           "member": "string",
           "name": "OrderField",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序方式 0:递增(默认) 1:递减",
+          "example": "",
           "member": "uint64",
           "name": "Order",
           "required": false,
@@ -2606,21 +2869,25 @@
       "document": "DescribeTaskOperationLog返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "操作日志",
+          "example": "",
           "member": "TaskOperationLog",
           "name": "TaskOperationLogSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "日志条数",
+          "example": "",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2632,48 +2899,54 @@
       "document": "DescribeUserCmdTaskInfo请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务ID",
+          "example": "",
           "member": "string",
           "name": "TaskId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "偏移量",
+          "example": "",
           "member": "uint64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数量限制",
+          "example": "",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序字段，支持： RunBeginTime,RunEndTime,Status",
+          "example": "",
           "member": "string",
           "name": "OrderField",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序方式，取值: 1倒序，0顺序；默认倒序",
+          "example": "",
           "member": "uint64",
           "name": "Order",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "关键字搜索，可搜索ID或别名，支持模糊搜索",
+          "example": "",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -2686,21 +2959,25 @@
       "document": "DescribeUserCmdTaskInfo返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回数量",
+          "example": "",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "自定义脚本任务详细信息列表",
+          "example": "",
           "member": "UserCmdTaskInfo",
           "name": "UserCmdTaskInfoSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2712,32 +2989,36 @@
       "document": "DescribeUserCmdTasks请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "偏移量",
+          "example": "",
           "member": "uint64",
           "name": "Offset",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数量限制",
+          "example": "",
           "member": "uint64",
           "name": "Limit",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序字段，支持： RunBeginTime,RunEndTime,InstanceCount,SuccessCount,FailureCount",
+          "example": "",
           "member": "string",
           "name": "OrderField",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序方式，取值: 1倒序，0顺序；默认倒序",
+          "example": "",
           "member": "uint64",
           "name": "Order",
           "required": false,
@@ -2750,21 +3031,25 @@
       "document": "DescribeUserCmdTasks返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "脚本任务信息数量",
+          "example": "",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "脚本任务信息列表",
+          "example": "",
           "member": "UserCmdTask",
           "name": "UserCmdTasks",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2776,48 +3061,54 @@
       "document": "DescribeUserCmds请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "偏移量",
+          "example": "",
           "member": "uint64",
           "name": "Offset",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数量限制",
+          "example": "",
           "member": "uint64",
           "name": "Limit",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序字段，支持： OsType,CreateTime,ModifyTime",
+          "example": "",
           "member": "string",
           "name": "OrderField",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "排序方式，取值: 1倒序，0顺序；默认倒序",
+          "example": "",
           "member": "uint64",
           "name": "Order",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "关键字搜索，可搜索ID或别名，支持模糊搜索",
+          "example": "",
           "member": "string",
           "name": "SearchKey",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "查询的脚本ID",
+          "example": "",
           "member": "string",
           "name": "CmdId",
           "required": false,
@@ -2830,21 +3121,25 @@
       "document": "DescribeUserCmds返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "返回数量",
+          "example": "",
           "member": "uint64",
           "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "脚本信息列表",
+          "example": "",
           "member": "UserCmd",
           "name": "UserCmds",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2856,8 +3151,9 @@
       "document": "DetachCamRole请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "服务器ID",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2870,7 +3166,7 @@
       "document": "DetachCamRole返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -2882,8 +3178,9 @@
       "document": "设备ID与别名",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "设备ID",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2891,8 +3188,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备别名",
+          "example": "",
           "member": "string",
           "name": "Alias",
           "required": true,
@@ -2906,8 +3204,9 @@
       "document": "物理机设备类型",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "机型ID",
+          "example": "",
           "member": "string",
           "name": "DeviceClassCode",
           "required": true,
@@ -2915,8 +3214,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "CPU描述",
+          "example": "",
           "member": "string",
           "name": "CpuDescription",
           "required": true,
@@ -2924,8 +3224,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "内存描述",
+          "example": "",
           "member": "string",
           "name": "MemDescription",
           "required": true,
@@ -2933,8 +3234,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "硬盘描述",
+          "example": "",
           "member": "string",
           "name": "DiskDescription",
           "required": true,
@@ -2942,8 +3244,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否支持RAID. 0:不支持; 1:支持",
+          "example": "",
           "member": "uint64",
           "name": "HaveRaidCard",
           "required": true,
@@ -2951,8 +3254,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "网卡描述",
+          "example": "",
           "member": "string",
           "name": "NicDescription",
           "required": true,
@@ -2960,8 +3264,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "GPU描述",
+          "example": "",
           "member": "string",
           "name": "GpuDescription",
           "required": true,
@@ -2969,8 +3274,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "单价折扣\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "float",
           "name": "Discount",
           "required": true,
@@ -2978,8 +3284,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "用户刊例价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "uint64",
           "name": "UnitPrice",
           "required": true,
@@ -2987,8 +3294,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实际价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "uint64",
           "name": "RealPrice",
           "required": true,
@@ -2996,8 +3304,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "官网刊例价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "uint64",
           "name": "NormalPrice",
           "required": true,
@@ -3005,8 +3314,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备使用场景类型",
+          "example": "",
           "member": "string",
           "name": "DeviceType",
           "required": true,
@@ -3014,8 +3324,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "机型系列",
+          "example": "",
           "member": "uint64",
           "name": "Series",
           "required": true,
@@ -3023,8 +3334,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "cpu的核心数。仅是物理服务器未开启超线程的核心数， 超线程的核心数为Cpu*2",
+          "example": "",
           "member": "uint64",
           "name": "Cpu",
           "required": true,
@@ -3032,8 +3344,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "内存容量。单位G",
+          "example": "",
           "member": "uint64",
           "name": "Mem",
           "required": true,
@@ -3047,8 +3360,9 @@
       "document": "RAID和设备分区结构",
       "members": [
         {
-          "default": "0",
+          "disabled": false,
           "document": "RAID类型ID",
+          "example": "",
           "member": "uint64",
           "name": "RaidId",
           "required": true,
@@ -3056,8 +3370,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "RAID名称",
+          "example": "",
           "member": "string",
           "name": "Raid",
           "required": true,
@@ -3065,8 +3380,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "RAID名称（前台展示用）",
+          "example": "",
           "member": "string",
           "name": "RaidDisplay",
           "required": true,
@@ -3074,8 +3390,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
+          "disabled": false,
           "document": "系统盘总大小（单位GiB）",
+          "example": "",
           "member": "uint64",
           "name": "SystemDiskSize",
           "required": true,
@@ -3083,8 +3400,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
+          "disabled": false,
           "document": "系统盘/分区默认大小（单位GiB）",
+          "example": "",
           "member": "uint64",
           "name": "SysRootSpace",
           "required": true,
@@ -3092,8 +3410,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
+          "disabled": false,
           "document": "系统盘swap分区默认大小（单位GiB）",
+          "example": "",
           "member": "uint64",
           "name": "SysSwaporuefiSpace",
           "required": true,
@@ -3101,8 +3420,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
+          "disabled": false,
           "document": "系统盘/usr/local分区默认大小（单位GiB）",
+          "example": "",
           "member": "uint64",
           "name": "SysUsrlocalSpace",
           "required": true,
@@ -3110,8 +3430,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
+          "disabled": false,
           "document": "系统盘/data分区默认大小（单位GiB）",
+          "example": "",
           "member": "uint64",
           "name": "SysDataSpace",
           "required": true,
@@ -3119,8 +3440,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
+          "disabled": false,
           "document": "设备是否是uefi启动方式。0:legacy启动; 1:uefi启动",
+          "example": "",
           "member": "uint64",
           "name": "SysIsUefiType",
           "required": true,
@@ -3128,8 +3450,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
+          "disabled": false,
           "document": "数据盘总大小",
+          "example": "",
           "member": "uint64",
           "name": "DataDiskSize",
           "required": true,
@@ -3137,8 +3460,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "硬盘列表",
+          "example": "",
           "member": "DeviceDiskSizeInfo",
           "name": "DeviceDiskSizeInfoSet",
           "required": true,
@@ -3152,8 +3476,9 @@
       "document": "硬盘大小的描述",
       "members": [
         {
-          "default": "\"\"",
+          "disabled": false,
           "document": "硬盘名称",
+          "example": "",
           "member": "string",
           "name": "DiskName",
           "required": true,
@@ -3161,8 +3486,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
+          "disabled": false,
           "document": "硬盘大小（单位GiB）",
+          "example": "",
           "member": "uint64",
           "name": "DiskSize",
           "required": true,
@@ -3176,8 +3502,9 @@
       "document": "设备硬件配置信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "设备实例 ID",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -3185,8 +3512,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否自定义机型",
+          "example": "",
           "member": "uint64",
           "name": "IsElastic",
           "required": false,
@@ -3194,8 +3522,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "机型计费模式，1 为预付费，2 为后付费",
+          "example": "",
           "member": "uint64",
           "name": "CpmPayMode",
           "required": false,
@@ -3203,8 +3532,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "自定义机型，CPU 型号 ID（非自定义机型返回0）",
+          "example": "",
           "member": "uint64",
           "name": "CpuId",
           "required": false,
@@ -3212,8 +3542,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "自定义机型，内存大小, 单位 GB（非自定义机型返回0）",
+          "example": "",
           "member": "uint64",
           "name": "Mem",
           "required": false,
@@ -3221,8 +3552,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否有 RAID 卡，0：没有 RAID 卡； 1：有 RAID 卡",
+          "example": "",
           "member": "uint64",
           "name": "ContainRaidCard",
           "required": false,
@@ -3230,8 +3562,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "自定义机型系统盘类型ID（若没有则返回0）",
+          "example": "",
           "member": "uint64",
           "name": "SystemDiskTypeId",
           "required": false,
@@ -3239,8 +3572,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "自定义机型系统盘数量（若没有则返回0）",
+          "example": "",
           "member": "uint64",
           "name": "SystemDiskCount",
           "required": false,
@@ -3248,8 +3582,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "自定义机型数据盘类型 ID（若没有则返回0）",
+          "example": "",
           "member": "uint64",
           "name": "DataDiskTypeId",
           "required": false,
@@ -3257,8 +3592,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "自定义机型数据盘数量（若没有则返回0）",
+          "example": "",
           "member": "uint64",
           "name": "DataDiskCount",
           "required": false,
@@ -3266,8 +3602,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "CPU 型号描述",
+          "example": "",
           "member": "string",
           "name": "CpuDescription",
           "required": false,
@@ -3275,8 +3612,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "内存描述",
+          "example": "",
           "member": "string",
           "name": "MemDescription",
           "required": false,
@@ -3284,8 +3622,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "磁盘描述",
+          "example": "",
           "member": "string",
           "name": "DiskDescription",
           "required": false,
@@ -3293,8 +3632,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "网卡描述",
+          "example": "",
           "member": "string",
           "name": "NicDescription",
           "required": false,
@@ -3302,8 +3642,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否支持 RAID 的描述",
+          "example": "",
           "member": "string",
           "name": "RaidDescription",
           "required": false,
@@ -3311,8 +3652,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "cpu的核心数。仅是物理服务器未开启超线程的核心数， 超线程的核心数为Cpu*2",
+          "example": "",
           "member": "uint64",
           "name": "Cpu",
           "required": true,
@@ -3320,8 +3662,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "机型外部代号",
+          "example": "",
           "member": "string",
           "name": "DeviceClassCode",
           "required": true,
@@ -3335,7 +3678,7 @@
       "document": "物理机信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "设备唯一ID",
           "example": "cpm-1a2b3c4d",
           "member": "string",
@@ -3345,7 +3688,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有网络ID",
           "example": "vpc-1a2b3c4d",
           "member": "string",
@@ -3355,7 +3698,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "子网ID",
           "example": "subnet-1a2b3c4d",
           "member": "string",
@@ -3365,7 +3708,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备状态ID，取值：<li>1：申领设备中</li><li>2：初始化中</li><li>4：运营中</li><li>7：隔离中</li><li>8：已隔离</li><li>10：解隔离中</li><li>16：故障中</li>",
           "example": "4",
           "member": "uint64",
@@ -3375,7 +3718,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备操作状态ID，取值：\n<li>1：运行中</li><li>2：正在关机</li><li>3：已关机</li><li>5：正在开机</li><li>7：重启中</li><li>9：重装中</li><li>12：绑定EIP</li><li>13：解绑EIP</li><li>14：绑定LB</li><li>15：解绑LB</li><li>19：更换IP中</li><li>20：制作镜像中</li><li>21：制作镜像失败</li><li>23：故障待重装</li><li>24：无备件待退回</li>",
           "example": "1",
           "member": "uint64",
@@ -3385,7 +3728,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作系统ID，参考接口[查询操作系统信息(DescribeOsInfo)](https://cloud.tencent.com/document/product/386/32902)",
           "example": "2",
           "member": "uint64",
@@ -3395,7 +3738,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "RAID类型ID，参考接口[查询机型RAID方式以及系统盘大小(DescribeDeviceClassPartition)](https://cloud.tencent.com/document/product/386/32910)",
           "example": "5",
           "member": "uint64",
@@ -3405,7 +3748,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备别名",
           "example": "设备名称",
           "member": "string",
@@ -3415,7 +3758,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "用户AppId",
           "example": "1251001000",
           "member": "uint64",
@@ -3425,7 +3768,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-bls-1",
           "member": "string",
@@ -3435,7 +3778,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "外网IP",
           "example": "123.123.12.3.123",
           "member": "string",
@@ -3445,7 +3788,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "内网IP",
           "example": "10.0.0.1",
           "member": "string",
@@ -3455,7 +3798,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备交付时间",
           "example": "2020-02-02 21:00:00",
           "member": "datetime",
@@ -3465,7 +3808,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备到期时间",
           "example": "2020-02-02 21:00:00",
           "member": "datetime",
@@ -3475,7 +3818,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "自动续费标识。0: 不自动续费; 1:自动续费",
           "example": "1",
           "member": "uint64",
@@ -3485,7 +3828,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备类型",
           "example": "PS100v3",
           "member": "string",
@@ -3495,7 +3838,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "标签列表",
           "example": "tag",
           "member": "Tag",
@@ -3505,7 +3848,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "计费模式。1: 预付费; 2: 后付费; 3:预付费转后付费中",
           "example": "1",
           "member": "uint64",
@@ -3515,7 +3858,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "带外IP",
           "example": "10.1.0.1",
           "member": "string",
@@ -3525,7 +3868,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "所在私有网络别名",
           "example": "vpc名称",
           "member": "string",
@@ -3535,7 +3878,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "所在子网别名",
           "example": "子网名称",
           "member": "string",
@@ -3545,7 +3888,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "所在私有网络CIDR",
           "example": "10.0.0.0/16",
           "member": "string",
@@ -3555,7 +3898,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "所在子网CIDR",
           "example": "10.0.0.0/24",
           "member": "string",
@@ -3565,7 +3908,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "标识是否是竞价实例。0: 普通设备; 1: 竞价实例设备",
           "example": "1",
           "member": "uint64",
@@ -3575,7 +3918,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "标识机器维保状态。Maintain: 在保;  WillExpire: 即将过保; Expire: 已过保\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Maintain",
           "member": "string",
@@ -3585,7 +3928,7 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "维保信息描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "有厂商维保服务，可继续使用",
           "member": "string",
@@ -3601,8 +3944,9 @@
       "document": "设备操作日志",
       "members": [
         {
-          "default": "0",
+          "disabled": false,
           "document": "日志的ID",
+          "example": "",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -3610,8 +3954,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备ID",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3619,8 +3964,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
+          "disabled": false,
           "document": "日志对应的操作任务ID",
+          "example": "",
           "member": "uint64",
           "name": "TaskId",
           "required": true,
@@ -3628,8 +3974,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作任务名称",
+          "example": "",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -3637,8 +3984,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作任务中文名称",
+          "example": "",
           "member": "string",
           "name": "TaskDescription",
           "required": true,
@@ -3646,8 +3994,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "0000-00-00 00:00:00",
+          "disabled": false,
           "document": "操作开始时间",
+          "example": "",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -3655,8 +4004,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "0000-00-00 00:00:00",
+          "disabled": false,
           "document": "操作结束时间",
+          "example": "",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -3664,8 +4014,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
+          "disabled": false,
           "document": "操作状态，0: 正在执行中；1：任务成功； 2: 任务失败。",
+          "example": "",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -3673,8 +4024,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作者",
+          "example": "",
           "member": "string",
           "name": "OpUin",
           "required": true,
@@ -3682,8 +4034,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作描述",
+          "example": "",
           "member": "string",
           "name": "LogDescription",
           "required": true,
@@ -3697,8 +4050,9 @@
       "document": "物理机分区格式",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "系统盘大小",
+          "example": "",
           "member": "uint64",
           "name": "SystemDiskSize",
           "required": true,
@@ -3706,8 +4060,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "数据盘大小",
+          "example": "",
           "member": "uint64",
           "name": "DataDiskSize",
           "required": true,
@@ -3715,8 +4070,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否兼容Uefi",
+          "example": "",
           "member": "bool",
           "name": "SysIsUefiType",
           "required": true,
@@ -3724,8 +4080,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "root分区大小",
+          "example": "",
           "member": "uint64",
           "name": "SysRootSpace",
           "required": true,
@@ -3733,8 +4090,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "Swaporuefi分区大小",
+          "example": "",
           "member": "uint64",
           "name": "SysSwaporuefiSpace",
           "required": true,
@@ -3742,8 +4100,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "Usrlocal分区大小",
+          "example": "",
           "member": "uint64",
           "name": "SysUsrlocalSpace",
           "required": true,
@@ -3751,8 +4110,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "data分区大小",
+          "example": "",
           "member": "uint64",
           "name": "SysDataSpace",
           "required": true,
@@ -3760,8 +4120,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "硬盘大小详情",
+          "example": "",
           "member": "DeviceDiskSizeInfo",
           "name": "DeviceDiskSizeInfoSet",
           "required": true,
@@ -3775,8 +4136,9 @@
       "document": "物理机机架信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "设备ID",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3784,8 +4146,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "所在可用区",
+          "example": "",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -3793,8 +4156,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有网络ID",
+          "example": "",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -3802,8 +4166,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "子网ID",
+          "example": "",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -3811,8 +4176,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "业务IP",
+          "example": "",
           "member": "string",
           "name": "LanIp",
           "required": true,
@@ -3820,8 +4186,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例别名",
+          "example": "",
           "member": "string",
           "name": "Alias",
           "required": true,
@@ -3829,8 +4196,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "机架名称",
+          "example": "",
           "member": "string",
           "name": "RckName",
           "required": true,
@@ -3838,8 +4206,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "机位",
+          "example": "",
           "member": "uint64",
           "name": "PosCode",
           "required": true,
@@ -3847,8 +4216,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "交换机名称",
+          "example": "",
           "member": "string",
           "name": "SwitchName",
           "required": true,
@@ -3856,8 +4226,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备交付时间",
+          "example": "",
           "member": "datetime",
           "name": "DeliverTime",
           "required": true,
@@ -3865,8 +4236,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "过期时间",
+          "example": "",
           "member": "datetime",
           "name": "Deadline",
           "required": true,
@@ -3880,8 +4252,9 @@
       "document": "服务器价格信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "物理机ID",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3889,8 +4262,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备型号",
+          "example": "",
           "member": "string",
           "name": "DeviceClassCode",
           "required": true,
@@ -3898,8 +4272,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否是弹性机型，1：是，0：否",
+          "example": "",
           "member": "uint64",
           "name": "IsElastic",
           "required": true,
@@ -3907,8 +4282,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "付费模式ID, 1:预付费; 2:后付费; 3:预付费转后付费中",
+          "example": "",
           "member": "uint64",
           "name": "CpmPayMode",
           "required": true,
@@ -3916,8 +4292,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "Cpu信息描述",
+          "example": "",
           "member": "string",
           "name": "CpuDescription",
           "required": true,
@@ -3925,8 +4302,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "内存信息描述",
+          "example": "",
           "member": "string",
           "name": "MemDescription",
           "required": true,
@@ -3934,8 +4312,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "硬盘信息描述",
+          "example": "",
           "member": "string",
           "name": "DiskDescription",
           "required": true,
@@ -3943,8 +4322,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "网卡信息描述",
+          "example": "",
           "member": "string",
           "name": "NicDescription",
           "required": true,
@@ -3952,8 +4332,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "Gpu信息描述",
+          "example": "",
           "member": "string",
           "name": "GpuDescription",
           "required": true,
@@ -3961,8 +4342,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "Raid信息描述",
+          "example": "",
           "member": "string",
           "name": "RaidDescription",
           "required": true,
@@ -3970,8 +4352,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "客户的单价",
+          "example": "",
           "member": "uint64",
           "name": "Price",
           "required": true,
@@ -3979,8 +4362,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "刊例单价",
+          "example": "",
           "member": "uint64",
           "name": "NormalPrice",
           "required": true,
@@ -3988,8 +4372,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "原价",
+          "example": "",
           "member": "uint64",
           "name": "TotalCost",
           "required": true,
@@ -3997,8 +4382,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "折扣价",
+          "example": "",
           "member": "uint64",
           "name": "RealTotalCost",
           "required": true,
@@ -4006,8 +4392,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "计费时长",
+          "example": "",
           "member": "uint64",
           "name": "TimeSpan",
           "required": true,
@@ -4015,8 +4402,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "计费时长单位, M:按月计费; D:按天计费",
+          "example": "",
           "member": "string",
           "name": "TimeUnit",
           "required": true,
@@ -4024,8 +4412,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "商品数量",
+          "example": "",
           "member": "uint64",
           "name": "GoodsCount",
           "required": true,
@@ -4039,8 +4428,9 @@
       "document": "自定义机型磁盘的描述",
       "members": [
         {
-          "default": "0",
+          "disabled": false,
           "document": "磁盘ID",
+          "example": "",
           "member": "uint64",
           "name": "DiskTypeId",
           "required": true,
@@ -4048,8 +4438,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "0",
+          "disabled": false,
           "document": "磁盘的容量，单位为G",
+          "example": "",
           "member": "uint64",
           "name": "Size",
           "required": true,
@@ -4057,8 +4448,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "磁盘信息描述",
+          "example": "",
           "member": "string",
           "name": "DiskDescription",
           "required": true,
@@ -4072,8 +4464,9 @@
       "document": "运行失败的自定义脚本信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "运行脚本的设备ID",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4081,8 +4474,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "失败原因",
+          "example": "",
           "member": "string",
           "name": "ErrorMsg",
           "required": true,
@@ -4096,8 +4490,9 @@
       "document": "托管设备带外信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "物理机ID",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4105,8 +4500,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "带外IP",
+          "example": "",
           "member": "string",
           "name": "OutBandIp",
           "required": true,
@@ -4114,8 +4510,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "VPN的IP",
+          "example": "",
           "member": "string",
           "name": "VpnIp",
           "required": true,
@@ -4123,8 +4520,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "VPN的端口",
+          "example": "",
           "member": "uint64",
           "name": "VpnPort",
           "required": true,
@@ -4138,24 +4536,27 @@
       "document": "ModifyCustomImageAttribute请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "镜像ID",
+          "example": "",
           "member": "string",
           "name": "ImageId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设置新的镜像名",
+          "example": "",
           "member": "string",
           "name": "ImageName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设置新的镜像描述",
+          "example": "",
           "member": "string",
           "name": "ImageDescription",
           "required": false,
@@ -4168,7 +4569,7 @@
       "document": "ModifyCustomImageAttribute返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -4180,7 +4581,7 @@
       "document": "ModifyDeviceAliases请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "需要改名的设备与别名列表",
           "example": "无",
           "member": "DeviceAlias",
@@ -4195,7 +4596,7 @@
       "document": "ModifyDeviceAliases返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -4207,16 +4608,18 @@
       "document": "ModifyDeviceAutoRenewFlag请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "自动续费标志位。0: 不自动续费; 1: 自动续费",
+          "example": "",
           "member": "uint64",
           "name": "AutoRenewFlag",
           "required": true,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "需要修改的设备ID列表",
+          "example": "",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4229,7 +4632,7 @@
       "document": "ModifyDeviceAutoRenewFlag返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -4241,40 +4644,45 @@
       "document": "ModifyLanIp请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "物理机ID",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "指定新VPC",
+          "example": "",
           "member": "string",
           "name": "VpcId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "指定新子网",
+          "example": "",
           "member": "string",
           "name": "SubnetId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "指定新内网IP",
+          "example": "",
           "member": "string",
           "name": "LanIp",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否需要重启机器，取值 1(需要) 0(不需要)，默认取值0",
+          "example": "",
           "member": "uint64",
           "name": "RebootDevice",
           "required": false,
@@ -4287,14 +4695,16 @@
       "document": "ModifyLanIp返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "黑石异步任务ID",
+          "example": "",
           "member": "uint64",
           "name": "TaskId",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -4306,8 +4716,9 @@
       "document": "ModifyPayModePre2Post请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "需要修改的设备ID列表",
+          "example": "",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4320,7 +4731,7 @@
       "document": "ModifyPayModePre2Post返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -4332,40 +4743,45 @@
       "document": "ModifyPsaRegulation请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "预授权规则ID",
+          "example": "",
           "member": "string",
           "name": "PsaId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "预授权规则别名",
+          "example": "",
           "member": "string",
           "name": "PsaName",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "维修中的实例上限",
+          "example": "",
           "member": "uint64",
           "name": "RepairLimit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "预授权规则备注",
+          "example": "",
           "member": "string",
           "name": "PsaDescription",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "预授权规则关联故障类型ID列表",
+          "example": "",
           "member": "uint64",
           "name": "TaskTypeIds",
           "required": false,
@@ -4378,7 +4794,7 @@
       "document": "ModifyPsaRegulation返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -4390,32 +4806,36 @@
       "document": "ModifyUserCmd请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "待修改的脚本ID",
+          "example": "",
           "member": "string",
           "name": "CmdId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "待修改的脚本名称",
+          "example": "",
           "member": "string",
           "name": "Alias",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "脚本适用的操作系统类型",
+          "example": "",
           "member": "string",
           "name": "OsType",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "待修改的脚本内容，必须经过base64编码",
+          "example": "",
           "member": "string",
           "name": "Content",
           "required": false,
@@ -4428,7 +4848,7 @@
       "document": "ModifyUserCmd返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -4440,8 +4860,9 @@
       "document": "OfflineDevices请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "需要退还的物理机ID列表",
+          "example": "",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4454,14 +4875,16 @@
       "document": "OfflineDevices返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "黑石异步任务ID",
+          "example": "",
           "member": "uint64",
           "name": "TaskId",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -4473,8 +4896,9 @@
       "document": "操作系统类型",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "操作系统ID",
+          "example": "",
           "member": "uint64",
           "name": "OsTypeId",
           "required": true,
@@ -4482,8 +4906,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作系统名称",
+          "example": "",
           "member": "string",
           "name": "OsName",
           "required": true,
@@ -4491,8 +4916,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作系统名称描述",
+          "example": "",
           "member": "string",
           "name": "OsDescription",
           "required": true,
@@ -4500,8 +4926,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作系统英文名称",
+          "example": "",
           "member": "string",
           "name": "OsEnglishDescription",
           "required": true,
@@ -4509,8 +4936,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作系统的分类，如CentOs Debian",
+          "example": "",
           "member": "string",
           "name": "OsClass",
           "required": true,
@@ -4518,8 +4946,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "标识镜像分类。public:公共镜像; private: 专属镜像",
+          "example": "",
           "member": "string",
           "name": "ImageTag",
           "required": true,
@@ -4527,8 +4956,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作系统，ext4文件下所支持的最大的磁盘大小。单位为T",
+          "example": "",
           "member": "uint64",
           "name": "MaxPartitionSize",
           "required": true,
@@ -4536,8 +4966,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "黑石版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "OsMinorVersion",
           "required": true,
@@ -4545,8 +4976,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "黑石版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "OsMinorClass",
           "required": true,
@@ -4560,8 +4992,9 @@
       "document": "描述设备分区信息",
       "members": [
         {
-          "default": "0",
+          "disabled": false,
           "document": "分区名称",
+          "example": "",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4569,8 +5002,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "分区大小",
+          "example": "",
           "member": "uint64",
           "name": "Size",
           "required": true,
@@ -4584,8 +5018,9 @@
       "document": "一条预授权规则",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "规则ID",
+          "example": "",
           "member": "string",
           "name": "PsaId",
           "required": true,
@@ -4593,8 +5028,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "规则别名",
+          "example": "",
           "member": "string",
           "name": "PsaName",
           "required": true,
@@ -4602,8 +5038,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "关联标签数量",
+          "example": "",
           "member": "uint64",
           "name": "TagCount",
           "required": true,
@@ -4611,8 +5048,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "关联实例数量",
+          "example": "",
           "member": "uint64",
           "name": "InstanceCount",
           "required": true,
@@ -4620,8 +5058,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "故障实例数量",
+          "example": "",
           "member": "uint64",
           "name": "RepairCount",
           "required": true,
@@ -4629,8 +5068,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "故障实例上限",
+          "example": "",
           "member": "uint64",
           "name": "RepairLimit",
           "required": true,
@@ -4638,8 +5078,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "创建时间",
+          "example": "",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -4647,8 +5088,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "规则备注",
+          "example": "",
           "member": "string",
           "name": "PsaDescription",
           "required": true,
@@ -4656,8 +5098,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "关联标签",
+          "example": "",
           "member": "Tag",
           "name": "Tags",
           "required": true,
@@ -4665,8 +5108,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "关联故障类型id",
+          "example": "",
           "member": "uint64",
           "name": "TaskTypeIds",
           "required": true,
@@ -4680,8 +5124,9 @@
       "document": "RebootDevices请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "需要重启的设备ID列表",
+          "example": "",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4694,14 +5139,16 @@
       "document": "RebootDevices返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步任务ID",
+          "example": "",
           "member": "uint64",
           "name": "TaskId",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -4713,8 +5160,9 @@
       "document": "RecoverDevices请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "需要恢复的物理机ID列表",
+          "example": "",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4727,14 +5175,16 @@
       "document": "RecoverDevices返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "黑石异步任务ID",
+          "example": "",
           "member": "uint64",
           "name": "TaskId",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -4746,8 +5196,9 @@
       "document": "地域信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "地域ID",
+          "example": "",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -4755,8 +5206,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "地域整型ID",
+          "example": "",
           "member": "uint64",
           "name": "RegionId",
           "required": true,
@@ -4764,8 +5216,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "地域描述",
+          "example": "",
           "member": "string",
           "name": "RegionDescription",
           "required": true,
@@ -4773,8 +5226,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "该地域下的可用区信息",
+          "example": "",
           "member": "ZoneInfo",
           "name": "ZoneInfoSet",
           "required": true,
@@ -4788,160 +5242,180 @@
       "document": "ReloadDeviceOs请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "设备的唯一ID",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "密码。 用户设置的linux root或Windows Administrator密码。密码校验规则: <li> Windows机器密码需12到16位，至少包括三项 `[a-z]`,`[A-Z]`,`[0-9]`和`[()`'`~!@#$%^&*-+=_`|`{}[]:;'<>,.?/]`的特殊符号, 密码不能包含Administrator(不区分大小写); <li> Linux机器密码需8到16位，至少包括两项`[a-z,A-Z]`,`[0-9]`和`[()`'`~!@#$%^&*-+=_`|`{}[]:;'<>,.?/]`的特殊符号",
+          "example": "",
           "member": "string",
           "name": "Password",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作系统类型ID。通过接口[查询操作系统信息(DescribeOsInfo)](https://cloud.tencent.com/document/api/386/32902)获取操作系统信息",
+          "example": "",
           "member": "uint64",
           "name": "OsTypeId",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "RAID类型ID。通过接口[查询机型RAID方式以及系统盘大小(DescribeDeviceClassPartition)](https://cloud.tencent.com/document/api/386/32910)获取RAID信息",
+          "example": "",
           "member": "uint64",
           "name": "RaidId",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否格式化数据盘。0: 不格式化（默认值）；1：格式化",
+          "example": "",
           "member": "uint64",
           "name": "IsZoning",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "系统盘根分区大小，默认是10G。系统盘的大小参考接口[查询机型RAID方式以及系统盘大小(DescribeDeviceClassPartition)](https://cloud.tencent.com/document/api/386/32910)",
+          "example": "",
           "member": "uint64",
           "name": "SysRootSpace",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "系统盘swap分区或/boot/efi分区的大小。若是uefi启动的机器，分区为/boot/efi ,且此值是默认是2G。普通机器为swap分区，可以不指定此分区。机型是否是uefi启动，参考接口[查询设备型号(DescribeDeviceClass)](https://cloud.tencent.com/document/api/386/32911)",
+          "example": "",
           "member": "uint64",
           "name": "SysSwaporuefiSpace",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "/usr/local分区大小",
+          "example": "",
           "member": "uint64",
           "name": "SysUsrlocalSpace",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "重装到新的私有网络的ID。如果改变VPC子网，则要求与SubnetId同时传参，否则可不填",
+          "example": "",
           "member": "string",
           "name": "VpcId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "重装到新的子网的ID。如果改变VPC子网，则要求与VpcId同时传参，否则可不填",
+          "example": "",
           "member": "string",
           "name": "SubnetId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "重装指定IP地址",
+          "example": "",
           "member": "string",
           "name": "LanIp",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "指定是否开启超线程。 0：关闭超线程；1：开启超线程（默认值）",
+          "example": "",
           "member": "uint64",
           "name": "HyperThreading",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "自定义镜像ID。传此字段则用自定义镜像重装",
+          "example": "",
           "member": "string",
           "name": "ImageId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "指定数据盘的文件系统格式，当前支持 EXT4和XFS选项， 默认为EXT4。 参数适用于数据盘和Linux， 且在IsZoning为1时生效",
+          "example": "",
           "member": "string",
           "name": "FileSystem",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否安装安全Agent，取值：1(安装) 0(不安装)，默认取值0",
+          "example": "",
           "member": "uint64",
           "name": "NeedSecurityAgent",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否安装监控Agent，取值：1(安装) 0(不安装)，默认取值0",
+          "example": "",
           "member": "uint64",
           "name": "NeedMonitorAgent",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否安装EMR Agent，取值：1(安装) 0(不安装)，默认取值0",
+          "example": "",
           "member": "uint64",
           "name": "NeedEMRAgent",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否安装EMR软件包，取值：1(安装) 0(不安装)，默认取值0",
+          "example": "",
           "member": "uint64",
           "name": "NeedEMRSoftware",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否保留安全组配置，取值：1(保留) 0(不保留)，默认取值0",
+          "example": "",
           "member": "uint64",
           "name": "ReserveSgConfig",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "/data分区大小，可不填。除root、swap、usr/local的剩余空间会自动分配到data分区",
+          "example": "",
           "member": "uint64",
           "name": "SysDataSpace",
           "required": false,
@@ -4954,14 +5428,16 @@
       "document": "ReloadDeviceOs返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "黑石异步任务ID",
+          "example": "",
           "member": "uint64",
           "name": "TaskId",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -4973,7 +5449,7 @@
       "document": "RepairTaskControl请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "维修任务ID",
           "example": "bm-repair-4zywlogv",
           "member": "string",
@@ -4982,7 +5458,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作",
           "example": "AuthorizeRepair",
           "member": "string",
@@ -4991,7 +5467,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "需要重新维修操作的备注信息，可提供返场维修原因，以便驻场快速针对问题定位解决。",
           "example": "无",
           "member": "string",
@@ -5006,6 +5482,7 @@
       "document": "RepairTaskControl返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "出参TaskId是黑石异步任务ID，不同于入参TaskId字段。\n此字段可作为DescriptionOperationResult查询异步任务状态接口的入参，查询异步任务执行结果。",
           "example": "123",
           "member": "uint64",
@@ -5015,7 +5492,7 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -5027,16 +5504,18 @@
       "document": "ResetDevicePassword请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "需要重置密码的服务器ID列表",
+          "example": "",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "新密码",
+          "example": "",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -5049,14 +5528,16 @@
       "document": "ResetDevicePassword返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "黑石异步任务ID",
+          "example": "",
           "member": "uint64",
           "name": "TaskId",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -5068,8 +5549,9 @@
       "document": "ReturnDevices请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "需要退还的物理机ID列表",
+          "example": "",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -5082,14 +5564,16 @@
       "document": "ReturnDevices返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "黑石异步任务ID",
+          "example": "",
           "member": "uint64",
           "name": "TaskId",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -5101,40 +5585,45 @@
       "document": "RunUserCmd请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "自定义脚本ID",
+          "example": "",
           "member": "string",
           "name": "CmdId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "执行脚本机器的用户名",
+          "example": "",
           "member": "string",
           "name": "UserName",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "执行脚本机器的用户名的密码",
+          "example": "",
           "member": "string",
           "name": "Password",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "执行脚本的服务器实例",
+          "example": "",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "执行脚本的参数，必须经过base64编码",
+          "example": "",
           "member": "string",
           "name": "CmdParam",
           "required": false,
@@ -5147,21 +5636,25 @@
       "document": "RunUserCmd返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "运行成功的任务信息列表",
+          "example": "",
           "member": "SuccessTaskInfo",
           "name": "SuccessTaskInfoSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "运行失败的任务信息列表",
+          "example": "",
           "member": "FailedTaskInfo",
           "name": "FailedTaskInfoSet",
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -5173,16 +5666,18 @@
       "document": "SetOutBandVpnAuthPassword请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "设置的Vpn认证密码",
+          "example": "",
           "member": "string",
           "name": "Password",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作字段，取值为：Create（创建）或Update（修改）",
+          "example": "",
           "member": "string",
           "name": "Operate",
           "required": true,
@@ -5195,7 +5690,7 @@
       "document": "SetOutBandVpnAuthPassword返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -5207,8 +5702,9 @@
       "document": "ShutdownDevices请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "需要关闭的设备ID列表",
+          "example": "",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -5221,14 +5717,16 @@
       "document": "ShutdownDevices返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步任务ID",
+          "example": "",
           "member": "uint64",
           "name": "TaskId",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -5240,8 +5738,9 @@
       "document": "StartDevices请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "需要开机的设备ID列表",
+          "example": "",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -5254,14 +5753,16 @@
       "document": "StartDevices返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "异步任务ID",
+          "example": "",
           "member": "uint64",
           "name": "TaskId",
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -5273,8 +5774,9 @@
       "document": "各实例对应的异步任务执行结果",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "实例ID",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5282,8 +5784,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "实例ID对应任务的状态，取值如下：<br>\n1：成功<br>\n2：失败<br>\n3：部分成功，部分失败<br>\n4：未完成<br>\n5：部分成功，部分未完成<br>\n6：部分未完成，部分失败<br>\n7：部分未完成，部分失败，部分成功",
+          "example": "",
           "member": "uint64",
           "name": "TaskStatus",
           "required": true,
@@ -5297,8 +5800,9 @@
       "document": "成功运行的自定义脚本信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "运行脚本的设备ID",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5306,8 +5810,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "黑石异步任务ID",
+          "example": "",
           "member": "uint64",
           "name": "TaskId",
           "required": true,
@@ -5315,8 +5820,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "黑石自定义脚本运行任务ID",
+          "example": "",
           "member": "string",
           "name": "CmdTaskId",
           "required": true,
@@ -5330,8 +5836,9 @@
       "document": "标签键与值",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "标签键",
+          "example": "",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -5339,8 +5846,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "标签键对应的值",
+          "example": "",
           "member": "string",
           "name": "TagValues",
           "required": true,
@@ -5354,8 +5862,9 @@
       "document": "维护平台维修任务信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务id",
+          "example": "",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -5363,8 +5872,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "主机id",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5372,8 +5882,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "主机别名",
+          "example": "",
           "member": "string",
           "name": "Alias",
           "required": true,
@@ -5381,8 +5892,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "故障类型id",
+          "example": "",
           "member": "uint64",
           "name": "TaskTypeId",
           "required": true,
@@ -5390,8 +5902,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务状态id",
+          "example": "",
           "member": "uint64",
           "name": "TaskStatus",
           "required": true,
@@ -5399,8 +5912,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "创建时间",
+          "example": "",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -5408,8 +5922,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "授权时间",
+          "example": "",
           "member": "datetime",
           "name": "AuthTime",
           "required": true,
@@ -5417,8 +5932,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "结束时间",
+          "example": "",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -5426,8 +5942,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务详情",
+          "example": "",
           "member": "string",
           "name": "TaskDetail",
           "required": true,
@@ -5435,8 +5952,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备状态",
+          "example": "",
           "member": "uint64",
           "name": "DeviceStatus",
           "required": true,
@@ -5444,8 +5962,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备操作状态",
+          "example": "",
           "member": "uint64",
           "name": "OperateStatus",
           "required": true,
@@ -5453,8 +5972,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "可用区",
+          "example": "",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -5462,8 +5982,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "地域",
+          "example": "",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -5471,8 +5992,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "所属网络",
+          "example": "",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -5480,8 +6002,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "所在子网",
+          "example": "",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -5489,8 +6012,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "子网名",
+          "example": "",
           "member": "string",
           "name": "SubnetName",
           "required": true,
@@ -5498,8 +6022,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "VPC名",
+          "example": "",
           "member": "string",
           "name": "VpcName",
           "required": true,
@@ -5507,8 +6032,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "VpcCidrBlock",
+          "example": "",
           "member": "string",
           "name": "VpcCidrBlock",
           "required": true,
@@ -5516,8 +6042,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "SubnetCidrBlock",
+          "example": "",
           "member": "string",
           "name": "SubnetCidrBlock",
           "required": true,
@@ -5525,8 +6052,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "公网ip",
+          "example": "",
           "member": "string",
           "name": "WanIp",
           "required": true,
@@ -5534,8 +6062,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "内网IP",
+          "example": "",
           "member": "string",
           "name": "LanIp",
           "required": true,
@@ -5543,8 +6072,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "管理IP",
+          "example": "",
           "member": "string",
           "name": "MgtIp",
           "required": true,
@@ -5552,8 +6082,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "故障类中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "TaskTypeName",
           "required": true,
@@ -5561,8 +6092,9 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "故障类型，取值：unconfirmed (不明确故障)；redundancy (有冗余故障)；nonredundancy (无冗余故障)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
           "member": "string",
           "name": "TaskSubType",
           "required": true,
@@ -5576,8 +6108,9 @@
       "document": "维修任务操作日志",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "操作步骤",
+          "example": "",
           "member": "string",
           "name": "TaskStep",
           "required": true,
@@ -5585,8 +6118,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作人",
+          "example": "",
           "member": "string",
           "name": "Operator",
           "required": true,
@@ -5594,8 +6128,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作描述",
+          "example": "",
           "member": "string",
           "name": "OperationDetail",
           "required": true,
@@ -5603,8 +6138,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作时间",
+          "example": "",
           "member": "datetime",
           "name": "OperationTime",
           "required": true,
@@ -5618,8 +6154,9 @@
       "document": "故障id对应故障名列表",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "故障类ID",
+          "example": "",
           "member": "uint64",
           "name": "TypeId",
           "required": true,
@@ -5627,8 +6164,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "故障类中文名",
+          "example": "",
           "member": "string",
           "name": "TypeName",
           "required": true,
@@ -5636,8 +6174,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "故障类型父类",
+          "example": "",
           "member": "string",
           "name": "TaskSubType",
           "required": true,
@@ -5651,24 +6190,27 @@
       "document": "UnbindPsaTag请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "预授权规则ID",
+          "example": "",
           "member": "string",
           "name": "PsaId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "需要解绑的标签key",
+          "example": "",
           "member": "string",
           "name": "TagKey",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "需要解绑的标签value",
+          "example": "",
           "member": "string",
           "name": "TagValue",
           "required": true,
@@ -5681,7 +6223,7 @@
       "document": "UnbindPsaTag返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -5693,8 +6235,9 @@
       "document": "脚本信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "用户自定义脚本名",
+          "example": "",
           "member": "string",
           "name": "Alias",
           "required": true,
@@ -5702,8 +6245,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "AppId",
+          "example": "",
           "member": "uint64",
           "name": "AppId",
           "required": true,
@@ -5711,8 +6255,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "脚本自增ID",
+          "example": "",
           "member": "uint64",
           "name": "AutoId",
           "required": true,
@@ -5720,8 +6265,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "脚本ID",
+          "example": "",
           "member": "string",
           "name": "CmdId",
           "required": true,
@@ -5729,8 +6275,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "脚本内容",
+          "example": "",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -5738,8 +6285,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "创建时间",
+          "example": "",
           "member": "datetime",
           "name": "CreateTime",
           "required": true,
@@ -5747,8 +6295,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "修改时间",
+          "example": "",
           "member": "datetime",
           "name": "ModifyTime",
           "required": true,
@@ -5756,8 +6305,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "命令适用的操作系统类型",
+          "example": "",
           "member": "string",
           "name": "OsType",
           "required": true,
@@ -5771,8 +6321,9 @@
       "document": "自定义脚本任务信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "任务ID",
+          "example": "",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -5780,8 +6331,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务状态ID，取值: -1(进行中) 0(结束)",
+          "example": "",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -5789,8 +6341,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "脚本名称",
+          "example": "",
           "member": "string",
           "name": "Alias",
           "required": true,
@@ -5798,8 +6351,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "脚本ID",
+          "example": "",
           "member": "string",
           "name": "CmdId",
           "required": true,
@@ -5807,8 +6361,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "运行实例数量",
+          "example": "",
           "member": "uint64",
           "name": "InstanceCount",
           "required": true,
@@ -5816,8 +6371,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "运行成功数量",
+          "example": "",
           "member": "uint64",
           "name": "SuccessCount",
           "required": true,
@@ -5825,8 +6381,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "运行失败数量",
+          "example": "",
           "member": "uint64",
           "name": "FailureCount",
           "required": true,
@@ -5834,8 +6391,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "执行开始时间",
+          "example": "",
           "member": "datetime",
           "name": "RunBeginTime",
           "required": true,
@@ -5843,8 +6401,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "执行结束时间",
+          "example": "",
           "member": "datetime",
           "name": "RunEndTime",
           "required": true,
@@ -5858,8 +6417,9 @@
       "document": "自定义脚本任务详细信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "自动编号，可忽略",
+          "example": "",
           "member": "uint64",
           "name": "AutoId",
           "required": true,
@@ -5867,8 +6427,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务ID",
+          "example": "",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -5876,8 +6437,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务开始时间",
+          "example": "",
           "member": "datetime",
           "name": "RunBeginTime",
           "required": true,
@@ -5885,8 +6447,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务结束时间",
+          "example": "",
           "member": "datetime",
           "name": "RunEndTime",
           "required": true,
@@ -5894,8 +6457,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "任务状态ID，取值为 -1：进行中；0：成功；>0：失败错误码",
+          "example": "",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -5903,8 +6467,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备别名",
+          "example": "",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -5912,8 +6477,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "设备ID",
+          "example": "",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5921,8 +6487,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有网络名",
+          "example": "",
           "member": "string",
           "name": "VpcName",
           "required": true,
@@ -5930,8 +6497,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有网络整型ID",
+          "example": "",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -5939,8 +6507,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有网络Cidr",
+          "example": "",
           "member": "string",
           "name": "VpcCidrBlock",
           "required": true,
@@ -5948,8 +6517,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "子网名",
+          "example": "",
           "member": "string",
           "name": "SubnetName",
           "required": true,
@@ -5957,8 +6527,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "子网ID",
+          "example": "",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -5966,8 +6537,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "子网Cidr",
+          "example": "",
           "member": "string",
           "name": "SubnetCidrBlock",
           "required": true,
@@ -5975,8 +6547,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "内网IP",
+          "example": "",
           "member": "string",
           "name": "LanIp",
           "required": true,
@@ -5984,8 +6557,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "脚本内容，base64编码后的值",
+          "example": "",
           "member": "string",
           "name": "CmdContent",
           "required": true,
@@ -5993,8 +6567,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "脚本参数，base64编码后的值",
+          "example": "",
           "member": "string",
           "name": "CmdParam",
           "required": true,
@@ -6002,8 +6577,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "脚本执行结果，base64编码后的值",
+          "example": "",
           "member": "string",
           "name": "CmdResult",
           "required": true,
@@ -6011,8 +6587,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "用户AppId",
+          "example": "",
           "member": "uint64",
           "name": "AppId",
           "required": true,
@@ -6020,8 +6597,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "用户执行脚本结束退出的返回值，没有返回值为-1",
+          "example": "",
           "member": "int64",
           "name": "LastShellExit",
           "required": true,
@@ -6035,8 +6613,9 @@
       "document": "可用区信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "可用区ID",
+          "example": "",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -6044,8 +6623,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "可用区整型ID",
+          "example": "",
           "member": "uint64",
           "name": "ZoneId",
           "required": true,
@@ -6053,8 +6633,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "可用区描述",
+          "example": "",
           "member": "string",
           "name": "ZoneDescription",
           "required": true,

@@ -1,6 +1,6 @@
 **Example 1: 升级实例**
 
-
+调整实例postgres-6bwgamo3规格为内存2GB、存储100GB。
 
 Input: 
 
@@ -17,7 +17,7 @@ Output:
     "Response": {
         "RequestId": "08fdf411-5d39-44f2-8e1d-a58ee60b237d",
         "DealName": "201806127634",
-        "BillId": "123"
+        "BillId": "20241204591002321368561"
     }
 }
 ```

@@ -6,30 +6,25 @@ Input:
 
 ```
 tccli tem ModifyApplicationAutoscaler --cli-unfold-argument  \
-    --SourceChannel 0 \
-    --AutoscalerId xx \
-    --Autoscaler.ModifyDate xx \
-    --Autoscaler.Description xx \
-    --Autoscaler.CronHorizontalAutoscaler.0.Priority 0 \
-    --Autoscaler.CronHorizontalAutoscaler.0.Schedules.0.StartAt xx \
-    --Autoscaler.CronHorizontalAutoscaler.0.Schedules.0.TargetReplicas 0 \
-    --Autoscaler.CronHorizontalAutoscaler.0.Enabled True \
-    --Autoscaler.CronHorizontalAutoscaler.0.Period xx \
-    --Autoscaler.CronHorizontalAutoscaler.0.Name xx \
+    --ApplicationId app-xxxxxx \
+    --EnvironmentId en-xxxxxx \
+    --AutoscalerId scaler-xxxxxx \
     --Autoscaler.MinReplicas 0 \
-    --Autoscaler.AutoscalerId xx \
-    --Autoscaler.Enabled True \
+    --Autoscaler.MaxReplicas 4 \
+    --Autoscaler.AutoscalerName pk-test-clb \
+    --Autoscaler.Description  \
+    --Autoscaler.Enabled False \
     --Autoscaler.HorizontalAutoscaler.0.MinReplicas 0 \
-    --Autoscaler.HorizontalAutoscaler.0.Metrics xx \
+    --Autoscaler.HorizontalAutoscaler.0.MaxReplicas 4 \
+    --Autoscaler.HorizontalAutoscaler.0.Metrics CPU \
+    --Autoscaler.HorizontalAutoscaler.0.DoubleThreshold 50 \
     --Autoscaler.HorizontalAutoscaler.0.Enabled True \
-    --Autoscaler.HorizontalAutoscaler.0.Threshold 0 \
-    --Autoscaler.HorizontalAutoscaler.0.MaxReplicas 0 \
-    --Autoscaler.EnableDate xx \
-    --Autoscaler.AutoscalerName xx \
-    --Autoscaler.CreateDate xx \
-    --Autoscaler.MaxReplicas 0 \
-    --ApplicationId xx \
-    --EnvironmentId xx
+    --Autoscaler.CronHorizontalAutoscaler.0.Name pk-test \
+    --Autoscaler.CronHorizontalAutoscaler.0.Period * * * \
+    --Autoscaler.CronHorizontalAutoscaler.0.Schedules.0.StartAt 02:00 \
+    --Autoscaler.CronHorizontalAutoscaler.0.Schedules.0.TargetReplicas 1 \
+    --Autoscaler.CronHorizontalAutoscaler.0.Enabled False \
+    --Autoscaler.CronHorizontalAutoscaler.0.Priority 0
 ```
 
 Output: 
@@ -37,7 +32,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "xx"
+        "RequestId": "abbd6b63-xxx-xxx-xxx"
     }
 }
 ```

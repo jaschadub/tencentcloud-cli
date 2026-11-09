@@ -1,15 +1,15 @@
 **Example 1: 创建函数**
 
-
+创建函数
 
 Input: 
 
 ```
 tccli scf CreateFunction --cli-unfold-argument  \
-    --FunctionName <FunctionName> \
-    --Handler <function.handler> \
     --Code.CosBucketName <CosBucketName> \
-    --Code.CosObjectName <CosObjectName>
+    --Code.CosObjectName <CosObjectName> \
+    --Handler <function.handler> \
+    --FunctionName <FunctionName>
 ```
 
 Output: 

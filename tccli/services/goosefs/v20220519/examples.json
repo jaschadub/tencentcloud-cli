@@ -1,0 +1,403 @@
+{
+  "actions": {
+    "AddCrossVpcSubnetSupportForClientNode": [
+      {
+        "document": "为客户端节点添加跨vpc和子网访问的能力",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCrossVpcSubnetSupportForClientNode\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-r3c4fa1f\",\n    \"SubnetInfo\": {\n        \"VpcId\": \"vpc-a1b2c3d4\",\n        \"SubnetId\": \"subnet-a1b2c3d4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "为客户端节点添加跨vpc和子网访问的能力"
+      }
+    ],
+    "AttachFileSystemBucket": [
+      {
+        "document": "为文件系统关联Bucket, 并指定数据流动的策略",
+        "input": "{\n  \"FileSystemId\": \"x_c60_r3c4fa1f\",\n  \"Bucket\": {\n    \"BucketName\": \"mybucket-125000\",\n    \"FileSystemPath\": \"mybucket-125000\",\n  \"DataRepositoryTaskAutoStrategy\": [\n    \"OndemandImport\",\n   \"PeriodImport\",\n   \"PeriodExport\"\n  ],\n  \"RuleId\": \"x-rule-1\"\n  }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "为文件系统关联Bucket"
+      }
+    ],
+    "BatchAddClientNodes": [
+      {
+        "document": "批量添加客户端节点",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchAddClientNodes\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-80k2ly5b\",\n    \"ClientNodes\": [\n        {\n            \"InstanceId\": \"ins-kf9u9pih\",\n            \"VpcId\": \"vpc-lc0aecbo\",\n            \"SubnetId\": \"subnet-jwtwc1vj\",\n            \"LinuxClientNodeIp\": \"10.3.7.21\",\n            \"MountPoint\": \"/Goosefsx\"\n        }\n    ],\n    \"ClusterId\": \"x-c60-80k2ly5b-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"50bb8fe8-068e-4804-83c6-2f7ed32d88a7\"\n    }\n}",
+        "title": "批量添加客户端节点"
+      }
+    ],
+    "BatchDeleteClientNodes": [
+      {
+        "document": "批量添加客户端节点",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteClientNodes\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-80k2ly5b\",\n    \"ClientNodes\": [\n        {\n            \"InstanceId\": \"ins-kf9u9pih\",\n            \"VpcId\": \"vpc-lc0aecbo\",\n            \"SubnetId\": \"subnet-jwtwc1vj\",\n            \"LinuxClientNodeIp\": \"10.3.7.21\"\n        }\n    ],\n    \"ClusterId\": \"x-c60-80k2ly5b-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da09ef86-994b-4358-bc55-6f605f62a070\"\n    }\n}",
+        "title": "批量删除客户端节点"
+      }
+    ],
+    "BuildClientNodeMountCommand": [
+      {
+        "document": "获取某个文件系统的客户端挂载命令",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BuildClientNodeMountCommand\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-053lg6hi\",\n    \"CustomMountDir\": \"/test1\",\n    \"ClusterId\": \"x-c60-053lg6hi-client-cluster-default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Command\": \"wget https://gfsx-cfg-bj-***-**********.cos.ap-beijing.myqcloud.com/client_env_package/agent/install-goosefsx-client.sh; chmod +x install-goosefsx-client.sh; ./install-goosefsx-client.sh 10.3.30.109:55533,10.3.30.161:55533,10.3.30.181:55533 /test1\",\n        \"RequestId\": \"92084d7c-416b-4aca-b10e-821df90aeec4\"\n    }\n}",
+        "title": "获取文件系统的客户端挂载命令"
+      }
+    ],
+    "BuildCustomerCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BuildCustomerCluster\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-1f2yq7b5\",\n    \"VpcId\": \"vpc-5owubpl0\",\n    \"SubnetId\": \"vpc-5owubpl0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"x-c60-1f2yq7b5-client-cluster-1\",\n        \"RequestId\": \"ce997012-2519-4e6a-b9b3-95ce81fc7ea6\"\n    }\n}",
+        "title": "新建客户端集群"
+      }
+    ],
+    "CancelLoadTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelLoadTask\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_**g97c61\",\n    \"TaskId\": \"00453915-1c85-4e3c-8e14-237416beb76b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fb8f4991-1b5d-4411-a3db-38b909fff528\"\n    }\n}",
+        "title": "取消任务预热"
+      }
+    ],
+    "CancelPolicyRuleExecuteRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelPolicyRuleExecuteRecord\n<公共请求参数>\n\n{\n    \"RuleId\": \"1785933849640\",\n    \"FileSystemId\": \"x-c60-0q62fdo7\",\n    \"RecordId\": \"1785937538297\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4ed8437-23df-4d77-ab9b-a6620695b10c\"\n    }\n}",
+        "title": "取消执行"
+      }
+    ],
+    "CreateDataRepositoryTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataRepositoryTask\n<公共请求参数>\n\n{\n    \"TaskType\": \"COS_TO_FS\",\n    \"Bucket\": \"ace-bj-donot-del-xxxxx\",\n    \"FileSystemId\": \"x-c60-xxxx\",\n    \"TaskPath\": \"dup/\",\n    \"TaskName\": \"预热测试_1\",\n    \"EnableCustomDestPath\": false,\n    \"OutputBucket\": \"ace-bj-donot-del-xxxxx\",\n    \"OutputPrefix\": \"data-repository-task-results/\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"x_task_1787660399825\",\n        \"RequestId\": \"17015b3c-9d94-4c0a-8e00-5d53cc86fca5\"\n    }\n}",
+        "title": "调用"
+      }
+    ],
+    "CreateFileSystem": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileSystem\n<公共请求参数>\n\n{\n    \"Name\": \"ai_fs\",\n    \"Description\": \"our test fs\",\n    \"VpcId\": \"vpc-lc0aecbo\",\n    \"SubnetId\": \"subnet-jwtwc1vj\",\n    \"Zone\": \"ap-beijing-7\",\n    \"GooseFSxBuildElements\": {\n        \"Model\": \"C60\",\n        \"Capacity\": 4608\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FileSystemId\": \"x-c60-ewe600t4\",\n        \"RequestId\": \"1207751e-b9a8-40f2-ae9b-122c518fbb9a\"\n    }\n}",
+        "title": "创建Goosefsx文件系统"
+      }
+    ],
+    "CreateFileset": [
+      {
+        "document": "创建FIleset",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileset\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-gq019g3k\",\n    \"FsetName\": \"fset_test_006\",\n    \"FsetDir\": \"/fset_test_006/\",\n    \"QuotaSizeLimit\": \"1024G\",\n    \"QuotaFilesLimit\": \"1024\",\n    \"AuditState\": \"enable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FsetId\": \"fset_1745742041947\",\n        \"RequestId\": \"1c44ae43-f00d-460f-a093-469c407b6fb5\"\n    }\n}",
+        "title": "创建FIleset"
+      }
+    ],
+    "CreateLoadTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadTask\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_x*******\",\n    \"LoadTaskCreationAttrs\": {\n        \"TaskType\": \"DistributedLoad\",\n        \"Priority\": 111,\n        \"Description\": \"LoadTaskTest\",\n        \"DistributedLoadAttrs\": {\n            \"LoadType\": \"LoadByPath\",\n            \"LoadByPath\": \"/\",\n            \"Replica\": \"SingleReplica\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"32d8680e-fcdb-****-a190-47c140389246\",\n        \"RequestId\": \"7f1b61db-b822-48b2-9004-f5edda11217c\"\n    }\n}",
+        "title": "创建DistributedLoad预热任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadTask\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_x*******\",\n    \"LoadTaskCreationAttrs\": {\n        \"TaskType\": \"MetadataLoad\",\n        \"Priority\": 222,\n        \"Description\": \"LoadTaskTest\",\n        \"MetadataLoadAttrs\": {\n            \"LoadType\": \"LoadByPath\",\n            \"LoadByPath\": \"/goosefs_path/\"\n        },\n        \"ReportPath\": \"cos://******-bj-**********/\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"c637a3b7-5593-****-b9cc-d65cf0fe2bb2\",\n        \"RequestId\": \"9a3845e3-dc68-468d-8d88-6ccc459e118d\"\n    }\n}",
+        "title": "创建MetadataLoad预热任务"
+      }
+    ],
+    "CreatePolicyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePolicyRule\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-0q62fdo7\",\n    \"ScanDir\": \"/test_policy/\",\n    \"Name\": \"policy_now\",\n    \"Execution\": {\n        \"ExecuteMode\": \"scheduled\",\n        \"ExecuteAt\": \"2026-08-06T21:30:00\",\n        \"WaitTime\": 12\n    },\n    \"PolicyRuleSet\": [\n        {\n            \"Key\": \"FILE_SIZE\",\n            \"Operator\": \">\",\n            \"Value\": \"0\"\n        }\n    ],\n    \"EnableManifest\": true,\n    \"Manifest\": {\n        \"Bucket\": \"goosefsx-test-1252246555\",\n        \"Prefix\": \"policy\",\n        \"Attributes\": [\n            \"FILE_SIZE\"\n        ],\n        \"Region\": \"ap-shanghai\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleId\": \"1786020012996\",\n        \"RequestId\": \"4c328927-f95e-40f0-9e14-2462a19e4027\"\n    }\n}",
+        "title": "创建扫描规则"
+      }
+    ],
+    "CreateUserQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-4lu862qo\",\n    \"QuotaType\": \"UID\",\n    \"QuotaObjectName\": \"40002\",\n    \"QuotaSizeLimit\": \"100G\",\n    \"QuotaFilesLimit\": \"1000000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"QuotaId\": \"quota_1754029945731\",\n        \"RequestId\": \"4693f5a8-3060-4658-aa43-a80de6ecd620\"\n    }\n}",
+        "title": "CreateUserQuota"
+      }
+    ],
+    "DeleteCrossVpcSubnetSupportForClientNode": [
+      {
+        "document": "为客户端节点删除跨vpc子网访问能力",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCrossVpcSubnetSupportForClientNode\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-a1b2c3d4\",\n    \"SubnetInfo\": {\n        \"VpcId\": \"vpc-a1b2c3d4\",\n        \"SubnetId\": \"subnet-a1b2c3d4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "为客户端节点删除跨vpc子网访问能力"
+      }
+    ],
+    "DeleteCustomerCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomerCluster\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-w953d0pt\",\n    \"ClusterId\": \"x-c60-w953d0pt-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b503a94a-15af-41f0-81fd-8c35ad3d7274\"\n    }\n}",
+        "title": "删除客户端管理集群"
+      }
+    ],
+    "DeleteFileSystem": [
+      {
+        "document": "删除文件系统",
+        "input": "https://goosefs.tencentcloudapi.com/?Action=DeleteFileSystem\n&FileSystemId=x_c60_r3c4fa1f\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "删除文件系统"
+      }
+    ],
+    "DeleteFileset": [
+      {
+        "document": "删除Fileset",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFileset\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-gq019g3k\",\n    \"FsetId\": \"fset_1745468035294\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2465d830-6362-418e-8d28-f60e418aec7e\"\n    }\n}",
+        "title": "删除Fileset"
+      }
+    ],
+    "DeletePolicyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePolicyRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"1785919964984\",\n    \"FileSystemId\": \"x-c60-0q62fdo7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48fc7a43-2c3c-45f4-8be7-b6014780c7b9\"\n    }\n}",
+        "title": "删除规则"
+      }
+    ],
+    "DeleteUserQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-4lu862qo\",\n    \"QuotaId\": \"quota_1754029945731\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a5a697c9-475b-4a74-8371-e667a4ec1bba\"\n    }\n}",
+        "title": "DeleteUserQuota"
+      }
+    ],
+    "DescribeClientNodes": [
+      {
+        "document": "",
+        "input": "https://goosefs.tencentcloudapi.com/?Action=DescribeClientNodes\n&FileSystemId=x_c60_r3c4fa1f\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\",\n        \"ClientNodes\": [\n            {\n                \"Status\": \"active\",\n                \"ClientNodeIp\": \"10.0.1.2\"\n            },\n            {\n                \"Status\": \"active\",\n                \"ClientNodeIp\": \"10.0.1.3\"\n            },\n            {\n                \"Status\": \"down\",\n                \"ClientNodeIp\": \"10.0.1.4\"\n            }\n        ]\n    }\n}",
+        "title": "列出集群中所有的客户端节点"
+      }
+    ],
+    "DescribeClusterClientToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterClientToken\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_0yz04uv3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClientTokens\": [\n            {\n                \"NodeIp\": \"127.0.0.1\",\n                \"LocalDirectory\": \"/data\",\n                \"GooseFSDirectory\": \"/goosefs\",\n                \"Token\": \"MTY4ODQ2NTA1NF84MzM2X2E3ZWFmMDVmLWI0MzMtNGE2Yi1iOWU2LTZiZDY5OTYwNThiZQ==\"\n            }\n        ],\n        \"RequestId\": \"9ecdc30f-4e06-4995-89b6-ffaf3a085a2e\"\n    }\n}",
+        "title": "查询GooseFS集群客户端凭证"
+      }
+    ],
+    "DescribeClusterRoleToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterRoleToken\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_x419f8qc\",\n    \"RoleName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleTokens\": [\n            {\n                \"RoleName\": \"test\",\n                \"Token\": \"MTY4ODQ2NTA1NF84MzM2X2E3ZWFmMDVmLWI0MzMtNGE2Yi1iOWU2LTZiZDY5OTYwXXXXXX==\"\n            }\n        ],\n        \"RequestId\": \"2a5ab488-0221-4315-8670-3873452be22d \"\n    }\n}",
+        "title": "查询GooseFS集群角色凭证"
+      }
+    ],
+    "DescribeCustomerCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerCluster\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-412s8jlp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterSet\": [\n            {\n                \"ClientNum\": 0,\n                \"ClusterId\": \"x-c60-412s8jlp\",\n                \"ClusterName\": \"test_cluster\",\n                \"ClusterType\": 0,\n                \"ManagerNodes\": [\n                    {\n                        \"ClusterId\": \"x-c60-412s8jlp\",\n                        \"InitialPassword\": \"*****\",\n                        \"NodeInstanceId\": \"ins-20jxbhdb\",\n                        \"NodeIp\": \"10.1.16.93\"\n                    }\n                ],\n                \"Status\": 0,\n                \"SubnetId\": \"subnet-ekn2txsv\",\n                \"VpcId\": \"vpc-q6lm145g\"\n            }\n        ],\n        \"RequestId\": \"13448a6b-8145-4f4a-960d-3db9427b6357\"\n    }\n}",
+        "title": "查询文件系统的客户端集群"
+      }
+    ],
+    "DescribeDataRepositoryTaskStatus": [
+      {
+        "document": "创建数据流通任务后, 获取任务的状态",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataRepositoryTaskStatus\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x_c60_r3c4fa1f\",\n    \"TaskId\": \"x_task_xxf4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"FinishedFileNumber\": 1,\n        \"FinishedCapacity\": 1,\n        \"TaskId\": \"x_task_xxf4\",\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "获取数据流通任务实时状态"
+      }
+    ],
+    "DescribeDataRepositoryTasks": [
+      {
+        "document": "列出数据流通任务",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataRepositoryTasks\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x_c60_r3c4fa1f\",\n    \"Limit\": \"20\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataRepositoryTaskList\": [\n            {\n                \"TaskId\": \"x_task_123456\",\n                \"TaskName\": \"mydownload_test\",\n                \"TaskEndTime\": \"2020-09-22T00:00:00+00:00\",\n                \"TaskCreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Bucket\": \"mubucket-12500000\",\n                \"TotalCapacity\": 104857600,\n                \"FinishedCapacity\": 10,\n                \"TotalFileNumber\": 100,\n                \"FinishedFileNumber\": 30,\n                \"TaskStatus\": \"SUCCESS\",\n                \"TaskFailMsg\": \"\",\n                \"TaskType\": \"COS_TO_FS\",\n                \"TaskPath\": \"aaa/bbb\",\n                \"RepositoryType\": \"MSP_AFM\",\n                \"TextLocation\": \"http://xx\"\n            }\n        ],\n        \"TotalCount\": 50,\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "列出数据流通任务"
+      }
+    ],
+    "DescribeFileSystemBuckets": [
+      {
+        "document": "罗列文件系统关联的Bucket映射",
+        "input": "https://goosefs.tencentcloudapi.com/?Action=DescribeFileSystemBuckets\n&FileSystemId=x_c60_r3c4fa1f\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"BucketList\": [\n            {\n                \"BucketName\": \"mybucket-12500000\",\n                \"FileSystemPath\": \"/goosefs_data\",\n                \"DataRepositoryTaskAutoStrategy\": [\n                    \"AutoImportData\",\n                    \"AutoImportMeta\"\n                ],\n                \"RuleId\": \"x-rule-1\",\n                \"RuleDescription\": \"Bucket与goosefs的文件映射\"\n            },\n            {\n                \"BucketName\": \"mytest-12500000\",\n                \"FileSystemPath\": \"/goosefs_data1\",\n                \"DataRepositoryTaskAutoStrategy\": [\n                    \"OndemandImport\",\n                    \"AutoImportMeta\",\n                    \"PeriodExport\"\n                ],\n                \"RuleId\": \"x-rule-2\",\n                \"RuleDescription\": \"Bucket与goosefs的文件映射\"\n            }\n        ],\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "罗列文件系统关联的Bucket映射"
+      }
+    ],
+    "DescribeFileSystems": [
+      {
+        "document": "列出所有的文件系统",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileSystems\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"FSAttributeList\": [\n            {\n                \"ChargeAttribute\": {\n                    \"PayMode\": \"postPay\"\n                },\n                \"CreateTime\": \"2025-03-06T20:25:17+08:00\",\n                \"Description\": \"性能\",\n                \"FileSystemId\": \"x-c50-6zgr1g24\",\n                \"GooseFSxAttribute\": {\n                    \"Capacity\": 9216,\n                    \"ClientManagerNodeList\": [\n                        {\n                            \"InitialPassword\": \"wcewcffevvrvvrvgr\",\n                            \"NodeInstanceId\": \"ins-3nryi8i7\",\n                            \"NodeIp\": \"10.0.0.10\"\n                        },\n                        {\n                            \"InitialPassword\": \"wcewcffevvrvvrvgr\",\n                            \"NodeInstanceId\": \"ins-h84056df\",\n                            \"NodeIp\": \"10.0.0.11\"\n                        },\n                        {\n                            \"InitialPassword\": \"wcewcffevvrvvrvgr\",\n                            \"NodeInstanceId\": \"ins-0voabq4p\",\n                            \"NodeIp\": \"10.0.0.12\"\n                        }\n                    ],\n                    \"MappedBucketList\": [],\n                    \"Model\": \"C50\"\n                },\n                \"ModifyTime\": \"2025-03-06T20:39:10+08:00\",\n                \"Name\": \"性能\",\n                \"Status\": \"ACTIVE\",\n                \"SubnetId\": \"subnet-c4cdynlr\",\n                \"Tag\": [],\n                \"Type\": \"goosefsx\",\n                \"VpcId\": \"vpc-lc0aecbo\",\n                \"Zone\": \"ap-beijing-7\"\n            },\n            {\n                \"ChargeAttribute\": {\n                    \"PayMode\": \"postPay\"\n                },\n                \"CreateTime\": \"2025-03-05T17:12:03+08:00\",\n                \"Description\": \"s6C50\",\n                \"FileSystemId\": \"x-c50-q51r4u2f\",\n                \"GooseFSxAttribute\": {\n                    \"Capacity\": 9216,\n                    \"ClientManagerNodeList\": [\n                        {\n                            \"InitialPassword\": \"wcewcffevvrvvrvgr\",\n                            \"NodeInstanceId\": \"ins-1z4swav5\",\n                            \"NodeIp\": \"10.0.0.1\"\n                        },\n                        {\n                            \"InitialPassword\": \"wcewcffevvrvvrvgr\",\n                            \"NodeInstanceId\": \"ins-6dzh6vd3\",\n                            \"NodeIp\": \"10.0.0.11\"\n                        },\n                        {\n                            \"InitialPassword\": \"wcewcffevvrvvrvgr\",\n                            \"NodeInstanceId\": \"ins-70nmym9x\",\n                            \"NodeIp\": \"10.0.0.12\"\n                        }\n                    ],\n                    \"MappedBucketList\": [],\n                    \"Model\": \"C50\"\n                },\n                \"ModifyTime\": \"2025-03-05T17:26:16+08:00\",\n                \"Name\": \"s6C50\",\n                \"Status\": \"ACTIVE\",\n                \"SubnetId\": \"subnet-c4cdynlr\",\n                \"Tag\": [],\n                \"Type\": \"goosefsx\",\n                \"VpcId\": \"vpc-lc0aecbo\",\n                \"Zone\": \"ap-beijing-7\"\n            }\n        ],\n        \"RequestId\": \"7066c1c9-5b5d-494c-8116-1c6f533ee2f6\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "罗列文件系统"
+      }
+    ],
+    "DescribeFilesetGeneralConfig": [
+      {
+        "document": "查询Fileset通用配置",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFilesetGeneralConfig\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-gq019g3k\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnforceQuotaOnRoot\": \"yes\",\n        \"RequestId\": \"ccec6e4e-0775-4af5-966c-788fa3215bd2\",\n        \"Status\": \"active\"\n    }\n}",
+        "title": "查询Fileset通用配置"
+      }
+    ],
+    "DescribeFilesets": [
+      {
+        "document": "查询Fileset",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFilesets\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-gq019g3k\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FilesetList\": [\n            {\n                \"AuditState\": \"disable\",\n                \"CreateTime\": \"2025-04-22T20:55:05+08:00\",\n                \"FsetDir\": \"/fset/fset_test_001/\",\n                \"FsetId\": \"fset_1745468035223\",\n                \"FsetName\": \"fset_test_001\",\n                \"ModifyTime\": \"2025-04-27T16:17:23+08:00\",\n                \"QuotaFilesLimit\": \"1024\",\n                \"QuotaFilesUsed\": \"2\",\n                \"QuotaFilesUsedPercent\": \"0.20%\",\n                \"QuotaSizeLimit\": \"1024G\",\n                \"QuotaSizeUsed\": \"35651584K\",\n                \"QuotaSizeUsedPercent\": \"3.32%\",\n                \"Status\": \"active\"\n            },\n            {\n                \"AuditState\": \"disable\",\n                \"CreateTime\": \"2025-04-22T20:55:12+08:00\",\n                \"FsetDir\": \"/fset/fset_test_002/\",\n                \"FsetId\": \"fset_1745468035263\",\n                \"FsetName\": \"fset_test_002\",\n                \"ModifyTime\": \"2025-04-27T16:17:35+08:00\",\n                \"QuotaFilesLimit\": \"1024\",\n                \"QuotaFilesUsed\": \"2\",\n                \"QuotaFilesUsedPercent\": \"0.20%\",\n                \"QuotaSizeLimit\": \"1024G\",\n                \"QuotaSizeUsed\": \"20971520K\",\n                \"QuotaSizeUsedPercent\": \"1.95%\",\n                \"Status\": \"active\"\n            },\n            {\n                \"AuditState\": \"disable\",\n                \"CreateTime\": \"2025-04-22T20:55:13+08:00\",\n                \"FsetDir\": \"/fset/fset_test_003/\",\n                \"FsetId\": \"fset_1745468035273\",\n                \"FsetName\": \"fset_test_003\",\n                \"ModifyTime\": \"2025-04-27T16:17:40+08:00\",\n                \"QuotaFilesLimit\": \"1024\",\n                \"QuotaFilesUsed\": \"2\",\n                \"QuotaFilesUsedPercent\": \"0.20%\",\n                \"QuotaSizeLimit\": \"1024G\",\n                \"QuotaSizeUsed\": \"31457280K\",\n                \"QuotaSizeUsedPercent\": \"2.93%\",\n                \"Status\": \"active\"\n            },\n            {\n                \"AuditState\": \"disable\",\n                \"CreateTime\": \"2025-04-22T20:55:21+08:00\",\n                \"FsetDir\": \"/fset/fset_test_004/\",\n                \"FsetId\": \"fset_1745468035284\",\n                \"FsetName\": \"fset_test_004\",\n                \"ModifyTime\": \"2025-04-27T16:17:46+08:00\",\n                \"QuotaFilesLimit\": \"1024\",\n                \"QuotaFilesUsed\": \"1\",\n                \"QuotaFilesUsedPercent\": \"0.10%\",\n                \"QuotaSizeLimit\": \"1024G\",\n                \"QuotaSizeUsed\": \"0K\",\n                \"QuotaSizeUsedPercent\": \"0.00%\",\n                \"Status\": \"active\"\n            },\n            {\n                \"AuditState\": \"disable\",\n                \"CreateTime\": \"2025-04-22T20:55:22+08:00\",\n                \"FsetDir\": \"/fset/fset_test_005/\",\n                \"FsetId\": \"fset_1745468035294\",\n                \"FsetName\": \"fset_test_005\",\n                \"ModifyTime\": \"2025-04-27T16:17:53+08:00\",\n                \"QuotaFilesLimit\": \"1024\",\n                \"QuotaFilesUsed\": \"1\",\n                \"QuotaFilesUsedPercent\": \"0.10%\",\n                \"QuotaSizeLimit\": \"1024G\",\n                \"QuotaSizeUsed\": \"0K\",\n                \"QuotaSizeUsedPercent\": \"0.00%\",\n                \"Status\": \"active\"\n            }\n        ],\n        \"RequestId\": \"2ab92d6c-dd47-429a-8b31-0ec56c574a2b\"\n    }\n}",
+        "title": "查询Fileset"
+      }
+    ],
+    "DescribeLoadTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoadTask\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_7kg3li69\",\n    \"TaskId\": \"7f22ba8e-ca92-40e4-a277-18461e481808\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LoadTaskAttrs\": {\n            \"CreateTime\": \"2025-10-31T11:36:59+08:00\",\n            \"Description\": \"ceshi\",\n            \"DistributedLoadAttrs\": {\n                \"LoadByList\": \"\",\n                \"LoadByPath\": \"/test\",\n                \"LoadType\": \"LoadByPath\",\n                \"MetadataSync\": false,\n                \"Replica\": \"SingleReplica\",\n                \"SkipIfExists\": false\n            },\n            \"MetadataLoadAttrs\": {\n                \"LoadByList\": \"\",\n                \"LoadByPath\": \"\",\n                \"LoadType\": \"\",\n                \"SkipIfExists\": false\n            },\n            \"ModifyTime\": \"2025-10-31T11:37:49+08:00\",\n            \"Priority\": 66,\n            \"ReportPath\": \"\",\n            \"Requester\": \"100000000001\",\n            \"State\": \"Completed\",\n            \"TaskId\": \"7f22ba8e-ca92-40e4-a277-18461e481808\",\n            \"TaskMessage\": \"\",\n            \"TaskType\": \"DistributedLoad\"\n        },\n        \"RequestId\": \"5dec7f7b-2b0b-4d1f-b94d-8ac23bc0ed80\"\n    }\n}",
+        "title": "查询目标预热任务"
+      }
+    ],
+    "DescribePolicyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyRule\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-0q62fdo7\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyRuleTaskList\": [\n            {\n                \"CreateTime\": \"2026-08-06T20:40:12+08:00\",\n                \"EnableManifest\": true,\n                \"Execution\": {\n                    \"ExecuteAt\": \"2026-08-06T21:30:00\",\n                    \"ExecuteMode\": \"scheduled\",\n                    \"ExecutePeriod\": null,\n                    \"WaitTime\": 12\n                },\n                \"Manifest\": {\n                    \"Attributes\": [\n                        \"FILE_SIZE\"\n                    ],\n                    \"Bucket\": \"goosefsx-test-1252246555\",\n                    \"Prefix\": \"policy\",\n                    \"Region\": \"ap-shanghai\"\n                },\n                \"ModifyTime\": \"2026-08-06T20:40:12+08:00\",\n                \"Name\": \"policy_now\",\n                \"PolicyRuleSet\": [\n                    {\n                        \"Key\": \"FILE_SIZE\",\n                        \"Operator\": \">\",\n                        \"Value\": \"0\"\n                    }\n                ],\n                \"RuleId\": \"1786020012996\",\n                \"ScanDir\": \"/test_policy/\",\n                \"Status\": 0\n            }\n        ],\n        \"TotalCount\": 11,\n        \"RequestId\": \"0fbfbc3a-9d33-47e1-85af-b846e93a157f\"\n    }\n}",
+        "title": "列出扫描规则"
+      }
+    ],
+    "DescribePolicyRuleExecuteRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyRuleExecuteRecord\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-0q62fdo7\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"RuleId\": \"1786019949985\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleExecuteList\": [\n            {\n                \"Capacity\": 588,\n                \"EndTime\": \"2026-08-06T20:40:11+08:00\",\n                \"FileCount\": 111105,\n                \"ManifestUrl\": \"https://goosefsx-test-**********.cos.ap-shanghai.myqcloud.com/policy/scan_policy_all_1786019949985_1786020001688.list.gfsx\",\n                \"RecordId\": \"1786020001688\",\n                \"StartTime\": \"2026-08-06T20:40:06+08:00\",\n                \"Status\": 2\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"b0cde05c-ef51-4489-9999-6031a4921e02\"\n    }\n}",
+        "title": "查询执行记录"
+      }
+    ],
+    "DescribeUserQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-4lu862qo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"QuotaList\": [\n            {\n                \"CreateTime\": \"2025-08-01T14:27:40+08:00\",\n                \"ModifyTime\": \"2025-08-01T14:27:40+08:00\",\n                \"QuotaFilesLimit\": \"100\",\n                \"QuotaFilesUsed\": \"0\",\n                \"QuotaFilesUsedPercent\": \"0%\",\n                \"QuotaId\": \"quota_1754029660656\",\n                \"QuotaObjectName\": \"40001\",\n                \"QuotaSizeLimit\": \"10G\",\n                \"QuotaSizeUsed\": \"0K\",\n                \"QuotaSizeUsedPercent\": \"0%\",\n                \"QuotaType\": \"UID\",\n                \"Status\": \"active\"\n            },\n            {\n                \"CreateTime\": \"2025-08-01T14:32:25+08:00\",\n                \"ModifyTime\": \"2025-08-01T14:32:25+08:00\",\n                \"QuotaFilesLimit\": \"1000000\",\n                \"QuotaFilesUsed\": \"0\",\n                \"QuotaFilesUsedPercent\": \"0%\",\n                \"QuotaId\": \"quota_1754029945731\",\n                \"QuotaObjectName\": \"40002\",\n                \"QuotaSizeLimit\": \"100G\",\n                \"QuotaSizeUsed\": \"0K\",\n                \"QuotaSizeUsedPercent\": \"0%\",\n                \"QuotaType\": \"UID\",\n                \"Status\": \"active\"\n            }\n        ],\n        \"RequestId\": \"2465b710-dbee-4254-86d5-9ef9972ed550\"\n    }\n}",
+        "title": "DescribeUserQuota"
+      }
+    ],
+    "DetachFileSystemBucket": [
+      {
+        "document": "解绑文件系统与Bucket的映射",
+        "input": "https://goosefs.tencentcloudapi.com/?Action=DetachFileSystemBucket\n&FileSystemId=x_c60_r3c4fa1f\n&BucketName=mybucket-12500000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "解绑文件系统与Bucket的映射"
+      }
+    ],
+    "DisablePolicyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisablePolicyRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"1785919964984\",\n    \"FileSystemId\": \"x-c60-0q62fdo7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"50028d64-80fc-4bf1-b6ff-3736928bed7e\"\n    }\n}",
+        "title": "禁用规则"
+      }
+    ],
+    "EnablePolicyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnablePolicyRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"1785919964984\",\n    \"FileSystemId\": \"x-c60-0q62fdo7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"09943c39-ce3f-47bb-bdb8-04b95855da86\"\n    }\n}",
+        "title": "启用规则"
+      }
+    ],
+    "ExpandCapacity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExpandCapacity\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x_c60_r3c4fa1f\",\n    \"ExpandedCapacity\": 4680\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "扩展文件系统容量"
+      }
+    ],
+    "ListLoadTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListLoadTasks\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_hlg97c61\",\n    \"Offset\": 0,\n    \"Limit\": 1,\n    \"StartTimestamp\": 1767859318,\n    \"EndTimestamp\": 1767859328\n}",
+        "output": "{\n    \"Response\": {\n        \"LoadTaskList\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"3a0256cf-ddb6-4273-ae44-205a007707ed\"\n    }\n}",
+        "title": "列出预热任务信息"
+      }
+    ],
+    "ModifyDataRepositoryBandwidth": [
+      {
+        "document": "修改数据流动带宽",
+        "input": "{\n  \"FileSystemId\": \"x_c60_123456\",\n  \"Bandwidth\": 600\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "修改数据流动带宽"
+      }
+    ],
+    "ModifyDataRepositoryTaskStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDataRepositoryTaskStatus\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-3980hscb\",\n    \"TaskId\": \"x_task_1782961196561\",\n    \"ModifyType\": \"pause\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e318cc3-776d-43fb-9cf2-617792c528c0\"\n    }\n}",
+        "title": "暂停调用"
+      }
+    ],
+    "MountMultipleStorageFileSystem": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MountMultipleStorageFileSystem\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-a112q1lj\",\n    \"CustomerClusterId\": \"x-c60-a112q1lj-client-cluster-1\",\n    \"StorageFileSystemId\": \"x-c60-mrn3a677\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a606332-e531-4014-b3be-306faa4821c6\"\n    }\n}",
+        "title": "客户端集群挂载存储文件系统"
+      }
+    ],
+    "QueryClientNodeMountCommand": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryClientNodeMountCommand\n<公共请求参数>\n\n{\n    \"ClusterId\": \"x-c60-a112q1lj-client-cluster-default\",\n    \"ClusterMountInfo\": [\n        {\n            \"StorageFileSystemId\": \"x-c60-a112q1lj\",\n            \"MountPoint\": \"/mountDir\"\n        }\n    ],\n    \"FileSystemId\": \"x-c60-a112q1lj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Command\": \"wget https://***********-***-**********.cos.ap-shanghai.myqcloud.com/client_env_package/agent/install-goosefsx-client.sh; chmod +x install-goosefsx-client.sh; ./install-goosefsx-client.sh ***.***.*.**:55533,***.***.*.**:55533,***.***.*.**:55533 x-c60-a112q1lj:/mountDir\",\n        \"RequestId\": \"5506922d-4abd-4ca1-ba9e-6f14566b3bd0\"\n    }\n}",
+        "title": "查询挂载命令"
+      }
+    ],
+    "QueryCrossVpcSubnetSupportForClientNode": [
+      {
+        "document": "查询客户端的跨vpc子网访问能力",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCrossVpcSubnetSupportForClientNode\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-a1b2c3d4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\",\n        \"SubnetInfoCollection\": [\n            {\n                \"VpcId\": \"vpc-a1b2c3d4\",\n                \"SubnetId\": \"subnet-a1b2c3d4\"\n            },\n            {\n                \"VpcId\": \"vpc-h1g1d1f1\",\n                \"SubnetId\": \"subnet-h1g1d1f1\"\n            },\n            {\n                \"VpcId\": \"vpc-m1n1o1p1\",\n                \"SubnetId\": \"subnet-m1n1o1p1\"\n            }\n        ]\n    }\n}",
+        "title": "查询客户端的跨vpc子网访问能力"
+      }
+    ],
+    "QueryDataRepositoryBandwidth": [
+      {
+        "document": "查询数据流动带宽",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDataRepositoryBandwidth\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x_c60_123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Bandwidth\": 600,\n        \"MinBandwidth\": 0,\n        \"BandwidthStatus\": 1,\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "查询数据流动带宽"
+      }
+    ],
+    "UpdateFileset": [
+      {
+        "document": "修改Fileset",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFileset\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-gq019g3k\",\n    \"FsetId\": \"fset_1745742041947\",\n    \"QuotaSizeLimit\": \"2048G\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"01c9ae21-4423-4593-a836-6d06c233faea\"\n    }\n}",
+        "title": "修改Fileset"
+      }
+    ],
+    "UpdateFilesetGeneralConfig": [
+      {
+        "document": "修改Fileset通用配置",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFilesetGeneralConfig\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-gq019g3k\",\n    \"EnforceQuotaOnRoot\": \"yes\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"351d5641-a330-45ef-beec-8174cb9115fb\"\n    }\n}",
+        "title": "修改Fileset通用配置"
+      }
+    ],
+    "UpdateLoadTaskPriority": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateLoadTaskPriority\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_36brs5g2\",\n    \"TaskId\": \"2c4a3356-28d5-4f87-98c3-78745b5d6bbf\",\n    \"Priority\": 666\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2650658c-e716-4ba0-b96a-2f9cfbcb5cb1\"\n    }\n}",
+        "title": "修改目标预热任务优先级"
+      }
+    ],
+    "UpdateUserQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-4lu862qo\",\n    \"QuotaId\": \"quota_1754029660656\",\n    \"QuotaSizeLimit\": \"20G\",\n    \"QuotaFilesLimit\": \"500000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cc66d787-9919-4bba-9ed7-ccd94812939e\"\n    }\n}",
+        "title": "UpdateUserQuota"
+      }
+    ]
+  },
+  "version": "1.0"
+}

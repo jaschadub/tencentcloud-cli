@@ -6,16 +6,19 @@ Input:
 
 ```
 tccli wedata ResumeIntegrationTask --cli-unfold-argument  \
-    --ProjectId xx \
-    --TaskId xx
+    --TaskId 4c187b4a-394b-4eb7-b9b0-948ca0552378 \
+    --ProjectId 1486446569620893696 \
+    --Event RESUME \
+    --ExtConfig.0.Name timestamp \
+    --ExtConfig.0.Value 1686811933000
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "Data": true
+        "Data": true,
+        "RequestId": "b214be7-c5a0-44ca-bd92-9d21a68e2931"
     }
 }
 ```

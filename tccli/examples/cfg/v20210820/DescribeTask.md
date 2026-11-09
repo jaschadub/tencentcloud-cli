@@ -1,4 +1,4 @@
-**Example 1: 查询任务**
+**Example 1: 查询演练任务**
 
 
 
@@ -6,89 +6,161 @@ Input:
 
 ```
 tccli cfg DescribeTask --cli-unfold-argument  \
-    --TaskId 309
+    --TaskId 6834
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "38f8dc62-1213-465d-bc0f-37dfa62230c2",
+        "ReportInfo": null,
+        "RequestId": "68da5328-ff1f-4320-92c0-a67e65c8a298",
         "Task": {
-            "TaskId": 309,
-            "TaskTitle": "123",
-            "TaskDescription": "123",
-            "TaskTag": "123",
-            "TaskStatus": 1001,
-            "TaskStatusType": 0,
-            "TaskProtectStrategy": null,
-            "TaskCreateTime": "2021-09-20 10:27:22",
-            "TaskUpdateTime": "2021-09-20 10:27:22",
-            "TaskStartTime": null,
+            "AlarmPolicy": [],
+            "ApmServiceList": [
+                {
+                    "InstanceId": "test-ins",
+                    "RegionId": 1,
+                    "ServiceNameList": [
+                        "test-service"
+                    ]
+                }
+            ],
+            "ApplicationId": "",
+            "ApplicationName": "",
+            "Tags": [],
+            "TaskCreateTime": "2023-10-09 10:55:18",
+            "TaskDescription": "游戏登录服跨AZ容灾演练",
             "TaskEndTime": null,
             "TaskExpect": null,
-            "TaskSummary": null,
-            "TaskMode": 1,
-            "TaskRegionId": 1,
-            "TaskPauseDuration": 12,
-            "TaskOwnerUin": "600000559519",
             "TaskGroups": [
                 {
-                    "TaskGroupId": 157,
+                    "ObjectTypeId": 1,
                     "TaskGroupActions": [
                         {
-                            "TaskGroupActionId": 185,
-                            "TaskGroupInstances": [],
-                            "ActionId": 1,
-                            "ActionTitle": "关机",
                             "ActionApiType": 1,
-                            "ActionRisk": "高风险",
                             "ActionAttribute": 1,
+                            "ActionId": 1,
+                            "ActionRisk": "高风险",
+                            "ActionTitle": "关机（测试）",
+                            "ActionType": "平台",
+                            "IsExecuteRedo": false,
+                            "TaskGroupActionCreateTime": "2023-10-09 10:55:18",
+                            "TaskGroupActionCustomConfiguration": "{\"force\": \"否\", \"destIp\": \"\", \"excludeIp\": \"\", \"localPort\": \"\", \"netPercent\": 8, \"remotePort\": \"\", \"excludePort\": \"\", \"netInterface\": \"eth0\"}",
+                            "TaskGroupActionExecuteId": null,
+                            "TaskGroupActionExecuteTime": null,
+                            "TaskGroupActionGeneralConfiguration": "{\"AliasTitle\": \"\", \"PreTimeWait\": 0, \"ActionTimeout\": 1800, \"AfterTimeWait\": 0}",
+                            "TaskGroupActionId": 13785,
                             "TaskGroupActionOrder": 1,
-                            "TaskGroupActionGeneralConfiguration": "{}",
-                            "TaskGroupActionCustomConfiguration": "{}",
+                            "TaskGroupActionRandomId": 457181,
+                            "TaskGroupActionRecoverId": 355514,
                             "TaskGroupActionStatus": 2001,
                             "TaskGroupActionStatusType": 0,
-                            "TaskGroupActionRandomId": 1,
-                            "TaskGroupActionRecoverId": 1,
-                            "TaskGroupActionExecuteId": 1,
-                            "TaskGroupActionCreateTime": "2021-09-20 10:27:22",
-                            "TaskGroupActionUpdateTime": "2021-09-20 10:27:22"
+                            "TaskGroupActionUpdateTime": "2023-10-09 10:55:18",
+                            "TaskGroupInstances": []
+                        },
+                        {
+                            "ActionApiType": 1,
+                            "ActionAttribute": 2,
+                            "ActionId": 2,
+                            "ActionRisk": "高风险",
+                            "ActionTitle": "开机",
+                            "ActionType": "平台",
+                            "IsExecuteRedo": false,
+                            "TaskGroupActionCreateTime": "2023-10-09 10:55:18",
+                            "TaskGroupActionCustomConfiguration": "{\"force\": \"否\", \"destIp\": \"\", \"excludeIp\": \"\", \"localPort\": \"\", \"netPercent\": 8, \"remotePort\": \"\", \"excludePort\": \"\", \"netInterface\": \"eth0\"}",
+                            "TaskGroupActionExecuteId": 457181,
+                            "TaskGroupActionExecuteTime": null,
+                            "TaskGroupActionGeneralConfiguration": "{\"PreTimeWait\": 0, \"ActionTimeout\": 1800, \"AfterTimeWait\": 0}",
+                            "TaskGroupActionId": 13786,
+                            "TaskGroupActionOrder": 2,
+                            "TaskGroupActionRandomId": 355514,
+                            "TaskGroupActionRecoverId": null,
+                            "TaskGroupActionStatus": 2001,
+                            "TaskGroupActionStatusType": 0,
+                            "TaskGroupActionUpdateTime": "2023-10-09 10:55:18",
+                            "TaskGroupInstances": []
                         }
                     ],
-                    "TaskGroupTitle": "123",
-                    "TaskGroupDescription": "123",
-                    "TaskGroupOrder": 1,
-                    "TaskGroupMode": 1,
+                    "TaskGroupCreateTime": "2023-10-09 10:55:18",
+                    "TaskGroupDescription": "1",
+                    "TaskGroupDiscardInstanceList": [],
+                    "TaskGroupId": 6454,
                     "TaskGroupInstanceList": [
-                        "123"
+                        "ins-knq6h3r8",
+                        "ins-61eitwrk",
+                        "ins-d2e45nba"
                     ],
-                    "ObjectTypeId": 1,
-                    "TaskGroupCreateTime": "2021-09-20 10:27:22",
-                    "TaskGroupUpdateTime": "2021-09-20 10:27:22"
+                    "TaskGroupInstancesExecuteRule": [
+                        {
+                            "TaskGroupInstancesExecuteMode": 3,
+                            "TaskGroupInstancesExecuteNum": 2,
+                            "TaskGroupInstancesExecutePercent": 100
+                        }
+                    ],
+                    "TaskGroupMode": 1,
+                    "TaskGroupOrder": 1,
+                    "TaskGroupSelectedInstanceList": [],
+                    "TaskGroupTitle": "1",
+                    "TaskGroupUpdateTime": "2023-10-09 10:55:18"
                 }
             ],
+            "TaskId": 5417,
+            "TaskMode": 1,
             "TaskMonitors": [
                 {
-                    "TaskMonitorId": 211,
-                    "TaskMonitorObjectTypeId": 1,
-                    "MetricName": "123",
-                    "MetricChineseName": "123",
                     "InstancesIds": [
-                        "123"
+                        "ins-knq6h3r8",
+                        "ins-61eitwrk",
+                        "ins-d2e45nba"
                     ],
-                    "Unit": "aaa"
+                    "MetricChineseName": "CPU使用率",
+                    "MetricId": 614,
+                    "MetricName": "CpuUsage",
+                    "TaskMonitorId": 5850,
+                    "TaskMonitorObjectTypeId": 1,
+                    "Unit": "%"
                 }
             ],
-            "TaskPolicy": {
-                "TaskPolicyIdList": [
-                    "123"
-                ],
-                "TaskPolicyStatus": "未触发",
-                "TaskPolicyRule": "123",
-                "TaskPolicyDealType": 2
-            }
+            "TaskOwnerUin": "700000174829",
+            "TaskPauseDuration": 60,
+            "TaskPlanId": null,
+            "TaskPlanTitle": null,
+            "TaskPolicy": null,
+            "TaskProtectStrategy": null,
+            "TaskRegionId": 1,
+            "TaskStartTime": null,
+            "TaskStatus": 1001,
+            "TaskStatusType": 0,
+            "TaskSummary": null,
+            "TaskTag": "",
+            "TaskTitle": "跨AZ容灾演练",
+            "TaskUpdateTime": "2023-10-09 10:55:18"
         }
+    }
+}
+```
+
+**Example 2: 无权限的调用**
+
+
+
+Input: 
+
+```
+tccli cfg DescribeTask --cli-unfold-argument  \
+    --TaskId 6834
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "UnauthorizedOperation",
+            "Message": "您无权操作此功能！"
+        },
+        "RequestId": "d1fc7e73-8e6d-45fa-a333-c199914883e9"
     }
 }
 ```

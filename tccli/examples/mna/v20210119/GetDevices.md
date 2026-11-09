@@ -1,4 +1,4 @@
-**Example 1: 获取设备基本信息列表**
+**Example 1: 示例**
 
 
 
@@ -6,9 +6,8 @@ Input:
 
 ```
 tccli mna GetDevices --cli-unfold-argument  \
-    --PageSize 10 \
-    --PageNumber 1 \
-    --Keyword mna-xxx
+    --PageSize 1 \
+    --PageNumber 1
 ```
 
 Output: 
@@ -17,23 +16,24 @@ Output:
     "Response": {
         "DeviceInfos": [
             {
-                "DeviceName": "dev",
-                "Remark": "xx",
-                "DeviceId": "mna-xxx",
-                "LastTime": 1,
-                "CreateTime": 1
-            },
-            {
-                "DeviceName": "dev1",
-                "Remark": "xx",
-                "DeviceId": "mna-xxx",
-                "LastTime": 1,
-                "CreateTime": 1
+                "AccessScope": 0,
+                "CreateTime": "1663310188000",
+                "DeviceId": "mna-w795bzezug",
+                "DeviceName": "dev2233",
+                "FlowTrunc": 0,
+                "GroupId": "",
+                "GroupName": "",
+                "LastTime": "1719454676000",
+                "LicensePayMode": 0,
+                "Payer": 0,
+                "Remark": "",
+                "Sn": "",
+                "Vendor": ""
             }
         ],
-        "Length": 10,
-        "TotalPage": 2,
-        "RequestId": "xx"
+        "Length": 899,
+        "RequestId": "8fbce821-acbb-49db-ad70-345b5d353324",
+        "TotalPage": 899
     }
 }
 ```

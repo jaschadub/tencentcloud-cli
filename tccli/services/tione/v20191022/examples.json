@@ -171,7 +171,7 @@
         "document": "",
         "input": "https://tione.tencentcloudapi.com/?Action=UpdateCodeRepository\r\n&CodeRepositoryName=private\r\n&GitSecret.Secret={\"UserName\":\"xxx\", \"Password\":\"xxx\"}\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"15837643767558277241\",\n        \"CodeRepositoryName\": \"private\"\n    }\n}",
-        "title": "更新存储库秘钥"
+        "title": "更新存储库密钥"
       }
     ],
     "UpdateNotebookInstance": [
@@ -180,14 +180,6 @@
         "input": "https://tione.tencentcloudapi.com/?Action=UpdateNotebookInstance\r\n&NotebookInstanceName=apitest\r\n&RoleArn=role_name\r\n&RootAccess=Enabled\r\n&VolumeSizeInGB=20\r\n&LifecycleScriptsName=aaa\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac85a52-fb9d-4b28-b0fa-1017b9ada1ac\"\n    }\n}",
         "title": "更新Notebook实例"
-      }
-    ],
-    "UpdateNotebookLifecycleScript": [
-      {
-        "document": "",
-        "input": "https://tione.tencentcloudapi.com/?Action=UpdateNotebookLifecycleScripts\r\n&NotebookLifecycleScriptsName=abc\r\n&CreateScript=YWJj&StartScript=YWJj\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"15833967702530096378\"\n    }\n}",
-        "title": "更新notebook生命周期脚本"
       }
     ]
   },

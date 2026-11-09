@@ -4,157 +4,183 @@
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n创建权限组。",
       "input": "CreateAccessGroupRequest",
       "name": "创建权限组",
-      "output": "CreateAccessGroupResponse"
+      "output": "CreateAccessGroupResponse",
+      "status": "offline"
     },
     "CreateAccessRules": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n批量创建权限规则，权限规则ID和创建时间无需填写。",
       "input": "CreateAccessRulesRequest",
       "name": "批量创建权限规则",
-      "output": "CreateAccessRulesResponse"
+      "output": "CreateAccessRulesResponse",
+      "status": "offline"
     },
     "CreateFileSystem": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n创建文件系统（异步）。",
       "input": "CreateFileSystemRequest",
       "name": "创建文件系统",
-      "output": "CreateFileSystemResponse"
+      "output": "CreateFileSystemResponse",
+      "status": "offline"
     },
     "CreateLifeCycleRules": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n批量创建生命周期规则，生命周期规则ID和创建时间无需填写。",
       "input": "CreateLifeCycleRulesRequest",
       "name": "批量创建生命周期规则",
-      "output": "CreateLifeCycleRulesResponse"
+      "output": "CreateLifeCycleRulesResponse",
+      "status": "offline"
     },
     "CreateMountPoint": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n创建文件系统挂载点，仅限于创建成功的文件系统。",
       "input": "CreateMountPointRequest",
       "name": "创建挂载点",
-      "output": "CreateMountPointResponse"
+      "output": "CreateMountPointResponse",
+      "status": "offline"
     },
     "CreateRestoreTasks": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n批量创建回热任务，回热任务ID、状态和创建时间无需填写。",
       "input": "CreateRestoreTasksRequest",
       "name": "批量创建回热任务",
-      "output": "CreateRestoreTasksResponse"
+      "output": "CreateRestoreTasksResponse",
+      "status": "offline"
     },
     "DeleteAccessGroup": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n删除权限组。",
       "input": "DeleteAccessGroupRequest",
       "name": "删除权限组",
-      "output": "DeleteAccessGroupResponse"
+      "output": "DeleteAccessGroupResponse",
+      "status": "offline"
     },
     "DeleteAccessRules": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n批量删除权限规则。",
       "input": "DeleteAccessRulesRequest",
       "name": "批量删除权限规则",
-      "output": "DeleteAccessRulesResponse"
+      "output": "DeleteAccessRulesResponse",
+      "status": "offline"
     },
     "DeleteFileSystem": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n删除文件系统，不允许删除非空文件系统。",
       "input": "DeleteFileSystemRequest",
       "name": "删除文件系统",
-      "output": "DeleteFileSystemResponse"
+      "output": "DeleteFileSystemResponse",
+      "status": "offline"
     },
     "DeleteLifeCycleRules": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n批量删除生命周期规则。",
       "input": "DeleteLifeCycleRulesRequest",
       "name": "批量删除生命周期规则",
-      "output": "DeleteLifeCycleRulesResponse"
+      "output": "DeleteLifeCycleRulesResponse",
+      "status": "offline"
     },
     "DeleteMountPoint": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n删除挂载点。",
       "input": "DeleteMountPointRequest",
       "name": "删除挂载点",
-      "output": "DeleteMountPointResponse"
+      "output": "DeleteMountPointResponse",
+      "status": "offline"
     },
     "DescribeAccessGroups": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n查看权限组列表。",
       "input": "DescribeAccessGroupsRequest",
       "name": "查看权限组列表",
-      "output": "DescribeAccessGroupsResponse"
+      "output": "DescribeAccessGroupsResponse",
+      "status": "offline"
     },
     "DescribeAccessRules": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n通过权限组ID查看权限规则列表。",
       "input": "DescribeAccessRulesRequest",
       "name": "查看权限规则列表",
-      "output": "DescribeAccessRulesResponse"
+      "output": "DescribeAccessRulesResponse",
+      "status": "offline"
     },
     "DescribeFileSystem": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n查看文件系统详细信息。",
       "input": "DescribeFileSystemRequest",
       "name": "查看文件系统详细信息",
-      "output": "DescribeFileSystemResponse"
+      "output": "DescribeFileSystemResponse",
+      "status": "offline"
     },
     "DescribeFileSystems": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n查看文件系统列表。",
       "input": "DescribeFileSystemsRequest",
       "name": "查看文件系统列表",
-      "output": "DescribeFileSystemsResponse"
+      "output": "DescribeFileSystemsResponse",
+      "status": "offline"
     },
     "DescribeLifeCycleRules": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n通过文件系统ID查看生命周期规则列表。",
       "input": "DescribeLifeCycleRulesRequest",
       "name": "查看生命周期规则列表",
-      "output": "DescribeLifeCycleRulesResponse"
+      "output": "DescribeLifeCycleRulesResponse",
+      "status": "offline"
     },
     "DescribeMountPoint": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n查看挂载点详细信息。",
       "input": "DescribeMountPointRequest",
       "name": "查看挂载点详细信息",
-      "output": "DescribeMountPointResponse"
+      "output": "DescribeMountPointResponse",
+      "status": "offline"
     },
     "DescribeMountPoints": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n通过文件系统ID或者权限组ID查看挂载点列表。",
       "input": "DescribeMountPointsRequest",
       "name": "查看挂载点列表",
-      "output": "DescribeMountPointsResponse"
+      "output": "DescribeMountPointsResponse",
+      "status": "offline"
     },
     "DescribeResourceTags": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n通过文件系统ID查看资源标签列表。",
       "input": "DescribeResourceTagsRequest",
       "name": "查看资源标签列表",
-      "output": "DescribeResourceTagsResponse"
+      "output": "DescribeResourceTagsResponse",
+      "status": "offline"
     },
     "DescribeRestoreTasks": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n通过文件系统ID查看回热任务列表。",
       "input": "DescribeRestoreTasksRequest",
       "name": "查看回热任务列表",
-      "output": "DescribeRestoreTasksResponse"
+      "output": "DescribeRestoreTasksResponse",
+      "status": "offline"
     },
     "ModifyAccessGroup": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n修改权限组属性。",
       "input": "ModifyAccessGroupRequest",
       "name": "修改权限组属性",
-      "output": "ModifyAccessGroupResponse"
+      "output": "ModifyAccessGroupResponse",
+      "status": "offline"
     },
     "ModifyAccessRules": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n批量修改权限规则属性，需要指定权限规则ID，支持修改权限规则地址、访问模式和优先级。",
       "input": "ModifyAccessRulesRequest",
       "name": "批量修改权限规则属性",
-      "output": "ModifyAccessRulesResponse"
+      "output": "ModifyAccessRulesResponse",
+      "status": "offline"
     },
     "ModifyFileSystem": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n修改文件系统属性，仅限于创建成功的文件系统。",
       "input": "ModifyFileSystemRequest",
       "name": "修改文件系统属性",
-      "output": "ModifyFileSystemResponse"
+      "output": "ModifyFileSystemResponse",
+      "status": "offline"
     },
     "ModifyLifeCycleRules": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n批量修改生命周期规则属性，需要指定生命周期规则ID，支持修改生命周期规则名称、路径、转换列表和状态。",
       "input": "ModifyLifeCycleRulesRequest",
       "name": "批量修改生命周期规则属性",
-      "output": "ModifyLifeCycleRulesResponse"
+      "output": "ModifyLifeCycleRulesResponse",
+      "status": "offline"
     },
     "ModifyMountPoint": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n修改挂载点属性。",
       "input": "ModifyMountPointRequest",
       "name": "修改挂载点属性",
-      "output": "ModifyMountPointResponse"
+      "output": "ModifyMountPointResponse",
+      "status": "offline"
     },
     "ModifyResourceTags": {
       "document": "云API旧版本2019-07-18预下线，所有功能由新版本2020-11-12替代，目前云API主要用作控制台使用。\n\n修改资源标签列表，全量覆盖。",
       "input": "ModifyResourceTagsRequest",
       "name": "修改资源标签列表",
-      "output": "ModifyResourceTagsResponse"
+      "output": "ModifyResourceTagsResponse",
+      "status": "offline"
     }
   },
   "metadata": {
@@ -168,7 +194,6 @@
       "document": "权限组",
       "members": [
         {
-          "default": "",
           "document": "权限组ID",
           "member": "string",
           "name": "AccessGroupId",
@@ -177,7 +202,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "权限组名称",
           "member": "string",
           "name": "AccessGroupName",
@@ -186,7 +210,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "权限组描述",
           "member": "string",
           "name": "Description",
@@ -195,7 +218,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -210,7 +232,6 @@
       "document": "权限规则",
       "members": [
         {
-          "default": "",
           "document": "权限规则ID",
           "member": "uint64",
           "name": "AccessRuleId",
@@ -219,7 +240,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "权限规则地址（网段或IP）",
           "member": "string",
           "name": "Address",
@@ -228,7 +248,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "权限规则访问模式（1：只读；2：读写）",
           "member": "uint64",
           "name": "AccessMode",
@@ -237,7 +256,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "优先级（取值范围1~100，值越小优先级越高）",
           "member": "uint64",
           "name": "Priority",
@@ -246,7 +264,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -261,7 +278,6 @@
       "document": "CreateAccessGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "权限组名称",
           "member": "string",
           "name": "AccessGroupName",
@@ -269,7 +285,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "权限组描述",
           "member": "string",
           "name": "Description",
@@ -302,7 +317,6 @@
       "document": "CreateAccessRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "多个权限规则，上限为10",
           "member": "AccessRule",
           "name": "AccessRules",
@@ -310,7 +324,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "权限组ID",
           "member": "string",
           "name": "AccessGroupId",
@@ -336,7 +349,6 @@
       "document": "CreateFileSystem请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "文件系统名称",
           "member": "string",
           "name": "FileSystemName",
@@ -344,7 +356,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件系统容量（byte），下限为1G，上限为1P，且必须是1G的整数倍",
           "member": "uint64",
           "name": "CapacityQuota",
@@ -352,7 +363,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "文件系统描述",
           "member": "string",
           "name": "Description",
@@ -385,7 +395,6 @@
       "document": "CreateLifeCycleRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "文件系统ID",
           "member": "string",
           "name": "FileSystemId",
@@ -393,7 +402,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "多个生命周期规则，上限为10",
           "member": "LifeCycleRule",
           "name": "LifeCycleRules",
@@ -419,7 +427,6 @@
       "document": "CreateMountPoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "挂载点名称",
           "member": "string",
           "name": "MountPointName",
@@ -427,7 +434,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件系统ID",
           "member": "string",
           "name": "FileSystemId",
@@ -435,7 +441,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "权限组ID",
           "member": "string",
           "name": "AccessGroupId",
@@ -443,7 +448,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "VPC网络ID",
           "member": "string",
           "name": "VpcId",
@@ -451,7 +455,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "挂载点状态（1：打开；2：关闭）",
           "member": "uint64",
           "name": "MountPointStatus",
@@ -459,7 +462,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "VPC网络类型（1：CVM；2：黑石1.0；3：黑石2.0）",
           "member": "uint64",
           "name": "VpcType",
@@ -492,7 +494,6 @@
       "document": "CreateRestoreTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "文件系统ID",
           "member": "string",
           "name": "FileSystemId",
@@ -500,7 +501,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "多个回热任务，上限为10",
           "member": "RestoreTask",
           "name": "RestoreTasks",
@@ -526,7 +526,6 @@
       "document": "DeleteAccessGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "权限组ID",
           "member": "string",
           "name": "AccessGroupId",
@@ -552,7 +551,6 @@
       "document": "DeleteAccessRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "多个权限规则ID，上限为10",
           "member": "uint64",
           "name": "AccessRuleIds",
@@ -578,7 +576,6 @@
       "document": "DeleteFileSystem请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "文件系统ID",
           "member": "string",
           "name": "FileSystemId",
@@ -604,7 +601,6 @@
       "document": "DeleteLifeCycleRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "多个生命周期规则ID，上限为10",
           "member": "uint64",
           "name": "LifeCycleRuleIds",
@@ -630,7 +626,6 @@
       "document": "DeleteMountPoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "挂载点ID",
           "member": "string",
           "name": "MountPointId",
@@ -656,7 +651,6 @@
       "document": "DescribeAccessGroups请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "过滤条件，Name可选“AccessGroupId“和“AccessGroupName”，Values上限为10",
           "member": "Filter",
           "name": "Filters",
@@ -664,7 +658,6 @@
           "type": "list"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0",
           "member": "uint64",
           "name": "Offset",
@@ -672,7 +665,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为所有",
           "member": "uint64",
           "name": "Limit",
@@ -705,7 +697,6 @@
       "document": "DescribeAccessRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "权限组ID",
           "member": "string",
           "name": "AccessGroupId",
@@ -713,7 +704,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0",
           "member": "uint64",
           "name": "Offset",
@@ -721,7 +711,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为所有",
           "member": "uint64",
           "name": "Limit",
@@ -754,7 +743,6 @@
       "document": "DescribeFileSystem请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "文件系统ID",
           "member": "string",
           "name": "FileSystemId",
@@ -808,7 +796,6 @@
       "document": "DescribeFileSystems请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "偏移量，默认为0",
           "member": "uint64",
           "name": "Offset",
@@ -816,7 +803,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为所有",
           "member": "uint64",
           "name": "Limit",
@@ -849,7 +835,6 @@
       "document": "DescribeLifeCycleRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "文件系统ID",
           "member": "string",
           "name": "FileSystemId",
@@ -882,7 +867,6 @@
       "document": "DescribeMountPoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "挂载点ID",
           "member": "string",
           "name": "MountPointId",
@@ -915,7 +899,6 @@
       "document": "DescribeMountPoints请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "文件系统ID\n注意：若根据AccessGroupId查看挂载点列表，则无需设置FileSystemId",
           "member": "string",
           "name": "FileSystemId",
@@ -923,7 +906,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "权限组ID\n注意：若根据FileSystemId查看挂载点列表，则无需设置AccessGroupId",
           "member": "string",
           "name": "AccessGroupId",
@@ -931,7 +913,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "偏移量，默认为0",
           "member": "uint64",
           "name": "Offset",
@@ -939,7 +920,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "返回数量，默认为所有",
           "member": "uint64",
           "name": "Limit",
@@ -972,7 +952,6 @@
       "document": "DescribeResourceTags请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "文件系统ID",
           "member": "string",
           "name": "FileSystemId",
@@ -1005,7 +984,6 @@
       "document": "DescribeRestoreTasks请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "文件系统ID",
           "member": "string",
           "name": "FileSystemId",
@@ -1038,7 +1016,6 @@
       "document": "文件系统",
       "members": [
         {
-          "default": "",
           "document": "appid",
           "member": "uint64",
           "name": "AppId",
@@ -1047,7 +1024,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统名称",
           "member": "string",
           "name": "FileSystemName",
@@ -1056,7 +1032,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统描述",
           "member": "string",
           "name": "Description",
@@ -1065,7 +1040,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "地域",
           "member": "string",
           "name": "Region",
@@ -1074,7 +1048,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统ID",
           "member": "string",
           "name": "FileSystemId",
@@ -1083,7 +1056,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -1092,7 +1064,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统块大小（byte）",
           "member": "uint64",
           "name": "BlockSize",
@@ -1101,7 +1072,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统容量（byte）",
           "member": "uint64",
           "name": "CapacityQuota",
@@ -1110,7 +1080,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统状态（1：创建中；2：创建成功；3：创建失败）",
           "member": "uint64",
           "name": "Status",
@@ -1125,7 +1094,6 @@
       "document": "过滤条件",
       "members": [
         {
-          "default": "",
           "document": "过滤字段",
           "member": "string",
           "name": "Name",
@@ -1134,7 +1102,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "过滤值",
           "member": "string",
           "name": "Values",
@@ -1149,7 +1116,6 @@
       "document": "生命周期规则",
       "members": [
         {
-          "default": "",
           "document": "生命周期规则ID",
           "member": "uint64",
           "name": "LifeCycleRuleId",
@@ -1158,7 +1124,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生命周期规则名称",
           "member": "string",
           "name": "LifeCycleRuleName",
@@ -1167,7 +1132,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生命周期规则路径（目录或文件）",
           "member": "string",
           "name": "Path",
@@ -1176,7 +1140,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生命周期规则转换列表",
           "member": "Transition",
           "name": "Transitions",
@@ -1185,7 +1148,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "生命周期规则状态（1：打开；2：关闭）",
           "member": "uint64",
           "name": "Status",
@@ -1194,7 +1156,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -1209,7 +1170,6 @@
       "document": "ModifyAccessGroup请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "权限组ID",
           "member": "string",
           "name": "AccessGroupId",
@@ -1217,7 +1177,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "权限组名称",
           "member": "string",
           "name": "AccessGroupName",
@@ -1225,7 +1184,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "权限组描述",
           "member": "string",
           "name": "Description",
@@ -1251,7 +1209,6 @@
       "document": "ModifyAccessRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "多个权限规则，上限为10",
           "member": "AccessRule",
           "name": "AccessRules",
@@ -1277,7 +1234,6 @@
       "document": "ModifyFileSystem请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "文件系统ID",
           "member": "string",
           "name": "FileSystemId",
@@ -1285,7 +1241,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件系统名称",
           "member": "string",
           "name": "FileSystemName",
@@ -1293,7 +1248,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件系统描述",
           "member": "string",
           "name": "Description",
@@ -1301,7 +1255,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "文件系统容量（byte），下限为1G，上限为1P，且必须是1G的整数倍\n注意：修改的文件系统容量不能小于当前使用量",
           "member": "uint64",
           "name": "CapacityQuota",
@@ -1327,7 +1280,6 @@
       "document": "ModifyLifeCycleRules请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "多个生命周期规则，上限为10",
           "member": "LifeCycleRule",
           "name": "LifeCycleRules",
@@ -1353,7 +1305,6 @@
       "document": "ModifyMountPoint请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "挂载点ID",
           "member": "string",
           "name": "MountPointId",
@@ -1361,7 +1312,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "挂载点名称",
           "member": "string",
           "name": "MountPointName",
@@ -1369,7 +1319,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "挂载点状态",
           "member": "uint64",
           "name": "MountPointStatus",
@@ -1377,7 +1326,6 @@
           "type": "int"
         },
         {
-          "default": "",
           "document": "权限组ID",
           "member": "string",
           "name": "AccessGroupId",
@@ -1403,7 +1351,6 @@
       "document": "ModifyResourceTags请求参数结构体",
       "members": [
         {
-          "default": "",
           "document": "文件系统ID",
           "member": "string",
           "name": "FileSystemId",
@@ -1411,7 +1358,6 @@
           "type": "string"
         },
         {
-          "default": "",
           "document": "多个资源标签，可以为空数组",
           "member": "Tag",
           "name": "Tags",
@@ -1437,7 +1383,6 @@
       "document": "挂载点",
       "members": [
         {
-          "default": "",
           "document": "挂载点ID",
           "member": "string",
           "name": "MountPointId",
@@ -1446,7 +1391,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "挂载点名称",
           "member": "string",
           "name": "MountPointName",
@@ -1455,7 +1399,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "文件系统ID",
           "member": "string",
           "name": "FileSystemId",
@@ -1464,7 +1407,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "权限组ID",
           "member": "string",
           "name": "AccessGroupId",
@@ -1473,7 +1415,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "VPC网络ID",
           "member": "string",
           "name": "VpcId",
@@ -1482,7 +1423,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "挂载点状态（1：打开；2：关闭）",
           "member": "uint64",
           "name": "Status",
@@ -1491,7 +1431,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -1500,7 +1439,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "VPC网络类型",
           "member": "uint64",
           "name": "VpcType",
@@ -1515,7 +1453,6 @@
       "document": "回热任务",
       "members": [
         {
-          "default": "",
           "document": "回热任务ID",
           "member": "uint64",
           "name": "RestoreTaskId",
@@ -1524,7 +1461,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "回热任务文件路径",
           "member": "string",
           "name": "FilePath",
@@ -1533,7 +1469,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "回热任务类型（1：标准；2：极速；3：批量）",
           "member": "uint64",
           "name": "Type",
@@ -1542,7 +1477,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "指定恢复出的临时副本的有效时长（单位天）",
           "member": "uint64",
           "name": "Days",
@@ -1551,7 +1485,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "回热任务状态（1：绑定文件中；2：绑定文件完成；3：文件回热中；4：文件回热完成）",
           "member": "uint64",
           "name": "Status",
@@ -1560,7 +1493,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "创建时间",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -1575,7 +1507,6 @@
       "document": "资源标签。",
       "members": [
         {
-          "default": "",
           "document": "标签键",
           "member": "string",
           "name": "Key",
@@ -1584,7 +1515,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "标签值",
           "member": "string",
           "name": "Value",
@@ -1599,7 +1529,6 @@
       "document": "生命周期规则转换属性",
       "members": [
         {
-          "default": "",
           "document": "触发时间（单位天）",
           "member": "uint64",
           "name": "Days",
@@ -1608,7 +1537,6 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
           "document": "转换类型（1：归档；2：删除）",
           "member": "uint64",
           "name": "Type",

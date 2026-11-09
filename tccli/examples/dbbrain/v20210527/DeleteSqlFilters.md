@@ -1,14 +1,15 @@
 **Example 1: 删除实例SQL限流任务**
 
-
+删除实例SQL限流任务
 
 Input: 
 
 ```
 tccli dbbrain DeleteSqlFilters --cli-unfold-argument  \
-    --InstanceId cdb-test \
-    --SessionToken cAuth \
-    --FilterIds 1234
+    --Product mysql \
+    --InstanceId cdb-hxuthiy6 \
+    --FilterIds 1089146 \
+    --SessionToken aOqcrCnPLZgCh41VqZVHda2Y+HI=:26872060
 ```
 
 Output: 

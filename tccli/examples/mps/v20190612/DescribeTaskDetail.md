@@ -1,6 +1,6 @@
 **Example 1: 获取任务详情**
 
-
+查询任务结果
 
 Input: 
 
@@ -29,14 +29,19 @@ Output:
                     "Bucket": "vodtestbj-235303****",
                     "Region": "ap-beijing",
                     "Object": "/input/videoplayback.mp4"
-                }
+                },
+                "S3InputInfo": null,
+                "UrlInputInfo": null
             },
             "MetaData": {
                 "AudioDuration": 380.9465637207031,
                 "AudioStreamSet": [
                     {
+                        "Channel": 0,
                         "Bitrate": 95999,
                         "Codec": "aac",
+                        "Codecs": "mp4a.40.2",
+                        "Loudness": 0,
                         "SamplingRate": 44100
                     }
                 ],
@@ -51,8 +56,13 @@ Output:
                     {
                         "Bitrate": 313658,
                         "Codec": "h264",
+                        "Codecs": "avc1.ffe100",
                         "Fps": 29,
                         "Height": 360,
+                        "HdrType": "",
+                        "ColorPrimaries": "",
+                        "ColorSpace": "",
+                        "ColorTransfer": "",
                         "Width": 480
                     }
                 ],
@@ -65,15 +75,24 @@ Output:
                         "Status": "SUCCESS",
                         "ErrCode": 0,
                         "Message": "SUCCESS",
+                        "ErrCodeExt": "SUCCESS",
+                        "Progress": 100,
                         "Input": {
                             "Definition": 210,
                             "WatermarkSet": [],
+                            "MosaicSet": [],
+                            "RawParameter": null,
+                            "EndTimeOffset": 0,
+                            "OverrideParameter": null,
+                            "HeadTailParameter": null,
+                            "StartTimeOffset": 0,
                             "OutputStorage": {
                                 "Type": "COS",
                                 "CosOutputStorage": {
                                     "Bucket": "vodtestgz-235303****",
                                     "Region": "ap-guangzhou"
-                                }
+                                },
+                                "S3OutputStorage": null
                             },
                             "OutputObjectPath": "/hello/world/what/ever/videoplayback_transcode111_210",
                             "SegmentObjectName": "/hello/world/what/ever/no/problem/videoplayback_transcode11_210_{number}",
@@ -90,7 +109,8 @@ Output:
                                 "CosOutputStorage": {
                                     "Bucket": "vodtestgz-235303****",
                                     "Region": "ap-guangzhou"
-                                }
+                                },
+                                "S3OutputStorage": null
                             },
                             "Path": "/hello/world/what/ever/videoplayback_transcode111_210.m3u8",
                             "Definition": 210,
@@ -105,15 +125,23 @@ Output:
                                 {
                                     "Bitrate": 302307,
                                     "Codec": "h264",
+                                    "Codecs": "avc1.ffe100",
                                     "Fps": 24,
                                     "Height": 240,
+                                    "HdrType": "",
+                                    "ColorPrimaries": "",
+                                    "ColorSpace": "",
+                                    "ColorTransfer": "",
                                     "Width": 320
                                 }
                             ],
                             "AudioStreamSet": [
                                 {
+                                    "Channel": 0,
                                     "Bitrate": 50990,
                                     "Codec": "aac",
+                                    "Codecs": "mp4a.40.2",
+                                    "Loudness": 0,
                                     "SamplingRate": 44100
                                 }
                             ]
@@ -122,14 +150,20 @@ Output:
                     "AnimatedGraphicTask": null,
                     "SnapshotByTimeOffsetTask": null,
                     "SampleSnapshotTask": null,
-                    "ImageSpriteTask": null
+                    "ImageSpriteTask": null,
+                    "AdaptiveDynamicStreamingTask": null
                 }
-            ]
+            ],
+            "AiAnalysisResultSet": [],
+            "AiRecognitionResultSet": [],
+            "AiContentReviewResultSet": [],
+            "AiQualityControlTaskResult": null
         },
         "TaskNotifyConfig": null,
         "EditMediaTask": null,
         "LiveStreamProcessTask": null,
         "ScheduleTask": null,
+        "LiveScheduleTask": null,
         "TasksPriority": 0,
         "SessionId": "",
         "SessionContext": "",

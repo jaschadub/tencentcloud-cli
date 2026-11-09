@@ -3,6 +3,7 @@ import six
 import json
 import time
 import os
+import uuid
 import tccli.options_define as options_define
 
 
@@ -83,13 +84,28 @@ class Utils(object):
     def dump_json_msg(filename, data):
         file_dir = os.path.split(filename)[0]
         if not os.path.isdir(file_dir):
-            os.makedirs(file_dir)
-        with open(filename, "w") as f:
+            os.makedirs(file_dir, 0o700)
+        elif os.name != "nt" and os.stat(file_dir).st_mode & 0o777 != 0o700:
+            os.chmod(file_dir, 0o700)
+
+        temp_file = filename + uuid.uuid4().hex + ".tmp"
+        with open(temp_file, "w") as f:
             json.dump(data, f,
                       indent=2,
                       separators=(',', ': '),
                       ensure_ascii=False,
                       sort_keys=True)
+        try:
+            if os.name != "nt":
+                os.rename(temp_file, filename)
+            else:
+                if six.PY3:
+                    os.replace(temp_file, filename)
+                else:
+                    raise Exception("windows platform python2 is not supported, please upgrade to python3")
+        except Exception:
+            os.remove(temp_file)
+            raise Exception("write configure file failed")
 
     @staticmethod
     def get_call_mode():
@@ -109,3 +125,11 @@ class Utils(object):
                 return mode
         return None
 
+    @staticmethod
+    def is_bool(s):
+        if s.lower() == 'true':
+            return True, True
+        elif s.lower() == 'false':
+            return True, False
+        else:
+            return False, None

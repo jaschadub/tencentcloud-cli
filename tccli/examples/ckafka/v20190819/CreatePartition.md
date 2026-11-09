@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ckafka CreatePartition --cli-unfold-argument  \
-    --InstanceId xxx \
-    --TopicName xxx \
-    --PartitionNum xxx
+    --InstanceId ckafka-test \
+    --TopicName mytopic \
+    --PartitionNum 3
 ```
 
 Output: 
@@ -17,7 +17,8 @@ Output:
     "Response": {
         "Result": {
             "ReturnCode": "0",
-            "ReturnMessage": "ok[apply success]"
+            "ReturnMessage": "ok[apply success]",
+            "Data": null
         },
         "RequestId": "483c3edd-a2ac-420c-905d-47a5ec7de4ad"
     }

@@ -1,6 +1,6 @@
 **Example 1: 获取技能组列表示例**
 
-
+获取技能组列表示例
 
 Input: 
 
@@ -23,11 +23,13 @@ Output:
             {
                 "SkillGroupId": 1115,
                 "SkillGroupName": "luluttt",
+                "SkillGroupType": 1,
                 "Type": "TEL",
                 "RoutePolicy": "firstCreate",
                 "UsingLastSeat": 0,
                 "MaxConcurrency": 1,
-                "LastModifyTimestamp": 1613976392
+                "LastModifyTimestamp": 1613976392,
+                "Alias": "6666"
             }
         ]
     }

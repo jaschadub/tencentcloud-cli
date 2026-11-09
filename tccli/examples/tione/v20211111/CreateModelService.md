@@ -1,4 +1,4 @@
-**Example 1: 创建一个自定义镜像的后付费服务**
+**Example 1: 新建在线服务**
 
 
 
@@ -7,18 +7,23 @@ Input:
 ```
 tccli tione CreateModelService --cli-unfold-argument  \
     --ServiceGroupId  \
-    --ServiceGroupName demo \
+    --ServiceGroupName demo-create \
     --ServiceDescription  \
     --ChargeType POSTPAID_BY_HOUR \
     --InstanceType TI.S.MEDIUM.POST \
     --ImageInfo.ImageType CCR \
-    --ImageInfo.ImageUrl ccr.ccs.tencentyun.com/tiemsdev/hellotest:latest \
-    --ImageInfo.RegistryRegion  \
+    --ImageInfo.ImageUrl ccr.ccs.tencentyun.com/test-ccr/hellotest \
+    --ImageInfo.RegistryRegion ap-guangzhou \
     --ImageInfo.RegistryId  \
+    --LogEnable False \
     --ScaleMode MANUAL \
     --Replicas 1 \
     --AuthorizationEnable False \
-    --LogEnable False
+    --ModelHotUpdateEnable False \
+    --ServiceLimit.EnableInstanceRpsLimit False \
+    --ServiceLimit.InstanceRpsLimit 500 \
+    --ScheduledAction.ScheduleStop False \
+    --ScheduledAction.ScheduleStopTime 2023-04-24T11:54:53+08:00
 ```
 
 Output: 
@@ -26,54 +31,82 @@ Output:
 {
     "Response": {
         "Service": {
-            "ServiceGroupId": "ms-gqlzzr2f",
-            "ServiceId": "ms-gqlzzr2f-1",
-            "ServiceGroupName": "demo",
+            "ServiceGroupId": "ms-skdg89rx",
+            "ServiceId": "ms-skdg89rx-1",
+            "ServiceGroupName": "demo-create",
             "ServiceDescription": "",
+            "Uin": "100030513581",
+            "SubUin": "100030513581",
+            "CreatedBy": "100044299491",
             "ServiceInfo": {
                 "Replicas": 1,
                 "ImageInfo": {
                     "ImageType": "CCR",
-                    "ImageUrl": "ccr.ccs.tencentyun.com/tiemsdev/hellotest:latest",
-                    "RegistryRegion": "",
+                    "ImageUrl": "ccr.ccs.tencentyun.com/jiaqi-3581-test/mock_service:tione_20250509",
+                    "RegistryRegion": "ap-guangzhou",
                     "RegistryId": ""
                 },
                 "Env": [],
                 "Resources": {
-                    "Cpu": 2000,
-                    "Memory": 4096,
+                    "Cpu": 1000,
+                    "Memory": 1024,
                     "Gpu": 0,
-                    "GpuType": "none"
+                    "RealGpu": 0,
+                    "GpuType": "GPU-GN7",
+                    "RealGpuDetailSet": [],
+                    "EnableRDMA": false
                 },
                 "InstanceType": "TI.S.MEDIUM.POST",
                 "ModelInfo": null,
                 "LogEnable": false,
                 "LogConfig": null,
                 "AuthorizationEnable": false,
+                "ScaleMode": "MANUAL",
                 "HorizontalPodAutoscaler": null,
+                "CronScaleJobs": [],
+                "ScaleStrategy": "",
                 "Status": null,
                 "Weight": 100,
                 "PodList": [],
+                "Pods": null,
+                "PodInfos": [],
                 "ResourceTotal": null,
-                "OldReplicas": 0
+                "OldReplicas": 0,
+                "HybridBillingPrepaidReplicas": 0,
+                "OldHybridBillingPrepaidReplicas": 0,
+                "ModelHotUpdateEnable": false
             },
             "ClusterId": "",
-            "Region": "ap-beijing",
+            "Region": "ap-guangzhou",
             "Namespace": "",
             "ChargeType": "POSTPAID_BY_HOUR",
             "ResourceGroupId": "",
-            "CreatedBy": "243224118",
+            "ResourceGroupName": "",
+            "Tags": [],
+            "IngressName": "user-ingress-1",
             "CreateTime": "",
             "UpdateTime": "",
-            "Uin": "100005348929",
-            "SubUin": "243224118",
-            "AppId": 1256580188,
+            "AppId": 10000000000,
             "BusinessStatus": "CREATING",
-            "Weight": 0,
+            "CreateFailedReason": "",
+            "Status": "",
+            "BillingInfo": "",
+            "Weight": 100,
+            "CreateSource": "DEFAULT",
             "Version": "",
-            "LatestVersion": ""
+            "LatestVersion": "",
+            "ServiceLimit": {
+                "EnableInstanceRpsLimit": false,
+                "InstanceRpsLimit": 0,
+                "EnableInstanceReqLimit": false,
+                "InstanceReqLimit": 0
+            },
+            "ScheduledAction": {
+                "ScheduleStop": false,
+                "ScheduleStopTime": "2023-04-24T11:54:53+08:00"
+            }
         },
-        "RequestId": "5d067ec5-def2-44f9-bed2-9b1f75b7067d"
+        "RequestId": "b8f848e4-64ea-475c-864e-6d4b0c9ec6ea"
     }
 }
 ```

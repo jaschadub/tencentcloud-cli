@@ -1,12 +1,12 @@
-**Example 1: 删除Datahub任务**
+**Example 1: 删除连接器任务**
 
-
+删除连接器任务
 
 Input: 
 
 ```
 tccli ckafka DeleteDatahubTask --cli-unfold-argument  \
-    --TaskId xx
+    --TaskId task-y9799wbn
 ```
 
 Output: 
@@ -14,9 +14,9 @@ Output:
 {
     "Response": {
         "Result": {
-            "TaskId": "xx"
+            "TaskId": "task-y9799wbn"
         },
-        "RequestId": "xx"
+        "RequestId": "84770b4b-df34-4ccf-8e22-41d3b1d0fe0d"
     }
 }
 ```

@@ -1,20 +1,20 @@
-**Example 1: 添加星标项目**
+**Example 1: 添加星标应用**
 
-
+添加星标应用
 
 Input: 
 
 ```
 tccli rum CreateStarProject --cli-unfold-argument  \
-    --ID 1 \
-    --InstanceID taw-123
+    --InstanceID taw-123 \
+    --ID 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Msg": "xxxx",
+        "Msg": "success",
         "RequestId": "65a8fec7-2b39-4b11-893f-3715279d235f"
     }
 }

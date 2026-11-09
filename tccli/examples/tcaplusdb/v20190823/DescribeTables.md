@@ -14,50 +14,76 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
         "TableInfos": [
             {
-                "UpdatedTime": "xx",
-                "ReservedVolume": 1,
-                "ReservedWriteQps": 26,
-                "KeyStruct": "xx",
-                "ValueStruct": "xx",
-                "CreatedTime": "xx",
-                "Status": "xx",
-                "TableGroupId": "xx",
-                "TableSize": 48566336,
-                "Memo": "xx",
-                "ClusterId": "xx",
-                "ListElementNum": 1,
-                "DbClusterInfoStruct": "xx",
-                "ApiAccessId": "xx",
-                "TableGroupName": "xx",
-                "IndexStruct": "xx",
-                "ShardingKeySet": "xx",
-                "ReservedReadQps": 80,
+                "TableName": "testname",
+                "TableInstanceId": "tcaplus-121312",
+                "TableType": "tdr",
+                "TableIdlType": "tdr",
+                "ClusterId": "121443121",
+                "ClusterName": "clustename",
+                "TableGroupId": "18433",
+                "TableGroupName": "groupname",
+                "KeyStruct": "keystruct",
+                "ValueStruct": "valuestruct",
+                "ShardingKeySet": "shardingkeyset",
+                "IndexStruct": "indexstruct",
+                "ListElementNum": 1024,
                 "IdlFiles": [
                     {
-                        "FileExtType": "xx",
-                        "FileType": "xx",
-                        "FileName": "xx",
-                        "FileSize": 266,
-                        "FileContent": "xx",
-                        "FileId": 551
+                        "FileName": "filename",
+                        "FileType": "tdr",
+                        "FileExtType": "tdr",
+                        "FileSize": 10240,
+                        "FileId": 1,
+                        "FileContent": "content"
                     }
                 ],
+                "ReservedVolume": 10,
+                "ReservedReadQps": 1000,
+                "ReservedWriteQps": 1000,
+                "TableSize": 1000,
+                "Status": "normal",
+                "CreatedTime": "2020-10-10 10:10:10",
+                "UpdatedTime": "2020-10-10 10:10:10",
+                "Memo": "memo",
                 "Error": {
-                    "Message": "xx",
-                    "Code": "xx"
+                    "Code": "",
+                    "Message": ""
                 },
-                "TableType": "xx",
-                "TableIdlType": "xx",
-                "ClusterName": "xx",
-                "TableInstanceId": "xx",
+                "ApiAccessId": "accessid",
+                "SortFieldNum": 0,
                 "SortRule": 0,
-                "TableName": "xx",
-                "SortFieldNum": 0
+                "DbClusterInfoStruct": "dbinfostruct",
+                "TxhBackupExpireDay": 1,
+                "SyncTableInfo": {
+                    "TargetTableSplitNum": 1,
+                    "TargetTableNamePrefix": [
+                        "tablenameprefix"
+                    ],
+                    "TargetSyncDBInstanceId": "193242",
+                    "TargetDatabaseName": "targetname",
+                    "Status": 0,
+                    "ClusterId": "193243234",
+                    "TableGroupId": 1,
+                    "TableName": "testname",
+                    "TableId": "tcaplus-12312",
+                    "KeyFieldMapping": [
+                        {
+                            "SourceName": "sourcename",
+                            "TargetName": "targetname"
+                        }
+                    ],
+                    "ValueFieldMapping": [
+                        {
+                            "SourceName": "sourcename",
+                            "TargetName": "targetname"
+                        }
+                    ]
+                }
             }
-        ]
+        ],
+        "RequestId": "1932423-121413"
     }
 }
 ```

@@ -3,7 +3,7 @@
     "AddSmsSign": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSmsSign\n<公共请求参数>\n\n{\n    \"Remark\": \"xxxx\",\n    \"SignPurpose\": 1,\n    \"SignType\": 0,\n    \"CommissionImage\": \"xxxx\",\n    \"SignName\": \"腾讯云\",\n    \"DocumentType\": 1,\n    \"International\": 0,\n    \"ProofImage\": \"xxxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSmsSign\n<公共请求参数>\n\n{\n    \"Remark\": \"业务自用申请\",\n    \"SignPurpose\": 0,\n    \"SignType\": 0,\n    \"CommissionImage\": \"base64\",\n    \"SignName\": \"腾讯云\",\n    \"DocumentType\": 1,\n    \"International\": 0,\n    \"ProofImage\": \"base64\",\n    \"QualificationId\": 1000001\n}",
         "output": "{\n    \"Response\": {\n        \"AddSignStatus\": {\n            \"SignId\": 1110\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
@@ -11,7 +11,7 @@
     "AddSmsTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSmsTemplate\n<公共请求参数>\n\n{\n    \"SmsType\": 0,\n    \"International\": 0,\n    \"Remark\": \"xx\",\n    \"TemplateContent\": \"您的验证码是{1}\",\n    \"TemplateName\": \"验证码\"\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSmsTemplate\n<公共请求参数>\n\n{\n    \"SmsType\": 3,\n    \"International\": 0,\n    \"Remark\": \"业务验证码\",\n    \"TemplateContent\": \"您的验证码是{1}\",\n    \"TemplateName\": \"验证码\"\n}",
         "output": "{\n    \"Response\": {\n        \"AddTemplateStatus\": {\n            \"TemplateId\": \"1110\"\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
@@ -19,7 +19,7 @@
     "CallbackStatusStatistics": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallbackStatusStatistics\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006874\",\n    \"EndTime\": \"2021050123\",\n    \"Limit\": 0,\n    \"BeginTime\": \"2021050113\",\n    \"Offset\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallbackStatusStatistics\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006666\",\n    \"EndTime\": \"2021050123\",\n    \"Limit\": 0,\n    \"BeginTime\": \"2021050113\",\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"CallbackStatusStatistics\": {\n            \"CallbackCount\": 1745,\n            \"RequestSuccessCount\": 1880,\n            \"CallbackFailCount\": 401,\n            \"CallbackSuccessCount\": 1344,\n            \"InternalErrorCount\": 0,\n            \"InvalidNumberCount\": 0,\n            \"ShutdownErrorCount\": 401,\n            \"BlackListCount\": 0,\n            \"FrequencyLimitCount\": 0\n        },\n        \"RequestId\": \"3314836f-0b10-45cb-b7be-593e84c1c197\"\n    }\n}",
         "title": "请求示例"
       }
@@ -43,8 +43,16 @@
     "DescribePhoneNumberInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePhoneNumberInfo\n<公共请求参数>\n\n{\n    \"PhoneNumberSet\": [\n        \"+8618511122266\",\n        \"+8618511122233\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"PhoneNumberInfoSet\": [\n            {\n                \"SubscriberNumber\": \"18511122266\",\n                \"Message\": \"Describe success\",\n                \"Code\": \"Ok\",\n                \"PhoneNumber\": \"+8618511122266\",\n                \"IsoCode\": \"CN\",\n                \"IsoName\": \"China\",\n                \"NationCode\": \"86\"\n            },\n            {\n                \"SubscriberNumber\": \"18511122233\",\n                \"Message\": \"Describe success\",\n                \"Code\": \"Ok\",\n                \"PhoneNumber\": \"+8618511122233\",\n                \"IsoCode\": \"CN\",\n                \"IsoName\": \"China\",\n                \"NationCode\": \"86\"\n            }\n        ],\n        \"RequestId\": \"a0aabda6-cf91-4f3e-a81f-9198114a2279\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePhoneNumberInfo\n<公共请求参数>\n\n{\n    \"PhoneNumberSet\": [\n        \"+8618501234444\",\n        \"+8618501234445\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PhoneNumberInfoSet\": [\n            {\n                \"SubscriberNumber\": \"18501234444\",\n                \"Message\": \"Describe success\",\n                \"Code\": \"Ok\",\n                \"PhoneNumber\": \"+8618501234444\",\n                \"IsoCode\": \"CN\",\n                \"IsoName\": \"China\",\n                \"NationCode\": \"86\"\n            },\n            {\n                \"SubscriberNumber\": \"18501234445\",\n                \"Message\": \"Describe success\",\n                \"Code\": \"Ok\",\n                \"PhoneNumber\": \"+8618501234445\",\n                \"IsoCode\": \"CN\",\n                \"IsoName\": \"China\",\n                \"NationCode\": \"86\"\n            }\n        ],\n        \"RequestId\": \"a0aabda6-cf91-4f3e-a81f-9198114a2279\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeSendRecordList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSendRecordList\n<公共请求参数>\n\n{\n    \"PhoneNumber\": \"+86136****8015\",\n    \"SmsSdkAppId\": \"140***9515\",\n    \"BeginTime\": 1787850451,\n    \"EndTime\": 1787902550,\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"SendRecordSet\": [\n            {\n                \"Content\": \"【腾讯云通信】您的验证码为0****1，5分钟内有效。\",\n                \"IsoCode\": \"CN\",\n                \"PhoneNumber\": \"+86136****8015\",\n                \"RequestCode\": \"Ok\",\n                \"SendStatus\": 2,\n                \"SendTime\": 1787902541,\n                \"SerialNo\": \"4719:106022169717827487984377125\",\n                \"StatusCode\": \"DELIVRD\",\n                \"UserReceiveTime\": 1787902571\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"22f73024-57b5-4f32-9657-85ef83239929\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -52,7 +60,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSmsSignList\n<公共请求参数>\n\n{\n    \"International\": 0,\n    \"SignIdSet\": [\n        1110,\n        1111\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\",\n        \"DescribeSignListStatusSet\": [\n            {\n                \"SignName\": \"腾讯云\",\n                \"International\": 0,\n                \"SignId\": 1110,\n                \"ReviewReply\": \"xxx\",\n                \"CreateTime\": 1617508800,\n                \"StatusCode\": 0\n            },\n            {\n                \"SignName\": \"腾讯云\",\n                \"International\": 1,\n                \"SignId\": 1111,\n                \"ReviewReply\": \"xxx\",\n                \"CreateTime\": 1617508801,\n                \"StatusCode\": 0\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\",\n        \"DescribeSignListStatusSet\": [\n            {\n                \"SignName\": \"腾讯云\",\n                \"International\": 0,\n                \"SignId\": 1110,\n                \"ReviewReply\": \"\",\n                \"CreateTime\": 1617508800,\n                \"StatusCode\": 0\n            },\n            {\n                \"SignName\": \"腾讯云\",\n                \"International\": 1,\n                \"SignId\": 1111,\n                \"ReviewReply\": \"\",\n                \"CreateTime\": 1617508801,\n                \"StatusCode\": 0\n            }\n        ]\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -60,14 +68,14 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSmsTemplateList\n<公共请求参数>\n\n{\n    \"International\": 0,\n    \"TemplateIdSet\": [\n        1110,\n        1111\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"DescribeTemplateStatusSet\": [\n            {\n                \"TemplateName\": \"验证码\",\n                \"TemplateId\": 1110,\n                \"International\": 0,\n                \"ReviewReply\": \"xxxx\",\n                \"CreateTime\": 1617379200,\n                \"TemplateContent\": \"您的验证码是{1}\",\n                \"StatusCode\": 0\n            },\n            {\n                \"TemplateName\": \"通知\",\n                \"TemplateId\": 1111,\n                \"International\": 0,\n                \"ReviewReply\": \"xxxx\",\n                \"CreateTime\": 1617508800,\n                \"TemplateContent\": \"请尽快参加{1}会议\",\n                \"StatusCode\": 0\n            }\n        ],\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DescribeTemplateStatusSet\": [\n            {\n                \"TemplateName\": \"验证码\",\n                \"TemplateId\": 1110,\n                \"International\": 0,\n                \"ReviewReply\": \"\",\n                \"CreateTime\": 1617379200,\n                \"TemplateContent\": \"您的验证码是{1}\",\n                \"StatusCode\": 0\n            },\n            {\n                \"TemplateName\": \"通知\",\n                \"TemplateId\": 1111,\n                \"International\": 0,\n                \"ReviewReply\": \"\",\n                \"CreateTime\": 1617508800,\n                \"TemplateContent\": \"请尽快参加{1}会议\",\n                \"StatusCode\": 0\n            }\n        ],\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
     ],
     "ModifySmsSign": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmsSign\n<公共请求参数>\n\n{\n    \"Remark\": \"xxxx\",\n    \"SignPurpose\": 1,\n    \"SignType\": 0,\n    \"CommissionImage\": \"xxxx\",\n    \"SignName\": \"腾讯云\",\n    \"DocumentType\": 1,\n    \"International\": 0,\n    \"SignId\": 1110,\n    \"ProofImage\": \"xxxx\"\n}",
+        "document": "修改短信签名",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmsSign\n<公共请求参数>\n\n{\n    \"Remark\": \"自用业务申请\",\n    \"SignPurpose\": 0,\n    \"SignType\": 0,\n    \"CommissionImage\": \"\",\n    \"SignName\": \"腾讯云\",\n    \"DocumentType\": 1,\n    \"International\": 0,\n    \"SignId\": 1110,\n    \"ProofImage\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"ModifySignStatus\": {\n            \"SignId\": 1110\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
@@ -75,7 +83,7 @@
     "ModifySmsTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmsTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 1110,\n    \"SmsType\": 0,\n    \"International\": 0,\n    \"Remark\": \"xx\",\n    \"TemplateContent\": \"您的验证码是{1}\",\n    \"TemplateName\": \"验证码\"\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmsTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 1110,\n    \"SmsType\": 3,\n    \"International\": 0,\n    \"Remark\": \"业务验证码\",\n    \"TemplateContent\": \"您的验证码是{1}\",\n    \"TemplateName\": \"验证码\"\n}",
         "output": "{\n    \"Response\": {\n        \"ModifyTemplateStatus\": {\n            \"TemplateId\": 1110\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
@@ -83,55 +91,75 @@
     "PullSmsReplyStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PullSmsReplyStatus\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006874\",\n    \"Limit\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0aabda6-cf91-4f3e-a81f-9198114a2279\",\n        \"PullSmsReplyStatusSet\": [\n            {\n                \"CountryCode\": \"86\",\n                \"ReplyContent\": \"xxxxxx\",\n                \"SubscriberNumber\": \"15291990000\",\n                \"ExtendCode\": \"11\",\n                \"ReplyTime\": 1620734188,\n                \"PhoneNumber\": \"+8615291990000\",\n                \"SignName\": \"腾讯云\"\n            },\n            {\n                \"CountryCode\": \"86\",\n                \"ReplyContent\": \"xxxxxx\",\n                \"SubscriberNumber\": \"15291990001\",\n                \"ExtendCode\": \"11\",\n                \"ReplyTime\": 1620734189,\n                \"PhoneNumber\": \"+8615291990001\",\n                \"SignName\": \"腾讯云\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PullSmsReplyStatus\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006666\",\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0aabda6-cf91-4f3e-a81f-9198114a2279\",\n        \"PullSmsReplyStatusSet\": [\n            {\n                \"CountryCode\": \"86\",\n                \"ReplyContent\": \"1\",\n                \"SubscriberNumber\": \"18501234444\",\n                \"ExtendCode\": \"11\",\n                \"ReplyTime\": 1620734188,\n                \"PhoneNumber\": \"+8618501234444\",\n                \"SignName\": \"腾讯云\"\n            },\n            {\n                \"CountryCode\": \"86\",\n                \"ReplyContent\": \"2\",\n                \"SubscriberNumber\": \"18501234444\",\n                \"ExtendCode\": \"11\",\n                \"ReplyTime\": 1620734189,\n                \"PhoneNumber\": \"+8618501234444\",\n                \"SignName\": \"腾讯云\"\n            }\n        ]\n    }\n}",
         "title": "请求示例"
       }
     ],
     "PullSmsReplyStatusByPhoneNumber": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PullSmsReplyStatusByPhoneNumber\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006666\",\n    \"PhoneNumber\": \"+8615291996666\",\n    \"BeginTime\": 1620734100,\n    \"Offset\": 0,\n    \"Limit\": 2,\n    \"EndTime\": 1620734200\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0aabda6-cf91-4f3e-a81f-9198114a2279\",\n        \"PullSmsReplyStatusSet\": [\n            {\n                \"CountryCode\": \"86\",\n                \"ReplyContent\": \"xxxxxx\",\n                \"SubscriberNumber\": \"15291996666\",\n                \"ExtendCode\": \"11\",\n                \"ReplyTime\": 1620734188,\n                \"PhoneNumber\": \"+8615291996666\",\n                \"SignName\": \"腾讯云\"\n            },\n            {\n                \"CountryCode\": \"86\",\n                \"ReplyContent\": \"xxxxxx\",\n                \"SubscriberNumber\": \"15291996666\",\n                \"ExtendCode\": \"11\",\n                \"ReplyTime\": 1620734189,\n                \"PhoneNumber\": \"+8615291996666\",\n                \"SignName\": \"腾讯云\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PullSmsReplyStatusByPhoneNumber\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006666\",\n    \"PhoneNumber\": \"+8618501234444\",\n    \"BeginTime\": 1620734100,\n    \"Offset\": 0,\n    \"Limit\": 2,\n    \"EndTime\": 1620734200\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0aabda6-cf91-4f3e-a81f-9198114a2279\",\n        \"PullSmsReplyStatusSet\": [\n            {\n                \"CountryCode\": \"86\",\n                \"ReplyContent\": \"1\",\n                \"SubscriberNumber\": \"18501234444\",\n                \"ExtendCode\": \"11\",\n                \"ReplyTime\": 1620734188,\n                \"PhoneNumber\": \"+8618501234444\",\n                \"SignName\": \"腾讯云\"\n            },\n            {\n                \"CountryCode\": \"86\",\n                \"ReplyContent\": \"2\",\n                \"SubscriberNumber\": \"18501234444\",\n                \"ExtendCode\": \"11\",\n                \"ReplyTime\": 1620734189,\n                \"PhoneNumber\": \"+8618501234444\",\n                \"SignName\": \"腾讯云\"\n            }\n        ]\n    }\n}",
         "title": "请求示例"
       }
     ],
     "PullSmsSendStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PullSmsSendStatus\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006874\",\n    \"Limit\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"PullSmsSendStatusSet\": [\n            {\n                \"Description\": \"DELIVRD\",\n                \"CountryCode\": \"86\",\n                \"SubscriberNumber\": \"15291990000\",\n                \"ReportStatus\": \"SUCCESS\",\n                \"PhoneNumber\": \"+8615291990000\",\n                \"SerialNo\": \"14:19325917feb3914eb78b50d6182d7e452e\",\n                \"UserReceiveTime\": 1620734188\n            },\n            {\n                \"Description\": \"DELIVRD\",\n                \"CountryCode\": \"86\",\n                \"SubscriberNumber\": \"15291990001\",\n                \"ReportStatus\": \"SUCCESS\",\n                \"PhoneNumber\": \"+8615291990001\",\n                \"SerialNo\": \"14:19325917feb3914eb78b50d6182d7e462f\",\n                \"UserReceiveTime\": 1620734188\n            }\n        ],\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PullSmsSendStatus\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006666\",\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"PullSmsSendStatusSet\": [\n            {\n                \"Description\": \"DELIVRD\",\n                \"CountryCode\": \"86\",\n                \"SubscriberNumber\": \"18501234444\",\n                \"ReportStatus\": \"SUCCESS\",\n                \"PhoneNumber\": \"+8618501234444\",\n                \"SerialNo\": \"5000:1045710669157053657849499619\",\n                \"UserReceiveTime\": 1620734188,\n                \"SessionContext\": \"\"\n            },\n            {\n                \"Description\": \"DELIVRD\",\n                \"CountryCode\": \"86\",\n                \"SubscriberNumber\": \"18501234445\",\n                \"ReportStatus\": \"SUCCESS\",\n                \"PhoneNumber\": \"+8618501234445\",\n                \"SerialNo\": \"5000:1045710669157053657849499718\",\n                \"UserReceiveTime\": 1620734188,\n                \"SessionContext\": \"\"\n            }\n        ],\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
         "title": "请求示例"
       }
     ],
     "PullSmsSendStatusByPhoneNumber": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PullSmsSendStatusByPhoneNumber\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006666\",\n    \"PhoneNumber\": \"+8615291996666\",\n    \"BeginTime\": 1620734100,\n    \"Offset\": 0,\n    \"Limit\": 2,\n    \"EndTime\": 1620734200\n}",
-        "output": "{\n    \"Response\": {\n        \"PullSmsSendStatusSet\": [\n            {\n                \"Description\": \"DELIVRD\",\n                \"CountryCode\": \"86\",\n                \"SubscriberNumber\": \"15291996666\",\n                \"ReportStatus\": \"SUCCESS\",\n                \"PhoneNumber\": \"+8615291996666\",\n                \"SerialNo\": \"14:19325917feb3914eb78b50d6182d7e452e\",\n                \"UserReceiveTime\": 1620734188\n            },\n            {\n                \"Description\": \"DELIVRD\",\n                \"CountryCode\": \"86\",\n                \"SubscriberNumber\": \"15291996666\",\n                \"ReportStatus\": \"SUCCESS\",\n                \"PhoneNumber\": \"+8615291996666\",\n                \"SerialNo\": \"14:19325917feb3914eb78b50d6182d7e456f\",\n                \"UserReceiveTime\": 1620734188\n            }\n        ],\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PullSmsSendStatusByPhoneNumber\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006666\",\n    \"PhoneNumber\": \"+8618501234444\",\n    \"BeginTime\": 1620734100,\n    \"Offset\": 0,\n    \"Limit\": 2,\n    \"EndTime\": 1620734200\n}",
+        "output": "{\n    \"Response\": {\n        \"PullSmsSendStatusSet\": [\n            {\n                \"Description\": \"DELIVRD\",\n                \"CountryCode\": \"86\",\n                \"SubscriberNumber\": \"18501234444\",\n                \"ReportStatus\": \"SUCCESS\",\n                \"PhoneNumber\": \"+8618501234444\",\n                \"SerialNo\": \"5000:1045710669157053657849499619\",\n                \"UserReceiveTime\": 1620734188,\n                \"SessionContext\": \"\"\n            },\n            {\n                \"Description\": \"DELIVRD\",\n                \"CountryCode\": \"86\",\n                \"SubscriberNumber\": \"18501234444\",\n                \"ReportStatus\": \"SUCCESS\",\n                \"PhoneNumber\": \"+8618501234444\",\n                \"SerialNo\": \"5000:1045710669157053657849498556\",\n                \"UserReceiveTime\": 1620734188,\n                \"SessionContext\": \"\"\n            }\n        ],\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
         "title": "请求示例"
       }
     ],
     "ReportConversion": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportConversion\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400000001\",\n    \"SerialNo\": \"5000:1045710669157053657849499619\",\n    \"ConversionTime\": 1658310430\n}",
-        "output": "{\n    \"Response\": {\n        \"ReportConversionStatus\": {\n            \"Code\": \"ok\",\n            \"Message\": \"report success\"\n        },\n        \"RequestId\": \"a0aabda6-cf91-4f3e-a81f-9198114a2279\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportConversion\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400000001\",\n    \"SerialNo\": \"a12gb4e2-sd11-5dx6-aav9-8f3d97xa2xu7\",\n    \"ConversionTime\": 1658310430\n}",
+        "output": "{\n    \"Response\": {\n        \"ReportConversionStatus\": {\n            \"Code\": \"OK\",\n            \"Message\": \"success\"\n        },\n        \"RequestId\": \"a0aabda6-cf91-4f3e-a81f-9198114a2279\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "SendMultiGlobalSms": [
+      {
+        "document": "批量发送短信成功。",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendMultiGlobalSms\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006666\",\n    \"MultiSmsInfoSet\": [\n        {\n            \"PhoneNumber\": \"+60198***000\",\n            \"TemplateId\": \"1800308\",\n            \"TemplateParamSet\": [\n                \"190191\"\n            ],\n            \"SenderId\": \"Qsms\",\n            \"SessionContext\": \"outsid_1776313405_1001\"\n        },\n        {\n            \"PhoneNumber\": \"+60198***001\",\n            \"TemplateId\": \"1800308\",\n            \"TemplateParamSet\": [\n                \"190192\"\n            ],\n            \"SenderId\": \"Qsms\",\n            \"SessionContext\": \"outsid_1776313405_1002\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SendMultiStatusSet\": [\n            {\n                \"Code\": \"Ok\",\n                \"Fee\": 1,\n                \"IsoCode\": \"MY\",\n                \"Message\": \"send success\",\n                \"PhoneNumber\": \"+60198***000\",\n                \"SerialNo\": \"a84166ff-8c6c-41f7-923b-9fdd27fd0fe4\",\n                \"SessionContext\": \"outsid_1776313405_1001\"\n            },\n            {\n                \"Code\": \"Ok\",\n                \"Fee\": 1,\n                \"IsoCode\": \"MY\",\n                \"Message\": \"send success\",\n                \"PhoneNumber\": \"+60198***001\",\n                \"SerialNo\": \"72f1f018-a0c8-4101-976b-265f25b4c0a2\",\n                \"SessionContext\": \"outsid_1776313405_1002\"\n            }\n        ],\n        \"RequestId\": \"104cc55c-05f1-456c-8a0b-18cf25ef56a4\"\n    }\n}",
+        "title": "批量发送短信成功示例"
+      },
+      {
+        "document": "批量发送短信失败。",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendMultiGlobalSms\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006666\",\n    \"MultiSmsInfoSet\": [\n        {\n            \"PhoneNumber\": \"+60198***000\",\n            \"TemplateId\": \"1800308\",\n            \"SenderId\": \"Qsms\",\n            \"SessionContext\": \"outsid_1776313405_1001\"\n        },\n        {\n            \"PhoneNumber\": \"+60198***001\",\n            \"TemplateId\": \"1800308\",\n            \"SenderId\": \"Qsms\",\n            \"SessionContext\": \"outsid_1776313405_1002\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SendMultiStatusSet\": [\n            {\n                \"Code\": \"FailedOperation.TemplateIncorrectOrUnapproved\",\n                \"Fee\": 0,\n                \"IsoCode\": \"MY\",\n                \"Message\": \"template is not approved or request content does not match the approved template content\",\n                \"PhoneNumber\": \"+60198***000\",\n                \"SerialNo\": \"de61cf79-636e-4ad0-ac0b-dc29937999af\",\n                \"SessionContext\": \"outsid_1776313405_1001\"\n            },\n            {\n                \"Code\": \"FailedOperation.TemplateIncorrectOrUnapproved\",\n                \"Fee\": 0,\n                \"IsoCode\": \"MY\",\n                \"Message\": \"template is not approved or request content does not match the approved template content\",\n                \"PhoneNumber\": \"+60198***001\",\n                \"SerialNo\": \"0b8780c6-e889-4201-87fb-5e8e282b3b3e\",\n                \"SessionContext\": \"outsid_1776313405_1002\"\n            }\n        ],\n        \"RequestId\": \"4899adba-08e2-4350-9fee-ab37b7560c4c\"\n    }\n}",
+        "title": "批量发送短信失败示例"
       }
     ],
     "SendSms": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendSms\n<公共请求参数>\n\n{\n    \"PhoneNumberSet\": [\n        \"+8618511122266\",\n        \"+8618511122233\"\n    ],\n    \"SmsSdkAppId\": \"1400006666\",\n    \"SignName\": \"腾讯云\",\n    \"TemplateId\": \"1234\",\n    \"TemplateParamSet\": [\n        \"12345\"\n    ],\n    \"SessionContext\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SendStatusSet\": [\n            {\n                \"SerialNo\": \"5000:1045710669157053657849499619\",\n                \"PhoneNumber\": \"+8618511122233\",\n                \"Fee\": 1,\n                \"SessionContext\": \"test\",\n                \"Code\": \"Ok\",\n                \"Message\": \"send success\",\n                \"IsoCode\": \"CN\"\n            },\n            {\n                \"SerialNo\": \"5000:1045710669157053657849499718\",\n                \"PhoneNumber\": \"+8618511122266\",\n                \"Fee\": 1,\n                \"SessionContext\": \"test\",\n                \"Code\": \"Ok\",\n                \"Message\": \"send success\",\n                \"IsoCode\": \"CN\"\n            }\n        ],\n        \"RequestId\": \"a0aabda6-cf91-4f3e-a81f-9198114a2279\"\n    }\n}",
-        "title": "请求示例"
+        "document": "发送短信成功。",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendSms\n<公共请求参数>\n\n{\n    \"PhoneNumberSet\": [\n        \"+8618501234444\",\n        \"+8618501234445\"\n    ],\n    \"SmsSdkAppId\": \"1400006666\",\n    \"SignName\": \"腾讯云\",\n    \"TemplateId\": \"1110\",\n    \"TemplateParamSet\": [\n        \"4370\"\n    ],\n    \"SessionContext\": \"outsid_1729495320_1011\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SendStatusSet\": [\n            {\n                \"SerialNo\": \"5000:1045710669157053657849499619\",\n                \"PhoneNumber\": \"+8618501234444\",\n                \"Fee\": 1,\n                \"SessionContext\": \"outsid_1729495320_1011\",\n                \"Code\": \"Ok\",\n                \"Message\": \"send success\",\n                \"IsoCode\": \"CN\"\n            },\n            {\n                \"SerialNo\": \"5000:1045710669157053657849499718\",\n                \"PhoneNumber\": \"+8618501234445\",\n                \"Fee\": 1,\n                \"SessionContext\": \"outsid_1729495320_1011\",\n                \"Code\": \"Ok\",\n                \"Message\": \"send success\",\n                \"IsoCode\": \"CN\"\n            }\n        ],\n        \"RequestId\": \"a0aabda6-cf91-4f3e-a81f-9198114a2279\"\n    }\n}",
+        "title": "发送短信成功示例"
+      },
+      {
+        "document": "发送短信请求中模板参数的个数与申请的模板不一致，返回发送失败。",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendSms\n<公共请求参数>\n\n{\n    \"PhoneNumberSet\": [\n        \"+8618501234444\",\n        \"+8618501234445\"\n    ],\n    \"SmsSdkAppId\": \"1400006666\",\n    \"SignName\": \"腾讯云\",\n    \"TemplateId\": \"1110\",\n    \"TemplateParamSet\": [\n        \"4370\",\n        \"5\"\n    ],\n    \"SessionContext\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SendStatusSet\": [\n            {\n                \"SerialNo\": \"\",\n                \"PhoneNumber\": \"+8618501234444\",\n                \"Fee\": 0,\n                \"SessionContext\": \"\",\n                \"Code\": \"FailedOperation.TemplateParamSetNotMatchApprovedTemplate\",\n                \"Message\": \"request content does not match the template content\",\n                \"IsoCode\": \"\"\n            },\n            {\n                \"SerialNo\": \"\",\n                \"PhoneNumber\": \"+8618501234445\",\n                \"Fee\": 0,\n                \"SessionContext\": \"\",\n                \"Code\": \"FailedOperation.TemplateParamSetNotMatchApprovedTemplat\",\n                \"Message\": \"request content does not match the template content\",\n                \"IsoCode\": \"\"\n            }\n        ],\n        \"RequestId\": \"4e394811-9ebd-4d66-98ee-730b21c4a681\"\n    }\n}",
+        "title": "发送短信失败示例"
       }
     ],
     "SendStatusStatistics": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendStatusStatistics\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006874\",\n    \"EndTime\": \"2021050123\",\n    \"Limit\": 0,\n    \"BeginTime\": \"2021050113\",\n    \"Offset\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendStatusStatistics\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006666\",\n    \"EndTime\": \"2021050123\",\n    \"Limit\": 0,\n    \"BeginTime\": \"2021050113\",\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"SendStatusStatistics\": {\n            \"FeeCount\": 1880,\n            \"RequestCount\": 1880,\n            \"RequestSuccessCount\": 1880\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
@@ -139,7 +167,7 @@
     "SmsPackagesStatistics": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SmsPackagesStatistics\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006874\",\n    \"EndTime\": \"2021043023\",\n    \"Limit\": 2,\n    \"BeginTime\": \"2021040113\",\n    \"Offset\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SmsPackagesStatistics\n<公共请求参数>\n\n{\n    \"SmsSdkAppId\": \"1400006666\",\n    \"EndTime\": \"2021043023\",\n    \"Limit\": 2,\n    \"BeginTime\": \"2021040113\",\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"SmsPackagesStatisticsSet\": [\n            {\n                \"PackageCreateTime\": 1617292800,\n                \"PackageExpiredTime\": 1617292800,\n                \"PackageEffectiveTime\": 1619884800,\n                \"PackageType\": 1,\n                \"CurrentUsage\": 1000,\n                \"PackageId\": 1000791745,\n                \"PackageAmount\": 1000\n            },\n            {\n                \"PackageCreateTime\": 1617379200,\n                \"PackageExpiredTime\": 1617379200,\n                \"PackageEffectiveTime\": 1619971200,\n                \"PackageType\": 1,\n                \"CurrentUsage\": 100,\n                \"PackageId\": 1000876572,\n                \"PackageAmount\": 1000\n            }\n        ],\n        \"RequestId\": \"3314836f-0b10-45cb-b7be-593e84c1c197\"\n    }\n}",
         "title": "请求示例"
       }

@@ -1,16 +1,16 @@
 **Example 1: 调用长安链体验网络合约查询**
 
-
+调用长安链体验网络合约查询
 
 Input: 
 
 ```
 tccli tbaas QueryChainMakerDemoContract --cli-unfold-argument  \
-    --ChainId chain_test \
+    --ChainId chain_demo \
     --ClusterId chainmaker-demo \
-    --ContractName test \
-    --FuncParam {"file_hash":"1234567"} \
-    --FuncName find_by_file_hash
+    --ContractName ChainMakerDemo \
+    --FuncParam {"key":"key1","field":"field1"} \
+    --FuncName get
 ```
 
 Output: 

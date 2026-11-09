@@ -6,47 +6,61 @@ Input:
 
 ```
 tccli tione DescribeBillingResourceGroups --cli-unfold-argument  \
-    --Filters.0.Fuzzy True \
-    --Filters.0.Values ems-dn6bqflh \
-    --Filters.0.Name xx \
+    --Filters.0.Name AvailableSort \
+    --Filters.0.Values true \
     --Filters.0.Negative True \
-    --TagFilters.0.TagValues xx \
-    --TagFilters.0.TagKey xx \
-    --Limit 0 \
-    --SearchWord xx \
+    --Filters.0.Fuzzy True \
+    --TagFilters.0.TagKey tag-a \
+    --TagFilters.0.TagValues tag-a \
     --Offset 0 \
-    --Type xx
+    --Limit 0 \
+    --SearchWord hello-world \
+    --DontShowInstanceSet True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "02be3c0f-d1f1-4a8e-97bd-38128985baa7",
         "TotalCount": 1,
         "ResourceGroupSet": [
             {
-                "ResourceGroupId": "ersg-69q4tmjm",
-                "ResourceGroupName": "hayescao_test",
+                "ResourceGroupId": "rsg-8c92bd27",
+                "ResourceGroupName": "test-rsg-a",
+                "FreeInstance": 1,
                 "TotalInstance": 1,
-                "UsedResource": {},
-                "TotalResource": {},
-                "InstanceSet": [
+                "UsedResource": {
+                    "Cpu": 1,
+                    "Memory": 1,
+                    "Gpu": 1,
+                    "GpuDetailSet": [
+                        {
+                            "Name": "A100",
+                            "Value": 1
+                        }
+                    ]
+                },
+                "TotalResource": {
+                    "Cpu": 1,
+                    "Memory": 1,
+                    "Gpu": 1,
+                    "GpuDetailSet": [
+                        {
+                            "Name": "A100",
+                            "Value": 1
+                        }
+                    ]
+                },
+                "InstanceSet": [],
+                "TagSet": [
                     {
-                        "InstanceId": "eins-343vo66vf91c",
-                        "UsedResource": {},
-                        "TotalResource": {
-                            "Cpu": 2000,
-                            "Memory": 4096
-                        },
-                        "InstanceStatus": "RUNNING",
-                        "AutoRenewFlag": "NOTIFY_AND_MANUAL_RENEW",
-                        "SpecId": "sv_tio_platform_cloud_pre_cpu_2c4g",
-                        "SpecAlias": "2核4G"
+                        "TagKey": "tag-a",
+                        "TagValue": "tag-b"
                     }
                 ]
             }
-        ]
+        ],
+        "RequestId": "a8410ded-4a5f-6ad1-6537-6a3462568017"
     }
 }
 ```

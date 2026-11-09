@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli clb DescribeExclusiveClusters --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 20
+    --Limit 20 \
+    --Offset 0
 ```
 
 Output: 
@@ -45,7 +45,10 @@ Output:
                 },
                 "ResourceCount": 30,
                 "IdleResourceCount": 26,
-                "LoadBalanceDirectorCount": 4
+                "LoadBalanceDirectorCount": 4,
+                "DisasterRecoveryType": "DISASTER-RECOVERY",
+                "Egress": "center_egress1",
+                "IPVersion": "IPv4"
             }
         ],
         "RequestId": "49e44bf9-1357-420b-87ba-3c827209af67"

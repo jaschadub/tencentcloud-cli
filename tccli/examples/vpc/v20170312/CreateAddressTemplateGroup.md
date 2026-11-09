@@ -1,12 +1,12 @@
 **Example 1: 创建IP地址模板集合**
 
-
+创建IP地址模板集合
 
 Input: 
 
 ```
 tccli vpc CreateAddressTemplateGroup --cli-unfold-argument  \
-    --AddressTemplateGroupName TestName \
+    --AddressTemplateGroupName demo \
     --AddressTemplateIds ipm-88t6207k ipm-mdunqeb6
 ```
 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "AddressTemplateGroup": {
-            "AddressTemplateGroupName": "TestName",
+            "AddressTemplateGroupName": "demo",
             "AddressTemplateGroupId": "ipmg-dih8xdbq",
             "AddressTemplateIdSet": [
                 "ipm-88t6207k",
@@ -23,6 +23,8 @@ Output:
             ],
             "AddressTemplateSet": [
                 {
+                    "AddressTemplateId": "demo",
+                    "AddressTemplateName": "demo",
                     "To": "10.1.1.2/22",
                     "From": "10.1.1.3/22"
                 }

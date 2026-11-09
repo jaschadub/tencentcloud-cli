@@ -1,14 +1,13 @@
 **Example 1: 查看协议端口模板集合**
 
-
+查看协议端口模板集合
 
 Input: 
 
 ```
 tccli vpc DescribeServiceTemplateGroups --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --Filters.0.Name service-template-group-name \
-    --Filters.0.Values TestName \
+    --Filters.0.Values demo \
     --Limit 2
 ```
 
@@ -19,7 +18,7 @@ Output:
         "TotalCount": 1,
         "ServiceTemplateGroupSet": [
             {
-                "ServiceTemplateGroupName": "TestName",
+                "ServiceTemplateGroupName": "demo",
                 "ServiceTemplateGroupId": "ppmg-2klmrefu",
                 "ServiceTemplateIdSet": [
                     "ppm-529nwwj8"
@@ -27,7 +26,17 @@ Output:
                 "ServiceTemplateSet": [
                     {
                         "ServiceTemplateId": "ppm-529nwwj8",
-                        "ServiceTemplateName": "test"
+                        "ServiceTemplateName": "demo",
+                        "CreatedTime": "2018-04-03 22:05:32",
+                        "ServiceSet": [
+                            "tcp:80"
+                        ],
+                        "ServiceExtraSet": [
+                            {
+                                "Service": "tcp:80",
+                                "Description": "web service"
+                            }
+                        ]
                     }
                 ],
                 "CreatedTime": "2018-04-03 22:05:32"

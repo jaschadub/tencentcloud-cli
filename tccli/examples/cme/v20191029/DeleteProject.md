@@ -1,12 +1,12 @@
 **Example 1: 删除项目**
 
-
+删除项目
 
 Input: 
 
 ```
 tccli cme DeleteProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --ProjectId cmepid_5f16967b64436100015fb026
 ```
 

@@ -1,6 +1,6 @@
 **Example 1: 创建刷新任务示例**
 
-
+创建刷新任务示例
 
 Input: 
 
@@ -11,9 +11,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "345da107-dfdf-48f0-9796-e6723bdc102e",
-        "TaskId": 32501,
-        "CreateResult": "Succ"
+        "CreateResult": "Succ",
+        "NewTaskID": "1730270334918953395",
+        "RequestId": "547f3e18-d5af-47ba-a67a-be34ac9df697",
+        "TaskId": 0
     }
 }
 ```

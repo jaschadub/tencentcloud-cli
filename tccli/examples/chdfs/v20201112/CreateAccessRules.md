@@ -6,20 +6,26 @@ Input:
 
 ```
 tccli chdfs CreateAccessRules --cli-unfold-argument  \
-    --AccessGroupId ag-jwmfdcul \
-    --AccessRules.0.Address 127.0.0.1 \
+    --AccessRules.0.Address 10.0.0.0/24 \
     --AccessRules.0.AccessMode 1 \
     --AccessRules.0.Priority 1 \
-    --AccessRules.1.Address 127.0.0.1 \
-    --AccessRules.1.AccessMode 2 \
-    --AccessRules.1.Priority 2
+    --AccessGroupId ag-gei2xxxx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d6d3ef8-db1d-40de-afa1-d340302458bb"
+        "AccessRules": [
+            {
+                "AccessMode": 1,
+                "AccessRuleId": 900,
+                "Address": "10.0.0.0/24",
+                "CreateTime": "2024-12-25T19:35:20+08:00",
+                "Priority": 1
+            }
+        ],
+        "RequestId": "c94d61f1-dd9b-472a-910a-5dc07cedaae7"
     }
 }
 ```

@@ -1,4 +1,28 @@
-**Example 1: 人脸静态活体检测（高精度版）接口**
+**Example 1: 人脸静态活体检测（高精度版）失败示例**
+
+
+
+Input: 
+
+```
+tccli iai DetectLiveFaceAccurate --cli-unfold-argument  \
+    --Url http://test.image.myqcloud.com/testB.jpg
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation.ImageDecodeFailed",
+            "Message": "图片解码失败。"
+        },
+        "RequestId": "0e77ad29-ad65-4901-9efc-b49a6e0a357b"
+    }
+}
+```
+
+**Example 2: 人脸静态活体检测（高精度版）成功示例**
 
 
 

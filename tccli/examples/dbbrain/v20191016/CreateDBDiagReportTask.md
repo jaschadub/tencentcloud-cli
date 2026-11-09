@@ -1,12 +1,12 @@
 **Example 1: 创建健康报告, 发送邮件(可选)**
 
-
+创建健康报告, 发送邮件。
 
 Input: 
 
 ```
 tccli dbbrain CreateDBDiagReportTask --cli-unfold-argument  \
-    --InstanceId test \
+    --InstanceId cdb-test1234 \
     --StartTime 2019-01-01T00:00:00+08:00 \
     --EndTime 2019-01-02T00:00:00+08:00 \
     --SendMailFlag 1 \

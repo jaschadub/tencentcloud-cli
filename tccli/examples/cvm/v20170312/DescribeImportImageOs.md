@@ -1,6 +1,6 @@
 **Example 1: 查询导入镜像支持的操作系统配置信息**
 
-
+查询导入镜像支持的操作系统配置信息
 
 Input: 
 
@@ -32,7 +32,7 @@ Output:
             {
                 "OsName": "Windows Server 2008",
                 "OsVersions": [
-                    "-"
+                    "9"
                 ],
                 "Architecture": [
                     "x86_64",
@@ -42,7 +42,7 @@ Output:
             {
                 "OsName": "Windows Server 2012",
                 "OsVersions": [
-                    "-"
+                    "9"
                 ],
                 "Architecture": [
                     "x86_64",
@@ -52,7 +52,7 @@ Output:
             {
                 "OsName": "Windows Server 2016",
                 "OsVersions": [
-                    "-"
+                    "9"
                 ],
                 "Architecture": [
                     "x86_64",
@@ -156,7 +156,7 @@ Output:
             {
                 "OsName": "Other Linux",
                 "OsVersions": [
-                    "-"
+                    "8"
                 ],
                 "Architecture": [
                     "x86_64",

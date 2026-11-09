@@ -1,14 +1,14 @@
-**Example 1: 服务版本停止**
+**Example 1: 服务重启**
 
-服务版本停止
+服务重启
 
 Input: 
 
 ```
 tccli tem RestartApplication --cli-unfold-argument  \
+    --ApplicationId app-xxxxxx \
     --SourceChannel 0 \
-    --ApplicationId xx \
-    --EnvironmentId xx
+    --EnvironmentId en-xxxxxx
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "xx"
+        "RequestId": "abc-xxx-xxx"
     }
 }
 ```

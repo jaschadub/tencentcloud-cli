@@ -11,8 +11,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "b9cd345d-9d88-4e3b-86b6-e0e5c971731a",
-        "TaskID": ""
+        "LastScanTime": "2024-10-11 14:34:15",
+        "RequestId": "ebdffbc4-bf83-4e25-bc4c-8ada17cc0481",
+        "Status": "END",
+        "SubStatus": "Cancel",
+        "TaskID": "10000504"
     }
 }
 ```

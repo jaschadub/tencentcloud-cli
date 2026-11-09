@@ -1,4 +1,4 @@
-**Example 1: 查询模板库中的模板信息**
+**Example 1: 查询授权子客openids**
 
 
 
@@ -6,28 +6,27 @@ Input:
 
 ```
 tccli essbasic OperateChannelTemplate --cli-unfold-argument  \
-    --Agent.ProxyAppId c17bdf9c2xxxx611f4d0200fef3d \
-    --Agent.ProxyOrganizationId 00498cc8500be9cxxxxxxx3aff766cac \
-    --Agent.ProxyOrganizationOpenId d7c13a8b8134xxxx968c0ee248f04 \
-    --Agent.AppId 65fb0c59104xxxxa382cc5ed0e \
-    --TemplateId yDxlkUyKxxxxxxxxxjEvToNRI2MuTr \
-    --OperateType select
+    --Agent.AppId yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2 \
+    --OperateType select \
+    --TemplateId yDSLOUUckpoqdttsUxPuHh1wkuixnkwj \
+    --Limit 1 \
+    --Offset 46
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "AppId": "16fd2f7d7axxxxxf8d501d57b5ec",
+        "AppId": "yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2",
         "AuthTag": "all",
         "FailMessageList": [],
         "OperateResult": "all-success",
         "ProxyOrganizationOpenIds": [
-            "子客企业1",
-            "子客企业2"
+            "Z912024120909230059"
         ],
-        "TemplateId": "yDxlkUyKQDpMxxxxxoNRI2MuTr",
-        "RequestId": "s16395xxxxx249716125"
+        "TemplateId": "yDSLOUUckpoqdttsUxPuHh1wkuixnkwj",
+        "Total": 210,
+        "RequestId": "32ed5c17-83f1-4064-aa11-6d454c40d7a7"
     }
 }
 ```

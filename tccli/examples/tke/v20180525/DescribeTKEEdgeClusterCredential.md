@@ -1,12 +1,12 @@
 **Example 1: 获取边缘计算集群的接入认证信息**
 
-
+获取边缘集群的认证信息，其中包含kubeconfig文件
 
 Input: 
 
 ```
 tccli tke DescribeTKEEdgeClusterCredential --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx
+    --ClusterId cls-2wds9k9p
 ```
 
 Output: 
@@ -32,16 +32,17 @@ Output:
         "CoreDns": "yes",
         "HealthRegion": "yes",
         "Health": "yes",
+        "UnitCluster": "yes",
         "GridDaemon": "yes",
         "PublicLB": {
             "Enabled": true,
             "AllowFromCidrs": [
-                "xx"
+                "160/254.0.0/16"
             ]
         },
         "InternalLB": {
             "SubnetId": [
-                "xx"
+                "vpc-2wds9k9p"
             ],
             "Enabled": true
         },

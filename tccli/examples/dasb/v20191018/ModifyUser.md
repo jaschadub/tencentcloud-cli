@@ -8,18 +8,18 @@ Input:
 tccli dasb ModifyUser --cli-unfold-argument  \
     --Id 1 \
     --ValidateTo 2020-09-22T00:00:00+00:00 \
-    --RealName xx \
+    --RealName zhangsan \
     --GroupIdSet 1 2 3 \
-    --Phone xx \
+    --Phone 183***98 \
     --ValidateFrom 2020-09-22T00:00:00+00:00 \
-    --Email xx
+    --Email test@qq.com
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "dfac9070-8b23-499e-83b2-a50e3ca059af"
     }
 }
 ```

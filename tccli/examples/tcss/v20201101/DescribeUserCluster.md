@@ -1,6 +1,6 @@
-**Example 1: 查询结果**
+**Example 1: 查询用户集群列表**
 
-
+查询用户集群列表
 
 Input: 
 
@@ -14,54 +14,45 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "a6405e01-bf4f-4044-abe9-4458783a3066",
-        "TotalCount": 9,
         "ClusterInfoList": [
             {
-                "ClusterId": "cls-0zmsjvko",
-                "ClusterName": "wk独立集群",
-                "ClusterVersion": "1.18.4",
-                "ClusterOs": "tlinux2.4x86_64",
-                "ClusterType": "INDEPENDENT_CLUSTER",
-                "ClusterNodeNum": 2,
-                "Region": "ap-guangzhou",
-                "DefenderStatus": "Defender_Normal",
-                "ClusterStatus": "Running",
-                "ClusterCheckMode": "Cluster_Normal",
-                "ClusterAutoCheck": true,
-                "DefenderErrorReason": "",
-                "UnreadyNodeNum": 0,
-                "SeriousRiskCount": 1,
-                "HighRiskCount": 5,
-                "MiddleRiskCount": 8,
-                "HintRiskCount": 4,
-                "CheckFailReason": "",
+                "AccessedStatus": "AccessedPartialDefence",
+                "AccessedSubStatus": "AccessedSubNone",
+                "ChargeCoresCnt": 4000,
+                "CheckFailReason": "SUCCESS",
                 "CheckStatus": "HasRisk",
-                "TaskCreateTime": "2021-11-16 02:01:36"
-            },
-            {
-                "ClusterId": "cls-94d14s7x",
-                "ClusterName": "jgl-独立",
-                "ClusterVersion": "1.20.6",
-                "ClusterOs": "tlinux2.4x86_64",
-                "ClusterType": "INDEPENDENT_CLUSTER",
-                "ClusterNodeNum": 2,
-                "Region": "ap-beijing",
-                "DefenderStatus": "Defender_Normal",
-                "ClusterStatus": "Running",
-                "ClusterCheckMode": "Cluster_Normal",
+                "ClusterAuditFailedInfo": "ClusterAuditFailedInfo",
+                "ClusterAuditStatus": "Opened",
                 "ClusterAutoCheck": false,
-                "DefenderErrorReason": "",
-                "UnreadyNodeNum": 0,
-                "SeriousRiskCount": 0,
-                "HighRiskCount": 1,
-                "MiddleRiskCount": 7,
+                "ClusterCheckMode": "ClusterCheckMode",
+                "ClusterId": "cls-abhq0j4o",
+                "ClusterName": "bx_test_tmp",
+                "ClusterNodeNum": 4,
+                "ClusterOs": "centos",
+                "ClusterStatus": "CSR_RUNNING",
+                "ClusterSubStatus": "3",
+                "ClusterType": "INDEPENDENT_CLUSTER",
+                "ClusterVersion": "1.28.3",
+                "CoresCnt": 12000,
+                "DefenderErrorReason": "DefenderErrorReason",
+                "DefenderStatus": "UnDefended",
+                "HighRiskCount": 6,
                 "HintRiskCount": 3,
-                "CheckFailReason": "",
-                "CheckStatus": "HasRisk",
-                "TaskCreateTime": "2021-11-15 11:57:24"
+                "MasterAddresses": [
+                    "10.*.*.*;"
+                ],
+                "MiddleRiskCount": 7,
+                "NodeCount": 4,
+                "OffLineNodeCount": 0,
+                "Region": "ap-guangzhou",
+                "SeriousRiskCount": 1,
+                "TaskCreateTime": "2024-10-30 14:41:25",
+                "UnInstallAgentNodeCount": 1,
+                "UnreadyNodeNum": 3
             }
-        ]
+        ],
+        "RequestId": "8a64a4f9-864c-49c6-adcb-21b483de477a",
+        "TotalCount": 7
     }
 }
 ```

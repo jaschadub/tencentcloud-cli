@@ -6,10 +6,11 @@ Input:
 
 ```
 tccli tdmq ResetMsgSubOffsetByTimestamp --cli-unfold-argument  \
-    --EnvironmentId default \
-    --TopicName cloud_test \
-    --Subscription cloud_sub \
-    --ToTimestamp 1585901708600
+    --EnvironmentId devNs \
+    --TopicName devTopic \
+    --Subscription devSub \
+    --ToTimestamp 1730690396152 \
+    --ClusterId pulsar-pnvjp9mbd947
 ```
 
 Output: 

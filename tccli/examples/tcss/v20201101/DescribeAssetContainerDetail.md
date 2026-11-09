@@ -1,6 +1,6 @@
 **Example 1: 查询容器信息**
 
-
+查询容器信息
 
 Input: 
 
@@ -15,41 +15,54 @@ Output:
     "Response": {
         "AppCnt": 0,
         "CPUUsage": 0,
-        "Cmd": "/pause",
+        "ClusterID": "cls-m2x0ndjy",
+        "ClusterName": "tke2",
+        "Cmd": "/usr/bin/dumb-init -- /nginx-ingress-controller --publish-service=ingress-nginx/ingress-nginx-controller --election-id=ingress-controller-leader --leader-elect-retry-period=2s --leader-elect-renew-deadline=10s --leader-elect-lease-duration=15s --v=2 --ingress-class=nginx --controller-class=k8s.io/ingress-nginx --configmap=ingress-nginx/ingress-nginx-controller --watch-ingress-without-class=true --update-status-on-shutdown=false --time-buckets=0.01,0.1,1,10 --length-buckets=10,30,50,70,90 --size-buckets=10,100,1000,100000,1000****",
         "ComponentCnt": 0,
-        "ContainerName": "/k8s_POD_ip-masq-agent-nhwn8_kube-system_56279ed6-af85-11e8-90de-0a587f84039e_0",
-        "CreateTime": "2018-09-03T14:26:28Z",
-        "HostID": "fbd6ea2c-1894-47b0-bf3e-095c78138f76",
-        "HostIP": "172.16.0.4",
-        "HostStatus": "",
-        "ImageCreateTime": "2014-07-19T07:02:32Z",
-        "ImageID": "sha256:f9d5de0795395db6c50cb1ac82ebed1bd8eb3eefcebb1aa724e01239594e937b",
-        "ImageName": "ccr.ccs.tencentyun.com/library/pause:latest",
-        "ImageSize": 239840,
-        "K8sMaster": "",
+        "ContainerName": "cbs-csi",
+        "CreateTime": "2024-10-24 19:36:24",
+        "HostID": "8bc803fd-d85d-47b8-9e2b-9644674be677",
+        "HostIP": "1.1.1.1",
+        "HostStatus": "ONLINE",
+        "ImageCreateTime": "0001-01-01 08:05:43",
+        "ImageID": "sha256:563af",
+        "ImageName": "image:latest",
+        "ImageSize": 0,
+        "IsolateSource": "none ",
+        "IsolateTime": "1970-01-01 00:00:01",
+        "K8sMaster": "etcd",
         "Mounts": [],
+        "NetStatus": "NORMAL",
+        "NetSubStatus": "NONE",
         "Network": {
-            "EndpointID": "912b40bfbddd044734e42135bc0a6a49984048ccdf26687d824f2d52cb63c650",
-            "Gateway": "",
-            "Ipv4": "",
-            "Ipv6": "",
-            "MAC": "",
-            "Mode": "host",
-            "Name": "",
-            "NetworkID": "327b241f90565248657f72ead20c1adfbac8dd60b18f7abf0a9727f2ff7ffc49"
+            "EndpointID": "myService/us-west-1/instance",
+            "Gateway": "gateway",
+            "Ipv4": "127.0.0.1",
+            "Ipv6": "2001:db8:85a3::8a2e:370:7334",
+            "MAC": "00:1A:2B:3C:4D:5E",
+            "Mode": "mode",
+            "Name": "name",
+            "NetworkID": "1002"
         },
-        "POD": "",
+        "NodeID": "eklet-subnet-1ewk3avk",
+        "NodeName": "VM-1-254-tencentos",
+        "NodeSubNetCIDR": "10.0.200.0/24",
+        "NodeSubNetID": "subnet-5gu2***",
+        "NodeSubNetName": "subnet***",
+        "NodeType": "NORMAL",
+        "NodeUniqueID": "27501aaed5e639693783321219989889",
+        "POD": "tcss-aset-11-321",
+        "PodIP": "1.1.1.1",
+        "PodName": "tcss-asset-124321",
+        "PodStatus": "Running",
         "PortCnt": 0,
         "ProcessCnt": 0,
+        "PublicIP": "10.0.1.92",
         "RamUsage": 0,
-        "RequestId": "9915f397-3268-4c12-85c9-03b07b6db718",
-        "RunAs": "",
-        "Status": "exited",
-        "WebServiceCnt": 0,
-        "NetStatus": "",
-        "NetSubStatus": "",
-        "IsolateSource": "xx",
-        "IsolateTime": "xx"
+        "RequestId": "6954374b-bfcd-4751-8358-3e3682551514",
+        "RunAs": "root",
+        "Status": "RUNNING",
+        "WebServiceCnt": 0
     }
 }
 ```

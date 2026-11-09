@@ -1,12 +1,12 @@
 **Example 1: 请求示例**
 
-
+查询直播拉流任务。
 
 Input: 
 
 ```
 tccli live DescribeLivePullStreamTasks --cli-unfold-argument  \
-    --TaskId 123
+    --TaskId 9654231
 ```
 
 Output: 
@@ -27,6 +27,8 @@ Output:
                 "DomainName": "yourdomain.com",
                 "EndTime": "2020-04-25T00:30:00Z",
                 "ErrorInfo": "",
+                "BackupToUrl": "",
+                "RecordTemplateId": "",
                 "PushArgs": "txsecret=7cbb8f382a21e8d2f6cd8098100d3b8e&txtime=5ea0450d",
                 "SourceType": "PullLivePushLive",
                 "SourceUrls": [
@@ -35,13 +37,17 @@ Output:
                 "StartTime": "2020-04-20T00:30:00Z",
                 "Status": "enable",
                 "StreamName": "teststream",
-                "Comment": "xx",
+                "Comment": "重要活动",
                 "TaskId": "10054",
                 "UpdateBy": "",
                 "UpdateTime": "2020-04-23T05:07:43Z",
                 "CreateTime": "2020-04-20T05:07:43Z",
                 "VodLoopTimes": -1,
                 "VodRefreshType": "ImmediateNewSource",
+                "VodLocalMode": 0,
+                "BackupSourceType": "",
+                "BackupSourceUrl": "",
+                "WatermarkList": [],
                 "RecentPullInfo": {
                     "FileUrl": "http://yourdomain/live/test.flv",
                     "OffsetTime": 95,

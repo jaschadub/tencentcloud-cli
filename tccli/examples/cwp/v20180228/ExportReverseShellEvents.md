@@ -12,8 +12,8 @@ Output:
 {
     "Response": {
         "RequestId": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a",
-        "DownloadUrl": "http://download.url/xxx.csv",
-        "TaskId": ""
+        "DownloadUrl": "https://cwp-1258344***.cos.ap-guangzhou.myqcloud.com/file.txt",
+        "TaskId": "1"
     }
 }
 ```

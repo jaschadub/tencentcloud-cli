@@ -1,12 +1,13 @@
 **Example 1: 创建命名空间。**
 
-
+创建命名空间。
 
 Input: 
 
 ```
 tccli scf CreateNamespace --cli-unfold-argument  \
-    --Namespace test
+    --Namespace ns1 \
+    --Description a ns
 ```
 
 Output: 

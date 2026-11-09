@@ -1,4 +1,60 @@
-**Example 1: 创建人员接口**
+**Example 1: 错误示例**
+
+人员ID不可重复
+
+Input: 
+
+```
+tccli iai CreatePerson --cli-unfold-argument  \
+    --GroupId ZhuYuanDormitoryNo1 \
+    --PersonName Cheng \
+    --PersonId 1001 \
+    --Gender 2 \
+    --Url http://test.image.myqcloud.com/testD.jpg
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.PersonIdAlreadyExist",
+            "Message": "人员ID已经存在。人员ID不可重复。"
+        },
+        "RequestId": "76dedef7-af27-4a20-9064-c5ef3133926d"
+    }
+}
+```
+
+**Example 2: 错误示例-2**
+
+人员库ID不存在
+
+Input: 
+
+```
+tccli iai CreatePerson --cli-unfold-argument  \
+    --GroupId ShenZhenCitizen \
+    --PersonName Siccy \
+    --PersonId 3001 \
+    --Gender 2 \
+    --Url http://test.image.myqcloud.com/testC.jpg
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.GroupIdNotExist",
+            "Message": "人员库ID不存在。"
+        },
+        "RequestId": "dfa512fc-fd07-4bf1-a292-cb497b620857"
+    }
+}
+```
+
+**Example 3: 创建人员接口**
 
 
 
@@ -18,8 +74,7 @@ tccli iai CreatePerson --cli-unfold-argument  \
     --PersonExDescriptionInfos.2.PersonExDescriptionIndex 2 \
     --PersonExDescriptionInfos.2.PersonExDescription 15级 \
     --PersonExDescriptionInfos.3.PersonExDescriptionIndex 3 \
-    --PersonExDescriptionInfos.3.PersonExDescription 3150808 \
-    --Version 2018-03-01
+    --PersonExDescriptionInfos.3.PersonExDescription 3150808
 ```
 
 Output: 
@@ -40,7 +95,7 @@ Output:
 }
 ```
 
-**Example 2: 创建人员接口-2**
+**Example 4: 创建人员接口-2**
 
 创建人员
 
@@ -58,8 +113,7 @@ tccli iai CreatePerson --cli-unfold-argument  \
     --PersonExDescriptionInfos.1.PersonExDescriptionIndex 1 \
     --PersonExDescriptionInfos.1.PersonExDescription 人工智能产品中心 \
     --PersonExDescriptionInfos.2.PersonExDescriptionIndex 2 \
-    --PersonExDescriptionInfos.2.PersonExDescription 人脸识别产品组 \
-    --Version 2018-03-01
+    --PersonExDescriptionInfos.2.PersonExDescription 人脸识别产品组
 ```
 
 Output: 
@@ -76,56 +130,6 @@ Output:
         },
         "FaceModelVersion": "3.0",
         "RequestId": "269a6bc0-0016-47e8-a63d-517ce4052b0e"
-    }
-}
-```
-
-**Example 3: 错误示例**
-
-人员ID不可重复
-
-Input: 
-
-```
-tccli iai CreatePerson --cli-unfold-argument  \
-    --GroupId ZhuYuanDormitoryNo1 \
-    --PersonName Cheng \
-    --PersonId 1001 \
-    --Gender 2 \
-    --Url http://test.image.myqcloud.com/testD.jpg \
-    --Version 2018-03-01
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "76dedef7-af27-4a20-9064-c5ef3133926d"
-    }
-}
-```
-
-**Example 4: 错误示例-2**
-
-人员库ID不存在
-
-Input: 
-
-```
-tccli iai CreatePerson --cli-unfold-argument  \
-    --GroupId ShenZhenCitizen \
-    --PersonName Siccy \
-    --PersonId 3001 \
-    --Gender 2 \
-    --Url http://test.image.myqcloud.com/testC.jpg \
-    --Version 2018-03-01
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "dfa512fc-fd07-4bf1-a292-cb497b620857"
     }
 }
 ```

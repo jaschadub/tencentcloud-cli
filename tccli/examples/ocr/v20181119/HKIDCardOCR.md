@@ -1,4 +1,4 @@
-**Example 1: 中国香港身份证识别示例代码**
+**Example 1: HKIDCardOCR调用**
 
 
 
@@ -6,9 +6,8 @@ Input:
 
 ```
 tccli ocr HKIDCardOCR --cli-unfold-argument  \
-    --DetectFake true \
-    --ReturnHeadImage false \
-    --ImageUrl https://xx/a.jpg
+    --ReturnHeadImage False \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg
 ```
 
 Output: 
@@ -25,13 +24,13 @@ Output:
         "Symbol": "***AZ",
         "FirstIssueDate": "(09-99)",
         "CurrentIssueDate": "23-09-10",
-        "FakeDetectResult": 1,
-        "WarningCode": [
-            -9102,
-            -9103
+        "HeadImage": null,
+        "WarnCardInfos": [
+            -9104
         ],
-        "HeadImage": "xx",
-        "RequestId": "fba1c9ad-aeb3-4418-9ecf-80ab1b5fc875"
+        "RequestId": "fba1c9ad-aeb3-4418-9ecf-80ab1b5fc875",
+        "WindowEmbeddedText": "C000000",
+        "SmallHeadImage": null
     }
 }
 ```

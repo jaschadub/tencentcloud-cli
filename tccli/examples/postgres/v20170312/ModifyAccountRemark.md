@@ -1,4 +1,4 @@
-**Example 1: 修改帐号备注**
+**Example 1: 修改账号备注**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli postgres ModifyAccountRemark --cli-unfold-argument  \
-    --UserName test \
+    --UserName webapp_user \
     --Remark testModifyRemark \
     --DBInstanceId postgres-6bwgamo3
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bda SegmentCustomizedPortraitPic --cli-unfold-argument  \
-    --Url IamNotAUrl \
+    --Url https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg \
     --SegmentationOptions.Background False
 ```
 
@@ -14,6 +14,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.UrlIllegal",
+            "Message": "URL格式不合法。"
+        },
         "RequestId": "46ed6f32-549f-4377-8116-2d55e4574528"
     }
 }
@@ -27,7 +31,7 @@ Input:
 
 ```
 tccli bda SegmentCustomizedPortraitPic --cli-unfold-argument  \
-    --Url test.jpg \
+    --Url https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg \
     --SegmentationOptions.Head True
 ```
 

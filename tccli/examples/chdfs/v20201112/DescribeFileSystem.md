@@ -15,7 +15,7 @@ Output:
     "Response": {
         "FileSystem": {
             "AppId": 1251006373,
-            "FileSystemName": "test",
+            "FileSystemName": "fs-test",
             "Description": "",
             "Region": "ap-guangzhou",
             "FileSystemId": "f4mhaqkciq0",
@@ -36,6 +36,8 @@ Output:
         "ArchiveCapacityUsed": 0,
         "StandardCapacityUsed": 0,
         "DegradeCapacityUsed": 0,
+        "DeepArchiveCapacityUsed": 0,
+        "IntelligentCapacityUsed": 0,
         "RequestId": "22e36f95-9295-4132-a75e-09a08d2e13fc"
     }
 }

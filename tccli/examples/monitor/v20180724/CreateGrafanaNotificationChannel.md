@@ -1,23 +1,23 @@
 **Example 1: 创建 Grafana 告警通道**
 
-
+创建 Grafana 告警通道
 
 Input: 
 
 ```
 tccli monitor CreateGrafanaNotificationChannel --cli-unfold-argument  \
-    --InstanceId xx \
-    --ChannelName xx \
+    --InstanceId grafana-abcdefgh \
+    --ChannelName my-channel \
     --OrgId 0 \
-    --Receivers xx
+    --Receivers notice-7k7q3qzr
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ChannelId": "xx",
-        "RequestId": "xx"
+        "ChannelId": "99434792",
+        "RequestId": "e3adaaf0-7266-4949-be41-bed713136876"
     }
 }
 ```

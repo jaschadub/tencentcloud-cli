@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dts DescribeSubscribes --cli-unfold-argument  \
-    --Status isolate \
+    --Status isolated \
     --Offset 0 \
     --Limit 1
 ```
@@ -38,7 +38,15 @@ Output:
                 "UniqSubnetId": "subnet-4p1hpsj8",
                 "UniqVpcId": "vpc-fbg8gh1j",
                 "Vip": "192.168.1.143",
-                "Vport": 7507
+                "Vport": 7507,
+                "SubscribeVersion": "kafka",
+                "AutoRenewFlag": 0,
+                "Tags": [
+                    {
+                        "TagKey": "负责人",
+                        "TagValue": "jason"
+                    }
+                ]
             }
         ],
         "RequestId": "14a719b5-ffb34ab6-816c43c1-8c6a23eb"

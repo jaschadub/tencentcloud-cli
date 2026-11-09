@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli monitor DescribeGrafanaChannels --cli-unfold-argument  \
-    --InstanceId xx \
+    --InstanceId grafana-12345678 \
     --ChannelState 0 \
     --Limit 0 \
     --Offset 0 \
-    --ChannelName xx \
-    --ChannelIds xx
+    --ChannelName **** \
+    --ChannelIds nchannel-abcd1234
 ```
 
 Output: 
@@ -21,18 +21,18 @@ Output:
         "NotificationChannelSet": [
             {
                 "Receivers": [
-                    "xx"
+                    "consumer-abcd1234"
                 ],
-                "ChannelId": "xx",
+                "ChannelId": "nchannel-abcd1234",
                 "OrganizationIds": [
-                    "xx"
+                    "1"
                 ],
                 "UpdatedAt": "2020-09-22T00:00:00+00:00",
-                "ChannelName": "xx",
+                "ChannelName": "****",
                 "CreatedAt": "2020-09-22T00:00:00+00:00"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "requestid"
     }
 }
 ```

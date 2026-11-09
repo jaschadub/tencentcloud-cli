@@ -1,60 +1,71 @@
 **Example 1: 示例**
 
-
+查询版本信息
 
 Input: 
 
 ```
 tccli tcb DescribeCloudBaseRunServerVersion --cli-unfold-argument  \
-    --EnvId lotestapi100004 \
-    --ServerName dockerservicename \
-    --VersionName adb
+    --EnvId env-sdfd \
+    --ServerName server \
+    --VersionName ver
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Branch": "",
-        "BuildDir": "",
-        "ContainerPort": 80,
-        "Cpu": 1,
-        "CpuSize": 1,
-        "CreatedTime": "2020-11-04 16:44:54",
-        "CustomLogs": "/var/logs/data.log",
+        "VersionName": "",
+        "Remark": "",
         "DockerfilePath": "",
-        "EnvParams": "{}",
-        "ImageUrl": "ccr.ccs.tencentyun.com/cloudbase-apolo-env-test-146d5/hello-world:v2",
-        "InitialDelaySeconds": 2,
-        "IsPublic": true,
-        "MaxNum": 50,
-        "Mem": 1,
-        "MemSize": 1,
+        "BuildDir": "",
+        "Cpu": 0,
+        "Mem": 0,
         "MinNum": 0,
+        "MaxNum": 0,
+        "PolicyType": "",
+        "PolicyThreshold": 0,
+        "EnvParams": "",
+        "CreatedTime": "",
+        "UpdatedTime": "",
+        "VersionIP": "",
+        "VersionPort": 0,
+        "Status": "",
         "PackageName": "",
         "PackageVersion": "",
-        "PolicyThreshold": 60,
-        "PolicyType": "cpu",
-        "Remark": "",
-        "Repo": "",
+        "UploadType": "",
         "RepoType": "",
-        "RequestId": "5620b49e-a25a-4007-84ef-03c9035c584d",
-        "ServerName": "test",
-        "Status": "normal",
+        "Repo": "",
+        "Branch": "",
+        "ServerName": "",
+        "IsPublic": true,
+        "VpcId": "",
         "SubnetIds": [
-            "subnet-6yny6j0d"
+            ""
         ],
-        "UpdatedTime": "2020-11-04 19:55:22",
-        "UploadType": "image",
-        "VersionIP": "10.0.192.3",
-        "VersionName": "test-010",
-        "VersionPort": 80,
-        "VpcId": "vpc-rtyzm94a",
-        "BaseImage": "JDK7",
-        "RepoLanguage": "Java",
+        "CustomLogs": "",
+        "ContainerPort": 0,
+        "InitialDelaySeconds": 0,
+        "ImageUrl": "",
+        "CpuSize": 0,
+        "MemSize": 0,
         "HasDockerfile": 0,
-        "EntryPoint": "java -jar app.jar",
-        "PolicyDetail": "xx"
+        "BaseImage": "",
+        "EntryPoint": "",
+        "RepoLanguage": "",
+        "PolicyDetail": [
+            {
+                "PolicyType": "",
+                "PolicyThreshold": 0
+            }
+        ],
+        "TkeClusterInfo": {
+            "ClusterId": "",
+            "VpcId": "",
+            "VersionClbSubnetId": ""
+        },
+        "TkeWorkloadType": "",
+        "RequestId": ""
     }
 }
 ```

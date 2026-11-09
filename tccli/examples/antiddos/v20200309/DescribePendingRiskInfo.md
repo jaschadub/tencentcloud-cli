@@ -1,6 +1,6 @@
 **Example 1: 查询账号维度待处理风险信息**
 
-
+查询账号维度待处理风险信息
 
 Input: 
 
@@ -14,7 +14,7 @@ Output:
         "ExpiredCount": 144,
         "IsPaidUsr": true,
         "AttackingCount": 0,
-        "RequestId": "xx",
+        "RequestId": "0506d138-ef0f-4ff4-83b0-f1d85e740afd",
         "Total": 146,
         "BlockingCount": 2
     }

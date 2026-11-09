@@ -1,130 +1,284 @@
 {
   "actions": {
+    "AddSpecifyPrivateZoneVpc": {
+      "document": "追加与私有域关联的VPC",
+      "input": "AddSpecifyPrivateZoneVpcRequest",
+      "name": "追加与私有域关联的VPC",
+      "output": "AddSpecifyPrivateZoneVpcResponse",
+      "status": "online"
+    },
+    "CreateExtendEndpoint": {
+      "document": "创建终端节点",
+      "input": "CreateExtendEndpointRequest",
+      "name": "创建增强型终端节点",
+      "output": "CreateExtendEndpointResponse",
+      "status": "online"
+    },
+    "CreateForwardRule": {
+      "document": "创建自定义转发规则",
+      "input": "CreateForwardRuleRequest",
+      "name": "创建自定义转发规则",
+      "output": "CreateForwardRuleResponse",
+      "status": "online"
+    },
+    "CreateInboundEndpoint": {
+      "document": "删除入站终端节点",
+      "input": "CreateInboundEndpointRequest",
+      "name": "创建入站终端节点",
+      "output": "CreateInboundEndpointResponse",
+      "status": "online"
+    },
     "CreatePrivateDNSAccount": {
-      "document": "创建私有域解析账号",
+      "document": "跨账号关联VPC时，可通过该API接口添加关联账号",
       "input": "CreatePrivateDNSAccountRequest",
-      "name": "创建私有域解析账号",
-      "output": "CreatePrivateDNSAccountResponse"
+      "name": "添加关联账号",
+      "output": "CreatePrivateDNSAccountResponse",
+      "status": "online"
     },
     "CreatePrivateZone": {
       "document": "创建私有域",
       "input": "CreatePrivateZoneRequest",
       "name": "创建私有域",
-      "output": "CreatePrivateZoneResponse"
+      "output": "CreatePrivateZoneResponse",
+      "status": "online"
+    },
+    "CreatePrivateZoneList": {
+      "document": "批量创建私有域",
+      "input": "CreatePrivateZoneListRequest",
+      "name": "批量创建私有域",
+      "output": "CreatePrivateZoneListResponse",
+      "status": "online"
     },
     "CreatePrivateZoneRecord": {
       "document": "添加私有域解析记录",
       "input": "CreatePrivateZoneRecordRequest",
       "name": "添加私有域解析记录",
-      "output": "CreatePrivateZoneRecordResponse"
+      "output": "CreatePrivateZoneRecordResponse",
+      "status": "online"
+    },
+    "CreatePrivateZoneRecordList": {
+      "document": "批量添加私有域解析记录",
+      "input": "CreatePrivateZoneRecordListRequest",
+      "name": "批量添加私有域解析记录",
+      "output": "CreatePrivateZoneRecordListResponse",
+      "status": "online"
+    },
+    "DeleteEndPoint": {
+      "document": "删除终端节点",
+      "input": "DeleteEndPointRequest",
+      "name": "删除终端节点",
+      "output": "DeleteEndPointResponse",
+      "status": "online"
+    },
+    "DeleteForwardRule": {
+      "document": "删除转发规则并停止转发",
+      "input": "DeleteForwardRuleRequest",
+      "name": "删除转发规则",
+      "output": "DeleteForwardRuleResponse",
+      "status": "online"
+    },
+    "DeleteInboundEndpoint": {
+      "document": "删除入站终端节点",
+      "input": "DeleteInboundEndpointRequest",
+      "name": "删除入站终端节点",
+      "output": "DeleteInboundEndpointResponse",
+      "status": "online"
     },
     "DeletePrivateDNSAccount": {
-      "document": "删除私有域解析账号",
+      "document": "适用于跨账号绑定VPC时需要移除关联账号的场景，解除账号关联后，将无法获取对应账号下的 VPC资源。",
       "input": "DeletePrivateDNSAccountRequest",
-      "name": "删除私有域解析账号",
-      "output": "DeletePrivateDNSAccountResponse"
+      "name": "移除账号关联",
+      "output": "DeletePrivateDNSAccountResponse",
+      "status": "online"
     },
     "DeletePrivateZone": {
       "document": "删除私有域并停止解析",
       "input": "DeletePrivateZoneRequest",
       "name": "删除私有域",
-      "output": "DeletePrivateZoneResponse"
+      "output": "DeletePrivateZoneResponse",
+      "status": "online"
     },
     "DeletePrivateZoneRecord": {
       "document": "删除私有域解析记录",
       "input": "DeletePrivateZoneRecordRequest",
       "name": "删除私有域解析记录",
-      "output": "DeletePrivateZoneRecordResponse"
+      "output": "DeletePrivateZoneRecordResponse",
+      "status": "online"
+    },
+    "DeleteSpecifyPrivateZoneVpc": {
+      "document": "删除与私有域关联的VPC",
+      "input": "DeleteSpecifyPrivateZoneVpcRequest",
+      "name": "删除与私有域关联的VPC",
+      "output": "DeleteSpecifyPrivateZoneVpcResponse",
+      "status": "online"
     },
     "DescribeAccountVpcList": {
-      "document": "获取私有域解析账号的VPC列表",
+      "document": "获取关联账号的VPC列表",
       "input": "DescribeAccountVpcListRequest",
-      "name": "获取私有域解析账号的VPC列表",
-      "output": "DescribeAccountVpcListResponse"
+      "name": "获取关联账号的VPC列表",
+      "output": "DescribeAccountVpcListResponse",
+      "status": "online"
     },
     "DescribeAuditLog": {
       "document": "获取操作日志列表",
       "input": "DescribeAuditLogRequest",
       "name": "获取操作日志列表",
-      "output": "DescribeAuditLogResponse"
+      "output": "DescribeAuditLogResponse",
+      "status": "online"
+    },
+    "DescribeCreateRecordListResult": {
+      "document": "查询批量添加私有域解析记录结果",
+      "input": "DescribeCreateRecordListResultRequest",
+      "name": "查询批量添加私有域解析记录结果",
+      "output": "DescribeCreateRecordListResultResponse",
+      "status": "online"
+    },
+    "DescribeCreateZoneListResult": {
+      "document": "查询批量添加私有域结果",
+      "input": "DescribeCreateZoneListResultRequest",
+      "name": "查询批量添加私有域结果",
+      "output": "DescribeCreateZoneListResultResponse",
+      "status": "online"
     },
     "DescribeDashboard": {
       "document": "获取私有域解析概览",
       "input": "DescribeDashboardRequest",
       "name": "获取私有域解析概览",
-      "output": "DescribeDashboardResponse"
+      "output": "DescribeDashboardResponse",
+      "status": "online"
+    },
+    "DescribeExtendEndpointList": {
+      "document": "获取终端节点列表",
+      "input": "DescribeExtendEndpointListRequest",
+      "name": "获取增强型终端节点列表",
+      "output": "DescribeExtendEndpointListResponse",
+      "status": "online"
+    },
+    "DescribeForwardRuleList": {
+      "document": "查询转发规则列表",
+      "input": "DescribeForwardRuleListRequest",
+      "name": "查询转发规则列表",
+      "output": "DescribeForwardRuleListResponse",
+      "status": "online"
+    },
+    "DescribeInboundEndpointList": {
+      "document": "获取入站终端节点列表",
+      "input": "DescribeInboundEndpointListRequest",
+      "name": "获取入站终端节点列表",
+      "output": "DescribeInboundEndpointListResponse",
+      "status": "online"
     },
     "DescribePrivateDNSAccountList": {
-      "document": "获取私有域解析账号列表",
+      "document": "在跨账号绑定VPC的场景下，可通过该API接口获取所有已关联账号的列表",
       "input": "DescribePrivateDNSAccountListRequest",
-      "name": "获取私有域解析账号列表",
-      "output": "DescribePrivateDNSAccountListResponse"
+      "name": "获取关联账号列表",
+      "output": "DescribePrivateDNSAccountListResponse",
+      "status": "online"
     },
     "DescribePrivateZone": {
       "document": "获取私有域信息",
       "input": "DescribePrivateZoneRequest",
       "name": "获取私有域信息",
-      "output": "DescribePrivateZoneResponse"
+      "output": "DescribePrivateZoneResponse",
+      "status": "online"
     },
     "DescribePrivateZoneList": {
       "document": "获取私有域列表",
       "input": "DescribePrivateZoneListRequest",
       "name": "获取私有域列表",
-      "output": "DescribePrivateZoneListResponse"
+      "output": "DescribePrivateZoneListResponse",
+      "status": "online"
     },
     "DescribePrivateZoneRecordList": {
       "document": "获取私有域记录列表",
       "input": "DescribePrivateZoneRecordListRequest",
       "name": "获取私有域记录列表",
-      "output": "DescribePrivateZoneRecordListResponse"
+      "output": "DescribePrivateZoneRecordListResponse",
+      "status": "online"
     },
     "DescribePrivateZoneService": {
       "document": "查询私有域解析开通状态",
       "input": "DescribePrivateZoneServiceRequest",
       "name": "查询私有域解析开通状态",
-      "output": "DescribePrivateZoneServiceResponse"
+      "output": "DescribePrivateZoneServiceResponse",
+      "status": "online"
     },
     "DescribeQuotaUsage": {
       "document": "查询额度使用情况",
       "input": "DescribeQuotaUsageRequest",
       "name": "查询额度使用情况",
-      "output": "DescribeQuotaUsageResponse"
+      "output": "DescribeQuotaUsageResponse",
+      "status": "online"
+    },
+    "DescribeRecord": {
+      "document": "获取私有域记录",
+      "input": "DescribeRecordRequest",
+      "name": "根据id获取私有域记录",
+      "output": "DescribeRecordResponse",
+      "status": "online"
     },
     "DescribeRequestData": {
       "document": "获取私有域解析请求量",
       "input": "DescribeRequestDataRequest",
       "name": "获取私有域解析请求量",
-      "output": "DescribeRequestDataResponse"
+      "output": "DescribeRequestDataResponse",
+      "status": "online"
+    },
+    "ModifyForwardRule": {
+      "document": "修改转发规则",
+      "input": "ModifyForwardRuleRequest",
+      "name": "修改转发规则",
+      "output": "ModifyForwardRuleResponse",
+      "status": "online"
+    },
+    "ModifyInboundEndpoint": {
+      "document": "删除入站终端节点",
+      "input": "ModifyInboundEndpointRequest",
+      "name": "修改入站终端节点",
+      "output": "ModifyInboundEndpointResponse",
+      "status": "online"
     },
     "ModifyPrivateZone": {
       "document": "修改私有域信息",
       "input": "ModifyPrivateZoneRequest",
       "name": "修改私有域",
-      "output": "ModifyPrivateZoneResponse"
+      "output": "ModifyPrivateZoneResponse",
+      "status": "online"
     },
     "ModifyPrivateZoneRecord": {
       "document": "修改私有域解析记录",
       "input": "ModifyPrivateZoneRecordRequest",
       "name": "修改私有域解析记录",
-      "output": "ModifyPrivateZoneRecordResponse"
+      "output": "ModifyPrivateZoneRecordResponse",
+      "status": "online"
     },
     "ModifyPrivateZoneVpc": {
       "document": "修改私有域关联的VPC",
       "input": "ModifyPrivateZoneVpcRequest",
       "name": "修改私有域关联的VPC",
-      "output": "ModifyPrivateZoneVpcResponse"
+      "output": "ModifyPrivateZoneVpcResponse",
+      "status": "online"
     },
     "ModifyRecordsStatus": {
       "document": "修改解析记录状态",
       "input": "ModifyRecordsStatusRequest",
       "name": "修改解析记录状态",
-      "output": "ModifyRecordsStatusResponse"
+      "output": "ModifyRecordsStatusResponse",
+      "status": "online"
+    },
+    "QueryAsyncBindVpcStatus": {
+      "document": "查询异步绑定vpc操作状态",
+      "input": "QueryAsyncBindVpcStatusRequest",
+      "name": "查询异步绑定vpc操作状态",
+      "output": "QueryAsyncBindVpcStatusResponse",
+      "status": "online"
     },
     "SubscribePrivateZoneService": {
       "document": "开通私有域解析",
       "input": "SubscribePrivateZoneServiceRequest",
       "name": "开通私有域解析",
-      "output": "SubscribePrivateZoneServiceResponse"
+      "output": "SubscribePrivateZoneServiceResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -138,44 +292,48 @@
       "document": "私有域解析账号Vpc信息",
       "members": [
         {
-          "default": "",
-          "document": "VpcId： vpc-xadsafsdasd",
-          "example": "无",
+          "disabled": false,
+          "document": "VpcId",
+          "example": "vpc-hgje12gt",
           "member": "string",
           "name": "UniqVpcId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "Vpc所属地区: ap-guangzhou, ap-shanghai\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "disabled": false,
+          "document": "Vpc所属地区",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "Vpc所属账号: 123456789\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456789",
+          "disabled": false,
+          "document": "Vpc所属账号",
+          "example": "10005630010",
           "member": "string",
           "name": "Uin",
+          "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "vpc资源名称：testname\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "vpc资源名称",
           "example": "testname",
           "member": "string",
           "name": "VpcName",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -184,42 +342,42 @@
       "document": "查询关联账号VPC列表出参",
       "members": [
         {
-          "default": "",
-          "document": "VpcId： vpc-xadsafsdasd",
-          "example": "无",
+          "disabled": false,
+          "document": "VpcId",
+          "example": "vpc-dfaqw1f",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "Vpc所属地区: ap-guangzhou, ap-shanghai",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "Vpc所属账号: 123456789",
-          "example": "无",
+          "example": "100220029",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "vpc资源名称：testname",
-          "example": "无",
+          "example": "vpcname",
           "member": "string",
           "name": "VpcName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -230,7 +388,7 @@
       "document": "关联的VPC出参",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "关联账户的uin",
           "example": "12345678",
           "member": "string",
@@ -240,7 +398,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "vpcid",
           "example": "vpc-wdskdss1",
           "member": "string",
@@ -250,7 +408,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "地域",
           "example": "ap-guangzhou",
           "member": "string",
@@ -262,42 +420,140 @@
       ],
       "usage": "out"
     },
+    "AddSpecifyPrivateZoneVpcRequest": {
+      "document": "AddSpecifyPrivateZoneVpc请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有域id",
+          "example": "zone-xxxxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "本次新增的vpc信息",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "VpcSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "本次新增关联账户vpc信息",
+          "example": "无",
+          "member": "AccountVpcInfo",
+          "name": "AccountVpcSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否为同步操作",
+          "example": "true",
+          "member": "bool",
+          "name": "Sync",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "AddSpecifyPrivateZoneVpcResponse": {
+      "document": "AddSpecifyPrivateZoneVpc返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "zone id",
+          "example": "zone-xxxxxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次新增的vpc",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "VpcSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次新增的关联账号vpc",
+          "example": "无",
+          "member": "AccountVpcInfo",
+          "name": "AccountVpcSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "唯一id",
+          "example": "vpc-sd23dfy",
+          "member": "string",
+          "name": "UniqId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AuditLog": {
       "document": "操作日志",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "日志类型",
+          "example": "all",
           "member": "string",
           "name": "Resource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "日志表名",
+          "example": "request_count",
           "member": "string",
           "name": "Metric",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "日志总数",
+          "example": "12548",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "日志列表",
+          "example": "[{\"Date\": \"2024-12-11 19:00:00\", \"OperatorUin\": \"10020023500\", \"Content\": \"修改私有域 aabc.com（zone-nseuk90\"}]",
           "member": "AuditLogInfo",
           "name": "DataSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -308,41 +564,259 @@
       "document": "日志详情",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "时间",
+          "example": "2024-12-11 19:00:00",
           "member": "datetime",
           "name": "Date",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "操作人uin",
+          "example": "10020023500",
           "member": "string",
           "name": "OperatorUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "日志内容",
+          "example": "修改私有域 aabc.com（zone-nseuk90）",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
       "usage": "out"
     },
+    "CreateExtendEndpointRequest": {
+      "document": "CreateExtendEndpoint请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateExtendEndpointResponse": {
+      "document": "CreateExtendEndpoint返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端节点id",
+          "example": "eid-ax8skcs0dg",
+          "member": "string",
+          "name": "EndpointId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点名称",
+          "example": "终端节点名",
+          "member": "string",
+          "name": "EndpointName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateForwardRuleRequest": {
+      "document": "CreateForwardRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转发规则名称",
+          "example": "转发规则1",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转发规则类型：云上到云下DOWN，云下到云上UP",
+          "example": "UP",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私有域ID，可在私有域列表页面查看",
+          "example": "zone-1dsi8dsg",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "终端节点ID",
+          "example": "eid-ml0mysdpsaf",
+          "member": "string",
+          "name": "EndPointId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateForwardRuleResponse": {
+      "document": "CreateForwardRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转发规则ID",
+          "example": "fid-afd2dcgsa3",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发规则名称",
+          "example": "转发规则1",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发规则类型",
+          "example": "DOWN",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有域ID",
+          "example": "zone-af2fdsfa",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点ID",
+          "example": "eid-afsdf2sa",
+          "member": "string",
+          "name": "EndPointId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInboundEndpointRequest": {
+      "document": "CreateInboundEndpoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "inbound",
+          "member": "string",
+          "name": "EndpointName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "EndpointRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vpcid",
+          "example": "vpc-dkhypdgt",
+          "member": "string",
+          "name": "EndpointVpc",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网信息",
+          "example": "无",
+          "member": "SubnetIpInfo",
+          "name": "SubnetIp",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInboundEndpointResponse": {
+      "document": "CreateInboundEndpoint返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端节点ID",
+          "example": "inbound-9c5d5da2b6",
+          "member": "string",
+          "name": "EndpointId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "inbound",
+          "member": "string",
+          "name": "EndpointName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePrivateDNSAccountRequest": {
       "document": "CreatePrivateDNSAccount请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "私有域解析账号",
+          "disabled": false,
+          "document": "<p>被绑定的主账号，不能与本账号一致，且需要完成授权</p>",
           "example": "无",
           "member": "PrivateDNSAccount",
           "name": "Account",
@@ -356,7 +830,70 @@
       "document": "CreatePrivateDNSAccount返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateZoneListRequest": {
+      "document": "CreatePrivateZoneList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有域域名数组，域名格式必须是标准的TLD",
+          "example": "[\"1.com\",\"2.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateZoneListResponse": {
+      "document": "CreatePrivateZoneList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateZoneRecordListRequest": {
+      "document": "CreatePrivateZoneRecordList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有域ID数组",
+          "example": "[\"zone-p0152fh2\", \"zone-ads13fgh\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "私有域解析记录数据",
+          "example": "无",
+          "member": "RecordsInfo",
+          "name": "RecordsInfo",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateZoneRecordListResponse": {
+      "document": "CreatePrivateZoneRecordList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -368,16 +905,16 @@
       "document": "CreatePrivateZoneRecord请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "私有域ID",
-          "example": "1",
+          "example": "zone-p0152fh2",
           "member": "string",
           "name": "ZoneId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "记录类型，可选的记录类型为：\"A\", \"AAAA\", \"CNAME\", \"MX\", \"TXT\", \"PTR\"",
           "example": "A",
           "member": "string",
@@ -386,7 +923,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "子域名，例如 \"www\", \"m\", \"@\"",
           "example": "b",
           "member": "string",
@@ -395,7 +932,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "记录值，例如 IP：192.168.10.2，CNAME：cname.qcloud.com.，MX：mail.qcloud.com.",
           "example": "3.3.3.3",
           "member": "string",
@@ -404,7 +941,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "记录权重，值为1-100",
           "example": "100",
           "member": "int64",
@@ -413,7 +950,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50",
           "example": "15",
           "member": "int64",
@@ -422,13 +959,22 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600",
           "example": "600",
           "member": "int64",
           "name": "TTL",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "这是备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -437,16 +983,17 @@
       "document": "CreatePrivateZoneRecord返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "记录Id",
-          "example": "1111",
+          "example": "15421",
           "member": "string",
           "name": "RecordId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -458,7 +1005,7 @@
       "document": "CreatePrivateZone请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "域名，格式必须是标准的TLD",
           "example": "a.com",
           "member": "string",
@@ -467,7 +1014,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "创建私有域的同时，为其打上标签",
           "example": "无",
           "member": "TagInfo",
@@ -476,7 +1023,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "创建私有域的同时，将其关联至VPC",
           "example": "无",
           "member": "VpcInfo",
@@ -485,7 +1032,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "测试域名",
           "member": "string",
@@ -494,7 +1041,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否开启子域名递归, ENABLED， DISABLED。默认值为ENABLED",
           "example": "ENABLED",
           "member": "string",
@@ -503,7 +1050,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": true,
           "document": "创建私有域的同时，将其关联至VPC",
           "example": "无",
           "member": "VpcInfo",
@@ -512,7 +1059,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "创建私有域同时绑定关联账号的VPC",
           "example": "无",
           "member": "AccountVpcInfo",
@@ -521,7 +1068,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否CNAME加速：ENABLED，DISABLED，默认值为ENABLED",
           "example": "ENABLED",
           "member": "string",
@@ -536,25 +1083,27 @@
       "document": "CreatePrivateZone返回参数结构体",
       "members": [
         {
-          "document": "私有域ID, zone-xxxxxx",
-          "example": "41",
+          "disabled": false,
+          "document": "私有域ID, zone-12sa5ce78",
+          "example": "zone-12sa5ce78",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "私有域名",
           "example": "a.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -566,31 +1115,114 @@
       "document": "时间统计值",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "时间",
+          "example": "2024-12-11 00:00:00",
           "member": "datetime",
           "name": "Date",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "值",
+          "example": "1435",
           "member": "int64",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
       ],
       "usage": "out"
     },
+    "DeleteEndPointRequest": {
+      "document": "DeleteEndPoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端节点ID",
+          "example": "eid-juygvf672i",
+          "member": "string",
+          "name": "EndPointId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEndPointResponse": {
+      "document": "DeleteEndPoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteForwardRuleRequest": {
+      "document": "DeleteForwardRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转发规则ID数组",
+          "example": " [\"fid-fd1b23c67\"]",
+          "member": "string",
+          "name": "RuleIdSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteForwardRuleResponse": {
+      "document": "DeleteForwardRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInboundEndpointRequest": {
+      "document": "DeleteInboundEndpoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端节点ID",
+          "example": "inbound-ffe1e2d6e0",
+          "member": "string",
+          "name": "EndpointId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInboundEndpointResponse": {
+      "document": "DeleteInboundEndpoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeletePrivateDNSAccountRequest": {
       "document": "DeletePrivateDNSAccount请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "私有域解析账号",
           "example": "无",
           "member": "PrivateDNSAccount",
@@ -605,7 +1237,7 @@
       "document": "DeletePrivateDNSAccount返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -617,17 +1249,17 @@
       "document": "DeletePrivateZoneRecord请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "私有域ID",
-          "example": "1999",
+          "example": "zone-p0152fh2",
           "member": "string",
           "name": "ZoneId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
-          "document": "记录ID",
+          "disabled": false,
+          "document": "记录ID（调用DescribePrivateZoneRecordList可获取到RecordId）",
           "example": "2323",
           "member": "string",
           "name": "RecordId",
@@ -635,9 +1267,9 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "记录ID数组，RecordId 优先",
-          "example": "[]",
+          "example": "[\"2657842\",\"2657843\"]",
           "member": "string",
           "name": "RecordIdSet",
           "required": false,
@@ -650,7 +1282,7 @@
       "document": "DeletePrivateZoneRecord返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -662,18 +1294,18 @@
       "document": "DeletePrivateZone请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "私有域ID",
-          "example": "1",
+          "example": "zone-qk26web2",
           "member": "string",
           "name": "ZoneId",
           "required": false,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有域ID数组，ZoneId 优先",
-          "example": "无",
+          "example": " [\"zone-qk26web2\", \"zone-hfgol776\"]",
           "member": "string",
           "name": "ZoneIdSet",
           "required": false,
@@ -686,7 +1318,101 @@
       "document": "DeletePrivateZone返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSpecifyPrivateZoneVpcRequest": {
+      "document": "DeleteSpecifyPrivateZoneVpc请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有域id",
+          "example": "zone-xxxxxxxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "本次删除的VPC",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "VpcSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "本次删除的关联账户VPC",
+          "example": "无",
+          "member": "AccountVpcInfo",
+          "name": "AccountVpcSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否为同步操作",
+          "example": "true",
+          "member": "bool",
+          "name": "Sync",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSpecifyPrivateZoneVpcResponse": {
+      "document": "DeleteSpecifyPrivateZoneVpc返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有域id",
+          "example": "zone-124das1",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次删除的VPC",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "VpcSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次删除的关联账户的VPC",
+          "example": "无",
+          "member": "AccountVpcInfo",
+          "name": "AccountVpcSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "唯一id",
+          "example": "234137",
+          "member": "string",
+          "name": "UniqId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -698,34 +1424,34 @@
       "document": "DescribeAccountVpcList请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "关联账号的uin",
-          "example": "123456789",
+          "example": "10000000010",
           "member": "string",
           "name": "AccountUin",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "分页偏移量，从0开始",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "过滤参数",
           "example": "无",
           "member": "Filter",
@@ -740,25 +1466,27 @@
       "document": "DescribeAccountVpcList返回参数结构体",
       "members": [
         {
-          "document": "VPC数量",
-          "example": "无",
+          "disabled": false,
+          "document": "关联账号VPC数量",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "document": "VPC 列表",
+          "disabled": false,
+          "document": "关联账号VPC 列表",
           "example": "无",
           "member": "AccountVpcInfoOut",
           "name": "VpcSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -770,7 +1498,7 @@
       "document": "DescribeAuditLog请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "请求量统计起始时间",
           "example": "2020-11-22 00:00:00",
           "member": "string",
@@ -779,7 +1507,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "筛选参数：ZoneId：私有域ID；Domain：私有域；OperatorUin：操作者账号ID",
           "example": "无",
           "member": "Filter",
@@ -788,7 +1516,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "请求量统计结束时间",
           "example": "2020-11-23 23:59:59",
           "member": "string",
@@ -797,7 +1525,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "分页偏移量，从0开始",
           "example": "0",
           "member": "int64",
@@ -806,7 +1534,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
           "example": "20",
           "member": "int64",
@@ -821,16 +1549,100 @@
       "document": "DescribeAuditLog返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "操作日志列表",
           "example": "无",
           "member": "AuditLog",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCreateRecordListResultRequest": {
+      "document": "DescribeCreateRecordListResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有域ID数组",
+          "example": "[\"zone-12345678\",\"zone-abcdefgh\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "私有域解析记录数据",
+          "example": "无",
+          "member": "RecordsInfo",
+          "name": "RecordsInfo",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCreateRecordListResultResponse": {
+      "document": "DescribeCreateRecordListResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量添加解析记录结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RecordsInfoResult",
+          "name": "RecordsResult",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCreateZoneListResultRequest": {
+      "document": "DescribeCreateZoneListResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有域域名数组，域名格式必须是标准的TLD",
+          "example": "[\"1.com\",\"2.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCreateZoneListResultResponse": {
+      "document": "DescribeCreateZoneListResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有域域名和zoneId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZoneInfo",
+          "name": "ZonesInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -847,43 +1659,242 @@
       "document": "DescribeDashboard返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "私有域解析总数",
           "example": "20",
           "member": "int64",
           "name": "ZoneTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "私有域关联VPC数量",
           "example": "7",
           "member": "int64",
           "name": "ZoneVpcCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "历史请求量总数",
           "example": "10000",
           "member": "int64",
           "name": "RequestTotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "流量包用量",
           "example": "无",
           "member": "FlowUsage",
           "name": "FlowUsage",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtendEndpointListRequest": {
+      "document": "DescribeExtendEndpointList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量，从0开始</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页限制数目， 最大100，默认20</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤参数，支持EndpointName,EndpointId</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtendEndpointListResponse": {
+      "document": "DescribeExtendEndpointList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>终端节点总数</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>终端节点列表</p>",
+          "example": "无",
+          "member": "OutboundEndpoint",
+          "name": "OutboundEndpointSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeForwardRuleListRequest": {
+      "document": "DescribeForwardRuleList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页偏移量，从0开始",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页限制数目， 最大100，默认20",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeForwardRuleListResponse": {
+      "document": "DescribeForwardRuleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有域数量",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有域列表",
+          "example": "无",
+          "member": "ForwardRule",
+          "name": "ForwardRuleSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInboundEndpointListRequest": {
+      "document": "DescribeInboundEndpointList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页偏移量，从0开始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页限制数目， 最大100，默认20",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数，支持EndPointName，EndpointName，EndPointId",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInboundEndpointListResponse": {
+      "document": "DescribeInboundEndpointList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点信息",
+          "example": "无",
+          "member": "InboundEndpointSet",
+          "name": "InboundEndpointSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -895,25 +1906,25 @@
       "document": "DescribePrivateDNSAccountList请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "分页偏移量，从0开始",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "过滤参数",
           "example": "无",
           "member": "Filter",
@@ -928,25 +1939,27 @@
       "document": "DescribePrivateDNSAccountList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "私有域解析账号数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "私有域解析账号列表",
           "example": "无",
           "member": "PrivateDNSAccount",
           "name": "AccountSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -958,25 +1971,25 @@
       "document": "DescribePrivateZoneList请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "分页偏移量，从0开始",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "过滤参数",
           "example": "无",
           "member": "Filter",
@@ -991,25 +2004,27 @@
       "document": "DescribePrivateZoneList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "私有域数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "私有域列表",
           "example": "无",
           "member": "PrivateZone",
           "name": "PrivateZoneSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1021,16 +2036,16 @@
       "document": "DescribePrivateZoneRecordList请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "私有域ID: zone-xxxxxx",
-          "example": "1",
+          "disabled": false,
+          "document": "私有域ID: zone-12c5a6e8",
+          "example": "zone-12c5a6e8",
           "member": "string",
           "name": "ZoneId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "过滤参数（支持使用Value、RecordType过滤）",
           "example": "无",
           "member": "Filter",
@@ -1039,7 +2054,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "分页偏移量，从0开始",
           "example": "0",
           "member": "int64",
@@ -1048,7 +2063,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "分页限制数目， 最大200，默认20",
           "example": "200",
           "member": "int64",
@@ -1063,25 +2078,27 @@
       "document": "DescribePrivateZoneRecordList返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "解析记录数量",
           "example": "5",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "解析记录列表",
           "example": "无",
           "member": "PrivateZoneRecord",
           "name": "RecordSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1093,9 +2110,9 @@
       "document": "DescribePrivateZone请求参数结构体",
       "members": [
         {
-          "default": "",
-          "document": "域名，格式必须是标准的TLD",
-          "example": "无",
+          "disabled": false,
+          "document": "私有域id",
+          "example": "zone-dm1igr1",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -1108,16 +2125,17 @@
       "document": "DescribePrivateZone返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "私有域详情",
           "example": "无",
           "member": "PrivateZone",
           "name": "PrivateZone",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1134,16 +2152,17 @@
       "document": "DescribePrivateZoneService返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "私有域解析服务开通状态。ENABLED已开通，DISABLED未开通",
           "example": "ENABLED",
           "member": "string",
           "name": "ServiceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1160,6 +2179,7 @@
       "document": "DescribeQuotaUsage返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "Tld额度使用情况",
           "example": "无",
           "member": "TldQuota",
@@ -1169,7 +2189,53 @@
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordRequest": {
+      "document": "DescribeRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有域ID",
+          "example": "zone-abcdef",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录ID",
+          "example": "10004567",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordResponse": {
+      "document": "DescribeRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录信息",
+          "example": "无",
+          "member": "RecordInfo",
+          "name": "RecordInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1181,7 +2247,7 @@
       "document": "DescribeRequestData请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "请求量统计起始时间，格式：2020-11-22 00:00:00",
           "example": "2020-11-22 00:00:00",
           "member": "string",
@@ -1190,7 +2256,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "筛选参数：",
           "example": "无",
           "member": "Filter",
@@ -1199,13 +2265,22 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "请求量统计结束时间，格式：2020-11-22 23:59:59",
           "example": "2020-11-23 23:59:59",
           "member": "string",
           "name": "TimeRangeEnd",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否导出：true导出，false不导出",
+          "example": "true",
+          "member": "bool",
+          "name": "Export",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1214,25 +2289,37 @@
       "document": "DescribeRequestData返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "请求量统计表",
           "example": "无",
           "member": "MetricData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "请求量单位时间: Day：天，Hour：小时",
           "example": "hour",
           "member": "string",
           "name": "Interval",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "disabled": false,
+          "document": "导出数据下载地址",
+          "example": "https://cos-xxx.com",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1240,26 +2327,109 @@
       ],
       "type": "object"
     },
-    "Filter": {
-      "document": "筛选参数",
+    "EndPointServiceInfo": {
+      "document": "终端节点信息",
       "members": [
         {
-          "default": "",
-          "document": "参数名",
+          "disabled": false,
+          "document": "ip",
+          "example": "10.10.0.1",
           "member": "string",
-          "name": "Name",
-          "required": true,
+          "name": "EndPointVip",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "子网id",
+          "example": "subnet-qm89qoty",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络侧状态，0 可用，1 待接受，3 拒绝",
+          "example": "0",
+          "member": "uint64",
+          "name": "EndPointState",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态，1表示可用，0表示删除",
+          "example": "1",
+          "member": "uint64",
+          "name": "EndPointStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "备注",
+          "member": "string",
+          "name": "EndPointRemark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络侧隔离状态，1：已隔离，0：未隔离",
+          "example": "0",
+          "member": "uint64",
+          "name": "EndPointIsolateFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EndpointService": {
+      "document": "PrivateDNS出站终端节点转发IP",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>子网剩余IP数</p>",
+          "example": "253",
+          "member": "uint64",
+          "name": "SubnetLessIp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Filter": {
+      "document": "筛选参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名",
+          "example": "Domain",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "参数值数组",
+          "example": "qq.com",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -1268,33 +2438,225 @@
       "document": "流量包用量",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "流量包类型：ZONE 私有域；TRAFFIC 解析流量包",
           "example": "zone",
           "member": "string",
           "name": "FlowType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "流量包总额度",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "TotalQuantity",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "流量包可用额度",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "AvailableQuantity",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ForwardRule": {
+      "document": "转发规则详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有域名",
+          "example": "qq.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发规则名称",
+          "example": "规则1",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则id",
+          "example": "fid-af22uxicg4g",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发规则类型：云上到云下DOWN、云下到云上DOWN",
+          "example": "DOWN",
+          "member": "string",
+          "name": "RuleType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-09-09 11:11:11",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2022-09-09 11:11:11",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点名称",
+          "example": "终端节点1",
+          "member": "string",
+          "name": "EndPointName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点ID",
+          "example": "eid-af2asdfblvm",
+          "member": "string",
+          "name": "EndPointId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发地址",
+          "example": "[1.1.1.1:53]",
+          "member": "string",
+          "name": "ForwardAddress",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有域绑定的vpc列表",
+          "example": "[{UniqVpcId: \"vpc-ser4jo\", Region: \"ap-guangzhou\"}]",
+          "member": "VpcInfo",
+          "name": "VpcSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的私有域ID",
+          "example": "zone-ad2kvms0",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "[{TagKey: \"key1\", TagValue: \"val1\"}]",
+          "member": "TagInfo",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InboundEndpointSet": {
+      "document": "终端节点信息列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端节点ID",
+          "example": "inbound-9c5d5da2b6",
+          "member": "string",
+          "name": "EndPointId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "test-inbound",
+          "member": "string",
+          "name": "EndPointName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpcid",
+          "example": "vpc-dkhypdgt",
+          "member": "string",
+          "name": "UniqVpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-06-06 15:44:29",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-06-06 15:44:29",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点信息",
+          "example": "无",
+          "member": "EndPointServiceInfo",
+          "name": "EndPointService",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -1304,62 +2666,143 @@
       "document": "统计数据表",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "资源描述",
-          "example": "无",
+          "example": "all",
           "member": "string",
           "name": "Resource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "表名",
-          "example": "无",
+          "example": "request_count",
           "member": "string",
           "name": "Metric",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "表数据",
-          "example": "无",
+          "example": "[{\"Date\":\"2024-12-11 00:00:00\", \"Value\": 1435}]",
           "member": "DatePoint",
           "name": "DataSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "查询范围内的请求总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "查询范围内的请求总量",
           "example": "100",
           "member": "int64",
           "name": "MetricCount",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "ModifyForwardRuleRequest": {
+      "document": "ModifyForwardRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转发规则ID",
+          "example": "fid-af29ockus",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转发规则名称",
+          "example": "转发规则名",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "终端节点ID",
+          "example": "eid-fxo28fgj",
+          "member": "string",
+          "name": "EndPointId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyForwardRuleResponse": {
+      "document": "ModifyForwardRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInboundEndpointRequest": {
+      "document": "ModifyInboundEndpoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端节点ID",
+          "example": "inbound-ffe1e2d6e0",
+          "member": "string",
+          "name": "EndpointId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "终端节点名称",
+          "example": "inbound-name",
+          "member": "string",
+          "name": "EndpointName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInboundEndpointResponse": {
+      "document": "ModifyInboundEndpoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyPrivateZoneRecordRequest": {
       "document": "ModifyPrivateZoneRecord请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "私有域ID",
-          "example": "zone-xxxxxx",
+          "example": "zone-ewqw2131",
           "member": "string",
           "name": "ZoneId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "记录ID",
           "example": "289",
           "member": "string",
@@ -1368,7 +2811,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "记录类型，可选的记录类型为：\"A\", \"AAAA\", \"CNAME\", \"MX\", \"TXT\", \"PTR\"",
           "example": "A",
           "member": "string",
@@ -1377,7 +2820,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "子域名，例如 \"www\", \"m\", \"@\"",
           "example": "@",
           "member": "string",
@@ -1386,7 +2829,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "记录值，例如 IP：192.168.10.2，CNAME：cname.qcloud.com.，MX：mail.qcloud.com.",
           "example": "8.8.8.8",
           "member": "string",
@@ -1395,7 +2838,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "记录权重，值为1-100",
           "example": "100",
           "member": "int64",
@@ -1404,7 +2847,7 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50",
           "example": "50",
           "member": "int64",
@@ -1413,13 +2856,22 @@
           "type": "int"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600",
           "example": "600",
           "member": "int64",
           "name": "TTL",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "这是备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1428,7 +2880,7 @@
       "document": "ModifyPrivateZoneRecord返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1440,16 +2892,16 @@
       "document": "ModifyPrivateZone请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "私有域ID",
-          "example": "1",
+          "example": "zone-12345678",
           "member": "string",
           "name": "ZoneId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "备注",
           "example": "测试域名",
           "member": "string",
@@ -1458,7 +2910,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否开启子域名递归, ENABLED， DISABLED",
           "example": "ENABLED",
           "member": "string",
@@ -1467,7 +2919,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "是否开启CNAME加速：ENABLED， DISABLED",
           "example": "ENABLED",
           "member": "string",
@@ -1482,7 +2934,7 @@
       "document": "ModifyPrivateZone返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1494,16 +2946,16 @@
       "document": "ModifyPrivateZoneVpc请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "私有域ID",
-          "example": "1",
+          "example": "zone-12e45ds6",
           "member": "string",
           "name": "ZoneId",
           "required": true,
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有域关联的全部VPC列表",
           "example": "无",
           "member": "VpcInfo",
@@ -1512,7 +2964,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有域账号关联的全部VPC列表",
           "example": "无",
           "member": "AccountVpcInfo",
@@ -1527,34 +2979,37 @@
       "document": "ModifyPrivateZoneVpc返回参数结构体",
       "members": [
         {
-          "document": "私有域ID, zone-xxxxxx",
-          "example": "1",
+          "disabled": false,
+          "document": "私有域ID, zone-12e45ds6",
+          "example": "zone-12e45ds6",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "解析域关联的VPC列表",
           "example": "无",
           "member": "VpcInfo",
           "name": "VpcSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "私有域账号关联的全部VPC列表",
           "example": "无",
           "member": "AccountVpcInfoOutput",
           "name": "AccountVpcSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1566,7 +3021,7 @@
       "document": "ModifyRecordsStatus请求参数结构体",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "私有域ID",
           "example": "zone-vcxs31di",
           "member": "string",
@@ -1575,7 +3030,7 @@
           "type": "string"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "解析记录ID列表",
           "example": "[1,2,3]",
           "member": "int64",
@@ -1584,7 +3039,7 @@
           "type": "list"
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "enabled：生效，disabled：失效",
           "example": "enabled",
           "member": "string",
@@ -1599,34 +3054,37 @@
       "document": "ModifyRecordsStatus返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "私有域ID",
           "example": "zone-sdf1fds3",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "解析记录ID列表",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "RecordIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
+          "disabled": false,
           "document": "enabled：生效，disabled：失效",
           "example": "enabled",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1634,35 +3092,132 @@
       ],
       "type": "object"
     },
-    "PrivateDNSAccount": {
-      "document": "私有域解析账号",
+    "OutboundEndpoint": {
+      "document": "出站终端节点",
       "members": [
         {
-          "default": "",
-          "document": "主账号Uin",
-          "example": "123456789",
+          "disabled": false,
+          "document": "出站终端节点ID",
+          "example": "eid-xxxxxx",
           "member": "string",
-          "name": "Uin",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "主账号名称",
-          "example": "privatedns@qcloud.com",
-          "member": "string",
-          "name": "Account",
+          "name": "EndpointId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "出站终端节点名",
+          "example": "出站终端节点名",
+          "member": "string",
+          "name": "EndpointName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出站终端节点所属地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "tag标签",
+          "example": "[{\"owner\":\"demo\"}]",
+          "member": "TagInfo",
+          "name": "Tags",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出站终端节点信息\n仅在转发架构为 V2R的情况下返回",
+          "example": "无",
+          "member": "EndpointService",
+          "name": "EndpointServiceSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发链接架构\nV2V: privatelink\nV2R: jnsgw",
+          "example": "V2V",
+          "member": "string",
+          "name": "ForwardLinkArch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点服务ID\n仅在转发架构为 V2V的情况下返回\n",
+          "example": "终端节点服务ID",
+          "member": "string",
+          "name": "EndPointServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点VIP列表\n仅在转发架构为 V2V的情况下返回",
+          "example": "[10.0.0.17:53,10.0.0.18:53]",
+          "member": "string",
+          "name": "EndPointVipSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PrivateDNSAccount": {
+      "document": "私有域解析账号",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主账号Uin",
+          "example": "1000209830",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号名称",
+          "example": "testname@qq.com",
+          "member": "string",
+          "name": "Account",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "用户昵称",
           "example": "私有域解析用户",
           "member": "string",
           "name": "Nickname",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1674,143 +3229,193 @@
       "document": "私有域信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "私有域id: zone-xxxxxxxx",
-          "example": "1782",
+          "example": "zone-xxxxxxxx",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "域名所有者uin",
           "example": "444353877",
           "member": "int64",
           "name": "OwnerUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有域名",
           "example": "test.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "创建时间",
           "example": "2020-12-26 18:51:20",
           "member": "datetime",
           "name": "CreatedOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "修改时间",
           "example": "2020-12-26 18:51:20",
           "member": "datetime",
           "name": "UpdatedOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "记录数",
           "example": "0",
           "member": "int64",
           "name": "RecordCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "备注",
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "绑定的Vpc列表",
-          "example": "[]",
+          "example": "[{UniqVpcId: \"vpc-ser4jo\", Region: \"ap-guangzhou\"}]",
           "member": "VpcInfo",
           "name": "VpcSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "私有域状态：正常解析：ENABLED, 暂停解析：SUSPEND, 锁定：FROZEN",
+          "disabled": false,
+          "document": "私有域绑定VPC状态，未关联vpc：SUSPEND，已关联VPC：ENABLED\n，关联VPC失败：FAILED",
           "example": "ENABLED",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "域名递归解析状态：开通：ENABLED, 关闭，DISABLED",
           "example": "DISABLED",
           "member": "string",
           "name": "DnsForwardStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "标签键值对集合",
           "example": "[{TagKey: \"testtag\", TagValue: \"testtag\"}]",
           "member": "TagInfo",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "绑定的关联账号的vpc列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "disabled": false,
+          "document": "绑定的关联账号的vpc列表",
+          "example": "[{Uin: \"1000783200\", UniqVpcId: \"vpc-ser4jo\", Region: \"ap-guangzhou\"}]",
           "member": "AccountVpcInfoOutput",
           "name": "AccountVpcSet",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "是否自定义TLD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": false,
+          "document": "是否自定义TLD",
           "example": "false",
           "member": "bool",
           "name": "IsCustomTld",
-          "required": true,
+          "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "CNAME加速状态：开通：ENABLED, 关闭，DISABLED",
           "example": "DISABLED",
           "member": "string",
           "name": "CnameSpeedupStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发规则名称",
+          "example": "转发规则名",
+          "member": "string",
+          "name": "ForwardRuleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发规则类型：云上到云下，DOWN；云下到云上，UP，目前只支持DOWN",
+          "example": "DOWN",
+          "member": "string",
+          "name": "ForwardRuleType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发的地址",
+          "example": "10.0.23.41:53,10.0.23.42:53,",
+          "member": "string",
+          "name": "ForwardAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "终端节点名",
+          "member": "string",
+          "name": "EndPointName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已删除的vpc",
+          "example": "[{UniqVpcId: \"vpc-ser4jo\", Region: \"ap-guangzhou\"}]",
+          "member": "VpcInfo",
+          "name": "DeletedVpcSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -1820,28 +3425,337 @@
       "document": "私有域信息",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "记录id",
           "example": "12076",
           "member": "string",
           "name": "RecordId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "私有域id: zone-xxxxxxxx",
           "example": "zone-pckv03qy",
           "member": "string",
           "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子域名",
+          "example": "www",
+          "member": "string",
+          "name": "SubDomain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录类型，可选的记录类型为：\"A\", \"AAAA\", \"CNAME\", \"MX\", \"TXT\", \"PTR\"",
+          "example": "A",
+          "member": "string",
+          "name": "RecordType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录值",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "RecordValue",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600",
+          "example": "300",
+          "member": "int64",
+          "name": "TTL",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50",
+          "example": "0",
+          "member": "int64",
+          "name": "MX",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录状态：ENABLED",
+          "example": "enabled",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录权重，值为1-100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "记录创建时间",
+          "example": "2021-09-07 19:00:58",
+          "member": "datetime",
+          "name": "CreatedOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录更新时间",
+          "example": "2021-09-07 19:00:58",
+          "member": "datetime",
+          "name": "UpdatedOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "附加信息内容",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0暂停，1启用",
+          "example": "是否暂停",
+          "member": "uint64",
+          "name": "Enabled",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "这是备注",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryAsyncBindVpcStatusRequest": {
+      "document": "QueryAsyncBindVpcStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一ID",
+          "example": "363636",
+          "member": "string",
+          "name": "UniqId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryAsyncBindVpcStatusResponse": {
+      "document": "QueryAsyncBindVpcStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "processing 处理中，success 执行成功，\nfailed 执行失败",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "绑定失败",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecordInfo": {
+      "document": "私有域信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录id",
+          "example": "12076",
+          "member": "string",
+          "name": "RecordId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有域id: zone-xxxxxxxx",
+          "example": "zone-pckv03qy",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子域名",
+          "example": "www",
+          "member": "string",
+          "name": "SubDomain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录类型，可选的记录类型为：\"A\", \"AAAA\", \"CNAME\", \"MX\", \"TXT\", \"PTR\"",
+          "example": "A",
+          "member": "string",
+          "name": "RecordType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录值",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "RecordValue",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600",
+          "example": "300",
+          "member": "int64",
+          "name": "TTL",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50",
+          "example": "5",
+          "member": "int64",
+          "name": "MX",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录权重，值为1-100",
+          "example": "1",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录创建时间",
+          "example": "2021-09-07 19:00:58",
+          "member": "datetime",
+          "name": "CreatedOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录更新时间",
+          "example": "2021-09-07 19:00:58",
+          "member": "datetime",
+          "name": "UpdatedOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0暂停，1启用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Enabled",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "这是备注",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RecordsInfo": {
+      "document": "私有域解析记录信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录类型，可选的记录类型为：\"A\", \"AAAA\", \"CNAME\", \"MX\", \"TXT\", \"PTR\"",
+          "example": "CNAME",
+          "member": "string",
+          "name": "RecordType",
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "子域名",
+          "disabled": false,
+          "document": "子域名，例如 \"www\", \"m\", \"@\"",
           "example": "www",
           "member": "string",
           "name": "SubDomain",
@@ -1850,19 +3764,9 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "记录类型，可选的记录类型为：\"A\", \"AAAA\", \"CNAME\", \"MX\", \"TXT\", \"PTR\"",
-          "example": "A",
-          "member": "string",
-          "name": "RecordType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "记录值",
-          "example": "1.1.1.1",
+          "disabled": false,
+          "document": "记录值，例如 IP：192.168.10.2，CNAME：cname.qcloud.com.，MX：mail.qcloud.com.",
+          "example": "8.8.8.8",
           "member": "string",
           "name": "RecordValue",
           "required": true,
@@ -1870,39 +3774,121 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
-          "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600",
-          "example": "300",
+          "disabled": false,
+          "document": "记录权重，值为1-100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
           "member": "int64",
-          "name": "TTL",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
-          "member": "int64",
-          "name": "MX",
-          "required": true,
+          "name": "Weight",
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "记录状态：ENABLED",
-          "example": "enabled",
+          "disabled": false,
+          "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "600",
+          "member": "int64",
+          "name": "TTL",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15",
+          "member": "int64",
+          "name": "MX",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RecordsInfoResult": {
+      "document": "批量添加解析记录返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有域ID",
+          "example": "zone-12345567",
           "member": "string",
-          "name": "Status",
+          "name": "ZoneId",
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
+          "document": "私有域域名",
+          "example": "1.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有域解析记录创建结果",
+          "example": "无",
+          "member": "RecordsInfoStatus",
+          "name": "RecordsStatus",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "这是备注",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RecordsInfoStatus": {
+      "document": "批量添加解析记录结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录类型，可选的记录类型为：\"A\", \"AAAA\", \"CNAME\", \"MX\", \"TXT\", \"PTR\"",
+          "example": "CNAME",
+          "member": "string",
+          "name": "RecordType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子域名，例如 \"www\", \"m\", \"@\"",
+          "example": "www",
+          "member": "string",
+          "name": "SubDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录值，例如 IP：192.168.10.2，CNAME：cname.qcloud.com.，MX：mail.qcloud.com.",
+          "example": "8.8.8.8",
+          "member": "string",
+          "name": "RecordValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "记录权重，值为1-100\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "100",
           "member": "int64",
           "name": "Weight",
           "required": true,
@@ -1910,47 +3896,71 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "记录创建时间",
-          "example": "2021-09-07 19:00:58",
-          "member": "datetime",
-          "name": "CreatedOn",
+          "disabled": false,
+          "document": "记录缓存时间，数值越小生效越快，取值1-86400s, 默认 600\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "600",
+          "member": "int64",
+          "name": "TTL",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "记录更新时间",
-          "example": "2021-09-07 19:00:58",
-          "member": "datetime",
-          "name": "UpdatedOn",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "default": "",
-          "document": "附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Extra",
-          "required": true,
-          "type": "string",
+          "type": "int",
           "value_allowed_null": true
         },
         {
-          "default": "",
-          "document": "0暂停，1启用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "是否暂停",
-          "member": "uint64",
-          "name": "Enabled",
+          "disabled": false,
+          "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15",
+          "member": "int64",
+          "name": "MX",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否添加成功：0是失败，1是成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "若status为0，则此处为失败原因描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "与已有解析记录冲突",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "SubnetIpInfo": {
+      "document": "终端节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-qm89qoty",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ip",
+          "example": "10.10.0.1",
+          "member": "string",
+          "name": "SubnetVip",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "SubscribePrivateZoneServiceRequest": {
       "document": "SubscribePrivateZoneService请求参数结构体",
@@ -1961,16 +3971,17 @@
       "document": "SubscribePrivateZoneService返回参数结构体",
       "members": [
         {
+          "disabled": false,
           "document": "私有域解析服务开通状态",
           "example": "ENABLED",
           "member": "string",
           "name": "ServiceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -1982,19 +3993,23 @@
       "document": "标签",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "标签键",
+          "example": "key1",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "标签值",
+          "example": "value1",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2006,7 +4021,7 @@
       "document": "Tld额度",
       "members": [
         {
-          "default": "",
+          "disabled": false,
           "document": "总共额度",
           "example": "1",
           "member": "int64",
@@ -2016,7 +4031,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "已使用额度",
           "example": "1",
           "member": "int64",
@@ -2026,7 +4041,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "库存",
           "example": "5000",
           "member": "int64",
@@ -2036,7 +4051,7 @@
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "用户限额",
           "example": "100",
           "member": "int64",
@@ -2052,25 +4067,65 @@
       "document": "Vpc信息",
       "members": [
         {
-          "default": "",
-          "document": "VpcId： vpc-xadsafsdasd",
+          "disabled": false,
+          "document": "VpcId",
+          "example": "vpc-dsd8ulf",
           "member": "string",
           "name": "UniqVpcId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "default": "",
+          "disabled": false,
           "document": "Vpc所属地区: ap-guangzhou, ap-shanghai",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
       "usage": "both"
+    },
+    "ZoneInfo": {
+      "document": "创建私有域成功后返回私有域信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zone-1233lskd",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私有域域名",
+          "example": "1.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "这是失败原因",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

@@ -1,0 +1,174 @@
+**Example 1: 生成发起合同组嵌入页面链接**
+
+生成发起合同组嵌入页面链接，通过FlowGroupOptions参数对发起页面个性化设置
+
+Input: 
+
+```
+tccli ess CreatePrepareFlowGroup --cli-unfold-argument  \
+    --Operator.UserId yDwJ5UUckpkym9i3UuyDyBp9wV0ZbPhf \
+    --FlowGroupName 我是合同组 \
+    --FlowGroupInfos.0.FlowName 第一个子合同 \
+    --FlowGroupInfos.0.Approvers.0.ApproverType 0 \
+    --FlowGroupInfos.0.Approvers.0.ApproverName 刘*** \
+    --FlowGroupInfos.0.Approvers.0.ApproverMobile 1*********3 \
+    --FlowGroupInfos.0.Approvers.0.OrganizationName 中土大陆测试 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentType SIGN_SEAL \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentHeight 100 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentWidth 100 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPage 1 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPosX 160 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPosY 260 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.FileIndex 0 \
+    --FlowGroupInfos.0.FileIds yD3irUUckpeyqbvwU5hlTiRzGjk6McbK \
+    --FlowGroupInfos.0.FlowType dfdfdsaf \
+    --FlowGroupInfos.0.Deadline 1787803572 \
+    --ResourceType 2 \
+    --FlowGroupOptions.FlowGroupNeedWorkflow True \
+    --FlowGroupOptions.NoEditFlowName True \
+    --FlowGroupOptions.NoEditFlowType True \
+    --FlowGroupOptions.NoEditDeadline True \
+    --FlowGroupOptions.SignComponentConfig.HideDate True \
+    --FlowGroupOptions.HideSignCodeAfterStart True \
+    --FlowGroupOptions.SignAfterStart True \
+    --FlowGroupOptions.PreviewAfterStart True \
+    --FlowGroupType 67687让674 \
+    --FlowGroupDeadline 1787803572
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowGroupId": "yD3irUUckpey34dgU1Uxi2iAm8dh2RJL",
+        "PrepareUrl": "https://embed.test.qian.tencent.cn/contract-create?embed=1&expiredOn=1785827973&code=yD3irUUckpey3uc9Uxi2iAmvsCzcVxdS&businessId=yD3irUUckpey34dgU1Uxi2iAm8dh2RJL&channel=TENCENTCLOUD&operateSource=byFileGroup&themeId=saas_web_theme_yDwf3UUckpshchk9Uuan1OkFOE0qLixm&isGroupWorkflow=true",
+        "RequestId": "d86ee7b6-0050-4d67-8e3d-481929fdd61a"
+    }
+}
+```
+
+**Example 2: 文件发起嵌入式合同组**
+
+文件发起嵌入式合同组
+
+Input: 
+
+```
+tccli ess CreatePrepareFlowGroup --cli-unfold-argument  \
+    --Operator.UserId yDwf3UUckps8dvypUEfH3DjwIpMfa0uw \
+    --FlowGroupInfos.0.FileIds yDCWiUUckpv6iggyUyuqIrwyppQVS7TR \
+    --FlowGroupInfos.0.FlowName 预发起合同 \
+    --FlowGroupInfos.0.FlowType 嵌入式文件发起合同 \
+    --FlowGroupInfos.0.FlowDescription 这是2025年购买食物的合同 \
+    --FlowGroupInfos.0.Deadline 1757034793 \
+    --FlowGroupInfos.0.Unordered False \
+    --FlowGroupInfos.0.NeedSignReview False \
+    --FlowGroupInfos.0.UserData  \
+    --FlowGroupInfos.0.Approvers.0.ApproverType 1 \
+    --FlowGroupInfos.0.Approvers.0.OrganizationName  \
+    --FlowGroupInfos.0.Approvers.0.ApproverName 典子签 \
+    --FlowGroupInfos.0.Approvers.0.ApproverOption.CanEditApprover True \
+    --FlowGroupInfos.0.Approvers.0.ApproverMobile 18700000000 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ChannelComponentId  \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ChannelComponentSource 0 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentDateFontSize 0 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentExtra  \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentHeight 100 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentId  \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentName  \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPage 3 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPosX 160 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPosY 360 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentRecipientId  \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentRequired False \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentValue  \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentWidth 100 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.FileIndex 0 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ForbidMoveAndDelete True \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.GenerateMode  \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.IsFormType False \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.KeywordOrder  \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.KeywordPage 0 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.LockComponentValue False \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.OffsetX 0 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.OffsetY 0 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.RelativeLocation  \
+    --FlowGroupName group \
+    --ResourceType 2
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowGroupId": "yDttAUUckpxbcziqUySqdD5Eugn0LPHo",
+        "RequestId": "s1747034803503801327",
+        "PrepareUrl": "https://embed.test.qian.tencent.cn/contract-create?embed=1&expiredOn=1747035103&code=yDttAUUckpxbcHI&businessId=yDttAUUckpxbcziqUySqdD5o&channel=TENCENTCLOUD&operateSource=byFileGroup&themeId=saas_web_theme_yDhk9nE0qLixm"
+    }
+}
+```
+
+**Example 3: 文件发起嵌入式合同组-开启合同组发起审批流**
+
+文件发起嵌入式合同组-开启合同组发起审批流
+
+Input: 
+
+```
+tccli ess CreatePrepareFlowGroup --cli-unfold-argument  \
+    --Operator.UserId yDwf3UUckps8dvypUEfH3DjwIpMfa0uw \
+    --FlowGroupOptions.FlowGroupNeedWorkflow True \
+    --FlowGroupInfos.0.FileIds yDCWiUUckpv6iggyUyuqIrwyppQVS7TR \
+    --FlowGroupInfos.0.FlowName 预发起合同 \
+    --FlowGroupInfos.0.FlowType 嵌入式文件发起合同 \
+    --FlowGroupInfos.0.FlowDescription 这是2025年购买食物的合同 \
+    --FlowGroupInfos.0.Deadline 1757034793 \
+    --FlowGroupInfos.0.Unordered False \
+    --FlowGroupInfos.0.NeedSignReview False \
+    --FlowGroupInfos.0.UserData  \
+    --FlowGroupInfos.0.Approvers.0.ApproverType 1 \
+    --FlowGroupInfos.0.Approvers.0.OrganizationName  \
+    --FlowGroupInfos.0.Approvers.0.ApproverName 典子签 \
+    --FlowGroupInfos.0.Approvers.0.ApproverOption.CanEditApprover True \
+    --FlowGroupInfos.0.Approvers.0.ApproverMobile 18700000000 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ChannelComponentId  \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ChannelComponentSource 0 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentDateFontSize 0 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentExtra  \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentHeight 100 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentId  \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentName  \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPage 3 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPosX 160 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentPosY 360 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentRecipientId  \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentRequired False \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentValue  \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ComponentWidth 100 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.FileIndex 0 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.ForbidMoveAndDelete True \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.GenerateMode  \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.IsFormType False \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.KeywordOrder  \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.KeywordPage 0 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.LockComponentValue False \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.OffsetX 0 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.OffsetY 0 \
+    --FlowGroupInfos.0.Approvers.0.SignComponents.0.RelativeLocation  \
+    --FlowGroupName group \
+    --ResourceType 2
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowGroupId": "yDttAUUckpxbcziqUySqdD5Eugn0LPHo",
+        "RequestId": "s1747034803503801327",
+        "PrepareUrl": "https://embed.test.qian.tencent.cn/contract-create?embed=1&expiredOn=1747035103&code=yDttAUUckpxbcHI&businessId=yDttAUUckpxbcziqUySqdD5o&channel=TENCENTCLOUD&operateSource=byFileGroup&themeId=saas_web_theme_yDhk9nE0qLixm&isGroupWorkflow=true"
+    }
+}
+```
+

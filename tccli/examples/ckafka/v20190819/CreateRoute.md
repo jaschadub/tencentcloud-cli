@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka CreateRoute --cli-unfold-argument  \
-    --InstanceId xxx \
+    --InstanceId ckafka-test \
     --VipType 1
 ```
 
@@ -16,9 +16,12 @@ Output:
     "Response": {
         "Result": {
             "ReturnCode": "0",
-            "ReturnMessage": "ok",
+            "ReturnMessage": "success",
             "Data": {
-                "FlowId": 0
+                "FlowId": 111,
+                "RouteDTO": {
+                    "RouteId": 132321
+                }
             }
         },
         "RequestId": "36713f94-d07d-4b96-babf-42d139276f23"

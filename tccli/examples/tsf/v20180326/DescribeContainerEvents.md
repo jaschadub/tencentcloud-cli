@@ -8,6 +8,7 @@ Input:
 tccli tsf DescribeContainerEvents --cli-unfold-argument  \
     --ResourceType instance \
     --ResourceId test-event-6f46bcb6b-sxfcr \
+    --GroupId group-9yn2q8yd \
     --Offset 0 \
     --Limit 20
 ```
@@ -16,22 +17,22 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "4bf8bc01-2786-4341-be2b-c6610556026e",
         "Result": {
-            "TotalCount": 1,
+            "TotalCount": 0,
             "Content": [
                 {
-                    "FirstTimestamp": "2021-02-07T18:32:12Z",
-                    "LastTimestamp": "2021-02-07T18:32:12Z",
-                    "Type": "Normal/Warning",
-                    "Kind": "Pod",
-                    "Name": "shop-demo-7ff965d54d-65rlw.1668ccf6e4263fde",
-                    "Reason": "Pulled",
-                    "Message": "0/1 nodes are available: 1 Insufficient memory.",
-                    "Count": 3
+                    "FirstTimestamp": 0,
+                    "LastTimestamp": 0,
+                    "Type": "instance",
+                    "Kind": "SERVER",
+                    "Name": "test-event",
+                    "Reason": "this is a reason",
+                    "Message": "this is a msg",
+                    "Count": 0
                 }
             ]
-        }
+        },
+        "RequestId": "96561cf1-738a-47d6-943b-dec7ebbccabe"
     }
 }
 ```

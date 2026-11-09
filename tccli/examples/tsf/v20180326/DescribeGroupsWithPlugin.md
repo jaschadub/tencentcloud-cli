@@ -6,71 +6,45 @@ Input:
 
 ```
 tccli tsf DescribeGroupsWithPlugin --cli-unfold-argument  \
-    --PluginId pgn-33pk2soi \
-    --GatewayInstanceId gw-ins-33pk2soi \
-    --Bound false \
+    --PluginId pgn-iuyb0s7c \
+    --Bound True \
+    --SearchWord /grpCtx \
     --Offset 0 \
-    --Limit 10
+    --Limit 5 \
+    --GatewayInstanceId gw-ins-4qvyt5dc
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "665d9f05-3e80-464f-beb0-64345fe5c61e",
         "Result": {
             "Content": [
                 {
-                    "Status": "xx",
-                    "UpdatedTime": "xx",
-                    "AuthType": "xx",
-                    "Description": "xx",
-                    "BindedGatewayDeployGroups": [
-                        {
-                            "DeployGroupId": "xx",
-                            "ApplicationName": "xx",
-                            "GroupStatus": "xx",
-                            "ClusterType": "xx",
-                            "DeployGroupName": "xx",
-                            "ApplicationType": "xx",
-                            "ApplicationId": "xx"
-                        }
-                    ],
-                    "GroupType": "xx",
-                    "AclMode": "xx",
-                    "ApiCount": 1,
-                    "GroupName": "xx",
-                    "GroupContext": "xx",
-                    "CreatedTime": "xx",
-                    "GroupId": "xx"
-                },
-                {
-                    "Status": "xx",
-                    "UpdatedTime": "xx",
-                    "AuthType": "xx",
-                    "Description": "xx",
-                    "BindedGatewayDeployGroups": [
-                        {
-                            "DeployGroupId": "xx",
-                            "ApplicationName": "xx",
-                            "ApplicationId": "xx",
-                            "ClusterType": "xx",
-                            "DeployGroupName": "xx",
-                            "ApplicationType": "xx",
-                            "GroupStatus": "xx"
-                        }
-                    ],
-                    "GroupType": "xx",
-                    "AclMode": "xx",
-                    "GroupId": "xx",
-                    "GroupName": "xx",
-                    "GroupContext": "xx",
-                    "CreatedTime": "xx",
-                    "ApiCount": 3
+                    "AclMode": "none",
+                    "ApiCount": 0,
+                    "AuthType": "secret",
+                    "BindedGatewayDeployGroups": [],
+                    "CreatedTime": "2024-11-04 14:21:53",
+                    "Description": "",
+                    "GatewayInstanceId": "gw-ins-4qvyt5dc",
+                    "GatewayInstanceIdList": null,
+                    "GatewayInstanceType": null,
+                    "GroupContext": "/grpCtx",
+                    "GroupId": "grp-v446jrhc",
+                    "GroupName": "grpName",
+                    "GroupType": "ms",
+                    "NamespaceNameKey": null,
+                    "NamespaceNameKeyPosition": "path",
+                    "ServiceNameKey": null,
+                    "ServiceNameKeyPosition": "path",
+                    "Status": "drafted",
+                    "UpdatedTime": "2024-11-04 14:24:41"
                 }
             ],
-            "TotalCount": 2
-        },
-        "RequestId": "xx"
+            "TotalCount": 1
+        }
     }
 }
 ```

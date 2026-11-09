@@ -1,4 +1,34 @@
-**Example 1: 渠道通过图片为子客代创建印章**
+**Example 1: 创建一个发票专用章**
+
+1.设置GenerateSource为SealGenerateSourceSystem 2.设置SealType为发票专用章INVOICE 3.设置SealStyle为椭圆形ellipse 4.设置SealSize为40_30
+
+Input: 
+
+```
+tccli essbasic CreateSealByImage --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --SealName 发票专用章 \
+    --GenerateSource SealGenerateSourceSystem \
+    --SealType INVOICE \
+    --SealStyle ellipse \
+    --SealSize 40_30
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SealId": "yDwfwUUgygorm2w0UuS2eARCYT5rtPIi",
+        "ImageUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=xxxxxxxxxxxxxx",
+        "RequestId": "477f4d46-062c-4d72-a2e0-94e5b52b0cc5"
+    }
+}
+```
+
+**Example 2: 创建印章预览图片**
 
 
 
@@ -6,20 +36,85 @@ Input:
 
 ```
 tccli essbasic CreateSealByImage --cli-unfold-argument  \
-    --SealImage base64 \
-    --SealName 测试 \
-    --Agent.ProxyAppId c17bdf*****200fef3d \
-    --Agent.ProxyOperator.OpenId 00498cc8*********xxx3aff766cac \
-    --Agent.ProxyOrganizationOpenId d7c13a8*********968c0ee248f04 \
-    --Agent.AppId 65fb0c59*********382cc5ed0e
+    --Agent.AppId yDCxxxxxxxxxxxxxxxxxxxxBD \
+    --Agent.ProxyOrganizationOpenId zhangsan_org_01 \
+    --Agent.ProxyOperator.OpenId zhangsan_01 \
+    --SealName 测试创建印章optional逻辑 \
+    --GenerateSource SealGenerateSourceSystem \
+    --SealType OTHER \
+    --SealStyle ellipse \
+    --Options.0.Key CreateSealPreview \
+    --Options.0.Value true
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "ImageUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=xxxxxxxxxx",
+        "PreviewFileUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=xxxxxxxxxx",
+        "PreviewPdfUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PDF?hkey=xxxxxxxxxx",
         "SealId": "",
-        "RequestId": "s16294xxxxx0001803"
+        "SealOperatorVerifyPath": "",
+        "SealOperatorVerifyQrcodeUrl": "",
+        "RequestId": "5447cb22-xxxx-zzzz-xxxx-68xxxxe38828"
+    }
+}
+```
+
+**Example 3: 系统生成印章**
+
+GenerateSource为SealGenerateSourceSystem表示系统生成印章
+
+Input: 
+
+```
+tccli essbasic CreateSealByImage --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --SealName 合同专用章 \
+    --GenerateSource SealGenerateSourceSystem \
+    --SealType FINANCE \
+    --SealHorizontalText 印章横向文字在这里
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SealId": "yDwi8UUckpo5z4omUyleFeZeadKwB=1Hm",
+        "ImageUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=a6c****66264",
+        "RequestId": "477f4d46-062c-4d72-a2e0-94e5b52b0cc5"
+    }
+}
+```
+
+**Example 4: 通过图片创建电子印章**
+
+1.SealImage传递图片的base64编码, GenerateSource不设置 2. 通过图片创建电子印章，需要电子签人工审核
+
+Input: 
+
+```
+tccli essbasic CreateSealByImage --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --SealName 人事专用章 \
+    --SealImage iVBORw0KGgoAAAANSUhEUgAAAGwAAABuCAYAAADCrvbGAAABW2lDZXE15yz3uZ6TErkJggg....(图片base64省略) \
+    --SealType PERSONNEL
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SealId": "yDwi8UUckpo5z4k1UyleFeZEcAE49vb6",
+        "ImageUrl": "",
+        "RequestId": "62378bbc-2384-499c-89f6-7835040b24a1"
     }
 }
 ```

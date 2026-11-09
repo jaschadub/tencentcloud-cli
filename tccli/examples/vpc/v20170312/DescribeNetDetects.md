@@ -1,13 +1,11 @@
 **Example 1: 查询所有网络探测**
 
-
+查询所有网络探测
 
 Input: 
 
 ```
-tccli vpc DescribeNetDetects --cli-unfold-argument  \
-    --Version 2017-03-12
-```
+tccli vpc DescribeNetDetects --cli-unfold-argument ```
 
 Output: 
 ```
@@ -16,11 +14,11 @@ Output:
         "NetDetectSet": [
             {
                 "VpcId": "vpc-12345678",
-                "VpcName": "vpc-test",
-                "SubnetId": "subnet-12345678",
-                "SubnetName": "subnet-test",
-                "NetDetectId": "netd-12345678",
-                "NetDetectName": "test",
+                "VpcName": "vpc-kngiybxl",
+                "SubnetId": "subnet-nswq8wkq",
+                "SubnetName": "demo",
+                "NetDetectId": "netd-pnpcflil",
+                "NetDetectName": "demo",
                 "DetectDestinationIp": [
                     "10.0.0.2",
                     "10.0.0.3"
@@ -33,15 +31,15 @@ Output:
                 "NextHopDestination": "10.0.0.4",
                 "NextHopName": "",
                 "NetDetectDescription": "",
-                "CreateTime": "0000-00-00 00:00:00"
+                "CreateTime": "2020-06-08 10:00:00"
             },
             {
-                "VpcId": "vpc-12345678",
-                "VpcName": "vpc-test",
-                "SubnetId": "subnet-12345678",
-                "SubnetName": "subnet-test",
-                "NetDetectId": "netd-12345679",
-                "NetDetectName": "test",
+                "VpcId": "vpc-kngiybxl",
+                "VpcName": "demo",
+                "SubnetId": "subnet-nswq8wkq",
+                "SubnetName": "demo",
+                "NetDetectId": "netd-4t7fr3fi",
+                "NetDetectName": "demo",
                 "DetectDestinationIp": [
                     "10.0.1.2",
                     "10.0.1.3"
@@ -54,7 +52,7 @@ Output:
                 "NextHopDestination": "10.0.0.4",
                 "NextHopName": "",
                 "NetDetectDescription": "",
-                "CreateTime": "0000-00-00 00:00:00"
+                "CreateTime": "2020-06-08 10:00:00"
             }
         ],
         "TotalCount": 2,
@@ -65,14 +63,13 @@ Output:
 
 **Example 2: 根据ID查询网络探测**
 
-
+根据ID查询网络探测
 
 Input: 
 
 ```
 tccli vpc DescribeNetDetects --cli-unfold-argument  \
-    --Version 2017-03-12 \
-    --NetDetectIds netd-12345678
+    --NetDetectIds netd-pnpcflil
 ```
 
 Output: 
@@ -81,12 +78,12 @@ Output:
     "Response": {
         "NetDetectSet": [
             {
-                "VpcId": "vpc-12345678",
+                "VpcId": "vpc-kngiybxl",
                 "VpcName": "vpc-test",
-                "SubnetId": "subnet-12345678",
-                "SubnetName": "subnet-test",
-                "NetDetectId": "netd-12345678",
-                "NetDetectName": "test",
+                "SubnetId": "subnet-nswq8wkq",
+                "SubnetName": "demo",
+                "NetDetectId": "netd-pnpcflil",
+                "NetDetectName": "demo",
                 "DetectDestinationIp": [
                     "10.0.0.2",
                     "10.0.0.3"
@@ -99,7 +96,7 @@ Output:
                 "NextHopDestination": "10.0.0.4",
                 "NextHopName": "",
                 "NetDetectDescription": "",
-                "CreateTime": "0000-00-00 00:00:00"
+                "CreateTime": "2020-06-08 10:00:00"
             }
         ],
         "TotalCount": 1,

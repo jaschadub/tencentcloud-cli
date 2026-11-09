@@ -17,40 +17,43 @@ Output:
 ```
 {
     "Response": {
-        "DetailSet": {
-            "PayerUin": "20548499",
-            "BusinessCodeName": "人脸核身-云智慧眼",
-            "ProductCodeName": "人脸核身·云智慧眼-银行卡信息核验",
-            "PayModeName": "按量计费",
-            "ProjectName": "默认项目",
-            "RegionName": "华南地区（广州）",
-            "ZoneName": "-",
-            "ResourceName": "-",
-            "ActionTypeName": "月结",
-            "OrderId": "201907",
-            "BillId": "20190612020000003179923224518398",
-            "FeeBeginTime": "2019-06-01 00:00:00",
-            "FeeEndTime": "2019-06-30 23:59:59",
-            "ProductCode": "sp_ai_image_huiyan_idbankcard",
-            "ComponentSet": [
-                {
-                    "ComponentCodeName": "银行卡三要素",
-                    "ItemCodeName": "人脸核身·云智慧眼-银行卡三要素",
-                    "SinglePrice": "0.4",
-                    "PriceUnit": "元/次/月",
-                    "UsedAmount": "5",
-                    "UsedAmountUnit": "次",
-                    "Cost": "2",
-                    "Discount": "1",
-                    "RealCost": "2",
-                    "VoucherPayAmount": "0",
-                    "CashPayAmount": "2",
-                    "IncentivePayAmount": "0"
-                }
-            ]
-        },
+        "DetailSet": [
+            {
+                "PayerUin": "10002011014",
+                "BusinessCodeName": "COS 对象存储",
+                "ProductCodeName": "COS 流量",
+                "PayModeName": "按量计费",
+                "ProjectName": "默认项目",
+                "RegionName": "华南地区（广州）",
+                "ZoneName": "其他",
+                "ResourceId": "cpn-dev-238-ap-beijing-1000000086",
+                "ResourceName": "cpn-dev-238-ap-beijing",
+                "ActionTypeName": "按量计费日结",
+                "OrderId": "20211009400006732337101",
+                "BillId": "2021100940000673233",
+                "FeeBeginTime": "2021-11-03 00:00:00",
+                "FeeEndTime": "2021-11-03 23:59:59",
+                "ComponentSet": [
+                    {
+                        "ComponentCodeName": "外网下行流量",
+                        "ItemCodeName": "COS 外网下行流量",
+                        "SinglePrice": "0.50000000",
+                        "PriceUnit": "元/GB/天",
+                        "UsedAmount": "0.0020975",
+                        "UsedAmountUnit": "GB",
+                        "Cost": "0.00104875",
+                        "Discount": "1",
+                        "RealCost": "0.00104875",
+                        "VoucherPayAmount": "0",
+                        "CashPayAmount": "0.00104875",
+                        "IncentivePayAmount": "0"
+                    }
+                ],
+                "ProductCode": "sp_cos_bw"
+            }
+        ],
         "Total": 1,
-        "RequestId": "d11d7149-3a4a-496c-999a-9287adf0962e"
+        "RequestId": "51db5fda-deac-4d51-8464-d23c32791abd"
     }
 }
 ```

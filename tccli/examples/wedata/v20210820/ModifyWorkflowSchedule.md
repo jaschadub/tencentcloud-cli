@@ -1,24 +1,24 @@
-**Example 1: 范例**
+**Example 1: 更新工作流调度范例1**
 
-
+更新工作流调度
 
 Input: 
 
 ```
 tccli wedata ModifyWorkflowSchedule --cli-unfold-argument  \
-    --WorkflowId 34e51bc4-0cd9-11ed-8909-bc97e105ba60 \
-    --StartupTime 47483648 \
-    --SelfDepend 1 \
+    --WorkflowId 34e51bc4-0cd9-11ed-89e105ba60 \
+    --StartupTime 1712883299 \
+    --SelfDepend 2 \
     --ProjectId 1 \
     --ExecutionEndTime  \
     --TaskAction  \
-    --DelayTime 1 \
+    --DelayTime 0 \
     --DependencyWorkflow no \
     --StartTime 2022-03-03 11:12:59 \
     --ExecutionStartTime  \
     --EndTime 2022-09-03 11:12:59 \
     --CycleType 1 \
-    --CycleStep 3 \
+    --CycleStep 10 \
     --CrontabExpression 
 ```
 
@@ -26,7 +26,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "dc5397bb-aa83-4ae2-8950-74e6f734102c",
+        "RequestId": "dc5397bb-74e6f734102c",
         "Data": {
             "Running": 0,
             "Success": 0,
@@ -37,27 +37,27 @@ Output:
 }
 ```
 
-**Example 2: 范例2**
+**Example 2: 更新工作流调度范例2**
 
-
+更新工作流调度
 
 Input: 
 
 ```
 tccli wedata ModifyWorkflowSchedule --cli-unfold-argument  \
-    --WorkflowId 34e51bc4-0cd9-11ed-8909-bc97e105ba60 \
-    --StartupTime 47483648 \
-    --SelfDepend 1 \
+    --WorkflowId 34e51bc4-0cd9-1105ba60 \
+    --StartupTime 1712883299 \
+    --SelfDepend 2 \
     --ProjectId 1 \
     --ExecutionEndTime  \
     --TaskAction  \
-    --DelayTime 1 \
+    --DelayTime 0 \
     --DependencyWorkflow no \
     --StartTime 2022-03-03 11:12:59 \
     --ExecutionStartTime  \
     --EndTime 2022-09-03 11:12:59 \
     --CycleType 1 \
-    --CycleStep 3 \
+    --CycleStep 10 \
     --CrontabExpression 
 ```
 

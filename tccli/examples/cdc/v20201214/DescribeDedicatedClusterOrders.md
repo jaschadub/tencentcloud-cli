@@ -1,225 +1,88 @@
 **Example 1: 查询专用集群订单列表**
 
-
+查询专用集群订单列表
 
 Input: 
 
 ```
-tccli cdc DescribeDedicatedClusterOrders --cli-unfold-argument ```
+tccli cdc DescribeDedicatedClusterOrders --cli-unfold-argument  \
+    --DedicatedClusterIds cluster-262n63e8 \
+    --Offset 0 \
+    --Limit 1 \
+    --ActionType CREATE \
+    --OrderTypes PUSH
+```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 4,
         "DedicatedClusterOrderSet": [
             {
-                "DedicatedClusterTypeId": "xx",
-                "PowerDraw": 2000.8,
-                "Weight": 3000,
-                "Mem": 0,
+                "Action": "CREATE",
+                "CheckExpectTime": "0000-00-00 00:00:00",
+                "CheckFinishTime": "0000-00-00 00:00:00",
+                "CheckStatus": "DELIVERING",
+                "Cpu": 0,
+                "CreateTime": "2024-09-22T00:00:00+00:00",
+                "DedicatedClusterId": "cluster-262n63e8",
+                "DedicatedClusterOrderId": "ord-rd0ty398",
                 "DedicatedClusterOrderItems": [
                     {
-                        "Count": 0,
-                        "DedicatedClusterTypeId": "xx",
-                        "PowerDraw": 0.0,
-                        "Name": "xx",
-                        "Weight": 0,
+                        "ComputeFormat": "1 SA5t.60XLARGE1076",
+                        "Count": 1,
+                        "CreateTime": "2024-09-22T00:00:00+00:00",
+                        "DedicatedClusterTypeId": "dctype-00100001",
+                        "Description": "基础底座",
+                        "Name": "基础底座",
+                        "PowerDraw": 0,
+                        "SubOrderId": "sord-e3t9jkm2",
+                        "SubOrderPayStatus": 0,
+                        "SubOrderStatus": "PENDING",
+                        "SupportedInstanceFamily": [],
+                        "SupportedStorageType": [],
+                        "SupportedUplinkSpeed": [
+                            10,
+                            25,
+                            40,
+                            100
+                        ],
+                        "TotalCpu": 0,
+                        "TotalGpu": 0,
                         "TotalMem": 0,
-                        "TotalGpu": 0,
-                        "TotalCpu": 0,
-                        "SupportedStorageType": [
-                            "xx"
-                        ],
-                        "ComputeFormat": "xx",
-                        "TypeName": "xx",
-                        "SubOrderStatus": "xx",
-                        "SubOrderId": "xx",
-                        "SupportedInstanceFamily": [
-                            "xx"
-                        ],
-                        "SupportedUplinkSpeed": [
-                            0
-                        ],
-                        "CreateTime": "2020-09-22T00:00:00+00:00",
-                        "Description": "xx"
+                        "TypeFamily": "CUSTOM",
+                        "TypeName": "BASE_EQUIPMENT.BASE_FOUNDATION",
+                        "Weight": 0
                     }
                 ],
-                "SupportedStorageType": [
-                    "xx"
-                ],
-                "DedicatedClusterOrderId": "xx",
-                "Action": "xx",
-                "OrderStatus": "xx",
-                "PayStatus": 0,
-                "SupportedInstanceFamily": [
-                    "S5"
-                ],
+                "DedicatedClusterTypeId": "None",
+                "DeliverExpectTime": "0000-00-00 00:00:00",
+                "DeliverFinishTime": "0000-00-00 00:00:00",
                 "Gpu": 0,
-                "SupportedUplinkSpeed": [
-                    40,
-                    100
-                ],
-                "CreateTime": "2020-09-22T00:00:00+00:00",
-                "Cpu": 0,
-                "DedicatedClusterId": "xx"
-            },
-            {
-                "DedicatedClusterTypeId": "xx",
-                "PowerDraw": 4156.7,
-                "Weight": 3273,
                 "Mem": 0,
-                "SupportedStorageType": [
-                    "xx"
-                ],
-                "DedicatedClusterOrderId": "xx",
-                "SupportedInstanceFamily": [
-                    "S1",
-                    "S5"
-                ],
-                "Cpu": 0,
-                "OrderStatus": "xx",
-                "Gpu": 0,
-                "Action": "xx",
+                "OrderPayPlan": null,
+                "OrderSLA": null,
+                "OrderStatus": "PENDING",
+                "OrderType": "PUSH",
                 "PayStatus": 0,
-                "SupportedUplinkSpeed": [
-                    13,
-                    100
-                ],
-                "CreateTime": "2020-09-22T00:00:00+00:00",
-                "DedicatedClusterOrderItems": [
-                    {
-                        "Count": 0,
-                        "DedicatedClusterTypeId": "xx",
-                        "PowerDraw": 0.0,
-                        "Name": "xx",
-                        "Weight": 0,
-                        "TotalGpu": 0,
-                        "TotalCpu": 0,
-                        "SupportedStorageType": [
-                            "xx"
-                        ],
-                        "ComputeFormat": "xx",
-                        "TypeName": "xx",
-                        "SubOrderStatus": "xx",
-                        "SubOrderId": "xx",
-                        "SupportedInstanceFamily": [
-                            "xx"
-                        ],
-                        "Description": "xx",
-                        "SupportedUplinkSpeed": [
-                            0
-                        ],
-                        "CreateTime": "2020-09-22T00:00:00+00:00",
-                        "TotalMem": 0
-                    }
-                ],
-                "DedicatedClusterId": "xx"
-            },
-            {
-                "DedicatedClusterTypeId": "xx",
-                "PowerDraw": 3829.1,
-                "Weight": 3724,
-                "Mem": 0,
-                "SupportedStorageType": [
-                    "xx"
-                ],
-                "DedicatedClusterOrderId": "xx",
+                "PayType": "ONEOFF",
+                "PowerDraw": 0,
                 "SupportedInstanceFamily": [
-                    "S3"
+                    "None"
                 ],
-                "Cpu": 0,
-                "OrderStatus": "xx",
-                "Gpu": 0,
-                "Action": "xx",
-                "PayStatus": 0,
-                "SupportedUplinkSpeed": [
-                    10,
-                    40
-                ],
-                "CreateTime": "2020-09-22T00:00:00+00:00",
-                "DedicatedClusterOrderItems": [
-                    {
-                        "Count": 0,
-                        "DedicatedClusterTypeId": "xx",
-                        "PowerDraw": 0.0,
-                        "Name": "xx",
-                        "Weight": 0,
-                        "TotalGpu": 0,
-                        "TotalCpu": 0,
-                        "SupportedStorageType": [
-                            "xx"
-                        ],
-                        "ComputeFormat": "xx",
-                        "TypeName": "xx",
-                        "SubOrderStatus": "xx",
-                        "SubOrderId": "xx",
-                        "SupportedInstanceFamily": [
-                            "xx"
-                        ],
-                        "Description": "xx",
-                        "SupportedUplinkSpeed": [
-                            0
-                        ],
-                        "CreateTime": "2020-09-22T00:00:00+00:00",
-                        "TotalMem": 0
-                    }
-                ],
-                "DedicatedClusterId": "xx"
-            },
-            {
-                "DedicatedClusterTypeId": "xx",
-                "PowerDraw": 3829.1,
-                "Weight": 3724,
-                "Mem": 0,
                 "SupportedStorageType": [
-                    "xx"
+                    "None"
                 ],
-                "DedicatedClusterOrderId": "xx",
-                "SupportedInstanceFamily": [
-                    "xx"
-                ],
-                "Cpu": 0,
-                "OrderStatus": "xx",
-                "Gpu": 0,
-                "Action": "xx",
-                "PayStatus": 0,
                 "SupportedUplinkSpeed": [
-                    10,
-                    40
+                    -1
                 ],
-                "CreateTime": "2020-09-22T00:00:00+00:00",
-                "DedicatedClusterOrderItems": [
-                    {
-                        "Count": 0,
-                        "DedicatedClusterTypeId": "xx",
-                        "PowerDraw": 0.0,
-                        "Name": "xx",
-                        "Weight": 0,
-                        "TotalGpu": 0,
-                        "TotalCpu": 0,
-                        "SupportedStorageType": [
-                            "xx"
-                        ],
-                        "ComputeFormat": "xx",
-                        "TypeName": "xx",
-                        "SubOrderStatus": "xx",
-                        "SubOrderId": "xx",
-                        "SupportedInstanceFamily": [
-                            "xx"
-                        ],
-                        "Description": "xx",
-                        "SupportedUplinkSpeed": [
-                            0
-                        ],
-                        "CreateTime": "2020-09-22T00:00:00+00:00",
-                        "TotalMem": 0
-                    }
-                ],
-                "DedicatedClusterId": "xx"
+                "TimeSpan": 3,
+                "TimeUnit": "YEAR",
+                "Weight": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "3da146fc-0136-4386-b632-9dbef7f06431",
+        "TotalCount": 30
     }
 }
 ```

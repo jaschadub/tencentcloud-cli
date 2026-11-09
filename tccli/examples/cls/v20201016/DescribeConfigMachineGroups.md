@@ -1,12 +1,12 @@
 **Example 1: 获取采集规则配置所绑定的机器组**
 
-
+获取采集规则配置所绑定的机器组
 
 Input: 
 
 ```
 tccli cls DescribeConfigMachineGroups --cli-unfold-argument  \
-    --ConfigId xxxxxxxxxx
+    --ConfigId 3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a
 ```
 
 Output: 
@@ -15,18 +15,26 @@ Output:
     "Response": {
         "MachineGroups": [
             {
-                "GroupId": "xxxx-xx-xx-xx-yyyyyyyy",
-                "GroupName": "testgroup",
+                "AutoUpdate": "",
+                "CreateTime": "2023-11-24 10:22:58",
+                "DelayCleanupTime": 0,
+                "GroupId": "59613f03-304e-492d-8bcc-af04716f4111",
+                "GroupName": "test-filter",
                 "MachineGroupType": {
                     "Type": "ip",
                     "Values": [
-                        "10.10.1.119"
+                        "9.1.9.1"
                     ]
                 },
-                "CreateTime": "xx"
+                "MetaTags": [],
+                "OSType": 0,
+                "ServiceLogging": false,
+                "Tags": [],
+                "UpdateEndTime": "",
+                "UpdateStartTime": ""
             }
         ],
-        "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
+        "RequestId": "f32611a9-c1ff-48f3-97b3-32e28fe5b359"
     }
 }
 ```

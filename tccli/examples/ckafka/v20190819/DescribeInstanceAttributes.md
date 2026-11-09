@@ -6,79 +6,96 @@ Input:
 
 ```
 tccli ckafka DescribeInstanceAttributes --cli-unfold-argument  \
-    --InstanceId xxx
+    --InstanceId ckafka-pkwxedpq
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "dc67ed1b-3ada-4dad-9c5e-dc2a3619558e",
         "Result": {
-            "MsgRetentionTime": 1440,
-            "DeleteRouteTimestamp": "xx",
-            "Version": "xx",
+            "Bandwidth": 1200,
+            "ClusterType": "CLOUD_EKS_TSE",
             "Config": {
-                "DefaultNumPartitions": 0,
                 "AutoCreateTopicsEnable": true,
+                "DefaultNumPartitions": 10,
                 "DefaultReplicationFactor": 2
             },
-            "RemainingPartitions": 0,
+            "CreateTime": 1667461825,
+            "CreatedPartitions": 1026,
+            "CreatedTopics": 61,
+            "CustomCertId": "certid",
+            "Cvm": 1,
+            "DeleteRouteTimestamp": "",
+            "DiskSize": 1000,
+            "DynamicDiskConfig": {
+                "DiskQuotaPercentage": 75,
+                "Enable": 1,
+                "MaxDiskSpace": 500000,
+                "StepForwardPercentage": 10
+            },
+            "ElasticFloatBandwidth": 480,
+            "ExpireTime": 1735890625,
+            "Features": [
+                "FEATURE_SUBNET_ACL",
+                "FEATURE_SASL_SSL",
+                "FEATURE_MULIT_SASL_PLAINTEXT",
+                "FEATURE_TOPIC_QUOTA",
+                "FEATURE_SASL_SCRAM_512",
+                "CLOUD_EKS_TSE",
+                "CLOUD_EKS_CROS_ZONE",
+                "FEATURE_SASL_SCRAM"
+            ],
+            "FreePartitionNumber": 1200,
+            "Healthy": 1,
+            "HealthyMessage": "healthy",
+            "InstanceChargeType": "PREPAID",
+            "InstanceId": "ckafka-pkwxedpq",
+            "InstanceName": "【勿删-不要再新建公网域名了，会产生安全工单】spock-test",
+            "InstanceType": "profession",
+            "MaxConnection": 10000,
+            "MaxGroupNum": 200,
+            "MsgRetentionTime": 2880,
+            "PublicNetwork": 6,
+            "RemainderPartitions": 174,
+            "RemainderTopics": 539,
+            "RemainingPartitions": 174,
+            "RemainingTopics": 539,
+            "RetentionTimeConfig": {
+                "BottomRetention": 360,
+                "DiskQuotaPercentage": 75,
+                "Enable": 0,
+                "StepForwardPercentage": 10
+            },
             "Status": 1,
-            "CreatedTopics": 0,
-            "VpcId": "xx",
+            "SubnetId": "subnet-kg07707y",
             "Tags": [
                 {
-                    "TagKey": "xx",
-                    "TagValue": "xx"
+                    "TagKey": "Application",
+                    "TagValue": "underlay-domain"
+                },
+                {
+                    "TagKey": "key",
+                    "TagValue": "555555"
                 }
             ],
-            "InstanceId": "xx",
-            "Vip": "xx",
-            "SubnetId": "xx",
-            "InstanceType": "xx",
-            "RemainderTopics": 17,
-            "MaxConnection": 1,
-            "PublicNetwork": 48000,
-            "Healthy": 1,
-            "ZoneId": 100003,
-            "Cvm": 0,
-            "DiskSize": 120000,
-            "HealthyMessage": "xx",
-            "RemainderPartitions": 45,
-            "InstanceName": "xx",
-            "CreatedPartitions": 0,
-            "Features": [
-                "xx"
-            ],
-            "ZoneIds": [
-                0
-            ],
-            "ExpireTime": 1,
-            "Bandwidth": 48000,
-            "MaxGroupNum": 0,
-            "RetentionTimeConfig": {
-                "StepForwardPercentage": 10,
-                "DiskQuotaPercentage": 90,
-                "Enable": 0,
-                "BottomRetention": 360
-            },
-            "DynamicDiskConfig": {
-                "Enable": 1,
-                "DiskQuotaPercentage": 30,
-                "StepForwardPercentage": 15,
-                "MaxDiskSpace": 1000
-            },
-            "Vport": "xx",
-            "CreateTime": 1,
+            "Version": "2.4.1",
+            "Vip": "172.16.0.17",
             "VipList": [
                 {
-                    "Vip": "xx",
-                    "Vport": "xx"
+                    "Vip": "172.16.0.17",
+                    "Vport": "9092"
                 }
             ],
-            "RemainingTopics": 0
-        },
-        "RequestId": "xx"
+            "VpcId": "vpc-apwrtw01",
+            "Vport": "9092",
+            "ZoneId": 100006,
+            "ZoneIds": [
+                100006,
+                100007
+            ]
+        }
     }
 }
 ```

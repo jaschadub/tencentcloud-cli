@@ -1,6 +1,6 @@
 **Example 1: 请求示例**
 
-
+查询示例
 
 Input: 
 
@@ -23,6 +23,7 @@ Output:
                         "ZoneName": "广州二区",
                         "IsSaleout": false,
                         "IsDefault": false,
+                        "OldZoneId": 0,
                         "NetWorkType": [
                             "basenet",
                             "vpcnet"

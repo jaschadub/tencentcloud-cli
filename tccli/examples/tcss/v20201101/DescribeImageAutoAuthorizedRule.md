@@ -12,10 +12,10 @@ Output:
 {
     "Response": {
         "MaxDailyCount": 0,
-        "RangeType": "xx",
+        "RangeType": "ALL",
         "RuleId": 1,
         "HostCount": 0,
-        "RequestId": "xx",
+        "RequestId": "392f05bd-bf86-4911-8cf9-b8c2ac0f62ab",
         "IsEnabled": 0
     }
 }

@@ -6,12 +6,14 @@ Input:
 
 ```
 tccli tdmq CreateRocketMQGroup --cli-unfold-argument  \
-    --GroupId group-example \
-    --Remark example \
-    --ReadEnable true \
-    --BroadcastEnable true \
+    --Remark 测试创建 \
+    --BroadcastEnable False \
     --ClusterId rocketmq-2p9vx3ax9jxg \
-    --Namespaces example
+    --RetryMaxTimes 16 \
+    --Namespaces test_namespace \
+    --ReadEnable True \
+    --GroupType TCP \
+    --GroupId test_group
 ```
 
 Output: 

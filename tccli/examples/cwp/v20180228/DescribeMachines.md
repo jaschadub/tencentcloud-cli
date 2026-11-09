@@ -20,42 +20,65 @@ Output:
     "Response": {
         "Machines": [
             {
-                "MachineName": "ccs_cls-i4vyo8qa_node",
-                "MachineIp": "0.0.0.0",
-                "MachineWanIp": "0.0.0.0",
-                "MachineOs": "ubuntu16.04.1 LTSx86_64",
-                "MachineStatus": "OFFLINE",
-                "Quuid": "fbd6ea2c-1894-47b0-bf3e-095c78138f76",
-                "Uuid": "",
-                "IsProVersion": false,
-                "PayMode": "",
-                "VulNum": 0,
-                "Tag": [],
-                "MalwareNum": 0,
-                "CyberAttackNum": 0,
-                "IsAddedOnTheFifteen": 1,
-                "SecurityStatus": "SAFE",
-                "InstanceState": "TERMINATED_PRO_VERSION",
-                "ProjectId": 1,
-                "HasAssetScan": 1,
-                "LicenseStatus": 0,
-                "InvasionNum": 0,
                 "BaselineNum": 0,
-                "RegionInfo": {
-                    "RegionCode": "gz",
-                    "Region": "ap-guangzhuo",
-                    "RegionId": 1,
-                    "RegionName": "广州",
-                    "RegionNameEn": "chine guangzhou"
+                "CloudTags": [
+                    {
+                        "TagKey": "Department",
+                        "TagValue": "dev"
+                    }
+                ],
+                "CyberAttackNum": 0,
+                "HasAssetScan": 0,
+                "InstanceId": "ins-111",
+                "InstanceState": "NORMAL",
+                "InvasionNum": 3,
+                "IpList": "1.1.1.1",
+                "IsAddedOnTheFifteen": 1,
+                "IsProVersion": false,
+                "KernelVersion": "3.10.0-1160.88.1.el7.x86_64",
+                "LicenseStatus": 0,
+                "MachineExtraInfo": {
+                    "HostName": "demo-instance",
+                    "InstanceID": "ins-111",
+                    "NetworkName": "vpc-111",
+                    "NetworkType": 1,
+                    "PrivateIP": "1.1.1.1",
+                    "WanIP": "1.1.1.1"
                 },
+                "MachineIp": "1.1.1.1",
+                "MachineName": "name01",
+                "MachineOs": "CentOS 7.6 64位",
+                "MachineStatus": "ONLINE",
                 "MachineType": "CVM",
-                "KernelVersion": "xxx.xxx",
+                "MachineWanIp": "1.1.1.1",
+                "MalwareNum": 0,
+                "PayMode": "POSTPAY",
+                "ProjectId": 0,
                 "ProtectType": "BASIC_VERSION",
-                "CloudTags": []
+                "Quuid": "3377add2-ee61-4c9a-99a3-************",
+                "RegionInfo": {
+                    "Region": "ap-nanjing",
+                    "RegionCode": "nj",
+                    "RegionId": 33,
+                    "RegionName": "华东地区（南京）",
+                    "RegionNameEn": "East China (Nanjing)"
+                },
+                "Remark": "do not remove",
+                "SecurityStatus": "RISK",
+                "Tag": [
+                    {
+                        "Rid": 1001,
+                        "Name": "cwp",
+                        "TagId": 1022
+                    }
+                ],
+                "Uuid": "3377add2-ee61-4c9a-99a3-************",
+                "VpcId": "vpc-1dj4***",
+                "VulNum": 0
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "c30f35cb-2f3e-94f5-59ae-316e0f32e660"
+        "RequestId": "621b6063-12b2-43fa-809e-************",
+        "TotalCount": 192
     }
 }
 ```

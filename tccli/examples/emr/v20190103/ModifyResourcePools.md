@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli emr ModifyResourcePools --cli-unfold-argument  \
-    --InstanceId xx \
-    --Key xx
+    --InstanceId emr-2xef56 \
+    --Key fair
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ErrorMsg": "xx",
-        "RequestId": "xx",
-        "IsDraft": true
+        "IsDraft": true,
+        "ErrorMsg": "errormsg_test",
+        "RequestId": "61fb757e-5a86-41ab-8421-b3abc7aff683"
     }
 }
 ```

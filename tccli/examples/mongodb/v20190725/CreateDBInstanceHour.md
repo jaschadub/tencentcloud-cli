@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli mongodb CreateDBInstanceHour --cli-unfold-argument  \
-    --Memory 4 \
-    --Volume 250 \
-    --ReplicateSetNum 1 \
-    --NodeNum 2 \
-    --MongoVersion MONGO_40_WT \
-    --MachineCode HIO10G \
-    --GoodsNum 1 \
     --Zone ap-guangzhou-3 \
+    --GoodsNum 1 \
     --Clone 1 \
-    --ClusterType REPLSET
+    --Memory 4 \
+    --ClusterType REPLSET \
+    --Volume 250 \
+    --NodeNum 2 \
+    --ReplicateSetNum 1 \
+    --MachineCode HIO10G \
+    --MongoVersion MONGO_40_WT
 ```
 
 Output: 
@@ -25,7 +25,7 @@ Output:
         "RequestId": "eaf9b19d-5ad4-4ca2-9fc4-a319aeb9181f",
         "DealId": "20190709160000003502416120946732",
         "InstanceIds": [
-            "cmgo-m26c6jsf"
+            "cmgo-m26c****"
         ]
     }
 }

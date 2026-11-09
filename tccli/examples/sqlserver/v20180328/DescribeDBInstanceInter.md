@@ -1,6 +1,6 @@
-**Example 1: 查询实例再互通组中的状态**
+**Example 1: 查询实例在互通组中的状态**
 
-
+查询实例在互通组中的状态，内网互通ip用于在SSIS服务中使用。
 
 Input: 
 
@@ -20,7 +20,7 @@ Output:
                 "InstanceId": "mssql-30vft2ix",
                 "InterPort": 1028,
                 "InterVip": "192.168.0.1",
-                "Name": "xxx",
+                "Name": "andy",
                 "Region": "ap-guangzhou",
                 "Status": 1,
                 "Version": "2012SP3",
@@ -33,7 +33,7 @@ Output:
                 "InstanceId": "mssql-iqnuxv3j",
                 "InterPort": 1026,
                 "InterVip": "192.168.0.1",
-                "Name": "xxxx",
+                "Name": "tom",
                 "Region": "ap-guangzhou",
                 "Status": 1,
                 "Version": "2017",
@@ -46,7 +46,7 @@ Output:
                 "InstanceId": "mssql-ngc6786l",
                 "InterPort": 1029,
                 "InterVip": "192.168.0.1",
-                "Name": "xxxx",
+                "Name": "andy2",
                 "Region": "ap-guangzhou",
                 "Status": 1,
                 "Version": "2008R2",

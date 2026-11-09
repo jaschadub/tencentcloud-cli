@@ -1,0 +1,213 @@
+{
+  "actions": {
+    "CreateApplication": [
+      {
+        "document": "对创建成功的HAI实例进行自定义应用制作。",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplication\n<公共请求参数>\n\n{\n    \"InstanceId\": \"hai-3nagq120\",\n    \"ApplicationName\": \"My Application\",\n    \"ApplicationDescription\": \"This is my first pytorch HAI application.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationId\": \"app-az05wwqa\",\n        \"RequestId\": \"83697e89-90d2-4fff-bbb1-1bc3d53c4dfadfdad\"\n    }\n}",
+        "title": "hai实例制作自定义应用"
+      }
+    ],
+    "CreateInferServiceByTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInferServiceByTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"tpl-dt2x59dd\",\n    \"ServiceName\": \"sisis\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceId\": \"svc-b9mhdkse\",\n        \"RequestId\": \"9779b007-504f-42ca-8fce-87548b843a9a\"\n    }\n}",
+        "title": "CreateInferServiceByTemplate"
+      }
+    ],
+    "CreateMuskPrompt": [
+      {
+        "document": "创建prompt任务",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMuskPrompt\n<公共请求参数>\n\n{\n    \"WorkgroupId\": \"4a3f3be9-f35b-40bf-b6bb-2af812dd63cb\",\n    \"WorkflowId\": \"wf-b9dbb48a-f4cd-40f3-9a68-2af4c78d31a7\",\n    \"PromptParams\": \"{\\\"6\\\":{\\\"inputs\\\":{\\\"text\\\":\\\"cute anime girl with massive fluffy fennec ears and a big fluffy tail blonde messy long hair blue eyes wearing a maid outfit with a long black gold leaf pattern dress and a white apron mouth open holding a fancy black forest cake with candles on top in the kitchen of an old dark Victorian mansion lit by candlelight with a bright window to the foggy forest and very expensive stuff everywhere\\\",\\\"clip\\\":[\\\"11\\\",0]},\\\"class_type\\\":\\\"CLIPTextEncode\\\",\\\"_meta\\\":{\\\"title\\\":\\\"CLIP Text Encode (Positive Prompt)\\\"}},\\\"8\\\":{\\\"inputs\\\":{\\\"samples\\\":[\\\"13\\\",0],\\\"vae\\\":[\\\"10\\\",0]},\\\"class_type\\\":\\\"VAEDecode\\\",\\\"_meta\\\":{\\\"title\\\":\\\"VAE解码\\\"}},\\\"9\\\":{\\\"inputs\\\":{\\\"filename_prefix\\\":\\\"ComfyUI\\\",\\\"images\\\":[\\\"8\\\",0]},\\\"class_type\\\":\\\"SaveImage\\\",\\\"_meta\\\":{\\\"title\\\":\\\"保存图像\\\"}},\\\"10\\\":{\\\"inputs\\\":{\\\"vae_name\\\":\\\"ae.sft\\\"},\\\"class_type\\\":\\\"VAELoader\\\",\\\"_meta\\\":{\\\"title\\\":\\\"加载VAE\\\"}},\\\"11\\\":{\\\"inputs\\\":{\\\"clip_name1\\\":\\\"t5xxl_fp8_e4m3fn.safetensors\\\",\\\"clip_name2\\\":\\\"clip_l.safetensors\\\",\\\"type\\\":\\\"flux\\\"},\\\"class_type\\\":\\\"DualCLIPLoader\\\",\\\"_meta\\\":{\\\"title\\\":\\\"双CLIP加载器\\\"}},\\\"12\\\":{\\\"inputs\\\":{\\\"unet_name\\\":\\\"flux1-dev-fp8.safetensors\\\",\\\"weight_dtype\\\":\\\"fp8_e4m3fn\\\"},\\\"class_type\\\":\\\"UNETLoader\\\",\\\"_meta\\\":{\\\"title\\\":\\\"加载扩散模型\\\"}},\\\"13\\\":{\\\"inputs\\\":{\\\"noise\\\":[\\\"25\\\",0],\\\"guider\\\":[\\\"22\\\",0],\\\"sampler\\\":[\\\"16\\\",0],\\\"sigmas\\\":[\\\"17\\\",0],\\\"latent_image\\\":[\\\"27\\\",0]},\\\"class_type\\\":\\\"SamplerCustomAdvanced\\\",\\\"_meta\\\":{\\\"title\\\":\\\"自定义采样器（高级）\\\"}},\\\"16\\\":{\\\"inputs\\\":{\\\"sampler_name\\\":\\\"euler\\\"},\\\"class_type\\\":\\\"KSamplerSelect\\\",\\\"_meta\\\":{\\\"title\\\":\\\"K采样器选择\\\"}},\\\"17\\\":{\\\"inputs\\\":{\\\"scheduler\\\":\\\"simple\\\",\\\"steps\\\":20,\\\"denoise\\\":1,\\\"model\\\":[\\\"30\\\",0]},\\\"class_type\\\":\\\"BasicScheduler\\\",\\\"_meta\\\":{\\\"title\\\":\\\"基本调度器\\\"}},\\\"22\\\":{\\\"inputs\\\":{\\\"model\\\":[\\\"30\\\",0],\\\"conditioning\\\":[\\\"26\\\",0]},\\\"class_type\\\":\\\"BasicGuider\\\",\\\"_meta\\\":{\\\"title\\\":\\\"基本引导器\\\"}},\\\"25\\\":{\\\"inputs\\\":{\\\"noise_seed\\\":317016131367339},\\\"class_type\\\":\\\"RandomNoise\\\",\\\"_meta\\\":{\\\"title\\\":\\\"随机噪声\\\"}},\\\"26\\\":{\\\"inputs\\\":{\\\"guidance\\\":3.5,\\\"conditioning\\\":[\\\"6\\\",0]},\\\"class_type\\\":\\\"FluxGuidance\\\",\\\"_meta\\\":{\\\"title\\\":\\\"Flux引导\\\"}},\\\"27\\\":{\\\"inputs\\\":{\\\"width\\\":1024,\\\"height\\\":1024,\\\"batch_size\\\":1},\\\"class_type\\\":\\\"EmptySD3LatentImage\\\",\\\"_meta\\\":{\\\"title\\\":\\\"空SD3潜空间图像\\\"}},\\\"30\\\":{\\\"inputs\\\":{\\\"max_shift\\\":1.15,\\\"base_shift\\\":0.5,\\\"width\\\":1024,\\\"height\\\":1024,\\\"model\\\":[\\\"12\\\",0]},\\\"class_type\\\":\\\"ModelSamplingFlux\\\",\\\"_meta\\\":{\\\"title\\\":\\\"模型采样Flux\\\"}}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PromptId\": \"edc6e6ec-072c-41dd-8672-c956b739fd31\",\n        \"RequestId\": \"840728c5-4abb-4eb5-b469-a304631693f9\"\n    }\n}",
+        "title": "创建prompt任务"
+      }
+    ],
+    "DeleteService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteService\n<公共请求参数>\n\n{\n    \"ServiceId\": \"svc-fnay2k0u\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4e3f0f2d-f548-4a93-a06f-b15e8f5691a5\"\n    }\n}",
+        "title": "DeleteService"
+      }
+    ],
+    "DeployInferService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployInferService\n<公共请求参数>\n\n{\n    \"ServiceMetaData\": {\n        \"ServiceName\": \"infer\",\n        \"ServiceChargeType\": \"PREPAID_BY_MONTH\"\n    },\n    \"ComputeInfo\": {\n        \"ComputeResources\": [\n            {\n                \"BundleType\": \"96G_A*1\",\n                \"Count\": 1\n            }\n        ],\n        \"Replicas\": 1\n    },\n    \"DeploymentConfigs\": [\n        {\n            \"Container\": {\n                \"Image\": {\n                    \"ImageRegistryUrl\": \"haihub.cn\"\n                }\n            }\n        }\n    ],\n    \"ServiceChargePrepaid\": {\n        \"Period\": 1,\n        \"TimeUnit\": \"MONTH\",\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceId\": \"svc-6cjxl264\",\n        \"RequestId\": \"1a6b1ac1-97b9-4b72-93f8-975fc7441ac8\"\n    }\n}",
+        "title": "自定义部署示例"
+      }
+    ],
+    "DescribeApplications": [
+      {
+        "document": "查询应用",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplications\n<公共请求参数>\n\n{\n    \"ApplicationIds\": [\n        \"app-7j7f9jhn\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationSet\": [\n            {\n                \"ApplicationId\": \"app-7j7f9jhn\",\n                \"ApplicationName\": \"混元-DiT WebUI\",\n                \"ApplicationSize\": 120,\n                \"ApplicationState\": \"ONLINE\",\n                \"ApplicationType\": \"PUBLIC_APPLICATION\",\n                \"ConfigEnvironment\": \"Ubuntu20.04, Python 3.8.12, CUDA 11.7, cuDNN 8, HunYuanDiT, JupyterLab, Gradio\",\n                \"CreateTime\": \"2024-07-11 16:36:08\",\n                \"Description\": \"混元-DiT是腾讯自研的高性能细粒度中文理解多分辨率扩散Transformer模型。提供双语生成能力，中国元素理解具有优势。\",\n                \"MinSystemDiskSize\": 150\n            }\n        ],\n        \"RequestId\": \"c344dc00-13a2-4d80-ae95-6e2d9fd0105d\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询应用"
+      }
+    ],
+    "DescribeDeployTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeployTemplates\n<公共请求参数>\n\n{\n    \"ModelId\": \"mdl-nbb23f5v\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EngineTypes\": [\n            \"Sglang\"\n        ],\n        \"RequestId\": \"8835934f-5769-4df6-b1e4-0a36236d4968\",\n        \"TemplateSet\": [\n            {\n                \"ComputeSet\": [\n                    {\n                        \"BundleType\": \"96G_A\",\n                        \"CPU\": \"16\",\n                        \"Count\": 2,\n                        \"GPUCount\": 1,\n                        \"GPUMemory\": \"96\",\n                        \"GPUPerformance\": \"88 tflops++\",\n                        \"Memory\": \"160\"\n                    }\n                ],\n                \"DeployMode\": \"DISTRIBUTED\",\n                \"EngineType\": \"Sglang\",\n                \"TemplateId\": \"tpl-0j2qaa8t\"\n            }\n        ]\n    }\n}",
+        "title": "DescribeDeployTemplates"
+      }
+    ],
+    "DescribeInstanceNetworkStatus": [
+      {
+        "document": "查看实例hai-xxxxxxxx关联的公网配置及使用情况",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNetworkStatus\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"hai-jklfaded\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"NetworkStatusSet\": [\n            {\n                \"InstanceId\": \"hai-xxxxxxxx\",\n                \"AddressIp\": \"1.1.1.1\",\n                \"Bandwidth\": 5,\n                \"TotalTrafficAmount\": 1000,\n                \"RemainingTrafficAmount\": 500\n            }\n        ],\n        \"RequestId\": \"41fa870d-8592-493c-b794-9fe19f23e800\"\n    }\n}",
+        "title": "查看实例hai-xxxxxxxx关联的公网配置及使用情况"
+      }
+    ],
+    "DescribeInstances": [
+      {
+        "document": "查看指定实例hai-jklfaded的信息",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"hai-jklfaded\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"InstanceSet\": [\n            {\n                \"InstanceId\": \"hai-jklfaded\",\n                \"InstanceName\": \"hai\",\n                \"InstanceState\": \"RUNNING\",\n                \"ApplicationName\": \"pytorch\",\n                \"BundleName\": \"基础型\",\n                \"GPUPerformance\": \"8+TFlops\",\n                \"GPUMemory\": \"16+GB\",\n                \"CPU\": \"20C\",\n                \"Memory\": \"80GB\",\n                \"SystemDisk\": {\n                    \"DiskType\": \"CLOUD_SSD\",\n                    \"DiskSize\": 80\n                },\n                \"PrivateIpAddresses\": [\n                    \"1.1.1.1\"\n                ],\n                \"PublicIpAddresses\": [\n                    \"2.2.2.2\"\n                ],\n                \"SecurityGroupIds\": [\n                    \"sg-xxxxxxxx\"\n                ],\n                \"LatestOperation\": \"RunInstances\",\n                \"LatestOperationState\": \"SUCCESS\",\n                \"CreateTime\": \"2023-08-01 00:00:00\",\n                \"MaxOutBandwidth\": \"10Mbps\",\n                \"MaxFreeTraffic\": \"1000GB\",\n                \"ConfigurationEnvironment\": \"cuda 10 | pytorch | tensorflow\",\n                \"LoginServices\": [\n                    {\n                        \"ServiceName\": \"jupyter\"\n                    }\n                ],\n                \"OSType\": \"linux\"\n            }\n        ],\n        \"RequestId\": \"41fa870d-8592-493c-b794-9fe19f23e800\"\n    }\n}",
+        "title": "查看指定实例hai-jklfaded的信息"
+      }
+    ],
+    "DescribeModels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModels\n<公共请求参数>\n\n{\n    \"ModelIds\": [\n        \"mdl-x39pcr9u\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelSet\": [\n            {\n                \"CommunityUrl\": \"https://cloud.tencent.com/developer/article/2496039\",\n                \"ConfigEnvironment\": \"CentOS 5.4 64位; nvidia 535.216.01| cuda12.2 | LLM\",\n                \"Description\": \"模型进行了一个小版本升级，当前版本为 DeepSeek-R1-0528。在最新更新中，DeepSeek R1 通过利用更多的计算资源并在后训练过程中引入算法优化机制，显著提高了其推理和推断能力的深度。该模型在各种基准测试中表现出色，包括数学、编程和一般逻辑方面。其整体性能现已接近领先模型，如 O3 和 Gemini 2.5 Pro。\",\n                \"GuideUrl\": \"https://cloud.tencent.com/developer/article/2498480\",\n                \"ModelId\": \"mdl-x39pcr9u\",\n                \"ModelName\": \"deepseek R1\",\n                \"ModelState\": \"ONLINE\",\n                \"Tags\": [\n                    \"大语言模型\",\n                    \"文本生成\",\n                    \"NVDIA\",\n                    \"深度求索\",\n                    \"600B以上\"\n                ]\n            }\n        ],\n        \"RequestId\": \"c6d968d0-9082-44c5-bf39-8726c900d6ea\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "DescribeModels"
+      }
+    ],
+    "DescribeMuskPrompts": [
+      {
+        "document": "获取prompt任务详情",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMuskPrompts\n<公共请求参数>\n\n{\n    \"WorkgroupId\": \"4a3f3be9-f35b-40bf-b6bb-2af812dd63cb\",\n    \"WorkflowId\": \"wf-b9dbb48a-f4cd-40f3-9a68-2af4c78d31a7\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"MuskPromptInfos\": [\n            {\n                \"CreateTime\": \"2024-12-24 12:07:22\",\n                \"OutputResource\": [],\n                \"PromptId\": \"edc6e6ec-072c-41dd-8672-c956b739fd31\",\n                \"Status\": 2,\n                \"UpdateTime\": \"2024-12-24 12:09:22\",\n                \"WorkflowId\": \"wf-b9dbb48a-f4cd-40f3-9a68-2af4c78d31a7\",\n                \"WorkgroupId\": \"4a3f3be9-f35b-40bf-b6bb-2af812dd63cb\"\n            }\n        ],\n        \"RequestId\": \"a8a7930a-b642-4a3e-a3df-2d4a6bd389cc\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取prompt任务详情"
+      }
+    ],
+    "DescribeRegions": [
+      {
+        "document": "查询地域列表",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RegionSet\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"广州\",\n                \"RegionState\": \"AVAILABLE\",\n                \"ScholarRocketSupportState\": \"ALREADY_SUPPORT\"\n            },\n            {\n                \"Region\": \"ap-chongqing\",\n                \"RegionName\": \"重庆\",\n                \"RegionState\": \"UNAVAILABLE\",\n                \"ScholarRocketSupportState\": \"NOT_SUPPORT_YET\"\n            }\n        ],\n        \"RequestId\": \"e34431dd-763e-4523-92da-ec68016a3d6a\"\n    }\n}",
+        "title": "查询地域列表"
+      }
+    ],
+    "DescribeScenes": [
+      {
+        "document": "查询场景",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScenes\n<公共请求参数>\n\n{\n    \"SceneIds\": [\n        \"sc-7ramp21e\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"82505ff0-ca36-486b-849f-50996228e838\",\n        \"SceneSet\": [\n            {\n                \"SceneId\": \"sc-7ramp21e\",\n                \"SceneName\": \"AI模型\"\n            }\n        ]\n    }\n}",
+        "title": "查询场景"
+      }
+    ],
+    "DescribeServiceLoginSettings": [
+      {
+        "document": "查询实例hai-xxxxxxxx包含的服务登录配置",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceLoginSettings\n<公共请求参数>\n\n{\n    \"InstanceId\": \"hai-xxxxxxxx\",\n    \"ServiceName\": \"jupyter\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"73956f5a-0f0e-4e60-ba7d-d555bcefe27b\",\n        \"LoginSettings\": [\n            {\n                \"ServiceName\": \"jupyter\",\n                \"Url\": \"http://1.14.52.185:80?40a0153b6c8ff839b2b83f9a3918daa55facad3c3e7a9b4a0e2377bd08f4aaa2\"\n            }\n        ]\n    }\n}",
+        "title": "查询实例hai-xxxxxxxx包含的服务登录配置"
+      }
+    ],
+    "DescribeServices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServices\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Offset\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceInfoSet\": [\n            {\n                \"ComputeSet\": [\n                    {\n                        \"BundleType\": \"96G_A*1\",\n                        \"CPU\": \"8\",\n                        \"Count\": 1,\n                        \"GPUCount\": \"1\",\n                        \"GPUMemory\": \"96\",\n                        \"GPUPerformance\": \"44\",\n                        \"Memory\": \"80\"\n                    }\n                ],\n                \"CreateTime\": \"2026-04-07 10:30:09\",\n                \"DeploymentConfigs\": [\n                    {\n                        \"Container\": {\n                            \"Envs\": [\n                                {\n                                    \"Name\": \"MODEL_DIRECTORY\",\n                                    \"Value\": \"/data/model\"\n                                }\n                            ],\n                            \"Image\": {\n                                \"ImageRegistryUrl\": \"aicompute.tencentcloudcr.com/aibench/sglang:v0.5.3rc0-hml-mooncake-0.3.6\"\n                            },\n                            \"Port\": \"30000\",\n                            \"Scripts\": [],\n                            \"Storages\": []\n                        },\n                        \"ContainerCount\": 1\n                    }\n                ],\n                \"HyperParam\": {},\n                \"ModelName\": \"deepseek-r1 671b sglang\",\n                \"RoleComputeSet\": [\n                    {\n                        \"BundleType\": \"96G_A*1\",\n                        \"CPU\": \"8\",\n                        \"Count\": 1,\n                        \"GPUCount\": \"1\",\n                        \"GPUMemory\": \"96\",\n                        \"GPUPerformance\": \"44\",\n                        \"Memory\": \"80\"\n                    }\n                ],\n                \"RoleStatuses\": [],\n                \"RunningReplicas\": 1,\n                \"SecurityType\": \"STANDARD\",\n                \"ServiceId\": \"svc-a1b0nsvq\",\n                \"ServiceName\": \"hai-autotest-final\",\n                \"ServiceState\": \"UPDATING\",\n                \"TotalReplicas\": 1\n            }\n        ],\n        \"TotalCount\": 38,\n        \"RequestId\": \"5d65c1f9-59c5-4597-98ed-6ac9c020b98c\"\n    }\n}",
+        "title": "查询所有服务信息"
+      }
+    ],
+    "DescribeServicesCallInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServicesCallInfo\n<公共请求参数>\n\n{\n    \"ServiceIds\": [\n        \"svc-fnay2k0u\"\n    ],\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"CallInfoSet\": [\n            {\n                \"ApiKey\": \"55*f0c9f*77*1a0589a*0019960*59*7*3*4*c2*56*f*ec*d2f9*8475d83*dbc\",\n                \"PublicEndpoint\": \"http://lb-*p**ypc*-4*xo*d*yk7ra1vsm.clb.bj-tencentclb.net\",\n                \"ServiceId\": \"svc-fnay2k0u\",\n                \"VpcEndpoint\": \"http://127.0.0.1\"\n            }\n        ],\n        \"RequestId\": \"353df959-b901-47be-9da6-8c94f67cd061\"\n    }\n}",
+        "title": "DescribeServicesCallInfo"
+      }
+    ],
+    "GetServicePodLogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetServicePodLogs\n<公共请求参数>\n\n{\n    \"ServiceId\": \"svc-6rt0ffqx\",\n    \"PodName\": \"svc-6rt0ffqx-0\",\n    \"TailLines\": \"100\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LogLines\": [\n            \"[2025-09-03 14:58:30] INFO:     10.0.7.10:60394 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 14:58:59] INFO:     10.0.7.10:60618 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 14:58:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 14:59:00] INFO:     10.0.7.10:60620 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 14:59:29] INFO:     10.0.7.10:60812 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 14:59:29] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 14:59:30] INFO:     10.0.7.10:60814 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 14:59:59] INFO:     10.0.7.10:32772 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 14:59:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:00:00] INFO:     10.0.7.10:32774 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:00:29] INFO:     10.0.7.10:33006 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:00:29] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:00:30] INFO:     10.0.7.10:33008 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:00:59] INFO:     10.0.7.10:33204 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:00:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:01:00] INFO:     10.0.7.10:33206 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:01:29] INFO:     10.0.7.10:33430 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:01:29] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:01:30] INFO:     10.0.7.10:33428 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:01:59] INFO:     10.0.7.10:33624 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:01:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:02:00] INFO:     10.0.7.10:33626 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:02:29] INFO:     10.0.7.10:33852 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:02:29] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:02:30] INFO:     10.0.7.10:33854 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:02:59] INFO:     10.0.7.10:34056 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:02:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:03:00] INFO:     10.0.7.10:34058 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:03:29] INFO:     10.0.7.10:34286 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:03:29] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:03:30] INFO:     10.0.7.10:34288 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:03:59] INFO:     10.0.7.10:34508 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:03:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:04:00] INFO:     10.0.7.10:34510 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:04:29] INFO:     10.0.7.10:34716 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:04:29] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:04:30] INFO:     10.0.7.10:34714 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:04:59] INFO:     10.0.7.10:34916 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:04:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:05:00] INFO:     10.0.7.10:34914 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:05:29] INFO:     10.0.7.10:35142 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:05:29] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:05:30] INFO:     10.0.7.10:35140 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:05:59] INFO:     10.0.7.10:35358 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:05:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:06:00] INFO:     10.0.7.10:35360 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:06:29] INFO:     10.0.7.10:35560 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:06:29] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:06:30] INFO:     10.0.7.10:35558 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:06:59] INFO:     10.0.7.10:35754 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:06:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:07:00] INFO:     10.0.7.10:35752 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:07:29] INFO:     10.0.7.10:35982 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:07:29] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:07:30] INFO:     10.0.7.10:35980 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:07:59] INFO:     10.0.7.10:36176 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:07:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:08:00] INFO:     10.0.7.10:36174 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:08:29] INFO:     10.0.7.10:36420 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:08:29] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:08:30] INFO:     10.0.7.10:36422 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:08:59] INFO:     10.0.7.10:36620 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:08:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:09:00] INFO:     10.0.7.10:36618 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:09:29] INFO:     10.0.7.10:36842 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:09:29] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:09:30] INFO:     10.0.7.10:36844 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:09:59] INFO:     10.0.7.10:37040 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:09:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:10:00] INFO:     10.0.7.10:37038 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:10:29] INFO:     10.0.7.10:37266 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:10:29] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:10:30] INFO:     10.0.7.10:37264 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:10:59] INFO:     10.0.7.10:37454 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:10:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:11:00] INFO:     10.0.7.10:37456 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:11:29] INFO:     10.0.7.10:37680 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:11:29] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:11:30] INFO:     10.0.7.10:37682 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:11:59] INFO:     10.0.7.10:37902 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:11:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:12:00] INFO:     10.0.7.10:37904 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:12:29] INFO:     10.0.7.10:38100 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:12:29] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:12:30] INFO:     10.0.7.10:38098 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:12:59] INFO:     10.0.7.10:38296 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:12:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:13:00] INFO:     10.0.7.10:38298 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:13:29] INFO:     10.0.7.10:38524 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:13:29] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:13:30] INFO:     10.0.7.10:38522 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:13:59] INFO:     10.0.7.10:38742 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:13:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:14:00] INFO:     10.0.7.10:38740 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:14:29] INFO:     10.0.7.10:38942 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:14:29] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:14:30] INFO:     10.0.7.10:38944 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:14:59] INFO:     10.0.7.10:39138 - \\\"GET /health HTTP/1.1\\\" 200 OK\",\n            \"[2025-09-03 15:14:59] Prefill batch. #new-seq: 1, #new-token: 1, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0\",\n            \"[2025-09-03 15:15:00] INFO:     10.0.7.10:39140 - \\\"GET /health_generate HTTP/1.1\\\" 200 OK\"\n        ],\n        \"RequestId\": \"64015e14-a860-4c62-bd4d-6678b2498115\"\n    }\n}",
+        "title": "GetServicePodLogs"
+      }
+    ],
+    "InquirePriceRunInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceRunInstances\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-gao2ylm1\",\n    \"BundleType\": \"XL\",\n    \"SystemDisk\": {\n        \"DiskType\": \"CLOUD_PREMIUM\",\n        \"DiskSize\": 250\n    },\n    \"InstanceName\": \"hai\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"UnitPrice\": 0.88,\n                \"DiscountUnitPrice\": 0.88,\n                \"Discount\": 100.0,\n                \"ChargeUnit\": \"HOUR\",\n                \"Amount\": 1\n            },\n            \"CloudDiskPrice\": {\n                \"UnitPrice\": 0,\n                \"DiscountUnitPrice\": 0,\n                \"Discount\": 0,\n                \"ChargeUnit\": \"HOUR\",\n                \"Amount\": 1\n            }\n        },\n        \"RequestId\": \"c5ec5837-b9d0-46dd-911e-6c91d488b938\"\n    }\n}",
+        "title": "发货询价"
+      }
+    ],
+    "InquirePriceUpdateServiceConfigs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceUpdateServiceConfigs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"ServicePrice\": {\n                \"Amount\": 1,\n                \"ChargeUnit\": \"HOUR\",\n                \"Discount\": 100,\n                \"DiscountPrice\": 33.38,\n                \"OriginPrice\": 33.38\n            }\n        },\n        \"RequestId\": \"6246e723-1260-4bbe-bede-ae2267769e56\"\n    }\n}",
+        "title": "InquirePriceUpdateServiceConfigs"
+      }
+    ],
+    "ResetInstancesPassword": [
+      {
+        "document": "实例重置密码",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetInstancesPassword\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"hai-xxxx\"\n    ],\n    \"DryRun\": false,\n    \"Password\": \"test#123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e188f45e-e2db-4c30-81e0-2e7a3dfa7754\",\n        \"TaskId\": 232559186\n    }\n}",
+        "title": "实例重置密码"
+      }
+    ],
+    "ResizeInstanceDisk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResizeInstanceDisk\n<公共请求参数>\n\n{\n    \"InstanceId\": \"hai-iog9qa62\",\n    \"DiskSize\": 180\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e3e3ae0-5418-a9f9-858c-9ec5589871a8\"\n    }\n}",
+        "title": "实例扩容云盘"
+      }
+    ],
+    "RunInstances": [
+      {
+        "document": "创建hai实例",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunInstances\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-gao2ylm1\",\n    \"BundleType\": \"XL\",\n    \"SystemDisk\": {\n        \"DiskType\": \"CLOUD_PREMIUM\",\n        \"DiskSize\": 250\n    },\n    \"InstanceName\": \"hai\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceIdSet\": [\n            \"hai-qcgdfaptd\"\n        ],\n        \"RequestId\": \"e267492d-fadaf-45a9-a139-416bc8652861\"\n    }\n}",
+        "title": "创建实例"
+      }
+    ],
+    "StartInstance": [
+      {
+        "document": "实例关机不收费场景下，重新开机。",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"hai-dunyfdff\",\n    \"DryRun\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"83697e89-90d2-4fff-bbb1-1bc3d53c4dfadfdad\"\n    }\n}",
+        "title": "实例开机"
+      }
+    ],
+    "StopInstance": [
+      {
+        "document": "实例关机不收费场景。",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"hai-dunyfddn\",\n    \"StopMode\": \"STOP_CHARGE\",\n    \"DryRun\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"057b40b9-c27f-4241-918b-debd34cfdafdasfdaf\"\n    }\n}",
+        "title": "实例关机"
+      }
+    ],
+    "TerminateInstances": [
+      {
+        "document": "销毁hai实例",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"hai-bfdafd\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"jkfdlja-jkljj-enka-lkjkj-aneknn\"\n    }\n}",
+        "title": "销毁hai实例"
+      }
+    ],
+    "UpdateServiceConfigs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateServiceConfigs\n<公共请求参数>\n\n{\n    \"ServiceId\": \"svc-8ube2pe8\",\n    \"TargetReplicas\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea34aa19-8d01-4e7e-85fa-b50c6b7f0614\"\n    }\n}",
+        "title": "UpdateServiceConfigs"
+      }
+    ]
+  },
+  "version": "1.0"
+}

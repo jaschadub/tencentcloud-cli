@@ -1,6 +1,6 @@
-**Example 1: 隔离实例**
+**Example 1: 销毁实例**
 
-
+销毁实例
 
 Input: 
 
@@ -14,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "128046",
-        "FlowId": "123"
+        "RequestId": "51169b54-61d4-4604-a07e-e519a5527923",
+        "FlowId": "147286"
     }
 }
 ```

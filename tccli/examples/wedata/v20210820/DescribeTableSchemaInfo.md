@@ -19,13 +19,13 @@ Output:
     "Response": {
         "SchemaInfoList": [
             {
-                "ColumnKey": "xx",
-                "Type": "xx",
-                "Description": "xx",
-                "Name": "xx"
+                "ColumnKey": "ColumnKey",
+                "Description": "Description",
+                "Name": "Name",
+                "Type": "HIVE"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "b91acd1a-1ca9-4d94-9647-e032924ac6bc"
     }
 }
 ```

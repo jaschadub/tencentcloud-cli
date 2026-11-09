@@ -11,32 +11,44 @@ Output:
 ```
 {
     "Response": {
-        "Total": 1,
         "Apps": [
             {
-                "OsInfo": "xx",
-                "Version": "xx",
-                "MachineWanIp": "xx",
-                "Uuid": "xx",
+                "MachineIp": "10.0.0.11",
+                "MachineName": "test-name",
+                "MachineWanIp": "110.84.0.11",
+                "Uuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
+                "Quuid": "24c9be55-c743-4a75-a5c7-2a2912341234",
                 "ProjectId": 1,
-                "ConfigPath": "xx",
-                "BinPath": "xx",
                 "Tag": [
                     {
-                        "TagId": 1,
                         "Rid": 0,
-                        "Name": "xx"
+                        "Name": "test-name",
+                        "TagId": 1
                     }
                 ],
-                "Quuid": "xx",
-                "ProcessCount": 1,
-                "Desc": "xx",
+                "Name": "test-name",
                 "Type": 1,
-                "MachineIp": "xx",
-                "Name": "xx"
+                "BinPath": "/root",
+                "OsInfo": "CentOs Bit64",
+                "ProcessCount": 1,
+                "Desc": "idesc",
+                "Version": "0.1.1",
+                "ConfigPath": "/root",
+                "FirstTime": "2024-10-11 12:23:34",
+                "UpdateTime": "2024-10-11 12:23:34",
+                "IsNew": 0,
+                "MachineExtraInfo": {
+                    "WanIP": "110.84.0.11",
+                    "PrivateIP": "10.0.0.11",
+                    "NetworkType": 0,
+                    "NetworkName": "vpc-12341234",
+                    "InstanceID": "ins-aj28fjz",
+                    "HostName": "test-name"
+                }
             }
         ],
-        "RequestId": "xx"
+        "Total": 1,
+        "RequestId": "37b6df34-68f1-4ab8-a3d8-7b89de604c82"
     }
 }
 ```

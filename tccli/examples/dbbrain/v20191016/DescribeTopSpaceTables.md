@@ -1,12 +1,12 @@
 **Example 1: 获取Top表的空间统计信息**
 
-
+获取Top表的空间统计信息。
 
 Input: 
 
 ```
 tccli dbbrain DescribeTopSpaceTables --cli-unfold-argument  \
-    --InstanceId cdb-test \
+    --InstanceId cdb-test1234 \
     --Limit 2 \
     --SortBy TableRows
 ```
@@ -20,7 +20,7 @@ Output:
         "TopSpaceTables": [
             {
                 "DataFree": 0,
-                "TableName": "test",
+                "TableName": "demo_table",
                 "TotalLength": 0.1,
                 "TableSchema": "test_bak",
                 "FragRatio": 0,
@@ -32,7 +32,7 @@ Output:
             },
             {
                 "DataFree": 0,
-                "TableName": "test",
+                "TableName": "demo_table",
                 "TotalLength": 0.1,
                 "TableSchema": "test_bak",
                 "FragRatio": 0,

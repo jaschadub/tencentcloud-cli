@@ -1,49 +1,129 @@
-**Example 1: 测试**
+**Example 1: 创建单C流程**
 
-
+创建一个单C流程
 
 Input: 
 
 ```
 tccli ess CreateFlow --cli-unfold-argument  \
-    --RelatedFlowId xxx \
-    --UserData 字符串 \
-    --FlowName 字符串 \
-    --FlowDescription 字符串 \
-    --FlowType 字符串 \
-    --Approvers.0.OrganizationName 字符串 \
+    --UserData 5a2X56ym5Liy \
+    --FlowName 西红柿购买合同 \
+    --FlowDescription 2024年西红柿购买合同 \
+    --FlowType 采购合同 \
     --Approvers.0.ApproverType 1 \
-    --Approvers.0.IsFullText false \
-    --Approvers.0.VerifyChannel WEIXIN \
-    --Approvers.0.Required true \
-    --Approvers.0.UserId  \
-    --Approvers.0.RecipientId  \
     --Approvers.0.NotifyType SMS \
-    --Approvers.0.ApproverMobile 135****6345 \
-    --Approvers.0.ApproverName 史国富 \
-    --Approvers.0.PreReadTime 5 \
+    --Approvers.0.ApproverMobile 113200000000 \
+    --Approvers.0.ApproverName 典子谦 \
     --DeadLine 1652931170 \
-    --ClientToken 字符串 \
-    --Operator.ProxyIp 字符串 \
-    --Operator.ClientIp 字符串 \
-    --Operator.UserId yDxMkUy*****E8VI2JmKxPkk \
-    --Operator.Channel YUFU \
-    --Operator.OpenId us-6c4f2****bafe176c2b1cb86a \
-    --Unordered true \
-    --CallbackUrl 
+    --Operator.UserId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH \
+    --Unordered True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FlowId": "yDR8YUUg****O4zjEuwxLMnR24",
-        "RequestId": "2846e98d-53bd-4d1f-807f-d2632a7fceef"
+        "FlowId": "yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc",
+        "RequestId": "2632a7fceef"
     }
 }
 ```
 
-**Example 2: 创建签署流程。**
+**Example 2: 创建含有动态签署人流程，签署方不指定具体的签署人**
+
+创建一个B2C流程，两方签署方不指定具体的签署人
+注：
+`1.签署人相关信息为空，如：姓名、手机号码等`
+`2.FillType需传值为1，表示为动态签署人（不确定具体的签署人），需后续进行补充。`
+
+Input: 
+
+```
+tccli ess CreateFlow --cli-unfold-argument  \
+    --Operator.UserId yDRS4UUgygqdcj51UuO4zjEyWTmzsIAR \
+    --FlowName 西瓜购买合同 \
+    --Unordered False \
+    --DeadLine 1604912664 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.Required True \
+    --Approvers.0.ApproverOption.FillType 1 \
+    --Approvers.1.ApproverType 1 \
+    --Approvers.1.Required True \
+    --Approvers.1.ApproverOption.FillType 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "yDRS4UUgygqdcj5pUuO4zjEu602GFIe6",
+        "RequestId": "4zjEBpXdcsHWX"
+    }
+}
+```
+
+**Example 3: 创建含有或签签署人流程，签署方不指定具体的签署人**
+
+创建一个B端签署流程，签署方不指定具体的签署人
+注：
+`1.签署人相关信息为空，如：姓名、手机号码等`
+`2.CustomApproverTag需传值，表示为或签签署人（不确定具体的签署人），需后续进行补充。`
+
+Input: 
+
+```
+tccli ess CreateFlow --cli-unfold-argument  \
+    --Operator.UserId yDCp0UUckpay74u2Uxgcd4v1197NeSXv \
+    --FlowName 测试或签合同 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.CustomApproverTag custom_tag \
+    --Approvers.0.OrganizationName 典子谦示例企业
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "yD3arUUckpmvkpc7U1UuZIg1D1AlzXVo",
+        "RequestId": "1c5501d6-dd0b-4589-9132-79d8c4adee54"
+    }
+}
+```
+
+**Example 4: 创建签署流程**
+
+创建一个B2C流程
+
+Input: 
+
+```
+tccli ess CreateFlow --cli-unfold-argument  \
+    --Operator.UserId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH \
+    --FlowName 西红柿采购合同 \
+    --Unordered False \
+    --DeadLine 1604912664 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.OrganizationName 典子谦示例企业 \
+    --Approvers.0.Required True \
+    --Approvers.0.ApproverName 典子谦 \
+    --Approvers.0.ApproverMobile 13200000000 \
+    --Approvers.1.ApproverType 1 \
+    --Approvers.1.Required True \
+    --Approvers.1.ApproverName 李四 \
+    --Approvers.1.ApproverMobile 15100000000
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "yDwfGUUckps86q8kUoTIbgRXTZbVk9I2",
+        "RequestId": "001uSHUNDy"
+    }
+}
+```
+
+**Example 5: 创建签署流程-开启发起审批流**
 
 
 
@@ -51,28 +131,28 @@ Input:
 
 ```
 tccli ess CreateFlow --cli-unfold-argument  \
-    --Operator.UserId 1956103********520fde6a \
-    --FlowName 测试 \
+    --Operator.UserId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH \
+    --Workflow True \
+    --FlowName 西红柿采购合同 \
     --Unordered False \
     --DeadLine 1604912664 \
-    --CustomShowMap 合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署方2:  {签署方2企业}{签署方2姓名};签署方3:  {签署方3姓名} \
     --Approvers.0.ApproverType 0 \
-    --Approvers.0.OrganizationName ***有限公司 \
+    --Approvers.0.OrganizationName 典子谦示例企业 \
     --Approvers.0.Required True \
-    --Approvers.0.ApproverName 张三 \
-    --Approvers.0.ApproverMobile 185****11111 \
+    --Approvers.0.ApproverName 典子谦 \
+    --Approvers.0.ApproverMobile 13200000000 \
     --Approvers.1.ApproverType 1 \
     --Approvers.1.Required True \
     --Approvers.1.ApproverName 李四 \
-    --Approvers.1.ApproverMobile 185****2222
+    --Approvers.1.ApproverMobile 15100000000
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FlowId": "2fb48c3945****65aaedf6",
-        "RequestId": "s1234345677xxxx"
+        "FlowId": "yDwfGUUckps86q8kUoTIbgRXTZbVk9I2",
+        "RequestId": "001uSHUNDy"
     }
 }
 ```

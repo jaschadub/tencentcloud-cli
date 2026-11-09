@@ -6,40 +6,43 @@ Input:
 
 ```
 tccli cfw DescribeEnterpriseSecurityGroupRule --cli-unfold-argument  \
-    --Enable xx \
-    --Protocol xx \
-    --Description xx \
-    --PageNo xx \
-    --SourceContent xx \
-    --ServiceTemplateId xx \
-    --PageSize xx \
-    --DestContent xx \
-    --RuleAction xx \
-    --Port xx
+    --SourceContent 192.168.0.2 \
+    --DestContent 192.168.0.3 \
+    --Description 放行规则 \
+    --RuleAction accept \
+    --Enable true \
+    --Port 80 \
+    --Protocol TCP \
+    --ServiceTemplateId ppmg-jz17vpis \
+    --PageNo 1 \
+    --PageSize 10 \
+    --RuleUuid 1
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "PageNo": "1",
+        "PageSize": "10",
         "Rules": [
             {
-                "OrderIndex": "xx",
-                "Protocol": "xx",
-                "SourceType": "xx",
-                "SourceContent": "xx",
-                "DestType": "xx",
-                "ServiceTemplateId": "xx",
-                "DestContent": "xx",
-                "RuleAction": "xx",
-                "Port": "xx",
-                "Description": "xx"
+                "SourceContent": "192.168.0.2",
+                "SourceType": "net",
+                "DestContent": "192.168.0.3",
+                "DestType": "net",
+                "Protocol": "TCP",
+                "Port": "80",
+                "ServiceTemplateId": "ppmg-jz17vpis",
+                "RuleAction": "accept",
+                "Description": "放行规则",
+                "OrderIndex": "1",
+                "Id": "1",
+                "Enable": "true"
             }
         ],
-        "TotalCount": "xx",
-        "PageSize": "xx",
-        "PageNo": "xx",
-        "RequestId": "xx"
+        "TotalCount": "1",
+        "RequestId": "8f563b4d-8151-4db0-a822-9bde279d2079"
     }
 }
 ```

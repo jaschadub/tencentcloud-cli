@@ -1,82 +1,87 @@
 **Example 1: 查询升级状态**
 
-
+查询升级状态
 
 Input: 
 
 ```
 tccli tke GetUpgradeInstanceProgress --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx
+    --ClusterId cls-e55paxnt
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "LifeState": "xx",
+        "Total": 0,
+        "Done": 0,
+        "LifeState": "running",
         "Instances": [
             {
-                "StartAt": "xx",
-                "InstanceID": "xx",
-                "Detail": [
-                    {
-                        "StartAt": "xx",
-                        "Step": "xx",
-                        "LifeState": "xx",
-                        "EndAt": "xx",
-                        "FailedMsg": "xx"
-                    },
-                    {
-                        "LifeState": "xx",
-                        "Step": "xx",
-                        "StartAt": "xx",
-                        "EndAt": "xx",
-                        "FailedMsg": "xx"
-                    },
-                    {
-                        "LifeState": "xx",
-                        "Step": "xx",
-                        "StartAt": "xx",
-                        "EndAt": "xx",
-                        "FailedMsg": "xx"
-                    },
-                    {
-                        "LifeState": "xx",
-                        "Step": "xx",
-                        "StartAt": "xx",
-                        "EndAt": "xx",
-                        "FailedMsg": "xx"
-                    }
-                ],
-                "EndAt": "xx",
+                "InstanceID": "ins-wggphft5",
+                "LifeState": "paused",
+                "StartAt": "2021-02-08T16:29:46+08:00",
+                "EndAt": "2021-02-08T16:39:46+08:00",
                 "CheckResult": {
+                    "CheckPass": false,
                     "Items": [
                         {
-                            "WorkLoadKind": "xx",
-                            "After": 1,
-                            "Namespace": "xx",
-                            "WorkLoadName": "xx",
+                            "Namespace": "default",
+                            "WorkLoadKind": "ReplicaSet",
+                            "WorkLoadName": "kubernetes-proxy-67fd23cf4d",
+                            "Before": 1,
+                            "After": 0,
                             "Pods": [
-                                "xx"
-                            ],
-                            "Before": 1
+                                "kubernetes-proxy-67fd23cf4d-2tcxw"
+                            ]
                         }
                     ],
-                    "CheckPass": true,
-                    "SinglePods": [
-                        "xx"
-                    ]
+                    "SinglePods": []
                 },
-                "LifeState": "xx"
+                "Detail": [
+                    {
+                        "EndAt": null,
+                        "FailedMsg": "precheck failed",
+                        "LifeState": "failed",
+                        "StartAt": "2023-02-08T08:29:51Z",
+                        "Step": "preCheck"
+                    },
+                    {
+                        "EndAt": null,
+                        "FailedMsg": "",
+                        "LifeState": "pending",
+                        "StartAt": null,
+                        "Step": "drain"
+                    },
+                    {
+                        "EndAt": null,
+                        "FailedMsg": "",
+                        "LifeState": "pending",
+                        "StartAt": null,
+                        "Step": "remove"
+                    },
+                    {
+                        "EndAt": null,
+                        "FailedMsg": "",
+                        "LifeState": "pending",
+                        "StartAt": null,
+                        "Step": "reset"
+                    },
+                    {
+                        "EndAt": null,
+                        "FailedMsg": "",
+                        "LifeState": "pending",
+                        "StartAt": null,
+                        "Step": "postCheck"
+                    }
+                ]
             }
         ],
-        "Done": 1,
-        "RequestId": "xx",
         "ClusterStatus": {
-            "PodTotal": 0,
+            "PodTotal": 10,
             "NotReadyPod": 0
         },
-        "Total": 3
+        "RequestId": "b224fa4b-fedf-4061-baa9-d547ew858df"
     }
 }
 ```

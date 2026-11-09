@@ -1,4 +1,28 @@
-**Example 1: 获取DescribeDataSetUrlStatistics信息**
+**Example 1: 222**
+
+
+
+Input: 
+
+```
+tccli rum DescribeDataSetUrlStatistics --cli-unfold-argument  \
+    --EndTime 1625454840 \
+    --Type condition \
+    --ID 1 \
+    --StartTime 1625444040
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "888d57f1-f544-4291-9a88-8638c050f208",
+        "Result": "{\"request_id\":\"888d57f1-f544-4291-9a88-8638c050f208\",\"results\":[{\"statement_id\":0,\"total\":0},{\"statement_id\":1,\"total\":0},{\"statement_id\":2,\"total\":0}]}"
+    }
+}
+```
+
+**Example 2: 获取DescribeDataSetUrlStatistics信息**
 
 
 
@@ -33,32 +57,8 @@ Output:
 ```
 {
     "Response": {
-        "Result": "xxxx",
+        "Result": "{\"request_id\":\"65a8fec7-2b39-4b11-893f-3715279d235f\",\"results\":[{\"statement_id\":0,\"total\":0},{\"statement_id\":1,\"total\":0},{\"statement_id\":2,\"total\":0}]}",
         "RequestId": "65a8fec7-2b39-4b11-893f-3715279d235f"
-    }
-}
-```
-
-**Example 2: 222**
-
-
-
-Input: 
-
-```
-tccli rum DescribeDataSetUrlStatistics --cli-unfold-argument  \
-    --EndTime 1625454840 \
-    --Type condition \
-    --ID 1 \
-    --StartTime 1625444040
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "888d57f1-f544-4291-9a88-8638c050f208",
-        "Result": "{\"request_id\":\"888d57f1-f544-4291-9a88-8638c050f208\",\"results\":[{\"statement_id\":0,\"total\":0},{\"statement_id\":1,\"total\":0},{\"statement_id\":2,\"total\":0}]}"
     }
 }
 ```

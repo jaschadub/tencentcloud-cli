@@ -1,12 +1,12 @@
 **Example 1: 查询可回档时间**
 
-
+查询可回档时间
 
 Input: 
 
 ```
 tccli cdb DescribeRollbackRangeTime --cli-unfold-argument  \
-    --InstanceIds cdb-fix44sxh cdb-bdf7h3j1
+    --InstanceIds cdb-bdf7h3j1 cdb-fix44sxh
 ```
 
 Output: 

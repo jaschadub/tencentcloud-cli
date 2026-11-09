@@ -6,11 +6,10 @@ Input:
 
 ```
 tccli dlc DropDMSTable --cli-unfold-argument  \
-    --DbName db1 \
+    --DatasourceConnectionName DataLakeCatalog \
+    --DbName database1 \
     --Name table1 \
-    --DeleteData False \
-    --EnvProps.Value xx \
-    --EnvProps.Key xx
+    --DeleteData True
 ```
 
 Output: 

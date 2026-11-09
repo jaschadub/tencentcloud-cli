@@ -4,7 +4,8 @@
       "document": "获取服务接入信息",
       "input": "DescribeAgentShellRequest",
       "name": "获取服务接入信息",
-      "output": "DescribeAgentShellResponse"
+      "output": "DescribeAgentShellResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -18,7 +19,6 @@
       "document": "agent安装脚本串",
       "members": [
         {
-          "default": "",
           "document": "鉴权token\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "Token",
@@ -27,7 +27,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据接收Ip\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "EtlIp",
@@ -36,7 +35,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "数据接收port\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "EtlPort",
@@ -45,7 +43,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "手动接入脚本串\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ByHandAccess",
@@ -54,7 +51,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "自动接入脚本串\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ByShellAccess",
@@ -63,7 +59,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "SkyWalking数据接收port\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "SkyWalkingPort",
@@ -72,7 +67,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Zipkin数据接收port\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "ZipkinPort",
@@ -81,7 +75,6 @@
           "value_allowed_null": true
         },
         {
-          "default": "",
           "document": "Jaeger数据接收port\n注意：此字段可能返回 null，表示取不到有效值。",
           "member": "string",
           "name": "JaegerPort",

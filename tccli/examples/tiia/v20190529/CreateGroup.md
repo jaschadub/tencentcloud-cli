@@ -1,6 +1,6 @@
 **Example 1: 调用成功示例**
 
-
+调用成功示例
 
 Input: 
 
@@ -8,9 +8,9 @@ Input:
 tccli tiia CreateGroup --cli-unfold-argument  \
     --Brief brief_test \
     --GroupName name_test \
-    --MaxQps 123 \
-    --MaxCapacity 123 \
-    --GroupId test_1
+    --MaxQps 10 \
+    --MaxCapacity 100 \
+    --GroupId test_group
 ```
 
 Output: 

@@ -1,4 +1,4 @@
-**Example 1: CreateCloudRunEnv**
+**Example 1: 开通云托管环境**
 
 
 
@@ -6,17 +6,20 @@ Input:
 
 ```
 tccli tcbr CreateCloudRunEnv --cli-unfold-argument  \
-    --FreeQuota basic \
-    --PackageType Enterprise
+    --EnvId lowcode-xxxxxxxxxx \
+    --PackageType Trial \
+    --Source weda \
+    --Channel weda \
+    --Alias default
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "EnvId": "prod-3g69bdvme2ac11cb",
-        "TranId": "0ow89eea326",
-        "RequestId": "1db46cfe-3b3d-47e8-aff2-1cbf1b6c3018"
+        "EnvId": "lowcode-xxxxxxxxxx",
+        "RequestId": "c8b68d5a-d045-4740-b731-xxxxxxx",
+        "TranId": ""
     }
 }
 ```

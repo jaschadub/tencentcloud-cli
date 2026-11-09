@@ -1,4 +1,4 @@
-**Example 1: 创建成员**
+**Example 1: 创建组织成员**
 
 
 
@@ -6,22 +6,19 @@ Input:
 
 ```
 tccli organization CreateOrganizationMember --cli-unfold-argument  \
-    --Remark test \
-    --Name test \
-    --NodeId 27 \
-    --AccountName test \
+    --Name member_name \
+    --PolicyType Financial \
     --PermissionIds 1 2 \
-    --PolicyType Finical \
-    --PayUin  \
-    --IdentityRoleID 1
+    --NodeId 100000000001 \
+    --AccountName member_name
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Uin": 100001919,
-        "RequestId": "1a556fac-cd38-4732-86ef-6283d6abddd7"
+        "Uin": 111111111111,
+        "RequestId": "baf86769-f4d5-47bd-8efc-3644add42458"
     }
 }
 ```

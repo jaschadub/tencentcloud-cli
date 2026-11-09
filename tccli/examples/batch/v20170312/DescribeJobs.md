@@ -16,7 +16,7 @@ Output:
         "TotalCount": 2,
         "JobSet": [
             {
-                "EndTime": null,
+                "EndTime": "2020-09-21T08:59:45Z",
                 "JobState": "STARTING",
                 "Tags": [
                     {
@@ -37,7 +37,12 @@ Output:
                 "JobId": "job-3n2weaqt",
                 "Priority": 1,
                 "Placement": {
-                    "Zone": "ap-guangzhou-4"
+                    "Zone": "ap-guangzhou-4",
+                    "ProjectId": 0,
+                    "HostIds": [
+                        "host-o5i742go"
+                    ],
+                    "HostId": "host-o5i742go"
                 },
                 "JobName": "hello-test-job",
                 "CreateTime": "2020-09-22T07:14:54Z"
@@ -68,7 +73,12 @@ Output:
                 "JobId": "job-7e7evk2x",
                 "Priority": 1,
                 "Placement": {
-                    "Zone": "ap-guangzhou-4"
+                    "Zone": "ap-guangzhou-4",
+                    "ProjectId": 1,
+                    "HostIds": [
+                        "host-o5i737go"
+                    ],
+                    "HostId": "host-o5i737go"
                 },
                 "JobName": "hello-test-job",
                 "CreateTime": "2020-09-21T08:57:01Z"

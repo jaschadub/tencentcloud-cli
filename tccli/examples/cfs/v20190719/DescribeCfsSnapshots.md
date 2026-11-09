@@ -13,25 +13,28 @@ Output:
 ```
 {
     "Response": {
-        "TotalSize": 1,
-        "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "dd01b47d-2b57-4721-a237-1bdf59eac8b4",
         "Snapshots": [
             {
-                "Status": 1,
-                "SnapshotName": "xx",
-                "Percent": 1,
-                "FileSystemId": "xx",
-                "Size": 1,
-                "AppId": 1,
-                "SnapshotId": "xx",
-                "AliveDay": 1,
-                "CreationTime": "xx",
-                "DeleteTime": "xx",
-                "FsName": "xx",
-                "RegionName": "xx"
+                "AliveDay": 0,
+                "AppId": 1300275735,
+                "CreationTime": "2024-09-27 16:03:06",
+                "DeleteTime": "0",
+                "FileSystemId": "cfs-12345",
+                "FsName": "aileen-api-charge",
+                "Percent": 0,
+                "RegionName": "ap-guangzhou",
+                "Size": 0,
+                "SnapshotId": "snapcfs-5v2hgj3p",
+                "SnapshotName": "heihei",
+                "SnapshotTime": "2024-09-27 16:03:06",
+                "SnapshotType": "Standard",
+                "Status": "creating",
+                "Tags": []
             }
-        ]
+        ],
+        "TotalCount": 1,
+        "TotalSize": 0
     }
 }
 ```

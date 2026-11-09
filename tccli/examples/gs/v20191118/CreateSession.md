@@ -1,6 +1,6 @@
 **Example 1: CreateSession示例**
 
-
+锁定实例后，创建会话，以连接实例
 
 Input: 
 
@@ -16,10 +16,10 @@ Output:
 ```
 {
     "Response": {
-        "RoleNumber": "xx",
-        "ServerSession": "xx",
-        "Role": "xx",
-        "RequestId": "xx"
+        "RoleNumber": "1",
+        "ServerSession": "e30=",
+        "Role": "Player",
+        "RequestId": "req123"
     }
 }
 ```

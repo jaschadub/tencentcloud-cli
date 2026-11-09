@@ -1,4 +1,4 @@
-**Example 1: 创建云数据库实例（按量计费）**
+**Example 1: 发货**
 
 
 
@@ -6,33 +6,42 @@ Input:
 
 ```
 tccli cdb CreateDBInstanceHour --cli-unfold-argument  \
-    --ResourceTags.0.TagKey marchtest \
-    --ResourceTags.0.TagValue test1 \
-    --Zone ap-guangzhou-3 \
-    --UniqVpcId vpc-0akbol5v \
-    --ProjectId 0 \
-    --SlaveZone ap-guangzhou-3 \
-    --InstanceRole master \
     --GoodsNum 1 \
-    --DeployMode 0 \
-    --Volume 25 \
-    --EngineVersion 5.6 \
-    --UniqSubnetId subnet-fyrtjbqw \
     --Memory 1000 \
-    --ProtectMode 0
+    --Volume 150 \
+    --EngineVersion 8.0 \
+    --UniqVpcId vpc-xxxxxx \
+    --UniqSubnetId subnet-xxxxxx \
+    --ProjectId 0 \
+    --Zone 540001 \
+    --InstanceRole master \
+    --Port 3306 \
+    --ParamList.0.Name lower_case_table_names \
+    --ParamList.0.Value 1 \
+    --ProtectMode 1 \
+    --DeployMode 0 \
+    --SlaveZone 540001 \
+    --BackupZone 0 \
+    --SecurityGroup sg-xxxxx \
+    --InstanceName xxxxxxx \
+    --AlarmPolicyList -1 \
+    --Cpu 1 \
+    --ParamTemplateType HIGH_STABILITY \
+    --EngineType InnoDB \
+    --DestroyProtect off
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
-        "InstanceIds": [
-            "cdb-03brtubb"
-        ],
         "DealIds": [
-            "20171201160000002670226599824833"
-        ]
+            "20260330601111111111"
+        ],
+        "InstanceIds": [
+            "cdb-xxxzz"
+        ],
+        "RequestId": "d30a3795-ee9e-4dc7-bf93-1e7ab751b6f5"
     }
 }
 ```

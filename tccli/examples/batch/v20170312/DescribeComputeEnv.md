@@ -29,7 +29,8 @@ Output:
         "EnvName": "test compute env",
         "NextAction": "",
         "Placement": {
-            "Zone": "ap-guangzhou-2"
+            "ProjectId": 0,
+            "Zone": "ap-guangzhou-6"
         },
         "ComputeNodeSet": [
             {

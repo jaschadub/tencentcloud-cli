@@ -1,41 +1,43 @@
-**Example 1: 查询云数据库的所有账号信息**
+**Example 1: 查询账号列表**
 
-
+查询账号列表
 
 Input: 
 
 ```
 tccli cdb DescribeAccounts --cli-unfold-argument  \
-    --InstanceId cdb-f35wr6wj
+    --InstanceId cdb-mw6uxcyt
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
-        "TotalCount": 2,
-        "MaxUserConnections": 10240,
         "Items": [
             {
-                "Notes": "test",
-                "Host": "localhost",
-                "User": "test_user",
-                "ModifyTime": "2020-11-10 01:00:00",
-                "ModifyPasswordTime": "2020-11-10 01:00:00",
-                "CreateTime": "2020-11-10 01:00:00",
-                "MaxUserConnections": 20
+                "CreateTime": "2026-08-27 10:14:08",
+                "Host": "%",
+                "MaxUserConnections": 0,
+                "ModifyPasswordTime": "2026-08-27 19:18:07",
+                "ModifyTime": "2026-08-27 19:18:07",
+                "Notes": "",
+                "OpenCam": false,
+                "User": "root"
             },
             {
-                "Notes": "test2",
-                "Host": "localhost",
-                "User": "root",
-                "ModifyTime": "2020-11-10 01:00:00",
-                "ModifyPasswordTime": "2020-11-10 01:00:00",
-                "CreateTime": "2020-11-10 01:00:00",
-                "MaxUserConnections": 20
+                "CreateTime": "2026-08-27 19:18:36",
+                "Host": "%",
+                "MaxUserConnections": 0,
+                "ModifyPasswordTime": "2026-08-27 19:18:36",
+                "ModifyTime": "2026-08-27 19:18:36",
+                "Notes": "",
+                "OpenCam": false,
+                "User": "testqqq"
             }
-        ]
+        ],
+        "MaxUserConnections": 10240,
+        "RequestId": "527dcdb8-9c9b-4fb0-9e47-e8316737e051",
+        "TotalCount": 2
     }
 }
 ```

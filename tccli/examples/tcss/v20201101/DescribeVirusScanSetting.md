@@ -1,6 +1,6 @@
 **Example 1: 运行时查询文件查杀设置**
 
-
+运行时查询文件查杀设置
 
 Input: 
 
@@ -11,18 +11,23 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "b9cd345d-9d88-4e3b-86b6-e0e5c971731a",
-        "EnableScan": true,
+        "BeginScanAt": "10:59:00",
+        "ClickTimeout": 0,
         "Cycle": 1,
-        "BeginScanAt": "01:00:00",
-        "ScanPathAll": true,
+        "EnableScan": true,
+        "RequestId": "def074cf-2ad4-4895-bc34-e1607b094a4e",
+        "ScanIds": [
+            "ad297b24a4f818d9da49c9bec10d54c179b6751fc362802b077f710b3638e0f0"
+        ],
+        "ScanPath": [
+            "/tmp"
+        ],
+        "ScanPathAll": false,
+        "ScanPathMode": "SCAN_PATH_USER_DEFINE",
         "ScanPathType": 0,
-        "Timeout": 2,
+        "ScanRangeAll": false,
         "ScanRangeType": 0,
-        "ClickTimeout": 1,
-        "ScanRangeAll": true,
-        "ScanIds": [],
-        "ScanPath": []
+        "Timeout": 5
     }
 }
 ```

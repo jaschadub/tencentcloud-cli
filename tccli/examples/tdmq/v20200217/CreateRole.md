@@ -1,23 +1,32 @@
 **Example 1: 创建角色**
 
-
+创建角色
 
 Input: 
 
 ```
 tccli tdmq CreateRole --cli-unfold-argument  \
-    --RoleName test_role_123 \
-    --Remark 创建角色
+    --RoleName devName \
+    --Remark devRemark \
+    --ClusterId pulsar-xk3ne8k2qkp8
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RoleName": "test_role_123",
-        "Token": "eyJrZXlJZCI6InN1bmdvxxxxx0X3JvbGVfMyJ9.dbHR8m6gc4L4vZUrodhW_O9bDulZQ6lraNswNLtcUcY",
-        "Remark": "创建角色",
-        "RequestId": "gggxxxx"
+        "RoleName": "devName",
+        "Token": "ajdsaiuasdnmasllamm",
+        "Remark": "devRemark",
+        "EnvironmentRoleSets": [
+            {
+                "EnvironmentId": "devNs",
+                "Permissions": [
+                    "produce"
+                ]
+            }
+        ],
+        "RequestId": "1004f1de-6fb8-41d5-965e-3aae8c87183a"
     }
 }
 ```

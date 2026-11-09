@@ -1,13 +1,13 @@
 **Example 1: 查询流日志集合**
 
-
+查询流日志集合
 
 Input: 
 
 ```
 tccli vpc DescribeFlowLogs --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 10
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
@@ -16,17 +16,18 @@ Output:
     "Response": {
         "FlowLog": [
             {
-                "CloudLogId": "219d5186-eab0-4510-905b-84925d8ec35e",
+                "CloudLogId": "dfb8f1a2-8522-47c1-8571-67905167ab3f",
+                "CloudLogRegion": "ap-guangzhou",
                 "CloudLogState": "SUCCESS",
                 "CreatedTime": "2019-05-07 18:00:26",
                 "FlowLogDescription": "",
                 "FlowLogId": "fl-2edhcclz",
-                "FlowLogName": "yuemingtest",
+                "FlowLogName": "FlowLogName1",
                 "ResourceId": "eni-78ysaex1",
                 "ResourceType": "NETWORKINTERFACE",
                 "TrafficType": "ACCEPT",
                 "VpcId": "vpc-pq9vxykj",
-                "StorageType": "cls",
+                "StorageType": "ckafka",
                 "FlowLogStorage": {
                     "StorageTopic": "topic-siqmaox1",
                     "StorageId": "ckafka-akwiqms1"
@@ -36,16 +37,17 @@ Output:
             },
             {
                 "CloudLogId": "dfb8f1a2-8522-47c1-8571-67905167ab3f",
+                "CloudLogRegion": "ap-guangzhou",
                 "CloudLogState": "SUCCESS",
                 "CreatedTime": "2019-05-08 10:48:26",
                 "FlowLogDescription": "",
                 "FlowLogId": "fl-f42uhpkj",
-                "FlowLogName": "test",
+                "FlowLogName": "FlowLogName2",
                 "ResourceId": "eni-78ysaex1",
                 "ResourceType": "NETWORKINTERFACE",
                 "TrafficType": "ACCEPT",
                 "VpcId": "vpc-pq9vxykj",
-                "StorageType": "cls",
+                "StorageType": "ckafka",
                 "FlowLogStorage": {
                     "StorageTopic": "topic-siqmaox1",
                     "StorageId": "ckafka-akwiqms1"
@@ -62,7 +64,7 @@ Output:
 
 **Example 2: 获取流日志信息**
 
-
+获取流日志信息
 
 Input: 
 
@@ -92,7 +94,8 @@ Output:
                 "Enable": true,
                 "StorageType": "cls",
                 "FlowLogStorage": {
-                    "StorageId": "29a6c8c8-d57d-4e25-84b5-9114734ce6ca"
+                    "StorageId": "29a6c8c8-d57d-4e25-84b5-9114734ce6ca",
+                    "StorageTopic": "topic-siqmaox1"
                 },
                 "TagSet": []
             }

@@ -1,13 +1,12 @@
 **Example 1: 创建日志集。**
 
-
+创建日志集。
 
 Input: 
 
 ```
 tccli clb CreateClsLogSet --cli-unfold-argument  \
-    --LogsetName clb_logset \
-    --Period 7
+    --LogsetName clb_logset
 ```
 
 Output: 

@@ -1,12 +1,12 @@
-**Example 1: 驾驶证识别示例代码1    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)**
+**Example 1: 驾驶证主页告警识别示例 **
 
-
+驾驶证主页告警识别示例 
 
 Input: 
 
 ```
 tccli ocr DriverLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/vehicle/DriverLicenseOCR/DriverLicenseOCR2.jpg \
     --CardSide FRONT
 ```
 
@@ -14,41 +14,46 @@ Output:
 ```
 {
     "Response": {
-        "Name": "李明",
-        "Sex": "男",
-        "Nationality": "中国",
         "Address": "上海市徐汇区田林路397号腾云大厦6F",
-        "DateOfBirth": "1987-01-01",
-        "IssuingAuthority": "上海市公安局交通警察总队",
-        "DateOfFirstIssue": "2011-10-01",
-        "Class": "C1",
-        "StartDate": "2011-10-01",
-        "EndDate": "2017-10-01",
-        "CardCode": "440524198701010014",
         "ArchivesCode": "",
-        "Record": "",
+        "CardCode": "440524198701010014",
+        "Class": "C1",
+        "CumulativeScore": "",
+        "DateOfBirth": "1987-01-01",
+        "DateOfFirstIssue": "2011-10-01",
+        "EndDate": "2017-10-01",
+        "IssuingAuthority": "上海市公安局交通警察总队",
+        "Name": "李明",
+        "Nationality": "中国",
         "RecognizeWarnCode": [
-            -9106
+            -9102
         ],
         "RecognizeWarnMsg": [
-            "WARN_DRIVER_LICENSE_PS_CARD"
+            "WARN_DRIVER_LICENSE_COPY_CARD"
         ],
-        "CumulativeScore": "xx",
-        "State": "xx",
-        "RequestId": "4ba2958b-e7cf-41c2-aafe-fdc985307f63"
+        "Record": "",
+        "RequestId": "c5ceedaa-cb6f-4210-af49-0a5dee461259",
+        "Sex": "男",
+        "StartDate": "2011-10-01",
+        "CurrentTime": "",
+        "GenerateTime": "",
+        "State": "",
+        "BackPageName": "",
+        "BackPageCardCode": "",
+        "DriverLicenseType": ""
     }
 }
 ```
 
-**Example 2: 驾驶证识别示例代码2    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)**
+**Example 2: 驾驶证主页识别示例   **
 
-
+驾驶证主页识别示例   
 
 Input: 
 
 ```
 tccli ocr DriverLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/vehicle/DriverLicenseOCR/DriverLicenseOCR1.jpg \
     --CardSide FRONT
 ```
 
@@ -56,81 +61,42 @@ Output:
 ```
 {
     "Response": {
-        "Name": "李四",
-        "Sex": "男",
-        "Nationality": "中国",
-        "Address": "上海市徐汇区田林路397号腾云大厦3F",
-        "DateOfBirth": "1989-01-01",
-        "DateOfFirstIssue": "2012-10-01",
-        "Class": "C1",
-        "StartDate": "2011-10-01",
-        "EndDate": "2017-10-01",
-        "CardCode": "440xxxxxxxxxxx0011",
+        "Address": "广东省深圳市南山区腾讯大厦",
         "ArchivesCode": "",
+        "CardCode": "440305198305101408",
+        "Class": "C2",
+        "CumulativeScore": "",
+        "DateOfBirth": "1983-05-10",
+        "DateOfFirstIssue": "2005-05-01",
+        "EndDate": "2025-10-01",
         "IssuingAuthority": "上海市公安局交通警察总队",
-        "Record": "",
-        "RecognizeWarnCode": [
-            -9106,
-            -9103
-        ],
-        "RecognizeWarnMsg": [
-            "WARN_DRIVER_LICENSE_PS_CARD",
-            "WARN_DRIVER_LICENSE_SCREENED_CARD"
-        ],
-        "CumulativeScore": "xx",
-        "State": "xx",
-        "RequestId": "4ba2958b-e7cf-41c2-aafe-fdc985307f63"
-    }
-}
-```
-
-**Example 3: 驾驶证识别示例代码3    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)**
-
-
-
-Input: 
-
-```
-tccli ocr DriverLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
-    --CardSide BACK
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Name": "文磊",
-        "Sex": "",
-        "Nationality": "",
-        "Address": "",
-        "DateOfBirth": "",
-        "DateOfFirstIssue": "",
-        "Class": "",
-        "StartDate": "",
-        "EndDate": "",
-        "CardCode": "510106197906030018",
-        "ArchivesCode": "510111425293",
-        "Record": "",
-        "IssuingAuthority": "",
+        "Name": "刘洋",
+        "Nationality": "中国",
         "RecognizeWarnCode": [],
         "RecognizeWarnMsg": [],
-        "CumulativeScore": "xx",
-        "State": "xx",
-        "RequestId": "83e87a88-2382-4781-96ec-f8d620fffee8"
+        "Record": "",
+        "RequestId": "9b0d1ee9-8fdb-4194-be58-212bee88a7fd",
+        "Sex": "女",
+        "StartDate": "2015-10-01",
+        "CurrentTime": "",
+        "GenerateTime": "",
+        "State": "",
+        "BackPageName": "",
+        "BackPageCardCode": "",
+        "DriverLicenseType": ""
     }
 }
 ```
 
-**Example 4: 驾驶证识别示例代码4    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)**
+**Example 3: 驾驶证副页识别示例   **
 
-
+驾驶证副页识别示例   
 
 Input: 
 
 ```
 tccli ocr DriverLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg \
     --CardSide BACK
 ```
 
@@ -138,30 +104,29 @@ Output:
 ```
 {
     "Response": {
-        "Name": "文磊",
-        "Sex": "",
-        "Nationality": "",
         "Address": "",
+        "ArchivesCode": "130123421234",
+        "CardCode": "13072*****345",
+        "Class": "",
+        "CumulativeScore": "",
         "DateOfBirth": "",
         "DateOfFirstIssue": "",
-        "Class": "",
-        "StartDate": "",
         "EndDate": "",
-        "CardCode": "510106197906030018",
-        "ArchivesCode": "510111425293",
-        "Record": "",
         "IssuingAuthority": "",
-        "RecognizeWarnCode": [
-            -9106,
-            -9103
-        ],
-        "RecognizeWarnMsg": [
-            "WARN_DRIVER_LICENSE_PS_CARD",
-            "WARN_DRIVER_LICENSE_SCREENED_CARD"
-        ],
-        "CumulativeScore": "xx",
-        "State": "xx",
-        "RequestId": "83e87a88-2382-4781-96ec-f8d620fffee8"
+        "Name": "李明",
+        "Nationality": "",
+        "RecognizeWarnCode": [],
+        "RecognizeWarnMsg": [],
+        "Record": "",
+        "RequestId": "03023a0a-cf96-4baa-8cd8-34ba9d32f3db",
+        "Sex": "",
+        "StartDate": "",
+        "CurrentTime": "",
+        "GenerateTime": "",
+        "State": "",
+        "BackPageName": "李明",
+        "BackPageCardCode": "13072*****345",
+        "DriverLicenseType": ""
     }
 }
 ```

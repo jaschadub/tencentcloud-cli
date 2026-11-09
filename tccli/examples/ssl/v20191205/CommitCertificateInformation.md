@@ -1,12 +1,13 @@
 **Example 1: 提交证书订单**
 
-
+提交证书订单
 
 Input: 
 
 ```
 tccli ssl CommitCertificateInformation --cli-unfold-argument  \
-    --CertificateId abcb1234
+    --CertificateId hehj***jsj \
+    --VerifyType DNS
 ```
 
 Output: 

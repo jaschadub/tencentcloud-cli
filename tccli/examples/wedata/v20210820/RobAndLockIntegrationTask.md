@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli wedata RobAndLockIntegrationTask --cli-unfold-argument  \
-    --ProjectId xx \
-    --TaskId xx \
-    --TaskType 201
+    --TaskId a9471037vb432fa8f88io37a217 \
+    --ProjectId 110225083773970304 \
+    --TaskType 202
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
         "RobLockState": {
-            "Locker": "xx",
-            "IsRob": true
-        }
+            "IsRob": true,
+            "Locker": "username"
+        },
+        "RequestId": "m8d94710-374fe432f-a8f88ba4-d437a210"
     }
 }
 ```

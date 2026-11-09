@@ -1,36 +1,36 @@
 **Example 1: 拉取层列表**
 
-
+拉取层列表
 
 Input: 
 
 ```
 tccli scf ListLayers --cli-unfold-argument  \
-    --SearchKey xx \
-    --CompatibleRuntime xx \
-    --Limit 0 \
-    --Offset 0
+    --Offset 0 \
+    --Limit 10
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "Layers": [
             {
-                "Status": "xx",
-                "LayerVersion": 0,
-                "Description": "xx",
-                "LicenseInfo": "xx",
-                "AddTime": "xx",
+                "LayerName": "test-layer",
+                "LayerVersion": 1,
                 "CompatibleRuntimes": [
-                    "xx"
+                    "Nodejs10.15"
                 ],
-                "LayerName": "xx"
+                "Description": "Layer created by serverless component",
+                "LicenseInfo": "",
+                "AddTime": "2022-10-26 10:08:11",
+                "Status": "Active",
+                "Stamp": "default",
+                "Tags": []
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "xx"
+        "RequestId": "dsfdf-cac3-451d-acfa-667d831521b4"
     }
 }
 ```

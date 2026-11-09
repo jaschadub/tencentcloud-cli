@@ -7,8 +7,8 @@ Input:
 ```
 tccli tem ModifyApplicationInfo --cli-unfold-argument  \
     --SourceChannel 0 \
-    --ApplicationId xx \
-    --Description xx \
+    --ApplicationId app-xxxxxx \
+    --Description 这是一个描述 \
     --EnableTracing 1
 ```
 
@@ -16,8 +16,8 @@ Output:
 ```
 {
     "Response": {
-        "Result": "xx",
-        "RequestId": "true"
+        "Result": true,
+        "RequestId": "1dew34d-xxx-xxx-xxx"
     }
 }
 ```

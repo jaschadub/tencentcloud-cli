@@ -1,4 +1,4 @@
-**Example 1: 样例**
+**Example 1: describe project with params**
 
 
 
@@ -6,58 +6,71 @@ Input:
 
 ```
 tccli wedata DescribeProject --cli-unfold-argument  \
-    --ProjectId 1 \
-    --DescribeAdminUsers True \
-    --DescribeMemberCount True \
-    --DescribeExecutors True \
-    --DescribeClusters True
+    --ProjectId 9782035857154610592
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "123"
-    }
-}
-```
-
-**Example 2: describe project with params**
-
-
-
-Input: 
-
-```
-tccli wedata DescribeProject --cli-unfold-argument  \
-    --ProjectId 978203585769070592
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "9ef8a942-efbe-4f77-8617-a9eb8875fea6"
-    }
-}
-```
-
-**Example 3: projectName transfer**
-
-
-
-Input: 
-
-```
-tccli wedata DescribeProject --cli-unfold-argument  \
-    --ProjectName unique_2rij3
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "949cd55d-e683-4698-a1cd-c142cf7b1e75"
+        "Data": {
+            "TenantId": "abc",
+            "ProjectId": "abc",
+            "ProjectName": "abc",
+            "DisplayName": "abc",
+            "Region": "abc",
+            "Description": "abc",
+            "CreateTime": "2020-09-22T00:00:00+00:00",
+            "Creator": {
+                "UserId": "abc",
+                "UserName": "abc",
+                "DisplayName": "abc",
+                "PhoneNum": "abc",
+                "Email": "abc"
+            },
+            "Tenant": {
+                "TenantId": "abc",
+                "TenantName": "abc",
+                "DisplayName": "abc",
+                "Description": "abc",
+                "OwnerUserId": "abc",
+                "Params": "abc"
+            },
+            "AdminUsers": [
+                {
+                    "UserId": "abc",
+                    "UserName": "abc",
+                    "DisplayName": "abc",
+                    "PhoneNum": "abc",
+                    "Email": "abc"
+                }
+            ],
+            "Clusters": [
+                {
+                    "ClusterId": "abc",
+                    "ClusterType": "abc",
+                    "ClusterName": "abc",
+                    "RegionCn": "abc",
+                    "RegionEn": "abc",
+                    "RegionArea": "abc",
+                    "Used": true,
+                    "Status": 1,
+                    "StatusInfo": "abc",
+                    "StorageType": "abc",
+                    "ComputeType": "abc",
+                    "ClusterResource": "abc",
+                    "ChargeType": "abc",
+                    "CreateTime": "2020-09-22T00:00:00+00:00",
+                    "ExtraConf": "abc",
+                    "RangerUserName": "abc",
+                    "CdwUserName": "abc"
+                }
+            ],
+            "Params": "abc",
+            "Status": 1,
+            "Model": "abc"
+        },
+        "RequestId": "abc"
     }
 }
 ```

@@ -1,12 +1,12 @@
 **Example 1: 获取任务详情**
 
-
+ 获取任务详情。
 
 Input: 
 
 ```
 tccli cme DescribeTaskDetail --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --TaskId 181xxxxxxxx9-procedurev2-b718fcee09a72470bf665cf55351d810t0
 ```
 
@@ -22,7 +22,7 @@ Output:
         "Status": "SUCCESS",
         "TaskType": "VIDEO_EDIT_PROJECT_EXPORT",
         "VideoEditProjectOutput": {
-            "MaterialId": "1111",
+            "MaterialId": "6866c9a7-a2ca-4d",
             "MetaData": {
                 "AudioStreamInfoSet": [
                     {
@@ -49,6 +49,7 @@ Output:
                 "Width": 1920
             },
             "URL": "http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.mp4",
+            "CoverURL": "http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.jpg",
             "VodFileId": "5285890802029089"
         }
     }

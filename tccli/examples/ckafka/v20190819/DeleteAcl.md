@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DeleteAcl --cli-unfold-argument  \
-    --InstanceId xxx \
+    --InstanceId ckafka \
     --ResourceType 2 \
     --ResourceName 1 \
     --Operation 2 \
@@ -21,7 +21,10 @@ Output:
             "ReturnMessage": "ok[apply ok]",
             "ReturnCode": "0",
             "Data": {
-                "FlowId": 0
+                "FlowId": 0,
+                "RouteDTO": {
+                    "RouteId": 0
+                }
             }
         },
         "RequestId": "2140f435-b350-4429-a105-9b83efe104b0"

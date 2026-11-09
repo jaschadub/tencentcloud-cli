@@ -1,6 +1,6 @@
 **Example 1: 创建一个CCN**
 
-
+创建一个云联网CCN实例
 
 Input: 
 
@@ -24,12 +24,15 @@ Output:
             "CcnDescription": "test description",
             "InstanceCount": 0,
             "QosLevel": "PT",
-            "State": 1,
+            "State": "AVAILABLE",
             "InstanceChargeType": "POSTPAID",
+            "InstanceMeteringType": "BANDWIDTH",
             "BandwidthLimitType": "OUTER_REGION_LIMIT",
             "CreateTime": "2020-09-22 00:00:00",
-            "RouteTableFlag": null,
-            "RouteTableCount": null,
+            "RouteTableFlag": true,
+            "RouteTableCount": 1,
+            "IsSecurityLock": true,
+            "RouteBroadcastPolicyFlag": true,
             "TagSet": [
                 {
                     "Key": "city",

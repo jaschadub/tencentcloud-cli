@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli wedata DescribeInstanceLastLog --cli-unfold-argument  \
-    --TaskId xx \
-    --CurRunDate xx
+    --TaskId 20210602165654425 \
+    --CurRunDate 2021-06-02+00:00:00
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": "XX",
-        "RequestId": "xx"
+        "Data": "true",
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

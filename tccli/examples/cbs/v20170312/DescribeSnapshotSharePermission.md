@@ -1,6 +1,6 @@
 **Example 1: 查询某个快照的分享信息**
 
-
+查询某个快照的分享信息
 
 Input: 
 
@@ -17,7 +17,7 @@ Output:
         "SharePermissionSet": [
             {
                 "CreatedTime": "2019-07-08 00:00:06",
-                "AccountId": "123456789"
+                "AccountId": "1044849112"
             }
         ]
     }

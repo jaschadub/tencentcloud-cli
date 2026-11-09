@@ -1,4 +1,4 @@
-**Example 1: 修改人员库接口**
+**Example 1: 修改人员库成功示例**
 
 
 
@@ -22,9 +22,9 @@ Output:
 }
 ```
 
-**Example 2: 修改人员库接口-2**
+**Example 2: 修改人员库名称、备注等信息的成功示例**
 
-修改人员库名称、备注、自定义描述字段名称
+
 
 Input: 
 
@@ -48,7 +48,7 @@ Output:
 }
 ```
 
-**Example 3: 错误示例**
+**Example 3: 修改人员库字段重复错误示例**
 
 
 
@@ -65,14 +65,18 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "FailedOperation.DuplicatedGroupDescription",
+            "Message": "同一人员库中自定义描述字段不可重复。"
+        },
         "RequestId": "4b483679-3f08-4a7c-b827-4a6332dc030f"
     }
 }
 ```
 
-**Example 4: 错误示例-2**
+**Example 4: 修改人员库名称重复错误示例**
 
-人员库名称不可重复
+
 
 Input: 
 
@@ -86,6 +90,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.GroupNameAlreadyExist",
+            "Message": "人员库名称已经存在。人员库名称不可重复。"
+        },
         "RequestId": "2dcce170-30cf-4078-9b3c-309362fbad21"
     }
 }

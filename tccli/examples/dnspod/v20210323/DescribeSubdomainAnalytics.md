@@ -1,116 +1,39 @@
 **Example 1: 子域名解析量统计**
 
-
+ 子域名解析量统计
 
 Input: 
 
 ```
 tccli dnspod DescribeSubdomainAnalytics --cli-unfold-argument  \
-    --Domain example.com \
-    --StartDate 2022-06-14 \
-    --EndDate 2022-06-14 \
-    --Subdomain www
+    --Domain dnspod.cn \
+    --StartDate 2024-12-30 \
+    --EndDate 2024-12-30 \
+    --SubDomain admin \
+    --DNSFormat DATE
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "AliasData": [
-            {
-                "Data": [
-                    {
-                        "DateKey": "20220608",
-                        "HourKey": null,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220609",
-                        "HourKey": null,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220610",
-                        "HourKey": null,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220611",
-                        "HourKey": null,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220612",
-                        "HourKey": null,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220613",
-                        "HourKey": null,
-                        "Num": 0
-                    },
-                    {
-                        "DateKey": "20220614",
-                        "HourKey": null,
-                        "Num": 0
-                    }
-                ],
-                "Info": {
-                    "DnsFormat": "DATE",
-                    "DnsTotal": 0,
-                    "Domain": "examplealis.com",
-                    "EndDate": "2022-06-14",
-                    "StartDate": "2022-06-08",
-                    "Subdomain": "www"
-                }
-            }
-        ],
+        "AliasData": [],
         "Data": [
             {
-                "DateKey": "20220608",
-                "HourKey": null,
-                "Num": 0
-            },
-            {
-                "DateKey": "20220609",
-                "HourKey": null,
-                "Num": 0
-            },
-            {
-                "DateKey": "20220610",
-                "HourKey": null,
-                "Num": 0
-            },
-            {
-                "DateKey": "20220611",
-                "HourKey": null,
-                "Num": 0
-            },
-            {
-                "DateKey": "20220612",
-                "HourKey": null,
-                "Num": 0
-            },
-            {
-                "DateKey": "20220613",
-                "HourKey": null,
-                "Num": 0
-            },
-            {
-                "DateKey": "20220614",
+                "DateKey": "20241230",
                 "HourKey": null,
                 "Num": 0
             }
         ],
         "Info": {
-            "DnsFormat": "DATE",
-            "DnsTotal": 0,
-            "Domain": "example.com",
-            "EndDate": "2022-06-14",
-            "StartDate": "2022-06-08",
-            "Subdomain": "www"
-        }
+            "DNSFormat": "DATE",
+            "DNSTotal": 0,
+            "Domain": "dnspod.cn",
+            "EndDate": "2024-12-30",
+            "StartDate": "2024-12-30",
+            "SubDomain": "admin"
+        },
+        "RequestId": "9ce684ec-a986-4f48-8495-e68b1f337e61"
     }
 }
 ```

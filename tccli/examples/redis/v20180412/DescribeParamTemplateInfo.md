@@ -1,12 +1,12 @@
-**Example 1: 示例**
+**Example 1: 查询参数模板信息**
 
-
+查询指定参数模板ID的模板信息
 
 Input: 
 
 ```
 tccli redis DescribeParamTemplateInfo --cli-unfold-argument  \
-    --TemplateId crs-cfg-7mgtd2ro
+    --TemplateId crs-cfg-7mgt****
 ```
 
 Output: 
@@ -16,8 +16,8 @@ Output:
         "Description": "MyCustomParamTemplate",
         "Items": [
             {
-                "CurrentValue": "",
-                "Default": "\"\"",
+                "CurrentValue": "flushall",
+                "Default": "param_default_value",
                 "Description": "commands in such config will not be allowed to run in this instance,you can config multi commands like this 'flushdb,keys'",
                 "EnumValue": [
                     "flushall",
@@ -71,7 +71,7 @@ Output:
         "Name": "redis_automation_is_awesome_1",
         "ProductType": 2,
         "RequestId": "72881d6c-c2a0-42af-862a-a5de09de104d",
-        "TemplateId": "crs-cfg-7mgtd2ro",
+        "TemplateId": "crs-cfg-7mgt****",
         "TotalCount": 14
     }
 }

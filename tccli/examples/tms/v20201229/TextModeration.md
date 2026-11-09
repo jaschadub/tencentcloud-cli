@@ -6,54 +6,179 @@ Input:
 
 ```
 tccli tms TextModeration --cli-unfold-argument  \
-    --Content 57uY5aOw57uY6Imy
+    --Content 5L2g55qE5Lil6LCo6K6p5L2g5Y+R546w77yM5Lqn5ZOB57uP55CG5Y+r5YmR6Z2S
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DataId": "123",
-        "Extra": "xx",
-        "BizType": "0",
-        "RiskDetails": [
-            {
-                "Level": 2,
-                "Label": "RiskAccount"
-            }
-        ],
+        "RequestId": "be7474bf-bcc6-4f4b-a081-80ac687c040e",
+        "BizType": "content_input",
+        "Label": "Illegal",
+        "SubLabel": "Drug",
+        "Suggestion": "Block",
+        "Keywords": [],
+        "Score": 87,
+        "DataId": "YIumnjV2MZibqk6G",
         "DetailResults": [
             {
-                "LibName": "Porn",
-                "Score": 72,
-                "Label": "Porn",
-                "SubLabel": "SexualBehavior",
-                "LibId": "12",
-                "Suggestion": "Review",
-                "Keywords": [
-                    "色情"
+                "Label": "Illegal",
+                "SubLabel": "Drug",
+                "Suggestion": "Block",
+                "Keywords": [],
+                "Score": 87,
+                "LibType": 0,
+                "LibId": "",
+                "LibName": "",
+                "Tags": null,
+                "HitInfos": [
+                    {
+                        "Type": "Keyword",
+                        "Keyword": "你好呀",
+                        "LibName": "",
+                        "Positions": [
+                            {
+                                "Start": 0,
+                                "End": 3
+                            }
+                        ]
+                    },
+                    {
+                        "Type": "Model",
+                        "Keyword": "",
+                        "LibName": "",
+                        "Positions": [
+                            {
+                                "Start": 0,
+                                "End": 3
+                            }
+                        ]
+                    }
                 ],
-                "LibType": 0
+                "HitSnippetInfos": [
+                    {
+                        "Snippet": "你好呀",
+                        "AtomicName": "",
+                        "AtomicId": "",
+                        "Positions": [
+                            {
+                                "Start": 0,
+                                "End": 3
+                            }
+                        ]
+                    }
+                ]
             },
             {
-                "LibName": "Porn",
+                "Label": "Abuse",
+                "SubLabel": "",
+                "Suggestion": "Pass",
+                "Keywords": [],
                 "Score": 0,
-                "Label": "",
-                "LibId": "1",
-                "Suggestion": "Block",
-                "Keywords": [
-                    "色情"
-                ],
-                "LibType": 2
+                "LibType": 0,
+                "LibId": "",
+                "LibName": "",
+                "Tags": null,
+                "HitInfos": [],
+                "HitSnippetInfos": []
+            },
+            {
+                "Label": "Ad",
+                "SubLabel": "",
+                "Suggestion": "Pass",
+                "Keywords": [],
+                "Score": 0,
+                "LibType": 0,
+                "LibId": "",
+                "LibName": "",
+                "Tags": null,
+                "HitInfos": [],
+                "HitSnippetInfos": []
+            },
+            {
+                "Label": "Teenager",
+                "SubLabel": "",
+                "Suggestion": "Pass",
+                "Keywords": [],
+                "Score": 0,
+                "LibType": 0,
+                "LibId": "",
+                "LibName": "",
+                "Tags": null,
+                "HitInfos": [],
+                "HitSnippetInfos": []
+            },
+            {
+                "Label": "Porn",
+                "SubLabel": "",
+                "Suggestion": "Pass",
+                "Keywords": [],
+                "Score": 0,
+                "LibType": 0,
+                "LibId": "",
+                "LibName": "",
+                "Tags": null,
+                "HitInfos": [],
+                "HitSnippetInfos": []
+            },
+            {
+                "Label": "Terror",
+                "SubLabel": "",
+                "Suggestion": "Pass",
+                "Keywords": [],
+                "Score": 0,
+                "LibType": 0,
+                "LibId": "",
+                "LibName": "",
+                "Tags": null,
+                "HitInfos": [],
+                "HitSnippetInfos": []
+            },
+            {
+                "Label": "Value",
+                "SubLabel": "",
+                "Suggestion": "Pass",
+                "Keywords": [],
+                "Score": 0,
+                "LibType": 0,
+                "LibId": "",
+                "LibName": "",
+                "Tags": null,
+                "HitInfos": [],
+                "HitSnippetInfos": []
+            },
+            {
+                "Label": "Polity",
+                "SubLabel": "",
+                "Suggestion": "Pass",
+                "Keywords": [],
+                "Score": 0,
+                "LibType": 0,
+                "LibId": "",
+                "LibName": "",
+                "Tags": null,
+                "HitInfos": [],
+                "HitSnippetInfos": []
             }
         ],
-        "Label": "Ad",
-        "SubLabel": "Contact",
-        "Score": 87,
-        "RequestId": "x2123-123123-123",
-        "Suggestion": "Block",
-        "Keywords": [
-            "加我好友，给你发优惠券"
+        "RiskDetails": null,
+        "Extra": "",
+        "ContextText": "",
+        "SentimentAnalysis": {},
+        "HitType": "text_nlp_tianji",
+        "HitSnippetInfos": [
+            {
+                "Snippet": "你好呀",
+                "AtomicName": "",
+                "AtomicId": "",
+                "Positions": [
+                    {
+                        "Start": 0,
+                        "End": 3
+                    }
+                ]
+            }
         ]
     }
 }

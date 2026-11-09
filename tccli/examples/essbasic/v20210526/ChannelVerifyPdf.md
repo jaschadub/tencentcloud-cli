@@ -1,150 +1,120 @@
-**Example 1: 示例-验证不通过**
+**Example 1: 验证通过**
 
-
+示例-验证通过
 
 Input: 
 
 ```
 tccli essbasic ChannelVerifyPdf --cli-unfold-argument  \
-    --Operator.OpenId testxxxx_test1 \
-    --FlowId yDRvzUUgxxxxygxxxx4zjEuYdDnsxeT \
-    --Agent.ProxyAppId xxxx \
-    --Agent.ProxyOperator.OpenId test1_xxxxx_test1 \
-    --Agent.AppId 7f3497f01xxxa35e0984a9657b0ec \
-    --Agent.ProxyOrganizationOpenId test1_cxxxx_organization1
+    --FlowId yDSLVUUckpo1c11xUxtOq8cvKy24by9M \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "PdfVerifyResults": [],
-        "RequestId": "8709904xxxxxx7-d1bc7420345f",
-        "VerifyResult": 4
+        "VerifyResult": 1,
+        "PdfVerifyResults": [
+            {
+                "VerifyResult": 1,
+                "SignPlatform": "腾讯电子签",
+                "SignerName": "ESS@典子谦示例企业@382919",
+                "SignTime": 1699252042000,
+                "SignAlgorithm": "SHA1withRSA",
+                "CertSn": "6c8e2911fadf70ea",
+                "CertNotBefore": 1699006057000,
+                "CertNotAfter": 1730542057000,
+                "SignType": 0,
+                "ComponentPosX": 361.0799865722656,
+                "ComponentPosY": 481.6199951171875,
+                "ComponentWidth": 119,
+                "ComponentHeight": 13.70001220703125,
+                "ComponentPage": 1
+            },
+            {
+                "VerifyResult": 1,
+                "SignPlatform": "腾讯电子签",
+                "SignerName": "ESS@典子谦示例企业@382919",
+                "SignTime": 1699252040000,
+                "SignAlgorithm": "SHA1withRSA",
+                "CertSn": "6c8e2911fadf70ea",
+                "CertNotBefore": 1699006057000,
+                "CertNotAfter": 1730542057000,
+                "SignType": 0,
+                "ComponentPosX": 361.0799865722656,
+                "ComponentPosY": 359.45001220703125,
+                "ComponentWidth": 119,
+                "ComponentHeight": 119,
+                "ComponentPage": 1
+            },
+            {
+                "VerifyResult": 1,
+                "SignPlatform": "腾讯电子签",
+                "SignerName": "ESS@张三@37000019890303000X@808854",
+                "SignTime": 1699252071000,
+                "SignAlgorithm": "SHA1withRSA",
+                "CertSn": "1000000000087449",
+                "CertNotBefore": 1681301253000,
+                "CertNotAfter": 1712837253000,
+                "SignType": 0,
+                "ComponentPosX": 193.55999755859375,
+                "ComponentPosY": 43.90997314453125,
+                "ComponentWidth": 86,
+                "ComponentHeight": 43,
+                "ComponentPage": 1
+            },
+            {
+                "VerifyResult": 1,
+                "SignPlatform": "腾讯电子签",
+                "SignerName": "ESS@张三@37000019890303000X@808854",
+                "SignTime": 1699252071000,
+                "SignAlgorithm": "SHA1withRSA",
+                "CertSn": "1000000000087449",
+                "CertNotBefore": 1681301253000,
+                "CertNotAfter": 1712837253000,
+                "SignType": 0,
+                "ComponentPosX": 177.05999755859375,
+                "ComponentPosY": 90.25,
+                "ComponentWidth": 119,
+                "ComponentHeight": 13.70001220703125,
+                "ComponentPage": 1
+            }
+        ],
+        "VerifySerialNo": "16992543927198",
+        "PdfResourceMd5": "708BE88A797843094A74FA10ABF08F01",
+        "RequestId": "80c66dcb-fc07-48d4-8914-eb0171bbf1ac"
     }
 }
 ```
 
-**Example 2: 示例-验证通过**
+**Example 2: 验证不通过**
 
-
+验证不通过
 
 Input: 
 
 ```
 tccli essbasic ChannelVerifyPdf --cli-unfold-argument  \
-    --Operator.OpenId testxxxx_test1 \
-    --FlowId yDRvzUUgxxxxygxxxx4zjEuYdDnsxeT \
-    --Agent.ProxyAppId xxxx \
-    --Agent.ProxyOperator.OpenId test1_clara_test1 \
-    --Agent.AppId 7f3497f01xxxa35e0984a9657b0ec \
-    --Agent.ProxyOrganizationOpenId test1_cxxxx_organization1
+    --FlowId yDSLWUUckposmpkvUyb9xvpEQeni94od \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "PdfVerifyResults": [
-            {
-                "CertNotAfter": 0,
-                "CertNotBefore": 0,
-                "CertSn": "",
-                "ComponentHeight": 0,
-                "ComponentPage": 0,
-                "ComponentPosX": 0,
-                "ComponentPosY": 0,
-                "ComponentWidth": 0,
-                "SignAlgorithm": "",
-                "SignPlatform": "",
-                "SignTime": 0,
-                "SignType": 0,
-                "SignerName": "",
-                "VerifyResult": 0
-            },
-            {
-                "CertNotAfter": 0,
-                "CertNotBefore": 0,
-                "CertSn": "",
-                "ComponentHeight": 0,
-                "ComponentPage": 0,
-                "ComponentPosX": 0,
-                "ComponentPosY": 0,
-                "ComponentWidth": 0,
-                "SignAlgorithm": "",
-                "SignPlatform": "",
-                "SignTime": 0,
-                "SignType": 0,
-                "SignerName": "",
-                "VerifyResult": 0
-            },
-            {
-                "CertNotAfter": 0,
-                "CertNotBefore": 0,
-                "CertSn": "",
-                "ComponentHeight": 0,
-                "ComponentPage": 0,
-                "ComponentPosX": 0,
-                "ComponentPosY": 0,
-                "ComponentWidth": 0,
-                "SignAlgorithm": "",
-                "SignPlatform": "",
-                "SignTime": 0,
-                "SignType": 0,
-                "SignerName": "",
-                "VerifyResult": 0
-            },
-            {
-                "CertNotAfter": 1646376026000,
-                "CertNotBefore": 1646289626000,
-                "CertSn": "1912050077215241",
-                "ComponentHeight": 39.999969482422,
-                "ComponentPage": 3,
-                "ComponentPosX": 327.10998535156,
-                "ComponentPosY": 321.78002929688,
-                "ComponentWidth": 62.780029296875,
-                "SignAlgorithm": "SHA1withRSA",
-                "SignPlatform": "腾讯电子签",
-                "SignTime": 1646289626000,
-                "SignType": 0,
-                "SignerName": "程英",
-                "VerifyResult": 0
-            },
-            {
-                "CertNotAfter": 1646376026000,
-                "CertNotBefore": 1646289626000,
-                "CertSn": "1912050077215241",
-                "ComponentHeight": 12,
-                "ComponentPage": 3,
-                "ComponentPosX": 343.5299987793,
-                "ComponentPosY": 404.7799987793,
-                "ComponentWidth": 69.940002441406,
-                "SignAlgorithm": "SHA1withRSA",
-                "SignPlatform": "腾讯电子签",
-                "SignTime": 1646289626000,
-                "SignType": 0,
-                "SignerName": "程英",
-                "VerifyResult": 0
-            },
-            {
-                "CertNotAfter": 1778601599000,
-                "CertNotBefore": 1620835200000,
-                "CertSn": "4c5a00000000000001839b86",
-                "ComponentHeight": 0,
-                "ComponentPage": 1,
-                "ComponentPosX": 0,
-                "ComponentPosY": 842,
-                "ComponentWidth": 0,
-                "SignAlgorithm": "SHA1withRSA",
-                "SignPlatform": "腾讯电子签",
-                "SignTime": 1646289627000,
-                "SignType": 1,
-                "SignerName": "深圳xxxx公司",
-                "VerifyResult": 0
-            }
-        ],
-        "RequestId": "9c683673-axxx2-648f67d46fad",
-        "VerifyResult": 1
+        "VerifyResult": 4,
+        "PdfVerifyResults": [],
+        "VerifySerialNo": "16992543927198",
+        "PdfResourceMd5": "708BE88A797843094A74FA10ABF08F01",
+        "RequestId": "e5064ef6-4743-461a-9024-3120576f3f6b"
     }
 }
 ```

@@ -1,99 +1,84 @@
-**Example 1: 跑批任务列表**
+**Example 1: 批量预测任务列表**
 
-
+批量预测任务列表信息
 
 Input: 
 
 ```
 tccli tione DescribeBatchTasks --cli-unfold-argument  \
-    --Filters.0.Fuzzy True \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
+    --Filters.0.Name BatchTaskName \
+    --Filters.0.Values abc \
     --Filters.0.Negative True \
-    --TagFilters.0.TagValues xx \
-    --TagFilters.0.TagKey xx \
+    --Filters.0.Fuzzy True \
+    --TagFilters.0.TagKey abc \
+    --TagFilters.0.TagValues abc \
+    --Offset 0 \
     --Limit 1 \
-    --OrderField xx \
-    --Offset 1 \
-    --Order xx
+    --Order ASC \
+    --OrderField CreateTime
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "BatchTaskSet": [
             {
-                "Status": "xx",
-                "UpdateTime": "xx",
-                "EndTime": "xx",
+                "BatchTaskId": "batch-78ugzrxxxxx",
+                "BatchTaskName": "示例任务",
                 "ModelInfo": {
+                    "ModelId": "m-882512801111",
+                    "ModelName": "classify-cpu",
+                    "ModelVersionId": "mv-v1-8825128049111111",
+                    "ModelVersion": "v1",
+                    "ModelSource": "COS",
+                    "ModelType": "NORMAL",
                     "CosPathInfo": {
+                        "Bucket": "example-gz-12111111111",
+                        "Region": "ap-guangzhou",
                         "Paths": [
-                            "xx"
-                        ],
-                        "Region": "xx",
-                        "Bucket": "xx"
+                            "classify/"
+                        ]
                     },
-                    "AlgorithmFramework": "xx",
-                    "ModelVersion": "xx",
-                    "ModelSource": "xx",
-                    "ModelType": "xx",
-                    "ModelName": "xx",
-                    "ModelVersionId": "xx",
-                    "ModelId": "xx"
+                    "AlgorithmFramework": "PYTORCH"
                 },
-                "BillingInfo": "xx",
                 "ImageInfo": {
-                    "ImageUrl": "xx",
-                    "RegistryRegion": "xx",
-                    "RegistryId": "xx",
-                    "ImageType": "xx"
+                    "ImageType": "PRESET",
+                    "ImageUrl": "tione.tencentcloudcr.com/qcloud-ti-platform/ti-cloud-infer-pytorch:example",
+                    "RegistryRegion": "",
+                    "RegistryId": ""
                 },
-                "BatchTaskName": "xx",
-                "Outputs": [
-                    {
-                        "DataSetSource": {
-                            "Id": "xx"
-                        },
-                        "CFSSource": {
-                            "Path": "xx",
-                            "Id": "xx"
-                        },
-                        "DataSourceType": "xx",
-                        "HDFSSource": {
-                            "Path": "xx",
-                            "Id": "xx"
-                        },
-                        "COSSource": {
-                            "Paths": [
-                                "xx"
-                            ],
-                            "Region": "xx",
-                            "Bucket": "xx"
-                        },
-                        "MappingPath": "xx"
+                "ChargeType": "POSTPAID_BY_HOUR",
+                "ChargeStatus": "NOT_BILLING",
+                "ResourceGroupId": "",
+                "ResourceGroupName": "",
+                "ResourceConfigInfo": {
+                    "Role": "WORKER",
+                    "Cpu": 2000,
+                    "Memory": 4096,
+                    "GpuType": "",
+                    "Gpu": 0,
+                    "InstanceType": "TI.S.MEDIUM.POST",
+                    "InstanceTypeAlias": "2C4G",
+                    "InstanceNum": 1,
+                    "RDMAConfig": {
+                        "Enable": true
                     }
-                ],
-                "Tags": [
-                    {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
-                    }
-                ],
-                "ResourceGroupName": "xx",
-                "RuntimeInSeconds": 1,
-                "ResourceGroupId": "xx",
-                "BatchTaskId": "xx",
-                "ChargeType": "xx",
-                "StartTime": "xx",
-                "CreateTime": "xx",
-                "ChargeStatus": "xx",
-                "FailureReason": "xx"
+                },
+                "Tags": [],
+                "Status": "SUCCEED",
+                "RuntimeInSeconds": 112,
+                "CreateTime": "2023-12-26 20:23:36",
+                "UpdateTime": "2023-12-26 20:23:36",
+                "StartTime": "2023-12-26 20:24:20",
+                "EndTime": "2023-12-26 20:26:12",
+                "Outputs": [],
+                "FailureReason": "job succeed",
+                "BillingInfo": ""
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 69,
+        "RequestId": "0ec7a782-111-111-a063-11111111111"
     }
 }
 ```

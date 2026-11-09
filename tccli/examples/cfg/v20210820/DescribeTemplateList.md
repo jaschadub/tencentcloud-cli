@@ -1,6 +1,6 @@
 **Example 1: 经验库列表**
 
-
+查询经验库列表
 
 Input: 
 
@@ -18,9 +18,9 @@ Output:
         "TemplateList": [
             {
                 "TemplateId": 511,
-                "TemplateTitle": "测试经验",
-                "TemplateDescription": "测试",
-                "TemplateTag": null,
+                "TemplateTitle": "跨AZ容灾",
+                "TemplateDescription": "跨AZ容灾场景验证",
+                "TemplateTag": "资源归属:研发组",
                 "TemplateIsUsed": 1,
                 "TemplateCreateTime": "2021-10-12 17:28:13",
                 "TemplateUpdateTime": "2021-10-12 17:48:16",
@@ -28,9 +28,9 @@ Output:
             },
             {
                 "TemplateId": 509,
-                "TemplateTitle": "test",
-                "TemplateDescription": "test",
-                "TemplateTag": "test",
+                "TemplateTitle": "CPU高负载",
+                "TemplateDescription": "CPU高负载故障场景验证",
+                "TemplateTag": "资源归属:研发组",
                 "TemplateIsUsed": 2,
                 "TemplateCreateTime": "2021-09-28 15:38:00",
                 "TemplateUpdateTime": "2021-10-11 16:26:45",
@@ -38,6 +38,41 @@ Output:
             }
         ],
         "Total": 2
+    }
+}
+```
+
+**Example 2: 查询经验列表**
+
+查询经验列表
+
+Input: 
+
+```
+tccli cfg DescribeTemplateList --cli-unfold-argument  \
+    --Limit 1 \
+    --Offset 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "b96d80d2-51b4-4f0f-8501-90b5ed5f0cfc",
+        "TemplateList": [
+            {
+                "TemplateCreateTime": "2024-07-01 15:26:46",
+                "TemplateDescription": "test-descrition",
+                "TemplateId": 1959,
+                "TemplateIsUsed": 1,
+                "TemplateSource": 0,
+                "TemplateTag": "资源归属:研发组",
+                "TemplateTitle": "经验库编辑",
+                "TemplateUpdateTime": "2024-07-01 15:48:26",
+                "TemplateUsedNum": 0
+            }
+        ],
+        "Total": 22
     }
 }
 ```

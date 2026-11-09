@@ -1,6 +1,6 @@
 **Example 1: 拉取配置绑定的server或location**
 
-
+拉取配置绑定的server或location
 
 Input: 
 
@@ -21,7 +21,7 @@ Output:
                 "ListenerId": "lbl-nppnktey",
                 "Domain": "www.aaa.com",
                 "LocationId": "loc-nppnktey",
-                "ListenerName": "test",
+                "ListenerName": "http-listener",
                 "Protocol": "http",
                 "Vport": 80,
                 "Url": "",

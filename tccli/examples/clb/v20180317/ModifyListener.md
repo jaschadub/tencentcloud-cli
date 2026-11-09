@@ -1,6 +1,29 @@
-**Example 1: 修改TCP监听器的名称、健康检查参数及转发策略**
+**Example 1: 修改HTTPS监听器绑定的证书**
 
+修改HTTPS监听器绑定的证书
 
+Input: 
+
+```
+tccli clb ModifyListener --cli-unfold-argument  \
+    --ListenerId lbl-4fbxq45k \
+    --Certificate.SSLMode UNIDIRECTIONAL \
+    --Certificate.CertId Nb1DY3hQ \
+    --LoadBalancerId lb-cuxw2rm0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "b64574f9-5bc7-4a63-a9d7-3671b6a6d62b"
+    }
+}
+```
+
+**Example 2: 修改TCP监听器的名称、健康检查参数及转发策略**
+
+修改TCP监听器的名称、健康检查参数及转发策略
 
 Input: 
 
@@ -27,7 +50,7 @@ Output:
 }
 ```
 
-**Example 2: 修改HTTPS监听器绑定的证书**
+**Example 3: 修改监听器重新调度参数**
 
 
 
@@ -35,17 +58,20 @@ Input:
 
 ```
 tccli clb ModifyListener --cli-unfold-argument  \
-    --ListenerId lbl-4fbxq45k \
-    --Certificate.SSLMode UNIDIRECTIONAL \
-    --Certificate.CertId Nb1DY3hQ \
-    --LoadBalancerId lb-cuxw2rm0
+    --LoadBalancerId lb-fd9kpk4s \
+    --ListenerId lbl-1sf4yxie \
+    --RescheduleTargetZeroWeight False \
+    --RescheduleUnhealthy False \
+    --RescheduleExpandTarget False \
+    --RescheduleStartTime 0 \
+    --RescheduleInterval 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "b64574f9-5bc7-4a63-a9d7-3671b6a6d62b"
+        "RequestId": "e5854a85-faee-485e-8892-0a7cbca45080"
     }
 }
 ```

@@ -1,4 +1,4 @@
-**Example 1: 获取发布文件列表**
+**Example 1: 查询Sourcemap**
 
 
 
@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli rum DescribeReleaseFiles --cli-unfold-argument  \
-    --ProjectID 1
+    --ProjectID 137889 \
+    --IgnoreDefaultTimeRange True
 ```
 
 Output: 
@@ -14,7 +15,7 @@ Output:
 {
     "Response": {
         "Files": [],
-        "RequestId": "65a8fec7-2b39-4b11-893f-3715279d235f"
+        "RequestId": "71a4b54e-5f6f-4d5b-b5f6-6a11458f8e6c"
     }
 }
 ```

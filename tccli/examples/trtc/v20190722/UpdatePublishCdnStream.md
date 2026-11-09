@@ -44,14 +44,14 @@ Output:
 {
     "Response": {
         "RequestId": "71993312-6ab8-4768-9124-118e0a20c45f",
-        "TaskId": "xxxx"
+        "TaskId": "-nHPekVU7h******sceOqAZ1YVQE."
     }
 }
 ```
 
 **Example 2: 更新转推参数**
 
-
+无
 
 Input: 
 
@@ -70,7 +70,7 @@ Output:
 {
     "Response": {
         "RequestId": "71993312-6ab8-4768-9124-118e0a20c45f",
-        "TaskId": "xxxx"
+        "TaskId": "-nHPekVU7h******sceOqAZ1YVQE."
     }
 }
 ```

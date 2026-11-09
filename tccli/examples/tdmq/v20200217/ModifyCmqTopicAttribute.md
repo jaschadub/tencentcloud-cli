@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tdmq ModifyCmqTopicAttribute --cli-unfold-argument  \
-    --MaxMsgSize 1 \
-    --TopicName xx \
-    --Trace True \
-    --MsgRetentionSeconds 1
+    --TopicName test-topic \
+    --MaxMsgSize 1240 \
+    --MsgRetentionSeconds 43200 \
+    --Trace True
 ```
 
 Output: 

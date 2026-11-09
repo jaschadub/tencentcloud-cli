@@ -1,14 +1,14 @@
-**Example 1: 图片内容识别**
+**Example 1: 图片同步检测**
 
-图片内容安全识别
+图片同步检测
 
 Input: 
 
 ```
 tccli ims ImageModeration --cli-unfold-argument  \
-    --FileUrl https://xxx.jpg \
+    --BizType test_1001 \
     --DataId 1213 \
-    --BizType test_1001
+    --FileUrl https://xxx.jpg
 ```
 
 Output: 
@@ -20,7 +20,7 @@ Output:
         "BizType": "test_1001",
         "Suggestion": "Block",
         "Label": "Porn",
-        "SubLabel": "SexBehavior",
+        "SubLabel": "SexyBehavior",
         "Score": 90,
         "HitFlag": 1,
         "LabelResults": [
@@ -28,7 +28,7 @@ Output:
                 "Scene": "Porn",
                 "Suggestion": "Block",
                 "Label": "Porn",
-                "SubLabel": "SexBehavior",
+                "SubLabel": "SexyBehavior",
                 "Score": 90,
                 "Details": [
                     {
@@ -53,6 +53,7 @@ Output:
                     {
                         "Id": 0,
                         "Name": "QRCODE",
+                        "Value": "https://test.com/test",
                         "Score": 100,
                         "Location": {
                             "X": 155.01746,
@@ -60,13 +61,17 @@ Output:
                             "Width": 769.9824,
                             "Height": 769.98254,
                             "Rotate": 0
-                        }
+                        },
+                        "SubLabel": "QRCODE",
+                        "GroupId": "group_id",
+                        "ObjectId": "object_id"
                     }
                 ]
             }
         ],
         "OcrResults": [
             {
+                "HitFlag": 0,
                 "Scene": "OCR",
                 "Suggestion": "Pass",
                 "Label": "Normal",
@@ -105,12 +110,30 @@ Output:
                         "Score": 99,
                         "Label": "Porn",
                         "Tag": "",
-                        "ImageId": "111",
+                        "ImageId": "image_id",
                         "Id": 0,
                         "LibId": ""
                     }
                 ],
                 "Suggestion": "Block"
+            }
+        ],
+        "RecognitionResults": [
+            {
+                "Label": "Scene",
+                "Tags": [
+                    {
+                        "Name": "MedicalImage",
+                        "Score": 30,
+                        "Location": {
+                            "X": 0,
+                            "Y": 0,
+                            "Width": 0,
+                            "Height": 0,
+                            "Rotate": 0
+                        }
+                    }
+                ]
             }
         ],
         "Extra": ""

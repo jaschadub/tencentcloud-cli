@@ -1,16 +1,16 @@
-**Example 1: 修改网络探测参数**
+**Example 1: 修改网络探测**
 
-
+修改网络探测
 
 Input: 
 
 ```
 tccli vpc ModifyNetDetect --cli-unfold-argument  \
-    --NetDetectId netd-12345678 \
-    --NetDetectName test \
-    --DetectDestinationIp 10.0.0.2 10.0.0.3 \
+    --NetDetectId netd-nswq8wkq \
+    --NetDetectName demo \
     --NextHopType NORMAL_CVM \
-    --NextHopDestination 10.0.0.4
+    --NextHopDestination 10.0.0.4 \
+    --DetectDestinationIp 10.0.0.3 10.0.0.2
 ```
 
 Output: 

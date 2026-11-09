@@ -1,120 +1,124 @@
 **Example 1: 查询实例列表**
 
-
+查询实例列表
 
 Input: 
 
 ```
 tccli cynosdb DescribeInstances --cli-unfold-argument  \
-    --OrderBy xx \
-    --Status xx \
-    --DbType xx \
-    --OrderByType xx \
-    --Filters.0.Values cynosdbpg-ins-bzkxxrmt \
-    --Filters.0.Names xx \
-    --Filters.0.ExactMatch True \
-    --Filters.0.Name xx \
+    --Limit 20 \
     --Offset 0 \
-    --Limit 0 \
-    --InstanceIds xx
+    --OrderBy CREATETIME \
+    --OrderByType ASC \
+    --Filters.0.Names status \
+    --Filters.0.Values running \
+    --Filters.0.ExactMatch True \
+    --Filters.0.Name  \
+    --Filters.0.Operator  \
+    --DbType MYSQL \
+    --Status running \
+    --InstanceIds cynosdbmysql-ins-1asd5qwe
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "TotalCount": 0,
         "InstanceSet": [
             {
-                "ServerlessStatus": "",
-                "WanStatus": "",
-                "RenewFlag": 2,
-                "Zone": "ap-guangzhou-3",
-                "DbVersion": "5.7",
-                "Storage": 100,
-                "Memory": 4,
-                "ProcessingTask": "",
-                "Status": "deleted",
-                "UpdateTime": "2020-11-13 11:43:04",
-                "VpcId": "",
-                "StorageId": "cynosdbmysql-xxxxxxxx",
-                "MinCpu": 0.0,
-                "MaxCpu": 0.0,
-                "InstanceId": "cynosdbmysql-ins-pd59rjuk",
-                "ClusterId": "cynosdbmysql-6bsl6k03",
-                "NetType": 0,
-                "PeriodEndTime": "2020-11-13 11:40:16",
-                "InstanceType": "ro",
-                "StoragePayMode": 0,
-                "DestroyTime": "",
-                "IsolateTime": "2020-11-13 11:40:28",
-                "DestroyDeadlineText": "",
-                "ProjectId": 0,
+                "Uin": "238762734",
+                "AppId": 23762834,
+                "ClusterId": "cynosdbmysql-asd45qwe",
+                "ClusterName": "MyClusterName",
+                "InstanceId": "cynosdbmysql-ins-asd45qwe",
+                "InstanceName": "MyInstanceName",
+                "ProjectId": 2342,
                 "Region": "ap-guangzhou",
-                "PayMode": 1,
-                "SubnetId": "",
-                "CynosVersion": "2.0.11",
-                "StatusDesc": "已删除",
-                "InstanceName": "cynosdbmysql-ins-pd59rjuk",
-                "Cpu": 2,
-                "WanDomain": "",
-                "ClusterName": "预付费集群",
-                "InstanceRole": "ro",
-                "WanPort": 0,
-                "Uin": "100000007539",
-                "DbType": "MYSQL",
-                "Vip": "",
-                "AppId": 251007582,
-                "WanIP": "",
-                "Vport": 0,
-                "CreateTime": "2020-11-13 11:37:30"
-            },
-            {
-                "ServerlessStatus": "",
-                "WanStatus": "",
-                "RenewFlag": 2,
                 "Zone": "ap-guangzhou-3",
+                "Status": "running",
+                "StatusDesc": "运行中",
+                "DbMode": "NORMAL",
+                "DbType": "MYSQL",
                 "DbVersion": "5.7",
-                "Storage": 100,
-                "Memory": 8,
-                "ProcessingTask": "",
-                "Status": "deleted",
-                "UpdateTime": "2020-11-13 11:43:04",
-                "VpcId": "",
-                "MinCpu": 0.0,
-                "MaxCpu": 0.0,
-                "InstanceId": "cynosdbmysql-ins-dxxbxr1a",
-                "ClusterId": "cynosdbmysql-6bsl6k03",
-                "NetType": 0,
-                "PeriodEndTime": "2020-11-13 11:40:15",
+                "Cpu": 1,
+                "Memory": 1,
+                "Storage": 10,
                 "InstanceType": "rw",
-                "DestroyTime": "",
-                "StorageId": "cynosdbmysql-xxxxxxxx",
-                "IsolateTime": "2020-11-13 11:40:25",
-                "DestroyDeadlineText": "",
-                "ProjectId": 0,
-                "StoragePayMode": 0,
-                "Region": "ap-guangzhou",
-                "PayMode": 1,
-                "SubnetId": "",
-                "CynosVersion": "2.0.11",
-                "StatusDesc": "已删除",
-                "InstanceName": "cynosdbmysql-ins-dxxbxr1a",
-                "Cpu": 4,
-                "WanDomain": "",
-                "ClusterName": "预付费集群",
                 "InstanceRole": "master",
-                "WanPort": 0,
-                "Uin": "100000007539",
-                "DbType": "MYSQL",
-                "Vip": "",
-                "AppId": 251007582,
-                "WanIP": "",
-                "Vport": 0,
-                "CreateTime": "2020-11-13 11:35:24"
+                "UpdateTime": "2020-09-22 00:00:00",
+                "CreateTime": "2020-09-22 00:00:00",
+                "VpcId": "vpc-12as56",
+                "SubnetId": "subnet-12kasd",
+                "Vip": "192.0.2.1",
+                "Vport": 3306,
+                "PayMode": 0,
+                "PeriodEndTime": "2020-09-22 00:00:00",
+                "DestroyDeadlineText": "<5 天",
+                "IsolateTime": "2020-09-22 00:00:00",
+                "NetType": 1,
+                "WanDomain": "cynosdbpg-bzkxxrmt.wan.domain.com",
+                "WanIP": "3.1.5.2",
+                "WanPort": 3306,
+                "WanStatus": "running",
+                "DestroyTime": "2024-01-04 00:09:10",
+                "CynosVersion": "2.0.10",
+                "ProcessingTask": "taskUpgradeStorage",
+                "RenewFlag": 0,
+                "MinCpu": 1,
+                "MaxCpu": 8,
+                "ServerlessStatus": "paused",
+                "StorageId": "cynosdbpg-bzkxxrmt",
+                "StoragePayMode": 0,
+                "PhysicalZone": "ap-guangzhou-3",
+                "BusinessType": "bus_a",
+                "Tasks": [
+                    {
+                        "TaskId": 111110,
+                        "TaskType": "taskCreateClusters",
+                        "TaskStatus": "running",
+                        "ObjectId": "cynosdbmysql-asd45qwe",
+                        "ObjectType": "cluster"
+                    }
+                ],
+                "IsFreeze": "no",
+                "ResourceTags": [
+                    {
+                        "TagKey": "tag_key_1",
+                        "TagValue": "tag_value_1"
+                    }
+                ],
+                "MasterZone": "ap-guangzhou-3",
+                "SlaveZones": [
+                    "ap-guangzhou-4"
+                ],
+                "InstanceNetInfo": [
+                    {
+                        "InstanceGroupType": "ha",
+                        "InstanceGroupId": "cynosdbmysql-grp-asd45qwe",
+                        "VpcId": "vpc-12as45",
+                        "SubnetId": "subnet-cbhs7ush",
+                        "NetType": 1,
+                        "Vip": "192.0.0.0",
+                        "Vport": 3306,
+                        "WanDomain": "cynosdbpg-bzkxxrmt.wan,domain,com",
+                        "WanIP": "23.15.5.1",
+                        "WanPort": 3306,
+                        "WanStatus": "running"
+                    }
+                ],
+                "ResourcePackages": [
+                    {
+                        "DeductionPriority": 0,
+                        "PackageId": "package-bhsy2snc",
+                        "PackageType": "CCU"
+                    }
+                ],
+                "CynosVersionTag": "stable",
+                "InstanceIndexMode": "onlyRowIndex"
             }
         ],
-        "TotalCount": 26,
-        "RequestId": "03ea3f94-297d-11eb-8f30-525400b7dd5a"
+        "RequestId": "fd5759b5-89e9-483c-b79c-d99b27c33192"
     }
 }
 ```

@@ -6,133 +6,274 @@ Input:
 
 ```
 tccli wedata DescribeIntegrationTasks --cli-unfold-argument  \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --PageSize 0 \
-    --ProjectId xx \
-    --OrderFields.0.Direction xx \
-    --OrderFields.0.Name xx \
-    --PageNumber 0 \
-    --StartTime xx \
-    --EndTime xx
+    --Filters.0.Name TaskId \
+    --Filters.0.Values t5c6f6968-97c0-4e40-b25b-8258c0170f48 \
+    --ProjectId 1486446569620893696 \
+    --OrderFields.0.Name CreateTime \
+    --OrderFields.0.Direction DESC \
+    --StartTime  \
+    --EndTime  \
+    --PageNumber 1 \
+    --PageSize 10 \
+    --TaskType 201
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "TotalCount": 10,
         "TaskInfoSet": [
             {
-                "TaskGroupId": "xx",
-                "Status": 0,
-                "WorkflowId": "xx",
-                "Description": "xx",
-                "CreatorUin": "xx",
-                "SyncType": 0,
-                "ProjectId": "xx",
-                "OwnerUin": "xx",
-                "ExecuteContext": [
-                    {
-                        "Name": "xx",
-                        "Value": "xx"
-                    }
-                ],
-                "ScheduleTaskId": "xx",
-                "TaskType": 0,
-                "AppId": "xx",
-                "ExecutorId": "xx",
-                "TaskId": "xx",
-                "OperatorUin": "xx",
+                "TaskName": "testtaskname",
+                "Description": "testdesc",
+                "SyncType": 2,
+                "TaskType": 202,
+                "WorkflowId": "",
+                "TaskId": "n11a6d01c-0ec6-4efc-bd14-97a921d01d3f",
+                "ScheduleTaskId": "cql-hjlx38yl",
+                "TaskGroupId": "a5d814828-452c-46f6-b128-19c1a3249bf0",
+                "ProjectId": "1486446569620893696",
+                "CreatorUin": "100022187073",
+                "OperatorUin": "100022187073",
+                "OwnerUin": "100022187073",
+                "AppId": "1257305888",
+                "Status": 3,
                 "Nodes": [
                     {
-                        "NodeType": "xx",
-                        "Description": "xx",
-                        "CreatorUin": "xx",
-                        "DataSourceType": "xx",
-                        "ProjectId": "xx",
-                        "OwnerUin": "xx",
-                        "ExtConfig": [
+                        "Id": "130973",
+                        "TaskId": "n11a6d01c-0ec6-4efc-bd14-97a921d01d3f",
+                        "Name": "nodeTestName",
+                        "NodeType": "INPUT",
+                        "DataSourceType": "MYSQL",
+                        "Description": "testdesc",
+                        "DatasourceId": "914840",
+                        "Config": [
                             {
-                                "Name": "xx",
-                                "Value": "xx"
+                                "Name": "Type",
+                                "Value": "MYSQL"
+                            },
+                            {
+                                "Name": "splitPk",
+                                "Value": "id"
+                            },
+                            {
+                                "Name": "Database",
+                                "Value": "databasetestname"
+                            },
+                            {
+                                "Name": "TableNames",
+                                "Value": "tabletestname"
+                            },
+                            {
+                                "Name": "PrimaryKey",
+                                "Value": "id"
+                            },
+                            {
+                                "Name": "isNew",
+                                "Value": "true"
+                            },
+                            {
+                                "Name": "PrimaryKey_INPUT_SYMBOL",
+                                "Value": "input"
+                            },
+                            {
+                                "Name": "splitPk_INPUT_SYMBOL",
+                                "Value": "input"
+                            },
+                            {
+                                "Name": "isClean",
+                                "Value": "0"
+                            },
+                            {
+                                "Name": "encoding",
+                                "Value": "utf-8"
                             }
                         ],
-                        "DatasourceId": "xx",
+                        "ExtConfig": [
+                            {
+                                "Name": "12123",
+                                "Value": "300"
+                            },
+                            {
+                                "Name": "y123131",
+                                "Value": "260"
+                            },
+                            {
+                                "Name": "iconPosition",
+                                "Value": "left"
+                            },
+                            {
+                                "Name": "size",
+                                "Value": "m"
+                            }
+                        ],
+                        "Schema": [
+                            {
+                                "Type": "String",
+                                "Alias": "name",
+                                "Comment": "名字",
+                                "Id": "616042880",
+                                "Name": "name",
+                                "Value": "nihao",
+                                "Properties": [
+                                    {
+                                        "Name": "exttestname",
+                                        "Value": "exttestvalue"
+                                    }
+                                ]
+                            }
+                        ],
                         "NodeMapping": {
-                            "SourceId": "xx",
-                            "SchemaMappings": [
-                                {
-                                    "SinkSchemaId": "xx",
-                                    "SourceSchemaId": "xx"
-                                }
-                            ],
-                            "SinkId": "xx",
+                            "SourceId": "130973",
+                            "SinkId": "130972",
                             "SourceSchema": [
                                 {
-                                    "Type": "xx",
-                                    "Id": "xx",
-                                    "Value": "xx",
-                                    "Name": "xx"
+                                    "Id": "597853056",
+                                    "Name": "name",
+                                    "Value": "test",
+                                    "Type": "String",
+                                    "Alias": "name",
+                                    "Comment": "名称",
+                                    "Properties": [
+                                        {
+                                            "Name": "exttestname",
+                                            "Value": "exttestvalue"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "SchemaMappings": [
+                                {
+                                    "SourceSchemaId": "597853056",
+                                    "SinkSchemaId": "616042880"
+                                }
+                            ],
+                            "ExtConfig": [
+                                {
+                                    "Name": "Type",
+                                    "Value": "MYSQL"
                                 }
                             ]
                         },
-                        "TaskId": "xx",
-                        "AppId": "xx",
-                        "Schema": [
+                        "AppId": "1315051999",
+                        "ProjectId": "1486446569620893696",
+                        "CreatorUin": "100028644005",
+                        "OperatorUin": "100028644005",
+                        "OwnerUin": "100028644005",
+                        "CreateTime": "2022-05-07 10:13:21",
+                        "UpdateTime": "2022-05-07 10:13:21"
+                    }
+                ],
+                "ExecutorId": "20220331190555092303",
+                "Mappings": [
+                    {
+                        "SourceId": "130973",
+                        "SinkId": "130972",
+                        "SourceSchema": [
                             {
-                                "Type": "xx",
-                                "Id": "xx",
-                                "Value": "xx",
-                                "Name": "xx"
+                                "Id": "597853056",
+                                "Name": "name",
+                                "Value": "test",
+                                "Type": "String",
+                                "Alias": "name",
+                                "Comment": "名称",
+                                "Properties": [
+                                    {
+                                        "Name": "exttestname",
+                                        "Value": "exttestvalue"
+                                    }
+                                ]
                             }
                         ],
-                        "Config": [
+                        "SchemaMappings": [
                             {
-                                "Name": "xx",
-                                "Value": "xx"
+                                "SourceSchemaId": "597853056",
+                                "SinkSchemaId": "616042880"
                             }
                         ],
-                        "Id": "xx",
-                        "OperatorUin": "xx",
-                        "Name": "xx"
+                        "ExtConfig": [
+                            {
+                                "Name": "ext key name",
+                                "Value": "ext key value"
+                            }
+                        ]
+                    }
+                ],
+                "TaskMode": "1",
+                "Incharge": "100028625403",
+                "OfflineTaskAddEntity": {
+                    "WorkflowName": "",
+                    "DependencyWorkflow": "",
+                    "StartTime": "2024-04-10 00:00:00",
+                    "EndTime": "2099-12-31 00:00:00",
+                    "CycleType": 1,
+                    "CycleStep": 5,
+                    "DelayTime": 0,
+                    "CrontabExpression": "",
+                    "RetryWait": 3,
+                    "Retriable": 1,
+                    "TryLimit": 3,
+                    "RunPriority": 6,
+                    "ProductName": "DATA_INTEGRATION",
+                    "SelfDepend": 3,
+                    "TaskAction": "",
+                    "ExecutionEndTime": "23:59",
+                    "ExecutionStartTime": "00:00",
+                    "TaskAutoSubmit": true,
+                    "InstanceInitStrategy": "T+0"
+                },
+                "ExecutorGroupName": "资源组01",
+                "InLongManagerUrl": "172.16.64.68:8083",
+                "InLongStreamId": "f8317843e-68f9-4373-914f-241d7200a9a4",
+                "InLongManagerVersion": "v17",
+                "DataProxyUrl": [
+                    "172.16.64.68:8086"
+                ],
+                "Submit": true,
+                "InputDatasourceType": "MYSQL",
+                "OutputDatasourceType": "DLC",
+                "NumRecordsIn": 1000,
+                "NumRecordsOut": 1000,
+                "ReaderDelay": 5,
+                "NumRestarts": 2,
+                "CreateTime": "2022-05-07 10:13:21",
+                "UpdateTime": "2022-05-07 10:13:21",
+                "LastRunTime": "2022-05-07 10:13:21",
+                "StopTime": "2022-05-07 10:13:21",
+                "HasVersion": true,
+                "Locked": true,
+                "Locker": "100022187073",
+                "RunningCu": 2,
+                "TaskAlarmRegularList": [
+                    "1769,1768"
+                ],
+                "SwitchResource": 1,
+                "ReadPhase": 0,
+                "InstanceVersion": 12,
+                "ArrangeSpaceTaskId": "20230112170349643",
+                "OfflineTaskStatus": 1,
+                "Config": [
+                    {
+                        "Name": "ext key name",
+                        "Value": "ext key value"
                     }
                 ],
                 "ExtConfig": [
                     {
-                        "Name": "xx",
-                        "Value": "xx"
+                        "Name": "ext key name",
+                        "Value": "ext key value"
                     }
                 ],
-                "Config": [
+                "ExecuteContext": [
                     {
-                        "Name": "xx",
-                        "Value": "xx"
-                    }
-                ],
-                "TaskName": "xx",
-                "Mappings": [
-                    {
-                        "SourceId": "xx",
-                        "SchemaMappings": [
-                            {
-                                "SinkSchemaId": "xx",
-                                "SourceSchemaId": "xx"
-                            }
-                        ],
-                        "SinkId": "xx",
-                        "SourceSchema": [
-                            {
-                                "Type": "xx",
-                                "Id": "xx",
-                                "Value": "xx",
-                                "Name": "xx"
-                            }
-                        ]
+                        "Name": "ext key name",
+                        "Value": "ext key value"
                     }
                 ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "ae90b19-209e-4acb-9f62-e2860dd810"
     }
 }
 ```

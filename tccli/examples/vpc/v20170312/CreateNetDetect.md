@@ -1,17 +1,17 @@
 **Example 1: 创建网络探测**
 
-
+创建网络探测
 
 Input: 
 
 ```
 tccli vpc CreateNetDetect --cli-unfold-argument  \
-    --VpcId vpc-12345678 \
-    --SubnetId subnet-12345678 \
-    --NetDetectName test \
-    --DetectDestinationIp 10.0.0.2 10.0.0.3 \
+    --VpcId vpc-4tw1bxlq \
+    --NextHopDestination 10.0.0.4 \
     --NextHopType NORMAL_CVM \
-    --NextHopDestination 10.0.0.4
+    --NetDetectName demo \
+    --DetectDestinationIp 10.0.0.3 10.0.0.2 \
+    --SubnetId subnet-6zwa44xm
 ```
 
 Output: 
@@ -19,12 +19,12 @@ Output:
 {
     "Response": {
         "NetDetect": {
-            "VpcId": "vpc-12345678",
-            "VpcName": "vpc-test",
-            "SubnetId": "subnet-12345678",
-            "SubnetName": "subnet-test",
-            "NetDetectId": "netd-12345678",
-            "NetDetectName": "test",
+            "VpcId": "vpc-4tw1bxlq",
+            "VpcName": "demo",
+            "SubnetId": "subnet-6zwa44xm",
+            "SubnetName": "demo",
+            "NetDetectId": "netd-ms7c7gcr",
+            "NetDetectName": "demo",
             "DetectDestinationIp": [
                 "10.0.0.2",
                 "10.0.0.3"

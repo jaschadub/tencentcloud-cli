@@ -1,22 +1,22 @@
-**Example 1: 增加自定义规则**
+**Example 1: 添加访问控制（自定义策略）**
 
-
+增加访问控制（自定义策略）
 
 Input: 
 
 ```
 tccli waf AddCustomRule --cli-unfold-argument  \
-    --Name test \
-    --SortId 100 \
-    --Redirect / \
-    --ExpireTime "" \
-    --Strategies.0.Field COOKIE \
-    --Strategies.0.CompareFunc null \
-    --Strategies.0.Content "" \
-    --Strategies.0.Arg "" \
+    --Redirect /redirect_url \
     --Domain www.test.com \
+    --Name name \
+    --SortId 100 \
+    --ExpireTime 0 \
+    --Edition clb-waf \
     --ActionType 1 \
-    --Edition clb-waf
+    --Strategies.0.Content cookie_value \
+    --Strategies.0.Field COOKIE \
+    --Strategies.0.CompareFunc eq \
+    --Strategies.0.Arg cookie_key
 ```
 
 Output: 

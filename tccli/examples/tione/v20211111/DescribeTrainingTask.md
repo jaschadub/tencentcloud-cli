@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tione DescribeTrainingTask --cli-unfold-argument  \
-    --Id xx
+    --Id train-1329791605108055040
 ```
 
 Output: 
@@ -14,107 +14,95 @@ Output:
 {
     "Response": {
         "TrainingTaskDetail": {
-            "Id": "xx",
-            "StartTime": "xx",
-            "FrameworkName": "xx",
-            "TrainingMode": "xx",
-            "SubUin": "xx",
-            "ChargeStatus": "xx",
-            "Status": "xx",
-            "UpdateTime": "xx",
-            "VpcId": "xx",
-            "Tags": [
-                {
-                    "TagKey": "xx",
-                    "TagValue": "xx"
-                }
-            ],
-            "CodePackagePath": {
-                "Paths": [
-                    "xx"
-                ],
-                "Region": "xx",
-                "Bucket": "xx"
-            },
-            "TuningParameters": "xx",
-            "ResourceGroupId": "xx",
-            "TensorBoardId": "xx",
-            "LatestInstanceId": "xx",
-            "SubnetId": "xx",
-            "FrameworkVersion": "xx",
+            "Id": "train-1329791605108055040",
+            "Name": "initCommand_test",
+            "Uin": "100031385875",
+            "SubUin": "100042146752",
+            "Region": "ap-guangzhou",
+            "FrameworkName": "PYTORCH",
+            "FrameworkVersion": "",
+            "FrameworkEnvironment": "torch1.9-py3.8-cuda11.1-gpu",
+            "TrainingMode": "DDP",
+            "ChargeType": "POSTPAID_BY_HOUR",
+            "ResourceGroupId": "",
+            "ResourceGroupName": "",
             "ResourceConfigInfos": [
                 {
-                    "InstanceType": "xx",
+                    "Role": "WORKER",
+                    "Cpu": 2000,
+                    "Memory": 2048,
+                    "GpuType": "",
+                    "Gpu": 0,
+                    "InstanceType": "TI.S6.MEDIUM2.POST",
+                    "InstanceTypeAlias": "2C2G",
                     "InstanceNum": 1,
-                    "Cpu": 1,
-                    "Role": "xx",
-                    "Memory": 1,
-                    "Gpu": 1,
-                    "GpuType": "xx",
-                    "InstanceTypeAlias": "xx"
+                    "RDMAConfig": {
+                        "Enable": false
+                    }
                 }
             ],
-            "DataConfigs": [
+            "Tags": [
                 {
-                    "DataSetSource": {
-                        "Id": "xx"
-                    },
-                    "CFSSource": {
-                        "Path": "xx",
-                        "Id": "xx"
-                    },
-                    "DataSourceType": "xx",
-                    "HDFSSource": {
-                        "Path": "xx",
-                        "Id": "xx"
-                    },
-                    "COSSource": {
-                        "Paths": [
-                            "xx"
-                        ],
-                        "Region": "xx",
-                        "Bucket": "xx"
-                    },
-                    "MappingPath": "xx"
+                    "TagKey": "qcs:tag:createdBy",
+                    "TagValue": "CAMUser:100042146752:evanxli"
                 }
             ],
-            "FailureReason": "xx",
-            "Remark": "xx",
-            "Name": "xx",
-            "BillingInfo": "xx",
-            "Region": "xx",
-            "ResourceGroupName": "xx",
-            "LogEnable": true,
-            "EndTime": "xx",
-            "Output": {
-                "Paths": [
-                    "xx"
-                ],
-                "Region": "xx",
-                "Bucket": "xx"
-            },
             "ImageInfo": {
-                "ImageUrl": "xx",
-                "RegistryRegion": "xx",
-                "RegistryId": "xx",
-                "ImageType": "xx"
+                "ImageType": "PRE_SET",
+                "ImageUrl": "tione.tencentcloudcr.com/qcloud-ti-platform/ti-cloud-torch-1.9.0-devel:1.0.9",
+                "RegistryRegion": "",
+                "RegistryId": "",
+                "ImageSecret": null,
+                "ImageName": "torch1.9-py3.8-cuda11.1-gpu"
             },
-            "Uin": "xx",
-            "RuntimeInSeconds": 1,
-            "DataSource": "xx",
-            "ChargeType": "xx",
-            "CreateTime": "xx",
+            "CodePackagePath": {
+                "Bucket": "",
+                "Region": "",
+                "Paths": []
+            },
             "StartCmdInfo": {
-                "PsStartCmd": "xx",
-                "StartCmd": "xx",
-                "WorkerStartCmd": "xx"
+                "StartCmd": "",
+                "PsStartCmd": "",
+                "WorkerStartCmd": "sleep 3600"
             },
+            "DataSource": "",
+            "DataConfigs": [],
+            "TuningParameters": "{abc,}",
+            "Output": {
+                "Bucket": "",
+                "Region": "",
+                "Paths": []
+            },
+            "LogEnable": false,
             "LogConfig": {
-                "TopicId": "xx",
-                "LogsetId": "xx"
-            }
+                "LogsetId": "",
+                "TopicId": ""
+            },
+            "VpcId": "",
+            "SubnetId": "",
+            "Status": "SUCCEED",
+            "RuntimeInSeconds": 3602,
+            "CreateTime": "2025-05-28T18:18:33+08",
+            "UpdateTime": "2025-05-29T14:41:57+08",
+            "StartTime": "2025-05-29T14:43:53+08",
+            "EndTime": "2025-05-29T15:43:55+08",
+            "ChargeStatus": "NOT_BILLING",
+            "LatestInstanceId": "train-1329791605108055040-a3vq1whfx24g",
+            "TensorBoardId": "",
+            "Remark": "",
+            "FailureReason": "",
+            "BillingInfo": "",
+            "Message": "",
+            "CallbackUrl": "",
+            "SubUinName": "evanxli",
+            "CodeRepos": [
+                {
+                    "Id": "cr-1076157270725717248",
+                    "TargetPath": "/git/data"
+                }
+            ]
         },
-        "RequestId": "xx"
+        "RequestId": "aaa06bff-0a06-4539-9a86-36b2f605d525"
     }
 }
 ```

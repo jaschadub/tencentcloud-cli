@@ -17,21 +17,42 @@ Output:
     "Response": {
         "TraceCodes": [
             {
-                "Code": "https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_000243813742005003",
+                "Code": "https://anxin.qq.com/q99j9ovp5c6sok7l5g",
                 "CorpId": 10000,
-                "PackId": "z1vt4ma2jpladh362o",
-                "BatchId": "xfetmgoiky2nms6nk8",
-                "MerchantId": "eqdmnz7020bmtvi9",
-                "ProductId": "85tfp1sn78r9m1568i",
-                "Status": 0,
-                "CreateTime": "2021-12-01T09:04:50.000Z",
-                "UpdateTime": "2021-12-03T07:50:43.000Z",
-                "MerchantName": "demo",
-                "ProductName": "demo5"
+                "PackId": "pn30msjjxdx",
+                "BatchId": "20241022112952826",
+                "MerchantId": "pn30msjjxwga",
+                "ProductId": "97zu51y30awe",
+                "Status": 1,
+                "CreateTime": "2024-10-30T07:16:21.265Z",
+                "UpdateTime": "2024-10-30T07:16:21.265Z",
+                "MerchantName": "商家A",
+                "ProductName": "产品A",
+                "AgentId": 1,
+                "Level": 1,
+                "PackSpec": [
+                    {
+                        "Level": 1,
+                        "Rate": 1,
+                        "Amount": 100,
+                        "CustomId": "97zu51y30ID1",
+                        "CodeParts": [
+                            {
+                                "Name": "唯一标识",
+                                "Type": "1",
+                                "Value": "值A",
+                                "Length": 5,
+                                "Ext": ""
+                            }
+                        ],
+                        "Unit": "单位A",
+                        "SceneCode": 0
+                    }
+                ]
             }
         ],
-        "TotalCount": 4,
-        "RequestId": "310c65d3-9be0-4d65-892c-fa09e9b69d25"
+        "TotalCount": 1,
+        "RequestId": "eaa3ccac-d2f5-4df0-a8b3-7b51324e9283"
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mongodb DescribeSpecInfo --cli-unfold-argument  \
-    --Region ap-guangzhou
+    --Zone ap-guangzhou-3
 ```
 
 Output: 
@@ -88,6 +88,7 @@ Output:
                         "Version": "3.6"
                     }
                 ],
+                "SupportMultiAZ": 1,
                 "Zone": "ap-guangzhou-3"
             }
         ]

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli privatedns CreatePrivateZoneRecord --cli-unfold-argument  \
-    --ZoneId zone-123456 \
+    --ZoneId zone-p0152fh2 \
     --RecordType A \
     --SubDomain b \
     --RecordValue 3.3.3.3 \
@@ -19,7 +19,7 @@ Output:
 {
     "Response": {
         "RequestId": "a98891db-9d73-514a-8751422197b540cd",
-        "RecordId": 1111
+        "RecordId": "15421"
     }
 }
 ```
@@ -32,7 +32,7 @@ Input:
 
 ```
 tccli privatedns CreatePrivateZoneRecord --cli-unfold-argument  \
-    --ZoneId zone-123456 \
+    --ZoneId zone-p0152fh2 \
     --RecordType MX \
     --SubDomain b \
     --RecordValue 3.3.3.3 \
@@ -45,7 +45,7 @@ Output:
 {
     "Response": {
         "RequestId": "a98891db-9d73-514a-8751422197b540cd",
-        "RecordId": 1111
+        "RecordId": "15421"
     }
 }
 ```
@@ -58,7 +58,7 @@ Input:
 
 ```
 tccli privatedns CreatePrivateZoneRecord --cli-unfold-argument  \
-    --ZoneId zone-123456 \
+    --ZoneId zone-p0152fh2 \
     --RecordType PTR \
     --SubDomain 1.1.1 \
     --RecordValue qq.com
@@ -69,7 +69,7 @@ Output:
 {
     "Response": {
         "RequestId": "a98891db-9d73-514a-8751422197b540cd",
-        "RecordId": 1111
+        "RecordId": "15421"
     }
 }
 ```

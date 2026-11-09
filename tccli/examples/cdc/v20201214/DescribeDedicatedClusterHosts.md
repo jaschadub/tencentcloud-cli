@@ -1,6 +1,6 @@
 **Example 1: 专用集群宿主机信息**
 
-
+专用集群宿主机信息
 
 Input: 
 
@@ -15,6 +15,7 @@ Output:
     "Response": {
         "HostInfoSet": [
             {
+                "HostId": "host-0l8k7qm",
                 "HostIp": "50.4.2.2",
                 "ServiceType": "云服务器宿主机",
                 "HostStatus": "PENDING",
@@ -27,6 +28,7 @@ Output:
                 "MemTotal": 96
             },
             {
+                "HostId": "host-0l8k7qp",
                 "HostIp": "50.4.2.3",
                 "ServiceType": "云服务器宿主机",
                 "HostStatus": "PENDING",

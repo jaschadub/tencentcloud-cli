@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli postgres ResetAccountPassword --cli-unfold-argument  \
-    --UserName test \
-    --Password 1234qwer() \
+    --UserName app_user \
+    --Password 1234Qwer() \
     --DBInstanceId postgres-lnp6j6172
 ```
 
@@ -15,7 +15,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "08fdf411-5d39-44f2-8e1d-a58ee60b237d"
+        "RequestId": "08fdf411-5d39-44f2-8e1d-a58ee60b237d",
+        "Error": {
+            "Message": "admin unmatch|oss return failed, code:3, message:admin unmatch",
+            "Code": "FailedOperation.OssOperationFailed"
+        }
     }
 }
 ```
@@ -28,8 +32,8 @@ Input:
 
 ```
 tccli postgres ResetAccountPassword --cli-unfold-argument  \
-    --UserName test \
-    --Password 1234qwer() \
+    --UserName test_app \
+    --Password 1234Qwer() \
     --DBInstanceId postgres-lnp6j6172
 ```
 

@@ -1,6 +1,26 @@
-**Example 1: 镜像仓库停止镜像一键扫描任务**
+**Example 1: 停止任务**
 
+停止任务
 
+Input: 
+
+```
+tccli tcss ModifyAssetImageRegistryScanStopOneKey --cli-unfold-argument  \
+    --TaskID 13
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "64c2b99b-ed9d-431b-b0c7-15c73d57c8e4"
+    }
+}
+```
+
+**Example 2: 镜像仓库停止镜像一键扫描任务**
+
+镜像仓库停止镜像一键扫描任务
 
 Input: 
 

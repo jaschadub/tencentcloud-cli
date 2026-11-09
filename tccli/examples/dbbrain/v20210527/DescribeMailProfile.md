@@ -20,7 +20,7 @@ Output:
         "RequestId": "c7324330-5fc8-11eb-a3f4-96666666",
         "ProfileList": [
             {
-                "ProfileId": "12345",
+                "ProfileId": "1433288",
                 "ProfileType": "dbScan_mail_configuration",
                 "ProfileLevel": "User",
                 "ProfileName": "测试uin",
@@ -33,12 +33,12 @@ Output:
                             "HIGH_RISK"
                         ],
                         "Region": [
-                            "eu-moscow"
+                            "ap-guangzhou"
                         ],
                         "ContactGroup": [],
                         "SendMail": 0,
                         "ContactPerson": [
-                            123
+                            24332
                         ]
                     },
                     "Language": "zh"

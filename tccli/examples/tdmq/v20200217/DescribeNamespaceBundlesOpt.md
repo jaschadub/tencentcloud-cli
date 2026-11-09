@@ -1,6 +1,6 @@
 **Example 1: test**
 
-
+测试
 
 Input: 
 
@@ -19,29 +19,7 @@ Output:
 {
     "Response": {
         "RequestId": "d2d3e253-3b1d-4471-a350-25e6ae20916c",
-        "TotalCount": 30,
-        "BundleSet": [
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {},
-            {}
-        ]
+        "TotalCount": 30
     }
 }
 ```

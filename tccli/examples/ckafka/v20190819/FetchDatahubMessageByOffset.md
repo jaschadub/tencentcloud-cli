@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka FetchDatahubMessageByOffset --cli-unfold-argument  \
-    --Name xxx \
+    --Name resourceName \
     --Partition 1 \
     --Offset 1
 ```
@@ -16,14 +16,15 @@ Output:
 {
     "Response": {
         "Result": {
+            "Topic": "topic-test",
+            "Partition": 0,
+            "Offset": 0,
+            "Key": "key",
+            "Value": "value",
             "Timestamp": 0,
-            "Topic": "xxx",
-            "Partition": 2,
-            "Offset": 2,
-            "Key": "xxx",
-            "Value": "xxx"
+            "Headers": "head"
         },
-        "RequestId": "62d589e0-53d5-47e0-95ff-237c48b8fb77"
+        "RequestId": "84770b4b-df34-4ccf-8e22-41d3b1d0fe0d"
     }
 }
 ```

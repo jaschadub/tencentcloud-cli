@@ -1,23 +1,24 @@
-**Example 1: 创建新账号**
+**Example 1: 创建用户账号**
 
-
+创建用户账号
 
 Input: 
 
 ```
 tccli cynosdb CreateAccounts --cli-unfold-argument  \
-    --ClusterId xxx \
-    --Accounts.0.AccountName xx \
-    --Accounts.0.AccountPassword xxx \
-    --Accounts.0.Description xxx \
-    --Accounts.0.Host xxx
+    --ClusterId cynosdbmysql-asd45qwe \
+    --Accounts.0.AccountName tom \
+    --Accounts.0.AccountPassword 888888@Abcde \
+    --Accounts.0.Host 1.1.1.1 \
+    --Accounts.0.Description AccountDescription \
+    --Accounts.0.MaxUserConnections 10
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "176669"
+        "RequestId": "2f355036-ad6b-4b09-8d9b-793235f856c5"
     }
 }
 ```

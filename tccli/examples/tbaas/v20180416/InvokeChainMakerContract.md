@@ -1,17 +1,17 @@
 **Example 1: 调用长安链合约执行交易**
 
-
+调用长安链合约执行交易
 
 Input: 
 
 ```
 tccli tbaas InvokeChainMakerContract --cli-unfold-argument  \
     --ChainId chain_dcwtt \
-    --FuncParam {"time":"2021-07-26","file_hash":"123456","file_name":"test.jpg"} \
+    --FuncParam {"time":"282039","file_hash":"123456","file_name":"test.jpg"} \
     --ClusterId chainmaker-j1juwsmndn \
     --FuncName save \
     --AsyncFlag 0 \
-    --ContractName test
+    --ContractName fact
 ```
 
 Output: 

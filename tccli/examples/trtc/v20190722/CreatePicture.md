@@ -1,14 +1,14 @@
 **Example 1: 上传图片**
 
-
+上传图片
 
 Input: 
 
 ```
 tccli trtc CreatePicture --cli-unfold-argument  \
-    --Content test \
+    --Content MTg4MTM \
     --Suffix jpg \
-    --SdkAppId 123 \
+    --SdkAppId 140000001 \
     --Height 12 \
     --Width 15 \
     --XPosition 15 \

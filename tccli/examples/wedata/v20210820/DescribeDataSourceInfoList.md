@@ -1,6 +1,6 @@
 **Example 1: 获取数据源信息**
 
-
+获取数据源列表
 
 Input: 
 
@@ -8,7 +8,8 @@ Input:
 tccli wedata DescribeDataSourceInfoList --cli-unfold-argument  \
     --PageNumber 0 \
     --PageSize 10 \
-    --ProjectId 1
+    --ProjectId 1 \
+    --Type MYSQL
 ```
 
 Output: 
@@ -18,19 +19,21 @@ Output:
         "TotalCount": 0,
         "DatasourceSet": [
             {
-                "Name": "xx",
-                "Region": "xx",
-                "ClusterId": "xx",
                 "DatabaseNames": [
-                    "xx"
+                    "default"
                 ],
-                "Instance": "xx",
-                "Type": "xx",
+                "Description": "备注",
                 "ID": 1,
-                "Description": "xx"
+                "Instance": "cdb-sd56gs51",
+                "Name": "myst_test",
+                "Region": "ap-beijing",
+                "Type": "mysql",
+                "ClusterId": "cdb-sf78f",
+                "Version": "5.2.3",
+                "ParamsString": "string"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "asdg15-asgg48as-sdg4861-516"
     }
 }
 ```

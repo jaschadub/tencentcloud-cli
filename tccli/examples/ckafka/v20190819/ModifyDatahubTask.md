@@ -1,13 +1,13 @@
-**Example 1: 修改Datahub任务**
+**Example 1: 修改连接器任务**
 
-
+修改连接器任务
 
 Input: 
 
 ```
 tccli ckafka ModifyDatahubTask --cli-unfold-argument  \
-    --TaskId xx \
-    --TaskName xx
+    --TaskId task-test \
+    --TaskName taskname
 ```
 
 Output: 
@@ -15,9 +15,9 @@ Output:
 {
     "Response": {
         "Result": {
-            "TaskId": "xx"
+            "TaskId": "task-tes"
         },
-        "RequestId": "xx"
+        "RequestId": "84770b4b-df34-4ccf-8e22-41d3b1d0fe0"
     }
 }
 ```

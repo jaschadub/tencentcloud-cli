@@ -1,16 +1,16 @@
 **Example 1: 修改本地专用集群信息**
 
-
+修改本地专用集群信息
 
 Input: 
 
 ```
 tccli cdc ModifyDedicatedClusterInfo --cli-unfold-argument  \
-    --DedicatedClusterId cluster-xx \
-    --Description xxx \
-    --Zone xxx \
-    --Name xxx \
-    --SiteId xxx
+    --DedicatedClusterId cluster-dfaf323 \
+    --Description 专用集群 \
+    --Zone ap-guangzhou-2 \
+    --Name 专用集群 \
+    --SiteId site-pp2cbp9k
 ```
 
 Output: 

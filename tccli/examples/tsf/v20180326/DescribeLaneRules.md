@@ -1,4 +1,4 @@
-**Example 1: 查询泳道规则列表**
+**Example 1: 查询灰度发布规则列表**
 
 
 
@@ -6,42 +6,35 @@ Input:
 
 ```
 tccli tsf DescribeLaneRules --cli-unfold-argument  \
-    --Limit 0 \
-    --Offset 10
+    --Limit 10 \
+    --Offset 0 \
+    --SearchWord ruleName \
+    --RuleId lane-r-v6ewp385 \
+    --RuleIdList lane-r-v6ewp385
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "e4a47430-c0f8-4ebb-9a20-774e32936035",
         "Result": {
             "Content": [
                 {
-                    "Remark": "xx",
+                    "CreateTime": 1725509095000,
                     "Enable": true,
-                    "RuleTagList": [
-                        {
-                            "UpdateTime": 0,
-                            "TagId": "xx",
-                            "TagOperator": "xx",
-                            "TagValue": "xx",
-                            "TagName": "xx",
-                            "LaneRuleId": "xx",
-                            "CreateTime": 0
-                        }
-                    ],
-                    "RuleId": "xx",
-                    "RuleTagRelationship": "xx",
-                    "UpdateTime": 0,
-                    "Priority": 0,
-                    "LaneId": "xx",
-                    "RuleName": "xx",
-                    "CreateTime": 0
+                    "LaneId": "lane-ynmlnwm4",
+                    "Priority": 1,
+                    "Remark": "this is desc",
+                    "RuleId": "lane-r-v6ewp385",
+                    "RuleName": "rule_app",
+                    "RuleTagList": null,
+                    "RuleTagRelationship": "RELEATION_AND",
+                    "UpdateTime": 1727167548000
                 }
             ],
-            "TotalCount": 0
-        },
-        "RequestId": "xx"
+            "TotalCount": 1
+        }
     }
 }
 ```

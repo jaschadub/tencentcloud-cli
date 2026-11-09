@@ -1,13 +1,13 @@
 **Example 1: 删除NAT的端口转发规则**
 
-删除NAT的端口转发规则，只需要传递DestinationIpPortTranslationNatRule结构体中的IpProtocol，PublicIpAddress，PublicPort字段。
+删除NAT的端口转发规则，需要传递DestinationIpPortTranslationNatRule结构体中的IpProtocol，PublicIpAddress，PublicPort，PrivateIpAddress，PrivatePort字段。
 
 Input: 
 
 ```
 tccli vpc DeleteNatGatewayDestinationIpPortTranslationNatRule --cli-unfold-argument  \
     --NatGatewayId nat-3isn9hr0 \
-    --DestinationIpPortTranslationNatRules.0.Description xx \
+    --DestinationIpPortTranslationNatRules.0.Description my service \
     --DestinationIpPortTranslationNatRules.0.PublicIpAddress 139.199.232.238 \
     --DestinationIpPortTranslationNatRules.0.PrivatePort 9999 \
     --DestinationIpPortTranslationNatRules.0.IpProtocol TCP \

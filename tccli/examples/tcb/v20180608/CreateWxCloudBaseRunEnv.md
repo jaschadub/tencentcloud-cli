@@ -1,21 +1,21 @@
 **Example 1: CreateWxCloudBaseRunEnv**
 
-
+创建云托管环境
 
 Input: 
 
 ```
 tccli tcb CreateWxCloudBaseRunEnv --cli-unfold-argument  \
-    --WxAppId xx
+    --WxAppId wx-sdff
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "EnvId": "xx",
-        "TranId": "xx",
-        "RequestId": "xx"
+        "EnvId": "env-sdfsd",
+        "TranId": "",
+        "RequestId": "sdfsdlkjf"
     }
 }
 ```

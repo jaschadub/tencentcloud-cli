@@ -1,6 +1,6 @@
 **Example 1: 剔除房间内某两个用户**
 
-
+剔除房间内某两个用户
 
 Input: 
 
@@ -8,7 +8,7 @@ Input:
 tccli gme DeleteRoomMember --cli-unfold-argument  \
     --DeleteType 2 \
     --RoomId 100 \
-    --BizId 140014556 \
+    --BizId 1400000000 \
     --Uids 2 1
 ```
 

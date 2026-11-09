@@ -1,15 +1,13 @@
-**Example 1: 根据过滤条件获取 rum 项目列表**
+**Example 1: 获取 RUM 应用列表**
 
-
+获取 RUM 应用列表
 
 Input: 
 
 ```
 tccli rum DescribeProjects --cli-unfold-argument  \
-    --Offset 1 \
     --Limit 20 \
-    --Filters.0.Name 'Name' \
-    --Filters.0.Values '测试项目名' '测试项目名2'
+    --Offset 1
 ```
 
 Output: 
@@ -23,16 +21,18 @@ Output:
 }
 ```
 
-**Example 2: 获取 rum 项目列表**
+**Example 2: 根据过滤条件获取 RUM 应用列表**
 
-
+根据过滤条件获取 RUM 应用列表
 
 Input: 
 
 ```
 tccli rum DescribeProjects --cli-unfold-argument  \
-    --Offset 1 \
-    --Limit 20
+    --Limit 20 \
+    --Filters.0.Values '测试项目名2' '测试项目名' \
+    --Filters.0.Name 'Name' \
+    --Offset 1
 ```
 
 Output: 

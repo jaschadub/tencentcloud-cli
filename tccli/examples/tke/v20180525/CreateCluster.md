@@ -6,158 +6,74 @@ Input:
 
 ```
 tccli tke CreateCluster --cli-unfold-argument  \
-    --ClusterCIDRSettings.ServiceCIDR xx \
-    --ClusterCIDRSettings.ClaimExpiredSeconds 0 \
-    --ClusterCIDRSettings.MaxClusterServiceNum 1 \
-    --ClusterCIDRSettings.MaxNodePodNum 1 \
-    --ClusterCIDRSettings.EniSubnetIds xx \
-    --ClusterCIDRSettings.ClusterCIDR xx \
-    --ClusterCIDRSettings.IgnoreServiceCIDRConflict True \
-    --ClusterCIDRSettings.IgnoreClusterCIDRConflict True \
-    --ClusterAdvancedSettings.AuditEnabled True \
-    --ClusterAdvancedSettings.DeletionProtection True \
-    --ClusterAdvancedSettings.RuntimeVersion xx \
-    --ClusterAdvancedSettings.IsDualStack True \
-    --ClusterAdvancedSettings.IsNonStaticIpMode True \
-    --ClusterAdvancedSettings.KubeProxyMode xx \
-    --ClusterAdvancedSettings.AuditLogTopicId xx \
-    --ClusterAdvancedSettings.ExtraArgs.KubeAPIServer xx \
-    --ClusterAdvancedSettings.ExtraArgs.KubeScheduler xx \
-    --ClusterAdvancedSettings.ExtraArgs.KubeControllerManager xx \
-    --ClusterAdvancedSettings.ExtraArgs.Etcd xx \
-    --ClusterAdvancedSettings.AuditLogsetId xx \
-    --ClusterAdvancedSettings.EnableCustomizedPodCIDR True \
-    --ClusterAdvancedSettings.CiliumMode xx \
-    --ClusterAdvancedSettings.AsEnabled True \
-    --ClusterAdvancedSettings.ContainerRuntime xx \
-    --ClusterAdvancedSettings.VpcCniType xx \
-    --ClusterAdvancedSettings.NetworkType xx \
-    --ClusterAdvancedSettings.NodeNameType xx \
-    --ClusterAdvancedSettings.IPVS True \
-    --ClusterAdvancedSettings.BasePodNumber 0 \
-    --ClusterBasicSettings.AutoUpgradeClusterLevel.IsAutoUpgrade True \
-    --ClusterBasicSettings.VpcId xx \
-    --ClusterBasicSettings.ClusterVersion xx \
-    --ClusterBasicSettings.TagSpecification.0.ResourceType xx \
-    --ClusterBasicSettings.TagSpecification.0.Tags.0.Value xx \
-    --ClusterBasicSettings.TagSpecification.0.Tags.0.Key xx \
-    --ClusterBasicSettings.ClusterName xx \
+    --ClusterType MANAGED_CLUSTER \
+    --ClusterBasicSettings.ClusterOs centos8.0x86_64 \
+    --ClusterBasicSettings.OsCustomizeType GENERAL \
+    --ClusterBasicSettings.ClusterVersion 1.26.1 \
+    --ClusterBasicSettings.ClusterName tke \
+    --ClusterBasicSettings.ClusterDescription 测试集群 \
+    --ClusterBasicSettings.VpcId vpc-135qxjgs \
     --ClusterBasicSettings.ProjectId 0 \
-    --ClusterBasicSettings.ClusterDescription xx \
-    --ClusterBasicSettings.NeedWorkSecurityGroup True \
-    --ClusterBasicSettings.SubnetId xx \
-    --ClusterBasicSettings.OsCustomizeType xx \
-    --ClusterBasicSettings.ClusterLevel xx \
-    --ClusterBasicSettings.ClusterOs xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.PreStartUserScript xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.DockerGraphPath xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.Labels.0.Name xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.Labels.0.Value xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.ExtraArgs.Kubelet xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.Taints.0.Value xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.Taints.0.Key xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.Taints.0.Effect xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.Unschedulable 0 \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.UserScript xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.DesiredPodNumber 0 \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.MIGEnable True \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CustomDriver.Address xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.Driver.Version xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.Driver.Name xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDA.Version xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDA.Name xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDNN.DocName xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDNN.Version xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDNN.Name xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDNN.DevName xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.MountTarget xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.DataDisks.0.DiskPartition xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.DataDisks.0.DiskType xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.DataDisks.0.DiskSize 0 \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.DataDisks.0.FileSystem xx \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.DataDisks.0.AutoFormatAndMount True \
-    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.DataDisks.0.MountTarget xx \
-    --RunInstancesForNode.0.NodeRole xx \
-    --RunInstancesForNode.0.RunInstancesPara {"VirtualPrivateCloud":{"SubnetId":"subnet-xxx","VpcId":"vpc-xxx"},"Placement":{"Zone":"ap-region-1","ProjectId":1032509},"InstanceType":"S3.LARGE8","SystemDisk":{"DiskType":"CLOUD_PREMIUM"},"DataDisks":[{"DiskType":"CLOUD_PREMIUM","DiskSize":50}],"InstanceCount":1,"InternetAccessible":{"PublicIpAssigned":true,"InternetMaxBandwidthOut":1},"LoginSettings":{"Password":"YourPassword"},"UserData":"IyEvYmluL3NoCgplY2hvIGFhYQo="} \
-    --ExtensionAddons.0.AddonName xx \
-    --ExtensionAddons.0.AddonParam xx \
-    --ClusterType xx \
-    --InstanceAdvancedSettings.PreStartUserScript xx \
-    --InstanceAdvancedSettings.DockerGraphPath xx \
-    --InstanceAdvancedSettings.Labels.0.Name xx \
-    --InstanceAdvancedSettings.Labels.0.Value xx \
-    --InstanceAdvancedSettings.ExtraArgs.Kubelet xx \
-    --InstanceAdvancedSettings.Taints.0.Value xx \
-    --InstanceAdvancedSettings.Taints.0.Key xx \
-    --InstanceAdvancedSettings.Taints.0.Effect xx \
+    --ClusterBasicSettings.NeedWorkSecurityGroup False \
+    --ClusterBasicSettings.TagSpecification.0.ResourceType cluster \
+    --ClusterBasicSettings.TagSpecification.0.Tags.0.Key product \
+    --ClusterBasicSettings.TagSpecification.0.Tags.0.Value tke \
+    --ClusterBasicSettings.ClusterLevel L5 \
+    --ClusterBasicSettings.AutoUpgradeClusterLevel.IsAutoUpgrade True \
+    --ClusterCIDRSettings.ClusterCIDR 172.24.0.0/16 \
+    --ClusterCIDRSettings.IgnoreClusterCIDRConflict False \
+    --ClusterCIDRSettings.MaxNodePodNum 64 \
+    --ClusterCIDRSettings.MaxClusterServiceNum 1024 \
+    --ClusterAdvancedSettings.AsEnabled False \
+    --ClusterAdvancedSettings.IPVS True \
+    --ClusterAdvancedSettings.ContainerRuntime containerd \
+    --ClusterAdvancedSettings.RuntimeVersion 1.6.9 \
+    --ClusterAdvancedSettings.NodeNameType lan-ip \
+    --ClusterAdvancedSettings.NetworkType GR \
+    --ClusterAdvancedSettings.DeletionProtection True \
+    --ClusterAdvancedSettings.AuditEnabled True \
+    --ClusterAdvancedSettings.AuditLogsetId  \
+    --ClusterAdvancedSettings.AuditLogTopicId  \
+    --ClusterAdvancedSettings.EnableCustomizedPodCIDR False \
+    --ClusterAdvancedSettings.IsDualStack False \
+    --ClusterAdvancedSettings.QGPUShareEnable True \
+    --InstanceAdvancedSettings.DockerGraphPath /var/lib/containerd \
     --InstanceAdvancedSettings.Unschedulable 0 \
-    --InstanceAdvancedSettings.UserScript xx \
+    --InstanceAdvancedSettings.PreStartUserScript  \
+    --InstanceAdvancedSettings.UserScript  \
     --InstanceAdvancedSettings.DesiredPodNumber 0 \
-    --InstanceAdvancedSettings.GPUArgs.MIGEnable True \
-    --InstanceAdvancedSettings.GPUArgs.CustomDriver.Address xx \
-    --InstanceAdvancedSettings.GPUArgs.Driver.Version xx \
-    --InstanceAdvancedSettings.GPUArgs.Driver.Name xx \
-    --InstanceAdvancedSettings.GPUArgs.CUDNN.DocName xx \
-    --InstanceAdvancedSettings.GPUArgs.CUDNN.Version xx \
-    --InstanceAdvancedSettings.GPUArgs.CUDNN.Name xx \
-    --InstanceAdvancedSettings.GPUArgs.CUDNN.DevName xx \
-    --InstanceAdvancedSettings.MountTarget xx \
-    --InstanceAdvancedSettings.DataDisks.0.DiskPartition xx \
-    --InstanceAdvancedSettings.DataDisks.0.DiskType xx \
-    --InstanceAdvancedSettings.DataDisks.0.DiskSize 0 \
-    --InstanceAdvancedSettings.DataDisks.0.FileSystem xx \
-    --InstanceAdvancedSettings.DataDisks.0.AutoFormatAndMount True \
-    --InstanceAdvancedSettings.DataDisks.0.MountTarget xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.PreStartUserScript xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.DockerGraphPath xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.Labels.0.Name xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.Labels.0.Value xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.ExtraArgs.Kubelet xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.Taints.0.Value xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.Taints.0.Key xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.Taints.0.Effect xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.Unschedulable 0 \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.UserScript xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.DesiredPodNumber 0 \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.GPUArgs.MIGEnable True \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.GPUArgs.CustomDriver.Address xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.GPUArgs.CUDNN.DocName xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.GPUArgs.CUDNN.Version xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.GPUArgs.CUDNN.Name xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.GPUArgs.CUDNN.DevName xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.MountTarget xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.DataDisks.0.DiskPartition xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.DataDisks.0.DiskType xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.DataDisks.0.DiskSize 0 \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.DataDisks.0.FileSystem xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.DataDisks.0.AutoFormatAndMount True \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceAdvancedSettings.DataDisks.0.MountTarget xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.HostName xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.LoginSettings.Password xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.LoginSettings.KeepImageLogin xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.LoginSettings.KeyIds xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.SecurityGroupIds xx \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.EnhancedService.SecurityService.Enabled True \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.EnhancedService.MonitorService.Enabled True \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.EnhancedService.AutomationService.Enabled True \
-    --ExistedInstancesForNode.0.ExistedInstancesPara.InstanceIds xx \
-    --ExistedInstancesForNode.0.DesiredPodNumbers 0 \
-    --ExistedInstancesForNode.0.NodeRole xx \
-    --InstanceDataDiskMountSettings.0.InstanceType xx \
-    --InstanceDataDiskMountSettings.0.Zone xx \
-    --InstanceDataDiskMountSettings.0.DataDisks.0.DiskPartition xx \
-    --InstanceDataDiskMountSettings.0.DataDisks.0.DiskType xx \
-    --InstanceDataDiskMountSettings.0.DataDisks.0.DiskSize 0 \
-    --InstanceDataDiskMountSettings.0.DataDisks.0.FileSystem xx \
-    --InstanceDataDiskMountSettings.0.DataDisks.0.AutoFormatAndMount True \
-    --InstanceDataDiskMountSettings.0.DataDisks.0.MountTarget xx
+    --ExtensionAddons.0.AddonName CBS \
+    --ExtensionAddons.0.AddonParam {"kind":"App","spec":{"chart":{"chartName":"cbs","chartVersion":"1.1.3"},"values":{"values":[],"rawValues":"e30=","rawValuesType":"json"}}} \
+    --ExtensionAddons.1.AddonName APP \
+    --ExtensionAddons.1.AddonParam {"kind":"App","spec":{"chart":{"chartName":"user-group-access-control","chartVersion":"1.0.0"}}} \
+    --ExtensionAddons.2.AddonName QGPU \
+    --ExtensionAddons.2.AddonParam {"kind":"App","spec":{"chart":{"chartName":"qgpu","chartVersion":"1.0.19"},"values":{"values":["config.priority=binpack","config.nodepriority=spread","config.rootdir=/var/lib/kubelet"]}}} \
+    --ExtensionAddons.3.AddonName KMS \
+    --ExtensionAddons.3.AddonParam {"kind":"App","spec":{"chart":{"chartName":"tke-kms-plugin","chartVersion":"1.0.0"},"name":"tke-kms-plugin","values":{"values":["keyId=7d90e454-8458-11ee-b601-525400741137","region=ap-guangzhou","resource=secrets"]}}} \
+    --RunInstancesForNode.0.NodeRole WORKER \
+    --RunInstancesForNode.0.RunInstancesPara {"Version":"2017-03-12","InstanceChargeType":"POSTPAID_BY_HOUR","Placement":{"Zone":"ap-shanghai-1","ProjectId":0},"TagSpecification":[{"ResourceType":"instance","Tags":[{"Key":"aa","Value":"cc"}]}],"InstanceType":"S2.MEDIUM2","ImageId":"img-25szkc8t","SystemDisk":{"DiskType":"CLOUD_BSSD","DiskSize":50},"VirtualPrivateCloud":{"VpcId":"vpc-135qxjgs","SubnetId":"subnet-rtp4p7q3","Ipv6AddressCount":0},"InternetAccessible":{"InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR","InternetMaxBandwidthOut":1,"PublicIpAssigned":true},"InstanceCount":1,"InstanceName":"","LoginSettings":{"KeyIds":["skey-4h43fuxj"]},"SecurityGroupIds":["sg-hjsb4ai4"],"EnhancedService":{"SecurityService":{"Enabled":true},"MonitorService":{"Enabled":true}},"PurchaseSource":"docker_dashboard","UserData":""} \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.MountTarget  \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.DockerGraphPath /var/lib/containerd \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.Unschedulable 0 \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.PreStartUserScript  \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.UserScript  \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.DesiredPodNumber 0 \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.MIGEnable False \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.Driver.Version  \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.Driver.Name  \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDA.Version  \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDA.Name  \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDNN.Version  \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDNN.Name  \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDNN.DocName  \
+    --RunInstancesForNode.0.InstanceAdvancedSettingsOverrides.0.GPUArgs.CUDNN.DevName 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ClusterId": "cls-xxx",
+        "ClusterId": "cls-7ph3twqe",
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }
 }
@@ -171,14 +87,14 @@ Input:
 
 ```
 tccli tke CreateCluster --cli-unfold-argument  \
-    --ClusterType INDEPENDENT_CLUSTER \
     --ClusterCIDRSettings.ClusterCIDR 10.4.0.0/14 \
-    --RunInstancesForNode.0.NodeRole MASTER_ETCD \
-    --RunInstancesForNode.0.RunInstancesPara {"VirtualPrivateCloud":{"SubnetId":"subnet-xxx","VpcId":"vpc-xxx"},"Placement":{"Zone":"ap-region-1","ProjectId":1032509},"InstanceType":"S3.LARGE8","SystemDisk":{"DiskType":"CLOUD_PREMIUM"},"DataDisks":[{"DiskType":"CLOUD_PREMIUM","DiskSize":50}],"InstanceCount":3,"InternetAccessible":{"PublicIpAssigned":true,"InternetMaxBandwidthOut":1},"LoginSettings":{"Password":"YourPassword"},"UserData":"IyEvYmluL3NoCgplY2hvIGFhYQo \
-    --RunInstancesForNode.1.NodeRole WORKER \
-    --RunInstancesForNode.1.RunInstancesPara {"VirtualPrivateCloud":{"SubnetId":"subnet-xxx","VpcId":"vpc-xxx"},"Placement":{"Zone":"ap-region-1","ProjectId":1032509},"InstanceType":"S3.LARGE8","SystemDisk":{"DiskType":"CLOUD_PREMIUM"},"DataDisks":[{"DiskType":"CLOUD_PREMIUM","DiskSize":50}],"InstanceCount":1,"InternetAccessible":{"PublicIpAssigned":true,"InternetMaxBandwidthOut":1},"LoginSettings":{"Password":"YourPassword"},"UserData":"IyEvYmluL3NoCgplY2hvIGFhYQo \
     --ExtensionAddons.0.AddonName GameApp \
-    --ExtensionAddons.0.AddonParam {"kind":"GameApp","apiVersion":"platform.tke/v1","metadata":{"generateName":"ga"},"spec":{"clusterName":"xxx"}}
+    --ExtensionAddons.0.AddonParam {"kind":"GameApp","apiVersion":"platform.tke/v1","metadata":{"generateName":"ga"},"spec":{"clusterName":"xxx"}} \
+    --ClusterType INDEPENDENT_CLUSTER \
+    --RunInstancesForNode.0.NodeRole WORKER \
+    --RunInstancesForNode.0.RunInstancesPara {"VirtualPrivateCloud":{"SubnetId":"subnet-xxx","VpcId":"vpc-xxx"},"Placement":{"Zone":"ap-region-1","ProjectId":1032509},"InstanceType":"S3.LARGE8","SystemDisk":{"DiskType":"CLOUD_PREMIUM"},"DataDisks":[{"DiskType":"CLOUD_PREMIUM","DiskSize":50}],"InstanceCount":1,"InternetAccessible":{"PublicIpAssigned":true,"InternetMaxBandwidthOut":1},"LoginSettings":{"Password":"YourPassword"},"UserData":"IyEvYmluL3NoCgplY2hvIGFhYQo="} \
+    --RunInstancesForNode.1.NodeRole MASTER_ETCD \
+    --RunInstancesForNode.1.RunInstancesPara {"VirtualPrivateCloud":{"SubnetId":"subnet-xxx","VpcId":"vpc-xxx"},"Placement":{"Zone":"ap-region-1","ProjectId":1032509},"InstanceType":"S3.LARGE8","SystemDisk":{"DiskType":"CLOUD_PREMIUM"},"DataDisks":[{"DiskType":"CLOUD_PREMIUM","DiskSize":50}],"InstanceCount":3,"InternetAccessible":{"PublicIpAssigned":true,"InternetMaxBandwidthOut":1},"LoginSettings":{"Password":"YourPassword"},"UserData":"IyEvYmluL3NoCgplY2hvIGFhYQo="}
 ```
 
 Output: 

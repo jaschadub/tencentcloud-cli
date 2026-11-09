@@ -1,6 +1,6 @@
-**Example 1: 下线集群**
+**Example 1: 销毁集群**
 
-
+销毁集群
 
 Input: 
 
@@ -13,8 +13,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "128046",
-        "FlowId": "123"
+        "RequestId": "51169b54-61d4-4604-a07e-e519a5527923",
+        "FlowId": "147286"
     }
 }
 ```

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ckafka ModifyTopicAttributes --cli-unfold-argument  \
-    --InstanceId xxx \
-    --Note xxx \
-    --TopicName xxx
+    --InstanceId ckafka-test \
+    --Note note \
+    --TopicName topic-test
 ```
 
 Output: 
@@ -16,13 +16,16 @@ Output:
 {
     "Response": {
         "Result": {
-            "ReturnMessage": "xx",
-            "ReturnCode": "xx",
+            "ReturnCode": "0",
+            "ReturnMessage": "ok",
             "Data": {
-                "FlowId": 0
+                "FlowId": 0,
+                "RouteDTO": {
+                    "RouteId": 0
+                }
             }
         },
-        "RequestId": "xx"
+        "RequestId": "fcfb7c89-3973-44f1-9a3e-a2811c67434e"
     }
 }
 ```

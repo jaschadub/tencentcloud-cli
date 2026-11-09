@@ -1,4 +1,4 @@
-**Example 1: 查询订单id关联的资源信息**
+**Example 1: 查询订单关联实例**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cynosdb DescribeResourcesByDealName --cli-unfold-argument  \
-    --DealName xxx
+    --DealName 201302542054
 ```
 
 Output: 
@@ -19,14 +19,14 @@ Output:
                 "InstanceIds": [
                     "cynosdbmysql-ins-pecl0drs"
                 ],
-                "DealName": "xxx"
+                "DealName": "201302542054"
             },
             {
                 "ClusterId": "cynosdbmysql-hjosrxhu",
                 "InstanceIds": [
                     "cynosdbmysql-ins-7f59pahg"
                 ],
-                "DealName": "xxx"
+                "DealName": "201302542054"
             }
         ],
         "RequestId": "005b862f-f408-4a95-a7e7-26f3e672e081"

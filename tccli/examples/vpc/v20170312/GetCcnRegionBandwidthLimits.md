@@ -1,6 +1,6 @@
 **Example 1: 查询CCN地域出带宽详情**
 
-该示例查询CCN地域出带宽详情，其中CCN的付费模式是后付费，后付费计费模式的云联网，用户不需要关注ExpireTime，RenewFlag参数。
+该示例查询CCN地域出带宽详情，其中CCN的付费模式是后付费。后付费计费模式的CCN，用户不需要关注ExpireTime，RenewFlag参数。
 
 Input: 
 
@@ -17,12 +17,25 @@ Output:
             {
                 "CcnRegionBandwidthLimit": {
                     "Region": "ap-guangzhou",
+                    "DstRegion": "ap-beijing",
                     "IsBm": false,
+                    "DstIsBm": false,
                     "BandwidthLimit": 10
                 },
                 "CcnId": "ccn-1pdchck1",
+                "DefaultQosBandwidthFlag": false,
+                "TagSet": [
+                    {
+                        "Key": "ccn-1",
+                        "Value": "ccn-1"
+                    }
+                ],
                 "RegionFlowControlId": "fcr-krx0mfoi",
-                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW"
+                "CreatedTime": "2020-05-20 16:29:44",
+                "ExpiredTime": "2020-05-20 16:29:44",
+                "MarketId": "market-xxxxxxxx",
+                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
+                "QosLevel": "AU"
             }
         ],
         "TotalCount": 1,
@@ -33,7 +46,7 @@ Output:
 
 **Example 2: 查询CCN地域间带宽详情**
 
-该示例是查询CCN地域间带宽详情，云联网为预付费，其中返回两个地域间限速实力，限速实例fcr-crrnp6w4续费模式RenewFlag为NOTIFY_AND_MANUAL_RENEW（非自动续费），限速实例fcr-lnfsgh4y续费模式RenewFlag为NOTIFY_AND_AUTO_RENEW（自动续费）。
+该示例是查询CCN地域间带宽详情，云联网为预付费，其中返回两个地域间限速实例，限速实例fcr-crrnp6w4续费模式RenewFlag为NOTIFY_AND_MANUAL_RENEW（非自动续费），限速实例fcr-lnfsgh4y续费模式RenewFlag为NOTIFY_AND_AUTO_RENEW（自动续费）。
 
 Input: 
 
@@ -56,8 +69,19 @@ Output:
                     "DstIsBm": false
                 },
                 "CcnId": "ccn-2gxeenq2",
+                "DefaultQosBandwidthFlag": false,
+                "TagSet": [
+                    {
+                        "Key": "ccn-1",
+                        "Value": "ccn-1"
+                    }
+                ],
                 "RegionFlowControlId": "fcr-crrnp6w4",
-                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW"
+                "CreatedTime": "2020-06-10 14:48:13",
+                "ExpiredTime": "2020-07-10 15:47:05",
+                "MarketId": "market-xxxxxxxx",
+                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
+                "QosLevel": "AU"
             },
             {
                 "CcnRegionBandwidthLimit": {
@@ -68,8 +92,19 @@ Output:
                     "DstIsBm": false
                 },
                 "CcnId": "ccn-2gxeenq2",
+                "DefaultQosBandwidthFlag": false,
+                "TagSet": [
+                    {
+                        "Key": "ccn-2",
+                        "Value": "ccn-2"
+                    }
+                ],
                 "RegionFlowControlId": "fcr-lnfsgh4y",
-                "RenewFlag": "NOTIFY_AND_AUTO_RENEW"
+                "CreatedTime": "2020-06-10 15:55:29",
+                "ExpiredTime": "2020-07-10 15:55:29",
+                "MarketId": "market-xxxxxxxx",
+                "RenewFlag": "NOTIFY_AND_AUTO_RENEW",
+                "QosLevel": "AU"
             }
         ],
         "TotalCount": 2,

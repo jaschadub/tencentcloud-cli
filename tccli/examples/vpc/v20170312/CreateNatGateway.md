@@ -1,6 +1,6 @@
 **Example 1: 创建NAT网关**
 
-
+创建一个传统型NAT网关并自动分配一个EIP
 
 Input: 
 
@@ -23,7 +23,7 @@ Output:
         "NatGatewaySet": [
             {
                 "NatGatewayId": "nat-cqbn23ju",
-                "NatGatewayName": "11111",
+                "NatGatewayName": "PublicNat",
                 "VpcId": "vpc-qi4ja3sx",
                 "CreatedTime": "2019-07-16 09:40:00",
                 "State": "AVAILABLE",
@@ -35,12 +35,14 @@ Output:
                     {
                         "AddressId": "eip-9uw5fwsu",
                         "PublicIpAddress": "139.199.232.119",
-                        "IsBlocked": false
+                        "IsBlocked": false,
+                        "BlockType": "NORMAL"
                     },
                     {
                         "AddressId": "eip-9uw5fsss",
                         "PublicIpAddress": "139.199.232.221",
-                        "IsBlocked": false
+                        "IsBlocked": false,
+                        "BlockType": "NORMAL"
                     }
                 ],
                 "DestinationIpPortTranslationNatRuleSet": [],
@@ -48,6 +50,11 @@ Output:
                 "Zone": "ap-guangzhou-2",
                 "ExclusiveGatewayBandwidth": 1,
                 "IsExclusive": true,
+                "StrictSnatMode": false,
+                "SmartScheduleMode": false,
+                "DedicatedClusterId": "",
+                "NatProductVersion": 1,
+                "RestrictState": "NORMAL",
                 "SourceIpTranslationNatRuleSet": [],
                 "SubnetId": "1215354",
                 "TagSet": [
@@ -55,7 +62,8 @@ Output:
                         "Key": "city",
                         "Value": "shanghai"
                     }
-                ]
+                ],
+                "DeletionProtectionEnabled": false
             }
         ],
         "TotalCount": 1,
@@ -66,16 +74,16 @@ Output:
 
 **Example 2: 创建标准型NAT网关**
 
-
+创建一个标准型NAT网关并自动分配一个EIP
 
 Input: 
 
 ```
 tccli vpc CreateNatGateway --cli-unfold-argument  \
-    --SubnetId subnet-q1b8fsg \
     --AddressCount 1 \
     --NatGatewayName xiaooliang_test \
-    --VpcId vpc-bohigpb7
+    --VpcId vpc-bohigpb7 \
+    --NatProductVersion 2
 ```
 
 Output: 
@@ -85,7 +93,7 @@ Output:
         "NatGatewaySet": [
             {
                 "NatGatewayId": "nat-o49t53q2",
-                "NatGatewayName": "xiaooliang_test",
+                "NatGatewayName": "PublicStandardNat",
                 "VpcId": "vpc-bohigpb7",
                 "State": "PENDING",
                 "NetworkState": "AVAILABLE",
@@ -101,7 +109,13 @@ Output:
                 "SecurityGroupSet": [],
                 "SourceIpTranslationNatRuleSet": [],
                 "IsExclusive": false,
-                "ExclusiveGatewayBandwidth": null
+                "StrictSnatMode": false,
+                "SmartScheduleMode": false,
+                "DedicatedClusterId": "",
+                "RestrictState": "NORMAL",
+                "NatProductVersion": 2,
+                "ExclusiveGatewayBandwidth": 0,
+                "DeletionProtectionEnabled": false
             }
         ],
         "TotalCount": 1,

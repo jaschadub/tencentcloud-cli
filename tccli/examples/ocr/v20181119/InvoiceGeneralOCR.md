@@ -1,12 +1,12 @@
 **Example 1: 通用机打发票识别示例代码**
 
-
+通用机打发票识别
 
 Input: 
 
 ```
 tccli ocr InvoiceGeneralOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg 
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg
 ```
 
 Output: 

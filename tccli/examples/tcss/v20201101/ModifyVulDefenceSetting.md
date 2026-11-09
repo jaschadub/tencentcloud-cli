@@ -1,6 +1,6 @@
 **Example 1: 编辑漏洞防御设置**
 
-
+编辑漏洞防御设置
 
 Input: 
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "dc56fda9-58c8-4c4f-9e8c-b7296836c1fe"
     }
 }
 ```

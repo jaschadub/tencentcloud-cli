@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli wedata CheckIntegrationTaskNameExists --cli-unfold-argument  \
-    --ProjectId xx \
-    --TaskName xx \
-    --TaskId xx
+    --ProjectId 11022568003970304 \
+    --TaskName 整库迁移 \
+    --TaskId 20220506145218687
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
     "Response": {
         "Data": true,
         "ExistsType": 1,
-        "RequestId": "xx"
+        "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }
 ```

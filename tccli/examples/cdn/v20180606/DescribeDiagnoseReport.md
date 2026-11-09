@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdn DescribeDiagnoseReport --cli-unfold-argument  \
-    --ReportId 123
+    --ReportId 9597132511111
 ```
 
 Output: 
@@ -19,8 +19,8 @@ Output:
                 {
                     "Key": "report_id",
                     "KeyText": "报告ID",
-                    "Value": "123",
-                    "ValueText": "123"
+                    "Value": "report content",
+                    "ValueText": "report content"
                 },
                 {
                     "Key": "diagnose_url",
@@ -43,8 +43,8 @@ Output:
                 {
                     "Key": "cname",
                     "KeyText": "解析配置",
-                    "Value": "CNAME www.test.com.cdn.dnsv1.com<br>",
-                    "ValueText": "CNAME www.test.com.cdn.dnsv1.com<br>"
+                    "Value": "CNAMEu2003www.test.com.cdn.dnsv1.com<br>",
+                    "ValueText": "CNAMEu2003www.test.com.cdn.dnsv1.com<br>"
                 }
             ]
         },
@@ -76,8 +76,8 @@ Output:
                 {
                     "Key": "dns",
                     "KeyText": "DNS IP",
-                    "Value": "183.3.229.15 广东省-中国电信<br>219.133.40.12 广东省-中国电信<br>",
-                    "ValueText": "183.3.229.15 广东省-中国电信<br>219.133.40.12 广东省-中国电信<br>"
+                    "Value": "183.3.229.15u2003广东省-中国电信<br>219.133.40.12u2003广东省-中国电信<br>",
+                    "ValueText": "183.3.229.15u2003广东省-中国电信<br>219.133.40.12u2003广东省-中国电信<br>"
                 }
             ],
             "Status": "ok"

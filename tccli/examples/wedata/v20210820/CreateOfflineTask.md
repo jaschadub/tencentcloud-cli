@@ -1,29 +1,31 @@
 **Example 1: 创建离线任务**
 
-
+创建离线任务
 
 Input: 
 
 ```
 tccli wedata CreateOfflineTask --cli-unfold-argument  \
-    --TypeId 0 \
-    --ProjectId xx \
-    --Notes xx \
-    --TaskAction xx \
+    --ProjectId 1486446569620893696 \
+    --CycleStep 1 \
     --DelayTime 0 \
-    --StartTime xx \
-    --TaskName xx \
-    --EndTime xx \
-    --CycleStep 0 \
-    --TaskMode xx
+    --EndTime 2099-12-31 00:00:00 \
+    --Notes  \
+    --StartTime 2022-04-11 00:00:00 \
+    --TaskName task test name \
+    --TypeId 27 \
+    --TaskAction  \
+    --TaskMode 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": true,
-        "RequestId": "xx"
+        "TaskId": "20220411181355382",
+        "ArrangeSpaceTaskId": null,
+        "Data": null,
+        "RequestId": "7508483f-5202-44b3-a846-8c6efb42acb0"
     }
 }
 ```

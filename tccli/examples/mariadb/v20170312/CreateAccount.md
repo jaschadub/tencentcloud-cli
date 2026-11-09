@@ -1,13 +1,13 @@
 **Example 1: 为云数据库实例创建访问账号**
 
-
+在tdsql-fdpjf5zh实例中创建可读写账号testuser1，密码为1234qweri#
 
 Input: 
 
 ```
 tccli mariadb CreateAccount --cli-unfold-argument  \
     --UserName testuser1 \
-    --Description 测试帐号 \
+    --Description 测试账号 \
     --InstanceId tdsql-fdpjf5zh \
     --ReadOnly 0 \
     --Host 172.17.% \

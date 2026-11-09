@@ -1,21 +1,21 @@
-**Example 1: 创建语音消息转文本自学习模型**
+**Example 1: 创建语音消息转文本热句模型**
 
-
+用户使用该接口可以创建语音消息转文本热句模型，以供识别调用
 
 Input: 
 
 ```
 tccli gme CreateCustomization --cli-unfold-argument  \
-    --BizId 1 \
-    --TextUrl xx
+    --BizId 1400000000 \
+    --TextUrl https://gme-xxx.cos.xxx.com/customization/1400000000/1400000000_customization
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "ModelId": "xx"
+        "RequestId": "f1338576-0231-4a4b-b441-a780e6ffe894",
+        "ModelId": "f440dfa77ae411eda5d3564a2eb5fd49"
     }
 }
 ```

@@ -16,36 +16,28 @@ Output:
     "Response": {
         "List": [
             {
-                "VulId": 8,
+                "VulId": 105374,
                 "Level": 4,
-                "VulName": "Struts2 S2-013远程代码执行漏洞(CVE-2013-1966)",
-                "PublishDate": "2013-05-23 00:00:00",
-                "Status": 0,
-                "LastScanTime": "",
-                "Progress": 0
-            },
-            {
-                "VulId": 9,
-                "Level": 4,
-                "VulName": "Struts2 S2-019远程代码执行漏洞(CVE-2013-4316)",
-                "PublishDate": "2013-09-26 00:00:00",
-                "Status": 0,
-                "LastScanTime": "",
-                "Progress": 0
-            },
-            {
-                "VulId": 18,
-                "Level": 4,
-                "VulName": "OpenSSL Heartbleed漏洞(CVE-2014-0160)",
-                "PublishDate": "2014-04-07 00:00:00",
-                "Status": 0,
-                "LastScanTime": "",
-                "Progress": 0
+                "VulName": "Apache OFBiz SSRF到远程代码执行漏洞（CVE-2024-45507）",
+                "PublishDate": "2024-09-04 00:00:00",
+                "Category": 2,
+                "Status": 2,
+                "LastScanTime": "2024-10-21 14:27:07",
+                "Progress": 0,
+                "CveId": "CVE-2024-45507",
+                "CvssScore": 9.8,
+                "Labels": "远程利用",
+                "HostCount": 0,
+                "IsSupportDefense": 0,
+                "DefenseAttackCount": 0,
+                "Method": 1,
+                "AttackLevel": 0,
+                "DefenseState": false
             }
         ],
-        "RequestId": "djaiodhajdhaj",
-        "TotalCount": 35,
-        "ExistsRisk": true
+        "TotalCount": 1,
+        "ExistsRisk": true,
+        "RequestId": "e5b4724c-49af-46ab-bd84-cdbae897e7e0"
     }
 }
 ```

@@ -6,14 +6,15 @@ Input:
 
 ```
 tccli cwp ModifyAutoOpenProVersionConfig --cli-unfold-argument  \
-    --Status CLOSE
+    --Status OPEN \
+    --ProtectType FLAGSHIP_PREPAY
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a"
+        "RequestId": "fe9763bf-1054-4fc3-8765-3a0273b8a769"
     }
 }
 ```

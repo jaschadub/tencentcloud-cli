@@ -1,6 +1,6 @@
-**Example 1: 获取人员基础信息接口**
+**Example 1: 获取人员基础信息成功示例**
 
-获取指定人员的信息，包括姓名、性别、人脸等
+
 
 Input: 
 
@@ -24,9 +24,9 @@ Output:
 }
 ```
 
-**Example 2: 错误示例**
+**Example 2: 获取人员基础信息失败示例**
 
-人员ID不存在
+
 
 Input: 
 
@@ -39,6 +39,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.PersonIdNotExist",
+            "Message": "人员ID不存在。"
+        },
         "RequestId": "98b4a0bc-802b-4764-9701-bc0c6c544395"
     }
 }

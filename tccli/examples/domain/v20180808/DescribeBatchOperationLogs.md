@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain DescribeBatchOperationLogs --cli-unfold-argument  \
-    --Offset 1 \
+    --Offset 0 \
     --Limit 20
 ```
 
@@ -14,18 +14,20 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 204,
+        "TotalCount": 1,
         "DomainBatchLogSet": [
             {
-                "LogId": 318,
-                "CreatedOn": "2020-06-10 20:08:43",
-                "Number": 12,
-                "Status": "doing"
+                "LogId": 10001,
+                "Number": 1,
+                "Status": "doing",
+                "CreatedOn": "2023-01-01 20:30:00",
+                "Success": 0,
+                "Doing": 0,
+                "Failed": 0
             }
         ],
-        "RequestId": "1af07f55-2b13-4076-a301-74c2480f7af7"
-    },
-    "ResultStatus": true
+        "RequestId": "f376d0e6-f064-1234-b27f-a8ae3b054dfa"
+    }
 }
 ```
 

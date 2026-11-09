@@ -1,6 +1,6 @@
 **Example 1: 请求示例**
 
-
+CreateLiveTranscodeRule 默认示例。
 
 Input: 
 
@@ -8,7 +8,7 @@ Input:
 tccli live CreateLiveTranscodeRule --cli-unfold-argument  \
     --DomainName 5000.liveplay.myqcloud.com \
     --AppName live \
-    --StreamName stream1 \
+    --StreamName  \
     --TemplateId 1000
 ```
 

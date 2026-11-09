@@ -14,18 +14,19 @@ Output:
         "TotalNum": 1,
         "Data": [
             {
-                "Uin": 10000000001,
-                "Name": "test",
-                "Uid": 1000001,
-                "Remark": "",
-                "ConsoleLogin": 0,
-                "PhoneNum": "16166666661",
+                "Uin": 100000000001,
+                "Name": "Jack",
+                "Uid": 10000001,
+                "Remark": "productUser",
+                "ConsoleLogin": 1,
+                "PhoneNum": "186****0001",
                 "CountryCode": "86",
-                "Email": " ",
-                "CreateTime": "2021-11-11 19:38:01"
+                "Email": "186****0001@qq.com",
+                "CreateTime": "2023-06-01 10:53:48",
+                "NickName": "Jack"
             }
         ],
-        "RequestId": "93ea219e-7dbe-4b76-ad63-baef14b31a3a"
+        "RequestId": "3bfc64a0-8935-43f4-91f7-6d16c41886d8"
     }
 }
 ```

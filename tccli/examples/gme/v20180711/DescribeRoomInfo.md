@@ -1,44 +1,47 @@
 **Example 1: 获取房间内用户信息**
 
-
+获取房间内用户信息,RoomIds和StrRoomIds填一个即可,若都存在,则优先查询StrRoomIds。
 
 Input: 
 
 ```
 tccli gme DescribeRoomInfo --cli-unfold-argument  \
-    --SdkAppId 1400000000 \
-    --RoomIds 88888 \
-    --StrRoomIds aaaaa
+    --RoomIds 10086 \
+    --StrRoomIds 10090 \
+    --SdkAppId 1400000000
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Result": 0,
+        "Result": 1,
         "RoomUsers": [
             {
-                "RoomId": 88888,
+                "RoomId": 0,
                 "Uins": [
-                    1234,
-                    5678
+                    100982048
+                ],
+                "StrRoomId": "10090",
+                "StrUins": [
+                    ""
                 ]
             }
         ],
-        "RequestId": "xxx-xxx-xxx"
+        "RequestId": "50d01794-367f-4993-b4e3-cac5a4c1aaaa"
     }
 }
 ```
 
 **Example 2: 获取房间内用户信息1**
 
-
+获取房间内用户信息1
 
 Input: 
 
 ```
 tccli gme DescribeRoomInfo --cli-unfold-argument  \
-    --RoomIds 11 \
+    --RoomIds 107740 \
     --SdkAppId 1400405451
 ```
 
@@ -46,15 +49,20 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "50d01794-367f-4993-b4e3-cac5a4c1aaaa",
-        "Result": 0,
+        "Result": 1,
         "RoomUsers": [
             {
                 "RoomId": 11,
+                "Uins": [
+                    100982048
+                ],
                 "StrRoomId": "",
-                "Uins": []
+                "StrUins": [
+                    ""
+                ]
             }
-        ]
+        ],
+        "RequestId": "50d01794-367f-4993-b4e3-cac5a4c1aaaa"
     }
 }
 ```

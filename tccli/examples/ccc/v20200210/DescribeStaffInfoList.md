@@ -1,6 +1,6 @@
 **Example 1: 获取坐席列表示例**
 
-
+获取坐席列表示例
 
 Input: 
 
@@ -9,7 +9,7 @@ tccli ccc DescribeStaffInfoList --cli-unfold-argument  \
     --ModifiedTime 1590147606 \
     --PageSize 10 \
     --PageNumber 0 \
-    --StaffMail “121223@qq.com” \
+    --StaffMail 121223@qq.com \
     --SdkAppId 1400000000
 ```
 
@@ -26,6 +26,7 @@ Output:
                 "Phone": "008617636049517",
                 "Nick": "测试3",
                 "StaffNumber": "125",
+                "RoleId": 1,
                 "SkillGroupList": [
                     {
                         "SkillGroupId": 53,

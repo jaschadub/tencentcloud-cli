@@ -7,7 +7,13 @@ Input:
 ```
 tccli monitor DescribePolicyGroupInfo --cli-unfold-argument  \
     --Module monitor \
-    --GroupId 11111
+    --GroupId '1247756
+
+
+{
+  "Module": "Monitor",
+  "GroupId": 1247756
+}'
 ```
 
 Output: 
@@ -47,6 +53,7 @@ Output:
         "IsDefault": 0,
         "LastEditUin": "1500000000",
         "ProjectId": 0,
+        "IsUnionRule": 0,
         "ReceiverInfos": null,
         "Region": [
             "bj",

@@ -1,4 +1,4 @@
-**Example 1: 查询consul类型注册引擎实例副本信息**
+**Example 1: 查询 Zookeeper 类型注册引擎实例副本信息**
 
 
 
@@ -13,18 +13,20 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "RequestId": "xx",
         "Replicas": [
             {
-                "Status": "xx",
-                "Name": "xx",
-                "Zone": "xx",
-                "ZoneId": "xx",
-                "Role": "xx",
-                "SubnetId": "xx"
+                "Name": "name",
+                "Role": "Leader",
+                "Status": "running",
+                "SubnetId": "subnet-id",
+                "Zone": "ap-guangzhou-1",
+                "ZoneId": "100000",
+                "AliasName": "aliasName",
+                "VpcId": "vpc-id"
             }
-        ]
+        ],
+        "TotalCount": 1,
+        "RequestId": "req-id"
     }
 }
 ```

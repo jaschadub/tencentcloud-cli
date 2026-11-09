@@ -1,6 +1,6 @@
 **Example 1: 调用长安链合约查询**
 
-
+调用长安链合约查询
 
 Input: 
 
@@ -8,7 +8,7 @@ Input:
 tccli tbaas QueryChainMakerContract --cli-unfold-argument  \
     --ChainId chain_dcwtt \
     --ClusterId chainmaker-j1juwsmndn \
-    --ContractName test \
+    --ContractName fact \
     --FuncParam {"file_hash":"1234567"} \
     --FuncName find_by_file_hash
 ```

@@ -16,46 +16,30 @@ Output:
 {
     "Response": {
         "Result": {
+            "TotalCount": 0,
             "Content": [
                 {
-                    "PkgId": "xx",
-                    "PkgType": "xx",
-                    "UploadTime": "xx",
-                    "PkgName": "xx",
-                    "PkgDesc": "xx",
+                    "PkgId": "pkg-6a79x94v",
+                    "PkgName": "java-consumer",
+                    "PkgType": "jar",
+                    "PkgVersion": "v1",
+                    "PkgDesc": "this is a desc",
+                    "UploadTime": "2020-11-12 09:12:33",
+                    "Md5": "2s78294s810xxxxxxxxxxx",
+                    "PkgPubStatus": 0,
                     "PkgBindInfo": [
                         {
-                            "ApplicationId": "xx",
-                            "GroupId": "xx"
+                            "ApplicationId": "application-6a79x94v",
+                            "GroupId": "group-6a79x94v"
                         }
-                    ],
-                    "PkgVersion": "xx",
-                    "PkgPubStatus": 1,
-                    "Md5": "xx"
-                },
-                {
-                    "PkgId": "xx",
-                    "PkgType": "xx",
-                    "UploadTime": "xx",
-                    "PkgName": "xx",
-                    "PkgDesc": "xx",
-                    "PkgBindInfo": [
-                        {
-                            "ApplicationId": "xx",
-                            "GroupId": "xx"
-                        }
-                    ],
-                    "PkgVersion": "xx",
-                    "PkgPubStatus": 1,
-                    "Md5": "xx"
+                    ]
                 }
             ],
-            "TotalCount": 2,
-            "RepositoryType": "xx",
-            "RepositoryName": "xx",
-            "RepositoryId": "xx"
+            "RepositoryId": "repository-6a79x94v",
+            "RepositoryType": "cos",
+            "RepositoryName": "bucket-mock"
         },
-        "RequestId": "xx"
+        "RequestId": "96561cf1-738a-47d6-943b-dec7ebbccabe"
     }
 }
 ```

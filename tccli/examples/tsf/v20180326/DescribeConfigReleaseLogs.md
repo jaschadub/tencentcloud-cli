@@ -6,76 +6,79 @@ Input:
 
 ```
 tccli tsf DescribeConfigReleaseLogs --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 20
+    --GroupId group-zvwbbnxv \
+    --ApplicationId application-ov6ml25a
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "cd8be98a-c557-43ef-bece-069f014bb2dd",
+        "RequestId": "6566f040-7ad3-4608-8be4-aa20e84cfdbf",
         "Result": {
-            "TotalCount": 3,
             "Content": [
                 {
-                    "ConfigReleaseLogId": "dcfgrl-6ymq4b5v",
-                    "ConfigId": "dcfg-6a79x94v",
-                    "ConfigName": "[配置项已被删除]",
-                    "ConfigVersion": "[配置项已被删除]",
-                    "GroupId": "group-mae5orra",
-                    "GroupName": "[部署组已被删除]",
-                    "NamespaceId": null,
-                    "NamespaceName": null,
-                    "ClusterId": null,
-                    "ClusterName": null,
-                    "ReleaseTime": "2019-05-28 09:41:40",
-                    "ReleaseDesc": null,
-                    "ReleaseStatus": "S",
-                    "LastConfigId": null,
-                    "LastConfigName": null,
-                    "LastConfigVersion": null,
+                    "ClusterId": "cluster-jqv3mda7",
+                    "ClusterName": "jolyonzheng-vm-cluster",
+                    "ConfigId": "dcfg-nyg99e5a",
+                    "ConfigName": "gw_opensource_api",
+                    "ConfigReleaseLogId": "dcfgrl-4y4rxnba",
+                    "ConfigVersion": "2",
+                    "GroupId": "group-zvwbbnxv",
+                    "GroupName": "group-msgw-mock1",
+                    "LastConfigId": "dcfg-qv3rrn6v",
+                    "LastConfigName": "gw_opensource_api",
+                    "LastConfigVersion": "1",
+                    "NamespaceId": "namespace-9ynzz64y",
+                    "NamespaceName": "mock-service-ns",
+                    "ReleaseDesc": "this is desc",
+                    "ReleaseStatus": "RS",
+                    "ReleaseTime": "2025-08-07 11:34:36",
+                    "ReleasedConfigCenter": "SHARE",
                     "RollbackFlag": false
                 },
                 {
-                    "ConfigReleaseLogId": "dcfgrl-ba228ppa",
-                    "ConfigId": "dcfg-6a79x94v",
-                    "ConfigName": "[配置项已被删除]",
-                    "ConfigVersion": "[配置项已被删除]",
-                    "GroupId": "group-mae5orra",
-                    "GroupName": "[部署组已被删除]",
-                    "NamespaceId": null,
-                    "NamespaceName": null,
-                    "ClusterId": null,
-                    "ClusterName": null,
-                    "ReleaseTime": "2019-05-28 09:36:52",
-                    "ReleaseDesc": "删除配置项",
-                    "ReleaseStatus": "DS",
-                    "LastConfigId": "dcfg-6a79x94v",
-                    "LastConfigName": "[配置项已被删除]",
-                    "LastConfigVersion": "[配置项已被删除]",
-                    "RollbackFlag": false
-                },
-                {
-                    "ConfigReleaseLogId": "dcfgrl-evjjbjlv",
-                    "ConfigId": "dcfg-6a79x94v",
-                    "ConfigName": "[配置项已被删除]",
-                    "ConfigVersion": "[配置项已被删除]",
-                    "GroupId": "group-mae5orra",
-                    "GroupName": "[部署组已被删除]",
-                    "NamespaceId": null,
-                    "NamespaceName": null,
-                    "ClusterId": null,
-                    "ClusterName": null,
-                    "ReleaseTime": "2019-05-28 09:30:55",
+                    "ClusterId": "cluster-jqv3mda7",
+                    "ClusterName": "jolyonzheng-vm-cluster",
+                    "ConfigId": "dcfg-qv3rrn6v",
+                    "ConfigName": "gw_opensource_api",
+                    "ConfigReleaseLogId": "dcfgrl-qabpxw9v",
+                    "ConfigVersion": "1",
+                    "GroupId": "group-zvwbbnxv",
+                    "GroupName": "group-msgw-mock1",
+                    "LastConfigId": "dcfg-nyg99e5a",
+                    "LastConfigName": "gw_opensource_api",
+                    "LastConfigVersion": "2",
+                    "NamespaceId": "namespace-9ynzz64y",
+                    "NamespaceName": "mock-service-ns",
                     "ReleaseDesc": null,
                     "ReleaseStatus": "S",
+                    "ReleaseTime": "2025-08-07 11:30:25",
+                    "ReleasedConfigCenter": "SHARE",
+                    "RollbackFlag": true
+                },
+                {
+                    "ClusterId": "cluster-jqv3mda7",
+                    "ClusterName": "jolyonzheng-vm-cluster",
+                    "ConfigId": "dcfg-nyg99e5a",
+                    "ConfigName": "gw_opensource_api",
+                    "ConfigReleaseLogId": "dcfgrl-6yoxb8ny",
+                    "ConfigVersion": "2",
+                    "GroupId": "group-zvwbbnxv",
+                    "GroupName": "group-msgw-mock1",
                     "LastConfigId": null,
                     "LastConfigName": null,
                     "LastConfigVersion": null,
+                    "NamespaceId": "namespace-9ynzz64y",
+                    "NamespaceName": "mock-service-ns",
+                    "ReleaseDesc": null,
+                    "ReleaseStatus": "S",
+                    "ReleaseTime": "2024-11-28 17:01:08",
+                    "ReleasedConfigCenter": "SHARE",
                     "RollbackFlag": false
                 }
-            ]
+            ],
+            "TotalCount": 3
         }
     }
 }

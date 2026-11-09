@@ -1,12 +1,12 @@
 **Example 1: 按照Sql模板查询指定时间段内的慢日志统计结果**
 
-
+按照Sql模板查询指定时间段内的慢日志统计结果。
 
 Input: 
 
 ```
 tccli dbbrain DescribeSlowLogTopSqls --cli-unfold-argument  \
-    --InstanceId test \
+    --InstanceId cdb-test1234 \
     --SortBy QueryTime \
     --OrderBy ASC \
     --Limit 10 \
@@ -39,11 +39,16 @@ Output:
                 "LockTime": 0,
                 "RowsSent": 0,
                 "RowsSentMin": 0,
+                "Md5": "868339165626254691",
                 "LockTimeMax": 0,
                 "RowsSentRatio": 0,
                 "RowsExamined": 0,
                 "RowsExaminedMin": 0,
-                "QueryTimeMin": 0
+                "QueryTimeMin": 0,
+                "RowsSentAvg": 0,
+                "LockTimeAvg": 0,
+                "RowsExaminedAvg": 0,
+                "QueryTimeAvg": 0
             }
         ]
     }

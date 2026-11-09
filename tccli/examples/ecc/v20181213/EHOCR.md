@@ -1,6 +1,6 @@
-**Example 1: 图像识别批改-识别**
+**Example 1: 图像识别批改-异步**
 
-ServerType = 0，使用识别功能，只返回识别文本（内容仅为参考，非实际返回结果）
+IsAsync= 1，使用异步处理（内容仅为参考，非实际返回结果）
 
 Input: 
 
@@ -8,17 +8,17 @@ Input:
 tccli ecc EHOCR --cli-unfold-argument  \
     --InputType 1 \
     --Image ccc \
-    --ServerType 0
+    --IsAsync 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": {
-            "Content": "this is compostion content",
+        "ResultData": {
+            "Content": "",
             "CorrectData": null,
-            "TaskId": null
+            "TaskId": "10000010"
         },
         "RequestId": "ae5d82c1-47a1-43c0-b8a2-4d3c35a21488"
     }
@@ -42,7 +42,7 @@ Output:
 ```
 {
     "Response": {
-        "Data": {
+        "ResultData": {
             "Content": "this is compostion content",
             "CorrectData": {
                 "Score": 72.39,
@@ -88,6 +88,20 @@ Output:
                                 "ErrorPosition": [
                                     8,
                                     8
+                                ],
+                                "ErrorCoordinates": [
+                                    {
+                                        "Coordinate": [
+                                            424,
+                                            360,
+                                            459,
+                                            359,
+                                            459,
+                                            386,
+                                            424,
+                                            387
+                                        ]
+                                    }
                                 ]
                             },
                             {
@@ -99,6 +113,20 @@ Output:
                                 "ErrorPosition": [
                                     8,
                                     8
+                                ],
+                                "ErrorCoordinates": [
+                                    {
+                                        "Coordinate": [
+                                            424,
+                                            360,
+                                            459,
+                                            359,
+                                            459,
+                                            386,
+                                            424,
+                                            387
+                                        ]
+                                    }
                                 ]
                             }
                         ]
@@ -112,9 +140,9 @@ Output:
 }
 ```
 
-**Example 3: 图像识别批改-异步**
+**Example 3: 图像识别批改-识别**
 
-IsAsync= 1，使用异步处理（内容仅为参考，非实际返回结果）
+ServerType = 0，使用识别功能，只返回识别文本（内容仅为参考，非实际返回结果）
 
 Input: 
 
@@ -122,17 +150,17 @@ Input:
 tccli ecc EHOCR --cli-unfold-argument  \
     --InputType 1 \
     --Image ccc \
-    --IsAsync 1
+    --ServerType 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": {
-            "Content": "",
+        "ResultData": {
+            "Content": "this is compostion content",
             "CorrectData": null,
-            "TaskId": "10000010"
+            "TaskId": null
         },
         "RequestId": "ae5d82c1-47a1-43c0-b8a2-4d3c35a21488"
     }

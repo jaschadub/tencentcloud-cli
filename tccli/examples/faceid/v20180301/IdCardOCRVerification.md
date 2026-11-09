@@ -1,4 +1,4 @@
-**Example 1: 使用姓名身份证号进行验证**
+**Example 1: 使用姓名身份证号进行验证示例**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli faceid IdCardOCRVerification --cli-unfold-argument  \
-    --IdCard 360*************50 \
-    --Name **杰
+    --IdCard 11204416541220243X \
+    --Name 韦小宝
 ```
 
 Output: 
@@ -16,8 +16,8 @@ Output:
     "Response": {
         "Result": "0",
         "Description": "姓名和身份证号一致",
-        "Name": "**杰",
-        "IdCard": "360*************50",
+        "Name": "韦小宝",
+        "IdCard": "11204416541220243X",
         "Sex": "",
         "Nation": "",
         "Birth": "",
@@ -27,7 +27,7 @@ Output:
 }
 ```
 
-**Example 2: 使用照片URL进行核验**
+**Example 2: 使用照片Base64进行核验示例**
 
 
 
@@ -35,7 +35,7 @@ Input:
 
 ```
 tccli faceid IdCardOCRVerification --cli-unfold-argument  \
-    --ImageUrl https://qq.com/a.jpg
+    --ImageBase64 /9j/4AAQSkZJRg.....s97n//2Q==
 ```
 
 Output: 
@@ -44,18 +44,46 @@ Output:
     "Response": {
         "Result": "0",
         "Description": "姓名和身份证号一致",
-        "Name": "**杰",
-        "IdCard": "360*************50",
+        "Name": "韦小宝",
+        "IdCard": "11204416541220243X",
         "Sex": "男",
         "Nation": "汉",
-        "Birth": "1986/11/13",
-        "Address": "江西省九江市庐山河南路57号01室",
+        "Birth": "1654/12/20",
+        "Address": "北京市东城区景山前街4号紫禁城敬事房",
+        "RequestId": "022ffdd2-67a2-4177-8946-97bc1c4b3347"
+    }
+}
+```
+
+**Example 3: 使用照片URL进行核验示例**
+
+
+
+Input: 
+
+```
+tccli faceid IdCardOCRVerification --cli-unfold-argument  \
+    --ImageUrl https://www.qq.com/image.jpg
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Result": "0",
+        "Description": "姓名和身份证号一致",
+        "Name": "韦小宝",
+        "IdCard": "11204416541220243X",
+        "Sex": "男",
+        "Nation": "汉",
+        "Birth": "1654/12/20",
+        "Address": "北京市东城区景山前街4号紫禁城敬事房",
         "RequestId": "a62f567c-1eea-4ef3-b51a-a9eb9bd84cd9"
     }
 }
 ```
 
-**Example 3: 使用照片Base64进行核验**
+**Example 4: 身份证识别及信息核验失败示例**
 
 
 
@@ -63,22 +91,23 @@ Input:
 
 ```
 tccli faceid IdCardOCRVerification --cli-unfold-argument  \
-    --ImageBase64 <base64字符串>
+    --IdCard 11204416541220243Y \
+    --Name 韦小宝
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Result": "0",
-        "Description": "姓名和身份证号一致",
-        "Name": "**杰",
-        "IdCard": "360*************50",
-        "Sex": "男",
-        "Nation": "汉",
-        "Birth": "1986/11/13",
-        "Address": "江西省九江市庐山河南路57号01室",
-        "RequestId": "022ffdd2-67a2-4177-8946-97bc1c4b3347"
+        "Address": "",
+        "Birth": "",
+        "Description": "非法身份证号（长度、校验位等不正确）",
+        "IdCard": "11204416541220243Y",
+        "Name": "韦小宝",
+        "Nation": "",
+        "RequestId": "c528602c-6574-4dd7-a836-895ff62a13ed",
+        "Result": "-2",
+        "Sex": ""
     }
 }
 ```

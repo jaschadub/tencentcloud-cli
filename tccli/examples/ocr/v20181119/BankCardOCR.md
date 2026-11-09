@@ -1,4 +1,4 @@
-**Example 1: 银行卡识别示例代码**
+**Example 1: BankCardOCR调用**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ocr BankCardOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/BankCardOCR/BankCardOCR1.jpg
 ```
 
 Output: 
@@ -14,17 +14,16 @@ Output:
 {
     "Response": {
         "BankInfo": "招商银行(03080000)",
-        "ValidDate": "07/2023",
-        "CardType": "贷记卡",
-        "CardName": "招商银行信用卡",
         "BorderCutImage": null,
-        "CardNoImage": null,
-        "QualityValue": 80,
-        "WarningCode": [
-            -9110
-        ],
+        "CardCategory": "标准实体银行卡",
+        "CardName": "招商银行信用卡",
         "CardNo": "6225768888888888",
-        "RequestId": "68f8fcbf-6004-0111a-ac18-6f1a9308fs100mab"
+        "CardNoImage": null,
+        "CardType": "贷记卡",
+        "QualityValue": null,
+        "RequestId": "4eeb7002-ef18-46b1-92dc-21e836f27d7f",
+        "ValidDate": "07/2023",
+        "WarningCode": null
     }
 }
 ```

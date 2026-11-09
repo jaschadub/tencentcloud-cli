@@ -14,13 +14,16 @@ Output:
 {
     "Response": {
         "Result": {
-            "ReturnMessage": "xx",
-            "ReturnCode": "xx",
+            "ReturnCode": "0",
+            "ReturnMessage": "OK",
             "Data": {
-                "FlowId": 0
+                "FlowId": 0,
+                "RouteDTO": {
+                    "RouteId": 0
+                }
             }
         },
-        "RequestId": "xx"
+        "RequestId": "84770b4b-df34-4ccf-8e22-41d3b1d0fe0d"
     }
 }
 ```

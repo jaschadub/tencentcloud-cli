@@ -1,13 +1,13 @@
 **Example 1: 获取特殊采集配置**
 
-
+获取特殊采集配置
 
 Input: 
 
 ```
 tccli cls DescribeConfigExtras --cli-unfold-argument  \
     --Filters.0.Key configExtraId \
-    --Filters.0.Values xxxx-xxx-xxxx \
+    --Filters.0.Values 3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a \
     --Offset 0 \
     --Limit 10
 ```
@@ -18,53 +18,105 @@ Output:
     "Response": {
         "Configs": [
             {
-                "ConfigExtraId": "xxxx-xx-xx-xx-yyyyyyy1",
-                "Name": "testname",
-                "TopicId": "xxxxxx-xxx-xxxxxx",
-                "Type": "host_file",
-                "HostFile": {
-                    "LogPath": "/var/log/tmep",
-                    "FilePattern": "*.log",
-                    "CustomLabels": [
-                        "key1=value1",
-                        "key=value2"
-                    ]
-                },
-                "LogType": "minimalist_log",
-                "ExtractRule": {
-                    "TimeKey": "date",
-                    "TimeFormat": "%Y-%m-%d %H:%M:%S",
-                    "Delimiter": "|",
-                    "LogRegex": ".*",
-                    "BeginRegex": "^",
-                    "Keys": [
-                        "date",
-                        "",
-                        "content"
-                    ],
-                    "FilterKeyRegex": [
-                        {
-                            "Key": "xxx",
-                            "Regex": "ssss"
-                        }
-                    ],
-                    "UnMatchLogKey": "testlog",
-                    "UnMatchUpLoadSwitch": true,
-                    "Backtracking": -1
-                },
-                "ExcludePaths": [
+                "AdvancedConfig": "{\"ClsAgentFileTimeout\":3600}",
+                "CollectInfos": [
                     {
-                        "Type": "xx",
-                        "Value": "xx"
+                        "CollectConfigs": [
+                            {
+                                "Name": "container_name"
+                            },
+                            {
+                                "Name": "namespace"
+                            },
+                            {
+                                "Name": "pod_name"
+                            },
+                            {
+                                "Name": "pod_ip"
+                            }
+                        ],
+                        "Type": 0
+                    },
+                    {
+                        "CollectConfigs": [],
+                        "Type": 1
                     }
                 ],
-                "UserDefineRule": "xxxxxx",
-                "UpdateTime": "2017-08-08 12:12:12",
-                "CreateTime": "2017-08-08 12:12:12"
+                "ConfigExtraId": "26ea1681-dfef-4429-a84f-3450d5d46796",
+                "ConfigFlag": "label_k8s",
+                "ContainerFile": {
+                    "Container": "",
+                    "CustomLabels": null,
+                    "ExcludeLabels": null,
+                    "ExcludeNamespace": "",
+                    "FilePaths": [],
+                    "FilePattern": "",
+                    "IncludeLabels": null,
+                    "LogPath": "",
+                    "Namespace": "",
+                    "WorkLoad": {
+                        "Container": "",
+                        "Kind": "",
+                        "Name": "",
+                        "Namespace": ""
+                    }
+                },
+                "ContainerStdout": {
+                    "AllContainers": true,
+                    "Container": "",
+                    "CustomLabels": null,
+                    "ExcludeLabels": null,
+                    "ExcludeNamespace": "",
+                    "IncludeLabels": null,
+                    "Namespace": "name_1",
+                    "WorkLoads": null
+                },
+                "CreateTime": "2023-12-04 14:32:35",
+                "ExcludePaths": null,
+                "ExtractRule": {
+                    "Address": "",
+                    "AdvanceFilterRules": null,
+                    "Backtracking": 0,
+                    "BeginRegex": "",
+                    "Delimiter": "",
+                    "EventLogRules": [],
+                    "FilterKeyRegex": [],
+                    "IsGBK": 0,
+                    "JsonStandard": 0,
+                    "Keys": [
+                        "__CONTENT__"
+                    ],
+                    "LogRegex": "",
+                    "MetaTags": [],
+                    "MetadataType": 0,
+                    "ParseProtocol": "",
+                    "PathRegex": "",
+                    "Protocol": "",
+                    "TimeFormat": "",
+                    "TimeKey": "",
+                    "UnMatchLogKey": null,
+                    "UnMatchUpLoadSwitch": false
+                },
+                "GroupId": "886bf7a8-7340-4314-8d64-b360da0ffd78",
+                "HostFile": {
+                    "CustomLabels": null,
+                    "FilePattern": "",
+                    "LogPath": ""
+                },
+                "LogFormat": "",
+                "LogType": "minimalist_log",
+                "LogsetId": "40907915-faa6-46e0-985f-b2fa8c17a080",
+                "LogsetName": "logset-test",
+                "Name": "config-test-886bf7a8-7340-4314-8d64-b360da0ffd78",
+                "TopicId": "b2dcf2e5-9582-4c87-9286-cccccb53889d",
+                "TopicName": "topic-test",
+                "Type": "container_stdout",
+                "UpdateTime": "2023-12-04 14:32:34",
+                "UserDefineRule": ""
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
+        "RequestId": "4e48c681-ebf8-4df1-bf0a-51f689117ac6",
+        "TotalCount": 1
     }
 }
 ```

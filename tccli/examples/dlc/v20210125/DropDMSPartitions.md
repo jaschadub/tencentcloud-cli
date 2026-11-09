@@ -11,14 +11,15 @@ tccli dlc DropDMSPartitions --cli-unfold-argument  \
     --TableName Table1 \
     --Name Name1 \
     --Values 1 2 \
-    --DeleteData False
+    --DeleteData False \
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "12345-67890-12345-67890",
         "Status": true
     }
 }

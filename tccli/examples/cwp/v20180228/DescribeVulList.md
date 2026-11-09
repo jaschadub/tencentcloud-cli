@@ -14,26 +14,40 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "4234234",
-        "TotalCount": 1,
-        "FollowVulCount": 0,
         "VulInfoList": [
             {
-                "Ids": "1748",
-                "Name": "Linux帐户口令生存期策略",
+                "Ids": "1",
+                "Name": "Apache Log4j 1.x JNDI 注入漏洞（CVE-2021-4104）",
+                "VulId": 34338,
                 "Status": 0,
-                "VulId": 100392,
-                "PublishTime": "2019-09-02 00:00:00",
-                "LastTime": "2020-06-29 03:04:15",
+                "PublishTime": "2021-12-14 20:15:00",
+                "LastTime": "2024-10-21 17:20:13",
                 "HostCount": 1,
-                "Level": 2,
+                "Level": 3,
                 "From": 0,
-                "Descript": "口令老化（Password aging）是一种增强的系统口令生命期认证机制，能够确保用户的口令定期更换，提高系统安全性。",
-                "PublishTimeWisteria": "",
-                "NameWisteria": "",
-                "DescriptWisteria": ""
+                "Descript": "Apache Log4j是美国阿帕奇（Apache）基金会的一款基于Java的开源日志记录工具。 \nApache Log4j 1.2存在代码问题漏洞，攻击者可利用该漏洞通过JMSApender反序列化来运行代码。",
+                "PublishTimeWisteria": "public time wisteria",
+                "NameWisteria": "wisteria name",
+                "DescriptWisteria": "description",
+                "CveId": "CVE-2021-4104",
+                "CvssScore": 7.5,
+                "Labels": "远程利用,存在POC",
+                "IsSupportDefense": 0,
+                "FixSwitch": 1,
+                "TaskId": 1,
+                "StatusStr": "1",
+                "DefenseAttackCount": 0,
+                "FirstAppearTime": "2024-10-18T01:22:06+08:00",
+                "VulCategory": 4,
+                "AttackLevel": 0,
+                "FixNoNeedRestart": false,
+                "Method": 0,
+                "VulFixSwitch": 1
             }
-        ]
+        ],
+        "TotalCount": 1,
+        "FollowVulCount": 1,
+        "RequestId": "d73d4495-1895-43a8-95be-f447b02e253d"
     }
 }
 ```

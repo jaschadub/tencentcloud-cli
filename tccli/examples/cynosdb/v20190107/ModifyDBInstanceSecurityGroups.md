@@ -1,21 +1,21 @@
-**Example 1: 修改云数据库安全组**
+**Example 1: 修改实例绑定安全组**
 
-
+修改实例绑定安全组
 
 Input: 
 
 ```
 tccli cynosdb ModifyDBInstanceSecurityGroups --cli-unfold-argument  \
-    --Zone ap-guangzhou-3 \
-    --InstanceId cynosdbmysql-ins-4senc2fm \
-    --SecurityGroupIds sg-ajr1jzgj
+    --InstanceId cynosdbmysql-j8ynfcpgj \
+    --SecurityGroupIds sg-mnbv \
+    --Zone ap-guangzhou-3
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "1a42feb9-82087f71-6a0031ac-699a92a8"
+        "RequestId": "48fa5cf5-77db-4e32-90ef-22c71ed95f51"
     }
 }
 ```

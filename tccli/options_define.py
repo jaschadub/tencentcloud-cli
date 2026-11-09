@@ -22,6 +22,8 @@ CliUnfoldArgument = "cli-unfold-argument"
 Waiter = "waiter"
 WaiterInfo = "waiter_info"
 Language = "language"
+RequestClient = "request-client"
+SysParam = "_sys_param"
 
 ENV_SECRET_ID = "TENCENTCLOUD_SECRET_ID"
 ENV_SECRET_KEY = "TENCENTCLOUD_SECRET_KEY"
@@ -31,7 +33,7 @@ ENV_REGION = "TENCENTCLOUD_REGION"
 ENV_TOKEN = "TENCENTCLOUD_TOKEN"
 ENV_TKE_REGION = "TKE_REGION"
 ENV_TKE_PROVIDER_ID = "TKE_PROVIDER_ID"
-ENV_TKE_IDENTITY_TOKEN_FILE = "TKE_IDENTITY_TOKEN_FILE"
+ENV_TKE_WEB_IDENTITY_TOKEN_FILE = "TKE_WEB_IDENTITY_TOKEN_FILE"
 ENV_TKE_ROLE_ARN = "TKE_ROLE_ARN"
 
 Help = "help"
@@ -40,7 +42,8 @@ Detail = "detail"
 
 
 ACTION_GLOBAL_OPT = [SecretId, SecretKey, Token, RoleArn, RoleSessionName, UseCVMRole, Region, Endpoint, Version, Language,
-                     Filter, Profile, Timeout, Output, HttpsProxy, GenerateCliSkeleton, CliInputJson, CliUnfoldArgument, Waiter]
+                     Filter, Profile, Timeout, Output, HttpsProxy, GenerateCliSkeleton, CliInputJson, CliUnfoldArgument, Waiter,
+                     RequestClient]
 
 
 

@@ -1,6 +1,6 @@
 **Example 1: 离线任务实例详情**
 
-
+离线任务实例详情
 
 Input: 
 
@@ -17,29 +17,52 @@ Output:
 {
     "Response": {
         "TaskInstanceDetail": {
-            "BrokerIp": "xx",
-            "UpdateTime": "xx",
-            "OwnerUin": 1,
-            "TaskRunId": "xx",
+            "TaskRunId": "abc",
+            "TaskId": "abc",
+            "CurRunDate": "abc",
+            "IssueDate": "abc",
+            "InlongTaskId": "abc",
+            "ExecutorGroupId": "abc",
             "TaskRunType": 1,
-            "CurRunDate": "xx",
-            "CreateUin": 1,
-            "ProjectId": "xx",
-            "InlongTaskId": "xx",
             "State": 1,
-            "PodName": "xx",
+            "StartTime": "abc",
+            "EndTime": "abc",
+            "BrokerIp": "abc",
+            "PodName": "abc",
+            "NextRunDate": "abc",
+            "CreateUin": 1,
             "OperatorUin": 1,
-            "StartTime": "xx",
+            "OwnerUin": 1,
             "AppId": 1,
-            "TaskId": "xx",
-            "TaskName": "xx",
-            "EndTime": "xx",
-            "IssueDate": "xx",
-            "CreateTime": "xx",
-            "ExecutorGroupId": "xx",
-            "NextRunDate": "xx"
+            "ProjectId": "abc",
+            "CreateTime": "abc",
+            "UpdateTime": "abc",
+            "TaskName": "abc"
         },
-        "RequestId": "xx"
+        "Data": {
+            "TaskRunId": "abc",
+            "TaskId": "abc",
+            "CurRunDate": "abc",
+            "IssueDate": "abc",
+            "InlongTaskId": "abc",
+            "ExecutorGroupId": "abc",
+            "TaskRunType": 1,
+            "State": 1,
+            "StartTime": "abc",
+            "EndTime": "abc",
+            "BrokerIp": "abc",
+            "PodName": "abc",
+            "NextRunDate": "abc",
+            "CreateUin": 1,
+            "OperatorUin": 1,
+            "OwnerUin": 1,
+            "AppId": 1,
+            "ProjectId": "abc",
+            "CreateTime": "abc",
+            "UpdateTime": "abc",
+            "TaskName": "abc"
+        },
+        "RequestId": "abc"
     }
 }
 ```

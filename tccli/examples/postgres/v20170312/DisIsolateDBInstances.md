@@ -1,13 +1,13 @@
 **Example 1: 解隔离实例**
 
-
+实例的解隔离操作。
 
 Input: 
 
 ```
 tccli postgres DisIsolateDBInstances --cli-unfold-argument  \
     --Period 1 \
-    --AutoVoucher false \
+    --AutoVoucher False \
     --DBInstanceIdSet postgres-xxxxxxxx
 ```
 

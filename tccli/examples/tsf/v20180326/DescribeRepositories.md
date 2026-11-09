@@ -7,15 +7,32 @@ Input:
 ```
 tccli tsf DescribeRepositories --cli-unfold-argument  \
     --Offset 0 \
-    --Limit 20
+    --Limit 20 \
+    --SearchWord demo \
+    --RepositoryType default
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "58998bc6-b283-4242-94e9-4d1b75e47a01",
-        "Result": {}
+        "Result": {
+            "TotalCount": 0,
+            "Content": [
+                {
+                    "RepositoryId": "repo-6a79x94v",
+                    "RepositoryName": "repo-mock",
+                    "RepositoryType": "cos",
+                    "RepositoryDesc": "this is a desc",
+                    "IsUsed": true,
+                    "CreateTime": "2019-12-20 09:33:22",
+                    "BucketName": "testBucket",
+                    "BucketRegion": "ap-guangzhou",
+                    "Directory": "/app"
+                }
+            ]
+        },
+        "RequestId": "96561cf1-738a-47d6-943b-dec7ebbccabe"
     }
 }
 ```

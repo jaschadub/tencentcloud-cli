@@ -1,13 +1,13 @@
 **Example 1: 切换自定义规则的开关**
 
-
+切换自定义规则的开关
 
 Input: 
 
 ```
 tccli waf ModifyCustomRuleStatus --cli-unfold-argument  \
     --Domain "test.qlcoud.com" \
-    --RuleId 12 \
+    --RuleId 1101 \
     --Status 0
 ```
 

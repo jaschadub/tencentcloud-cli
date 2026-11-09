@@ -1,6 +1,6 @@
 **Example 1: 创建弹性网卡**
 
-
+创建弹性网卡
 
 Input: 
 
@@ -12,10 +12,10 @@ tccli vpc CreateNetworkInterface --cli-unfold-argument  \
     --PrivateIpAddresses.0.Primary true \
     --PrivateIpAddresses.0.PrivateIpAddress 172.16.64.13 \
     --SecurityGroupIds sg-05bb4upy \
-    --NetworkInterfaceDescription TestDesc \
+    --NetworkInterfaceDescription demo \
     --SecondaryPrivateIpAddressCount 1 \
     --SubnetId subnet-76r802pg \
-    --NetworkInterfaceName TestNIC
+    --NetworkInterfaceName demo
 ```
 
 Output: 
@@ -23,42 +23,40 @@ Output:
 {
     "Response": {
         "NetworkInterface": {
-            "NetworkInterfaceId": "eni-irk5qhhl",
-            "VpcId": "vpc-0akbol5v",
-            "SubnetId": "subnet-76r802pg",
-            "NetworkInterfaceName": "TestNIC",
-            "NetworkInterfaceDescription": "TestDesc",
-            "MacAddress": "20:90:6F:62:33:E2",
-            "Business": "xx",
-            "CdcId": "xx",
-            "EniType": 1,
-            "AttachType": 1,
+            "AttachType": 0,
+            "Attachment": null,
+            "Business": "cvm",
+            "CdcId": "",
+            "CreatedTime": "",
+            "EniType": 0,
+            "GroupSet": [],
+            "Ipv6AddressSet": [],
+            "MacAddress": "20:90:6F:2A:11:3D",
+            "NetworkInterfaceDescription": "",
+            "NetworkInterfaceId": "eni-ndaunxuo",
+            "NetworkInterfaceName": "demo",
+            "Primary": false,
             "PrivateIpAddressSet": [
                 {
-                    "PrivateIpAddress": "172.16.64.13",
-                    "Primary": true,
                     "AddressId": "",
-                    "PublicIpAddress": "",
                     "Description": "",
                     "IsWanIpBlocked": false,
+                    "Primary": true,
+                    "PrivateIpAddress": "10.0.0.3",
+                    "PublicIpAddress": "",
+                    "QosLevel": "PT",
                     "State": "PENDING"
                 }
             ],
-            "Attachment": null,
-            "GroupSet": [],
-            "Primary": false,
+            "QosLevel": "PT",
+            "ResourceId": "",
             "State": "PENDING",
-            "Zone": "",
-            "CreatedTime": "",
-            "Ipv6AddressSet": [],
-            "TagSet": [
-                {
-                    "Key": "city",
-                    "Value": "shanghai"
-                }
-            ]
+            "SubnetId": "subnet-r8x0gown",
+            "TagSet": [],
+            "VpcId": "vpc-67kr6ava",
+            "Zone": ""
         },
-        "RequestId": "5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1"
+        "RequestId": "a5c5cd4d-9024-4465-a8c0-5b0979ec806e"
     }
 }
 ```

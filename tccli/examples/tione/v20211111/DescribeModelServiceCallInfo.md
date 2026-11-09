@@ -1,12 +1,12 @@
-**Example 1: 查询服务调用**
+**Example 1: 服务调用地址查询**
 
-
+查询某个服务
 
 Input: 
 
 ```
 tccli tione DescribeModelServiceCallInfo --cli-unfold-argument  \
-    --ServiceGroupId ms-xxxx
+    --ServiceGroupId ms-p8w5zvh7
 ```
 
 Output: 
@@ -14,22 +14,27 @@ Output:
 {
     "Response": {
         "ServiceCallInfo": {
-            "ServiceGroupId": "ms-xxxxx",
-            "InnerHttpAddr": "http://service-xxxxx-00000-in.gz.apigw.tencentcs.com:8009/tione",
-            "InnerHttpsAddr": "https://service-xxxxx-000000-in.gz.apigw.tencentcs.com:9009/tione",
-            "OuterHttpAddr": "http://service-xxxx-00000.gz.apigw.tencentcs.com:80/tione",
-            "OuterHttpsAddr": "https://service-xxxx-00000.gz.apigw.tencentcs.com:443/tione",
-            "AppKey": "",
-            "AppSecret": ""
+            "ServiceGroupId": "ms-ndxkhtb2",
+            "InnerHttpAddr": "http://service-5a4oixv0-1256580188-in.gz.tencentapigw.com:8011/tione",
+            "InnerHttpsAddr": "https://service-5a4oixv0-1256580188-in.gz.tencentapigw.com:9011/tione",
+            "OuterHttpAddr": "http://service-5a4oixv0-1256580188.gz.tencentapigw.com:80/tione",
+            "OuterHttpsAddr": "https://service-5a4oixv0-1256580188.gz.tencentapigw.com:443/tione",
+            "AppKey": "APID23ycs7qbGGbTf27PG18oOVK1Q449UORNA1g5",
+            "AppSecret": "bD2krm7a7ujt6779kLKV1g0x4n2z861IcguAMm6v",
+            "AuthorizationEnable": true
         },
-        "InferGatewayCallInfo": {
-            "SubnetId": "xx",
-            "VpcHttpsAddr": "xx",
-            "VpcHttpAddr": "xx",
-            "VpcId": "xx",
-            "VpcGrpcTlsAddr": "xx"
+        "InferGatewayCallInfo": null,
+        "DefaultNginxGatewayCallInfo": null,
+        "TJCallInfo": null,
+        "IntranetCallInfo": {
+            "IngressPrivateLinkInfo": null,
+            "ServiceEIPInfo": [],
+            "DefaultInnerCallInfos": [],
+            "PrivateLinkInfos": [],
+            "PrivateLinkInfosV2": []
         },
-        "RequestId": "5203eb3a-366e-4e14-bd59-afe109849377"
+        "ServiceCallInfoV2": null,
+        "RequestId": "0e26af99-dc12-4866-b6cf-1896a10c2910"
     }
 }
 ```

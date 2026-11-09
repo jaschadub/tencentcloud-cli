@@ -1,6 +1,6 @@
 **Example 1: 配置同步任务**
 
-
+配置一个同步整库的同步任务
 
 Input: 
 
@@ -21,6 +21,18 @@ tccli dts ConfigureSyncJob --cli-unfold-argument  \
     --Objects.Mode Partial \
     --Objects.Databases.0.DbName db1 \
     --Objects.Databases.0.DbMode All \
+    --Objects.Databases.0.TableMode All \
+    --Objects.Databases.0.Tables None \
+    --Objects.Databases.0.ViewMode All \
+    --Objects.Databases.0.Views None \
+    --Objects.Databases.0.FunctionMode All \
+    --Objects.Databases.0.TriggerMode  \
+    --Objects.Databases.0.EventMode  \
+    --Objects.Databases.0.ProcedureMode All \
+    --Objects.Databases.0.Functions None \
+    --Objects.Databases.0.Procedures None \
+    --Objects.Databases.0.Events None \
+    --Objects.Databases.0.Triggers None \
     --JobId sync-7r1cz016 \
     --Options.DealOfExistSameTable ExecuteAfterIgnore \
     --Options.OpTypes Update \
@@ -44,7 +56,7 @@ Output:
 
 **Example 2: 配置同步任务2**
 
-
+配置一个同步包含条件覆盖的任务
 
 Input: 
 

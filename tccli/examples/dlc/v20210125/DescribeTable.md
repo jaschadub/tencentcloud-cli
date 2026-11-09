@@ -1,70 +1,83 @@
-**Example 1: 示例1**
+**Example 1: 查询表信息**
 
-
+查询表信息
 
 Input: 
 
 ```
 tccli dlc DescribeTable --cli-unfold-argument  \
-    --DatabaseName testdb \
-    --TableName table1
+    --TableName table2 \
+    --DatabaseName database1 \
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "a8317085-a8a7-46ea-b7db-ca7b72c2a6bf",
+        "RequestId": "********-****-****-****-b20a8b876cfb",
         "Table": {
-            "TableBaseInfo": {
-                "DatasourceConnectionName": "DataLakeCatalog",
-                "DatabaseName": "testdb",
-                "TableName": "table1",
-                "TableComment": "测试表",
-                "Type": "table",
-                "TableFormat": "iceberg",
-                "UserAlias": "testUser",
-                "UserSubUin": "100019878767"
-            },
             "Columns": [
                 {
-                    "Name": "user_id",
-                    "Type": "int",
-                    "Comment": ""
-                },
-                {
-                    "Name": "birthday",
-                    "Type": "int",
-                    "Comment": ""
+                    "Comment": "test col",
+                    "CreateTime": "1736941935000",
+                    "DataMaskStrategyInfo": null,
+                    "IsPartition": true,
+                    "ModifiedTime": "",
+                    "Name": "column1",
+                    "Nullable": "",
+                    "Position": 0,
+                    "Precision": 0,
+                    "Scale": 0,
+                    "Type": "int"
                 }
             ],
+            "CreateTime": "1736853257000",
+            "HeatValue": 10,
+            "InputFormat": "org.apache.hadoop.mapred.FileInputFormat",
+            "InputFormatShort": "parquet",
+            "Location": "cosn://********",
+            "ModifiedTime": "1736941935000",
             "Partitions": [
                 {
-                    "Name": "gender",
-                    "Type": "string",
-                    "Comment": ""
+                    "Comment": "test col",
+                    "CreateTime": 0,
+                    "Name": "column1",
+                    "Transform": "identity",
+                    "TransformArgs": null,
+                    "Type": "int"
                 }
             ],
             "Properties": [
                 {
-                    "Key": "skip.header.line.count",
-                    "Value": "1"
+                    "Key": "comment",
+                    "Value": "test comment"
                 },
                 {
-                    "Key": "EXTERNAL",
-                    "Value": "TRUE"
+                    "Key": "property1",
+                    "Value": "test property"
                 },
                 {
-                    "Key": "transient_lastDdlTime",
-                    "Value": "1630495521302"
+                    "Key": "test property",
+                    "Value": "default value"
                 }
             ],
-            "Location": "cosn://ricky-1301xxx708/test1",
-            "CreateTime": "1630495521000",
-            "ModifiedTime": "1630495521000",
-            "InputFormat": "org.apache.hadoop.mapred.TextInputFormat",
-            "StorageSize": 1024,
-            "RecordCount": 10
+            "RecordCount": 0,
+            "StorageSize": 0,
+            "TableBaseInfo": {
+                "DatabaseName": "database1",
+                "DatasourceConnectionName": "",
+                "DbGovernPolicyIsDisable": "",
+                "GovernPolicy": {
+                    "RuleType": "none"
+                },
+                "TableComment": null,
+                "TableFormat": "ICEBERG",
+                "TableName": "table2",
+                "Type": "MANAGED_TABLE",
+                "UserAlias": "t********",
+                "UserSubUin": "1*********6"
+            }
         }
     }
 }

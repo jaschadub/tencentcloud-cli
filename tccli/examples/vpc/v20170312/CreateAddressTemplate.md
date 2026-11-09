@@ -1,6 +1,6 @@
 **Example 1: 创建IP地址模板**
 
-
+创建IP地址模板
 
 Input: 
 
@@ -24,8 +24,8 @@ Output:
             "CreatedTime": "2018-04-03 21:38:01",
             "AddressExtraSet": [
                 {
-                    "Description": "xx",
-                    "Address": "xx"
+                    "Description": "address cidr",
+                    "Address": "10.0.0.0/16"
                 }
             ]
         },

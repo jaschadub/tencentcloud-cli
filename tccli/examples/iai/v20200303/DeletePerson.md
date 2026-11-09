@@ -1,6 +1,6 @@
-**Example 1: 删除人员接口**
+**Example 1: 删除人员信息成功示例**
 
-删除指定人员信息
+
 
 Input: 
 
@@ -18,9 +18,9 @@ Output:
 }
 ```
 
-**Example 2: 错误示例**
+**Example 2: 删除人员信息失败示例**
 
-人员ID不存在
+
 
 Input: 
 
@@ -33,6 +33,10 @@ Output:
 ```
 {
     "Response": {
+        "Error": {
+            "Code": "ResourceNotFound.ErrorPersonNotExisted",
+            "Message": "个体不存在。"
+        },
         "RequestId": "4b9c1bdc-86eb-413f-8c74-15bcf4466cd5"
     }
 }

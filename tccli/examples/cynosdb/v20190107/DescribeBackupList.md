@@ -1,13 +1,13 @@
 **Example 1: 查询备份文件列表**
 
-
+查询备份文件列表
 
 Input: 
 
 ```
 tccli cynosdb DescribeBackupList --cli-unfold-argument  \
-    --Limit 10 \
-    --ClusterId cynosdbpg-ilgo90hu \
+    --Limit 2 \
+    --ClusterId cynosdbmysql-ck8fmktd \
     --Offset 0
 ```
 
@@ -15,24 +15,38 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "BackupList": [
             {
-                "SnapshotId": 10000,
-                "SnapshotTime": "xx",
-                "FileName": "snap",
-                "FileSize": 20190215,
-                "StartTime": "2019-01-20 01:10:12",
-                "FinishTime": "2019-01-20 02:10:12",
-                "BackupType": "snapshot",
+                "BackupId": 1880312,
                 "BackupMethod": "auto",
+                "BackupName": "",
                 "BackupStatus": "success",
+                "BackupType": "snapshot",
+                "FileName": "jia_20241028040005",
+                "FileSize": 10426,
+                "FinishTime": "2024-10-28 04:02:34",
+                "SnapShotType": "increment",
+                "SnapshotId": 1880312,
+                "SnapshotTime": "2024-10-28 04:00:04",
+                "StartTime": "2024-10-28 04:02:14"
+            },
+            {
+                "BackupId": 1879681,
+                "BackupMethod": "auto",
+                "BackupName": "",
+                "BackupStatus": "success",
+                "BackupType": "logic",
+                "FileName": "jia_20241028022147",
+                "FileSize": 1684666,
+                "FinishTime": "2024-10-28 02:22:24",
                 "SnapShotType": "full",
-                "BackupName": "desc123",
-                "BackupId": 100
+                "SnapshotId": 1879681,
+                "SnapshotTime": "2024-10-28 02:21:47",
+                "StartTime": "2024-10-28 02:21:47"
             }
         ],
-        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7"
+        "RequestId": "1f2f4b1e-424d-4740-9b26-d947e957780e",
+        "TotalCount": 40
     }
 }
 ```

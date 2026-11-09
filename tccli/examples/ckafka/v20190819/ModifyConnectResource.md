@@ -1,20 +1,20 @@
-**Example 1: 编辑Datahub连接源**
+**Example 1: 编辑连接器连接**
 
-
+编辑连接器连接
 
 Input: 
 
 ```
 tccli ckafka ModifyConnectResource --cli-unfold-argument  \
-    --Description xx \
-    --DtsConnectParam.UserName xx \
-    --DtsConnectParam.Resource xx \
-    --DtsConnectParam.GroupId xx \
-    --DtsConnectParam.Password xx \
-    --DtsConnectParam.Topic xx \
+    --Description yourdescription \
+    --DtsConnectParam.UserName user \
+    --DtsConnectParam.Resource resource \
+    --DtsConnectParam.GroupId groupid \
+    --DtsConnectParam.Password yourpassword \
+    --DtsConnectParam.Topic topic-test \
     --DtsConnectParam.Port 0 \
-    --ResourceName xx \
-    --ResourceId reource-xxx \
+    --ResourceName resource-name \
+    --ResourceId reource-test \
     --Type DTS
 ```
 
@@ -23,9 +23,9 @@ Output:
 {
     "Response": {
         "Result": {
-            "ResourceId": "resource-xx"
+            "ResourceId": "resource-test"
         },
-        "RequestId": "xx"
+        "RequestId": "84770b4b-df34-4ccf-8e22-41d3b1d0fe0d"
     }
 }
 ```

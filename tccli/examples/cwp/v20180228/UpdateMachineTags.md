@@ -6,10 +6,8 @@ Input:
 
 ```
 tccli cwp UpdateMachineTags --cli-unfold-argument  \
-    --Quuid 2b6e5770-8e4d-11e9-8127-98be94219792 \
-    --TagIds 11 12 \
-    --MachineRegion ap-guangzhou \
-    --MachineArea CVM
+    --Quuid 24c9be55-c743-4a75-a5c7-2a2912341234 \
+    --TagIds 1
 ```
 
 Output: 

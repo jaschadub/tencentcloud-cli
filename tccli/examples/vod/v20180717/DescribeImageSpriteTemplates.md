@@ -18,8 +18,9 @@ Output:
             {
                 "Definition": 10001,
                 "Type": "Custom",
-                "Name": "雪碧图模板1",
-                "Comment": "test",
+                "Name": "MyImageSpriteTemplate",
+                "Format": "jpg",
+                "Comment": "image sprite template",
                 "CreateTime": "2018-10-01T10:00:00Z",
                 "UpdateTime": "2018-10-01T10:00:00Z",
                 "Height": 540,

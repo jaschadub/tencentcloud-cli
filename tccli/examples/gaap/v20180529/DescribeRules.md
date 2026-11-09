@@ -6,107 +6,48 @@ Input:
 
 ```
 tccli gaap DescribeRules --cli-unfold-argument  \
-    --ListenerId listener-9jt0rtv9
+    --ListenerId listener-qjm2tftd
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "83a6736e-5550-4f9e-a2bf-c669e7b3a1d5",
         "TotalCount": 1,
         "DomainRuleSet": [
             {
-                "GaapCertificateAlias": "xx",
+                "Domain": "baidu.com",
+                "IsDefaultServer": false,
+                "DomainStatus": 0,
                 "Http3Supported": 0,
-                "Domain": "xx",
-                "CertificateId": "xx",
-                "PolyRealServerCertificateAliasInfo": [
-                    {
-                        "CertificateId": "xx",
-                        "CertificateAlias": "xx"
-                    }
-                ],
-                "RealServerCertificateId": "xx",
-                "BanStatus": "xx",
-                "CertificateAlias": "xx",
-                "ClientCertificateId": "xx",
-                "GaapCertificateId": "xx",
-                "BasicAuth": 1,
-                "BasicAuthConfAlias": "xx",
-                "BasicAuthConfId": "xx",
-                "RealServerCertificateAlias": "xx",
-                "RuleSet": [
-                    {
-                        "BindStatus": 1,
-                        "Domain": "xx",
-                        "RealServerType": "xx",
-                        "ForwardHost": "xx",
-                        "RuleId": "xx",
-                        "HealthCheck": 1,
-                        "ServerNameIndication": "xx",
-                        "ListenerId": "xx",
-                        "CheckParams": {
-                            "Domain": "xx",
-                            "ConnectTimeout": 1,
-                            "BlockInter": 1,
-                            "FailedThreshold": 1,
-                            "Path": "xx",
-                            "FailedCountInter": 1,
-                            "Method": "xx",
-                            "DelayLoop": 1,
-                            "StatusCode": [
-                                1,
-                                1,
-                                1,
-                                1,
-                                1
-                            ]
-                        },
-                        "ForcedRedirect": "1",
-                        "Scheduler": "xx",
-                        "Path": "xx",
-                        "RuleStatus": 1,
-                        "ServerNameIndicationSwitch": "xx",
-                        "RealServerSet": [
-                            {
-                                "RealServerStatus": 0,
-                                "RealServerPort": 234,
-                                "RealServerId": "xx",
-                                "RealServerFailoverRole": "xx",
-                                "DownIPList": [
-                                    "xx"
-                                ],
-                                "RealServerWeight": 1,
-                                "RealServerIP": "xx"
-                            },
-                            {
-                                "RealServerStatus": 0,
-                                "RealServerPort": 424,
-                                "RealServerId": "xx",
-                                "RealServerWeight": 1,
-                                "RealServerFailoverRole": "xx",
-                                "DownIPList": [
-                                    "xx"
-                                ],
-                                "RealServerIP": "xx"
-                            }
-                        ]
-                    }
-                ],
+                "BanStatus": "RECOVER",
+                "RuleSet": [],
+                "CertificateId": "default",
+                "CertificateAlias": "默认证书",
+                "ClientCertificateId": "default",
+                "ClientCertificateAlias": "默认证书",
+                "BasicAuthConfId": null,
+                "BasicAuth": 0,
+                "BasicAuthConfAlias": null,
+                "RealServerCertificateId": null,
+                "RealServerAuth": 0,
+                "RealServerCertificateAlias": null,
+                "RealServerCertificateDomain": null,
+                "GaapCertificateId": null,
+                "GaapAuth": 0,
+                "GaapCertificateAlias": null,
                 "PolyClientCertificateAliasInfo": [
                     {
-                        "CertificateId": "xx",
-                        "CertificateAlias": "xx"
+                        "CertificateId": "default",
+                        "CertificateAlias": "默认证书"
                     }
                 ],
-                "GaapAuth": 1,
-                "ClientCertificateAlias": "xx",
-                "RealServerAuth": 1,
-                "RealServerCertificateDomain": "xx",
-                "DomainStatus": 1
+                "PolyRealServerCertificateAliasInfo": [],
+                "TLSSupportVersion": [],
+                "TLSCiphers": ""
             }
-        ],
-        "RequestId": "xx"
+        ]
     }
 }
 ```

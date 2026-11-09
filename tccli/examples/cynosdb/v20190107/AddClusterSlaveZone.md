@@ -1,21 +1,23 @@
-**Example 1: 增加从可用区**
+**Example 1: 开启多可用区部署**
 
-
+开启多可用区部署
 
 Input: 
 
 ```
 tccli cynosdb AddClusterSlaveZone --cli-unfold-argument  \
-    --ClusterId xx \
-    --SlaveZone xx
+    --ClusterId cynosdbmysql-asd \
+    --SlaveZone ap-guangzhou-4 \
+    --BinlogSyncWay async \
+    --SemiSyncTimeout 10000
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FlowId": "123",
-        "RequestId": "128046"
+        "FlowId": 147184,
+        "RequestId": "fd5759b5-89e9-483c-b79c-d99b27c33192"
     }
 }
 ```
